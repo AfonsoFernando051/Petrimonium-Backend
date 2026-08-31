@@ -120,6 +120,30 @@ login). The gamification allow-list and Pet signal-ingestion API design are
 still not done. Package restructuring (§3-4 of the module plan) is also
 still not done — deliberately deferred in favor of the app_context/BFF work.
 
+## Update, 2026-08-31 (part 2 — split execution begins)
+
+The user confirmed the full 3-repo functional split described in the
+per-repo prompts is now underway, following a 7-stage incremental plan.
+Stage 1 (baseline/contracts) closed two items:
+
+- **Live regression fixed**: neither Flutter app was sending `appContext` at
+  login, so both were already getting 403 from this backend on
+  `/api/investments/**` (Wallet) and `/api/v1/academy|learning|lab/**`
+  (Academy) — the enforcement landed before the clients adopted it. Both
+  apps' `AuthRemoteDataSource.login`/`loginWithGoogle` now send their fixed
+  `appContext` (`'wallet'` / `'academy'`), confirmed via each repo's own
+  test suite.
+- **`onboarding`/`InvestorProfile` module ownership resolved**: `identity`,
+  not `education` — see `docs/BACKEND_MODULE_PLAN.md` §3/§7. No code moved
+  yet (package restructuring is still deferred per the note above), this
+  only closes the open decision for when that restructuring happens.
+
+Still not done, unchanged from the note above: gamification allow-list, Pet
+signal-ingestion API, package restructuring, ArchUnit boundary test. Next:
+Stage 2, a new `simulated_portfolio` context/schema for Academy's virtual
+wallet (no existing data to migrate — the Financial Lab never persisted
+money, only XP).
+
 ## Open question, never answered
 
 The prior session stopped after the audit and asked directly: proceed to

@@ -139,9 +139,10 @@ each context package (same `application`/`core`/`infrastructure` split you
 already use, just nested one level differently):
 
 ```
-com.jf.PetApp.identity/          (auth, User, JWT, password reset, refresh tokens)
+com.jf.PetApp.identity/          (auth, User, JWT, password reset, refresh tokens,
+                                   onboarding, InvestorProfile — see below)
     application/  core/  infrastructure/
-com.jf.PetApp.education/         (academy catalog, learning progress, onboarding*)
+com.jf.PetApp.education/         (academy catalog, learning progress)
     application/  core/  infrastructure/
 com.jf.PetApp.realportfolio/     (investment, finance)
     application/  core/  infrastructure/
@@ -156,11 +157,11 @@ com.jf.PetApp.shared/            (SecurityUtils, GlobalExceptionHandler,
                                    RateLimitingFilter, translation)
 ```
 
-`onboarding*`: the investor-profile questionnaire computes `InvestorProfile`,
-which today lives on `User` itself — structurally closer to `identity`
-(it's a user attribute) than `education`, even though the question content
-reads like curriculum. Flagging as a judgment call, not baking in a choice —
-say which you'd prefer before this gets executed.
+`onboarding*`: **resolved — `identity`.** The investor-profile questionnaire
+computes `InvestorProfile`, which today lives on `User` itself and is shared
+by both apps from first login — a user attribute, not curriculum, even though
+the question content reads that way. Decision made 2026-08-31, no longer a
+judgment call.
 
 This is a mechanical, IDE-assisted rename across the ~250 files in
 `src/main/java` — no logic changes. Proposed execution order (once approved):
@@ -296,8 +297,8 @@ alter table jf_mentor_messages set schema ai;
    `simulated_portfolio` tables created yet** (§2) — confirming this reading
    is correct, since it's the one place the data itself doesn't declare its
    own answer.
-3. **`onboarding`/`InvestorProfile` → `identity` vs. `education`** (§3) —
-   no strong signal either way, your call.
+3. ~~`onboarding`/`InvestorProfile` → `identity` vs. `education`~~ (§3) —
+   **resolved 2026-08-31: `identity`.**
 4. **Schema names** (`identity`, `education`, `real_portfolio`,
    `gamification`, `pet`, `ai`) — cheap to bikeshed now, expensive to rename
    once migrations reference them.
