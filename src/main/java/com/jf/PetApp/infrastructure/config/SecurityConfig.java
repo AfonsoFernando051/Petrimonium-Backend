@@ -104,7 +104,8 @@ public class SecurityConfig {
                 // content is Academy-only. Everything else (gamification, pet, mentor, auth) is
                 // shared — any authenticated session, regardless of app_context, may reach it.
                 .requestMatchers("/api/investments/**").hasAuthority(AppContextEnum.WALLET.authority())
-                .requestMatchers("/api/v1/academy/**", "/api/v1/learning/**", "/api/v1/lab/**")
+                .requestMatchers("/api/v1/academy/**", "/api/v1/learning/**", "/api/v1/lab/**",
+                        "/api/v1/simulated-portfolios/**")
                     .hasAuthority(AppContextEnum.ACADEMY.authority())
                 .anyRequest().authenticated()
             )

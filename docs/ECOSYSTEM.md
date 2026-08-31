@@ -139,10 +139,24 @@ Stage 1 (baseline/contracts) closed two items:
   only closes the open decision for when that restructuring happens.
 
 Still not done, unchanged from the note above: gamification allow-list, Pet
-signal-ingestion API, package restructuring, ArchUnit boundary test. Next:
-Stage 2, a new `simulated_portfolio` context/schema for Academy's virtual
-wallet (no existing data to migrate — the Financial Lab never persisted
-money, only XP).
+signal-ingestion API, package restructuring. Next was Stage 2, a new
+`simulated_portfolio` context/schema for Academy's virtual wallet — see the
+update immediately below.
+
+## Update, 2026-08-31 (part 3 — Stage 2: `simulated_portfolio` built)
+
+Stage 2 of the split plan is done. Full detail in
+`docs/BACKEND_MODULE_PLAN.md` §11 — summary: new `simulated_portfolio`
+Postgres schema and three tables (`simulated_portfolios`,
+`simulated_positions`, `simulated_orders`), new
+`/api/v1/simulated-portfolios/**` endpoints gated behind
+`APP_CONTEXT_ACADEMY`, buy/sell executed at the real reference quote (never
+a client-supplied price) via the existing `ExternalInvestmentApiPort`, and
+a new ArchUnit test (`SimulatedPortfolioBoundaryTest`) enforcing that this
+context and `real_portfolio`/`investment` never depend on each other,
+except that one shared read-only quote port. No `real_portfolio` code or
+data touched. Full suite: 874/874. This context exists only in the backend
+so far — no Flutter app consumes it yet; that's Stage 3.
 
 ## Open question, never answered
 

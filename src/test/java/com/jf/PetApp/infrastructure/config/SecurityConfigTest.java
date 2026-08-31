@@ -133,6 +133,41 @@ class SecurityConfigTest {
     }
 
     @Test
+    void simulatedPortfolioEndpoint_WithValidTokenButNoAppContext_IsForbidden() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("learner-no-context@test.com", RoleEnum.USER));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/simulated-portfolios/me", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void simulatedPortfolioEndpoint_WithWalletAppContext_IsForbidden() {
+        // The inverse of protectedEndpoint_WithAcademyAppContext_IsForbiddenFromRealPortfolio:
+        // Wallet must never be able to reach Academy's simulated wallet either.
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("investor-wants-simulated@test.com", RoleEnum.USER, AppContextEnum.WALLET));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/simulated-portfolios/me", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void simulatedPortfolioEndpoint_WithAcademyAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("learner-academy@test.com", RoleEnum.USER, AppContextEnum.ACADEMY));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/simulated-portfolios/me", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
     void sharedEndpoint_WithValidTokenButNoAppContext_IsStillReachable() {
         // Not every endpoint is app_context-scoped — gamification/pet/mentor/auth stay reachable
         // by any authenticated session regardless of which app (or no app) issued it.

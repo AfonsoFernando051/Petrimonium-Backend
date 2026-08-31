@@ -375,3 +375,57 @@ in `petrimonium-academy/docs/CROSS_REPO_CONTRACTS.md` §1:
 
 Not done in this pass: §3/§4 (package restructuring, ArchUnit boundary
 test) — still pending, per §0/§9.
+
+## 11. `simulated_portfolio` context (2026-08-31, split plan Stage 2)
+
+Academy's fictitious wallet — brand new context, no existing data to
+migrate (the Financial Lab only ever wrote XP, never money — §2). Built
+under the *current* package-by-layer-then-feature convention
+(`application/simulatedportfolio/`, `infrastructure/entity/`,
+`infrastructure/controller/simulatedportfolio/`,
+`infrastructure/repository/simulatedportfolio/`), same as everything else
+pre-§3 restructuring — not yet under a `com.jf.PetApp.simulatedportfolio`
+package, but laid out so that move is mechanical when §3 happens.
+
+- **Schema/tables**: `simulated_portfolios` (one per user, unique
+  `user_id`, `virtual_balance`/`initial_balance` numeric(19,2),
+  `reset_at`), `simulated_positions` (unique per `(portfolio_id, ticker)`,
+  quantity numeric(19,6) for fractional shares), `simulated_orders`
+  (append-only ledger, `client_order_id` unique per portfolio and always
+  populated — client-supplied or server-generated UUID — for idempotent
+  retries). Created unqualified in `db/migration/V22`, moved into the
+  `simulated_portfolio` Postgres schema in `db/migration-postgres/V23` —
+  same two-step pattern V1→V20 used, just without years of existing data to
+  worry about. `spring.flyway.schemas` in `application-prod.properties`
+  updated to include it.
+- **Endpoints** (`/api/v1/simulated-portfolios/**`, gated behind
+  `hasAuthority(APP_CONTEXT_ACADEMY)` in `SecurityConfig`, same pattern as
+  academy/learning/lab): `GET /me` (lazy get-or-create summary + computed
+  allocation%), `POST /orders` (buy/sell at the current reference quote,
+  never a client-supplied price), `GET /orders` (history), `POST /reset`
+  (wipes positions/orders, restores initial balance — requires
+  `confirm: true`, validated by both `@AssertTrue` and the use case).
+- **Reference pricing**: reuses `ExternalInvestmentApiPort`
+  (`application.investment.port`) for quotes — a deliberate, narrow,
+  documented exception to the simulated/real boundary (public market data,
+  not portfolio state). Enforced everywhere else by
+  `SimulatedPortfolioBoundaryTest` (new ArchUnit test, `archunit-junit5`
+  added as a test-scope dependency): no class under
+  `application.simulatedportfolio`/`infrastructure.*.simulatedportfolio`
+  may depend on `application.investment`/`InvestmentJpaEntity`/
+  `FinanceJpaEntity`/etc, and vice versa, except that one port + its DTO.
+  This is the §4 dependency-rule proposal, scoped to the one boundary that
+  already needed it rather than waiting for full package restructuring.
+- **`onboarding`/`InvestorProfile` → `identity`** decision (§3/§7) is also
+  applied in this pass — see the inline note in §3 above.
+- **Verified**: full `mvn test`, 874/874 (823 existing + 51 new — repository
+  adapter `@DataJpaTest`, use-case unit tests including the buy/sell/reset/
+  idempotency paths, controller `@WebMvcTest`, 2 new
+  `SecurityConfigTest` authorization cases, 2 new ArchUnit rules). Full
+  Spring Boot context boot smoke test still green.
+- **Not done in this pass**: nothing on the Academy or Wallet Flutter apps
+  yet — this context exists only in the backend. Consuming it (replacing
+  Academy's current real-portfolio UI with this simulated one) is Stage 3
+  of the split plan. No live-quote enrichment on position market value in
+  `GET /me` yet (only cost-basis-derived numbers) — deferred as a
+  non-blocking nice-to-have alongside the Stage 3 UI work.

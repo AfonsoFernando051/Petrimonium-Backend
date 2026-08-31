@@ -157,6 +157,18 @@
 			<scope>test</scope>
 		</dependency>
 		<!--
+			Enforces the simulated_portfolio / real_portfolio module boundary at compile-test time
+			(docs/BACKEND_MODULE_PLAN.md §4's dependency-rule proposal, scoped narrowly to the one
+			boundary that already needs it rather than waiting for the full package restructuring) —
+			see SimulatedPortfolioBoundaryTest.
+		-->
+		<dependency>
+			<groupId>com.tngtech.archunit</groupId>
+			<artifactId>archunit-junit5</artifactId>
+			<version>1.3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!--
 			Not test-scoped: RestTemplateBuilder (org.springframework.boot.restclient) — used by
 			HttpClientConfig to give every outbound HTTP client a bounded timeout — lives here in
 			Boot 4's restructured modules, not in spring-boot-webmvc.
