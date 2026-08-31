@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
@@ -17,17 +18,20 @@ import com.jf.PetApp.core.domain.enums.InvestmentType;
  */
 class InvestmentTest {
 
+    private static final BigDecimal QUANTITY = BigDecimal.valueOf(10.0);
+    private static final BigDecimal PRICE = BigDecimal.valueOf(25.5);
+
     @Test
     void accessors_ReturnConstructedValues() {
         LocalDate purchaseDate = LocalDate.of(2026, 1, 15);
         Investment investment = new Investment(
-                1, "user@test.com", "PETR4", 10.0, 25.5, purchaseDate, InvestmentType.STOCKS);
+                1, "user@test.com", "PETR4", QUANTITY, PRICE, purchaseDate, InvestmentType.STOCKS);
 
         assertEquals(1, investment.id());
         assertEquals("user@test.com", investment.userEmail());
         assertEquals("PETR4", investment.name());
-        assertEquals(10.0, investment.quantity());
-        assertEquals(25.5, investment.purchasePrice());
+        assertEquals(QUANTITY, investment.quantity());
+        assertEquals(PRICE, investment.purchasePrice());
         assertEquals(purchaseDate, investment.purchaseDate());
         assertEquals(InvestmentType.STOCKS, investment.type());
     }
@@ -35,7 +39,7 @@ class InvestmentTest {
     @Test
     void nullId_RepresentsAnUnsavedLot() {
         Investment investment = new Investment(
-                null, "user@test.com", "PETR4", 10.0, 25.5, LocalDate.now(), InvestmentType.STOCKS);
+                null, "user@test.com", "PETR4", QUANTITY, PRICE, LocalDate.now(), InvestmentType.STOCKS);
 
         assertNull(investment.id());
     }
@@ -43,8 +47,8 @@ class InvestmentTest {
     @Test
     void equals_SameValues_AreEqual() {
         LocalDate date = LocalDate.of(2026, 1, 15);
-        Investment a = new Investment(1, "user@test.com", "PETR4", 10.0, 25.5, date, InvestmentType.STOCKS);
-        Investment b = new Investment(1, "user@test.com", "PETR4", 10.0, 25.5, date, InvestmentType.STOCKS);
+        Investment a = new Investment(1, "user@test.com", "PETR4", QUANTITY, PRICE, date, InvestmentType.STOCKS);
+        Investment b = new Investment(1, "user@test.com", "PETR4", QUANTITY, PRICE, date, InvestmentType.STOCKS);
 
         assertEquals(a, b);
         assertEquals(a.hashCode(), b.hashCode());
@@ -53,8 +57,8 @@ class InvestmentTest {
     @Test
     void equals_DifferentValues_AreNotEqual() {
         LocalDate date = LocalDate.of(2026, 1, 15);
-        Investment a = new Investment(1, "user@test.com", "PETR4", 10.0, 25.5, date, InvestmentType.STOCKS);
-        Investment b = new Investment(2, "user@test.com", "PETR4", 10.0, 25.5, date, InvestmentType.STOCKS);
+        Investment a = new Investment(1, "user@test.com", "PETR4", QUANTITY, PRICE, date, InvestmentType.STOCKS);
+        Investment b = new Investment(2, "user@test.com", "PETR4", QUANTITY, PRICE, date, InvestmentType.STOCKS);
 
         assertNotEquals(a, b);
     }

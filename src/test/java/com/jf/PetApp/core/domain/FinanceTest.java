@@ -17,7 +17,7 @@ class FinanceTest {
     @Test
     void settersAndGetters_RoundTripEveryField() {
         Finance finance = new Finance();
-        Investment investment = new Investment(1, "user@test.com", "PETR4", 10.0, 20.0, null, null);
+        Investment investment = new Investment(1, "user@test.com", "PETR4", BigDecimal.valueOf(10.0), BigDecimal.valueOf(20.0), null, null);
 
         finance.setId(7);
         finance.setBalance(BigDecimal.valueOf(1234.56));

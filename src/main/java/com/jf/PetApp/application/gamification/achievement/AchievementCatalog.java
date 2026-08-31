@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.gamification.achievement;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -28,10 +29,10 @@ public final class AchievementCatalog {
             new AchievementDefinition("first_investment", 0, AchievementContext::hasHoldings),
             // DECISION-014: XP must never reward passive-income/wealth signals.
             // Kept as a milestone for flavor, but grants no XP.
-            new AchievementDefinition("first_dividend", 0, c -> c.monthlyPassiveIncomeEstimate() > 0),
-            new AchievementDefinition("positive_return", 0, c -> c.totalGain() > 0),
-            new AchievementDefinition("portfolio_10k", 0, c -> c.currentValue() >= 10_000),
-            new AchievementDefinition("portfolio_50k", 0, c -> c.currentValue() >= 50_000),
+            new AchievementDefinition("first_dividend", 0, c -> c.monthlyPassiveIncomeEstimate().compareTo(BigDecimal.ZERO) > 0),
+            new AchievementDefinition("positive_return", 0, c -> c.totalGain().compareTo(BigDecimal.ZERO) > 0),
+            new AchievementDefinition("portfolio_10k", 0, c -> c.currentValue().compareTo(BigDecimal.valueOf(10_000)) >= 0),
+            new AchievementDefinition("portfolio_50k", 0, c -> c.currentValue().compareTo(BigDecimal.valueOf(50_000)) >= 0),
             // DECISION-027: XP must never reward investment activity, only
             // learning/practice behavior. Kept as a milestone for flavor,
             // but grants no XP.
@@ -43,5 +44,5 @@ public final class AchievementCatalog {
                     c -> c.firstPurchaseDate() != null && c.daysSinceFirstPurchase(java.time.LocalDate.now()) >= 365),
             // DECISION-014: XP must never reward passive-income/wealth signals.
             // Kept as a milestone for flavor, but grants no XP.
-            new AchievementDefinition("dividend_hunter", 0, c -> c.annualPassiveIncomeEstimate() >= 1_000));
+            new AchievementDefinition("dividend_hunter", 0, c -> c.annualPassiveIncomeEstimate().compareTo(BigDecimal.valueOf(1_000)) >= 0));
 }

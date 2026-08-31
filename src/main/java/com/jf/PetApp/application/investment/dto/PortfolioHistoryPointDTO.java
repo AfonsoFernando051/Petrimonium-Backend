@@ -1,10 +1,11 @@
 package com.jf.PetApp.application.investment.dto;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public record PortfolioHistoryPointDTO(
     LocalDate date,
-    Double investedCapital,
-    Double portfolioValue
+    BigDecimal investedCapital,
+    BigDecimal portfolioValue
 ) {
 }

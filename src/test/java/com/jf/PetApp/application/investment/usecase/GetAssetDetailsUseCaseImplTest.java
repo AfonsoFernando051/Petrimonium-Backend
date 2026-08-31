@@ -18,6 +18,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -61,7 +63,14 @@ class GetAssetDetailsUseCaseImplTest {
     }
 
     private Investment lot(String ticker, double quantity, double purchasePrice) {
-        return new Investment(1, EMAIL, ticker, quantity, purchasePrice, LocalDate.now(), InvestmentType.STOCKS);
+        return new Investment(1, EMAIL, ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(purchasePrice), LocalDate.now(), InvestmentType.STOCKS);
+    }
+
+    /** Compares a plain double to a BigDecimal money/quantity field by value, ignoring scale —
+     * rounds the expected side the same way the production code rounds money (2 decimals,
+     * HALF_UP), since fields like portfolioWeight are already rounded before this compares them. */
+    private static void assertMoney(double expected, BigDecimal actual) {
+        assertEquals(0, BigDecimal.valueOf(expected).setScale(2, RoundingMode.HALF_UP).compareTo(actual));
     }
 
     private Map<String, Object> enrichedData(double price) {
@@ -91,9 +100,9 @@ class GetAssetDetailsUseCaseImplTest {
         UserPositionDTO position = result.userPosition();
         assertNotNull(position);
         // invested = 100*30 + 50*36 = 3000 + 1800 = 4800; quantity = 150
-        assertEquals(150.0, position.quantity(), DELTA);
-        assertEquals(4800.0, position.investedValue(), DELTA);
-        assertEquals(32.0, position.averagePrice(), DELTA); // 4800 / 150
+        assertMoney(150.0, position.quantity());
+        assertMoney(4800.0, position.investedValue());
+        assertMoney(32.0, position.averagePrice()); // 4800 / 150
     }
 
     @Test
@@ -105,9 +114,9 @@ class GetAssetDetailsUseCaseImplTest {
         UserPositionDTO position = useCase.execute(EMAIL, "PETR4").userPosition();
 
         // invested = 3000, currentValue = 100*36 = 3600, gain = 600, gain% = 20%
-        assertEquals(3600.0, position.currentValue(), DELTA);
-        assertEquals(600.0, position.unrealizedGain(), DELTA);
-        assertEquals(20.0, position.unrealizedGainPercent(), DELTA);
+        assertMoney(3600.0, position.currentValue());
+        assertMoney(600.0, position.unrealizedGain());
+        assertMoney(20.0, position.unrealizedGainPercent());
     }
 
     @Test
@@ -119,8 +128,8 @@ class GetAssetDetailsUseCaseImplTest {
         UserPositionDTO position = useCase.execute(EMAIL, "PETR4").userPosition();
 
         // invested = 4000, currentValue = 3000, gain = -1000, gain% = -25%
-        assertEquals(-1000.0, position.unrealizedGain(), DELTA);
-        assertEquals(-25.0, position.unrealizedGainPercent(), DELTA);
+        assertMoney(-1000.0, position.unrealizedGain());
+        assertMoney(-25.0, position.unrealizedGainPercent());
     }
 
     @Test
@@ -135,7 +144,7 @@ class GetAssetDetailsUseCaseImplTest {
         UserPositionDTO position = useCase.execute(EMAIL, "PETR4").userPosition();
 
         // total portfolio value = 3500 + 3000 = 6500; weight = 3500/6500 * 100
-        assertEquals(3500.0 / 6500.0 * 100, position.portfolioWeight(), DELTA);
+        assertMoney(3500.0 / 6500.0 * 100, position.portfolioWeight());
     }
 
     @Test
@@ -160,8 +169,8 @@ class GetAssetDetailsUseCaseImplTest {
         // "unavailable" path: no live price, so current value uses averagePrice (30) as price.
         UserPositionDTO position = result.userPosition();
         assertNotNull(position);
-        assertEquals(300.0, position.currentValue(), DELTA); // 10 * 30
-        assertEquals(0.0, position.unrealizedGain(), DELTA);
+        assertMoney(300.0, position.currentValue()); // 10 * 30
+        assertMoney(0.0, position.unrealizedGain());
     }
 
     // ── Dividend enrichment ──────────────────────────────────────────────
@@ -354,7 +363,7 @@ class GetAssetDetailsUseCaseImplTest {
 
         assertEquals("CACHED", result.dataStatus());
         assertNotNull(result.userPosition());
-        assertEquals(350.0, result.userPosition().currentValue(), DELTA); // 10 * 35 (cached price)
+        assertMoney(350.0, result.userPosition().currentValue()); // 10 * 35 (cached price)
         verify(externalApi, never()).getEnrichedQuote(any());
         verify(externalApi, never()).getQuote(any());
     }

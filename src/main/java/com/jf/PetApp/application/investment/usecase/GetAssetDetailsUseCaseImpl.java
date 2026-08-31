@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -107,7 +108,8 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
 
     private UserPositionDTO computeUserPosition(String email, String ticker, Double currentPrice) {
         List<Investment> lots = investmentRepo.findByUserEmail(email);
-        return positionCalculator.compute(lots, ticker, currentPrice);
+        BigDecimal price = currentPrice == null ? null : BigDecimal.valueOf(currentPrice);
+        return positionCalculator.compute(lots, ticker, price);
     }
 
     private List<DividendRadarEntryDTO> fetchRecentDividends(String email, String ticker) {
@@ -115,12 +117,16 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
             List<DividendDTO> dividends = externalApi.getDividends(ticker);
             if (dividends.isEmpty()) return List.of();
 
-            // Get user's quantity for this ticker
+            // Get user's quantity for this ticker. Kept as double here (unlike the
+            // BigDecimal position/summary chain) — DividendRadarEntryDTO/DividendDTO are a
+            // separate, still-Double DTO chain sourced from confirmed provider payment
+            // history, out of scope for this pass (docs/BACKEND_MODULE_PLAN.md §12).
             List<Investment> lots = investmentRepo.findByUserEmail(email);
             double userQuantity = lots.stream()
                     .filter(lot -> lot.name().equalsIgnoreCase(ticker))
-                    .mapToDouble(Investment::quantity)
-                    .sum();
+                    .map(Investment::quantity)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add)
+                    .doubleValue();
 
             LocalDate today = LocalDate.now();
             List<DividendRadarEntryDTO> entries = new ArrayList<>();

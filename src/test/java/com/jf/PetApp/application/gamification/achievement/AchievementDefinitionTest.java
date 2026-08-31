@@ -2,6 +2,7 @@ package com.jf.PetApp.application.gamification.achievement;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.function.Predicate;
 
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class AchievementDefinitionTest {
 
     private static AchievementContext contextWith(boolean hasHoldings) {
-        return new AchievementContext(hasHoldings, 0.0, 0.0, 0, 0, LocalDate.now(), 0.0, 0.0);
+        return new AchievementContext(hasHoldings, BigDecimal.ZERO, BigDecimal.ZERO, 0, 0, LocalDate.now(), BigDecimal.ZERO, BigDecimal.ZERO);
     }
 
     @Test

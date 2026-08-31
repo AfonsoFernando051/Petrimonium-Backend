@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +42,7 @@ class GetDividendRadarUseCaseImplTest {
     }
 
     private Investment lot(String ticker, double quantity, LocalDate purchaseDate) {
-        return new Investment(1, EMAIL, ticker, quantity, 10.0, purchaseDate, InvestmentType.STOCKS);
+        return new Investment(1, EMAIL, ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(10.0), purchaseDate, InvestmentType.STOCKS);
     }
 
     private DividendDTO dividend(String ticker, LocalDate dataCom, LocalDate paymentDate) {

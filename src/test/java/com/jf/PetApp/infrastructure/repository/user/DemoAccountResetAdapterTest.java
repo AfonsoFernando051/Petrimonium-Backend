@@ -25,6 +25,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
+import java.math.BigDecimal;
 import java.time.Instant;
 import java.time.LocalDate;
 
@@ -84,8 +85,8 @@ class DemoAccountResetAdapterTest {
         InvestmentJpaEntity investment = new InvestmentJpaEntity();
         investment.setUser(userJpaRepository.findByEmail(email).orElseThrow());
         investment.setName("PETR4");
-        investment.setQuantity(10.0);
-        investment.setPurchasePrice(30.0);
+        investment.setQuantity(BigDecimal.valueOf(10.0));
+        investment.setPurchasePrice(BigDecimal.valueOf(30.0));
         investment.setPurchaseDate(LocalDate.now());
         investment.setType(InvestmentType.STOCKS);
         investmentRepository.save(investment);

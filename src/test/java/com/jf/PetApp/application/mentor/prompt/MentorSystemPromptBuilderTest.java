@@ -10,6 +10,7 @@ import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
 
@@ -90,7 +91,8 @@ class MentorSystemPromptBuilderTest {
 
     @Test
     void build_WithZeroTotalAssets_TreatedAsNoPortfolio() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(0.0, 0.0, 0.0, 0.0, 0);
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0);
 
         String prompt = MentorSystemPromptBuilder.build(null, summary, null, null, "pt", null, null, null);
 
@@ -99,7 +101,8 @@ class MentorSystemPromptBuilderTest {
 
     @Test
     void build_WithPortfolio_IncludesRealNumbersInContextBlock() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(1000.0, 1200.0, 200.0, 20.0, 3);
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
 
         String prompt = MentorSystemPromptBuilder.build(null, summary, null, null, "pt", null, null, null);
 
@@ -108,10 +111,11 @@ class MentorSystemPromptBuilderTest {
 
     @Test
     void build_WithAllocation_ListsEachSliceWithItsPercentage() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(1000.0, 1200.0, 200.0, 20.0, 3);
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
         List<AllocationSliceDTO> allocation = List.of(
-                new AllocationSliceDTO(InvestmentType.STOCKS, 800.0, 66.7),
-                new AllocationSliceDTO(InvestmentType.FIXED_INCOME, 400.0, 33.3)
+                new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(800.0), BigDecimal.valueOf(66.7)),
+                new AllocationSliceDTO(InvestmentType.FIXED_INCOME, BigDecimal.valueOf(400.0), BigDecimal.valueOf(33.3))
         );
 
         String prompt = MentorSystemPromptBuilder.build(null, summary, allocation, null, "pt", null, null, null);

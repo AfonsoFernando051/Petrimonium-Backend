@@ -13,6 +13,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "jf_investments", schema = "real_portfolio")
 public class InvestmentJpaEntity {
@@ -23,10 +25,11 @@ public class InvestmentJpaEntity {
 
     private String name;
 
-    private Double quantity;
+    @Column(precision = 19, scale = 6)
+    private BigDecimal quantity;
 
-    @Column(name = "purchase_price")
-    private Double purchasePrice;
+    @Column(name = "purchase_price", precision = 19, scale = 2)
+    private BigDecimal purchasePrice;
 
     @Column(name = "purchase_date")
     private java.time.LocalDate purchaseDate;
@@ -54,19 +57,19 @@ public class InvestmentJpaEntity {
         this.name = name;
     }
 
-    public Double getQuantity() {
+    public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Double quantity) {
+    public void setQuantity(BigDecimal quantity) {
         this.quantity = quantity;
     }
 
-    public Double getPurchasePrice() {
+    public BigDecimal getPurchasePrice() {
         return purchasePrice;
     }
 
-    public void setPurchasePrice(Double purchasePrice) {
+    public void setPurchasePrice(BigDecimal purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
 

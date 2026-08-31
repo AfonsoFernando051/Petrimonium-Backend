@@ -1,10 +1,12 @@
 package com.jf.PetApp.application.investment.dto;
 
+import java.math.BigDecimal;
+
 public record PortfolioSummaryDTO(
-    Double investedCapital,
-    Double currentValue,
-    Double totalGain,
-    Double totalGainPercent,
+    BigDecimal investedCapital,
+    BigDecimal currentValue,
+    BigDecimal totalGain,
+    BigDecimal totalGainPercent,
     Integer totalAssets
 ) {
 }

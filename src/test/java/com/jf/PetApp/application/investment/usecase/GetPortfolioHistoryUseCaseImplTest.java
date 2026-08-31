@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -31,10 +33,25 @@ class GetPortfolioHistoryUseCaseImplTest {
     }
 
     private InvestmentLotDTO lot(double quantity, double purchasePrice, LocalDate purchaseDate, double currentPrice) {
+        BigDecimal q = BigDecimal.valueOf(quantity);
+        BigDecimal purchase = BigDecimal.valueOf(purchasePrice);
+        BigDecimal current = BigDecimal.valueOf(currentPrice);
         return new InvestmentLotDTO(
-                1, "PETR4", InvestmentType.STOCKS, quantity, purchasePrice, purchaseDate,
-                currentPrice, quantity * purchasePrice, quantity * currentPrice
+                1, "PETR4", InvestmentType.STOCKS, q, purchase, purchaseDate,
+                current, q.multiply(purchase), q.multiply(current)
         );
+    }
+
+    /** Compares a plain double to a BigDecimal money field by value, ignoring scale. */
+    private static void assertMoney(double expected, BigDecimal actual) {
+        assertEquals(0, BigDecimal.valueOf(expected).setScale(2, RoundingMode.HALF_UP).compareTo(actual));
+    }
+
+    /** Same as {@link #assertMoney}, but within an absolute tolerance. */
+    private static void assertMoneyApprox(double expected, BigDecimal actual, double delta) {
+        BigDecimal diff = BigDecimal.valueOf(expected).subtract(actual).abs();
+        assertTrue(diff.compareTo(BigDecimal.valueOf(delta)) <= 0,
+                () -> "expected " + expected + " within " + delta + " of " + actual);
     }
 
     @Test
@@ -45,8 +62,8 @@ class GetPortfolioHistoryUseCaseImplTest {
 
         assertEquals(1, points.size());
         assertEquals(TODAY, points.get(0).date());
-        assertEquals(0.0, points.get(0).investedCapital());
-        assertEquals(0.0, points.get(0).portfolioValue());
+        assertMoney(0.0, points.get(0).investedCapital());
+        assertMoney(0.0, points.get(0).portfolioValue());
     }
 
     @Test
@@ -69,8 +86,8 @@ class GetPortfolioHistoryUseCaseImplTest {
 
         // Bought today at 10, now worth 20 -> today's sample should already
         // reflect the full current value, not a part-way interpolation.
-        assertEquals(100.0, todayPoint.investedCapital()); // 10 * 10
-        assertEquals(200.0, todayPoint.portfolioValue());  // 10 * 20
+        assertMoney(100.0, todayPoint.investedCapital()); // 10 * 10
+        assertMoney(200.0, todayPoint.portfolioValue());  // 10 * 20
     }
 
     @Test
@@ -80,8 +97,8 @@ class GetPortfolioHistoryUseCaseImplTest {
         List<PortfolioHistoryPointDTO> points = useCase.execute(EMAIL, "7D");
         PortfolioHistoryPointDTO firstPoint = points.get(0); // today - 7, before the purchase
 
-        assertEquals(0.0, firstPoint.investedCapital());
-        assertEquals(0.0, firstPoint.portfolioValue());
+        assertMoney(0.0, firstPoint.investedCapital());
+        assertMoney(0.0, firstPoint.portfolioValue());
     }
 
     @Test
@@ -97,7 +114,7 @@ class GetPortfolioHistoryUseCaseImplTest {
                 .findFirst()
                 .orElseThrow();
 
-        assertEquals(15.0, midpoint.portfolioValue(), 0.5);
+        assertMoneyApprox(15.0, midpoint.portfolioValue(), 0.5);
     }
 
     @Test
@@ -134,8 +151,8 @@ class GetPortfolioHistoryUseCaseImplTest {
         List<PortfolioHistoryPointDTO> points = useCase.execute(EMAIL, "7D");
         PortfolioHistoryPointDTO todayPoint = points.get(points.size() - 1);
 
-        assertEquals(100.0 + 100.0, todayPoint.investedCapital()); // 10*10 + 5*20
-        assertEquals(100.0 + 100.0, todayPoint.portfolioValue());
+        assertMoney(100.0 + 100.0, todayPoint.investedCapital()); // 10*10 + 5*20
+        assertMoney(100.0 + 100.0, todayPoint.portfolioValue());
     }
 
     @Test

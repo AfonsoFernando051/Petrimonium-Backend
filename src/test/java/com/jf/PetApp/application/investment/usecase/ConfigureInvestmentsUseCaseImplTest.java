@@ -12,6 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,8 +43,8 @@ public class ConfigureInvestmentsUseCaseImplTest {
         String email = "investor@test.com";
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
 
-        ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", 100.0, 35.5, java.time.LocalDate.now(), InvestmentType.STOCKS);
-        ConfigureInvestmentCommand asset2 = new ConfigureInvestmentCommand("BTC", 0.5, 300000.0, java.time.LocalDate.now(), InvestmentType.CRYPTO);
+        ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", BigDecimal.valueOf(100.0), BigDecimal.valueOf(35.5), java.time.LocalDate.now(), InvestmentType.STOCKS);
+        ConfigureInvestmentCommand asset2 = new ConfigureInvestmentCommand("BTC", BigDecimal.valueOf(0.5), BigDecimal.valueOf(300000.0), java.time.LocalDate.now(), InvestmentType.CRYPTO);
 
         configureInvestmentsUseCase.execute(email, List.of(asset1, asset2));
 
@@ -63,7 +64,7 @@ public class ConfigureInvestmentsUseCaseImplTest {
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
 
-        ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", 100.0, 35.5, java.time.LocalDate.now(), InvestmentType.STOCKS);
+        ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", BigDecimal.valueOf(100.0), BigDecimal.valueOf(35.5), java.time.LocalDate.now(), InvestmentType.STOCKS);
 
         assertThrows(ResourceNotFoundException.class, () ->
             configureInvestmentsUseCase.execute(email, List.of(asset1)));

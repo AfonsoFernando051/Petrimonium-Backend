@@ -1,5 +1,7 @@
 package com.jf.PetApp.application.gamification.usecase;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.List;
@@ -106,9 +108,11 @@ public class EvaluateAchievementsUseCaseImpl implements EvaluateAchievementsUseC
                 .min(java.time.LocalDate::compareTo)
                 .orElse(null);
 
-        double annualPassiveIncome = allocation.stream()
-                .mapToDouble(slice -> slice.currentValue() * ASSUMED_ANNUAL_YIELD.getOrDefault(slice.type(), 0.0))
-                .sum();
+        BigDecimal annualPassiveIncome = allocation.stream()
+                .map(slice -> slice.currentValue().multiply(BigDecimal.valueOf(ASSUMED_ANNUAL_YIELD.getOrDefault(slice.type(), 0.0))))
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .setScale(2, RoundingMode.HALF_UP);
+        BigDecimal monthlyPassiveIncome = annualPassiveIncome.divide(BigDecimal.valueOf(12), 2, RoundingMode.HALF_UP);
 
         return new AchievementContext(
                 hasHoldings,
@@ -117,7 +121,7 @@ public class EvaluateAchievementsUseCaseImpl implements EvaluateAchievementsUseC
                 distinctTypeCount,
                 distinctFundsTickerCount,
                 firstPurchaseDate,
-                annualPassiveIncome / 12,
+                monthlyPassiveIncome,
                 annualPassiveIncome);
     }
 }

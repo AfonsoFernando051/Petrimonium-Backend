@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -31,7 +33,13 @@ class GetPortfolioAllocationUseCaseImplTest {
     }
 
     private InvestmentLotDTO lot(InvestmentType type, double currentValue) {
-        return new InvestmentLotDTO(1, "X", type, 1.0, currentValue, LocalDate.now(), currentValue, currentValue, currentValue);
+        BigDecimal value = BigDecimal.valueOf(currentValue);
+        return new InvestmentLotDTO(1, "X", type, BigDecimal.ONE, value, LocalDate.now(), value, value, value);
+    }
+
+    /** Compares a plain double to a BigDecimal money/percent field by value, ignoring scale. */
+    private static void assertMoney(double expected, BigDecimal actual) {
+        assertEquals(0, BigDecimal.valueOf(expected).setScale(2, RoundingMode.HALF_UP).compareTo(actual));
     }
 
     @Test
@@ -51,8 +59,8 @@ class GetPortfolioAllocationUseCaseImplTest {
 
         assertEquals(1, result.size());
         assertEquals(InvestmentType.STOCKS, result.get(0).type());
-        assertEquals(1000.0, result.get(0).currentValue());
-        assertEquals(100.0, result.get(0).portfolioPercent());
+        assertMoney(1000.0, result.get(0).currentValue());
+        assertMoney(100.0, result.get(0).portfolioPercent());
     }
 
     @Test
@@ -64,11 +72,11 @@ class GetPortfolioAllocationUseCaseImplTest {
 
         List<AllocationSliceDTO> result = useCase.execute(EMAIL);
 
-        double totalPercent = result.stream().mapToDouble(AllocationSliceDTO::portfolioPercent).sum();
-        assertEquals(100.0, totalPercent, 0.0001);
+        BigDecimal totalPercent = result.stream().map(AllocationSliceDTO::portfolioPercent).reduce(BigDecimal.ZERO, BigDecimal::add);
+        assertMoney(100.0, totalPercent);
 
         AllocationSliceDTO stocks = result.stream().filter(s -> s.type() == InvestmentType.STOCKS).findFirst().orElseThrow();
-        assertEquals(75.0, stocks.portfolioPercent());
+        assertMoney(75.0, stocks.portfolioPercent());
     }
 
     @Test
@@ -81,8 +89,8 @@ class GetPortfolioAllocationUseCaseImplTest {
         List<AllocationSliceDTO> result = useCase.execute(EMAIL);
 
         assertEquals(1, result.size());
-        assertEquals(1000.0, result.get(0).currentValue());
-        assertEquals(100.0, result.get(0).portfolioPercent());
+        assertMoney(1000.0, result.get(0).currentValue());
+        assertMoney(100.0, result.get(0).portfolioPercent());
     }
 
     @Test
@@ -91,6 +99,6 @@ class GetPortfolioAllocationUseCaseImplTest {
 
         List<AllocationSliceDTO> result = useCase.execute(EMAIL);
 
-        assertEquals(0.0, result.get(0).portfolioPercent());
+        assertMoney(0.0, result.get(0).portfolioPercent());
     }
 }

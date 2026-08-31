@@ -3,6 +3,7 @@ package com.jf.PetApp.application.gamification.achievement;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Set;
 
@@ -69,7 +70,8 @@ class AchievementCatalogTest {
     @Test
     void maximumAttainableXp_IsZero_RegardlessOfWealthOrActivity() {
         AchievementContext maxedOutContext = new AchievementContext(
-                true, 1_000_000.0, 1_000_000.0, 10, 10, LocalDate.of(2000, 1, 1), 100_000.0, 100_000.0);
+                true, BigDecimal.valueOf(1_000_000.0), BigDecimal.valueOf(1_000_000.0), 10, 10,
+                LocalDate.of(2000, 1, 1), BigDecimal.valueOf(100_000.0), BigDecimal.valueOf(100_000.0));
 
         int totalXp = AchievementCatalog.DEFINITIONS.stream()
                 .filter(definition -> definition.qualifies().test(maxedOutContext))

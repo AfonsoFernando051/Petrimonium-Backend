@@ -69,7 +69,7 @@ class GetMentorReplyUseCaseImplTest {
     private static final String EMAIL = "investor@test.com";
     private static final Long CONVERSATION_ID = 42L;
     private static final PortfolioSummaryDTO EMPTY_SUMMARY =
-            new PortfolioSummaryDTO(0.0, 0.0, 0.0, 0.0, 0);
+            new PortfolioSummaryDTO(java.math.BigDecimal.ZERO, java.math.BigDecimal.ZERO, java.math.BigDecimal.ZERO, java.math.BigDecimal.ZERO, 0);
     private static final LearningProgressResult EMPTY_LEARNING_PROGRESS =
             new LearningProgressResult(Set.of(), Set.of(), Set.of(), 0, 1, 0, 50);
     private static final AcademyCatalogResult EMPTY_ACADEMY_CATALOG =

@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -58,7 +59,13 @@ public class GetDividendRadarUseCaseImpl implements GetDividendRadarUseCase {
         for (Map.Entry<String, List<Investment>> holding : lotsByTicker.entrySet()) {
             String ticker = holding.getKey();
             List<Investment> tickerLots = holding.getValue();
-            double currentQuantity = tickerLots.stream().mapToDouble(Investment::quantity).sum();
+            // Dividend Radar stays a Double-typed calculation (unlike the BigDecimal
+            // position/summary chain) — out of scope for this pass, see
+            // docs/BACKEND_MODULE_PLAN.md §12.
+            double currentQuantity = tickerLots.stream()
+                    .map(Investment::quantity)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add)
+                    .doubleValue();
             if (currentQuantity <= 0) continue;
 
             List<DividendDTO> dividends = fetchDividends(ticker);
@@ -102,8 +109,9 @@ public class GetDividendRadarUseCaseImpl implements GetDividendRadarUseCase {
         if (dataCom == null) return currentQuantity;
         return tickerLots.stream()
                 .filter(lot -> lot.purchaseDate() != null && !lot.purchaseDate().isAfter(dataCom))
-                .mapToDouble(Investment::quantity)
-                .sum();
+                .map(Investment::quantity)
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .doubleValue();
     }
 
     private DividendRadarEntryDTO toEntry(DividendDTO dividend, double quantity, String status) {

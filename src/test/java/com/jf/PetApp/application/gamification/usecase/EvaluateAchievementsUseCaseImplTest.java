@@ -9,6 +9,7 @@ import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
@@ -69,7 +70,7 @@ class EvaluateAchievementsUseCaseImplTest {
     @Test
     void execute_EmptyPortfolio_UnlocksNothing() {
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of());
-        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(0.0, 0.0, 0.0, 0.0, 0));
+        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0));
         when(getPortfolioAllocationUseCase.execute(EMAIL)).thenReturn(List.of());
         when(achievementRepository.unlockedWithTimestamps(USER_ID)).thenReturn(Map.of());
 
@@ -82,11 +83,13 @@ class EvaluateAchievementsUseCaseImplTest {
     @Test
     void execute_HasHoldings_UnlocksFirstInvestmentExactlyOnce() {
         InvestmentLotDTO lot = new InvestmentLotDTO(
-                1, "PETR4", InvestmentType.STOCKS, 10.0, 30.0, LocalDate.now(), 30.0, 300.0, 300.0);
+                1, "PETR4", InvestmentType.STOCKS, BigDecimal.valueOf(10.0), BigDecimal.valueOf(30.0), LocalDate.now(),
+                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0));
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of(lot));
-        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(300.0, 300.0, 0.0, 0.0, 1));
+        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(
+                BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), BigDecimal.ZERO, BigDecimal.ZERO, 1));
         when(getPortfolioAllocationUseCase.execute(EMAIL))
-                .thenReturn(List.of(new AllocationSliceDTO(InvestmentType.STOCKS, 300.0, 100.0)));
+                .thenReturn(List.of(new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(300.0), BigDecimal.valueOf(100.0))));
         when(achievementRepository.isUnlocked(USER_ID, "first_investment")).thenReturn(false);
         when(achievementRepository.unlockedWithTimestamps(USER_ID)).thenReturn(Map.of());
 
@@ -101,11 +104,13 @@ class EvaluateAchievementsUseCaseImplTest {
     @Test
     void execute_AlreadyUnlocked_NeverReGrantsXp() {
         InvestmentLotDTO lot = new InvestmentLotDTO(
-                1, "PETR4", InvestmentType.STOCKS, 10.0, 30.0, LocalDate.now(), 30.0, 300.0, 300.0);
+                1, "PETR4", InvestmentType.STOCKS, BigDecimal.valueOf(10.0), BigDecimal.valueOf(30.0), LocalDate.now(),
+                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0));
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of(lot));
-        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(300.0, 300.0, 0.0, 0.0, 1));
+        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(
+                BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), BigDecimal.ZERO, BigDecimal.ZERO, 1));
         when(getPortfolioAllocationUseCase.execute(EMAIL))
-                .thenReturn(List.of(new AllocationSliceDTO(InvestmentType.STOCKS, 300.0, 100.0)));
+                .thenReturn(List.of(new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(300.0), BigDecimal.valueOf(100.0))));
         when(achievementRepository.isUnlocked(USER_ID, "first_investment")).thenReturn(true);
         when(achievementRepository.unlockedWithTimestamps(USER_ID)).thenReturn(Map.of());
 
@@ -118,7 +123,7 @@ class EvaluateAchievementsUseCaseImplTest {
     @Test
     void execute_ReturnsRealTotalXpFromRepository() {
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of());
-        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(0.0, 0.0, 0.0, 0.0, 0));
+        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0));
         when(getPortfolioAllocationUseCase.execute(EMAIL)).thenReturn(List.of());
         when(achievementRepository.unlockedWithTimestamps(USER_ID)).thenReturn(Map.of());
         when(achievementRepository.totalXpFor(USER_ID)).thenReturn(50);

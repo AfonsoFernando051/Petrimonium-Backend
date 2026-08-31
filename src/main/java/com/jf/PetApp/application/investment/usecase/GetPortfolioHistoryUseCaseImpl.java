@@ -1,5 +1,7 @@
 package com.jf.PetApp.application.investment.usecase;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ import com.jf.PetApp.application.investment.dto.PortfolioHistoryPointDTO;
 public class GetPortfolioHistoryUseCaseImpl implements GetPortfolioHistoryUseCase {
 
     private static final int SAMPLE_COUNT = 60;
+    private static final int MONEY_SCALE = 2;
 
     private final GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase;
 
@@ -35,16 +38,18 @@ public class GetPortfolioHistoryUseCaseImpl implements GetPortfolioHistoryUseCas
 
         List<PortfolioHistoryPointDTO> points = new ArrayList<>();
         for (LocalDate d : sampleDates) {
-            double investedCapital = 0.0;
-            double portfolioValue = 0.0;
+            BigDecimal investedCapital = BigDecimal.ZERO;
+            BigDecimal portfolioValue = BigDecimal.ZERO;
 
             for (InvestmentLotDTO lot : lots) {
                 if (lot.purchaseDate().isAfter(d)) {
                     continue;
                 }
 
-                double investedContribution = lot.quantity() * lot.purchasePrice();
+                BigDecimal investedContribution = lot.quantity().multiply(lot.purchasePrice());
 
+                // A pure interpolation weight (0..1), not itself a money value — kept as
+                // double, then applied to BigDecimal money via BigDecimal.valueOf below.
                 double progress;
                 if (today.equals(lot.purchaseDate())) {
                     progress = 1.0;
@@ -54,13 +59,18 @@ public class GetPortfolioHistoryUseCaseImpl implements GetPortfolioHistoryUseCas
                     progress = totalDays == 0 ? 1.0 : clamp((double) elapsedDays / (double) totalDays, 0.0, 1.0);
                 }
 
-                double valueContribution = lot.quantity() * (lot.purchasePrice() + (lot.currentPrice() - lot.purchasePrice()) * progress);
+                BigDecimal priceDelta = lot.currentPrice().subtract(lot.purchasePrice());
+                BigDecimal interpolatedPrice = lot.purchasePrice().add(priceDelta.multiply(BigDecimal.valueOf(progress)));
+                BigDecimal valueContribution = lot.quantity().multiply(interpolatedPrice);
 
-                investedCapital += investedContribution;
-                portfolioValue += valueContribution;
+                investedCapital = investedCapital.add(investedContribution);
+                portfolioValue = portfolioValue.add(valueContribution);
             }
 
-            points.add(new PortfolioHistoryPointDTO(d, investedCapital, portfolioValue));
+            points.add(new PortfolioHistoryPointDTO(
+                    d,
+                    investedCapital.setScale(MONEY_SCALE, RoundingMode.HALF_UP),
+                    portfolioValue.setScale(MONEY_SCALE, RoundingMode.HALF_UP)));
         }
 
         return points;

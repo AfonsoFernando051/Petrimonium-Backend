@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.gamification.achievement;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -8,17 +9,18 @@ import java.time.LocalDate;
  * already use ({@code GetPortfolioHoldingsUseCase},
  * {@code GetPortfolioSummaryUseCase}, {@code GetPortfolioAllocationUseCase}),
  * so an achievement can never be unlocked on anything the server hasn't
- * independently verified.
+ * independently verified. Money fields are {@link BigDecimal}, matching the
+ * real_portfolio calculation chain they're built from.
  */
 public record AchievementContext(
         boolean hasHoldings,
-        double currentValue,
-        double totalGain,
+        BigDecimal currentValue,
+        BigDecimal totalGain,
         int distinctTypeCount,
         int distinctFundsTickerCount,
         LocalDate firstPurchaseDate,
-        double monthlyPassiveIncomeEstimate,
-        double annualPassiveIncomeEstimate) {
+        BigDecimal monthlyPassiveIncomeEstimate,
+        BigDecimal annualPassiveIncomeEstimate) {
 
     public long daysSinceFirstPurchase(LocalDate today) {
         if (firstPurchaseDate == null) {

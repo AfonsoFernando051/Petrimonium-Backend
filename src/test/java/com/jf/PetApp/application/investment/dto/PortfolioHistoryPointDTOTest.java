@@ -2,6 +2,7 @@ package com.jf.PetApp.application.investment.dto;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,10 +13,10 @@ class PortfolioHistoryPointDTOTest {
     void accessorsReturnConstructedValues() {
         LocalDate date = LocalDate.of(2026, 3, 15);
 
-        PortfolioHistoryPointDTO dto = new PortfolioHistoryPointDTO(date, 1000.0, 1200.0);
+        PortfolioHistoryPointDTO dto = new PortfolioHistoryPointDTO(date, BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0));
 
         assertEquals(date, dto.date());
-        assertEquals(1000.0, dto.investedCapital());
-        assertEquals(1200.0, dto.portfolioValue());
+        assertEquals(BigDecimal.valueOf(1000.0), dto.investedCapital());
+        assertEquals(BigDecimal.valueOf(1200.0), dto.portfolioValue());
     }
 }
