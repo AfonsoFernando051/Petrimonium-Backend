@@ -434,3 +434,106 @@ package, but laid out so that move is mechanical when §3 happens.
   of the split plan. No live-quote enrichment on position market value in
   `GET /me` yet (only cost-basis-derived numbers) — deferred as a
   non-blocking nice-to-have alongside the Stage 3 UI work.
+
+## 12. `real_portfolio` precision migration — `double` → `BigDecimal` (2026-08-31, Stage 4)
+
+`jf_investments.quantity`/`purchase_price` were `double precision` — real
+money must never use binary floating point, per the standing rule that
+real_portfolio calculations are never allowed to accumulate the rounding
+error `double` compounds across many lots and achievement-threshold checks
+(`portfolio_10k`/`portfolio_50k`/`positive_return` etc. compare a computed
+`currentValue`/`totalGain` against a fixed threshold — a `double` sum across
+enough lots can drift onto the wrong side of that threshold).
+
+**What changed**, everywhere quantity/price/derived money flows through the
+real-portfolio "ledger chain":
+- `core/domain/Investment` (quantity, purchasePrice), `InvestmentJpaEntity`
+  (`@Column(precision = 19, scale = 6)` for quantity, `scale = 2` for price).
+- `V24__investment_precision.sql` — `ALTER TABLE jf_investments ALTER COLUMN
+  ... SET DATA TYPE numeric(...) USING ...::numeric(...)`. Verified against
+  this project's actual H2 2.4.240 (empirically, via a throwaway JDBC
+  script) that this exact syntax — `SET DATA TYPE ... USING` — is accepted
+  by both H2 and PostgreSQL, unlike H2's no-`USING` form or Postgres's bare
+  `TYPE` keyword, which aren't mutually compatible in one statement. No
+  rows dropped; every existing value cast in place.
+- `ConfigureInvestmentCommand`, `AssetRegistrationDto`, `InvestmentRepositoryAdapter`
+  (pass-through — no arithmetic, just wider types).
+- `UserPositionCalculator` — full rewrite: average price, invested/current
+  value, unrealized gain/%, portfolio weight, all `BigDecimal`, scale 2,
+  `RoundingMode.HALF_UP`, matching simulated_portfolio's own convention.
+- `UserPositionDTO`, `InvestmentLotDTO`, `PortfolioSummaryDTO`,
+  `AllocationSliceDTO`, `PortfolioHistoryPointDTO` — all money/quantity
+  fields converted; their use cases (`GetPortfolioHoldingsUseCaseImpl`,
+  `GetPortfolioSummaryUseCaseImpl`, `GetPortfolioAllocationUseCaseImpl`,
+  `GetPortfolioHistoryUseCaseImpl`, `GetAssetDetailsUseCaseImpl`) rewritten
+  to match. `GetPortfolioHistoryUseCaseImpl`'s day-by-day interpolation
+  fraction (`progress`, 0..1) deliberately stays `double` — it's a pure
+  weight, not itself a money value; only its product with `BigDecimal`
+  prices carries precision weight.
+- `AchievementContext` (currentValue, totalGain, monthly/annual passive
+  income estimate) and `AchievementCatalog`'s threshold predicates
+  (`>`/`>=` → `.compareTo(...)`), since achievement qualification reads
+  directly off this chain.
+
+**Deliberately left `Double`, out of scope for this pass** (still a real,
+tracked precision gap, but a separate calculation chain — converting it
+would have roughly doubled this change's size for a lower-stakes surface):
+- `DividendDTO`/`DividendRadarEntryDTO` and `GetDividendRadarUseCaseImpl`
+  (Dividend Radar) — confirmed provider payment history, not the
+  position/gain ledger achievements key off.
+- `AssetDetailsResponseDTO`'s ~40 external market-fundamentals fields
+  (P/E, ROE, margins, 52-week range, volumes, etc.) — raw pass-through
+  display data from the provider, never persisted, never used in a
+  balance-affecting calculation this backend owns.
+
+**Verified**: full `mvn test`, 877/877 green (all pre-existing behavior
+preserved, confirmed by running the untouched test suite through every
+step of this migration rather than rewriting expectations blind).
+
+## 13. Real B3/brokerage sync — preparatory architecture only (2026-08-31, Stage 4)
+
+Audited what already exists before building anything: `BrapiInvestmentApiClient`
+is the only external investment integration in this codebase, and it is
+public **market-data quotes only** — no B3 endpoint, SDK, official contract,
+token, or credential exists anywhere in this project, and none is invented
+here. `jf_investments` is, and remains, entirely user-declared (manual
+entry via `POST /api/investments/configure`, a full replace) — there is no
+existing "sync from a real account" capability to consolidate; this is net
+new, purely architectural work.
+
+**What was built** — the exact shape the user's spec asked for when no
+legitimate integration exists yet:
+- `RealPortfolioSyncPort` (domain port) + `ExternalPositionDTO` (provider-
+  agnostic internal shape: ticker/quantity/averagePrice/asOf — no
+  provider-specific field ever crosses this boundary).
+- `B3RealPortfolioSyncAdapter` — the only implementation, and a
+  permanently-disabled one: `isEnabled()` requires both
+  `app.b3-sync.enabled=true` and a non-blank `api.b3.token`; neither is set
+  in any environment (`application.properties`, both blank/false by
+  default, no `.env`/prod override exists). `fetchPositions(...)` throws
+  rather than fabricate data if ever called while disabled. No credential
+  of any kind is committed.
+- `RealPortfolioSyncLogRepositoryPort`/`RealPortfolioSyncLogJpaEntity`
+  (`real_portfolio_sync_log`, `real_portfolio` schema, migrations
+  V25/V26 — same unqualified-then-schema-move pattern as V22/V23) — an
+  audit row for **every** sync attempt, including `DISABLED` ones, unique
+  per `(user_email, provider, idempotency_key)`.
+- `SyncRealPortfolioUseCaseImpl` — idempotent (same shape as
+  `XpLedgerService`/`PlaceSimulatedOrderUseCaseImpl`: a repeated
+  idempotency key returns the already-logged outcome, never re-runs),
+  handles provider unavailability (`FAILED`, never propagated as a 500),
+  and treats "not configured" (`DISABLED`) as a normal 200 result, never an
+  error — `POST /api/investments/sync` (already `APP_CONTEXT_WALLET`-gated
+  by the existing blanket `/api/investments/**` rule, no `SecurityConfig`
+  change needed).
+- Deliberately **not** built: any reconciliation of a successful fetch's
+  positions into `jf_investments` (replace vs merge vs flag-conflicts is a
+  real product decision that needs an actual provider contract to design
+  against — the successful-fetch path today only logs a position count).
+  This path is structurally correct but practically unreachable in every
+  real environment, by design, until real B3 credentials/contracts exist.
+
+**Verified**: full `mvn test`, 893/893 green, including a disabled-adapter
+unit test suite that pins `isEnabled()` false under every partial-config
+combination (flag-only, token-only, neither) so a future config typo can't
+silently start reporting "enabled" with nothing real behind it.

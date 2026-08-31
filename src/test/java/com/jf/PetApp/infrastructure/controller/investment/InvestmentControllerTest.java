@@ -8,6 +8,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,6 +63,9 @@ class InvestmentControllerTest {
 
     @MockitoBean
     private GetAssetDetailsUseCase getAssetDetailsUseCase;
+
+    @MockitoBean
+    private com.jf.PetApp.application.investment.usecase.SyncRealPortfolioUseCase syncRealPortfolioUseCase;
 
     @MockitoBean
     private JwtAuthenticationFilter jwtAuthenticationFilter; // mock the exact filter that security config uses
@@ -172,11 +176,40 @@ class InvestmentControllerTest {
     @WithMockUser(username = "investor@test.com")
     void getSummary_ReturnsPortfolioSummary() throws Exception {
         when(getPortfolioSummaryUseCase.execute(eq("investor@test.com")))
-                .thenReturn(new PortfolioSummaryDTO(1000.0, 1200.0, 200.0, 20.0, 3));
+                .thenReturn(new PortfolioSummaryDTO(
+                        BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3));
 
         mockMvc.perform(get("/api/investments/summary").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.currentValue").value(1200.0))
                 .andExpect(jsonPath("$.totalGainPercent").value(20.0));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void syncRealPortfolio_WhenDisabled_Returns200WithDisabledStatus() throws Exception {
+        when(syncRealPortfolioUseCase.execute(eq("investor@test.com"), any(), any())).thenReturn(
+                new com.jf.PetApp.application.investment.dto.RealPortfolioSyncResultDTO(
+                        "DISABLED", "B3", "No legitimate B3 integration is configured yet.",
+                        java.time.Instant.now(), java.time.Instant.now()));
+
+        mockMvc.perform(post("/api/investments/sync")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("DISABLED"))
+                .andExpect(jsonPath("$.provider").value("B3"));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void syncRealPortfolio_WithNoRequestBody_StillWorks() throws Exception {
+        when(syncRealPortfolioUseCase.execute(eq("investor@test.com"), any(), any())).thenReturn(
+                new com.jf.PetApp.application.investment.dto.RealPortfolioSyncResultDTO(
+                        "DISABLED", "B3", "No legitimate B3 integration is configured yet.",
+                        java.time.Instant.now(), java.time.Instant.now()));
+
+        mockMvc.perform(post("/api/investments/sync").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
     }
 }

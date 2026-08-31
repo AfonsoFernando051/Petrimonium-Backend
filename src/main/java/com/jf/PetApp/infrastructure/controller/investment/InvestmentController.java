@@ -8,6 +8,7 @@ import com.jf.PetApp.application.investment.usecase.GetPortfolioHistoryUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioHoldingsUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioSummaryUseCase;
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentCommand;
+import com.jf.PetApp.application.investment.usecase.SyncRealPortfolioUseCase;
 import com.jf.PetApp.core.security.SecurityUtils;
 
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import com.jf.PetApp.infrastructure.controller.investment.dto.AssetRegistrationDto;
+import com.jf.PetApp.infrastructure.controller.investment.dto.SyncRealPortfolioRequest;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.dto.AssetDetailsResponseDTO;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
@@ -24,6 +26,7 @@ import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioHistoryPointDTO;
 import com.jf.PetApp.application.investment.dto.DividendRadarResponseDTO;
+import com.jf.PetApp.application.investment.dto.RealPortfolioSyncResultDTO;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
@@ -46,6 +49,7 @@ public class InvestmentController {
     private final GetPortfolioHistoryUseCase getPortfolioHistoryUseCase;
     private final GetDividendRadarUseCase getDividendRadarUseCase;
     private final GetAssetDetailsUseCase getAssetDetailsUseCase;
+    private final SyncRealPortfolioUseCase syncRealPortfolioUseCase;
     private final Validator validator;
 
     public InvestmentController(ConfigureInvestmentsUseCase configureInvestmentsUseCase,
@@ -56,6 +60,7 @@ public class InvestmentController {
                                  GetPortfolioHistoryUseCase getPortfolioHistoryUseCase,
                                  GetDividendRadarUseCase getDividendRadarUseCase,
                                  GetAssetDetailsUseCase getAssetDetailsUseCase,
+                                 SyncRealPortfolioUseCase syncRealPortfolioUseCase,
                                  Validator validator) {
         this.configureInvestmentsUseCase = configureInvestmentsUseCase;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
@@ -65,6 +70,7 @@ public class InvestmentController {
         this.getPortfolioHistoryUseCase = getPortfolioHistoryUseCase;
         this.getDividendRadarUseCase = getDividendRadarUseCase;
         this.getAssetDetailsUseCase = getAssetDetailsUseCase;
+        this.syncRealPortfolioUseCase = syncRealPortfolioUseCase;
         this.validator = validator;
     }
 
@@ -160,5 +166,16 @@ public class InvestmentController {
     public ResponseEntity<AssetDetailsResponseDTO> getAssetDetails(@PathVariable String ticker) {
         String email = SecurityUtils.getCurrentUserEmail();
         return ResponseEntity.ok(getAssetDetailsUseCase.execute(email, ticker));
+    }
+
+    // Always 200 — DISABLED is the expected, normal outcome in every environment today (no
+    // legitimate B3/brokerage integration exists yet), never surfaced as a client error.
+    @PostMapping("/sync")
+    public ResponseEntity<RealPortfolioSyncResultDTO> syncRealPortfolio(
+            @RequestBody(required = false) SyncRealPortfolioRequest request) {
+        String email = SecurityUtils.getCurrentUserEmail();
+        String externalAccountReference = request != null ? request.externalAccountReference() : null;
+        String idempotencyKey = request != null ? request.idempotencyKey() : null;
+        return ResponseEntity.ok(syncRealPortfolioUseCase.execute(email, externalAccountReference, idempotencyKey));
     }
 }
