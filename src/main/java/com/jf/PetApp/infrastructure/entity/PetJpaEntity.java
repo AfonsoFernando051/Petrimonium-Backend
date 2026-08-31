@@ -15,7 +15,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "jf_pets")
+@Table(name = "jf_pets", schema = "pet")
 public class PetJpaEntity {
 
     @Id

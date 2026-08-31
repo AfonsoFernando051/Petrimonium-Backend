@@ -13,7 +13,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "jf_finances")
+@Table(name = "jf_finances", schema = "real_portfolio")
 public class FinanceJpaEntity {
 
     @Id

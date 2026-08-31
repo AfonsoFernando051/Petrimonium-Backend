@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "lesson_progress")
+@Table(name = "lesson_progress", schema = "education")
 public class LessonProgressJpaEntity {
 
     @Id

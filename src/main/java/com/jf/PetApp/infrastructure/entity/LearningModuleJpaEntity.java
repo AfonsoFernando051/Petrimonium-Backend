@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "learning_modules")
+@Table(name = "learning_modules", schema = "education")
 public class LearningModuleJpaEntity {
 
     @Id

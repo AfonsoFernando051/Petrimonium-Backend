@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "jf_password_reset_tokens")
+@Table(name = "jf_password_reset_tokens", schema = "identity")
 public class PasswordResetTokenJpaEntity {
 
     @Id

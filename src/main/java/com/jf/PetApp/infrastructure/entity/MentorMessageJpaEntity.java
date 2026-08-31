@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 import java.time.Instant;
 
 @Entity
-@Table(name = "jf_mentor_messages")
+@Table(name = "jf_mentor_messages", schema = "ai")
 public class MentorMessageJpaEntity {
 
     @Id

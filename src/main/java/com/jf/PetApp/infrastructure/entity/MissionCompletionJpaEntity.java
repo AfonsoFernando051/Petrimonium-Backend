@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "mission_completions")
+@Table(name = "mission_completions", schema = "gamification")
 public class MissionCompletionJpaEntity {
 
     @Id

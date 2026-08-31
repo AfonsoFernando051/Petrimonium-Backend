@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
 @Entity
-@Table(name = "jf_investments")
+@Table(name = "jf_investments", schema = "real_portfolio")
 public class InvestmentJpaEntity {
 
     @Id

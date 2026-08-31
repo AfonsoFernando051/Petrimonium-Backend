@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "achievement_unlocks")
+@Table(name = "achievement_unlocks", schema = "gamification")
 public class AchievementUnlockJpaEntity {
 
     @Id

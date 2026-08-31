@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "jf_refresh_tokens")
+@Table(name = "jf_refresh_tokens", schema = "identity")
 public class RefreshTokenJpaEntity {
 
     @Id
