@@ -1,5 +1,7 @@
 package com.jf.PetApp.infrastructure.controller.simulatedportfolio;
 
+import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
+import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedOrderDTO;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
 import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedOrderHistoryUseCase;
@@ -16,12 +18,15 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Academy-only (see SecurityConfig: {@code hasAuthority(APP_CONTEXT_ACADEMY)}
@@ -38,17 +43,38 @@ public class SimulatedPortfolioController {
     private final PlaceSimulatedOrderUseCase placeSimulatedOrderUseCase;
     private final GetSimulatedOrderHistoryUseCase getSimulatedOrderHistoryUseCase;
     private final ResetSimulatedPortfolioUseCase resetSimulatedPortfolioUseCase;
+    private final ExternalInvestmentApiPort externalInvestmentApiPort;
 
     public SimulatedPortfolioController(
             GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase,
             PlaceSimulatedOrderUseCase placeSimulatedOrderUseCase,
             GetSimulatedOrderHistoryUseCase getSimulatedOrderHistoryUseCase,
-            ResetSimulatedPortfolioUseCase resetSimulatedPortfolioUseCase
+            ResetSimulatedPortfolioUseCase resetSimulatedPortfolioUseCase,
+            ExternalInvestmentApiPort externalInvestmentApiPort
     ) {
         this.getSimulatedPortfolioUseCase = getSimulatedPortfolioUseCase;
         this.placeSimulatedOrderUseCase = placeSimulatedOrderUseCase;
         this.getSimulatedOrderHistoryUseCase = getSimulatedOrderHistoryUseCase;
         this.resetSimulatedPortfolioUseCase = resetSimulatedPortfolioUseCase;
+        this.externalInvestmentApiPort = externalInvestmentApiPort;
+    }
+
+    // Academy has no reachable equivalent of /api/investments/search or
+    // /api/investments/quote/{ticker} — those are Wallet-only per SecurityConfig. These two
+    // read-only passthroughs give Academy's order-placement UI a way to search tickers and
+    // preview the reference price it's about to trade at, without granting it any access to
+    // real_portfolio. Same public market-data exception as PlaceSimulatedOrderUseCaseImpl (see
+    // its class doc and SimulatedPortfolioBoundaryTest) — mirrors InvestmentController's own
+    // getQuote/searchQuotes, which also call this port directly with no dedicated use case.
+    @GetMapping("/quotes/search")
+    public ResponseEntity<List<AssetQuoteResponse>> searchQuotes(@RequestParam String query) {
+        return ResponseEntity.ok(externalInvestmentApiPort.searchQuotes(query));
+    }
+
+    @GetMapping("/quotes/{ticker}")
+    public ResponseEntity<AssetQuoteResponse> getQuote(@PathVariable String ticker) {
+        Optional<AssetQuoteResponse> quote = externalInvestmentApiPort.getQuote(ticker);
+        return quote.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping("/me")

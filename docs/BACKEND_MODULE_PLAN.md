@@ -405,6 +405,11 @@ package, but laid out so that move is mechanical when §3 happens.
   never a client-supplied price), `GET /orders` (history), `POST /reset`
   (wipes positions/orders, restores initial balance — requires
   `confirm: true`, validated by both `@AssertTrue` and the use case).
+  Added afterward, for Stage 3's order-placement UI: `GET /quotes/search`
+  and `GET /quotes/{ticker}` — Academy has no reachable equivalent of
+  `/api/investments/search`/`/quote/{ticker}` (Wallet-only), so these two
+  thin passthroughs onto the same `ExternalInvestmentApiPort` let it search
+  tickers and preview a price before confirming an order.
 - **Reference pricing**: reuses `ExternalInvestmentApiPort`
   (`application.investment.port`) for quotes — a deliberate, narrow,
   documented exception to the simulated/real boundary (public market data,

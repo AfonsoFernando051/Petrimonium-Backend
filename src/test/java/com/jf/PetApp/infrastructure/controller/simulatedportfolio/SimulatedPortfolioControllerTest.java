@@ -1,5 +1,7 @@
 package com.jf.PetApp.infrastructure.controller.simulatedportfolio;
 
+import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
+import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedOrderDTO;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
 import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedOrderHistoryUseCase;
@@ -21,6 +23,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
@@ -50,6 +53,9 @@ class SimulatedPortfolioControllerTest {
 
     @MockitoBean
     private ResetSimulatedPortfolioUseCase resetSimulatedPortfolioUseCase;
+
+    @MockitoBean
+    private ExternalInvestmentApiPort externalInvestmentApiPort;
 
     @MockitoBean
     private JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -139,5 +145,36 @@ class SimulatedPortfolioControllerTest {
                 .andExpect(status().isBadRequest());
 
         verify(resetSimulatedPortfolioUseCase, never()).execute(any(), org.mockito.ArgumentMatchers.anyBoolean());
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void searchQuotes_ReturnsWhateverTheMarketDataPortReturns() throws Exception {
+        when(externalInvestmentApiPort.searchQuotes("petr")).thenReturn(
+                List.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/search").param("query", "petr"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$[0].symbol").value("PETR4"));
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuote_WhenFound_ReturnsIt() throws Exception {
+        when(externalInvestmentApiPort.getQuote("PETR4")).thenReturn(
+                Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/PETR4"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.regularMarketPrice").value(30.50));
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuote_WhenUnknown_ReturnsNotFound() throws Exception {
+        when(externalInvestmentApiPort.getQuote("GHOST99")).thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/GHOST99"))
+                .andExpect(status().isNotFound());
     }
 }
