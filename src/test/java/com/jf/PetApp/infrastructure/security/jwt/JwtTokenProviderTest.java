@@ -1,6 +1,7 @@
 package com.jf.PetApp.infrastructure.security.jwt;
 
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -9,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +31,7 @@ class JwtTokenProviderTest {
         JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
         User user = userWith("investor@test.com", RoleEnum.USER);
 
-        String token = provider.generateToken(user);
+        String token = provider.generateToken(user, null);
 
         assertEquals("investor@test.com", provider.extractSubject(token));
     }
@@ -39,7 +41,7 @@ class JwtTokenProviderTest {
         JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
         User user = userWith("admin@test.com", RoleEnum.ADMIN);
 
-        String token = provider.generateToken(user);
+        String token = provider.generateToken(user, null);
 
         SecretKey key = Keys.hmacShaKeyFor(TEST_SECRET.getBytes(StandardCharsets.UTF_8));
         Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
@@ -49,7 +51,7 @@ class JwtTokenProviderTest {
     @Test
     void validate_WithATokenItSignedItself_ReturnsTrue() {
         JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
-        String token = provider.generateToken(userWith("investor@test.com", RoleEnum.USER));
+        String token = provider.generateToken(userWith("investor@test.com", RoleEnum.USER), null);
 
         assertTrue(provider.validate(token));
     }
@@ -73,7 +75,7 @@ class JwtTokenProviderTest {
         // Negative expiration means the token's expiry is already in the past
         // the instant it's minted.
         JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, -1000);
-        String token = provider.generateToken(userWith("investor@test.com", RoleEnum.USER));
+        String token = provider.generateToken(userWith("investor@test.com", RoleEnum.USER), null);
 
         assertFalse(provider.validate(token));
     }
@@ -83,7 +85,7 @@ class JwtTokenProviderTest {
         JwtTokenProvider providerA = new JwtTokenProvider(TEST_SECRET, 3_600_000);
         JwtTokenProvider providerB = new JwtTokenProvider("a-completely-different-test-signing-key-0123456789ABCDEF", 3_600_000);
 
-        String tokenFromA = providerA.generateToken(userWith("investor@test.com", RoleEnum.USER));
+        String tokenFromA = providerA.generateToken(userWith("investor@test.com", RoleEnum.USER), null);
 
         assertFalse(providerB.validate(tokenFromA));
     }
@@ -91,5 +93,47 @@ class JwtTokenProviderTest {
     @Test
     void constructor_RejectsASecretShorterThan256Bits() {
         assertThrows(Exception.class, () -> new JwtTokenProvider("too-short", 3_600_000));
+    }
+
+    @Test
+    void generateToken_WithAppContext_EmbedsItAsALowercaseClaim() {
+        JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
+        User user = userWith("investor@test.com", RoleEnum.USER);
+
+        String token = provider.generateToken(user, AppContextEnum.WALLET);
+
+        SecretKey key = Keys.hmacShaKeyFor(TEST_SECRET.getBytes(StandardCharsets.UTF_8));
+        Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
+        assertEquals("wallet", claims.get("app_context"));
+    }
+
+    @Test
+    void generateToken_WithoutAppContext_OmitsTheClaimEntirely() {
+        JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
+        User user = userWith("investor@test.com", RoleEnum.USER);
+
+        String token = provider.generateToken(user, null);
+
+        SecretKey key = Keys.hmacShaKeyFor(TEST_SECRET.getBytes(StandardCharsets.UTF_8));
+        Claims claims = Jwts.parser().verifyWith(key).build().parseSignedClaims(token).getPayload();
+        assertFalse(claims.containsKey("app_context"));
+    }
+
+    @Test
+    void extractAppContext_RoundTripsTheClaim() {
+        JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
+        User user = userWith("investor@test.com", RoleEnum.USER);
+
+        String token = provider.generateToken(user, AppContextEnum.ACADEMY);
+
+        assertEquals(Optional.of(AppContextEnum.ACADEMY), provider.extractAppContext(token));
+    }
+
+    @Test
+    void extractAppContext_WithNoClaim_ReturnsEmpty() {
+        JwtTokenProvider provider = new JwtTokenProvider(TEST_SECRET, 3_600_000);
+        String token = provider.generateToken(userWith("investor@test.com", RoleEnum.USER), null);
+
+        assertEquals(Optional.empty(), provider.extractAppContext(token));
     }
 }

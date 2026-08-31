@@ -10,6 +10,7 @@ import com.jf.PetApp.application.gamification.service.StreakService;
 import com.jf.PetApp.application.user.port.DemoAccountResetPort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -55,12 +56,28 @@ class LoginUseCaseImplTest {
 
         when(userRepository.findByEmail("investor@test.com")).thenReturn(Optional.of(user));
         when(passwordEncoder.matches("correct-password", "hashed-password")).thenReturn(true);
-        when(refreshTokenIssuerService.issueFor(user)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(user, null)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         LoginResult result = loginUseCase.execute(new LoginCommand("investor@test.com", "correct-password"));
 
         assertEquals("jwt-token", result.accessToken());
         assertEquals("refresh-token", result.refreshToken());
+    }
+
+    @Test
+    void execute_WithAppContextOnTheCommand_PassesItToTheIssuer() {
+        User user = new User();
+        user.setEmail("investor@test.com");
+        user.setPassword("hashed-password");
+
+        when(userRepository.findByEmail("investor@test.com")).thenReturn(Optional.of(user));
+        when(passwordEncoder.matches("correct-password", "hashed-password")).thenReturn(true);
+        when(refreshTokenIssuerService.issueFor(user, AppContextEnum.WALLET))
+                .thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+
+        loginUseCase.execute(new LoginCommand("investor@test.com", "correct-password", AppContextEnum.WALLET));
+
+        verify(refreshTokenIssuerService).issueFor(user, AppContextEnum.WALLET);
     }
 
     @Test
@@ -75,7 +92,7 @@ class LoginUseCaseImplTest {
         assertThrows(AuthenticationException.class, () ->
             loginUseCase.execute(new LoginCommand("investor@test.com", "wrong-password")));
 
-        verify(refreshTokenIssuerService, never()).issueFor(any());
+        verifyNoInteractions(refreshTokenIssuerService);
     }
 
     @Test
@@ -101,7 +118,7 @@ class LoginUseCaseImplTest {
         when(userRepository.findByEmail("investor")).thenReturn(Optional.empty());
         when(userRepository.findByUsername("investor")).thenReturn(Optional.of(user));
         when(passwordEncoder.matches("correct-password", "hashed-password")).thenReturn(true);
-        when(refreshTokenIssuerService.issueFor(user)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(user, null)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         LoginResult result = loginUseCase.execute(new LoginCommand("investor", "correct-password"));
 
@@ -117,7 +134,7 @@ class LoginUseCaseImplTest {
 
         when(userRepository.findByEmail("admin2@petinvest.local")).thenReturn(Optional.of(user));
         when(passwordEncoder.matches("correct-password", "hashed-password")).thenReturn(true);
-        when(refreshTokenIssuerService.issueFor(user)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(user, null)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         loginUseCase.execute(new LoginCommand("admin2@petinvest.local", "correct-password"));
 

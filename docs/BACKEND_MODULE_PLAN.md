@@ -1,10 +1,12 @@
 # Backend module & schema boundary plan
 
-Status as of 2026-08-31: **§5-6 (schema-per-context) executed and verified.**
-§3-4 (package restructuring, ArchUnit boundary test) not started. You said
-"assuma e aja" on the 4 open decisions in §7 (all resolved as recommended)
-and I proceeded with the schema split — see §9 for what actually landed and
-one thing the plan got wrong that I had to fix along the way.
+Status as of 2026-08-31: **§5-6 (schema-per-context) and JWT app_context +
+BFF enforcement (tasks 6 and 3 of the original ecosystem-onboarding prompt)
+executed and verified.** §3-4 of *this* doc (package restructuring, ArchUnit
+boundary test) still not started — you chose the app_context/BFF work first
+when asked. You said "assuma e aja" on the 4 open decisions in §7 (all
+resolved as recommended) and I proceeded with the schema split — see §9 for
+what actually landed there. See §10 for the app_context/BFF work.
 
 ## 9. What's actually done (2026-08-31)
 
@@ -310,3 +312,65 @@ alter table jf_mentor_messages set schema ai;
 None of this touches the BFF layer, the gamification allow-list, the Pet
 signal API, or the JWT claims contract — those are tasks 3–6, unstarted,
 after this one is approved and landed.
+
+## 10. JWT app_context claim + BFF enforcement (2026-08-31)
+
+What landed, following the `app_context` shape already published to Academy
+in `petrimonium-academy/docs/CROSS_REPO_CONTRACTS.md` §1:
+
+- **`AppContextEnum`** (`core/domain/enums/`) — `ACADEMY`/`WALLET`. Owns the
+  claim-value/authority-name mapping in one place (`claimValue()`,
+  `authority()`, `fromClaimValue()` for trusted JWT parsing,
+  `fromRequestValue()` for untrusted client input — see below).
+- **Request contract**: `/auth/login` and `/auth/google` accept an optional
+  `appContext` field ("academy"/"wallet", case-insensitive). Absent/blank is
+  allowed — the resulting token simply carries no `app_context` claim (safe
+  default, matches every client that hasn't adopted this yet). An
+  unrecognized non-blank value is a 400 `INVALID_REQUEST`
+  (`AppContextEnum.fromRequestValue`, reusing the existing
+  `IllegalArgumentException` → `GlobalExceptionHandler` mapping — no new
+  exception type needed).
+- **Token contract**: `TokenProvider.generateToken(User, AppContextEnum)`
+  embeds `"app_context": "academy"|"wallet"` (lowercase, per the published
+  shape) only when non-null. `/auth/refresh` does **not** accept an
+  `appContext` field — the rotated token always inherits the value stored on
+  the refresh-token row being rotated (`RefreshToken.appContext`, new nullable
+  column, `V21__add_app_context_to_refresh_tokens.sql`). This was a
+  deliberate call beyond what the contract doc specified: letting a refresh
+  request choose its own context would let a stolen Academy-context refresh
+  token mint a Wallet-context access token, defeating the whole point. A
+  session's app scope is fixed at login/google-login and can only change by
+  authenticating again.
+- **Enforcement (the actual BFF)**: `JwtAuthenticationFilter` grants an
+  `APP_CONTEXT_WALLET`/`APP_CONTEXT_ACADEMY` Spring Security authority
+  alongside the existing `ROLE_*` one, when the token carries the claim.
+  `SecurityConfig` gates `/api/investments/**` behind
+  `hasAuthority(APP_CONTEXT_WALLET)` and `/api/v1/academy/**`,
+  `/api/v1/learning/**`, `/api/v1/lab/**` behind
+  `hasAuthority(APP_CONTEXT_ACADEMY)`. Everything else (gamification, pet,
+  mentor, onboarding, settings, auth) stays `anyRequest().authenticated()` —
+  unrestricted by app_context, per the ECOSYSTEM.md audit (those contexts
+  have no real/simulated leakage risk today).
+- **Confirmed breaking change, as flagged in ECOSYSTEM.md**: a token with no
+  `app_context` (any token minted before this change, or a client that
+  hasn't adopted the field yet) can no longer reach `/api/investments/**` —
+  this was called out in advance as the intended enforcement, not a
+  regression. Academy's Flutter repo needs to either start sending
+  `appContext: "wallet"` at login for its portfolio screens, or (more
+  likely, per the ECOSYSTEM.md note) drop those screens once Wallet exists
+  as their real home.
+- **Verified, not just written**: full `mvn test`, 831/831 (821 + 10 new
+  tests covering claim round-trip, filter authority-granting, and the
+  BFF-enforcement paths — both the 403 and the 200 sides — in
+  `SecurityConfigTest`'s real filter-chain slice, not a mocked one). Also
+  smoke-booted `dev` profile against H2 and confirmed
+  `V21__add_app_context_to_refresh_tokens.sql` actually applies
+  (`Migrating schema "PUBLIC" to version "21 - add app context to refresh
+  tokens"`) and Tomcat starts — not just that the migration file parses.
+- **What Academy/Wallet need to do next** (not this repo's job): send
+  `appContext` at `/auth/login` and `/auth/google`. Nothing here assumes
+  they've done so yet — that's exactly what `fromRequestValue`'s
+  null-is-allowed handling is for.
+
+Not done in this pass: §3/§4 (package restructuring, ArchUnit boundary
+test) — still pending, per §0/§9.

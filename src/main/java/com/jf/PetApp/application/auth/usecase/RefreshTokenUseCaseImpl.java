@@ -58,7 +58,9 @@ public class RefreshTokenUseCaseImpl implements RefreshTokenUseCase {
         User user = userRepository.findById(stored.userId().intValue())
                 .orElseThrow(() -> new AuthenticationException("Refresh token is invalid, expired, or revoked"));
 
-        RefreshTokenResult result = issuerService.issueFor(user);
+        // The rotated token inherits the same app_context — a refresh can never switch which
+        // app a session belongs to, only the original login/google login sets it.
+        RefreshTokenResult result = issuerService.issueFor(user, stored.appContext());
 
         // Rotate: this token is now spent, and records which new one replaced it.
         refreshTokenRepository.revoke(stored.id(), now, RefreshToken.hash(result.refreshToken()));

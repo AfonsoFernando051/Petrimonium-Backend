@@ -24,6 +24,7 @@ import com.jf.PetApp.application.auth.usecase.RefreshTokenUseCase;
 import com.jf.PetApp.application.auth.usecase.RegisterUserUseCase;
 import com.jf.PetApp.application.auth.usecase.RequestPasswordResetUseCase;
 import com.jf.PetApp.application.auth.usecase.ResetPasswordUseCase;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.presentation.auth.dto.ForgotPasswordRequest;
 import com.jf.PetApp.presentation.auth.dto.ForgotPasswordResponse;
 import com.jf.PetApp.presentation.auth.dto.GoogleLoginRequest;
@@ -74,7 +75,11 @@ public class AuthController {
         @Valid @RequestBody LoginRequest request
     ) {
         LoginResult result = loginUseCase.execute(
-            new LoginCommand(request.email(), request.password())
+            new LoginCommand(
+                request.email(),
+                request.password(),
+                AppContextEnum.fromRequestValue(request.appContext())
+            )
         );
 
         return ResponseEntity.ok(
@@ -87,7 +92,10 @@ public class AuthController {
         @Valid @RequestBody GoogleLoginRequest request
     ) {
         LoginResult result = googleLoginUseCase.execute(
-            new GoogleLoginCommand(request.idToken())
+            new GoogleLoginCommand(
+                request.idToken(),
+                AppContextEnum.fromRequestValue(request.appContext())
+            )
         );
 
         return ResponseEntity.ok(

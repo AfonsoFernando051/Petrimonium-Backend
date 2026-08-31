@@ -6,6 +6,8 @@ import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
 import java.util.HexFormat;
 
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
+
 /**
  * A long-lived, rotating credential that lets the mobile client silently obtain a new access
  * token without forcing the user to log in again every hour (the JWT access token's lifetime).
@@ -26,7 +28,11 @@ public record RefreshToken(
         Instant expiresAt,
         Instant revokedAt,
         String replacedByTokenHash,
-        Instant createdAt
+        Instant createdAt,
+        // Which app this session belongs to, carried forward unchanged on every rotation (see
+        // RefreshTokenUseCaseImpl) — a refresh can never switch a session's app_context, only the
+        // original login/google login can set it.
+        AppContextEnum appContext
 ) {
 
     public boolean isValid(Instant now) {

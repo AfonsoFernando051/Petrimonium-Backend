@@ -2,6 +2,7 @@ package com.jf.PetApp.infrastructure.security.jwt;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
+import java.util.Optional;
 
 import javax.crypto.SecretKey;
 
@@ -10,7 +11,9 @@ import org.springframework.stereotype.Component;
 
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 
+import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -32,17 +35,21 @@ public class JwtTokenProvider implements TokenProvider {
     }
 
     @Override
-    public String generateToken(User user) {
+    public String generateToken(User user, AppContextEnum appContext) {
         Date now = new Date();
         Date expiration = new Date(now.getTime() + expirationMillis);
 
-        return Jwts.builder()
+        JwtBuilder builder = Jwts.builder()
             .subject(user.getEmail())
             .claim("role", user.getRole().name())
             .issuedAt(now)
-            .expiration(expiration)
-            .signWith(secretKey)
-            .compact();
+            .expiration(expiration);
+
+        if (appContext != null) {
+            builder.claim("app_context", appContext.claimValue());
+        }
+
+        return builder.signWith(secretKey).compact();
     }
 
     @Override
@@ -66,5 +73,17 @@ public class JwtTokenProvider implements TokenProvider {
             .parseSignedClaims(token)
             .getPayload()
             .getSubject();
+    }
+
+    @Override
+    public Optional<AppContextEnum> extractAppContext(String token) {
+        String claim = Jwts.parser()
+            .verifyWith(secretKey)
+            .build()
+            .parseSignedClaims(token)
+            .getPayload()
+            .get("app_context", String.class);
+
+        return AppContextEnum.fromClaimValue(claim);
     }
 }

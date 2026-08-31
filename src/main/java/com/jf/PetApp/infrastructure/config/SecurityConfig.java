@@ -2,6 +2,7 @@ package com.jf.PetApp.infrastructure.config;
 
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.application.user.port.UserRepository;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.infrastructure.security.RequestIdFilter;
 import com.jf.PetApp.infrastructure.security.jwt.JwtAuthenticationFilter;
 import com.jf.PetApp.infrastructure.security.ratelimit.RateLimitingFilter;
@@ -98,6 +99,13 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
+                // BFF enforcement (docs/BACKEND_MODULE_PLAN.md §5, ECOSYSTEM.md): real_portfolio
+                // is real money and must never answer an Academy-context session; education
+                // content is Academy-only. Everything else (gamification, pet, mentor, auth) is
+                // shared — any authenticated session, regardless of app_context, may reach it.
+                .requestMatchers("/api/investments/**").hasAuthority(AppContextEnum.WALLET.authority())
+                .requestMatchers("/api/v1/academy/**", "/api/v1/learning/**", "/api/v1/lab/**")
+                    .hasAuthority(AppContextEnum.ACADEMY.authority())
                 .anyRequest().authenticated()
             )
             .addFilterBefore(

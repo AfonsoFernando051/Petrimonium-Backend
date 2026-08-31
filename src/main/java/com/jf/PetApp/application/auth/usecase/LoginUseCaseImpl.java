@@ -47,7 +47,7 @@ public class LoginUseCaseImpl implements LoginUseCase {
 
         demoAccountResetPort.resetIfDemoAccount(user.getUsername());
 
-        RefreshTokenResult tokens = refreshTokenIssuerService.issueFor(user);
+        RefreshTokenResult tokens = refreshTokenIssuerService.issueFor(user, command.appContext());
         streakService.recordActivity(user.getId());
 
         return new LoginResult(tokens.accessToken(), tokens.refreshToken());

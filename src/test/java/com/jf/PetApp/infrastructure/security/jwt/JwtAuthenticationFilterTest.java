@@ -3,6 +3,7 @@ package com.jf.PetApp.infrastructure.security.jwt;
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 
 import jakarta.servlet.FilterChain;
@@ -70,6 +71,7 @@ class JwtAuthenticationFilterTest {
         when(request.getHeader("Authorization")).thenReturn("Bearer valid-token");
         when(tokenProvider.validate("valid-token")).thenReturn(true);
         when(tokenProvider.extractSubject("valid-token")).thenReturn("investor@test.com");
+        when(tokenProvider.extractAppContext("valid-token")).thenReturn(Optional.empty());
         when(userRepository.findByEmail("investor@test.com"))
                 .thenReturn(Optional.of(userWith("investor@test.com", RoleEnum.USER)));
 
@@ -83,10 +85,27 @@ class JwtAuthenticationFilterTest {
     }
 
     @Test
+    void doFilterInternal_WithAppContextClaim_GrantsTheMatchingAppContextAuthority() throws Exception {
+        when(request.getHeader("Authorization")).thenReturn("Bearer wallet-token");
+        when(tokenProvider.validate("wallet-token")).thenReturn(true);
+        when(tokenProvider.extractSubject("wallet-token")).thenReturn("investor@test.com");
+        when(tokenProvider.extractAppContext("wallet-token")).thenReturn(Optional.of(AppContextEnum.WALLET));
+        when(userRepository.findByEmail("investor@test.com"))
+                .thenReturn(Optional.of(userWith("investor@test.com", RoleEnum.USER)));
+
+        filter.doFilterInternal(request, response, filterChain);
+
+        UsernamePasswordAuthenticationToken auth =
+                (UsernamePasswordAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
+        assertTrue(auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("APP_CONTEXT_WALLET")));
+    }
+
+    @Test
     void doFilterInternal_WithAdminRole_GrantsRoleAdminAuthority() throws Exception {
         when(request.getHeader("Authorization")).thenReturn("Bearer admin-token");
         when(tokenProvider.validate("admin-token")).thenReturn(true);
         when(tokenProvider.extractSubject("admin-token")).thenReturn("admin@test.com");
+        when(tokenProvider.extractAppContext("admin-token")).thenReturn(Optional.empty());
         when(userRepository.findByEmail("admin@test.com"))
                 .thenReturn(Optional.of(userWith("admin@test.com", RoleEnum.ADMIN)));
 
@@ -135,6 +154,7 @@ class JwtAuthenticationFilterTest {
         when(request.getHeader("Authorization")).thenReturn("Bearer valid-token");
         when(tokenProvider.validate("valid-token")).thenReturn(true);
         when(tokenProvider.extractSubject("valid-token")).thenReturn("ghost@test.com");
+        when(tokenProvider.extractAppContext("valid-token")).thenReturn(Optional.empty());
         when(userRepository.findByEmail("ghost@test.com")).thenReturn(Optional.empty());
 
         filter.doFilterInternal(request, response, filterChain);

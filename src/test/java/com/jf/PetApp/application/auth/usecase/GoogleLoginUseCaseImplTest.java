@@ -10,6 +10,7 @@ import com.jf.PetApp.application.auth.service.RefreshTokenIssuerService;
 import com.jf.PetApp.application.gamification.service.StreakService;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.AuthProviderEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -56,12 +57,30 @@ class GoogleLoginUseCaseImplTest {
 
         when(googleTokenVerifier.verify("valid-token")).thenReturn(googleUser);
         when(userRepository.findByProviderId("google-sub-1")).thenReturn(Optional.of(user));
-        when(refreshTokenIssuerService.issueFor(user)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(user, null)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         LoginResult result = googleLoginUseCase.execute(new GoogleLoginCommand("valid-token"));
 
         assertEquals("jwt-token", result.accessToken());
         verify(userRepository, never()).save(any());
+    }
+
+    @Test
+    void execute_WithAppContextOnTheCommand_PassesItToTheIssuer() {
+        GoogleUserInfo googleUser = new GoogleUserInfo("google-sub-1", "investor@test.com", "Investor");
+        User user = new User();
+        user.setId(1L);
+        user.setProvider(AuthProviderEnum.GOOGLE);
+        user.setProviderId("google-sub-1");
+
+        when(googleTokenVerifier.verify("valid-token")).thenReturn(googleUser);
+        when(userRepository.findByProviderId("google-sub-1")).thenReturn(Optional.of(user));
+        when(refreshTokenIssuerService.issueFor(user, AppContextEnum.ACADEMY))
+                .thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+
+        googleLoginUseCase.execute(new GoogleLoginCommand("valid-token", AppContextEnum.ACADEMY));
+
+        verify(refreshTokenIssuerService).issueFor(user, AppContextEnum.ACADEMY);
     }
 
     @Test
@@ -77,7 +96,7 @@ class GoogleLoginUseCaseImplTest {
         when(userRepository.findByProviderId("google-sub-2")).thenReturn(Optional.empty());
         when(userRepository.findByEmail("investor@test.com")).thenReturn(Optional.of(existingLocalUser));
         when(userRepository.save(existingLocalUser)).thenReturn(existingLocalUser);
-        when(refreshTokenIssuerService.issueFor(existingLocalUser)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(existingLocalUser, null)).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         LoginResult result = googleLoginUseCase.execute(new GoogleLoginCommand("valid-token"));
 
@@ -95,7 +114,7 @@ class GoogleLoginUseCaseImplTest {
         when(userRepository.findByProviderId("google-sub-3")).thenReturn(Optional.empty());
         when(userRepository.findByEmail("newcomer@test.com")).thenReturn(Optional.empty());
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
-        when(refreshTokenIssuerService.issueFor(any(User.class))).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
+        when(refreshTokenIssuerService.issueFor(any(User.class), isNull())).thenReturn(new RefreshTokenResult("jwt-token", "refresh-token"));
 
         LoginResult result = googleLoginUseCase.execute(new GoogleLoginCommand("valid-token"));
 

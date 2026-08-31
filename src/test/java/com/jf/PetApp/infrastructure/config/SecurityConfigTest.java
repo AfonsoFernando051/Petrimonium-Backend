@@ -3,6 +3,7 @@ package com.jf.PetApp.infrastructure.config;
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 
 import org.junit.jupiter.api.Test;
@@ -44,9 +45,13 @@ class SecurityConfigTest {
     // doFilterInternal) rather than trusting the JWT's claims — so a token is only "valid" in
     // the sense this test needs if the email it carries actually resolves to a persisted user.
     private String validTokenFor(String email, RoleEnum role) {
+        return validTokenFor(email, role, null);
+    }
+
+    private String validTokenFor(String email, RoleEnum role, AppContextEnum appContext) {
         User user = User.create("securitytest", email, "irrelevant-hash", role);
         userRepository.save(user);
-        return tokenProvider.generateToken(user);
+        return tokenProvider.generateToken(user, appContext);
     }
 
     @Test
@@ -89,15 +94,54 @@ class SecurityConfigTest {
     }
 
     @Test
-    void protectedEndpoint_WithValidToken_IsAuthenticatedAndReachesTheController() {
+    void protectedEndpoint_WithValidTokenButNoAppContext_IsForbidden() {
+        // real_portfolio (docs/BACKEND_MODULE_PLAN.md §5) is Wallet-scoped at this layer — a
+        // token with no app_context claim (e.g. minted before this claim existed) can no longer
+        // reach it, same as the intended-breaking-change flagged in ECOSYSTEM.md for Academy's
+        // current /api/investments callers.
         HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(validTokenFor("investor@test.com", RoleEnum.USER));
+        headers.setBearerAuth(validTokenFor("investor-no-context@test.com", RoleEnum.USER));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void protectedEndpoint_WithAcademyAppContext_IsForbiddenFromRealPortfolio() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("investor-academy@test.com", RoleEnum.USER, AppContextEnum.ACADEMY));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void protectedEndpoint_WithWalletAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("investor-wallet@test.com", RoleEnum.USER, AppContextEnum.WALLET));
 
         ResponseEntity<String> response = restTemplate.exchange(
                 "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
 
         // BrapiInvestmentApiClient falls back to mock data with no token configured, so a
         // valid bearer token should reach the controller and get a normal 200 — not blocked.
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    void sharedEndpoint_WithValidTokenButNoAppContext_IsStillReachable() {
+        // Not every endpoint is app_context-scoped — gamification/pet/mentor/auth stay reachable
+        // by any authenticated session regardless of which app (or no app) issued it.
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("investor-shared@test.com", RoleEnum.USER));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/pets/status", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 }

@@ -2,6 +2,11 @@ package com.jf.PetApp.application.auth.dto;
 
 import jakarta.validation.constraints.NotBlank;
 
-public record LoginRequest(@NotBlank String email, @NotBlank String password) {
+// appContext is optional (nullable) — "academy" or "wallet", case-insensitive; see
+// AppContextEnum#fromRequestValue for how it's parsed and validated.
+public record LoginRequest(@NotBlank String email, @NotBlank String password, String appContext) {
 
+    public LoginRequest(String email, String password) {
+        this(email, password, null);
+    }
 }

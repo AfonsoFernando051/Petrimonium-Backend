@@ -39,7 +39,7 @@ public class GoogleLoginUseCaseImpl implements GoogleLoginUseCase {
                 .or(() -> linkExistingLocalAccount(googleUser))
                 .orElseGet(() -> registerFromGoogle(googleUser));
 
-        RefreshTokenResult tokens = refreshTokenIssuerService.issueFor(user);
+        RefreshTokenResult tokens = refreshTokenIssuerService.issueFor(user, command.appContext());
         streakService.recordActivity(user.getId());
 
         return new LoginResult(tokens.accessToken(), tokens.refreshToken());

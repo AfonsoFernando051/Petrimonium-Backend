@@ -1,5 +1,10 @@
 package com.jf.PetApp.application.auth.dto;
 
-public record LoginCommand(String email, String password) {
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 
+public record LoginCommand(String email, String password, AppContextEnum appContext) {
+
+    public LoginCommand(String email, String password) {
+        this(email, password, null);
+    }
 }

@@ -10,6 +10,7 @@ import com.jf.PetApp.application.auth.port.RefreshTokenRepositoryPort;
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.core.domain.RefreshToken;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 
 /**
  * Issues a fresh access+refresh token pair for a user — the one place that logic lives, shared
@@ -36,8 +37,9 @@ public class RefreshTokenIssuerService {
         this.refreshTokenTtl = refreshTokenTtl;
     }
 
-    public RefreshTokenResult issueFor(User user) {
-        String accessToken = tokenProvider.generateToken(user);
+    /** {@code appContext} may be null (no app_context requested/known for this session). */
+    public RefreshTokenResult issueFor(User user, AppContextEnum appContext) {
+        String accessToken = tokenProvider.generateToken(user, appContext);
         String rawRefreshToken = generateRawToken();
 
         Instant now = Instant.now();
@@ -48,7 +50,8 @@ public class RefreshTokenIssuerService {
                 now.plus(refreshTokenTtl),
                 null,
                 null,
-                now
+                now,
+                appContext
         );
         refreshTokenRepository.save(refreshToken);
 

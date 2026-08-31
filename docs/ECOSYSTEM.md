@@ -106,15 +106,30 @@ elsewhere or the comment is stale, worth checking). A blank slate for the
 BFF-as-module vs. BFF-as-gateway decision — nothing today constrains it
 either way.
 
+## Update, 2026-08-31
+
+Everything below this point is the original audit, left as-is for history.
+Since then: schema-per-context landed (`docs/BACKEND_MODULE_PLAN.md` §5-6/§9),
+and so did the JWT `app_context` claim + BFF enforcement on
+`/api/investments/**` (Wallet-only) and `/api/v1/academy|learning|lab/**`
+(Academy-only) — see `docs/BACKEND_MODULE_PLAN.md` §10 for what actually
+landed, including the one place it went beyond the `app_context` claim as
+originally specified in `petrimonium-academy/docs/CROSS_REPO_CONTRACTS.md`
+(refresh never accepts a client-supplied context, only the one stored at
+login). The gamification allow-list and Pet signal-ingestion API design are
+still not done. Package restructuring (§3-4 of the module plan) is also
+still not done — deliberately deferred in favor of the app_context/BFF work.
+
 ## Open question, never answered
 
 The prior session stopped after the audit and asked directly: proceed to
 the module-boundary + schema-per-context proposal (task 2 of the original
 prompt), or weigh in first on the `investment` → `real_portfolio` real/
 simulated question, since that's the one place genuine ambiguity was found
-in the current data model? Neither has happened yet.
+in the current data model? Both are resolved now — see the update above and
+`docs/BACKEND_MODULE_PLAN.md` §2.
 
-## What hasn't been done
+## What hasn't been done (as of the original audit — see the update above)
 
 Everything except the audit. No module boundary plan, no BFF routing plan,
 no gamification API allow-list, no Pet signal-ingestion API design, no JWT

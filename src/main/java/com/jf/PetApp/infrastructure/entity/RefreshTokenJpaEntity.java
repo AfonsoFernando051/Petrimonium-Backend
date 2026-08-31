@@ -3,9 +3,12 @@ package com.jf.PetApp.infrastructure.entity;
 import java.time.Instant;
 
 import com.jf.PetApp.core.domain.RefreshToken;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -38,6 +41,10 @@ public class RefreshTokenJpaEntity {
     @Column(name = "created_at", nullable = false)
     private Instant createdAt;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "app_context")
+    private AppContextEnum appContext;
+
     public static RefreshTokenJpaEntity fromDomain(RefreshToken token) {
         RefreshTokenJpaEntity entity = new RefreshTokenJpaEntity();
         entity.id = token.id();
@@ -47,11 +54,12 @@ public class RefreshTokenJpaEntity {
         entity.revokedAt = token.revokedAt();
         entity.replacedByTokenHash = token.replacedByTokenHash();
         entity.createdAt = token.createdAt();
+        entity.appContext = token.appContext();
         return entity;
     }
 
     public RefreshToken toDomain() {
-        return new RefreshToken(id, userId, tokenHash, expiresAt, revokedAt, replacedByTokenHash, createdAt);
+        return new RefreshToken(id, userId, tokenHash, expiresAt, revokedAt, replacedByTokenHash, createdAt, appContext);
     }
 
     /** Package-private mutator kept minimal on purpose — this entity is otherwise immutable
