@@ -1,0 +1,2533 @@
+{
+  "schoolId": "macroeconomics_markets",
+  "domainId": "macro_markets",
+  "order": 15,
+  "iconKey": "bar_chart_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Macroeconomia e Mercados",
+      "description": "PIB, inflação, Selic e política monetária — e como isso afeta seus investimentos."
+    },
+    "en": {
+      "title": "Macroeconomics & Markets",
+      "description": "GDP, inflation, interest rates and monetary policy — and how they affect your investments."
+    },
+    "es": {
+      "title": "Macroeconomía y Mercados",
+      "description": "PIB, inflación, tasas de interés y política monetaria — y cómo afectan tus inversiones."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "macro_fundamentals",
+      "order": 1,
+      "iconKey": "bar_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos de Macroeconomia",
+          "description": "PIB e ciclos econômicos, a taxa Selic, política monetária e como juros afetam diferentes ativos."
+        },
+        "en": {
+          "title": "Macroeconomics Fundamentals",
+          "description": "GDP and economic cycles, the base interest rate, monetary policy and how rates affect different assets."
+        },
+        "es": {
+          "title": "Fundamentos de Macroeconomía",
+          "description": "PIB y ciclos económicos, la tasa básica de interés, política monetaria y cómo las tasas afectan a diferentes activos."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "macro_gdp_and_cycles",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "PIB e Ciclos Econômicos"
+            },
+            "en": {
+              "title": "GDP and Economic Cycles"
+            },
+            "es": {
+              "title": "PIB y Ciclos Económicos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Expansão e retração se alternam",
+                  "body": "Economias não crescem em linha reta: elas passam por ciclos de expansão, quando o PIB cresce e o emprego aumenta, e de retração (ou recessão), quando a atividade econômica encolhe. Esses ciclos são impulsionados por diversos fatores — consumo, investimento, política monetária, eventos externos — e se repetem ao longo do tempo, mesmo que de forma irregular e difícil de prever com precisão."
+                },
+                "en": {
+                  "title": "Expansion and contraction take turns",
+                  "body": "Economies don't grow in a straight line: they go through cycles of expansion, when GDP grows and employment rises, and contraction (or recession), when economic activity shrinks. These cycles are driven by various factors — consumption, investment, monetary policy, external events — and repeat over time, even if irregularly and hard to predict with precision."
+                },
+                "es": {
+                  "title": "Expansión y retracción se alternan",
+                  "body": "Las economías no crecen en línea recta: atraviesan ciclos de expansión, cuando el PIB crece y el empleo aumenta, y de retracción (o recesión), cuando la actividad económica se reduce. Estos ciclos son impulsados por diversos factores — consumo, inversión, política monetaria, eventos externos — y se repiten con el tiempo, aunque de forma irregular y difícil de predecir con precisión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Durante uma expansão, empresas contratam mais e vendem mais, e o consumo das famílias tende a crescer. Em uma recessão, o oposto tende a acontecer: empresas cortam custos, o desemprego sobe, e o consumo se retrai — um ciclo que se retroalimenta até algum fator inverter a tendência."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "During an expansion, companies hire more and sell more, and household consumption tends to grow. In a recession, the opposite tends to happen: companies cut costs, unemployment rises, and consumption contracts — a cycle that feeds on itself until some factor reverses the trend."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Durante una expansión, las empresas contratan más y venden más, y el consumo de las familias tiende a crecer. En una recesión, tiende a ocurrir lo opuesto: las empresas recortan costos, el desempleo sube, y el consumo se retrae — un ciclo que se retroalimenta hasta que algún factor revierte la tendencia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como as economias costumam se comportar ao longo do tempo?",
+                  "options": [
+                    "Em crescimento constante e previsível, sem nenhuma variação",
+                    "Em ciclos alternados de expansão e retração, impulsionados por diversos fatores",
+                    "Sempre em recessão, sem períodos de crescimento",
+                    "De forma totalmente aleatória, sem nenhum padrão cíclico"
+                  ],
+                  "explanation": "Economias passam por ciclos de expansão e retração que se repetem ao longo do tempo, mesmo que de forma irregular e sem um cronograma fixo."
+                },
+                "en": {
+                  "prompt": "How do economies usually behave over time?",
+                  "options": [
+                    "In constant, predictable growth, with no variation at all",
+                    "In alternating cycles of expansion and contraction, driven by various factors",
+                    "Always in recession, with no periods of growth",
+                    "In a completely random way, with no cyclical pattern at all"
+                  ],
+                  "explanation": "Economies go through cycles of expansion and contraction that repeat over time, even if irregularly and without a fixed schedule."
+                },
+                "es": {
+                  "prompt": "¿Cómo suelen comportarse las economías con el tiempo?",
+                  "options": [
+                    "En crecimiento constante y previsible, sin ninguna variación",
+                    "En ciclos alternados de expansión y retracción, impulsados por diversos factores",
+                    "Siempre en recesión, sin períodos de crecimiento",
+                    "De forma totalmente aleatoria, sin ningún patrón cíclico"
+                  ],
+                  "explanation": "Las economías atraviesan ciclos de expansión y retracción que se repiten con el tiempo, aunque de forma irregular y sin un cronograma fijo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você lê uma notícia dizendo que o PIB caiu por dois trimestres seguidos, um sinal técnico comum de recessão. O que esse tipo de informação sugere sobre o momento do ciclo econômico?",
+                  "options": [
+                    "Que a economia vai crescer indefinidamente a partir de agora",
+                    "Que a economia provavelmente está em um período de retração, o que pode influenciar decisões de consumo, emprego e investimento em geral",
+                    "Que essa informação não tem relação nenhuma com investimentos",
+                    "Que o PIB nunca mais vai voltar a crescer"
+                  ],
+                  "explanation": "Quedas consecutivas do PIB são um indicativo comum de retração econômica — um contexto relevante para entender o ambiente em que decisões financeiras estão sendo tomadas."
+                },
+                "en": {
+                  "prompt": "You read news saying GDP has fallen for two consecutive quarters, a common technical signal of recession. What does this kind of information suggest about where the economic cycle stands?",
+                  "options": [
+                    "That the economy will grow indefinitely from now on",
+                    "That the economy is likely in a period of contraction, which can influence consumption, employment and investment decisions in general",
+                    "That this information has no relation to investments at all",
+                    "That GDP will never grow again"
+                  ],
+                  "explanation": "Consecutive GDP declines are a common indicator of economic contraction — relevant context for understanding the environment in which financial decisions are being made."
+                },
+                "es": {
+                  "prompt": "Lees una noticia que dice que el PIB cayó durante dos trimestres seguidos, una señal técnica común de recesión. ¿Qué sugiere este tipo de información sobre el momento del ciclo económico?",
+                  "options": [
+                    "Que la economía va a crecer indefinidamente a partir de ahora",
+                    "Que la economía probablemente está en un período de retracción, lo que puede influir en decisiones de consumo, empleo e inversión en general",
+                    "Que esa información no tiene ninguna relación con las inversiones",
+                    "Que el PIB nunca más va a volver a crecer"
+                  ],
+                  "explanation": "Las caídas consecutivas del PIB son un indicativo común de retracción económica — un contexto relevante para entender el entorno en que se están tomando las decisiones financieras."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Economias passam por ciclos alternados de expansão e retração.",
+                    "Esses ciclos são impulsionados por diversos fatores e difíceis de prever com precisão.",
+                    "Entender em que fase do ciclo a economia está ajuda a interpretar o contexto das decisões financeiras."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Economies go through alternating cycles of expansion and contraction.",
+                    "These cycles are driven by various factors and hard to predict with precision.",
+                    "Understanding what phase of the cycle the economy is in helps interpret the context of financial decisions."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las economías atraviesan ciclos alternados de expansión y retracción.",
+                    "Estos ciclos son impulsados por diversos factores y difíciles de predecir con precisión.",
+                    "Entender en qué fase del ciclo está la economía ayuda a interpretar el contexto de las decisiones financieras."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_selic_rate",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "A Taxa Selic"
+            },
+            "en": {
+              "title": "The Base Interest Rate"
+            },
+            "es": {
+              "title": "La Tasa Básica de Interés"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A taxa que baliza todas as outras",
+                  "body": "A Selic é a taxa básica de juros da economia brasileira, definida periodicamente pelo Banco Central. Ela serve como referência para praticamente todas as demais taxas de juros do país — de empréstimos a investimentos de renda fixa — funcionando como uma espécie de piso ou balizador para o custo do dinheiro na economia como um todo."
+                },
+                "en": {
+                  "title": "The rate that anchors all the others",
+                  "body": "The Selic is Brazil's base interest rate, set periodically by the Central Bank. It serves as a reference for practically all other interest rates in the country — from loans to fixed-income investments — acting as a kind of floor or anchor for the cost of money across the economy as a whole."
+                },
+                "es": {
+                  "title": "La tasa que sirve de referencia para las demás",
+                  "body": "La Selic es la tasa básica de interés de la economía brasileña, definida periódicamente por el Banco Central. Sirve como referencia para prácticamente todas las demás tasas de interés del país — desde préstamos hasta inversiones de renta fija — funcionando como una especie de piso o referencia para el costo del dinero en toda la economía."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando a Selic sobe, novos CDBs e títulos do Tesouro tendem a oferecer taxas mais altas, já que competem por dinheiro em um ambiente de juros maior. Ao mesmo tempo, empréstimos e financiamentos também tendem a ficar mais caros, encarecendo o crédito para empresas e famílias."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When the Selic rises, new CDBs and Treasury bonds tend to offer higher rates, since they compete for money in a higher-interest environment. At the same time, loans and financing also tend to get more expensive, raising the cost of credit for companies and households."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando la Selic sube, los nuevos CDB y bonos del Tesoro tienden a ofrecer tasas más altas, ya que compiten por dinero en un entorno de tasas mayores. Al mismo tiempo, los préstamos y financiamientos también tienden a encarecerse, elevando el costo del crédito para empresas y familias."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o papel da Selic na economia?",
+                  "options": [
+                    "Ela é apenas uma taxa simbólica, sem efeito real sobre outras taxas",
+                    "Ela serve como referência para praticamente todas as demais taxas de juros do país",
+                    "Ela só afeta investimentos em ações",
+                    "Ela é definida pelas próprias corretoras, sem intervenção do Banco Central"
+                  ],
+                  "explanation": "A Selic funciona como balizador para o custo do dinheiro em toda a economia, influenciando desde empréstimos até o retorno de investimentos de renda fixa."
+                },
+                "en": {
+                  "prompt": "What is the base rate's role in the economy?",
+                  "options": [
+                    "It's just a symbolic rate, with no real effect on other rates",
+                    "It serves as a reference for practically all other interest rates in the country",
+                    "It only affects stock investments",
+                    "It's set by the brokers themselves, with no Central Bank involvement"
+                  ],
+                  "explanation": "The base rate acts as an anchor for the cost of money across the whole economy, influencing everything from loans to the return on fixed-income investments."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el papel de la tasa básica en la economía?",
+                  "options": [
+                    "Es solo una tasa simbólica, sin efecto real sobre otras tasas",
+                    "Sirve como referencia para prácticamente todas las demás tasas de interés del país",
+                    "Solo afecta a las inversiones en acciones",
+                    "La definen las propias correduras, sin intervención del Banco Central"
+                  ],
+                  "explanation": "La tasa básica funciona como referencia para el costo del dinero en toda la economía, influyendo desde préstamos hasta el retorno de inversiones de renta fija."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O Banco Central anuncia uma alta na Selic. Com base no que você aprendeu, o que provavelmente acontece com as taxas de novos CDBs emitidos logo em seguida?",
+                  "options": [
+                    "Elas provavelmente vão cair, já que a Selic e as taxas de CDB não têm relação",
+                    "Elas tendem a subir também, já que a Selic serve de referência para a remuneração de investimentos de renda fixa",
+                    "Elas permanecem sempre fixas, independentemente da Selic",
+                    "Só empréstimos são afetados, nunca investimentos"
+                  ],
+                  "explanation": "Como a Selic serve de referência para a remuneração da renda fixa, uma alta na Selic costuma se refletir em taxas mais altas para novos CDBs e títulos emitidos depois da mudança."
+                },
+                "en": {
+                  "prompt": "The Central Bank announces a hike in the base rate. Based on what you learned, what likely happens to the rates of new CDBs issued right after?",
+                  "options": [
+                    "They'll likely fall, since the base rate and CDB rates aren't related",
+                    "They tend to rise too, since the base rate serves as a reference for fixed-income returns",
+                    "They stay always fixed, regardless of the base rate",
+                    "Only loans are affected, never investments"
+                  ],
+                  "explanation": "Since the base rate serves as a reference for fixed-income returns, a hike in it usually shows up as higher rates for new CDBs and bonds issued after the change."
+                },
+                "es": {
+                  "prompt": "El Banco Central anuncia una subida en la tasa básica. Según lo que aprendiste, ¿qué probablemente pasa con las tasas de los nuevos CDB emitidos justo después?",
+                  "options": [
+                    "Probablemente bajen, ya que la tasa básica y las tasas de CDB no están relacionadas",
+                    "Tienden a subir también, ya que la tasa básica sirve de referencia para la remuneración de las inversiones de renta fija",
+                    "Permanecen siempre fijas, sin importar la tasa básica",
+                    "Solo los préstamos se ven afectados, nunca las inversiones"
+                  ],
+                  "explanation": "Como la tasa básica sirve de referencia para la remuneración de la renta fija, una subida en ella suele reflejarse en tasas más altas para nuevos CDB y bonos emitidos después del cambio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A Selic é a taxa básica de juros, definida pelo Banco Central.",
+                    "Ela serve como referência para outras taxas de juros da economia.",
+                    "Quando a Selic sobe, tanto crédito quanto renda fixa tendem a refletir essa mudança."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The base rate is the economy's benchmark interest rate, set by the Central Bank.",
+                    "It serves as a reference for other interest rates in the economy.",
+                    "When the base rate rises, both credit and fixed income tend to reflect that change."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa básica es la tasa de interés de referencia, definida por el Banco Central.",
+                    "Sirve como referencia para otras tasas de interés de la economía.",
+                    "Cuando la tasa básica sube, tanto el crédito como la renta fija tienden a reflejar ese cambio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_monetary_policy",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Política Monetária"
+            },
+            "en": {
+              "title": "Monetary Policy"
+            },
+            "es": {
+              "title": "Política Monetaria"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ajustando os juros para conter ou estimular a economia",
+                  "body": "Política monetária é o conjunto de ações do Banco Central para controlar a quantidade de dinheiro e o custo do crédito na economia, principalmente através da definição da taxa básica de juros. Quando a inflação está alta, o Banco Central costuma subir os juros para desestimular o consumo e o crédito, esfriando a economia. Quando a economia está fraca e a inflação sob controle, ele pode reduzir os juros para estimular consumo e investimento."
+                },
+                "en": {
+                  "title": "Adjusting rates to cool down or stimulate the economy",
+                  "body": "Monetary policy is the set of actions the Central Bank takes to control the amount of money and the cost of credit in the economy, mainly by setting the base interest rate. When inflation is high, the Central Bank usually raises rates to discourage consumption and credit, cooling down the economy. When the economy is weak and inflation is under control, it can lower rates to stimulate consumption and investment."
+                },
+                "es": {
+                  "title": "Ajustando las tasas para frenar o estimular la economía",
+                  "body": "La política monetaria es el conjunto de acciones del Banco Central para controlar la cantidad de dinero y el costo del crédito en la economía, principalmente a través de la definición de la tasa básica de interés. Cuando la inflación está alta, el Banco Central suele subir las tasas para desincentivar el consumo y el crédito, enfriando la economía. Cuando la economía está débil y la inflación está bajo control, puede reducir las tasas para estimular el consumo y la inversión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Diante de uma inflação persistentemente alta, o Banco Central eleva os juros repetidas vezes ao longo de vários meses, tornando o crédito mais caro. Com o tempo, o consumo desacelera, a demanda por bens diminui, e a pressão sobre os preços tende a arrefecer — esse é o mecanismo por trás da política monetária contracionista."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Facing persistently high inflation, the Central Bank raises rates repeatedly over several months, making credit more expensive. Over time, consumption slows down, demand for goods decreases, and the pressure on prices tends to ease — this is the mechanism behind contractionary monetary policy."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Ante una inflación persistentemente alta, el Banco Central eleva las tasas repetidas veces a lo largo de varios meses, encareciendo el crédito. Con el tiempo, el consumo se desacelera, la demanda de bienes disminuye, y la presión sobre los precios tiende a ceder — ese es el mecanismo detrás de la política monetaria contraccionista."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o Banco Central costuma fazer diante de uma inflação persistentemente alta?",
+                  "options": [
+                    "Reduzir os juros para estimular ainda mais o consumo",
+                    "Subir os juros para desestimular consumo e crédito, esfriando a economia",
+                    "Não fazer nada, já que juros não têm relação com inflação",
+                    "Eliminar completamente a moeda em circulação"
+                  ],
+                  "explanation": "Subir os juros é a ferramenta clássica de política monetária para combater inflação alta, tornando o crédito mais caro e desestimulando o consumo."
+                },
+                "en": {
+                  "prompt": "What does the Central Bank usually do in the face of persistently high inflation?",
+                  "options": [
+                    "Lower rates to stimulate consumption even further",
+                    "Raise rates to discourage consumption and credit, cooling down the economy",
+                    "Do nothing, since rates have no relation to inflation",
+                    "Completely eliminate the currency in circulation"
+                  ],
+                  "explanation": "Raising rates is the classic monetary policy tool for fighting high inflation, making credit more expensive and discouraging consumption."
+                },
+                "es": {
+                  "prompt": "¿Qué suele hacer el Banco Central ante una inflación persistentemente alta?",
+                  "options": [
+                    "Reducir las tasas para estimular aún más el consumo",
+                    "Subir las tasas para desincentivar el consumo y el crédito, enfriando la economía",
+                    "No hacer nada, ya que las tasas no tienen relación con la inflación",
+                    "Eliminar por completo la moneda en circulación"
+                  ],
+                  "explanation": "Subir las tasas es la herramienta clásica de política monetaria para combatir la inflación alta, encareciendo el crédito y desincentivando el consumo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "A economia está enfraquecendo, com desemprego subindo, e a inflação está sob controle. O que a lógica da política monetária sugere que o Banco Central pode considerar fazer?",
+                  "options": [
+                    "Subir ainda mais os juros, para piorar a situação",
+                    "Reduzir os juros, buscando estimular consumo e investimento para reaquecer a economia",
+                    "A política monetária não tem nenhuma ferramenta para esse cenário",
+                    "Eliminar a taxa básica de juros permanentemente"
+                  ],
+                  "explanation": "Com inflação sob controle e economia enfraquecendo, reduzir os juros é a ferramenta clássica para tornar o crédito mais barato e estimular consumo e investimento."
+                },
+                "en": {
+                  "prompt": "The economy is weakening, with unemployment rising, and inflation is under control. What does monetary policy logic suggest the Central Bank might consider doing?",
+                  "options": [
+                    "Raise rates even further, to make the situation worse",
+                    "Lower rates, seeking to stimulate consumption and investment to reheat the economy",
+                    "Monetary policy has no tool for this scenario",
+                    "Permanently eliminate the base interest rate"
+                  ],
+                  "explanation": "With inflation under control and the economy weakening, lowering rates is the classic tool to make credit cheaper and stimulate consumption and investment."
+                },
+                "es": {
+                  "prompt": "La economía se está debilitando, con el desempleo subiendo, y la inflación está bajo control. ¿Qué sugiere la lógica de la política monetaria que el Banco Central podría considerar hacer?",
+                  "options": [
+                    "Subir aún más las tasas, para empeorar la situación",
+                    "Reducir las tasas, buscando estimular el consumo y la inversión para reactivar la economía",
+                    "La política monetaria no tiene ninguna herramienta para este escenario",
+                    "Eliminar la tasa básica de interés permanentemente"
+                  ],
+                  "explanation": "Con la inflación bajo control y la economía debilitándose, reducir las tasas es la herramienta clásica para abaratar el crédito y estimular el consumo y la inversión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Política monetária é o conjunto de ações do Banco Central para controlar dinheiro e crédito na economia.",
+                    "Juros mais altos combatem inflação, esfriando o consumo.",
+                    "Juros mais baixos estimulam consumo e investimento, quando a inflação está sob controle."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Monetary policy is the set of Central Bank actions to control money and credit in the economy.",
+                    "Higher rates fight inflation by cooling down consumption.",
+                    "Lower rates stimulate consumption and investment, when inflation is under control."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La política monetaria es el conjunto de acciones del Banco Central para controlar el dinero y el crédito en la economía.",
+                    "Las tasas más altas combaten la inflación, enfriando el consumo.",
+                    "Las tasas más bajas estimulan el consumo y la inversión, cuando la inflación está bajo control."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_interest_rates_and_assets",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Como Juros Afetam Diferentes Ativos"
+            },
+            "en": {
+              "title": "How Interest Rates Affect Different Assets"
+            },
+            "es": {
+              "title": "Cómo las Tasas Afectan a Diferentes Activos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo ativo reage da mesma forma",
+                  "body": "Mudanças na taxa básica de juros não afetam todos os tipos de investimento da mesma maneira. Em geral, juros mais altos tendem a tornar a renda fixa mais atrativa, já que os novos títulos passam a pagar mais. Ao mesmo tempo, juros mais altos costumam pressionar o preço de ações, porque encarecem o crédito das empresas e tornam a renda fixa uma alternativa mais competitiva para o investidor."
+                },
+                "en": {
+                  "title": "Not every asset reacts the same way",
+                  "body": "Changes in the base interest rate don't affect every type of investment the same way. In general, higher rates tend to make fixed income more attractive, since new bonds start paying more. At the same time, higher rates usually pressure stock prices, because they make companies' credit more expensive and turn fixed income into a more competitive alternative for investors."
+                },
+                "es": {
+                  "title": "No todos los activos reaccionan igual",
+                  "body": "Los cambios en la tasa básica de interés no afectan a todos los tipos de inversión de la misma manera. En general, las tasas más altas tienden a hacer que la renta fija sea más atractiva, ya que los nuevos títulos empiezan a pagar más. Al mismo tiempo, las tasas más altas suelen presionar el precio de las acciones, porque encarecen el crédito de las empresas y convierten a la renta fija en una alternativa más competitiva para el inversor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em um ciclo de alta de juros, um CDB novo pode passar a pagar 14% ao ano, um retorno mais atrativo e com menos risco do que muitas ações. Isso pode levar parte dos investidores a migrar recursos da bolsa para a renda fixa, pressionando os preços das ações para baixo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "During a rate-hike cycle, a new CDB might start paying 14% a year, a more attractive return with less risk than many stocks. This can lead some investors to shift money from the stock market to fixed income, pushing stock prices down."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En un ciclo de subida de tasas, un CDB nuevo puede empezar a pagar el 14% anual, un retorno más atractivo y con menos riesgo que muchas acciones. Esto puede llevar a parte de los inversores a trasladar recursos de la bolsa hacia la renta fija, presionando a la baja los precios de las acciones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Em geral, o que tende a acontecer com a atratividade da renda fixa quando a taxa básica de juros sobe?",
+                  "options": [
+                    "Ela tende a diminuir, já que os títulos novos pagam menos",
+                    "Ela tende a aumentar, já que novos títulos passam a oferecer taxas mais altas",
+                    "Não existe nenhuma relação entre os dois",
+                    "A renda fixa deixa de existir quando os juros sobem"
+                  ],
+                  "explanation": "Com a taxa básica mais alta, novos títulos de renda fixa costumam oferecer retornos mais atrativos, aumentando a competitividade dessa classe de ativos."
+                },
+                "en": {
+                  "prompt": "In general, what tends to happen to fixed income's attractiveness when the base rate rises?",
+                  "options": [
+                    "It tends to decrease, since new bonds pay less",
+                    "It tends to increase, since new bonds start offering higher rates",
+                    "There's no relation between the two",
+                    "Fixed income ceases to exist when rates rise"
+                  ],
+                  "explanation": "With a higher base rate, new fixed-income bonds usually offer more attractive returns, increasing that asset class's competitiveness."
+                },
+                "es": {
+                  "prompt": "En general, ¿qué tiende a pasar con el atractivo de la renta fija cuando la tasa básica de interés sube?",
+                  "options": [
+                    "Tiende a disminuir, ya que los nuevos títulos pagan menos",
+                    "Tiende a aumentar, ya que los nuevos títulos empiezan a ofrecer tasas más altas",
+                    "No existe ninguna relación entre ambos",
+                    "La renta fija deja de existir cuando las tasas suben"
+                  ],
+                  "explanation": "Con una tasa básica más alta, los nuevos títulos de renta fija suelen ofrecer retornos más atractivos, aumentando la competitividad de esa clase de activos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco e retorno de outra lição, e sabe que a renda fixa costuma ficar mais atrativa quando os juros sobem. Como isso ajuda a explicar por que ações às vezes caem justamente em ciclos de alta de juros?",
+                  "options": [
+                    "Não ajuda, ações e juros não têm relação nenhuma",
+                    "Porque, com a renda fixa oferecendo retornos maiores e menor risco, parte dos investidores pode preferir migrar recursos para lá, reduzindo a demanda por ações",
+                    "Porque juros altos sempre fazem as empresas terem lucro maior",
+                    "Porque ações só caem quando o Banco Central proíbe sua negociação"
+                  ],
+                  "explanation": "Quando a renda fixa passa a competir com retornos mais altos e menor risco, parte dos investidores tende a realocar recursos para lá, o que pode pressionar os preços das ações para baixo."
+                },
+                "en": {
+                  "prompt": "You already understand risk and return from another lesson, and know that fixed income usually becomes more attractive when rates rise. How does this help explain why stocks sometimes fall exactly during rate-hike cycles?",
+                  "options": [
+                    "It doesn't help, stocks and rates have no relation at all",
+                    "Because, with fixed income offering higher returns and lower risk, some investors may prefer to shift money there, reducing demand for stocks",
+                    "Because high rates always make companies more profitable",
+                    "Because stocks only fall when the Central Bank bans their trading"
+                  ],
+                  "explanation": "When fixed income starts competing with higher returns and lower risk, some investors tend to reallocate money there, which can push stock prices down."
+                },
+                "es": {
+                  "prompt": "Ya entiendes riesgo y retorno de otra lección, y sabes que la renta fija suele volverse más atractiva cuando las tasas suben. ¿Cómo ayuda esto a explicar por qué las acciones a veces caen justo en ciclos de subida de tasas?",
+                  "options": [
+                    "No ayuda, las acciones y las tasas no tienen ninguna relación",
+                    "Porque, con la renta fija ofreciendo retornos mayores y menor riesgo, parte de los inversores puede preferir trasladar recursos hacia allí, reduciendo la demanda de acciones",
+                    "Porque las tasas altas siempre hacen que las empresas tengan mayor ganancia",
+                    "Porque las acciones solo caen cuando el Banco Central prohíbe su negociación"
+                  ],
+                  "explanation": "Cuando la renta fija empieza a competir con retornos más altos y menor riesgo, parte de los inversores tiende a reasignar recursos hacia allí, lo que puede presionar a la baja los precios de las acciones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Juros mais altos tendem a tornar a renda fixa mais atrativa.",
+                    "Isso pode pressionar os preços de ações para baixo, à medida que investidores realocam recursos.",
+                    "Diferentes ativos reagem de formas diferentes ao mesmo movimento de juros."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Higher rates tend to make fixed income more attractive.",
+                    "This can push stock prices down, as investors reallocate money.",
+                    "Different assets react differently to the same rate movement."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las tasas más altas tienden a hacer que la renta fija sea más atractiva.",
+                    "Esto puede presionar a la baja los precios de las acciones, a medida que los inversores reasignan recursos.",
+                    "Activos diferentes reaccionan de forma distinta al mismo movimiento de tasas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_reading_indicators",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Lendo Indicadores com Cautela"
+            },
+            "en": {
+              "title": "Reading Indicators with Caution"
+            },
+            "es": {
+              "title": "Leyendo Indicadores con Cautela"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um dado isolado raramente conta a história toda",
+                  "body": "Indicadores macroeconômicos são publicados regularmente e podem variar de um mês para outro por diversos motivos, incluindo fatores pontuais e sazonais. Reagir de forma exagerada a um único dado — vendendo ou comprando ativos com base em uma única divulgação — costuma ser menos útil do que observar a tendência desses indicadores ao longo de vários períodos."
+                },
+                "en": {
+                  "title": "A single data point rarely tells the whole story",
+                  "body": "Macroeconomic indicators are published regularly and can vary from one month to another for various reasons, including one-off and seasonal factors. Overreacting to a single data point — selling or buying assets based on one release — tends to be less useful than watching the trend of these indicators across several periods."
+                },
+                "es": {
+                  "title": "Un dato aislado rara vez cuenta toda la historia",
+                  "body": "Los indicadores macroeconómicos se publican regularmente y pueden variar de un mes a otro por diversos motivos, incluyendo factores puntuales y estacionales. Reaccionar de forma exagerada a un solo dato — vendiendo o comprando activos con base en una única publicación — suele ser menos útil que observar la tendencia de esos indicadores a lo largo de varios períodos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "A inflação de um único mês vem acima do esperado, por causa de um fator pontual, como uma alta temporária em alimentos. Um investidor que vende todos os seus ativos de renda fixa em pânico, só por causa desse dado isolado, pode estar reagindo a um ruído de curto prazo, em vez de a uma mudança real de tendência."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A single month's inflation comes in above expectations, due to a one-off factor, like a temporary spike in food prices. An investor who panic-sells all their fixed-income assets, just because of that isolated data point, might be reacting to short-term noise, rather than to a real change in trend."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "La inflación de un solo mes viene por encima de lo esperado, debido a un factor puntual, como un aumento temporal en alimentos. Un inversor que vende en pánico todos sus activos de renta fija, solo por ese dato aislado, puede estar reaccionando a un ruido de corto plazo, en lugar de a un cambio real de tendencia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que reagir a um único dado macroeconômico isolado costuma ser arriscado?",
+                  "options": [
+                    "Porque indicadores macroeconômicos nunca são confiáveis",
+                    "Porque um único dado pode refletir fatores pontuais e sazonais, em vez de uma mudança real de tendência",
+                    "Porque indicadores só são divulgados uma vez por ano",
+                    "Porque não existe nenhuma forma de acompanhar indicadores ao longo do tempo"
+                  ],
+                  "explanation": "Um dado isolado pode ser ruído de curto prazo — observar a tendência ao longo de vários períodos costuma ser mais informativo do que reagir a uma única divulgação."
+                },
+                "en": {
+                  "prompt": "Why is reacting to a single isolated macroeconomic data point usually risky?",
+                  "options": [
+                    "Because macroeconomic indicators are never reliable",
+                    "Because a single data point can reflect one-off and seasonal factors, rather than a real change in trend",
+                    "Because indicators are only released once a year",
+                    "Because there's no way to track indicators over time"
+                  ],
+                  "explanation": "A single data point can be short-term noise — watching the trend over several periods tends to be more informative than reacting to one release."
+                },
+                "es": {
+                  "prompt": "¿Por qué reaccionar a un solo dato macroeconómico aislado suele ser arriesgado?",
+                  "options": [
+                    "Porque los indicadores macroeconómicos nunca son confiables",
+                    "Porque un solo dato puede reflejar factores puntuales y estacionales, en lugar de un cambio real de tendencia",
+                    "Porque los indicadores solo se publican una vez al año",
+                    "Porque no existe ninguna forma de seguir indicadores a lo largo del tiempo"
+                  ],
+                  "explanation": "Un dato aislado puede ser ruido de corto plazo — observar la tendencia a lo largo de varios períodos suele ser más informativo que reaccionar a una sola publicación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende PIB, Selic, política monetária e como juros afetam diferentes ativos. Diante de uma única divulgação de dado econômico surpreendente, o que essa base de conhecimento sugere como abordagem mais equilibrada?",
+                  "options": [
+                    "Reagir imediatamente, vendendo ou comprando ativos com base apenas nesse dado isolado",
+                    "Considerar esse dado como parte de um quadro maior, observando se ele confirma ou não uma tendência já observada em períodos anteriores, antes de agir",
+                    "Ignorar completamente todos os indicadores macroeconômicos, já que eles nunca importam",
+                    "Assumir que esse dado isolado já determina com certeza os próximos anos da economia"
+                  ],
+                  "explanation": "Entender os mecanismos por trás dos indicadores ajuda a interpretá-los com mais contexto — um dado isolado ganha mais sentido quando visto dentro de uma tendência mais ampla, não como um evento decisivo isolado."
+                },
+                "en": {
+                  "prompt": "You already understand GDP, the base rate, monetary policy, and how rates affect different assets. Faced with a single surprising economic data release, what does this knowledge base suggest as a more balanced approach?",
+                  "options": [
+                    "Reacting immediately, selling or buying assets based only on that isolated data point",
+                    "Considering that data point as part of a bigger picture, checking whether it confirms or not a trend already observed over previous periods, before acting",
+                    "Completely ignoring all macroeconomic indicators, since they never matter",
+                    "Assuming that single data point already determines with certainty the economy's next several years"
+                  ],
+                  "explanation": "Understanding the mechanisms behind indicators helps interpret them with more context — a single data point makes more sense when seen within a broader trend, not as an isolated decisive event."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el PIB, la tasa básica, la política monetaria y cómo las tasas afectan a diferentes activos. Ante una sola publicación de dato económico sorprendente, ¿qué sugiere esta base de conocimiento como enfoque más equilibrado?",
+                  "options": [
+                    "Reaccionar de inmediato, vendiendo o comprando activos basándose solo en ese dato aislado",
+                    "Considerar ese dato como parte de un panorama más amplio, observando si confirma o no una tendencia ya observada en períodos anteriores, antes de actuar",
+                    "Ignorar por completo todos los indicadores macroeconómicos, ya que nunca importan",
+                    "Asumir que ese dato aislado ya determina con certeza los próximos años de la economía"
+                  ],
+                  "explanation": "Entender los mecanismos detrás de los indicadores ayuda a interpretarlos con más contexto — un dato aislado cobra más sentido cuando se ve dentro de una tendencia más amplia, no como un evento decisivo aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Indicadores macroeconômicos podem variar por fatores pontuais e sazonais.",
+                    "Observar a tendência ao longo de vários períodos é mais informativo do que reagir a um único dado.",
+                    "Você concluiu o módulo de fundamentos de macroeconomia."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Macroeconomic indicators can vary due to one-off and seasonal factors.",
+                    "Watching the trend across several periods is more informative than reacting to a single data point.",
+                    "You've completed the macroeconomics fundamentals module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los indicadores macroeconómicos pueden variar por factores puntuales y estacionales.",
+                    "Observar la tendencia a lo largo de varios períodos es más informativo que reaccionar a un solo dato.",
+                    "Completaste el módulo de fundamentos de macroeconomía."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "macro_global_markets",
+      "order": 2,
+      "iconKey": "query_stats_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "macro_fundamentals"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Câmbio, Ciclos Globais e Mercados",
+          "description": "Câmbio, inflação em profundidade, conexões com o mercado global e como interpretar sinais mais avançados do ciclo econômico."
+        },
+        "en": {
+          "title": "Exchange Rates, Global Cycles & Markets",
+          "description": "Exchange rates, inflation in depth, global market connections and how to read more advanced signals of the economic cycle."
+        },
+        "es": {
+          "title": "Tipo de Cambio, Ciclos Globales y Mercados",
+          "description": "Tipo de cambio, inflación en profundidad, conexiones con el mercado global y cómo interpretar señales más avanzadas del ciclo económico."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "macro_exchange_rates",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Câmbio e Investimentos"
+            },
+            "en": {
+              "title": "Exchange Rates and Investments"
+            },
+            "es": {
+              "title": "Tipo de Cambio e Inversiones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O preço de uma moeda em relação à outra",
+                  "body": "A taxa de câmbio (por exemplo, quantos reais equivalem a um dólar) varia constantemente, influenciada por fatores como o diferencial de juros entre países, o fluxo de capital estrangeiro e a percepção de risco do país. Um real mais fraco (dólar mais caro) encarece importações e tende a beneficiar empresas exportadoras, enquanto um real mais forte tem o efeito oposto."
+                },
+                "en": {
+                  "title": "The price of one currency relative to another",
+                  "body": "The exchange rate (for example, how many reais equal one dollar) constantly changes, influenced by factors like the interest rate differential between countries, foreign capital flows and the country's perceived risk. A weaker real (a more expensive dollar) makes imports pricier and tends to benefit exporting companies, while a stronger real has the opposite effect."
+                },
+                "es": {
+                  "title": "El precio de una moneda en relación con otra",
+                  "body": "El tipo de cambio (por ejemplo, cuántos reales equivalen a un dólar) varía constantemente, influenciado por factores como el diferencial de tasas de interés entre países, el flujo de capital extranjero y la percepción de riesgo del país. Un real más débil (dólar más caro) encarece las importaciones y tiende a beneficiar a las empresas exportadoras, mientras que un real más fuerte tiene el efecto contrario."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando os juros nos Estados Unidos sobem em relação aos do Brasil, capital estrangeiro pode migrar para ativos americanos em busca de retornos maiores, reduzindo a entrada de dólares no Brasil e pressionando o real a se desvalorizar."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When interest rates in the United States rise relative to Brazil's, foreign capital can migrate to American assets in search of higher returns, reducing the inflow of dollars into Brazil and pressuring the real to weaken."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando las tasas de interés en Estados Unidos suben en relación con las de Brasil, el capital extranjero puede migrar hacia activos estadounidenses en busca de retornos mayores, reduciendo la entrada de dólares a Brasil y presionando al real a devaluarse."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que tende a acontecer com o real quando o diferencial de juros favorece cada vez mais os Estados Unidos?",
+                  "options": [
+                    "Ele tende a se fortalecer em relação ao dólar",
+                    "Ele tende a se enfraquecer em relação ao dólar",
+                    "Não existe nenhuma relação entre os dois",
+                    "O câmbio deixa de flutuar nesse cenário"
+                  ],
+                  "explanation": "Quando os juros americanos ficam mais atrativos, capital tende a migrar para lá, reduzindo a entrada de dólares no Brasil e pressionando o real a se desvalorizar."
+                },
+                "en": {
+                  "prompt": "What tends to happen to the real when the rate differential increasingly favors the United States?",
+                  "options": [
+                    "It tends to strengthen against the dollar",
+                    "It tends to weaken against the dollar",
+                    "There's no relation between the two",
+                    "The exchange rate stops floating in this scenario"
+                  ],
+                  "explanation": "When US rates become more attractive, capital tends to migrate there, reducing the inflow of dollars into Brazil and pressuring the real to weaken."
+                },
+                "es": {
+                  "prompt": "¿Qué tiende a pasar con el real cuando el diferencial de tasas favorece cada vez más a Estados Unidos?",
+                  "options": [
+                    "Tiende a fortalecerse frente al dólar",
+                    "Tiende a debilitarse frente al dólar",
+                    "No existe ninguna relación entre ambos",
+                    "El tipo de cambio deja de flotar en ese escenario"
+                  ],
+                  "explanation": "Cuando las tasas estadounidenses se vuelven más atractivas, el capital tiende a migrar hacia allí, reduciendo la entrada de dólares a Brasil y presionando al real a devaluarse."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que juros mais altos tornam a renda fixa de um país mais atrativa para investidores. Como isso ajuda a explicar por que uma alta de juros nos EUA pode enfraquecer o real?",
+                  "options": [
+                    "Não ajuda, câmbio e juros são assuntos completamente independentes",
+                    "Porque juros americanos mais altos atraem capital para lá, reduzindo a entrada de dólares no Brasil e pressionando o real para baixo",
+                    "Porque juros altos nos EUA obrigam o Brasil a imprimir mais dinheiro",
+                    "Porque o câmbio é definido apenas pelo governo, sem relação com juros"
+                  ],
+                  "explanation": "O mesmo mecanismo de atratividade de juros que você já viu para renda fixa também explica fluxos de capital entre países — e esses fluxos afetam diretamente o câmbio."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that higher rates make a country's fixed income more attractive to investors. How does that help explain why a US rate hike can weaken the real?",
+                  "options": [
+                    "It doesn't help, exchange rates and interest rates are completely unrelated topics",
+                    "Because higher US rates attract capital there, reducing the inflow of dollars into Brazil and pushing the real down",
+                    "Because high US rates force Brazil to print more money",
+                    "Because the exchange rate is set only by the government, with no relation to rates"
+                  ],
+                  "explanation": "The same interest-rate-attractiveness mechanism you already saw for fixed income also explains capital flows between countries — and those flows directly affect the exchange rate."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que tasas más altas hacen que la renta fija de un país sea más atractiva para los inversores. ¿Cómo ayuda esto a explicar por qué una subida de tasas en EE. UU. puede debilitar al real?",
+                  "options": [
+                    "No ayuda, el tipo de cambio y las tasas de interés son temas completamente independientes",
+                    "Porque tasas estadounidenses más altas atraen capital hacia allí, reduciendo la entrada de dólares a Brasil y presionando al real a la baja",
+                    "Porque tasas altas en EE. UU. obligan a Brasil a imprimir más dinero",
+                    "Porque el tipo de cambio lo define solo el gobierno, sin relación con las tasas"
+                  ],
+                  "explanation": "El mismo mecanismo de atractivo de tasas que ya viste para la renta fija también explica los flujos de capital entre países — y esos flujos afectan directamente al tipo de cambio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A taxa de câmbio varia conforme o diferencial de juros, o fluxo de capital e a percepção de risco do país.",
+                    "Um real mais fraco encarece importações e pode beneficiar exportadoras; um real mais forte tem o efeito oposto.",
+                    "Juros mais altos em outro país podem atrair capital para lá, pressionando o real a se desvalorizar."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The exchange rate varies with the interest rate differential, capital flows and the country's perceived risk.",
+                    "A weaker real makes imports more expensive and can benefit exporters; a stronger real has the opposite effect.",
+                    "Higher rates in another country can attract capital there, pressuring the real to weaken."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El tipo de cambio varía según el diferencial de tasas, el flujo de capital y la percepción de riesgo del país.",
+                    "Un real más débil encarece las importaciones y puede beneficiar a las exportadoras; un real más fuerte tiene el efecto contrario.",
+                    "Tasas más altas en otro país pueden atraer capital hacia allí, presionando al real a devaluarse."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_inflation_types",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Inflação de Demanda vs. de Custos"
+            },
+            "en": {
+              "title": "Demand-Pull vs. Cost-Push Inflation"
+            },
+            "es": {
+              "title": "Inflación de Demanda vs. de Costos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem toda inflação tem a mesma origem",
+                  "body": "Inflação de demanda acontece quando o consumo cresce mais rápido do que a capacidade da economia de produzir bens e serviços, pressionando os preços para cima. Já a inflação de custos surge quando o preço de insumos importantes — como energia, alimentos ou matérias-primas — sobe por causa de choques de oferta, mesmo sem um aumento de demanda. Distinguir as duas ajuda a entender por que a mesma ferramenta (juros) funciona melhor em um caso do que no outro."
+                },
+                "en": {
+                  "title": "Not all inflation has the same origin",
+                  "body": "Demand-pull inflation happens when consumption grows faster than the economy's capacity to produce goods and services, pushing prices up. Cost-push inflation, on the other hand, arises when the price of key inputs — such as energy, food or raw materials — rises due to supply shocks, even without an increase in demand. Distinguishing the two helps explain why the same tool (interest rates) works better in one case than the other."
+                },
+                "es": {
+                  "title": "No toda la inflación tiene el mismo origen",
+                  "body": "La inflación de demanda ocurre cuando el consumo crece más rápido que la capacidad de la economía para producir bienes y servicios, presionando los precios al alza. La inflación de costos, en cambio, surge cuando el precio de insumos importantes — como energía, alimentos o materias primas — sube por choques de oferta, incluso sin un aumento de la demanda. Distinguir ambas ayuda a entender por qué la misma herramienta (las tasas de interés) funciona mejor en un caso que en otro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um governo distribui estímulos e o consumo dispara além da capacidade produtiva das empresas — isso é inflação de demanda. Já uma seca severa que reduz drasticamente a safra de alimentos, encarecendo-os independentemente do quanto as pessoas consomem, é um exemplo clássico de inflação de custos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A government hands out stimulus and consumption surges beyond companies' production capacity — that's demand-pull inflation. A severe drought that drastically reduces the food harvest, making food more expensive regardless of how much people consume, is a classic example of cost-push inflation."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un gobierno distribuye estímulos y el consumo se dispara más allá de la capacidad productiva de las empresas — eso es inflación de demanda. Una sequía severa que reduce drásticamente la cosecha de alimentos, encareciéndolos sin importar cuánto consuman las personas, es un ejemplo clásico de inflación de costos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma seca que reduz a safra de alimentos e encarece os preços, independentemente do nível de consumo, é um exemplo de qual tipo de inflação?",
+                  "options": [
+                    "Inflação de demanda",
+                    "Inflação de custos",
+                    "Não é considerada inflação",
+                    "Deflação"
+                  ],
+                  "explanation": "Choques de oferta, como uma seca que reduz a produção de alimentos, são o exemplo clássico de inflação de custos."
+                },
+                "en": {
+                  "prompt": "A drought that reduces the food harvest and raises prices, regardless of the level of consumption, is an example of which type of inflation?",
+                  "options": [
+                    "Demand-pull inflation",
+                    "Cost-push inflation",
+                    "It isn't considered inflation",
+                    "Deflation"
+                  ],
+                  "explanation": "Supply shocks, like a drought that reduces food production, are the classic example of cost-push inflation."
+                },
+                "es": {
+                  "prompt": "Una sequía que reduce la cosecha de alimentos y encarece los precios, sin importar el nivel de consumo, es un ejemplo de qué tipo de inflación?",
+                  "options": [
+                    "Inflación de demanda",
+                    "Inflación de costos",
+                    "No se considera inflación",
+                    "Deflación"
+                  ],
+                  "explanation": "Los choques de oferta, como una sequía que reduce la producción de alimentos, son el ejemplo clásico de inflación de costos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que o Banco Central costuma subir os juros para combater inflação alta. Diante de uma inflação causada majoritariamente por um choque de oferta (como uma seca), por que essa ferramenta pode ser menos eficaz?",
+                  "options": [
+                    "Porque juros mais altos nunca afetam a economia de nenhuma forma",
+                    "Porque subir os juros esfria o consumo em geral, mas não resolve diretamente o problema de oferta que está encarecendo os alimentos",
+                    "Porque juros mais altos sempre eliminam completamente qualquer inflação de custos",
+                    "Porque a política monetária só existe para combater inflação de custos, nunca de demanda"
+                  ],
+                  "explanation": "Juros mais altos atuam principalmente esfriando a demanda agregada — eles têm efeito limitado sobre um problema de oferta, como uma quebra de safra, ainda que possam ajudar a conter efeitos secundários sobre o restante da economia."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that the Central Bank usually raises rates to fight high inflation. Faced with inflation caused mostly by a supply shock (like a drought), why might that tool be less effective?",
+                  "options": [
+                    "Because higher rates never affect the economy in any way",
+                    "Because raising rates cools down consumption in general, but doesn't directly fix the supply problem that's making food more expensive",
+                    "Because higher rates always completely eliminate any cost-push inflation",
+                    "Because monetary policy only exists to fight cost-push inflation, never demand-pull"
+                  ],
+                  "explanation": "Higher rates mainly work by cooling aggregate demand — they have limited effect on a supply problem, like a failed harvest, even though they can help contain secondary effects on the rest of the economy."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el Banco Central suele subir las tasas para combatir la inflación alta. Ante una inflación causada mayormente por un choque de oferta (como una sequía), ¿por qué esa herramienta puede ser menos eficaz?",
+                  "options": [
+                    "Porque tasas más altas nunca afectan la economía de ninguna forma",
+                    "Porque subir las tasas enfría el consumo en general, pero no resuelve directamente el problema de oferta que está encareciendo los alimentos",
+                    "Porque tasas más altas siempre eliminan por completo cualquier inflación de costos",
+                    "Porque la política monetaria solo existe para combatir la inflación de costos, nunca la de demanda"
+                  ],
+                  "explanation": "Las tasas más altas actúan principalmente enfriando la demanda agregada — tienen un efecto limitado sobre un problema de oferta, como una mala cosecha, aunque pueden ayudar a contener efectos secundarios sobre el resto de la economía."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Inflação de demanda surge quando o consumo cresce mais rápido do que a produção.",
+                    "Inflação de custos surge de choques de oferta, como alta de energia ou alimentos.",
+                    "A mesma ferramenta de política monetária pode ter eficácia diferente dependendo da origem da inflação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Demand-pull inflation arises when consumption grows faster than production.",
+                    "Cost-push inflation arises from supply shocks, like a spike in energy or food prices.",
+                    "The same monetary policy tool can have different effectiveness depending on inflation's origin."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La inflación de demanda surge cuando el consumo crece más rápido que la producción.",
+                    "La inflación de costos surge de choques de oferta, como una subida de energía o alimentos.",
+                    "La misma herramienta de política monetaria puede tener distinta eficacia según el origen de la inflación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_yield_curve",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "A Curva de Juros e o que Ela Sinaliza"
+            },
+            "en": {
+              "title": "The Yield Curve and What It Signals"
+            },
+            "es": {
+              "title": "La Curva de Tasas y lo que Señala"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comparando juros de curto e longo prazo",
+                  "body": "A curva de juros mostra as taxas pagas por títulos de dívida de um mesmo emissor em diferentes prazos, do mais curto ao mais longo. Em condições consideradas normais, títulos mais longos pagam taxas mais altas, para compensar o investidor pelo maior tempo de exposição a incertezas. Quando essa relação se inverte — e títulos curtos passam a pagar mais do que os longos — o mercado costuma interpretar isso como um sinal de que investidores esperam desaceleração econômica ou cortes de juros no futuro."
+                },
+                "en": {
+                  "title": "Comparing short- and long-term rates",
+                  "body": "The yield curve shows the rates paid by debt securities from the same issuer at different maturities, from shortest to longest. Under conditions considered normal, longer bonds pay higher rates, to compensate the investor for the longer exposure to uncertainty. When that relationship inverts — and short-term bonds start paying more than long-term ones — the market usually interprets it as a signal that investors expect an economic slowdown or future rate cuts."
+                },
+                "es": {
+                  "title": "Comparando tasas de corto y largo plazo",
+                  "body": "La curva de tasas muestra las tasas pagadas por títulos de deuda de un mismo emisor en diferentes plazos, del más corto al más largo. En condiciones consideradas normales, los títulos más largos pagan tasas más altas, para compensar al inversor por la mayor exposición a incertidumbres. Cuando esa relación se invierte — y los títulos cortos empiezan a pagar más que los largos — el mercado suele interpretar esto como una señal de que los inversores esperan una desaceleración económica o recortes de tasas en el futuro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se um título de 2 anos passa a pagar uma taxa maior do que um título de 10 anos do mesmo emissor, diz-se que a curva de juros está invertida. Historicamente, esse fenômeno já precedeu períodos de desaceleração em algumas economias, embora não seja um indicador infalível nem determine exatamente quando isso vai acontecer."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If a 2-year bond starts paying a higher rate than a 10-year bond from the same issuer, the yield curve is said to be inverted. Historically, this phenomenon has preceded periods of slowdown in some economies, although it's not an infallible indicator and doesn't determine exactly when that will happen."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si un título a 2 años empieza a pagar una tasa mayor que un título a 10 años del mismo emisor, se dice que la curva de tasas está invertida. Históricamente, este fenómeno ha precedido a períodos de desaceleración en algunas economías, aunque no es un indicador infalible ni determina exactamente cuándo va a ocurrir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma curva de juros invertida?",
+                  "options": [
+                    "Títulos de longo prazo pagando taxas muito mais altas que os de curto prazo",
+                    "Títulos de curto prazo pagando taxas mais altas do que os de longo prazo",
+                    "Todos os títulos pagando exatamente a mesma taxa, sem exceção",
+                    "A ausência completa de qualquer título de longo prazo no mercado"
+                  ],
+                  "explanation": "A inversão ocorre quando títulos de prazo mais curto passam a pagar taxas mais altas do que os de prazo mais longo, o oposto da relação considerada normal."
+                },
+                "en": {
+                  "prompt": "What characterizes an inverted yield curve?",
+                  "options": [
+                    "Long-term bonds paying much higher rates than short-term ones",
+                    "Short-term bonds paying higher rates than long-term ones",
+                    "All bonds paying exactly the same rate, without exception",
+                    "The complete absence of any long-term bond in the market"
+                  ],
+                  "explanation": "Inversion occurs when shorter-maturity bonds start paying higher rates than longer-maturity ones, the opposite of the relationship considered normal."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una curva de tasas invertida?",
+                  "options": [
+                    "Títulos de largo plazo pagando tasas mucho más altas que los de corto plazo",
+                    "Títulos de corto plazo pagando tasas más altas que los de largo plazo",
+                    "Todos los títulos pagando exactamente la misma tasa, sin excepción",
+                    "La ausencia completa de cualquier título de largo plazo en el mercado"
+                  ],
+                  "explanation": "La inversión ocurre cuando los títulos de plazo más corto empiezan a pagar tasas más altas que los de plazo más largo, lo opuesto a la relación considerada normal."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já aprendeu, em outra lição, que um dado macroeconômico isolado raramente conta a história toda e que é preciso cautela ao interpretar indicadores. Como esse princípio se aplica à curva de juros invertida?",
+                  "options": [
+                    "Não se aplica, uma curva invertida é sempre uma certeza absoluta de recessão iminente",
+                    "A inversão é um sinal relevante a ser observado dentro de um quadro mais amplo, não uma previsão garantida e isolada de recessão",
+                    "Significa que a curva de juros nunca deve ser observada por ninguém",
+                    "Uma curva invertida garante que os juros vão subir indefinidamente"
+                  ],
+                  "explanation": "Assim como qualquer indicador isolado, a inversão da curva de juros é um sinal a ser ponderado junto com outras informações, não uma previsão certeira e isolada."
+                },
+                "en": {
+                  "prompt": "You already learned, in another lesson, that a single macroeconomic data point rarely tells the whole story and that indicators call for caution. How does that principle apply to an inverted yield curve?",
+                  "options": [
+                    "It doesn't apply, an inverted curve is always an absolute certainty of imminent recession",
+                    "The inversion is a relevant signal to watch within a broader picture, not a guaranteed, isolated recession forecast",
+                    "It means the yield curve should never be watched by anyone",
+                    "An inverted curve guarantees rates will rise indefinitely"
+                  ],
+                  "explanation": "Like any isolated indicator, yield curve inversion is a signal to weigh alongside other information, not a certain, standalone forecast."
+                },
+                "es": {
+                  "prompt": "Ya aprendiste, en otra lección, que un dato macroeconómico aislado rara vez cuenta toda la historia y que los indicadores requieren cautela. ¿Cómo se aplica ese principio a una curva de tasas invertida?",
+                  "options": [
+                    "No se aplica, una curva invertida es siempre una certeza absoluta de recesión inminente",
+                    "La inversión es una señal relevante a observar dentro de un panorama más amplio, no un pronóstico garantizado y aislado de recesión",
+                    "Significa que la curva de tasas nunca debe ser observada por nadie",
+                    "Una curva invertida garantiza que las tasas subirán indefinidamente"
+                  ],
+                  "explanation": "Al igual que cualquier indicador aislado, la inversión de la curva de tasas es una señal a ponderar junto con otra información, no un pronóstico certero y aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A curva de juros compara taxas de curto e longo prazo de um mesmo emissor.",
+                    "Uma curva invertida — curto prazo pagando mais que longo prazo — costuma ser vista como sinal de cautela sobre o ciclo econômico.",
+                    "Como qualquer indicador isolado, ela deve ser interpretada com cautela, dentro de um quadro mais amplo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The yield curve compares short- and long-term rates from the same issuer.",
+                    "An inverted curve — short-term paying more than long-term — is usually seen as a cautionary signal about the economic cycle.",
+                    "Like any isolated indicator, it should be interpreted with caution, within a broader picture."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La curva de tasas compara tasas de corto y largo plazo de un mismo emisor.",
+                    "Una curva invertida — corto plazo pagando más que largo plazo — suele verse como una señal de cautela sobre el ciclo económico.",
+                    "Como cualquier indicador aislado, debe interpretarse con cautela, dentro de un panorama más amplio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_global_linkages",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Conexões com o Mercado Global"
+            },
+            "en": {
+              "title": "Connections with Global Markets"
+            },
+            "es": {
+              "title": "Conexiones con el Mercado Global"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Economias abertas sentem o que acontece lá fora",
+                  "body": "Economias como a brasileira são consideradas abertas, o que significa que decisões de política monetária em grandes economias — como uma alta de juros nos Estados Unidos — podem afetar o fluxo de capital estrangeiro, o câmbio e até os preços de commodities exportadas pelo país. Da mesma forma, eventos geopolíticos e variações no preço de commodities globais podem se refletir na economia local, mesmo sem nenhuma decisão interna ter mudado."
+                },
+                "en": {
+                  "title": "Open economies feel what happens abroad",
+                  "body": "Economies like Brazil's are considered open, meaning monetary policy decisions in large economies — like a US rate hike — can affect foreign capital flows, the exchange rate and even the prices of commodities the country exports. Similarly, geopolitical events and swings in global commodity prices can ripple into the local economy, even without any domestic decision having changed."
+                },
+                "es": {
+                  "title": "Las economías abiertas sienten lo que pasa afuera",
+                  "body": "Economías como la brasileña se consideran abiertas, lo que significa que decisiones de política monetaria en grandes economías — como una subida de tasas en Estados Unidos — pueden afectar el flujo de capital extranjero, el tipo de cambio e incluso los precios de las materias primas que el país exporta. De la misma forma, eventos geopolíticos y variaciones en el precio de las materias primas globales pueden reflejarse en la economía local, incluso sin que ninguna decisión interna haya cambiado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando o banco central americano sobe os juros de forma agressiva, é comum observar saída de capital de mercados emergentes, incluindo o Brasil, à medida que investidores buscam retornos mais seguros nos Estados Unidos — isso pode pressionar o real e encarecer produtos importados por aqui."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When the American central bank raises rates aggressively, it's common to see capital flow out of emerging markets, including Brazil, as investors seek safer returns in the United States — this can pressure the real and make imported goods more expensive here."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando el banco central estadounidense sube las tasas de forma agresiva, es común observar salida de capital de mercados emergentes, incluido Brasil, a medida que los inversores buscan retornos más seguros en Estados Unidos — esto puede presionar al real y encarecer los productos importados aquí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que decisões de política monetária nos Estados Unidos podem afetar uma economia aberta como a do Brasil?",
+                  "options": [
+                    "Porque não têm nenhum efeito fora dos Estados Unidos",
+                    "Porque podem influenciar o fluxo de capital estrangeiro e o câmbio de outros países",
+                    "Porque o Brasil é obrigado por lei a seguir as decisões americanas",
+                    "Porque isso só afeta o preço do petróleo, e nada mais"
+                  ],
+                  "explanation": "Em economias abertas, mudanças de juros em grandes economias podem redirecionar fluxos de capital global, afetando câmbio e condições financeiras de outros países."
+                },
+                "en": {
+                  "prompt": "Why can US monetary policy decisions affect an open economy like Brazil's?",
+                  "options": [
+                    "Because they have no effect outside the United States",
+                    "Because they can influence foreign capital flows and other countries' exchange rates",
+                    "Because Brazil is legally required to follow American decisions",
+                    "Because it only affects the price of oil, and nothing else"
+                  ],
+                  "explanation": "In open economies, rate changes in large economies can redirect global capital flows, affecting the exchange rate and financial conditions of other countries."
+                },
+                "es": {
+                  "prompt": "¿Por qué las decisiones de política monetaria en Estados Unidos pueden afectar a una economía abierta como la de Brasil?",
+                  "options": [
+                    "Porque no tienen ningún efecto fuera de Estados Unidos",
+                    "Porque pueden influir en el flujo de capital extranjero y el tipo de cambio de otros países",
+                    "Porque Brasil está obligado por ley a seguir las decisiones estadounidenses",
+                    "Porque eso solo afecta el precio del petróleo, y nada más"
+                  ],
+                  "explanation": "En economías abiertas, los cambios de tasas en grandes economías pueden redirigir flujos de capital global, afectando el tipo de cambio y las condiciones financieras de otros países."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que juros mais altos nos EUA podem enfraquecer o real ao atrair capital para lá. Juntando isso ao que aprendeu aqui sobre economias abertas, o que esse encadeamento sugere sobre investir em um mercado emergente?",
+                  "options": [
+                    "Que mercados emergentes nunca são afetados por decisões de outros países",
+                    "Que fatores externos, como política monetária de grandes economias, podem influenciar ativos locais mesmo sem nenhuma mudança interna",
+                    "Que só é possível investir em ativos emergentes se os juros americanos estiverem em zero",
+                    "Que o câmbio e os juros americanos não têm nenhuma relação com o Brasil"
+                  ],
+                  "explanation": "Economias emergentes tendem a ser mais sensíveis a fluxos de capital internacional, o que significa que decisões tomadas fora do país podem influenciar ativos locais mesmo sem mudanças na política interna."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that higher US rates can weaken the real by attracting capital there. Combining that with what you learned here about open economies, what does this chain suggest about investing in an emerging market?",
+                  "options": [
+                    "That emerging markets are never affected by other countries' decisions",
+                    "That external factors, like large economies' monetary policy, can influence local assets even without any domestic change",
+                    "That it's only possible to invest in emerging assets if American rates are at zero",
+                    "That the exchange rate and American rates have no relation to Brazil"
+                  ],
+                  "explanation": "Emerging economies tend to be more sensitive to international capital flows, meaning decisions made outside the country can influence local assets even without changes in domestic policy."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que tasas más altas en EE. UU. pueden debilitar al real al atraer capital hacia allí. Sumando esto a lo que aprendiste aquí sobre economías abiertas, ¿qué sugiere esta cadena sobre invertir en un mercado emergente?",
+                  "options": [
+                    "Que los mercados emergentes nunca se ven afectados por decisiones de otros países",
+                    "Que factores externos, como la política monetaria de grandes economías, pueden influir en activos locales incluso sin ningún cambio interno",
+                    "Que solo es posible invertir en activos emergentes si las tasas estadounidenses están en cero",
+                    "Que el tipo de cambio y las tasas estadounidenses no tienen ninguna relación con Brasil"
+                  ],
+                  "explanation": "Las economías emergentes tienden a ser más sensibles a los flujos de capital internacional, lo que significa que decisiones tomadas fuera del país pueden influir en activos locales incluso sin cambios en la política interna."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Economias abertas, como a do Brasil, sofrem influência de decisões tomadas em outros países.",
+                    "Juros mais altos em grandes economias podem gerar saída de capital de mercados emergentes.",
+                    "Eventos globais podem afetar ativos locais mesmo sem nenhuma mudança na política interna."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Open economies, like Brazil's, are influenced by decisions made in other countries.",
+                    "Higher rates in large economies can trigger capital outflows from emerging markets.",
+                    "Global events can affect local assets even without any change in domestic policy."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las economías abiertas, como la de Brasil, se ven influenciadas por decisiones tomadas en otros países.",
+                    "Tasas más altas en grandes economías pueden generar salida de capital de mercados emergentes.",
+                    "Eventos globales pueden afectar activos locales incluso sin ningún cambio en la política interna."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_market_cycles_sectors",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ciclo Econômico e Setores da Economia"
+            },
+            "en": {
+              "title": "The Economic Cycle and Economic Sectors"
+            },
+            "es": {
+              "title": "El Ciclo Económico y los Sectores de la Economía"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Setores diferentes, momentos diferentes",
+                  "body": "Diferentes setores da economia tendem a se comportar de formas distintas ao longo das fases do ciclo econômico. Setores mais ligados a consumo discricionário — como viagens ou bens de luxo — costumam ser mais sensíveis a expansões e retrações, enquanto setores considerados mais defensivos — como utilidades básicas e alimentos — tendem a sofrer variações mais suaves, já que a demanda por eles muda menos independentemente do momento econômico."
+                },
+                "en": {
+                  "title": "Different sectors, different moments",
+                  "body": "Different sectors of the economy tend to behave differently across the phases of the economic cycle. Sectors more tied to discretionary consumption — like travel or luxury goods — tend to be more sensitive to expansions and contractions, while sectors considered more defensive — like basic utilities and food — tend to see milder swings, since demand for them changes less regardless of the economic moment."
+                },
+                "es": {
+                  "title": "Sectores diferentes, momentos diferentes",
+                  "body": "Diferentes sectores de la economía tienden a comportarse de forma distinta a lo largo de las fases del ciclo económico. Sectores más ligados al consumo discrecional — como viajes o bienes de lujo — suelen ser más sensibles a expansiones y retracciones, mientras que sectores considerados más defensivos — como servicios básicos y alimentos — tienden a sufrir variaciones más suaves, ya que la demanda por ellos cambia menos, sin importar el momento económico."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em uma recessão, uma empresa de viagens pode ver sua demanda despencar, já que consumidores cortam gastos não essenciais primeiro. Já uma distribuidora de energia elétrica tende a manter uma demanda mais estável, porque as pessoas continuam precisando de eletricidade independentemente do momento econômico."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "In a recession, a travel company might see its demand plunge, since consumers cut non-essential spending first. A power distribution company, on the other hand, tends to keep more stable demand, because people still need electricity regardless of the economic moment."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En una recesión, una empresa de viajes puede ver caer bruscamente su demanda, ya que los consumidores recortan primero los gastos no esenciales. Una distribuidora de energía eléctrica, en cambio, tiende a mantener una demanda más estable, porque las personas siguen necesitando electricidad sin importar el momento económico."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que setores considerados defensivos, como utilidades básicas, tendem a sofrer variações mais suaves ao longo do ciclo econômico?",
+                  "options": [
+                    "Porque são proibidos por lei de perder valor",
+                    "Porque a demanda por seus produtos e serviços muda pouco, independentemente do momento econômico",
+                    "Porque nunca são afetados por nenhum fator econômico",
+                    "Porque só existem em países desenvolvidos"
+                  ],
+                  "explanation": "Setores defensivos oferecem produtos e serviços considerados essenciais, cuja demanda tende a variar menos entre expansões e retrações."
+                },
+                "en": {
+                  "prompt": "Why do sectors considered defensive, like basic utilities, tend to see milder swings across the economic cycle?",
+                  "options": [
+                    "Because they are legally forbidden from losing value",
+                    "Because demand for their products and services changes little, regardless of the economic moment",
+                    "Because they are never affected by any economic factor",
+                    "Because they only exist in developed countries"
+                  ],
+                  "explanation": "Defensive sectors offer products and services considered essential, whose demand tends to vary less between expansions and contractions."
+                },
+                "es": {
+                  "prompt": "¿Por qué los sectores considerados defensivos, como los servicios básicos, tienden a sufrir variaciones más suaves a lo largo del ciclo económico?",
+                  "options": [
+                    "Porque están prohibidos por ley de perder valor",
+                    "Porque la demanda por sus productos y servicios cambia poco, sin importar el momento económico",
+                    "Porque nunca se ven afectados por ningún factor económico",
+                    "Porque solo existen en países desarrollados"
+                  ],
+                  "explanation": "Los sectores defensivos ofrecen productos y servicios considerados esenciales, cuya demanda tiende a variar menos entre expansiones y retracciones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores, os ciclos de expansão e retração e como juros afetam diferentes ativos. Diante de sinais de que a economia pode estar entrando em retração, o que essa base de conhecimento sugere sobre como diferentes setores tendem a reagir?",
+                  "options": [
+                    "Que todos os setores sempre reagem exatamente da mesma forma, sem nenhuma diferença",
+                    "Que setores mais ligados a consumo discricionário tendem a ser mais sensíveis, enquanto setores defensivos tendem a sofrer variações mais suaves",
+                    "Que nenhum setor é afetado por retrações econômicas",
+                    "Que apenas o setor financeiro existe durante retrações"
+                  ],
+                  "explanation": "Combinando o entendimento de ciclos econômicos com a natureza de cada setor, é possível interpretar por que diferentes negócios tendem a reagir de forma distinta ao mesmo momento do ciclo — sem que isso configure uma recomendação de compra ou venda de qualquer ativo específico."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons, expansion and contraction cycles and how rates affect different assets. Faced with signs the economy may be entering a contraction, what does this knowledge base suggest about how different sectors tend to react?",
+                  "options": [
+                    "That every sector always reacts in exactly the same way, with no difference at all",
+                    "That sectors more tied to discretionary consumption tend to be more sensitive, while defensive sectors tend to see milder swings",
+                    "That no sector is affected by economic contractions",
+                    "That only the financial sector exists during contractions"
+                  ],
+                  "explanation": "Combining an understanding of economic cycles with each sector's nature makes it possible to interpret why different businesses tend to react differently to the same point in the cycle — without this being a recommendation to buy or sell any specific asset."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores, los ciclos de expansión y retracción y cómo las tasas afectan a diferentes activos. Ante señales de que la economía podría estar entrando en retracción, ¿qué sugiere esta base de conocimiento sobre cómo tienden a reaccionar los distintos sectores?",
+                  "options": [
+                    "Que todos los sectores siempre reaccionan exactamente de la misma forma, sin ninguna diferencia",
+                    "Que los sectores más ligados al consumo discrecional tienden a ser más sensibles, mientras que los sectores defensivos tienden a sufrir variaciones más suaves",
+                    "Que ningún sector se ve afectado por retracciones económicas",
+                    "Que solo el sector financiero existe durante las retracciones"
+                  ],
+                  "explanation": "Combinar la comprensión de los ciclos económicos con la naturaleza de cada sector permite interpretar por qué diferentes negocios tienden a reaccionar de forma distinta al mismo momento del ciclo — sin que esto constituya una recomendación de comprar o vender ningún activo específico."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Setores ligados a consumo discricionário tendem a ser mais sensíveis a expansões e retrações.",
+                    "Setores defensivos, como utilidades básicas, tendem a ter demanda mais estável ao longo do ciclo.",
+                    "Você concluiu o módulo de câmbio, ciclos globais e mercados."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Sectors tied to discretionary consumption tend to be more sensitive to expansions and contractions.",
+                    "Defensive sectors, like basic utilities, tend to have more stable demand across the cycle.",
+                    "You've completed the exchange rates, global cycles and markets module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los sectores ligados al consumo discrecional tienden a ser más sensibles a expansiones y retracciones.",
+                    "Los sectores defensivos, como los servicios básicos, tienden a tener una demanda más estable a lo largo del ciclo.",
+                    "Completaste el módulo de tipo de cambio, ciclos globales y mercados."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "macro_specialist_topics",
+      "order": 3,
+      "iconKey": "bar_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "macro_global_markets"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Macroeconomia: Nível Especialista",
+          "description": "Política fiscal, dívida pública, balança comercial, indicadores antecedentes/coincidentes/defasados e commodities."
+        },
+        "en": {
+          "title": "Macroeconomics: Expert Level",
+          "description": "Fiscal policy, public debt, trade balance, leading/coincident/lagging indicators, and commodities."
+        },
+        "es": {
+          "title": "Macroeconomía: Nivel Experto",
+          "description": "Política fiscal, deuda pública, balanza comercial, indicadores adelantados/coincidentes/rezagados y materias primas."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "macro_fiscal_policy",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Política Fiscal: Gastos e Impostos do Governo"
+            },
+            "en": {
+              "title": "Fiscal Policy: Government Spending and Taxes"
+            },
+            "es": {
+              "title": "Política Fiscal: Gasto e Impuestos del Gobierno"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A outra ferramenta além dos juros",
+                  "body": "Política fiscal é o conjunto de decisões do governo sobre quanto arrecadar em impostos e quanto gastar, sendo uma ferramenta distinta da política monetária (que atua via juros e controle da quantidade de dinheiro). Um governo pode adotar política fiscal expansionista — aumentando gastos ou reduzindo impostos, para estimular a economia — ou contracionista — reduzindo gastos ou aumentando impostos, para conter a demanda, geralmente em resposta a inflação alta ou desequilíbrio nas contas públicas."
+                },
+                "en": {
+                  "title": "The other tool besides interest rates",
+                  "body": "Fiscal policy is the set of government decisions about how much to collect in taxes and how much to spend, a tool distinct from monetary policy (which acts through interest rates and control of the money supply). A government can adopt expansionary fiscal policy — increasing spending or cutting taxes, to stimulate the economy — or contractionary policy — cutting spending or raising taxes, to curb demand, usually in response to high inflation or a public accounts imbalance."
+                },
+                "es": {
+                  "title": "La otra herramienta además de las tasas de interés",
+                  "body": "La política fiscal es el conjunto de decisiones del gobierno sobre cuánto recaudar en impuestos y cuánto gastar, siendo una herramienta distinta de la política monetaria (que actúa mediante las tasas de interés y el control de la cantidad de dinero). Un gobierno puede adoptar una política fiscal expansiva — aumentando el gasto o reduciendo impuestos, para estimular la economía — o contractiva — reduciendo el gasto o aumentando impuestos, para contener la demanda, generalmente en respuesta a una inflación alta o un desequilibrio en las cuentas públicas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Diante de uma recessão, o governo pode optar por aumentar investimentos em obras públicas e conceder benefícios temporários a famílias de baixa renda, injetando dinheiro na economia mesmo que isso amplie o déficit público no curto prazo — uma política fiscal expansionista buscando reaquecer a atividade econômica."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Facing a recession, the government may choose to increase investment in public works and grant temporary benefits to low-income families, injecting money into the economy even if that widens the public deficit in the short term — an expansionary fiscal policy seeking to reheat economic activity."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Ante una recesión, el gobierno puede optar por aumentar la inversión en obras públicas y conceder beneficios temporales a familias de bajos ingresos, inyectando dinero en la economía aunque eso amplíe el déficit público en el corto plazo — una política fiscal expansiva buscando reactivar la actividad económica."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma política fiscal expansionista?",
+                  "options": [
+                    "Reduzir gastos públicos e aumentar impostos, para conter a demanda",
+                    "Aumentar gastos públicos ou reduzir impostos, para estimular a economia",
+                    "Elevar a taxa básica de juros para desestimular o consumo",
+                    "Eliminar completamente a arrecadação de impostos"
+                  ],
+                  "explanation": "Política fiscal expansionista busca estimular a economia através de mais gastos públicos ou menos impostos, o oposto de uma política fiscal contracionista."
+                },
+                "en": {
+                  "prompt": "What characterizes expansionary fiscal policy?",
+                  "options": [
+                    "Cutting public spending and raising taxes, to curb demand",
+                    "Increasing public spending or cutting taxes, to stimulate the economy",
+                    "Raising the base interest rate to discourage consumption",
+                    "Completely eliminating tax collection"
+                  ],
+                  "explanation": "Expansionary fiscal policy seeks to stimulate the economy through more public spending or lower taxes, the opposite of contractionary fiscal policy."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una política fiscal expansiva?",
+                  "options": [
+                    "Reducir el gasto público y aumentar los impuestos, para contener la demanda",
+                    "Aumentar el gasto público o reducir los impuestos, para estimular la economía",
+                    "Elevar la tasa básica de interés para desincentivar el consumo",
+                    "Eliminar por completo la recaudación de impuestos"
+                  ],
+                  "explanation": "La política fiscal expansiva busca estimular la economía mediante más gasto público o menos impuestos, lo opuesto a una política fiscal contractiva."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que política monetária é a ferramenta do Banco Central via taxa de juros. Como a política fiscal se diferencia dessa ferramenta, mesmo quando as duas podem buscar objetivos parecidos, como conter uma inflação alta?",
+                  "options": [
+                    "Política fiscal é decidida pelo governo através de gastos e impostos, enquanto política monetária é decidida pelo Banco Central através da taxa de juros — duas autoridades e ferramentas diferentes, que podem inclusive apontar em direções opostas ao mesmo tempo",
+                    "Política fiscal e política monetária são exatamente a mesma ferramenta, apenas com nomes diferentes",
+                    "Apenas a política monetária pode ser usada para conter inflação; política fiscal nunca tem esse efeito",
+                    "O Banco Central é quem decide tanto a política fiscal quanto a monetária, sem distinção entre elas"
+                  ],
+                  "explanation": "Política fiscal (gastos e impostos, decidida pelo governo) e política monetária (juros, decidida pelo Banco Central) são ferramentas distintas, operadas por autoridades diferentes — e podem, na prática, até estar em direções opostas ao mesmo tempo, o que complica a leitura do cenário econômico."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that monetary policy is the Central Bank's tool via interest rates. How does fiscal policy differ from that tool, even when both can pursue similar goals, like curbing high inflation?",
+                  "options": [
+                    "Fiscal policy is decided by the government through spending and taxes, while monetary policy is decided by the Central Bank through interest rates — two different authorities and tools, which can even point in opposite directions at the same time",
+                    "Fiscal policy and monetary policy are exactly the same tool, just with different names",
+                    "Only monetary policy can be used to curb inflation; fiscal policy never has that effect",
+                    "The Central Bank is who decides both fiscal and monetary policy, with no distinction between them"
+                  ],
+                  "explanation": "Fiscal policy (spending and taxes, decided by the government) and monetary policy (rates, decided by the Central Bank) are distinct tools, operated by different authorities — and can, in practice, even point in opposite directions at the same time, which complicates reading the economic scenario."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la política monetaria es la herramienta del Banco Central mediante la tasa de interés. ¿Cómo se diferencia la política fiscal de esa herramienta, incluso cuando ambas pueden perseguir objetivos parecidos, como contener una inflación alta?",
+                  "options": [
+                    "La política fiscal la decide el gobierno mediante el gasto y los impuestos, mientras que la política monetaria la decide el Banco Central mediante la tasa de interés — dos autoridades y herramientas diferentes, que incluso pueden apuntar en direcciones opuestas al mismo tiempo",
+                    "Política fiscal y política monetaria son exactamente la misma herramienta, solo con nombres diferentes",
+                    "Solo la política monetaria puede usarse para contener la inflación; la política fiscal nunca tiene ese efecto",
+                    "El Banco Central es quien decide tanto la política fiscal como la monetaria, sin distinción entre ellas"
+                  ],
+                  "explanation": "La política fiscal (gasto e impuestos, decidida por el gobierno) y la política monetaria (tasas, decidida por el Banco Central) son herramientas distintas, operadas por autoridades diferentes — y pueden, en la práctica, incluso apuntar en direcciones opuestas al mismo tiempo, lo que complica la lectura del escenario económico."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Política fiscal envolve decisões do governo sobre gastos e impostos.",
+                    "Política fiscal expansionista estimula a economia; contracionista busca conter a demanda.",
+                    "Política fiscal e política monetária são ferramentas distintas, operadas por autoridades diferentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Fiscal policy involves government decisions about spending and taxes.",
+                    "Expansionary fiscal policy stimulates the economy; contractionary policy seeks to curb demand.",
+                    "Fiscal policy and monetary policy are distinct tools, operated by different authorities."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La política fiscal implica decisiones del gobierno sobre el gasto y los impuestos.",
+                    "La política fiscal expansiva estimula la economía; la contractiva busca contener la demanda.",
+                    "Política fiscal y política monetaria son herramientas distintas, operadas por autoridades diferentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_public_debt",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Dívida Pública e seu Impacto nos Mercados"
+            },
+            "en": {
+              "title": "Public Debt and Its Impact on Markets"
+            },
+            "es": {
+              "title": "Deuda Pública y su Impacto en los Mercados"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que o governo deve, e por que isso importa para investidores",
+                  "body": "Dívida pública é o total que um governo deve a credores, acumulado principalmente pela emissão de títulos públicos para financiar déficits fiscais ao longo do tempo. Uma dívida pública crescente em relação ao tamanho da economia (medida como proporção do PIB) pode gerar preocupação sobre a capacidade do governo de honrar seus compromissos, o que tende a exigir taxas de juros mais altas nos novos títulos emitidos para compensar esse risco percebido — afetando não apenas o custo de financiamento do governo, mas também as taxas de referência usadas em toda a economia."
+                },
+                "en": {
+                  "title": "What the government owes, and why it matters to investors",
+                  "body": "Public debt is the total a government owes to creditors, accumulated mainly through issuing government bonds to finance fiscal deficits over time. Growing public debt relative to the size of the economy (measured as a share of GDP) can raise concern about the government's ability to honor its commitments, which tends to require higher interest rates on newly issued bonds to compensate for that perceived risk — affecting not just the government's own financing cost, but also the benchmark rates used throughout the economy."
+                },
+                "es": {
+                  "title": "Lo que el gobierno debe, y por qué importa a los inversores",
+                  "body": "La deuda pública es el total que un gobierno debe a sus acreedores, acumulada principalmente mediante la emisión de títulos públicos para financiar déficits fiscales a lo largo del tiempo. Una deuda pública creciente en relación con el tamaño de la economía (medida como proporción del PIB) puede generar preocupación sobre la capacidad del gobierno de honrar sus compromisos, lo que tiende a exigir tasas de interés más altas en los nuevos títulos emitidos para compensar ese riesgo percibido — afectando no solo el costo de financiamiento del gobierno, sino también las tasas de referencia usadas en toda la economía."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um país cuja dívida pública sobe rapidamente em relação ao PIB pode ver as agências de classificação de risco rebaixarem sua nota de crédito soberano, o que tende a encarecer os juros pagos pelo governo em novas emissões de títulos — e, por consequência, pressionar para cima as taxas de referência usadas por bancos e empresas naquele mesmo país."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A country whose public debt rises quickly relative to GDP may see rating agencies downgrade its sovereign credit rating, which tends to make the interest the government pays on new bond issuances more expensive — and, as a consequence, push up the benchmark rates used by banks and companies in that same country."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un país cuya deuda pública sube rápidamente en relación con el PIB puede ver que las agencias calificadoras de riesgo rebajen su calificación de crédito soberano, lo que tiende a encarecer los intereses que paga el gobierno en nuevas emisiones de títulos — y, en consecuencia, presionar al alza las tasas de referencia usadas por bancos y empresas en ese mismo país."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que uma dívida pública crescente em relação ao PIB pode preocupar investidores?",
+                  "options": [
+                    "Porque pode gerar dúvidas sobre a capacidade do governo de honrar seus compromissos, exigindo juros mais altos em novos títulos para compensar esse risco",
+                    "Porque dívida pública nunca tem nenhuma relação com a taxa de juros paga pelo governo",
+                    "Porque uma dívida pública maior sempre reduz automaticamente os juros de mercado",
+                    "Porque o PIB deixa de ser calculado quando a dívida pública cresce"
+                  ],
+                  "explanation": "Uma dívida pública elevada em relação ao PIB pode ser percebida como um risco de crédito maior, levando o mercado a exigir taxas de juros mais altas para financiar o governo."
+                },
+                "en": {
+                  "prompt": "Why can growing public debt relative to GDP worry investors?",
+                  "options": [
+                    "Because it can raise doubts about the government's ability to honor its commitments, requiring higher rates on new bonds to compensate for that risk",
+                    "Because public debt has no relation at all to the interest rate paid by the government",
+                    "Because higher public debt always automatically reduces market interest rates",
+                    "Because GDP stops being calculated when public debt grows"
+                  ],
+                  "explanation": "High public debt relative to GDP can be perceived as greater credit risk, leading the market to demand higher interest rates to finance the government."
+                },
+                "es": {
+                  "prompt": "¿Por qué una deuda pública creciente en relación con el PIB puede preocupar a los inversores?",
+                  "options": [
+                    "Porque puede generar dudas sobre la capacidad del gobierno de honrar sus compromisos, exigiendo tasas más altas en nuevos títulos para compensar ese riesgo",
+                    "Porque la deuda pública no tiene ninguna relación con la tasa de interés pagada por el gobierno",
+                    "Porque una deuda pública mayor siempre reduce automáticamente las tasas de mercado",
+                    "Porque el PIB deja de calcularse cuando la deuda pública crece"
+                  ],
+                  "explanation": "Una deuda pública elevada en relación con el PIB puede percibirse como un riesgo de crédito mayor, llevando al mercado a exigir tasas de interés más altas para financiar al gobierno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que agências de classificação avaliam a capacidade de um emissor honrar suas dívidas, e que ratings mais baixos costumam vir acompanhados de juros mais altos. Como esse mesmo mecanismo se aplica especificamente à dívida pública de um país?",
+                  "options": [
+                    "O mesmo mecanismo se aplica: um rebaixamento na classificação de risco soberano de um país tende a exigir juros mais altos nos títulos públicos emitidos depois disso, exatamente como acontece com uma debênture de uma empresa rebaixada",
+                    "Ratings de crédito só existem para empresas privadas, nunca para governos",
+                    "Dívida pública nunca é avaliada por agências de classificação de risco",
+                    "Um rebaixamento de rating soberano sempre reduz os juros pagos pelo governo"
+                  ],
+                  "explanation": "O mecanismo é o mesmo estudado para títulos privados: um rating mais baixo (nesse caso, soberano) sinaliza maior risco de crédito percebido, e o mercado tende a exigir juros mais altos para compensar esse risco — seja para um governo, seja para uma empresa."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that rating agencies assess an issuer's ability to honor its debts, and that lower ratings usually come with higher rates. How does that same mechanism apply specifically to a country's public debt?",
+                  "options": [
+                    "The same mechanism applies: a downgrade in a country's sovereign risk rating tends to require higher rates on public bonds issued afterward, exactly like what happens with a downgraded company's debenture",
+                    "Credit ratings only exist for private companies, never for governments",
+                    "Public debt is never assessed by rating agencies",
+                    "A sovereign rating downgrade always reduces the rates the government pays"
+                  ],
+                  "explanation": "The mechanism is the same one studied for private bonds: a lower rating (in this case, sovereign) signals higher perceived credit risk, and the market tends to demand higher rates to compensate for that risk — whether for a government or for a company."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que las agencias calificadoras evalúan la capacidad de un emisor de honrar sus deudas, y que calificaciones más bajas suelen venir acompañadas de tasas más altas. ¿Cómo se aplica ese mismo mecanismo específicamente a la deuda pública de un país?",
+                  "options": [
+                    "El mismo mecanismo se aplica: una rebaja en la calificación de riesgo soberano de un país tiende a exigir tasas más altas en los títulos públicos emitidos después de eso, exactamente como ocurre con una debênture de una empresa rebajada",
+                    "Las calificaciones de crédito solo existen para empresas privadas, nunca para gobiernos",
+                    "La deuda pública nunca es evaluada por agencias calificadoras de riesgo",
+                    "Una rebaja de calificación soberana siempre reduce las tasas pagadas por el gobierno"
+                  ],
+                  "explanation": "El mecanismo es el mismo estudiado para títulos privados: una calificación más baja (en este caso, soberana) señala un mayor riesgo de crédito percibido, y el mercado tiende a exigir tasas más altas para compensar ese riesgo — ya sea para un gobierno o para una empresa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Dívida pública é o total que um governo deve, acumulado principalmente pela emissão de títulos.",
+                    "Uma dívida pública crescente em relação ao PIB pode gerar preocupação sobre a capacidade de pagamento do governo.",
+                    "O mesmo mecanismo de rating de crédito estudado para empresas se aplica à dívida soberana de um país."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Public debt is the total a government owes, accumulated mainly through bond issuance.",
+                    "Growing public debt relative to GDP can raise concern about the government's ability to pay.",
+                    "The same credit rating mechanism studied for companies applies to a country's sovereign debt."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La deuda pública es el total que debe un gobierno, acumulada principalmente mediante la emisión de títulos.",
+                    "Una deuda pública creciente en relación con el PIB puede generar preocupación sobre la capacidad de pago del gobierno.",
+                    "El mismo mecanismo de calificación de crédito estudiado para empresas se aplica a la deuda soberana de un país."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_trade_balance",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Balança Comercial e Conta Corrente"
+            },
+            "en": {
+              "title": "Trade Balance and the Current Account"
+            },
+            "es": {
+              "title": "Balanza Comercial y Cuenta Corriente"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que entra e sai de um país em transações com o exterior",
+                  "body": "A balança comercial é a diferença entre o valor total das exportações e das importações de um país em um período. Quando as exportações superam as importações, o país tem superávit comercial; quando o oposto acontece, tem déficit. A balança comercial é um dos componentes da conta corrente, um indicador mais amplo que também inclui rendas e transferências trocadas com o exterior, e que ajuda a entender o fluxo líquido de moeda estrangeira entrando ou saindo do país."
+                },
+                "en": {
+                  "title": "What flows in and out of a country in transactions abroad",
+                  "body": "The trade balance is the difference between the total value of a country's exports and imports over a period. When exports exceed imports, the country has a trade surplus; when the opposite happens, it has a deficit. The trade balance is one component of the current account, a broader indicator that also includes income and transfers exchanged with abroad, and that helps understand the net flow of foreign currency entering or leaving the country."
+                },
+                "es": {
+                  "title": "Lo que entra y sale de un país en transacciones con el exterior",
+                  "body": "La balanza comercial es la diferencia entre el valor total de las exportaciones e importaciones de un país en un período. Cuando las exportaciones superan a las importaciones, el país tiene superávit comercial; cuando ocurre lo contrario, tiene déficit. La balanza comercial es uno de los componentes de la cuenta corriente, un indicador más amplio que también incluye rentas y transferencias intercambiadas con el exterior, y que ayuda a entender el flujo neto de moneda extranjera que entra o sale del país."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um país exportador de commodities se beneficia de uma alta nos preços internacionais desses produtos, vendo sua balança comercial melhorar significativamente, com mais dólares entrando no país através das exportações do que saindo através das importações — o que também tende a fortalecer a moeda local, por aumentar a oferta de moeda estrangeira disponível no mercado de câmbio."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A commodity-exporting country benefits from a rise in those products' international prices, seeing its trade balance improve significantly, with more dollars entering the country through exports than leaving through imports — which also tends to strengthen the local currency, by increasing the supply of foreign currency available in the exchange market."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un país exportador de materias primas se beneficia de una subida en los precios internacionales de esos productos, viendo mejorar significativamente su balanza comercial, con más dólares entrando al país por las exportaciones que saliendo por las importaciones — lo que también tiende a fortalecer la moneda local, al aumentar la oferta de moneda extranjera disponible en el mercado cambiario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um superávit comercial?",
+                  "options": [
+                    "Importações superando exportações em valor",
+                    "Exportações superando importações em valor",
+                    "A ausência total de comércio internacional",
+                    "Um déficit nas contas do governo"
+                  ],
+                  "explanation": "Superávit comercial ocorre quando o valor total das exportações de um país supera o valor total de suas importações em um período."
+                },
+                "en": {
+                  "prompt": "What characterizes a trade surplus?",
+                  "options": [
+                    "Imports exceeding exports in value",
+                    "Exports exceeding imports in value",
+                    "The total absence of international trade",
+                    "A deficit in the government's accounts"
+                  ],
+                  "explanation": "A trade surplus occurs when a country's total export value exceeds its total import value over a period."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un superávit comercial?",
+                  "options": [
+                    "Las importaciones superando a las exportaciones en valor",
+                    "Las exportaciones superando a las importaciones en valor",
+                    "La ausencia total de comercio internacional",
+                    "Un déficit en las cuentas del gobierno"
+                  ],
+                  "explanation": "El superávit comercial ocurre cuando el valor total de las exportaciones de un país supera el valor total de sus importaciones en un período."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que o câmbio varia conforme o fluxo de capital e de moeda estrangeira entrando e saindo do país. Como um superávit comercial crescente se conecta a esse mecanismo cambial?",
+                  "options": [
+                    "Um superávit comercial crescente aumenta a entrada de moeda estrangeira no país através das exportações, o que tende a contribuir para o fortalecimento da moeda local, pelo mesmo mecanismo de oferta e demanda por moeda estrangeira já estudado",
+                    "Balança comercial e câmbio são conceitos completamente independentes, sem nenhuma relação entre si",
+                    "Um superávit comercial sempre enfraquece a moeda local, independentemente de qualquer outro fator",
+                    "Apenas o fluxo de capital financeiro afeta o câmbio; o comércio de bens nunca tem esse efeito"
+                  ],
+                  "explanation": "Assim como fluxos de capital financeiro afetam o câmbio, o fluxo de moeda estrangeira gerado pelo comércio de bens (via balança comercial) segue a mesma lógica de oferta e demanda — mais dólares entrando via exportações tende a contribuir para uma moeda local mais forte."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that the exchange rate varies with the flow of capital and foreign currency entering and leaving the country. How does a growing trade surplus connect to that exchange-rate mechanism?",
+                  "options": [
+                    "A growing trade surplus increases the inflow of foreign currency into the country through exports, which tends to contribute to strengthening the local currency, through the same supply-and-demand mechanism for foreign currency already studied",
+                    "Trade balance and exchange rate are completely independent concepts, with no relation to each other",
+                    "A trade surplus always weakens the local currency, regardless of any other factor",
+                    "Only financial capital flow affects the exchange rate; trade in goods never has that effect"
+                  ],
+                  "explanation": "Just as financial capital flows affect the exchange rate, the foreign currency flow generated by trade in goods (via the trade balance) follows the same supply-and-demand logic — more dollars coming in through exports tends to contribute to a stronger local currency."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el tipo de cambio varía según el flujo de capital y de moneda extranjera que entra y sale del país. ¿Cómo se conecta un superávit comercial creciente con ese mecanismo cambiario?",
+                  "options": [
+                    "Un superávit comercial creciente aumenta la entrada de moneda extranjera al país a través de las exportaciones, lo que tiende a contribuir al fortalecimiento de la moneda local, mediante el mismo mecanismo de oferta y demanda de moneda extranjera ya estudiado",
+                    "Balanza comercial y tipo de cambio son conceptos completamente independientes, sin ninguna relación entre sí",
+                    "Un superávit comercial siempre debilita a la moneda local, sin importar ningún otro factor",
+                    "Solo el flujo de capital financiero afecta al tipo de cambio; el comercio de bienes nunca tiene ese efecto"
+                  ],
+                  "explanation": "Así como los flujos de capital financiero afectan al tipo de cambio, el flujo de moneda extranjera generado por el comercio de bienes (vía la balanza comercial) sigue la misma lógica de oferta y demanda — más dólares entrando por exportaciones tiende a contribuir a una moneda local más fuerte."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Balança comercial é a diferença entre exportações e importações; superávit é quando exportações superam importações.",
+                    "A conta corrente é um indicador mais amplo, que inclui a balança comercial e outros fluxos com o exterior.",
+                    "O fluxo de moeda estrangeira do comércio segue a mesma lógica de oferta e demanda que afeta o câmbio."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The trade balance is the difference between exports and imports; a surplus is when exports exceed imports.",
+                    "The current account is a broader indicator, including the trade balance and other flows with abroad.",
+                    "The foreign currency flow from trade follows the same supply-and-demand logic that affects the exchange rate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La balanza comercial es la diferencia entre exportaciones e importaciones; el superávit es cuando las exportaciones superan a las importaciones.",
+                    "La cuenta corriente es un indicador más amplio, que incluye la balanza comercial y otros flujos con el exterior.",
+                    "El flujo de moneda extranjera del comercio sigue la misma lógica de oferta y demanda que afecta al tipo de cambio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_leading_lagging_indicators",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Indicadores Antecedentes, Coincidentes e Defasados"
+            },
+            "en": {
+              "title": "Leading, Coincident, and Lagging Indicators"
+            },
+            "es": {
+              "title": "Indicadores Adelantados, Coincidentes y Rezagados"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo indicador aponta para a mesma direção no tempo",
+                  "body": "Indicadores econômicos podem ser classificados conforme sua relação temporal com o ciclo econômico. Indicadores antecedentes tendem a mudar antes de uma virada no ciclo, servindo como um sinal de alerta antecipado — como novos pedidos da indústria. Indicadores coincidentes se movem junto com o ciclo atual, como o PIB. Indicadores defasados só refletem uma mudança de ciclo depois que ela já ocorreu, como a taxa de desemprego, que costuma continuar subindo por um tempo mesmo depois de a economia já ter começado a se recuperar."
+                },
+                "en": {
+                  "title": "Not every indicator points to the same direction in time",
+                  "body": "Economic indicators can be classified by their timing relationship with the economic cycle. Leading indicators tend to change before a turn in the cycle, serving as an early warning signal — like new industrial orders. Coincident indicators move together with the current cycle, like GDP. Lagging indicators only reflect a cycle change after it has already occurred, like the unemployment rate, which usually keeps rising for a while even after the economy has already started recovering."
+                },
+                "es": {
+                  "title": "No todo indicador apunta a la misma dirección en el tiempo",
+                  "body": "Los indicadores económicos pueden clasificarse según su relación temporal con el ciclo económico. Los indicadores adelantados tienden a cambiar antes de un giro en el ciclo, sirviendo como una señal de alerta anticipada — como nuevos pedidos de la industria. Los indicadores coincidentes se mueven junto con el ciclo actual, como el PIB. Los indicadores rezagados solo reflejan un cambio de ciclo después de que ya ocurrió, como la tasa de desempleo, que suele seguir subiendo por un tiempo incluso después de que la economía ya comenzó a recuperarse."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Novos pedidos da indústria começam a cair meses antes de a economia entrar oficialmente em recessão, funcionando como um alerta antecedente. O PIB confirma a recessão quando ela já está em curso, de forma coincidente. Já a taxa de desemprego continua subindo por vários meses depois de a economia já ter voltado a crescer, um comportamento defasado típico desse indicador."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "New industrial orders start falling months before the economy officially enters a recession, acting as a leading warning. GDP confirms the recession once it's already underway, coincidentally. The unemployment rate, meanwhile, keeps rising for several months after the economy has already resumed growing, a typical lagging behavior for that indicator."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Los nuevos pedidos de la industria comienzan a caer meses antes de que la economía entre oficialmente en recesión, funcionando como una alerta adelantada. El PIB confirma la recesión cuando ya está en curso, de forma coincidente. La tasa de desempleo, en cambio, sigue subiendo durante varios meses después de que la economía ya volvió a crecer, un comportamiento rezagado típico de ese indicador."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um indicador antecedente?",
+                  "options": [
+                    "Ele tende a mudar antes de uma virada no ciclo econômico, servindo como um alerta antecipado",
+                    "Ele só reflete uma mudança de ciclo muito depois de ela já ter ocorrido",
+                    "Ele se move exatamente ao mesmo tempo que o PIB, sem nenhuma antecipação",
+                    "Ele nunca tem nenhuma relação com o ciclo econômico"
+                  ],
+                  "explanation": "Indicadores antecedentes mudam antes de uma virada no ciclo, funcionando como um sinal de alerta antecipado sobre para onde a economia está indo."
+                },
+                "en": {
+                  "prompt": "What characterizes a leading indicator?",
+                  "options": [
+                    "It tends to change before a turn in the economic cycle, serving as an early warning",
+                    "It only reflects a cycle change long after it has already occurred",
+                    "It moves at exactly the same time as GDP, with no anticipation at all",
+                    "It never has any relation to the economic cycle"
+                  ],
+                  "explanation": "Leading indicators change before a turn in the cycle, acting as an early warning signal about where the economy is heading."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un indicador adelantado?",
+                  "options": [
+                    "Tiende a cambiar antes de un giro en el ciclo económico, sirviendo como una alerta anticipada",
+                    "Solo refleja un cambio de ciclo mucho después de que ya ocurrió",
+                    "Se mueve exactamente al mismo tiempo que el PIB, sin ninguna anticipación",
+                    "Nunca tiene ninguna relación con el ciclo económico"
+                  ],
+                  "explanation": "Los indicadores adelantados cambian antes de un giro en el ciclo, funcionando como una señal de alerta anticipada sobre hacia dónde se dirige la economía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que reagir a um único dado macroeconômico isolado costuma ser arriscado, e que observar tendências ao longo de vários períodos é mais informativo. Como classificar um indicador como antecedente, coincidente ou defasado ajuda a aplicar esse mesmo princípio de forma mais precisa?",
+                  "options": [
+                    "Saber se um indicador é antecedente, coincidente ou defasado ajuda a interpretar corretamente o que ele está sinalizando sobre o momento do ciclo, evitando o erro de tratar um sinal atrasado (defasado) como se fosse uma previsão do futuro (antecedente)",
+                    "Essa classificação não tem nenhuma relação com a cautela necessária ao interpretar indicadores isolados",
+                    "Indicadores defasados são sempre mais úteis para prever o futuro do que indicadores antecedentes",
+                    "Uma vez classificado um indicador, não é mais necessário observar sua tendência ao longo de vários períodos"
+                  ],
+                  "explanation": "Entender a classificação temporal de um indicador é justamente o que permite interpretá-lo com mais precisão dentro do contexto do ciclo econômico, evitando o erro de tratar um sinal que só confirma o passado (defasado) como se fosse uma previsão do que vem a seguir (antecedente)."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that reacting to a single isolated macroeconomic data point tends to be risky, and that watching trends across several periods is more informative. How does classifying an indicator as leading, coincident, or lagging help apply that same principle more precisely?",
+                  "options": [
+                    "Knowing whether an indicator is leading, coincident, or lagging helps correctly interpret what it's signaling about the point in the cycle, avoiding the mistake of treating a delayed (lagging) signal as if it were a forecast of the future (leading)",
+                    "This classification has no relation at all to the caution needed when interpreting isolated indicators",
+                    "Lagging indicators are always more useful for predicting the future than leading indicators",
+                    "Once an indicator is classified, there's no more need to watch its trend across several periods"
+                  ],
+                  "explanation": "Understanding an indicator's timing classification is precisely what allows interpreting it more precisely within the economic cycle's context, avoiding the mistake of treating a signal that only confirms the past (lagging) as if it were a forecast of what comes next (leading)."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que reaccionar a un solo dato macroeconómico aislado suele ser arriesgado, y que observar tendencias a lo largo de varios períodos es más informativo. ¿Cómo ayuda clasificar un indicador como adelantado, coincidente o rezagado a aplicar ese mismo principio de forma más precisa?",
+                  "options": [
+                    "Saber si un indicador es adelantado, coincidente o rezagado ayuda a interpretar correctamente qué está señalando sobre el momento del ciclo, evitando el error de tratar una señal atrasada (rezagada) como si fuera una predicción del futuro (adelantada)",
+                    "Esa clasificación no tiene ninguna relación con la cautela necesaria al interpretar indicadores aislados",
+                    "Los indicadores rezagados siempre son más útiles para predecir el futuro que los indicadores adelantados",
+                    "Una vez clasificado un indicador, ya no es necesario observar su tendencia a lo largo de varios períodos"
+                  ],
+                  "explanation": "Entender la clasificación temporal de un indicador es precisamente lo que permite interpretarlo con más precisión dentro del contexto del ciclo económico, evitando el error de tratar una señal que solo confirma el pasado (rezagada) como si fuera una predicción de lo que viene después (adelantada)."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Indicadores antecedentes mudam antes de uma virada no ciclo; coincidentes se movem junto; defasados refletem depois.",
+                    "A taxa de desemprego é um exemplo clássico de indicador defasado.",
+                    "Classificar um indicador ajuda a interpretá-lo com mais precisão, evitando confundir um sinal atrasado com uma previsão."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Leading indicators change before a cycle turn; coincident indicators move alongside it; lagging indicators reflect it afterward.",
+                    "The unemployment rate is a classic example of a lagging indicator.",
+                    "Classifying an indicator helps interpret it more precisely, avoiding confusing a delayed signal with a forecast."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los indicadores adelantados cambian antes de un giro del ciclo; los coincidentes se mueven junto con él; los rezagados lo reflejan después.",
+                    "La tasa de desempleo es un ejemplo clásico de indicador rezagado.",
+                    "Clasificar un indicador ayuda a interpretarlo con más precisión, evitando confundir una señal atrasada con una predicción."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_commodities_and_inflation",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Commodities e Inflação"
+            },
+            "en": {
+              "title": "Commodities and Inflation"
+            },
+            "es": {
+              "title": "Materias Primas e Inflación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Como o preço de matérias-primas se espalha pela economia",
+                  "body": "Commodities são bens básicos e padronizados, como petróleo, minério de ferro e produtos agrícolas, cujos preços são definidos em mercados globais. Uma alta generalizada nos preços de commodities tende a se espalhar pela economia como um todo, encarecendo desde combustíveis até alimentos, e pode ser uma fonte importante de inflação de custos — especialmente relevante para países que dependem da importação dessas matérias-primas, ou cujas próprias moedas se desvalorizam durante esses períodos."
+                },
+                "en": {
+                  "title": "How raw material prices spread through the economy",
+                  "body": "Commodities are basic, standardized goods, like oil, iron ore, and agricultural products, whose prices are set in global markets. A widespread rise in commodity prices tends to spread through the economy as a whole, raising the cost of everything from fuel to food, and can be an important source of cost-push inflation — especially relevant for countries that depend on importing these raw materials, or whose own currencies weaken during these periods."
+                },
+                "es": {
+                  "title": "Cómo el precio de las materias primas se propaga por la economía",
+                  "body": "Las materias primas (commodities) son bienes básicos y estandarizados, como el petróleo, el mineral de hierro y los productos agrícolas, cuyos precios se determinan en mercados globales. Una subida generalizada en los precios de las materias primas tiende a propagarse por toda la economía, encareciendo desde combustibles hasta alimentos, y puede ser una fuente importante de inflación de costos — especialmente relevante para países que dependen de importar esas materias primas, o cuyas propias monedas se devalúan durante esos períodos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma forte alta no preço internacional do petróleo encarece diretamente os combustíveis, e indiretamente quase tudo que depende de transporte para chegar ao consumidor final, pressionando a inflação de um país mesmo sem nenhuma mudança nas condições internas de consumo — um exemplo claro de como um choque externo de commodities pode se traduzir em inflação de custos doméstica."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A sharp rise in the international price of oil directly raises the cost of fuel, and indirectly almost everything that depends on transportation to reach the end consumer, pressuring a country's inflation even without any change in domestic consumption conditions — a clear example of how an external commodity shock can translate into domestic cost-push inflation."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una fuerte subida en el precio internacional del petróleo encarece directamente los combustibles, e indirectamente casi todo lo que depende del transporte para llegar al consumidor final, presionando la inflación de un país incluso sin ningún cambio en las condiciones internas de consumo — un ejemplo claro de cómo un choque externo de materias primas puede traducirse en inflación de costos doméstica."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como uma alta generalizada nos preços de commodities tende a afetar a economia?",
+                  "options": [
+                    "Ela nunca afeta países que não produzem essas commodities",
+                    "Ela tende a se espalhar pela economia, encarecendo desde combustíveis até alimentos, e pode gerar inflação de custos",
+                    "Ela sempre reduz a inflação de qualquer país, sem exceção",
+                    "Ela afeta apenas o mercado de ações, nunca os preços ao consumidor"
+                  ],
+                  "explanation": "Altas de commodities tendem a se propagar pela economia através de custos de produção e transporte, sendo uma fonte relevante de inflação de custos, especialmente para países importadores."
+                },
+                "en": {
+                  "prompt": "How does a widespread rise in commodity prices tend to affect the economy?",
+                  "options": [
+                    "It never affects countries that don't produce those commodities",
+                    "It tends to spread through the economy, raising the cost of everything from fuel to food, and can generate cost-push inflation",
+                    "It always reduces inflation in any country, without exception",
+                    "It only affects the stock market, never consumer prices"
+                  ],
+                  "explanation": "Commodity price increases tend to propagate through the economy via production and transportation costs, being a relevant source of cost-push inflation, especially for importing countries."
+                },
+                "es": {
+                  "prompt": "¿Cómo tiende a afectar a la economía una subida generalizada en los precios de las materias primas?",
+                  "options": [
+                    "Nunca afecta a países que no producen esas materias primas",
+                    "Tiende a propagarse por la economía, encareciendo desde combustibles hasta alimentos, y puede generar inflación de costos",
+                    "Siempre reduce la inflación de cualquier país, sin excepción",
+                    "Solo afecta al mercado de acciones, nunca a los precios al consumidor"
+                  ],
+                  "explanation": "Las subidas de materias primas tienden a propagarse por la economía a través de costos de producción y transporte, siendo una fuente relevante de inflación de costos, especialmente para países importadores."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores desta escola, tanto a diferença entre inflação de demanda e de custos quanto o papel do câmbio na economia. Como esses dois conceitos juntos explicam por que uma alta de commodities pode pressionar ainda mais a inflação em um país cuja moeda também se desvaloriza no mesmo período?",
+                  "options": [
+                    "Uma alta de commodities já é um choque de custos por si só, e uma moeda local mais fraca encarece ainda mais essas mesmas commodities (geralmente precificadas em dólar) para quem compra na moeda local, combinando dois efeitos de alta de custos ao mesmo tempo",
+                    "Câmbio e preços de commodities nunca têm nenhuma relação entre si",
+                    "Inflação de demanda é a única explicação possível para esse cenário, sem nenhuma relação com custos ou câmbio",
+                    "Uma moeda local mais fraca sempre reduz o impacto de uma alta de commodities sobre a inflação"
+                  ],
+                  "explanation": "Como muitas commodities são precificadas internacionalmente em dólar, uma moeda local mais fraca encarece ainda mais essas commodities para quem compra na moeda local — combinando o choque de custos da alta de commodities com o efeito cambial, dois mecanismos que se reforçam mutuamente."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this school, both the difference between demand-pull and cost-push inflation and the exchange rate's role in the economy. How do these two concepts together explain why a commodity price rise can pressure inflation even more in a country whose currency also weakens in the same period?",
+                  "options": [
+                    "A commodity price rise is already a cost shock by itself, and a weaker local currency makes those same commodities (usually priced in dollars) even more expensive for those buying in the local currency, combining two cost-push effects at once",
+                    "Exchange rates and commodity prices have no relation to each other at all",
+                    "Demand-pull inflation is the only possible explanation for this scenario, with no relation to costs or exchange rates",
+                    "A weaker local currency always reduces the impact of a commodity price rise on inflation"
+                  ],
+                  "explanation": "Since many commodities are priced internationally in dollars, a weaker local currency makes those commodities even more expensive for those buying in the local currency — combining the commodity price rise's cost shock with the exchange-rate effect, two mechanisms that reinforce each other."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de esta escuela, tanto la diferencia entre inflación de demanda y de costos como el papel del tipo de cambio en la economía. ¿Cómo explican estos dos conceptos juntos por qué una subida de materias primas puede presionar aún más la inflación en un país cuya moneda también se devalúa en el mismo período?",
+                  "options": [
+                    "Una subida de materias primas ya es un choque de costos por sí sola, y una moneda local más débil encarece aún más esas mismas materias primas (generalmente cotizadas en dólares) para quien compra en moneda local, combinando dos efectos de alza de costos al mismo tiempo",
+                    "El tipo de cambio y los precios de las materias primas nunca tienen ninguna relación entre sí",
+                    "La inflación de demanda es la única explicación posible para este escenario, sin ninguna relación con costos o tipo de cambio",
+                    "Una moneda local más débil siempre reduce el impacto de una subida de materias primas sobre la inflación"
+                  ],
+                  "explanation": "Como muchas materias primas se cotizan internacionalmente en dólares, una moneda local más débil encarece aún más esas materias primas para quien compra en moneda local — combinando el choque de costos de la subida de materias primas con el efecto cambiario, dos mecanismos que se refuerzan mutuamente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Altas de commodities tendem a se espalhar pela economia, gerando inflação de custos.",
+                    "Uma moeda local mais fraca pode amplificar esse efeito, já que muitas commodities são precificadas em dólar.",
+                    "Você concluiu o módulo especializado de macroeconomia: política fiscal, dívida pública, balança comercial, indicadores antecedentes/coincidentes/defasados e commodities."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Commodity price rises tend to spread through the economy, generating cost-push inflation.",
+                    "A weaker local currency can amplify that effect, since many commodities are priced in dollars.",
+                    "You've completed the specialized macroeconomics module: fiscal policy, public debt, trade balance, leading/coincident/lagging indicators, and commodities."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Las subidas de materias primas tienden a propagarse por la economía, generando inflación de costos.",
+                    "Una moneda local más débil puede amplificar ese efecto, ya que muchas materias primas se cotizan en dólares.",
+                    "Completaste el módulo especializado de macroeconomía: política fiscal, deuda pública, balanza comercial, indicadores adelantados/coincidentes/rezagados y materias primas."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

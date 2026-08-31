@@ -1,0 +1,2533 @@
+{
+  "schoolId": "international_investing",
+  "domainId": "investing",
+  "order": 12,
+  "iconKey": "public_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Investimento Internacional",
+      "description": "Diversificação geográfica, câmbio, BDRs e ativos no exterior."
+    },
+    "en": {
+      "title": "International Investing",
+      "description": "Geographic diversification, foreign exchange, BDRs and assets abroad."
+    },
+    "es": {
+      "title": "Inversión Internacional",
+      "description": "Diversificación geográfica, tipo de cambio, BDRs y activos en el exterior."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "international_investing_basics",
+      "order": 1,
+      "iconKey": "public_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos do Investimento Internacional",
+          "description": "Diversificação geográfica, risco cambial, BDRs, investir diretamente no exterior e tributação."
+        },
+        "en": {
+          "title": "International Investing Fundamentals",
+          "description": "Geographic diversification, exchange rate risk, BDRs, investing directly abroad and taxation."
+        },
+        "es": {
+          "title": "Fundamentos de la Inversión Internacional",
+          "description": "Diversificación geográfica, riesgo cambiario, BDR, invertir directamente en el exterior y tributación."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "international_geographic_diversification",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Diversificação Geográfica"
+            },
+            "en": {
+              "title": "Geographic Diversification"
+            },
+            "es": {
+              "title": "Diversificación Geográfica"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Não depender de um único país",
+                  "body": "Investir apenas em ativos de um único país significa que todo o seu patrimônio está exposto aos riscos específicos daquela economia — sua moeda, sua política, seus ciclos econômicos. Diversificação geográfica é distribuir investimentos entre diferentes países ou regiões, reduzindo a dependência do desempenho de uma única economia."
+                },
+                "en": {
+                  "title": "Not depending on a single country",
+                  "body": "Investing only in assets from a single country means your entire portfolio is exposed to that economy's specific risks — its currency, its politics, its economic cycles. Geographic diversification means spreading investments across different countries or regions, reducing dependence on the performance of a single economy."
+                },
+                "es": {
+                  "title": "No depender de un único país",
+                  "body": "Invertir solo en activos de un único país significa que todo tu patrimonio está expuesto a los riesgos específicos de esa economía — su moneda, su política, sus ciclos económicos. La diversificación geográfica es distribuir inversiones entre diferentes países o regiones, reduciendo la dependencia del desempeño de una sola economía."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor com 100% do patrimônio em ativos brasileiros sente todo o impacto se a economia brasileira passar por uma crise específica. Se parte desse patrimônio estivesse em ativos de outros países, o impacto de um problema isolado no Brasil tenderia a ser parcialmente amortecido pelo desempenho dos outros mercados."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor with 100% of their portfolio in Brazilian assets feels the full impact if the Brazilian economy goes through a specific crisis. If part of that portfolio were in assets from other countries, the impact of an isolated problem in Brazil would tend to be partially cushioned by the performance of the other markets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor con el 100% de su patrimonio en activos brasileños siente todo el impacto si la economía brasileña atraviesa una crisis específica. Si parte de ese patrimonio estuviera en activos de otros países, el impacto de un problema aislado en Brasil tendería a ser parcialmente amortiguado por el desempeño de los otros mercados."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é diversificação geográfica?",
+                  "options": [
+                    "Investir apenas em empresas exportadoras",
+                    "Distribuir investimentos entre diferentes países ou regiões, reduzindo a dependência de uma única economia",
+                    "Trocar de corretora com frequência",
+                    "Investir apenas em moeda estrangeira física"
+                  ],
+                  "explanation": "Diversificação geográfica reduz a exposição concentrada aos riscos específicos de um único país ou economia, distribuindo investimentos entre diferentes regiões."
+                },
+                "en": {
+                  "prompt": "What is geographic diversification?",
+                  "options": [
+                    "Investing only in exporting companies",
+                    "Spreading investments across different countries or regions, reducing dependence on a single economy",
+                    "Frequently switching brokers",
+                    "Investing only in physical foreign currency"
+                  ],
+                  "explanation": "Geographic diversification reduces concentrated exposure to the specific risks of a single country or economy, by spreading investments across different regions."
+                },
+                "es": {
+                  "prompt": "¿Qué es la diversificación geográfica?",
+                  "options": [
+                    "Invertir solo en empresas exportadoras",
+                    "Distribuir inversiones entre diferentes países o regiones, reduciendo la dependencia de una sola economía",
+                    "Cambiar de correduría con frecuencia",
+                    "Invertir solo en moneda extranjera física"
+                  ],
+                  "explanation": "La diversificación geográfica reduce la exposición concentrada a los riesgos específicos de un solo país o economía, distribuyendo inversiones entre diferentes regiones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco de concentração de outra lição. Como esse conceito se aplica especificamente a ter 100% do patrimônio em um único país?",
+                  "options": [
+                    "Não se aplica, risco de concentração só existe dentro de uma mesma classe de ativos",
+                    "Ter todo o patrimônio em um único país é uma forma de concentração — nesse caso, concentração geográfica, com os mesmos riscos de amplificar o impacto de um problema isolado",
+                    "Concentração geográfica é sempre segura, diferente de outros tipos de concentração",
+                    "Só existe risco de concentração em ações de um único setor"
+                  ],
+                  "explanation": "Concentrar todo o patrimônio em um único país é uma forma específica de risco de concentração — os problemas daquela economia específica afetam desproporcionalmente todo o patrimônio."
+                },
+                "en": {
+                  "prompt": "You already understand concentration risk from another lesson. How does that concept apply specifically to having 100% of your portfolio in a single country?",
+                  "options": [
+                    "It doesn't apply, concentration risk only exists within the same asset class",
+                    "Having all your wealth in a single country is a form of concentration — in this case, geographic concentration, with the same risk of amplifying the impact of an isolated problem",
+                    "Geographic concentration is always safe, unlike other types of concentration",
+                    "Concentration risk only exists in stocks from a single sector"
+                  ],
+                  "explanation": "Concentrating all your wealth in a single country is a specific form of concentration risk — that specific economy's problems disproportionately affect your entire portfolio."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo de concentración de otra lección. ¿Cómo se aplica ese concepto específicamente a tener el 100% del patrimonio en un solo país?",
+                  "options": [
+                    "No se aplica, el riesgo de concentración solo existe dentro de una misma clase de activos",
+                    "Tener todo el patrimonio en un solo país es una forma de concentración — en este caso, concentración geográfica, con los mismos riesgos de amplificar el impacto de un problema aislado",
+                    "La concentración geográfica siempre es segura, a diferencia de otros tipos de concentración",
+                    "El riesgo de concentración solo existe en acciones de un único sector"
+                  ],
+                  "explanation": "Concentrar todo el patrimonio en un solo país es una forma específica de riesgo de concentración — los problemas de esa economía específica afectan desproporcionadamente todo el patrimonio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Diversificação geográfica reduz a dependência de uma única economia.",
+                    "Concentrar tudo em um país é uma forma de risco de concentração.",
+                    "Um problema isolado em um país tende a ter impacto amortecido em uma carteira internacionalmente diversificada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Geographic diversification reduces dependence on a single economy.",
+                    "Concentrating everything in one country is a form of concentration risk.",
+                    "An isolated problem in one country tends to have a cushioned impact on an internationally diversified portfolio."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La diversificación geográfica reduce la dependencia de una sola economía.",
+                    "Concentrar todo en un país es una forma de riesgo de concentración.",
+                    "Un problema aislado en un país tiende a tener un impacto amortiguado en una cartera diversificada internacionalmente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_exchange_rate_risk",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco Cambial"
+            },
+            "en": {
+              "title": "Exchange Rate Risk"
+            },
+            "es": {
+              "title": "Riesgo Cambiario"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um risco extra, para o bem e para o mal",
+                  "body": "Ao investir em ativos denominados em outra moeda, o retorno final em reais depende não só do desempenho do ativo em si, mas também da variação da taxa de câmbio entre as duas moedas durante o período. Se a moeda estrangeira se valoriza frente ao real, isso amplifica o retorno; se ela se desvaloriza, o efeito é o oposto — mesmo que o ativo em si tenha ido bem na moeda original."
+                },
+                "en": {
+                  "title": "An extra risk, for better or worse",
+                  "body": "When investing in assets denominated in another currency, the final return in your home currency depends not only on the asset's own performance, but also on how the exchange rate between the two currencies moves during the period. If the foreign currency appreciates against your home currency, that amplifies the return; if it depreciates, the effect is the opposite — even if the asset itself did well in its original currency."
+                },
+                "es": {
+                  "title": "Un riesgo extra, para bien y para mal",
+                  "body": "Al invertir en activos denominados en otra moneda, el retorno final en tu moneda local depende no solo del desempeño del activo en sí, sino también de la variación del tipo de cambio entre ambas monedas durante el período. Si la moneda extranjera se aprecia frente a tu moneda local, eso amplifica el retorno; si se deprecia, el efecto es el opuesto — incluso si el activo en sí tuvo un buen desempeño en su moneda original."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor brasileiro compra um ativo nos Estados Unidos que sobe 10% em dólar ao longo de um ano. Se, no mesmo período, o dólar se valorizou 5% frente ao real, o retorno em reais fica próximo de 15%. Mas se o dólar se desvalorizou 5% frente ao real no período, o retorno em reais fica próximo de apenas 5%, mesmo com o ativo tendo subido os mesmos 10% em dólar."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A Brazilian investor buys an asset in the United States that rises 10% in dollars over a year. If, in the same period, the dollar appreciated 5% against the real, the return in reals comes out close to 15%. But if the dollar depreciated 5% against the real over the period, the return in reals comes out to only about 5%, even though the asset rose the same 10% in dollars."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor brasileño compra un activo en Estados Unidos que sube un 10% en dólares durante un año. Si, en el mismo período, el dólar se apreció un 5% frente al real, el retorno en reales queda cerca del 15%. Pero si el dólar se depreció un 5% frente al real en el período, el retorno en reales queda cerca de solo el 5%, aunque el activo haya subido el mismo 10% en dólares."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco cambial, no contexto de investimentos internacionais?",
+                  "options": [
+                    "O risco de um ativo estrangeiro nunca pagar dividendos",
+                    "A incerteza sobre como a variação da taxa de câmbio vai afetar o retorno final em moeda local",
+                    "O risco de um país proibir investimentos estrangeiros",
+                    "A garantia de que investimentos internacionais sempre rendem mais"
+                  ],
+                  "explanation": "Risco cambial é a incerteza adicional criada pela variação da taxa de câmbio, que pode amplificar ou reduzir o retorno de um investimento estrangeiro quando convertido de volta para a moeda local."
+                },
+                "en": {
+                  "prompt": "What is exchange rate risk, in the context of international investing?",
+                  "options": [
+                    "The risk that a foreign asset will never pay dividends",
+                    "The uncertainty about how the exchange rate's variation will affect the final return in local currency",
+                    "The risk that a country will ban foreign investments",
+                    "The guarantee that international investments always earn more"
+                  ],
+                  "explanation": "Exchange rate risk is the additional uncertainty created by the exchange rate's fluctuation, which can amplify or reduce a foreign investment's return once converted back to local currency."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo cambiario, en el contexto de las inversiones internacionales?",
+                  "options": [
+                    "El riesgo de que un activo extranjero nunca pague dividendos",
+                    "La incertidumbre sobre cómo la variación del tipo de cambio afectará el retorno final en moneda local",
+                    "El riesgo de que un país prohíba las inversiones extranjeras",
+                    "La garantía de que las inversiones internacionales siempre rinden más"
+                  ],
+                  "explanation": "El riesgo cambiario es la incertidumbre adicional creada por la variación del tipo de cambio, que puede amplificar o reducir el retorno de una inversión extranjera al convertirlo de vuelta a la moneda local."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está avaliando um investimento em dólar que teve um ótimo desempenho na moeda original. Por que não basta olhar apenas esse número para saber o quanto você realmente ganhou em reais?",
+                  "options": [
+                    "Porque basta sempre olhar o desempenho na moeda original, o câmbio nunca importa",
+                    "Porque a variação da taxa de câmbio no período também afeta o retorno final convertido para reais, para cima ou para baixo",
+                    "Porque investimentos em dólar nunca podem ser convertidos de volta para reais",
+                    "Porque o desempenho em dólar é sempre irrelevante para investidores brasileiros"
+                  ],
+                  "explanation": "O retorno final em reais combina o desempenho do ativo na moeda original com a variação cambial do período — os dois fatores precisam ser considerados juntos, não isoladamente."
+                },
+                "en": {
+                  "prompt": "You're evaluating a dollar-denominated investment that performed great in its original currency. Why isn't that number alone enough to know how much you actually gained in your home currency?",
+                  "options": [
+                    "Because it's always enough to look at performance in the original currency, exchange rates never matter",
+                    "Because the exchange rate's variation over the period also affects the final return once converted back to your home currency, either up or down",
+                    "Because dollar investments can never be converted back to your home currency",
+                    "Because performance in dollars is always irrelevant for investors outside the US"
+                  ],
+                  "explanation": "The final return in your home currency combines the asset's performance in its original currency with the period's exchange rate variation — both factors need to be considered together, not in isolation."
+                },
+                "es": {
+                  "prompt": "Estás evaluando una inversión en dólares que tuvo un excelente desempeño en la moneda original. ¿Por qué no basta con mirar solo ese número para saber cuánto ganaste realmente en tu moneda local?",
+                  "options": [
+                    "Porque siempre basta con mirar el desempeño en la moneda original, el tipo de cambio nunca importa",
+                    "Porque la variación del tipo de cambio en el período también afecta el retorno final convertido a tu moneda local, hacia arriba o hacia abajo",
+                    "Porque las inversiones en dólares nunca pueden convertirse de vuelta a tu moneda local",
+                    "Porque el desempeño en dólares siempre es irrelevante para inversores fuera de Estados Unidos"
+                  ],
+                  "explanation": "El retorno final en tu moneda local combina el desempeño del activo en su moneda original con la variación cambiaria del período — ambos factores deben considerarse juntos, no de forma aislada."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Retorno de investimentos internacionais combina desempenho do ativo e variação cambial.",
+                    "A moeda estrangeira se valorizando amplifica o retorno; se desvalorizando, o reduz.",
+                    "Risco cambial é uma camada extra de incerteza sobre investimentos em outra moeda."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Return on international investments combines asset performance and exchange rate variation.",
+                    "The foreign currency appreciating amplifies the return; depreciating reduces it.",
+                    "Exchange rate risk is an extra layer of uncertainty on investments in another currency."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El retorno de inversiones internacionales combina el desempeño del activo y la variación cambiaria.",
+                    "La moneda extranjera apreciándose amplifica el retorno; depreciándose, lo reduce.",
+                    "El riesgo cambiario es una capa extra de incertidumbre sobre inversiones en otra moneda."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_bdrs",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "BDRs"
+            },
+            "en": {
+              "title": "BDRs"
+            },
+            "es": {
+              "title": "BDR"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ações estrangeiras negociadas localmente",
+                  "body": "BDR (Brazilian Depositary Receipt) é um certificado negociado na bolsa brasileira que representa ações de uma empresa listada no exterior, sem que o investidor precise abrir conta em uma corretora estrangeira. Uma instituição depositária mantém as ações originais custodiadas fora do país e emite os BDRs correspondentes, que replicam o desempenho do ativo original — incluindo a exposição à variação cambial da moeda em que a ação original é negociada."
+                },
+                "en": {
+                  "title": "Foreign stocks traded locally",
+                  "body": "A BDR (Brazilian Depositary Receipt) is a certificate traded on the Brazilian stock exchange that represents shares of a company listed abroad, without the investor needing to open an account with a foreign broker. A depositary institution holds the original shares in custody abroad and issues the corresponding BDRs, which track the original asset's performance — including exposure to exchange rate variation in the currency the original stock trades in."
+                },
+                "es": {
+                  "title": "Acciones extranjeras negociadas localmente",
+                  "body": "El BDR (Brazilian Depositary Receipt) es un certificado negociado en la bolsa brasileña que representa acciones de una empresa listada en el exterior, sin que el inversor necesite abrir una cuenta en una correduría extranjera. Una institución depositaria mantiene las acciones originales custodiadas fuera del país y emite los BDR correspondientes, que replican el desempeño del activo original — incluyendo la exposición a la variación cambiaria de la moneda en que se negocia la acción original."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor brasileiro compra um BDR que representa ações de uma empresa de tecnologia listada nos Estados Unidos. Ele negocia esse BDR pela mesma corretora que já usa no Brasil, em reais, mas o desempenho do BDR segue o da ação original em dólar, combinado com a variação cambial entre as duas moedas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A Brazilian investor buys a BDR that represents shares of a technology company listed in the United States. They trade that BDR through the same broker they already use in Brazil, in reals, but the BDR's performance follows the original stock's performance in dollars, combined with the exchange rate variation between the two currencies."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor brasileño compra un BDR que representa acciones de una empresa de tecnología listada en Estados Unidos. Negocia ese BDR a través de la misma correduría que ya usa en Brasil, en reales, pero el desempeño del BDR sigue al de la acción original en dólares, combinado con la variación cambiaria entre ambas monedas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um BDR?",
+                  "options": [
+                    "Um título de renda fixa emitido pelo governo brasileiro",
+                    "Um certificado negociado na bolsa brasileira que representa ações de uma empresa listada no exterior",
+                    "Um tipo de conta bancária em moeda estrangeira",
+                    "Um imposto cobrado sobre investimentos internacionais"
+                  ],
+                  "explanation": "BDR é um certificado que permite negociar, na bolsa local, um ativo que representa ações de uma empresa estrangeira, sem precisar de conta em corretora no exterior."
+                },
+                "en": {
+                  "prompt": "What is a BDR?",
+                  "options": [
+                    "A fixed-income instrument issued by the Brazilian government",
+                    "A certificate traded on the Brazilian stock exchange that represents shares of a company listed abroad",
+                    "A type of foreign-currency bank account",
+                    "A tax charged on international investments"
+                  ],
+                  "explanation": "A BDR is a certificate that allows trading, on the local exchange, an asset that represents shares of a foreign company, without needing an account with a broker abroad."
+                },
+                "es": {
+                  "prompt": "¿Qué es un BDR?",
+                  "options": [
+                    "Un título de renta fija emitido por el gobierno brasileño",
+                    "Un certificado negociado en la bolsa brasileña que representa acciones de una empresa listada en el exterior",
+                    "Un tipo de cuenta bancaria en moneda extranjera",
+                    "Un impuesto cobrado sobre inversiones internacionales"
+                  ],
+                  "explanation": "El BDR es un certificado que permite negociar, en la bolsa local, un activo que representa acciones de una empresa extranjera, sin necesidad de una cuenta en una correduría en el exterior."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco cambial de outra lição. Um BDR de uma empresa americana também carrega esse risco?",
+                  "options": [
+                    "Não, BDRs são negociados em reais, então não têm nenhuma exposição cambial",
+                    "Sim, porque o BDR replica o desempenho da ação original em dólar, então a variação cambial entre real e dólar afeta o retorno mesmo sendo negociado em reais",
+                    "Não, o risco cambial só existe para quem investe diretamente no exterior",
+                    "Sim, mas apenas se o investidor sacar o dinheiro em espécie"
+                  ],
+                  "explanation": "Mesmo negociado em reais na bolsa brasileira, o BDR reflete o desempenho do ativo original em sua moeda de origem — por isso carrega a mesma exposição ao risco cambial que investir diretamente naquele ativo lá fora."
+                },
+                "en": {
+                  "prompt": "You already understand exchange rate risk from another lesson. Does a BDR of an American company also carry that risk?",
+                  "options": [
+                    "No, BDRs are traded in reals, so they have no currency exposure at all",
+                    "Yes, because the BDR tracks the original stock's performance in dollars, so the exchange rate variation between reals and dollars affects the return even though it's traded in reals",
+                    "No, exchange rate risk only exists for people investing directly abroad",
+                    "Yes, but only if the investor withdraws the money in cash"
+                  ],
+                  "explanation": "Even though it's traded in reals on the Brazilian exchange, the BDR reflects the original asset's performance in its home currency — so it carries the same exposure to exchange rate risk as investing directly in that asset abroad."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo cambiario de otra lección. ¿Un BDR de una empresa estadounidense también conlleva ese riesgo?",
+                  "options": [
+                    "No, los BDR se negocian en reales, así que no tienen ninguna exposición cambiaria",
+                    "Sí, porque el BDR replica el desempeño de la acción original en dólares, así que la variación cambiaria entre real y dólar afecta el retorno aunque se negocie en reales",
+                    "No, el riesgo cambiario solo existe para quien invierte directamente en el exterior",
+                    "Sí, pero solo si el inversor retira el dinero en efectivo"
+                  ],
+                  "explanation": "Aunque se negocie en reales en la bolsa brasileña, el BDR refleja el desempeño del activo original en su moneda de origen — por eso conlleva la misma exposición al riesgo cambiario que invertir directamente en ese activo en el exterior."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "BDR representa, na bolsa local, ações de uma empresa listada no exterior.",
+                    "Ele permite investir em empresas estrangeiras sem abrir conta em corretora no exterior.",
+                    "Mesmo negociado em reais, o BDR carrega a exposição cambial do ativo original."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A BDR represents, on the local exchange, shares of a company listed abroad.",
+                    "It allows investing in foreign companies without opening an account with a broker abroad.",
+                    "Even traded in reals, the BDR carries the original asset's currency exposure."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El BDR representa, en la bolsa local, acciones de una empresa listada en el exterior.",
+                    "Permite invertir en empresas extranjeras sin abrir una cuenta en una correduría en el exterior.",
+                    "Aunque se negocie en reales, el BDR conlleva la exposición cambiaria del activo original."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_direct_foreign_investing",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Investir Diretamente no Exterior"
+            },
+            "en": {
+              "title": "Investing Directly Abroad"
+            },
+            "es": {
+              "title": "Invertir Directamente en el Exterior"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Outra forma de acessar o mercado internacional",
+                  "body": "Além dos BDRs, é possível investir diretamente no exterior, abrindo conta em uma corretora internacional e comprando ativos — como ações ou ETFs — negociados fora do país. Essa via costuma dar acesso a um universo maior de ativos do que os disponíveis via BDR, mas também envolve etapas adicionais, como transferências internacionais, possível burocracia para declarar bens no exterior, e a necessidade de lidar diretamente com outra moeda."
+                },
+                "en": {
+                  "title": "Another way to access the international market",
+                  "body": "Besides BDRs, it's possible to invest directly abroad, by opening an account with an international broker and buying assets — like stocks or ETFs — traded outside the country. This route usually gives access to a wider universe of assets than what's available via BDRs, but it also involves extra steps, like international transfers, possible paperwork to declare assets held abroad, and the need to deal directly with another currency."
+                },
+                "es": {
+                  "title": "Otra forma de acceder al mercado internacional",
+                  "body": "Además de los BDR, es posible invertir directamente en el exterior, abriendo una cuenta en una correduría internacional y comprando activos — como acciones o ETF — negociados fuera del país. Esta vía suele dar acceso a un universo más amplio de activos que los disponibles vía BDR, pero también implica pasos adicionales, como transferencias internacionales, posible burocracia para declarar bienes en el exterior, y la necesidad de lidiar directamente con otra moneda."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor abre conta em uma corretora americana, transfere dinheiro convertido em dólar e compra um ETF que replica um índice de ações internacional que não tem BDR equivalente disponível na bolsa brasileira — ampliando o leque de opções além do que estaria acessível apenas via BDRs."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor opens an account with a US broker, transfers money converted into dollars, and buys an ETF that tracks an international stock index with no equivalent BDR available on the Brazilian exchange — expanding their options beyond what would be accessible through BDRs alone."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor abre una cuenta en una correduría estadounidense, transfiere dinero convertido a dólares y compra un ETF que replica un índice de acciones internacional que no tiene un BDR equivalente disponible en la bolsa brasileña — ampliando el abanico de opciones más allá de lo accesible solo vía BDR."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia investir diretamente no exterior de investir via BDR?",
+                  "options": [
+                    "Não existe diferença nenhuma entre as duas formas",
+                    "Investir diretamente exige abrir conta em corretora internacional e dá acesso a um universo maior de ativos, mas envolve etapas adicionais",
+                    "BDR só pode ser negociado em corretoras estrangeiras",
+                    "Investir diretamente no exterior elimina completamente o risco cambial"
+                  ],
+                  "explanation": "Investir diretamente no exterior amplia o leque de ativos disponíveis, mas exige abrir conta fora do país e lidar com etapas como transferências internacionais e possível burocracia adicional."
+                },
+                "en": {
+                  "prompt": "What differentiates investing directly abroad from investing via BDR?",
+                  "options": [
+                    "There's no difference at all between the two",
+                    "Investing directly requires opening an account with an international broker and gives access to a wider universe of assets, but involves extra steps",
+                    "BDRs can only be traded through foreign brokers",
+                    "Investing directly abroad completely eliminates exchange rate risk"
+                  ],
+                  "explanation": "Investing directly abroad widens the range of available assets, but requires opening an account outside the country and dealing with steps like international transfers and possible extra paperwork."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia invertir directamente en el exterior de invertir vía BDR?",
+                  "options": [
+                    "No existe ninguna diferencia entre ambas formas",
+                    "Invertir directamente exige abrir una cuenta en una correduría internacional y da acceso a un universo más amplio de activos, pero implica pasos adicionales",
+                    "El BDR solo puede negociarse en correduras extranjeras",
+                    "Invertir directamente en el exterior elimina por completo el riesgo cambiario"
+                  ],
+                  "explanation": "Invertir directamente en el exterior amplía el abanico de activos disponibles, pero exige abrir una cuenta fuera del país y lidiar con pasos como transferencias internacionales y posible burocracia adicional."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer investir em um ETF internacional específico que não tem BDR correspondente na bolsa brasileira. O que essa situação sugere sobre suas opções?",
+                  "options": [
+                    "Que não existe forma nenhuma de acessar esse ativo",
+                    "Que investir diretamente no exterior, abrindo conta em uma corretora internacional, pode ser o caminho necessário para acessar esse ativo específico",
+                    "Que você deveria desistir de qualquer diversificação internacional",
+                    "Que BDRs sempre cobrem 100% dos ativos disponíveis no exterior"
+                  ],
+                  "explanation": "Nem todo ativo estrangeiro tem um BDR equivalente disponível na bolsa local — nesses casos, investir diretamente no exterior costuma ser o caminho para acessar aquele ativo específico."
+                },
+                "en": {
+                  "prompt": "You want to invest in a specific international ETF that has no corresponding BDR on the Brazilian exchange. What does this situation suggest about your options?",
+                  "options": [
+                    "That there's no way at all to access this asset",
+                    "That investing directly abroad, by opening an account with an international broker, might be the necessary path to access this specific asset",
+                    "That you should give up on any international diversification",
+                    "That BDRs always cover 100% of the assets available abroad"
+                  ],
+                  "explanation": "Not every foreign asset has an equivalent BDR available on the local exchange — in those cases, investing directly abroad tends to be the way to access that specific asset."
+                },
+                "es": {
+                  "prompt": "Quieres invertir en un ETF internacional específico que no tiene un BDR correspondiente en la bolsa brasileña. ¿Qué sugiere esta situación sobre tus opciones?",
+                  "options": [
+                    "Que no existe ninguna forma de acceder a ese activo",
+                    "Que invertir directamente en el exterior, abriendo una cuenta en una correduría internacional, puede ser el camino necesario para acceder a ese activo específico",
+                    "Que deberías renunciar a cualquier diversificación internacional",
+                    "Que los BDR siempre cubren el 100% de los activos disponibles en el exterior"
+                  ],
+                  "explanation": "No todo activo extranjero tiene un BDR equivalente disponible en la bolsa local — en esos casos, invertir directamente en el exterior suele ser el camino para acceder a ese activo específico."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Investir diretamente no exterior exige abrir conta em corretora internacional.",
+                    "Essa via dá acesso a um universo maior de ativos do que o disponível via BDR.",
+                    "Também envolve etapas adicionais, como transferências internacionais e possível burocracia."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Investing directly abroad requires opening an account with an international broker.",
+                    "This route gives access to a wider universe of assets than what's available via BDR.",
+                    "It also involves extra steps, like international transfers and possible paperwork."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Invertir directamente en el exterior exige abrir una cuenta en una correduría internacional.",
+                    "Esta vía da acceso a un universo más amplio de activos que el disponible vía BDR.",
+                    "También implica pasos adicionales, como transferencias internacionales y posible burocracia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_double_taxation",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tributação de Investimentos no Exterior"
+            },
+            "en": {
+              "title": "Taxation of Foreign Investments"
+            },
+            "es": {
+              "title": "Tributación de Inversiones en el Exterior"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas jurisdições, duas possíveis cobranças",
+                  "body": "Investimentos internacionais podem estar sujeitos a regras tributárias de mais de um país: o país onde o ativo está localizado e o país de residência do investidor. Muitos países têm acordos para evitar a chamada bitributação — cobrar imposto duas vezes sobre o mesmo rendimento — mas as regras variam bastante conforme o tipo de ativo, o país e a forma de investir (diretamente ou via BDR). Por isso, entender a tributação aplicável é parte importante de qualquer investimento internacional, e as regras podem mudar ao longo do tempo."
+                },
+                "en": {
+                  "title": "Two jurisdictions, two possible charges",
+                  "body": "International investments can be subject to tax rules from more than one country: the country where the asset is located and the investor's country of residence. Many countries have agreements to avoid so-called double taxation — charging tax twice on the same income — but the rules vary quite a bit depending on the type of asset, the country, and the way of investing (directly or via BDR). That's why understanding the applicable taxation is an important part of any international investment, and the rules can change over time."
+                },
+                "es": {
+                  "title": "Dos jurisdicciones, dos posibles cobros",
+                  "body": "Las inversiones internacionales pueden estar sujetas a reglas tributarias de más de un país: el país donde está ubicado el activo y el país de residencia del inversor. Muchos países tienen acuerdos para evitar la llamada doble tributación — cobrar impuesto dos veces sobre el mismo rendimiento — pero las reglas varían bastante según el tipo de activo, el país y la forma de invertir (directamente o vía BDR). Por eso, entender la tributación aplicable es una parte importante de cualquier inversión internacional, y las reglas pueden cambiar con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor brasileiro que recebe dividendos de uma ação americana pode ter esse valor tributado nos Estados Unidos antes mesmo de chegar até ele, e ainda precisar declarar esse rendimento no Brasil, seguindo as regras brasileiras vigentes — que podem ou não permitir compensar o imposto já pago no exterior, dependendo do tipo de rendimento e do acordo entre os países."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A Brazilian investor who receives dividends from an American stock might have that amount taxed in the United States even before it reaches them, and still need to declare that income in Brazil, following Brazil's current rules — which may or may not allow offsetting the tax already paid abroad, depending on the type of income and the agreement between the countries."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor brasileño que recibe dividendos de una acción estadounidense puede tener ese monto gravado en Estados Unidos incluso antes de que le llegue, y aún necesitar declarar ese rendimiento en Brasil, siguiendo las reglas brasileñas vigentes — que pueden o no permitir compensar el impuesto ya pagado en el exterior, dependiendo del tipo de rendimiento y del acuerdo entre los países."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é bitributação?",
+                  "options": [
+                    "Um tipo de investimento que rende o dobro",
+                    "A cobrança de imposto duas vezes sobre o mesmo rendimento, em países diferentes",
+                    "Um imposto exclusivo sobre BDRs",
+                    "Uma taxa cobrada apenas por corretoras internacionais"
+                  ],
+                  "explanation": "Bitributação é quando o mesmo rendimento é tributado tanto no país de origem do ativo quanto no país de residência do investidor — muitos acordos internacionais existem justamente para evitar essa dupla cobrança."
+                },
+                "en": {
+                  "prompt": "What is double taxation?",
+                  "options": [
+                    "A type of investment that earns double",
+                    "Charging tax twice on the same income, in different countries",
+                    "A tax exclusive to BDRs",
+                    "A fee charged only by international brokers"
+                  ],
+                  "explanation": "Double taxation is when the same income is taxed both in the asset's country of origin and in the investor's country of residence — many international agreements exist specifically to avoid this double charge."
+                },
+                "es": {
+                  "prompt": "¿Qué es la doble tributación?",
+                  "options": [
+                    "Un tipo de inversión que rinde el doble",
+                    "El cobro de impuesto dos veces sobre el mismo rendimiento, en países diferentes",
+                    "Un impuesto exclusivo sobre los BDR",
+                    "Una tasa cobrada solo por correduras internacionales"
+                  ],
+                  "explanation": "La doble tributación es cuando el mismo rendimiento se grava tanto en el país de origen del activo como en el país de residencia del inversor — muchos acuerdos internacionales existen justamente para evitar este doble cobro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está pensando em investir diretamente no exterior e ouve alguém dizer 'a tributação de investimentos internacionais é sempre a mesma, não precisa nem pesquisar'. Por que essa afirmação deve ser vista com cautela?",
+                  "options": [
+                    "Porque ela está certa, todas as regras tributárias internacionais são sempre idênticas",
+                    "Porque as regras variam conforme o tipo de ativo, o país e a forma de investir, e ainda podem mudar ao longo do tempo — por isso vale sempre confirmar a legislação vigente",
+                    "Porque investimentos internacionais nunca são tributados em lugar nenhum",
+                    "Porque bitributação é sempre impossível de acontecer"
+                  ],
+                  "explanation": "Assim como você viu antes com a isenção de LCI e LCA, regras tributárias podem ser específicas e mudar com o tempo — vale sempre confirmar a legislação vigente para o tipo de ativo e país envolvidos, em vez de assumir uma regra genérica."
+                },
+                "en": {
+                  "prompt": "You're considering investing directly abroad and hear someone say 'taxation of international investments is always the same, no need to even look it up.' Why should that statement be viewed with caution?",
+                  "options": [
+                    "Because it's correct, all international tax rules are always identical",
+                    "Because the rules vary depending on the type of asset, the country, and the way of investing, and can still change over time — so it's always worth confirming the current legislation",
+                    "Because international investments are never taxed anywhere",
+                    "Because double taxation is always impossible to happen"
+                  ],
+                  "explanation": "Just like you saw earlier with the LCI and LCA exemption, tax rules can be specific and change over time — it's always worth confirming the legislation currently in force for the type of asset and countries involved, instead of assuming a generic rule."
+                },
+                "es": {
+                  "prompt": "Estás considerando invertir directamente en el exterior y escuchas a alguien decir 'la tributación de las inversiones internacionales siempre es la misma, ni hace falta investigar'. ¿Por qué esa afirmación debe verse con cautela?",
+                  "options": [
+                    "Porque es correcta, todas las reglas tributarias internacionales son siempre idénticas",
+                    "Porque las reglas varían según el tipo de activo, el país y la forma de invertir, y aún pueden cambiar con el tiempo — por eso siempre vale la pena confirmar la legislación vigente",
+                    "Porque las inversiones internacionales nunca se gravan en ningún lugar",
+                    "Porque la doble tributación siempre es imposible que ocurra"
+                  ],
+                  "explanation": "Tal como viste antes con la exención de la LCI y la LCA, las reglas tributarias pueden ser específicas y cambiar con el tiempo — siempre vale la pena confirmar la legislación vigente para el tipo de activo y los países involucrados, en lugar de asumir una regla genérica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Investimentos internacionais podem estar sujeitos a regras tributárias de mais de um país.",
+                    "Acordos entre países buscam evitar a bitributação, mas as regras variam bastante.",
+                    "Você concluiu o módulo de fundamentos do investimento internacional."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "International investments can be subject to tax rules from more than one country.",
+                    "Agreements between countries aim to avoid double taxation, but the rules vary quite a bit.",
+                    "You've completed the international investing fundamentals module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Las inversiones internacionales pueden estar sujetas a reglas tributarias de más de un país.",
+                    "Los acuerdos entre países buscan evitar la doble tributación, pero las reglas varían bastante.",
+                    "Completaste el módulo de fundamentos de la inversión internacional."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "international_investing_advanced",
+      "order": 2,
+      "iconKey": "public_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "international_investing_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Investimento Internacional Avançado",
+          "description": "ETFs internacionais, contas em corretoras estrangeiras, proteção ao investidor e hedge cambial."
+        },
+        "en": {
+          "title": "Advanced International Investing",
+          "description": "International ETFs, foreign broker accounts, investor protection and currency hedging."
+        },
+        "es": {
+          "title": "Inversión Internacional Avanzada",
+          "description": "ETF internacionales, cuentas en correduras extranjeras, protección al inversor y cobertura cambiaria."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "international_etfs",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "ETFs Internacionais"
+            },
+            "en": {
+              "title": "International ETFs"
+            },
+            "es": {
+              "title": "ETF Internacionales"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um fundo negociado em bolsa, com exposição diversificada",
+                  "body": "ETFs (Exchange Traded Funds) internacionais são fundos negociados em bolsa que replicam um índice ou uma cesta de ativos estrangeiros, permitindo acesso a um mercado inteiro, ou a um segmento específico, através de uma única compra. Em vez de escolher ações individuais de empresas estrangeiras, um investidor pode comprar um ETF que já reúne dezenas ou centenas delas, obtendo diversificação instantânea dentro daquele mercado ou tema."
+                },
+                "en": {
+                  "title": "An exchange-traded fund with diversified exposure",
+                  "body": "International ETFs (Exchange Traded Funds) are exchange-traded funds that track an index or a basket of foreign assets, giving access to an entire market, or a specific segment, through a single purchase. Instead of picking individual foreign company stocks, an investor can buy an ETF that already bundles dozens or hundreds of them, gaining instant diversification within that market or theme."
+                },
+                "es": {
+                  "title": "Un fondo negociado en bolsa, con exposición diversificada",
+                  "body": "Los ETF (Exchange Traded Funds) internacionales son fondos negociados en bolsa que replican un índice o una cesta de activos extranjeros, permitiendo acceso a un mercado entero, o a un segmento específico, a través de una sola compra. En lugar de elegir acciones individuales de empresas extranjeras, un inversor puede comprar un ETF que ya reúne decenas o cientos de ellas, obteniendo diversificación instantánea dentro de ese mercado o tema."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em vez de escolher individualmente entre centenas de empresas americanas, um investidor compra um ETF que replica um índice amplo do mercado americano. Com uma única operação, ele passa a ter exposição a todas as empresas que compõem esse índice, na proporção em que aparecem nele — sem precisar analisar e comprar cada uma separadamente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Instead of individually picking among hundreds of American companies, an investor buys an ETF that tracks a broad US market index. With a single transaction, they gain exposure to every company in that index, in the proportion they appear in it — without needing to analyze and buy each one separately."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En lugar de elegir individualmente entre cientos de empresas estadounidenses, un inversor compra un ETF que replica un índice amplio del mercado estadounidense. Con una sola operación, pasa a tener exposición a todas las empresas que componen ese índice, en la proporción en que aparecen en él — sin necesidad de analizar y comprar cada una por separado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que um ETF internacional permite fazer com uma única compra?",
+                  "options": [
+                    "Comprar uma única ação estrangeira específica",
+                    "Obter exposição diversificada a um índice ou cesta de ativos estrangeiros, sem precisar escolher cada ativo individualmente",
+                    "Eliminar completamente o risco cambial de qualquer investimento",
+                    "Garantir isenção de impostos em qualquer país"
+                  ],
+                  "explanation": "Um ETF replica um índice ou cesta de ativos, dando ao investidor exposição diversificada a vários ativos estrangeiros de uma só vez, em vez de exigir a escolha individual de cada um."
+                },
+                "en": {
+                  "prompt": "What does an international ETF allow you to do with a single purchase?",
+                  "options": [
+                    "Buy a single specific foreign stock",
+                    "Gain diversified exposure to an index or basket of foreign assets, without needing to pick each asset individually",
+                    "Completely eliminate the exchange rate risk of any investment",
+                    "Guarantee a tax exemption in any country"
+                  ],
+                  "explanation": "An ETF tracks an index or basket of assets, giving the investor diversified exposure to several foreign assets at once, instead of requiring the individual selection of each one."
+                },
+                "es": {
+                  "prompt": "¿Qué permite hacer un ETF internacional con una sola compra?",
+                  "options": [
+                    "Comprar una única acción extranjera específica",
+                    "Obtener exposición diversificada a un índice o cesta de activos extranjeros, sin necesidad de elegir cada activo individualmente",
+                    "Eliminar por completo el riesgo cambiario de cualquier inversión",
+                    "Garantizar exención de impuestos en cualquier país"
+                  ],
+                  "explanation": "Un ETF replica un índice o cesta de activos, dando al inversor exposición diversificada a varios activos extranjeros de una sola vez, en lugar de exigir la elección individual de cada uno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende diversificação e correlação entre ativos de outras lições. Como um ETF internacional amplo se conecta com esses conceitos, comparado a escolher poucas ações estrangeiras individualmente?",
+                  "options": [
+                    "Não se conecta, ETFs não têm relação com diversificação",
+                    "Um ETF amplo reúne muitos ativos de uma vez, reduzindo a concentração em qualquer empresa específica e tendendo a oferecer mais diversificação real do que escolher poucas ações individuais",
+                    "Escolher poucas ações individuais sempre diversifica mais do que um ETF",
+                    "ETFs e ações individuais têm exatamente o mesmo nível de diversificação"
+                  ],
+                  "explanation": "Um ETF amplo distribui o investimento entre muitos ativos de uma vez, o que tende a reduzir a concentração em uma única empresa e a oferecer diversificação mais robusta do que escolher poucas ações individuais."
+                },
+                "en": {
+                  "prompt": "You already understand diversification and correlation between assets from other lessons. How does a broad international ETF connect with those concepts, compared to individually picking a few foreign stocks?",
+                  "options": [
+                    "It doesn't connect, ETFs have no relation to diversification",
+                    "A broad ETF bundles many assets at once, reducing concentration in any specific company and tending to offer more real diversification than picking a few individual stocks",
+                    "Picking a few individual stocks always diversifies more than an ETF",
+                    "ETFs and individual stocks have exactly the same level of diversification"
+                  ],
+                  "explanation": "A broad ETF spreads the investment across many assets at once, which tends to reduce concentration in a single company and offer more robust diversification than picking a few individual stocks."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la diversificación y la correlación entre activos de otras lecciones. ¿Cómo se conecta un ETF internacional amplio con esos conceptos, comparado con elegir pocas acciones extranjeras individualmente?",
+                  "options": [
+                    "No se conecta, los ETF no tienen relación con la diversificación",
+                    "Un ETF amplio reúne muchos activos de una vez, reduciendo la concentración en cualquier empresa específica y tendiendo a ofrecer más diversificación real que elegir pocas acciones individuales",
+                    "Elegir pocas acciones individuales siempre diversifica más que un ETF",
+                    "Los ETF y las acciones individuales tienen exactamente el mismo nivel de diversificación"
+                  ],
+                  "explanation": "Un ETF amplio distribuye la inversión entre muchos activos de una vez, lo que tiende a reducir la concentración en una sola empresa y a ofrecer una diversificación más robusta que elegir pocas acciones individuales."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "ETFs internacionais replicam um índice ou cesta de ativos estrangeiros.",
+                    "Eles permitem diversificação instantânea com uma única compra.",
+                    "Isso tende a reduzir a concentração comparado a escolher poucos ativos individualmente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "International ETFs track an index or basket of foreign assets.",
+                    "They allow instant diversification with a single purchase.",
+                    "This tends to reduce concentration compared to picking few assets individually."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los ETF internacionales replican un índice o cesta de activos extranjeros.",
+                    "Permiten diversificación instantánea con una sola compra.",
+                    "Esto tiende a reducir la concentración comparado con elegir pocos activos individualmente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_foreign_broker_accounts",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Contas em Corretoras Estrangeiras"
+            },
+            "en": {
+              "title": "Foreign Broker Accounts"
+            },
+            "es": {
+              "title": "Cuentas en Correduras Extranjeras"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Abrindo a porta de entrada para investir diretamente fora",
+                  "body": "Para investir diretamente no exterior, é necessário abrir conta em uma corretora estrangeira, um processo que costuma incluir o preenchimento de formulários fiscais específicos — como o W-8BEN, usado nos Estados Unidos para declarar que o investidor não é residente fiscal americano, o que determina regras diferentes de retenção de imposto sobre certos rendimentos, como dividendos. Além da papelada, o processo geralmente envolve transferências internacionais de dinheiro, sujeitas a taxas e ao IOF sobre operações de câmbio."
+                },
+                "en": {
+                  "title": "Opening the door to investing directly abroad",
+                  "body": "To invest directly abroad, it's necessary to open an account with a foreign broker, a process that usually includes filling out specific tax forms — like the W-8BEN, used in the United States to declare that the investor isn't a US tax resident, which determines different withholding rules for certain income, like dividends. Besides the paperwork, the process generally involves international money transfers, subject to fees and to IOF on foreign exchange transactions."
+                },
+                "es": {
+                  "title": "Abriendo la puerta de entrada para invertir directamente afuera",
+                  "body": "Para invertir directamente en el exterior, es necesario abrir una cuenta en una correduría extranjera, un proceso que suele incluir completar formularios fiscales específicos — como el W-8BEN, usado en Estados Unidos para declarar que el inversor no es residente fiscal estadounidense, lo que determina reglas diferentes de retención de impuesto sobre ciertos rendimientos, como dividendos. Además del papeleo, el proceso generalmente implica transferencias internacionales de dinero, sujetas a tarifas y al IOF sobre operaciones de cambio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor brasileiro abre conta em uma corretora americana e, como parte do processo, preenche o formulário W-8BEN. Isso garante que a retenção de imposto sobre dividendos recebidos de ações americanas siga a alíquota reduzida prevista para não residentes, em vez de uma alíquota potencialmente mais alta aplicada a quem não preenche o formulário."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A Brazilian investor opens an account with a US broker and, as part of the process, fills out the W-8BEN form. This ensures that the tax withholding on dividends received from American stocks follows the reduced rate set for non-residents, instead of a potentially higher rate applied to those who don't fill out the form."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor brasileño abre una cuenta en una correduría estadounidense y, como parte del proceso, completa el formulario W-8BEN. Esto garantiza que la retención de impuesto sobre los dividendos recibidos de acciones estadounidenses siga la alícuota reducida prevista para no residentes, en lugar de una alícuota potencialmente más alta aplicada a quien no completa el formulario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Para que serve o formulário W-8BEN, no contexto de investir diretamente nos Estados Unidos?",
+                  "options": [
+                    "Para abrir uma conta bancária comum nos Estados Unidos",
+                    "Para declarar que o investidor não é residente fiscal americano, o que determina regras específicas de retenção de imposto sobre certos rendimentos",
+                    "Para solicitar cidadania americana",
+                    "Para isentar completamente o investidor de qualquer imposto, em qualquer país"
+                  ],
+                  "explanation": "O W-8BEN é um formulário fiscal que declara o status de não residente do investidor perante o fisco americano, afetando diretamente as regras de retenção de imposto sobre rendimentos como dividendos."
+                },
+                "en": {
+                  "prompt": "What is the W-8BEN form for, in the context of investing directly in the United States?",
+                  "options": [
+                    "To open a regular bank account in the United States",
+                    "To declare that the investor isn't a US tax resident, which determines specific withholding rules for certain income",
+                    "To apply for US citizenship",
+                    "To completely exempt the investor from any tax, in any country"
+                  ],
+                  "explanation": "The W-8BEN is a tax form that declares the investor's non-resident status to the US tax authorities, directly affecting withholding rules on income like dividends."
+                },
+                "es": {
+                  "prompt": "¿Para qué sirve el formulario W-8BEN, en el contexto de invertir directamente en Estados Unidos?",
+                  "options": [
+                    "Para abrir una cuenta bancaria común en Estados Unidos",
+                    "Para declarar que el inversor no es residente fiscal estadounidense, lo que determina reglas específicas de retención de impuesto sobre ciertos rendimientos",
+                    "Para solicitar la ciudadanía estadounidense",
+                    "Para eximir por completo al inversor de cualquier impuesto, en cualquier país"
+                  ],
+                  "explanation": "El W-8BEN es un formulario fiscal que declara el estatus de no residente del inversor ante el fisco estadounidense, afectando directamente las reglas de retención de impuesto sobre rendimientos como dividendos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende bitributação de outra lição. Como o formulário W-8BEN se relaciona com esse conceito?",
+                  "options": [
+                    "Não se relaciona, bitributação e W-8BEN são assuntos completamente separados",
+                    "O W-8BEN ajuda a garantir que o investidor seja tributado corretamente como não residente, o que costuma ser parte dos acordos que buscam evitar a bitributação sobre o mesmo rendimento",
+                    "O W-8BEN garante que o investidor nunca pagará nenhum imposto em nenhum país",
+                    "Preencher o W-8BEN elimina a necessidade de declarar rendimentos no Brasil"
+                  ],
+                  "explanation": "Ao declarar corretamente o status de não residente, o W-8BEN ajuda a aplicar a alíquota adequada prevista em acordos fiscais, um dos mecanismos que contribuem para evitar a bitributação sobre o mesmo rendimento."
+                },
+                "en": {
+                  "prompt": "You already understand double taxation from another lesson. How does the W-8BEN form relate to that concept?",
+                  "options": [
+                    "It doesn't relate, double taxation and the W-8BEN are completely separate topics",
+                    "The W-8BEN helps ensure the investor is correctly taxed as a non-resident, which is usually part of the agreements that aim to avoid double taxation on the same income",
+                    "The W-8BEN guarantees the investor will never pay any tax in any country",
+                    "Filling out the W-8BEN eliminates the need to declare income in Brazil"
+                  ],
+                  "explanation": "By correctly declaring non-resident status, the W-8BEN helps apply the appropriate rate set out in tax agreements, one of the mechanisms that help avoid double taxation on the same income."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la doble tributación de otra lección. ¿Cómo se relaciona el formulario W-8BEN con ese concepto?",
+                  "options": [
+                    "No se relaciona, la doble tributación y el W-8BEN son temas completamente separados",
+                    "El W-8BEN ayuda a garantizar que el inversor sea gravado correctamente como no residente, lo que suele ser parte de los acuerdos que buscan evitar la doble tributación sobre el mismo rendimiento",
+                    "El W-8BEN garantiza que el inversor nunca pagará ningún impuesto en ningún país",
+                    "Completar el W-8BEN elimina la necesidad de declarar rendimientos en Brasil"
+                  ],
+                  "explanation": "Al declarar correctamente el estatus de no residente, el W-8BEN ayuda a aplicar la alícuota adecuada prevista en acuerdos fiscales, uno de los mecanismos que contribuyen a evitar la doble tributación sobre el mismo rendimiento."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Investir diretamente no exterior exige abrir conta em uma corretora estrangeira.",
+                    "Formulários fiscais como o W-8BEN declaram o status de não residente do investidor.",
+                    "Isso afeta as regras de retenção de imposto e se conecta a acordos que evitam a bitributação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Investing directly abroad requires opening an account with a foreign broker.",
+                    "Tax forms like the W-8BEN declare the investor's non-resident status.",
+                    "This affects withholding rules and connects to agreements that avoid double taxation."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Invertir directamente en el exterior exige abrir una cuenta en una correduría extranjera.",
+                    "Formularios fiscales como el W-8BEN declaran el estatus de no residente del inversor.",
+                    "Esto afecta las reglas de retención de impuesto y se conecta con acuerdos que evitan la doble tributación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_investor_protection",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Proteção ao Investidor: SIPC x FGC"
+            },
+            "en": {
+              "title": "Investor Protection: SIPC vs. FGC"
+            },
+            "es": {
+              "title": "Protección al Inversor: SIPC vs. FGC"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Redes de proteção diferentes em cada país",
+                  "body": "Assim como o FGC (Fundo Garantidor de Créditos) oferece proteção limitada a certos investimentos no Brasil em caso de falência de uma instituição, outros países têm seus próprios mecanismos de proteção, com regras diferentes. Nos Estados Unidos, o SIPC (Securities Investor Protection Corporation) protege investidores em caso de falência de uma corretora, cobrindo a falta de ativos ou dinheiro na conta até um limite estabelecido, mas não protege contra perdas de mercado — se o valor de um ativo cai, o SIPC não cobre essa perda, apenas a eventual falha da corretora em devolver o que deveria estar custodiado."
+                },
+                "en": {
+                  "title": "Different protection networks in each country",
+                  "body": "Just as the FGC (Credit Guarantee Fund) offers limited protection for certain investments in Brazil in case of an institution's bankruptcy, other countries have their own protection mechanisms, with different rules. In the United States, the SIPC (Securities Investor Protection Corporation) protects investors in case of a broker's bankruptcy, covering missing assets or cash in the account up to an established limit — but it doesn't protect against market losses; if an asset's value falls, the SIPC doesn't cover that loss, only the broker's eventual failure to return what should have been held in custody."
+                },
+                "es": {
+                  "title": "Redes de protección diferentes en cada país",
+                  "body": "Al igual que el FGC (Fondo Garantizador de Créditos) ofrece protección limitada a ciertas inversiones en Brasil en caso de quiebra de una institución, otros países tienen sus propios mecanismos de protección, con reglas diferentes. En Estados Unidos, el SIPC (Securities Investor Protection Corporation) protege a los inversores en caso de quiebra de una correduría, cubriendo la falta de activos o dinero en la cuenta hasta un límite establecido — pero no protege contra pérdidas de mercado; si el valor de un activo cae, el SIPC no cubre esa pérdida, solo el eventual fallo de la correduría en devolver lo que debería estar custodiado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se uma corretora americana falir e, por má gestão ou fraude, não conseguir devolver os ativos que deveria ter custodiado para seus clientes, o SIPC pode cobrir essa falta até um limite estabelecido. Mas se o investidor simplesmente perdeu dinheiro porque o preço de uma ação caiu, essa perda de mercado não é coberta por nenhum tipo de proteção como o SIPC ou o FGC — esses mecanismos protegem contra falhas da instituição, não contra o risco normal do investimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If a US broker goes bankrupt and, due to mismanagement or fraud, can't return the assets it should have held in custody for its clients, the SIPC can cover that shortfall up to an established limit. But if the investor simply lost money because a stock's price fell, that market loss isn't covered by any type of protection like the SIPC or the FGC — those mechanisms protect against institutional failures, not against the investment's normal risk."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si una correduría estadounidense quiebra y, por mala gestión o fraude, no logra devolver los activos que debería haber custodiado para sus clientes, el SIPC puede cubrir esa falta hasta un límite establecido. Pero si el inversor simplemente perdió dinero porque el precio de una acción cayó, esa pérdida de mercado no está cubierta por ningún tipo de protección como el SIPC o el FGC — esos mecanismos protegen contra fallas de la institución, no contra el riesgo normal de la inversión."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o SIPC (nos Estados Unidos) protege?",
+                  "options": [
+                    "Perdas de mercado quando o preço de um ativo cai",
+                    "A falta de ativos ou dinheiro na conta em caso de falência da corretora, até um limite estabelecido",
+                    "Qualquer tipo de prejuízo, sem exceção",
+                    "Apenas investimentos em renda fixa"
+                  ],
+                  "explanation": "O SIPC protege contra falhas da corretora em devolver ativos ou dinheiro custodiados, em caso de falência — não contra a desvalorização normal de um investimento no mercado."
+                },
+                "en": {
+                  "prompt": "What does the SIPC (in the United States) protect?",
+                  "options": [
+                    "Market losses when an asset's price falls",
+                    "Missing assets or cash in the account in case of the broker's bankruptcy, up to an established limit",
+                    "Any type of loss, without exception",
+                    "Only fixed-income investments"
+                  ],
+                  "explanation": "The SIPC protects against the broker's failure to return custodied assets or cash, in case of bankruptcy — not against an investment's normal market decline."
+                },
+                "es": {
+                  "prompt": "¿Qué protege el SIPC (en Estados Unidos)?",
+                  "options": [
+                    "Pérdidas de mercado cuando el precio de un activo cae",
+                    "La falta de activos o dinero en la cuenta en caso de quiebra de la correduría, hasta un límite establecido",
+                    "Cualquier tipo de pérdida, sin excepción",
+                    "Solo inversiones de renta fija"
+                  ],
+                  "explanation": "El SIPC protege contra fallas de la correduría en devolver activos o dinero custodiados, en caso de quiebra — no contra la desvalorización normal de una inversión en el mercado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que o FGC no Brasil protege contra a falência de uma instituição, não contra oscilações de mercado. Como esse mesmo princípio se aplica ao SIPC nos Estados Unidos?",
+                  "options": [
+                    "Não se aplica, o SIPC funciona de forma completamente diferente do FGC",
+                    "O SIPC segue o mesmo princípio: protege contra a falência ou falha da corretora em devolver ativos custodiados, mas não cobre perdas normais de mercado, assim como o FGC no Brasil",
+                    "O SIPC cobre qualquer tipo de perda, diferente do FGC",
+                    "O SIPC só existe para proteger investidores brasileiros"
+                  ],
+                  "explanation": "Tanto o FGC quanto o SIPC seguem o mesmo princípio geral: proteger contra falhas institucionais, como a falência de uma instituição, e não contra o risco normal de mercado de um investimento."
+                },
+                "en": {
+                  "prompt": "You already understand that the FGC in Brazil protects against an institution's bankruptcy, not against market fluctuations. How does that same principle apply to the SIPC in the United States?",
+                  "options": [
+                    "It doesn't apply, the SIPC works completely differently from the FGC",
+                    "The SIPC follows the same principle: it protects against the broker's bankruptcy or failure to return custodied assets, but doesn't cover normal market losses, just like the FGC in Brazil",
+                    "The SIPC covers any type of loss, unlike the FGC",
+                    "The SIPC only exists to protect Brazilian investors"
+                  ],
+                  "explanation": "Both the FGC and the SIPC follow the same general principle: protecting against institutional failures, like an institution's bankruptcy, and not against an investment's normal market risk."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que el FGC en Brasil protege contra la quiebra de una institución, no contra oscilaciones de mercado. ¿Cómo se aplica ese mismo principio al SIPC en Estados Unidos?",
+                  "options": [
+                    "No se aplica, el SIPC funciona de forma completamente diferente al FGC",
+                    "El SIPC sigue el mismo principio: protege contra la quiebra o falla de la correduría en devolver activos custodiados, pero no cubre pérdidas normales de mercado, tal como el FGC en Brasil",
+                    "El SIPC cubre cualquier tipo de pérdida, a diferencia del FGC",
+                    "El SIPC solo existe para proteger a inversores brasileños"
+                  ],
+                  "explanation": "Tanto el FGC como el SIPC siguen el mismo principio general: proteger contra fallas institucionales, como la quiebra de una institución, y no contra el riesgo normal de mercado de una inversión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Diferentes países têm mecanismos próprios de proteção ao investidor, como o SIPC nos Estados Unidos.",
+                    "Esses mecanismos protegem contra falhas institucionais, não contra perdas normais de mercado.",
+                    "O princípio geral é parecido ao do FGC no Brasil, mesmo com regras e limites específicos de cada país."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Different countries have their own investor protection mechanisms, like the SIPC in the United States.",
+                    "These mechanisms protect against institutional failures, not normal market losses.",
+                    "The general principle is similar to the FGC in Brazil, even with each country's specific rules and limits."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Diferentes países tienen sus propios mecanismos de protección al inversor, como el SIPC en Estados Unidos.",
+                    "Estos mecanismos protegen contra fallas institucionales, no contra pérdidas normales de mercado.",
+                    "El principio general es parecido al del FGC en Brasil, incluso con reglas y límites específicos de cada país."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_currency_hedge",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Hedge Cambial"
+            },
+            "en": {
+              "title": "Currency Hedging"
+            },
+            "es": {
+              "title": "Cobertura Cambiaria"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Reduzindo a exposição à variação do câmbio",
+                  "body": "Hedge cambial é o uso de instrumentos financeiros, geralmente derivativos, para reduzir a exposição de um investimento à variação da taxa de câmbio, isolando o retorno do ativo em si do efeito da moeda. Alguns fundos internacionais oferecem versões 'com hedge' e 'sem hedge' do mesmo investimento: a versão com hedge busca neutralizar o efeito cambial, deixando o retorno mais próximo do desempenho do ativo na moeda original; a versão sem hedge mantém a exposição cambial, amplificando ou reduzindo o retorno conforme a moeda varia."
+                },
+                "en": {
+                  "title": "Reducing exposure to exchange rate variation",
+                  "body": "Currency hedging is the use of financial instruments, usually derivatives, to reduce an investment's exposure to exchange rate variation, isolating the asset's own return from the currency's effect. Some international funds offer 'hedged' and 'unhedged' versions of the same investment: the hedged version seeks to neutralize the currency effect, keeping the return closer to the asset's performance in its original currency; the unhedged version keeps the currency exposure, amplifying or reducing the return as the currency fluctuates."
+                },
+                "es": {
+                  "title": "Reduciendo la exposición a la variación del tipo de cambio",
+                  "body": "La cobertura cambiaria (hedge cambial) es el uso de instrumentos financieros, generalmente derivados, para reducir la exposición de una inversión a la variación del tipo de cambio, aislando el retorno del activo en sí del efecto de la moneda. Algunos fondos internacionales ofrecen versiones 'con cobertura' y 'sin cobertura' de la misma inversión: la versión con cobertura busca neutralizar el efecto cambiario, dejando el retorno más cercano al desempeño del activo en su moneda original; la versión sin cobertura mantiene la exposición cambiaria, amplificando o reduciendo el retorno según varíe la moneda."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo que investe em ações americanas oferece duas versões: uma com hedge cambial e outra sem. Se as ações sobem 10% em dólar, mas o dólar cai 5% frente ao real no mesmo período, a versão sem hedge captura um retorno menor em reais, afetado pela queda do dólar. A versão com hedge, por outro lado, busca entregar um retorno mais próximo dos 10% originais em dólar, neutralizando boa parte do efeito cambial."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fund that invests in American stocks offers two versions: one with currency hedging and one without. If the stocks rise 10% in dollars, but the dollar falls 5% against the real in the same period, the unhedged version captures a lower return in reals, affected by the dollar's drop. The hedged version, on the other hand, seeks to deliver a return closer to the original 10% in dollars, neutralizing much of the currency effect."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo que invierte en acciones estadounidenses ofrece dos versiones: una con cobertura cambiaria y otra sin ella. Si las acciones suben un 10% en dólares, pero el dólar cae un 5% frente al real en el mismo período, la versión sin cobertura captura un retorno menor en reales, afectado por la caída del dólar. La versión con cobertura, en cambio, busca entregar un retorno más cercano al 10% original en dólares, neutralizando gran parte del efecto cambiario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o hedge cambial busca fazer?",
+                  "options": [
+                    "Aumentar a exposição de um investimento à variação cambial",
+                    "Reduzir a exposição de um investimento à variação da taxa de câmbio, isolando o retorno do ativo em si",
+                    "Garantir que o dólar sempre vai se valorizar frente ao real",
+                    "Eliminar completamente qualquer tipo de risco de um investimento internacional"
+                  ],
+                  "explanation": "Hedge cambial usa instrumentos financeiros para neutralizar o efeito da variação cambial sobre o retorno de um investimento, isolando o desempenho do ativo na moeda original."
+                },
+                "en": {
+                  "prompt": "What does currency hedging seek to do?",
+                  "options": [
+                    "Increase an investment's exposure to exchange rate variation",
+                    "Reduce an investment's exposure to exchange rate variation, isolating the asset's own return",
+                    "Guarantee the dollar will always appreciate against the real",
+                    "Completely eliminate any type of risk in an international investment"
+                  ],
+                  "explanation": "Currency hedging uses financial instruments to neutralize the effect of exchange rate variation on an investment's return, isolating the asset's performance in its original currency."
+                },
+                "es": {
+                  "prompt": "¿Qué busca hacer la cobertura cambiaria?",
+                  "options": [
+                    "Aumentar la exposición de una inversión a la variación cambiaria",
+                    "Reducir la exposición de una inversión a la variación del tipo de cambio, aislando el retorno del activo en sí",
+                    "Garantizar que el dólar siempre se apreciará frente al real",
+                    "Eliminar por completo cualquier tipo de riesgo de una inversión internacional"
+                  ],
+                  "explanation": "La cobertura cambiaria usa instrumentos financieros para neutralizar el efecto de la variación cambiaria sobre el retorno de una inversión, aislando el desempeño del activo en su moneda original."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco cambial e derivativos de outras lições. Como esses dois conceitos se conectam na estratégia de hedge cambial?",
+                  "options": [
+                    "Não se conectam, hedge cambial não usa nenhum tipo de derivativo",
+                    "Hedge cambial usa derivativos especificamente para reduzir o risco cambial identificado em outra lição — é uma aplicação prática de derivativos como ferramenta de proteção (hedge), não de especulação",
+                    "Hedge cambial elimina completamente a necessidade de entender risco cambial",
+                    "Derivativos só podem ser usados para especular, nunca para hedge cambial"
+                  ],
+                  "explanation": "Hedge cambial é um exemplo direto de como derivativos podem ser usados para proteção (hedge), reduzindo especificamente o risco cambial que existe em investimentos internacionais — conectando os dois conceitos estudados separadamente."
+                },
+                "en": {
+                  "prompt": "You already understand exchange rate risk and derivatives from other lessons. How do these two concepts connect in the currency hedging strategy?",
+                  "options": [
+                    "They don't connect, currency hedging doesn't use any type of derivative",
+                    "Currency hedging uses derivatives specifically to reduce the exchange rate risk identified in another lesson — it's a practical application of derivatives as a protection (hedge) tool, not speculation",
+                    "Currency hedging completely eliminates the need to understand exchange rate risk",
+                    "Derivatives can only be used to speculate, never for currency hedging"
+                  ],
+                  "explanation": "Currency hedging is a direct example of how derivatives can be used for protection (hedging), specifically reducing the exchange rate risk that exists in international investments — connecting the two concepts studied separately."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo cambiario y los derivados de otras lecciones. ¿Cómo se conectan estos dos conceptos en la estrategia de cobertura cambiaria?",
+                  "options": [
+                    "No se conectan, la cobertura cambiaria no usa ningún tipo de derivado",
+                    "La cobertura cambiaria usa derivados específicamente para reducir el riesgo cambiario identificado en otra lección — es una aplicación práctica de derivados como herramienta de protección (hedge), no de especulación",
+                    "La cobertura cambiaria elimina por completo la necesidad de entender el riesgo cambiario",
+                    "Los derivados solo pueden usarse para especular, nunca para cobertura cambiaria"
+                  ],
+                  "explanation": "La cobertura cambiaria es un ejemplo directo de cómo los derivados pueden usarse para protección (hedge), reduciendo específicamente el riesgo cambiario que existe en las inversiones internacionales — conectando los dos conceptos estudiados por separado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Hedge cambial usa derivativos para reduzir a exposição à variação do câmbio.",
+                    "Fundos internacionais podem oferecer versões com e sem hedge do mesmo investimento.",
+                    "Fundos hedgeados buscam isolar o retorno do ativo original do efeito cambial, enquanto fundos sem hedge mantêm essa exposição."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Currency hedging uses derivatives to reduce exposure to exchange rate variation.",
+                    "International funds can offer hedged and unhedged versions of the same investment.",
+                    "Hedged funds seek to isolate the original asset's return from the currency effect, while unhedged funds keep that exposure."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La cobertura cambiaria usa derivados para reducir la exposición a la variación del tipo de cambio.",
+                    "Los fondos internacionales pueden ofrecer versiones con y sin cobertura de la misma inversión.",
+                    "Los fondos con cobertura buscan aislar el retorno del activo original del efecto cambiario, mientras que los fondos sin cobertura mantienen esa exposición."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_currency_conversion_costs",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custos de Conversão: Spread Cambial e IOF"
+            },
+            "en": {
+              "title": "Conversion Costs: Currency Spread and IOF"
+            },
+            "es": {
+              "title": "Costos de Conversión: Spread Cambiario e IOF"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O câmbio 'oficial' não é o que você realmente paga",
+                  "body": "Ao converter reais para outra moeda para investir no exterior, o valor efetivamente pago costuma ser diferente da cotação 'oficial' divulgada pelo mercado. Bancos e corretoras aplicam um spread cambial — a diferença entre o preço de compra e o de venda da moeda — que funciona como uma margem embutida na operação. Além disso, no Brasil incide o IOF (Imposto sobre Operações Financeiras) sobre operações de câmbio, outro custo que reduz o valor líquido convertido. Juntos, spread e IOF podem representar uma fatia relevante do valor movimentado, especialmente em transferências menores."
+                },
+                "en": {
+                  "title": "The 'official' exchange rate isn't what you actually pay",
+                  "body": "When converting reals into another currency to invest abroad, the amount you actually pay usually differs from the 'official' rate quoted by the market. Banks and brokers apply a currency spread — the difference between the buying and selling price of the currency — which works as a built-in margin on the transaction. In addition, Brazil charges IOF (Tax on Financial Operations) on foreign exchange transactions, another cost that reduces the net amount converted. Together, spread and IOF can represent a meaningful slice of the amount moved, especially on smaller transfers."
+                },
+                "es": {
+                  "title": "El tipo de cambio 'oficial' no es lo que realmente pagas",
+                  "body": "Al convertir reales a otra moneda para invertir en el exterior, el monto efectivamente pagado suele ser diferente de la cotización 'oficial' divulgada por el mercado. Bancos y correduras aplican un spread cambiario — la diferencia entre el precio de compra y el de venta de la moneda — que funciona como un margen incorporado en la operación. Además, en Brasil se aplica el IOF (Impuesto sobre Operaciones Financieras) sobre operaciones de cambio, otro costo que reduce el monto neto convertido. Juntos, el spread y el IOF pueden representar una porción relevante del monto movido, especialmente en transferencias menores."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor quer converter R$10.000 para dólares. A cotação 'de mercado' do dia é de R$5,00 por dólar, mas a corretora vende o dólar a R$5,10 — um spread de 2%. Sobre essa operação de câmbio ainda incide o IOF. No fim, o investidor recebe menos dólares do que o valor sugerido pela cotação de mercado sozinha, mesmo antes de qualquer taxa de corretagem sobre o investimento em si."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor wants to convert R$10,000 into dollars. The 'market' quote for the day is R$5.00 per dollar, but the broker sells the dollar at R$5.10 — a 2% spread. IOF still applies on top of this exchange transaction. In the end, the investor receives fewer dollars than the amount suggested by the market quote alone, even before any brokerage fee on the investment itself."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor quiere convertir R$10.000 a dólares. La cotización 'de mercado' del día es de R$5,00 por dólar, pero la correduría vende el dólar a R$5,10 — un spread del 2%. Sobre esta operación de cambio todavía se aplica el IOF. Al final, el inversor recibe menos dólares de lo sugerido por la cotización de mercado sola, incluso antes de cualquier comisión de corretaje sobre la inversión en sí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o spread cambial?",
+                  "options": [
+                    "Um imposto cobrado apenas sobre BDRs",
+                    "A diferença entre o preço de compra e o de venda de uma moeda, cobrada pela instituição que faz a conversão",
+                    "Uma taxa fixa igual em todas as instituições financeiras",
+                    "O nome dado à variação da cotação ao longo do dia"
+                  ],
+                  "explanation": "O spread cambial é a margem embutida entre o preço de compra e o de venda de uma moeda, cobrada pela instituição responsável pela conversão — é um custo adicional além da cotação 'de mercado' divulgada."
+                },
+                "en": {
+                  "prompt": "What is the currency spread?",
+                  "options": [
+                    "A tax charged only on BDRs",
+                    "The difference between the buying and selling price of a currency, charged by the institution making the conversion",
+                    "A fixed fee that's the same across all financial institutions",
+                    "The name given to the quote's variation throughout the day"
+                  ],
+                  "explanation": "The currency spread is the built-in margin between a currency's buying and selling price, charged by the institution responsible for the conversion — it's an extra cost on top of the quoted 'market' rate."
+                },
+                "es": {
+                  "prompt": "¿Qué es el spread cambiario?",
+                  "options": [
+                    "Un impuesto cobrado solo sobre los BDR",
+                    "La diferencia entre el precio de compra y el de venta de una moneda, cobrada por la institución que hace la conversión",
+                    "Una tasa fija igual en todas las instituciones financieras",
+                    "El nombre dado a la variación de la cotización a lo largo del día"
+                  ],
+                  "explanation": "El spread cambiario es el margen incorporado entre el precio de compra y el de venta de una moneda, cobrado por la institución responsable de la conversión — es un costo adicional además de la cotización 'de mercado' divulgada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição, que abrir conta em uma corretora estrangeira envolve transferências internacionais sujeitas a taxas e ao IOF sobre operações de câmbio. Como o conceito de spread cambial se soma a esse custo já conhecido?",
+                  "options": [
+                    "Não se soma, spread cambial e IOF são exatamente a mesma cobrança",
+                    "O spread cambial é um custo adicional, cobrado pela instituição na conversão da moeda, que se soma ao IOF — os dois juntos reduzem o valor líquido efetivamente convertido em cada transferência internacional",
+                    "Spread cambial substitui completamente a necessidade de pagar IOF",
+                    "Esses custos só existem para quem investe via BDR, nunca para quem transfere dinheiro diretamente"
+                  ],
+                  "explanation": "Spread cambial e IOF são custos distintos que incidem juntos sobre a mesma operação de câmbio — o primeiro é uma margem cobrada pela instituição financeira, o segundo é um imposto — e ambos reduzem o valor líquido que chega ao destino da transferência."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson, that opening an account with a foreign broker involves international transfers subject to fees and to IOF on foreign exchange transactions. How does the concept of currency spread add to that already-known cost?",
+                  "options": [
+                    "It doesn't add up, currency spread and IOF are exactly the same charge",
+                    "The currency spread is an extra cost, charged by the institution when converting the currency, which adds to the IOF — together they reduce the net amount actually converted in each international transfer",
+                    "Currency spread completely replaces the need to pay IOF",
+                    "These costs only exist for those investing via BDR, never for those transferring money directly"
+                  ],
+                  "explanation": "Currency spread and IOF are distinct costs that apply together to the same exchange transaction — the first is a margin charged by the financial institution, the second is a tax — and both reduce the net amount that reaches the destination of the transfer."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección, que abrir una cuenta en una correduría extranjera implica transferencias internacionales sujetas a tarifas y al IOF sobre operaciones de cambio. ¿Cómo se suma el concepto de spread cambiario a ese costo ya conocido?",
+                  "options": [
+                    "No se suma, el spread cambiario y el IOF son exactamente el mismo cobro",
+                    "El spread cambiario es un costo adicional, cobrado por la institución al convertir la moneda, que se suma al IOF — ambos juntos reducen el monto neto efectivamente convertido en cada transferencia internacional",
+                    "El spread cambiario sustituye por completo la necesidad de pagar IOF",
+                    "Estos costos solo existen para quien invierte vía BDR, nunca para quien transfiere dinero directamente"
+                  ],
+                  "explanation": "El spread cambiario y el IOF son costos distintos que se aplican juntos sobre la misma operación de cambio — el primero es un margen cobrado por la institución financiera, el segundo es un impuesto — y ambos reducen el monto neto que llega al destino de la transferencia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Converter moeda para investir no exterior envolve um spread cambial, cobrado pela instituição financeira.",
+                    "O IOF sobre operações de câmbio é outro custo que se soma ao spread.",
+                    "Juntos, esses custos reduzem o valor líquido efetivamente convertido em cada transferência internacional."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Converting currency to invest abroad involves a currency spread, charged by the financial institution.",
+                    "IOF on foreign exchange transactions is another cost that adds to the spread.",
+                    "Together, these costs reduce the net amount actually converted in each international transfer."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Convertir moneda para invertir en el exterior implica un spread cambiario, cobrado por la institución financiera.",
+                    "El IOF sobre operaciones de cambio es otro costo que se suma al spread.",
+                    "Juntos, estos costos reducen el monto neto efectivamente convertido en cada transferencia internacional."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "international_investing_expert",
+      "order": 3,
+      "iconKey": "public_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "international_investing_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Investimento Internacional: Nível Especialista",
+          "description": "Home bias, ponderação por valor de mercado global, mercados emergentes vs. desenvolvidos, risco-país e correlação entre mercados internacionais."
+        },
+        "en": {
+          "title": "International Investing: Expert Level",
+          "description": "Home bias, global market-cap weighting, emerging vs. developed markets, country risk and cross-border market correlation."
+        },
+        "es": {
+          "title": "Inversión Internacional: Nivel Experto",
+          "description": "Home bias, ponderación por valor de mercado global, mercados emergentes vs. desarrollados, riesgo país y correlación entre mercados internacionales."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "international_home_bias",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Home Bias: A Preferência pelo Próprio País"
+            },
+            "en": {
+              "title": "Home Bias: Preference for One's Own Country"
+            },
+            "es": {
+              "title": "Home Bias: Preferencia por el Propio País"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma tendência a concentrar no que é familiar",
+                  "body": "Home bias é a tendência observada de investidores concentrarem uma parcela desproporcionalmente grande de suas carteiras em ativos do próprio país, mesmo quando esse país representa uma fatia bem menor do mercado financeiro global. Isso acontece mesmo entre investidores que já reconhecem, em teoria, os benefícios da diversificação geográfica — a familiaridade com empresas, moeda e informações do próprio mercado tende a pesar mais do que uma análise puramente racional sobre alocação ideal."
+                },
+                "en": {
+                  "title": "A tendency to concentrate on what's familiar",
+                  "body": "Home bias is the observed tendency of investors to concentrate a disproportionately large share of their portfolios in their own country's assets, even when that country represents a much smaller slice of the global financial market. This happens even among investors who already recognize, in theory, the benefits of geographic diversification — familiarity with companies, currency and information from one's own market tends to weigh more than a purely rational analysis of ideal allocation."
+                },
+                "es": {
+                  "title": "Una tendencia a concentrarse en lo familiar",
+                  "body": "El home bias es la tendencia observada de los inversores a concentrar una porción desproporcionadamente grande de sus carteras en activos de su propio país, incluso cuando ese país representa una porción mucho menor del mercado financiero global. Esto ocurre incluso entre inversores que ya reconocen, en teoría, los beneficios de la diversificación geográfica — la familiaridad con empresas, moneda e información del propio mercado tiende a pesar más que un análisis puramente racional sobre la asignación ideal."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor brasileiro mantém 95% de sua carteira em ativos locais, mesmo sabendo que o mercado brasileiro representa uma fração pequena do valor de mercado global de ações. Ele justifica a escolha pela familiaridade com as empresas locais e pela praticidade de investir sem lidar com câmbio ou tributação internacional — um exemplo típico de home bias, mesmo havendo consciência dos benefícios teóricos da diversificação."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A Brazilian investor keeps 95% of their portfolio in local assets, even knowing the Brazilian market represents a small fraction of global stock market value. They justify the choice by familiarity with local companies and the convenience of investing without dealing with foreign exchange or international taxation — a typical example of home bias, even while being aware of diversification's theoretical benefits."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor brasileño mantiene el 95% de su cartera en activos locales, aunque sabe que el mercado brasileño representa una fracción pequeña del valor de mercado global de acciones. Justifica la elección por la familiaridad con las empresas locales y la comodidad de invertir sin lidiar con tipo de cambio o tributación internacional — un ejemplo típico de home bias, aun existiendo consciencia de los beneficios teóricos de la diversificación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é home bias?",
+                  "options": [
+                    "A tendência de investidores sempre escolherem os ativos internacionais mais rentáveis",
+                    "A tendência de investidores concentrarem uma parcela desproporcional da carteira em ativos do próprio país",
+                    "Uma regra legal que proíbe investir no exterior",
+                    "Um tipo específico de imposto sobre investimentos internacionais"
+                  ],
+                  "explanation": "Home bias é justamente essa tendência comportamental de concentrar a carteira em ativos do próprio país, além do que uma alocação puramente baseada no tamanho relativo dos mercados sugeriria."
+                },
+                "en": {
+                  "prompt": "What is home bias?",
+                  "options": [
+                    "The tendency of investors to always pick the most profitable international assets",
+                    "The tendency of investors to concentrate a disproportionate share of the portfolio in their own country's assets",
+                    "A legal rule that prohibits investing abroad",
+                    "A specific type of tax on international investments"
+                  ],
+                  "explanation": "Home bias is precisely this behavioral tendency to concentrate the portfolio in one's own country's assets, beyond what an allocation based purely on relative market size would suggest."
+                },
+                "es": {
+                  "prompt": "¿Qué es el home bias?",
+                  "options": [
+                    "La tendencia de los inversores a elegir siempre los activos internacionales más rentables",
+                    "La tendencia de los inversores a concentrar una porción desproporcionada de la cartera en activos del propio país",
+                    "Una regla legal que prohíbe invertir en el exterior",
+                    "Un tipo específico de impuesto sobre inversiones internacionales"
+                  ],
+                  "explanation": "El home bias es precisamente esa tendencia conductual a concentrar la cartera en activos del propio país, más allá de lo que sugeriría una asignación basada puramente en el tamaño relativo de los mercados."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que a diversificação geográfica busca reduzir a dependência do desempenho de um único país. Como o home bias entra em conflito direto com esse princípio, mesmo quando o investidor já conhece esse argumento?",
+                  "options": [
+                    "O home bias faz com que o investidor concentre a carteira justamente no país que ele já conhece melhor, na prática reduzindo o benefício de diversificação que ele mesmo reconhece em teoria",
+                    "Home bias e diversificação geográfica são exatamente a mesma coisa, sem nenhum conflito entre eles",
+                    "O home bias elimina completamente a necessidade de diversificação geográfica, tornando-a desnecessária",
+                    "Home bias só afeta investidores que nunca ouviram falar em diversificação"
+                  ],
+                  "explanation": "O home bias é um exemplo claro de como um viés comportamental pode levar a uma escolha que contradiz na prática um princípio que o próprio investidor reconhece racionalmente, como o valor da diversificação geográfica."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that geographic diversification seeks to reduce dependence on a single country's performance. How does home bias directly conflict with that principle, even when the investor already knows the argument?",
+                  "options": [
+                    "Home bias makes the investor concentrate the portfolio precisely in the country they already know best, in practice reducing the diversification benefit they recognize in theory",
+                    "Home bias and geographic diversification are exactly the same thing, with no conflict between them",
+                    "Home bias completely eliminates the need for geographic diversification, making it unnecessary",
+                    "Home bias only affects investors who have never heard of diversification"
+                  ],
+                  "explanation": "Home bias is a clear example of how a behavioral bias can lead to a choice that, in practice, contradicts a principle the investor themselves recognizes rationally, like the value of geographic diversification."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la diversificación geográfica busca reducir la dependencia del desempeño de un único país. ¿Cómo entra el home bias en conflicto directo con ese principio, incluso cuando el inversor ya conoce ese argumento?",
+                  "options": [
+                    "El home bias hace que el inversor concentre la cartera justamente en el país que ya conoce mejor, reduciendo en la práctica el beneficio de diversificación que él mismo reconoce en teoría",
+                    "Home bias y diversificación geográfica son exactamente lo mismo, sin ningún conflicto entre ellos",
+                    "El home bias elimina por completo la necesidad de diversificación geográfica, haciéndola innecesaria",
+                    "El home bias solo afecta a inversores que nunca escucharon hablar de diversificación"
+                  ],
+                  "explanation": "El home bias es un ejemplo claro de cómo un sesgo conductual puede llevar a una elección que, en la práctica, contradice un principio que el propio inversor reconoce racionalmente, como el valor de la diversificación geográfica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Home bias é a tendência de concentrar a carteira desproporcionalmente em ativos do próprio país.",
+                    "Isso acontece mesmo entre investidores que já reconhecem os benefícios teóricos da diversificação geográfica.",
+                    "A familiaridade com o mercado local tende a pesar mais do que uma análise puramente racional de alocação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Home bias is the tendency to concentrate the portfolio disproportionately in one's own country's assets.",
+                    "This happens even among investors who already recognize geographic diversification's theoretical benefits.",
+                    "Familiarity with the local market tends to weigh more than a purely rational allocation analysis."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El home bias es la tendencia a concentrar la cartera desproporcionadamente en activos del propio país.",
+                    "Esto ocurre incluso entre inversores que ya reconocen los beneficios teóricos de la diversificación geográfica.",
+                    "La familiaridad con el mercado local tiende a pesar más que un análisis puramente racional de asignación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_market_cap_weighting",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ponderação por Valor de Mercado Global"
+            },
+            "en": {
+              "title": "Global Market-Cap Weighting"
+            },
+            "es": {
+              "title": "Ponderación por Valor de Mercado Global"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo país pesa igual em um índice global",
+                  "body": "Índices globais de ações costumam ponderar cada país de acordo com seu valor de mercado total — ou seja, países com mercados de ações maiores e mais desenvolvidos representam uma fatia proporcionalmente maior do índice, enquanto países com mercados menores representam uma fatia bem menor. Isso significa que investir em um único ETF ou fundo que segue um índice global de ações não distribui o dinheiro igualmente entre países, mas sim de acordo com o peso relativo de cada mercado no total."
+                },
+                "en": {
+                  "title": "Not every country weighs the same in a global index",
+                  "body": "Global stock indexes usually weight each country according to its total market value — meaning countries with larger, more developed stock markets represent a proportionally bigger slice of the index, while countries with smaller markets represent a much smaller slice. This means investing in a single ETF or fund that tracks a global stock index doesn't split the money equally across countries, but rather according to each market's relative weight in the total."
+                },
+                "es": {
+                  "title": "No todos los países pesan igual en un índice global",
+                  "body": "Los índices globales de acciones suelen ponderar a cada país según su valor de mercado total — es decir, los países con mercados de acciones más grandes y desarrollados representan una porción proporcionalmente mayor del índice, mientras que los países con mercados más pequeños representan una porción mucho menor. Esto significa que invertir en un único ETF o fondo que sigue un índice global de acciones no distribuye el dinero por igual entre países, sino según el peso relativo de cada mercado en el total."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra um ETF que segue um índice amplo de ações globais, esperando uma exposição equilibrada entre países. Na prática, por causa da ponderação por valor de mercado, uma parte considerável desse índice costuma estar concentrada em poucos países com mercados de ações muito grandes, enquanto dezenas de outros países juntos representam uma fatia bem menor."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys an ETF tracking a broad global stock index, expecting balanced exposure across countries. In practice, because of market-cap weighting, a considerable part of that index is usually concentrated in a few countries with very large stock markets, while dozens of other countries together represent a much smaller slice."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra un ETF que sigue un índice amplio de acciones globales, esperando una exposición equilibrada entre países. En la práctica, por la ponderación por valor de mercado, una parte considerable de ese índice suele estar concentrada en pocos países con mercados de acciones muy grandes, mientras que decenas de otros países juntos representan una porción bastante menor."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Como um índice global de ações ponderado por valor de mercado geralmente distribui o peso entre os países?",
+                  "options": [
+                    "Países com mercados de ações maiores e mais desenvolvidos representam uma fatia proporcionalmente maior do índice",
+                    "Todos os países recebem exatamente o mesmo peso, independentemente do tamanho de seus mercados",
+                    "O peso é distribuído por sorteio entre os países participantes",
+                    "Apenas o país onde o índice foi criado recebe algum peso"
+                  ],
+                  "explanation": "Em índices ponderados por valor de mercado, países com mercados de ações maiores representam uma fatia proporcionalmente maior do índice total."
+                },
+                "en": {
+                  "prompt": "How does a market-cap-weighted global stock index generally distribute weight across countries?",
+                  "options": [
+                    "Countries with larger, more developed stock markets represent a proportionally bigger slice of the index",
+                    "Every country gets exactly the same weight, regardless of the size of its markets",
+                    "Weight is distributed by lottery among participating countries",
+                    "Only the country where the index was created gets any weight"
+                  ],
+                  "explanation": "In market-cap-weighted indexes, countries with larger stock markets represent a proportionally bigger slice of the total index."
+                },
+                "es": {
+                  "prompt": "¿Cómo distribuye generalmente el peso entre países un índice global de acciones ponderado por valor de mercado?",
+                  "options": [
+                    "Los países con mercados de acciones más grandes y desarrollados representan una porción proporcionalmente mayor del índice",
+                    "Todos los países reciben exactamente el mismo peso, sin importar el tamaño de sus mercados",
+                    "El peso se distribuye por sorteo entre los países participantes",
+                    "Solo el país donde se creó el índice recibe algún peso"
+                  ],
+                  "explanation": "En los índices ponderados por valor de mercado, los países con mercados de acciones más grandes representan una porción proporcionalmente mayor del índice total."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que a diversificação geográfica busca reduzir a dependência do desempenho de um único país. Diante da ponderação por valor de mercado, um único ETF global pode não entregar toda a diversificação geográfica que o investidor imagina?",
+                  "options": [
+                    "Sim — se o índice está fortemente concentrado em poucos países grandes, o investidor ainda carrega uma dependência considerável do desempenho desses mercados específicos, mesmo tecnicamente estando 'diversificado globalmente'",
+                    "Não, um ETF global sempre distribui o investimento igualmente entre todos os países do mundo",
+                    "Ponderação por valor de mercado elimina completamente qualquer concentração em um índice global",
+                    "Não existe nenhuma relação entre ponderação por valor de mercado e o conceito de diversificação geográfica"
+                  ],
+                  "explanation": "Como a ponderação por valor de mercado concentra o índice nos países com maiores mercados, um investidor que busca reduzir a dependência de qualquer país específico precisa entender que um único índice global ainda pode deixá-lo mais exposto a poucos mercados grandes do que imaginava."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that geographic diversification seeks to reduce dependence on a single country's performance. Given market-cap weighting, might a single global ETF not deliver all the geographic diversification the investor imagines?",
+                  "options": [
+                    "Yes — if the index is heavily concentrated in a few large countries, the investor still carries considerable dependence on those specific markets' performance, even while technically being 'globally diversified'",
+                    "No, a global ETF always splits the investment equally across every country in the world",
+                    "Market-cap weighting completely eliminates any concentration in a global index",
+                    "There's no relation at all between market-cap weighting and the concept of geographic diversification"
+                  ],
+                  "explanation": "Since market-cap weighting concentrates the index in the countries with the largest markets, an investor seeking to reduce dependence on any specific country needs to understand that a single global index can still leave them more exposed to a few large markets than they imagined."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la diversificación geográfica busca reducir la dependencia del desempeño de un único país. Ante la ponderación por valor de mercado, ¿podría un único ETF global no entregar toda la diversificación geográfica que el inversor imagina?",
+                  "options": [
+                    "Sí — si el índice está fuertemente concentrado en pocos países grandes, el inversor todavía carga una dependencia considerable del desempeño de esos mercados específicos, aunque técnicamente esté 'diversificado globalmente'",
+                    "No, un ETF global siempre distribuye la inversión por igual entre todos los países del mundo",
+                    "La ponderación por valor de mercado elimina por completo cualquier concentración en un índice global",
+                    "No existe ninguna relación entre la ponderación por valor de mercado y el concepto de diversificación geográfica"
+                  ],
+                  "explanation": "Como la ponderación por valor de mercado concentra el índice en los países con mercados más grandes, un inversor que busca reducir la dependencia de cualquier país específico necesita entender que un único índice global todavía puede dejarlo más expuesto a pocos mercados grandes de lo que imaginaba."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Índices globais de ações costumam ponderar cada país pelo seu valor de mercado total.",
+                    "Isso concentra o índice nos países com mercados de ações maiores e mais desenvolvidos.",
+                    "Um único índice global pode deixar o investidor mais exposto a poucos mercados grandes do que ele imagina."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Global stock indexes usually weight each country by its total market value.",
+                    "This concentrates the index in countries with larger, more developed stock markets.",
+                    "A single global index can leave the investor more exposed to a few large markets than they imagine."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los índices globales de acciones suelen ponderar a cada país por su valor de mercado total.",
+                    "Esto concentra el índice en los países con mercados de acciones más grandes y desarrollados.",
+                    "Un único índice global puede dejar al inversor más expuesto a pocos mercados grandes de lo que imagina."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_emerging_vs_developed_markets",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Mercados Desenvolvidos vs. Emergentes"
+            },
+            "en": {
+              "title": "Developed vs. Emerging Markets"
+            },
+            "es": {
+              "title": "Mercados Desarrollados vs. Emergentes"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Classificações com implicações de risco e retorno diferentes",
+                  "body": "Mercados são frequentemente classificados como desenvolvidos ou emergentes, com base em fatores como estabilidade econômica e institucional, tamanho e liquidez do mercado financeiro, e nível de renda do país. Mercados desenvolvidos tendem a ser vistos como mais estáveis, mas com potencial de crescimento mais limitado; mercados emergentes, incluindo o Brasil, costumam ter maior potencial de crescimento econômico, mas também maior volatilidade e sensibilidade a mudanças no cenário político e no fluxo de capital internacional."
+                },
+                "en": {
+                  "title": "Classifications with different risk and return implications",
+                  "body": "Markets are often classified as developed or emerging, based on factors like economic and institutional stability, financial market size and liquidity, and the country's income level. Developed markets tend to be seen as more stable, but with more limited growth potential; emerging markets, including Brazil, usually have greater economic growth potential, but also higher volatility and sensitivity to changes in the political landscape and international capital flows."
+                },
+                "es": {
+                  "title": "Clasificaciones con implicaciones de riesgo y retorno diferentes",
+                  "body": "Los mercados suelen clasificarse como desarrollados o emergentes, según factores como la estabilidad económica e institucional, el tamaño y liquidez del mercado financiero, y el nivel de ingreso del país. Los mercados desarrollados tienden a verse como más estables, pero con un potencial de crecimiento más limitado; los mercados emergentes, incluido Brasil, suelen tener un mayor potencial de crecimiento económico, pero también mayor volatilidad y sensibilidad a cambios en el escenario político y en el flujo de capital internacional."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Durante um período de instabilidade política em um mercado emergente, o fluxo de capital estrangeiro pode sair rapidamente do país, causando quedas acentuadas nos preços dos ativos locais e desvalorização da moeda — um padrão de volatilidade tipicamente mais intenso do que o observado em mercados desenvolvidos com instituições mais estáveis."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "During a period of political instability in an emerging market, foreign capital can quickly flow out of the country, causing sharp drops in local asset prices and currency depreciation — a volatility pattern typically more intense than what's observed in developed markets with more stable institutions."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Durante un período de inestabilidad política en un mercado emergente, el flujo de capital extranjero puede salir rápidamente del país, causando caídas pronunciadas en los precios de los activos locales y devaluación de la moneda — un patrón de volatilidad típicamente más intenso que el observado en mercados desarrollados con instituciones más estables."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que geralmente caracteriza um mercado emergente, em comparação com um mercado desenvolvido?",
+                  "options": [
+                    "Estabilidade absoluta e ausência total de volatilidade",
+                    "Maior potencial de crescimento econômico, mas também maior volatilidade e sensibilidade a mudanças políticas e de fluxo de capital",
+                    "Um tamanho de mercado financeiro sempre maior do que o de qualquer mercado desenvolvido",
+                    "A impossibilidade de qualquer investidor estrangeiro investir nesse mercado"
+                  ],
+                  "explanation": "Mercados emergentes costumam combinar maior potencial de crescimento com maior volatilidade e sensibilidade a fatores políticos e a fluxos de capital internacional."
+                },
+                "en": {
+                  "prompt": "What generally characterizes an emerging market, compared to a developed one?",
+                  "options": [
+                    "Absolute stability and total absence of volatility",
+                    "Greater economic growth potential, but also higher volatility and sensitivity to political changes and capital flows",
+                    "A financial market size always larger than any developed market",
+                    "The impossibility of any foreign investor investing in that market"
+                  ],
+                  "explanation": "Emerging markets usually combine greater growth potential with higher volatility and sensitivity to political factors and international capital flows."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza generalmente a un mercado emergente, en comparación con un mercado desarrollado?",
+                  "options": [
+                    "Estabilidad absoluta y ausencia total de volatilidad",
+                    "Mayor potencial de crecimiento económico, pero también mayor volatilidad y sensibilidad a cambios políticos y de flujo de capital",
+                    "Un tamaño de mercado financiero siempre mayor que el de cualquier mercado desarrollado",
+                    "La imposibilidad de que cualquier inversor extranjero invierta en ese mercado"
+                  ],
+                  "explanation": "Los mercados emergentes suelen combinar mayor potencial de crecimiento con mayor volatilidad y sensibilidad a factores políticos y a flujos de capital internacional."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que economias abertas como a do Brasil sofrem influência de decisões de política monetária tomadas em grandes economias, com capital podendo sair rapidamente em busca de juros mais altos em outros lugares. Como isso ajuda a explicar por que mercados emergentes tendem a ter volatilidade mais acentuada do que mercados desenvolvidos?",
+                  "options": [
+                    "Porque mercados emergentes costumam ser mais sensíveis a esses fluxos de capital internacional, o que amplifica o impacto de decisões externas sobre seus preços e câmbio",
+                    "Porque mercados desenvolvidos nunca são afetados por nenhum fluxo de capital internacional",
+                    "Porque mercados emergentes são sempre imunes a decisões de política monetária de outros países",
+                    "Não existe nenhuma relação entre fluxo de capital internacional e a volatilidade de mercados emergentes"
+                  ],
+                  "explanation": "A maior sensibilidade de mercados emergentes a fluxos de capital internacional é justamente um dos fatores que amplifica sua volatilidade em comparação com mercados desenvolvidos, cujas instituições e moedas costumam ser vistas como portos mais estáveis."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that open economies like Brazil's are influenced by monetary policy decisions made in large economies, with capital able to quickly flow out in search of higher rates elsewhere. How does that help explain why emerging markets tend to have sharper volatility than developed markets?",
+                  "options": [
+                    "Because emerging markets tend to be more sensitive to those international capital flows, which amplifies the impact of external decisions on their prices and exchange rate",
+                    "Because developed markets are never affected by any international capital flow",
+                    "Because emerging markets are always immune to other countries' monetary policy decisions",
+                    "There's no relation at all between international capital flow and emerging markets' volatility"
+                  ],
+                  "explanation": "Emerging markets' greater sensitivity to international capital flows is precisely one of the factors that amplifies their volatility compared to developed markets, whose institutions and currencies are usually seen as more stable havens."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que las economías abiertas como la de Brasil se ven influenciadas por decisiones de política monetaria tomadas en grandes economías, con capital que puede salir rápidamente en busca de tasas más altas en otros lugares. ¿Cómo ayuda esto a explicar por qué los mercados emergentes tienden a tener una volatilidad más pronunciada que los mercados desarrollados?",
+                  "options": [
+                    "Porque los mercados emergentes suelen ser más sensibles a esos flujos de capital internacional, lo que amplifica el impacto de decisiones externas sobre sus precios y tipo de cambio",
+                    "Porque los mercados desarrollados nunca se ven afectados por ningún flujo de capital internacional",
+                    "Porque los mercados emergentes son siempre inmunes a las decisiones de política monetaria de otros países",
+                    "No existe ninguna relación entre el flujo de capital internacional y la volatilidad de los mercados emergentes"
+                  ],
+                  "explanation": "La mayor sensibilidad de los mercados emergentes a los flujos de capital internacional es precisamente uno de los factores que amplifica su volatilidad en comparación con los mercados desarrollados, cuyas instituciones y monedas suelen verse como refugios más estables."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Mercados são classificados como desenvolvidos ou emergentes com base em estabilidade, tamanho e nível de renda.",
+                    "Mercados emergentes costumam ter maior potencial de crescimento, mas também maior volatilidade.",
+                    "Essa volatilidade está associada à maior sensibilidade desses mercados a fluxos de capital internacional."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Markets are classified as developed or emerging based on stability, size and income level.",
+                    "Emerging markets usually have greater growth potential, but also higher volatility.",
+                    "That volatility is tied to these markets' greater sensitivity to international capital flows."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los mercados se clasifican como desarrollados o emergentes según estabilidad, tamaño y nivel de ingreso.",
+                    "Los mercados emergentes suelen tener mayor potencial de crecimiento, pero también mayor volatilidad.",
+                    "Esa volatilidad está asociada a la mayor sensibilidad de esos mercados a los flujos de capital internacional."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_political_and_country_risk",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco Político e Risco-País"
+            },
+            "en": {
+              "title": "Political Risk and Country Risk"
+            },
+            "es": {
+              "title": "Riesgo Político y Riesgo País"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um risco específico de onde o ativo está, não do ativo em si",
+                  "body": "Risco-país (ou risco político) é o risco de que decisões governamentais, instabilidade política, mudanças bruscas de regulação ou até conflitos afetem o valor de investimentos feitos em um determinado país, independentemente da qualidade da empresa ou do ativo específico. Esse risco é avaliado, entre outras formas, através de classificações de risco soberano feitas por agências especializadas, que buscam medir a capacidade e a disposição de um governo de honrar seus compromissos e manter um ambiente estável para investimentos."
+                },
+                "en": {
+                  "title": "A risk specific to where the asset is, not the asset itself",
+                  "body": "Country risk (or political risk) is the risk that government decisions, political instability, abrupt regulatory changes or even conflicts affect the value of investments made in a given country, regardless of the quality of the specific company or asset. This risk is assessed, among other ways, through sovereign risk ratings issued by specialized agencies, which try to measure a government's ability and willingness to honor its commitments and maintain a stable environment for investments."
+                },
+                "es": {
+                  "title": "Un riesgo específico de dónde está el activo, no del activo en sí",
+                  "body": "El riesgo país (o riesgo político) es el riesgo de que decisiones gubernamentales, inestabilidad política, cambios bruscos de regulación o incluso conflictos afecten el valor de inversiones hechas en un determinado país, independientemente de la calidad de la empresa o el activo específico. Este riesgo se evalúa, entre otras formas, mediante calificaciones de riesgo soberano hechas por agencias especializadas, que buscan medir la capacidad y disposición de un gobierno de honrar sus compromisos y mantener un ambiente estable para las inversiones."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa sólida e bem administrada, listada em um país que passa por uma crise política severa, pode ver o valor de suas ações despencar não por causa de nenhum problema em sua operação, mas por causa da incerteza generalizada sobre o ambiente regulatório e institucional daquele país — um exemplo de como o risco-país afeta ativos independentemente de seus fundamentos individuais."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A solid, well-managed company, listed in a country going through a severe political crisis, can see its stock value plunge not because of any problem in its own operations, but because of widespread uncertainty about that country's regulatory and institutional environment — an example of how country risk affects assets regardless of their individual fundamentals."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa sólida y bien administrada, listada en un país que atraviesa una crisis política severa, puede ver el valor de sus acciones desplomarse no por ningún problema en su operación, sino por la incertidumbre generalizada sobre el ambiente regulatorio e institucional de ese país — un ejemplo de cómo el riesgo país afecta a los activos independientemente de sus fundamentos individuales."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco-país (ou risco político)?",
+                  "options": [
+                    "O risco de que fatores como instabilidade política ou mudanças regulatórias em um país afetem o valor de investimentos ali, independentemente da qualidade do ativo específico",
+                    "Um risco que afeta exclusivamente ativos de renda fixa, nunca ações",
+                    "Uma taxa cobrada pelo governo sobre investimentos estrangeiros",
+                    "Um risco que só existe em países desenvolvidos"
+                  ],
+                  "explanation": "Risco-país se refere especificamente a fatores do ambiente político e institucional de um país que podem afetar investimentos ali, à parte da qualidade do ativo individual."
+                },
+                "en": {
+                  "prompt": "What is country risk (or political risk)?",
+                  "options": [
+                    "The risk that factors like political instability or regulatory changes in a country affect the value of investments there, regardless of the specific asset's quality",
+                    "A risk that exclusively affects fixed-income assets, never stocks",
+                    "A fee charged by the government on foreign investments",
+                    "A risk that only exists in developing countries"
+                  ],
+                  "explanation": "Country risk specifically refers to factors in a country's political and institutional environment that can affect investments there, apart from the individual asset's quality."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo país (o riesgo político)?",
+                  "options": [
+                    "El riesgo de que factores como la inestabilidad política o cambios regulatorios en un país afecten el valor de las inversiones allí, independientemente de la calidad del activo específico",
+                    "Un riesgo que afecta exclusivamente a activos de renta fija, nunca a acciones",
+                    "Una tasa cobrada por el gobierno sobre inversiones extranjeras",
+                    "Un riesgo que solo existe en países en desarrollo"
+                  ],
+                  "explanation": "El riesgo país se refiere específicamente a factores del ambiente político e institucional de un país que pueden afectar inversiones allí, aparte de la calidad del activo individual."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que mercados emergentes costumam ter maior volatilidade, associada em parte à sensibilidade a fluxos de capital internacional. Como o risco-país se conecta a essa maior volatilidade especificamente?",
+                  "options": [
+                    "Risco-país não tem nenhuma relação com a volatilidade de mercados emergentes",
+                    "O risco-país é um dos fatores por trás dessa maior sensibilidade: incerteza política ou institucional pode ser justamente o gatilho que faz capital estrangeiro sair rapidamente de um mercado emergente",
+                    "Risco-país só existe em mercados desenvolvidos, nunca em mercados emergentes",
+                    "Mercados emergentes são sempre imunes a qualquer forma de risco político"
+                  ],
+                  "explanation": "O risco-país é frequentemente um dos fatores que dispara movimentos bruscos de saída de capital estrangeiro em mercados emergentes, conectando diretamente esse conceito à maior volatilidade discutida na lição anterior."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that emerging markets tend to have higher volatility, partly tied to sensitivity to international capital flows. How does country risk connect to that higher volatility specifically?",
+                  "options": [
+                    "Country risk has no relation at all to emerging markets' volatility",
+                    "Country risk is one of the factors behind that greater sensitivity: political or institutional uncertainty can be precisely the trigger that makes foreign capital quickly leave an emerging market",
+                    "Country risk only exists in developed markets, never in emerging markets",
+                    "Emerging markets are always immune to any form of political risk"
+                  ],
+                  "explanation": "Country risk is often one of the factors that triggers sharp foreign-capital outflows from emerging markets, directly connecting this concept to the higher volatility discussed in the previous lesson."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que los mercados emergentes suelen tener mayor volatilidad, asociada en parte a la sensibilidad a los flujos de capital internacional. ¿Cómo se conecta el riesgo país con esa mayor volatilidad específicamente?",
+                  "options": [
+                    "El riesgo país no tiene ninguna relación con la volatilidad de los mercados emergentes",
+                    "El riesgo país es uno de los factores detrás de esa mayor sensibilidad: la incertidumbre política o institucional puede ser justamente el gatillo que hace que el capital extranjero salga rápidamente de un mercado emergente",
+                    "El riesgo país solo existe en mercados desarrollados, nunca en mercados emergentes",
+                    "Los mercados emergentes son siempre inmunes a cualquier forma de riesgo político"
+                  ],
+                  "explanation": "El riesgo país es frecuentemente uno de los factores que dispara movimientos bruscos de salida de capital extranjero en mercados emergentes, conectando directamente este concepto con la mayor volatilidad discutida en la lección anterior."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco-país é o risco de que fatores políticos ou institucionais de um país afetem investimentos ali, à parte da qualidade do ativo específico.",
+                    "Ele é avaliado, entre outras formas, por classificações de risco soberano feitas por agências especializadas.",
+                    "Risco-país é um dos fatores que ajuda a explicar a maior volatilidade observada em mercados emergentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Country risk is the risk that a country's political or institutional factors affect investments there, apart from the specific asset's quality.",
+                    "It's assessed, among other ways, through sovereign risk ratings from specialized agencies.",
+                    "Country risk is one of the factors that helps explain the higher volatility observed in emerging markets."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo país es el riesgo de que factores políticos o institucionales de un país afecten inversiones allí, aparte de la calidad del activo específico.",
+                    "Se evalúa, entre otras formas, mediante calificaciones de riesgo soberano de agencias especializadas.",
+                    "El riesgo país es uno de los factores que ayuda a explicar la mayor volatilidad observada en los mercados emergentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_cross_border_correlation",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Correlação entre Mercados Internacionais"
+            },
+            "en": {
+              "title": "Cross-Border Market Correlation"
+            },
+            "es": {
+              "title": "Correlación entre Mercados Internacionales"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O benefício da diversificação internacional depende da correlação",
+                  "body": "O benefício de diversificar geograficamente entre países depende de os mercados desses países não se moverem sempre exatamente da mesma forma — ou seja, de uma correlação relativamente baixa entre eles em condições normais. Mercados de países com economias e setores muito diferentes tendem a ter correlação mais baixa entre si em tempos normais, o que amplia o potencial benefício da diversificação internacional em comparação com concentrar tudo em mercados muito parecidos."
+                },
+                "en": {
+                  "title": "International diversification's benefit depends on correlation",
+                  "body": "The benefit of diversifying geographically across countries depends on those countries' markets not always moving in exactly the same way — that is, on relatively low correlation between them under normal conditions. Markets in countries with very different economies and sectors tend to have lower correlation with each other under normal conditions, which expands the potential benefit of international diversification compared to concentrating everything in very similar markets."
+                },
+                "es": {
+                  "title": "El beneficio de la diversificación internacional depende de la correlación",
+                  "body": "El beneficio de diversificar geográficamente entre países depende de que los mercados de esos países no se muevan siempre exactamente de la misma forma — es decir, de una correlación relativamente baja entre ellos en condiciones normales. Los mercados de países con economías y sectores muy diferentes tienden a tener una correlación más baja entre sí en tiempos normales, lo que amplía el beneficio potencial de la diversificación internacional en comparación con concentrar todo en mercados muy parecidos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em um ano normal de mercado, o desempenho de um mercado de ações fortemente ligado a commodities pode divergir bastante do desempenho de um mercado dominado por empresas de tecnologia em outro país, já que fatores diferentes influenciam cada um. Essa baixa correlação em condições normais é justamente o que sustenta o argumento de diversificar entre esses dois tipos de mercado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "In a normal market year, the performance of a stock market heavily tied to commodities can diverge quite a bit from the performance of a market dominated by technology companies in another country, since different factors drive each one. That low correlation under normal conditions is precisely what supports the argument for diversifying between these two types of markets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En un año normal de mercado, el desempeño de un mercado de acciones fuertemente ligado a las materias primas puede diferir bastante del desempeño de un mercado dominado por empresas tecnológicas en otro país, ya que factores diferentes influyen en cada uno. Esa baja correlación en condiciones normales es justamente lo que sustenta el argumento de diversificar entre esos dos tipos de mercado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "De que depende o benefício de diversificar geograficamente entre diferentes países?",
+                  "options": [
+                    "De uma correlação relativamente baixa entre os mercados desses países em condições normais",
+                    "De todos os mercados do mundo se moverem sempre exatamente da mesma forma",
+                    "Da existência de uma única moeda global para todos os países",
+                    "Da eliminação completa de qualquer risco cambial"
+                  ],
+                  "explanation": "O benefício da diversificação geográfica depende justamente de os mercados não se moverem sempre juntos — ou seja, de uma correlação relativamente baixa entre eles em condições normais."
+                },
+                "en": {
+                  "prompt": "What does the benefit of geographically diversifying across different countries depend on?",
+                  "options": [
+                    "A relatively low correlation between those countries' markets under normal conditions",
+                    "Every market in the world always moving in exactly the same way",
+                    "The existence of a single global currency for all countries",
+                    "The complete elimination of any exchange rate risk"
+                  ],
+                  "explanation": "Geographic diversification's benefit depends precisely on markets not always moving together — that is, on relatively low correlation between them under normal conditions."
+                },
+                "es": {
+                  "prompt": "¿De qué depende el beneficio de diversificar geográficamente entre diferentes países?",
+                  "options": [
+                    "De una correlación relativamente baja entre los mercados de esos países en condiciones normales",
+                    "De que todos los mercados del mundo se muevan siempre exactamente de la misma forma",
+                    "De la existencia de una única moneda global para todos los países",
+                    "De la eliminación completa de cualquier riesgo cambiario"
+                  ],
+                  "explanation": "El beneficio de la diversificación geográfica depende justamente de que los mercados no se muevan siempre juntos — es decir, de una correlación relativamente baja entre ellos en condiciones normales."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que em crises financeiras extremas, correlações que pareciam baixas em condições normais podem convergir e subir de forma abrupta, reduzindo o benefício da diversificação justamente quando mais se precisaria dela. Como esse princípio se aplica especificamente à diversificação geográfica internacional?",
+                  "options": [
+                    "Em uma crise financeira global severa, mercados de diferentes países que normalmente têm baixa correlação entre si podem cair juntos de forma mais acentuada do que o esperado, reduzindo temporariamente o benefício da diversificação internacional",
+                    "Diversificação internacional está completamente imune a esse fenômeno, ao contrário de qualquer outra forma de diversificação",
+                    "Correlações entre países sempre permanecem baixas, mesmo durante as crises financeiras mais severas",
+                    "Esse princípio se aplica apenas a ativos de um único país, nunca a diferentes mercados internacionais"
+                  ],
+                  "explanation": "O mesmo fenômeno de convergência de correlações em crises extremas, discutido para ativos em geral, também se aplica a mercados de diferentes países: em uma crise global severa, mercados historicamente pouco correlacionados podem cair juntos, reduzindo temporariamente o benefício esperado da diversificação geográfica."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that in extreme financial crises, correlations that seemed low under normal conditions can converge and rise abruptly, reducing diversification's benefit exactly when it would be needed most. How does that principle apply specifically to international geographic diversification?",
+                  "options": [
+                    "In a severe global financial crisis, markets from different countries that normally have low correlation with each other can fall together more sharply than expected, temporarily reducing international diversification's benefit",
+                    "International diversification is completely immune to that phenomenon, unlike any other form of diversification",
+                    "Correlations between countries always stay low, even during the most severe financial crises",
+                    "This principle only applies to assets from a single country, never to different international markets"
+                  ],
+                  "explanation": "The same correlation-convergence phenomenon during extreme crises, discussed for assets in general, also applies to markets from different countries: in a severe global crisis, historically weakly correlated markets can fall together, temporarily reducing international diversification's expected benefit."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que en crisis financieras extremas, correlaciones que parecían bajas en condiciones normales pueden converger y subir de forma abrupta, reduciendo el beneficio de la diversificación justo cuando más se necesitaría. ¿Cómo se aplica ese principio específicamente a la diversificación geográfica internacional?",
+                  "options": [
+                    "En una crisis financiera global severa, mercados de diferentes países que normalmente tienen baja correlación entre sí pueden caer juntos de forma más pronunciada de lo esperado, reduciendo temporalmente el beneficio de la diversificación internacional",
+                    "La diversificación internacional está completamente inmune a ese fenómeno, a diferencia de cualquier otra forma de diversificación",
+                    "Las correlaciones entre países siempre permanecen bajas, incluso durante las crisis financieras más severas",
+                    "Ese principio se aplica solo a activos de un único país, nunca a diferentes mercados internacionales"
+                  ],
+                  "explanation": "El mismo fenómeno de convergencia de correlaciones en crisis extremas, discutido para activos en general, también se aplica a mercados de diferentes países: en una crisis global severa, mercados históricamente poco correlacionados pueden caer juntos, reduciendo temporalmente el beneficio esperado de la diversificación geográfica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "O benefício da diversificação internacional depende de correlação relativamente baixa entre mercados em condições normais.",
+                    "Em crises financeiras globais severas, essas correlações podem convergir, reduzindo temporariamente esse benefício.",
+                    "Você concluiu o módulo avançado de investimento internacional: home bias, ponderação por valor de mercado, mercados emergentes vs. desenvolvidos, risco-país e correlação entre mercados."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "International diversification's benefit depends on relatively low correlation between markets under normal conditions.",
+                    "In severe global financial crises, those correlations can converge, temporarily reducing that benefit.",
+                    "You've completed the advanced international investing module: home bias, market-cap weighting, emerging vs. developed markets, country risk and cross-border correlation."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El beneficio de la diversificación internacional depende de una correlación relativamente baja entre mercados en condiciones normales.",
+                    "En crisis financieras globales severas, esas correlaciones pueden converger, reduciendo temporalmente ese beneficio.",
+                    "Completaste el módulo avanzado de inversión internacional: home bias, ponderación por valor de mercado, mercados emergentes vs. desarrollados, riesgo país y correlación entre mercados."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2548 @@
+{
+  "schoolId": "taxation",
+  "domainId": "taxation_regulation",
+  "order": 16,
+  "iconKey": "receipt_long_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Tributação",
+      "description": "Imposto de renda sobre renda fixa, ações, FIIs e criptoativos — conteúdo revisado periodicamente."
+    },
+    "en": {
+      "title": "Taxation",
+      "description": "Income tax on fixed income, stocks, REITs and crypto assets — content reviewed periodically."
+    },
+    "es": {
+      "title": "Tributación",
+      "description": "Impuesto sobre la renta fija, acciones, fondos inmobiliarios y criptoactivos — contenido revisado periódicamente."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "taxation_basics",
+      "order": 1,
+      "iconKey": "receipt_long_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos da Tributação",
+          "description": "Tabela regressiva da renda fixa, tributação de ações, FIIs, criptoativos e a responsabilidade pelo DARF."
+        },
+        "en": {
+          "title": "Taxation Fundamentals",
+          "description": "Fixed income's regressive table, stock taxation, REITs, cryptoassets and the responsibility for the DARF."
+        },
+        "es": {
+          "title": "Fundamentos de la Tributación",
+          "description": "Tabla regresiva de la renta fija, tributación de acciones, FII, criptoactivos y la responsabilidad del DARF."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "taxation_fixed_income_tax_table",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tabela Regressiva do IR em Renda Fixa"
+            },
+            "en": {
+              "title": "The Regressive Income Tax Table for Fixed Income"
+            },
+            "es": {
+              "title": "La Tabla Regresiva del IR en Renta Fija"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto mais tempo, menor a alíquota",
+                  "body": "A maioria dos investimentos de renda fixa no Brasil — como CDBs e Tesouro Direto — segue uma tabela regressiva de Imposto de Renda sobre o rendimento: a alíquota começa em 22,5% para resgates em até 180 dias, e cai progressivamente até o mínimo de 15% para aplicações mantidas por mais de 720 dias (2 anos). O imposto incide apenas sobre o rendimento, não sobre o valor principal aplicado, e costuma ser retido automaticamente no resgate."
+                },
+                "en": {
+                  "title": "The longer the term, the lower the rate",
+                  "body": "Most fixed-income investments in Brazil — like CDBs and Treasury bonds — follow a regressive income tax table on earnings: the rate starts at 22.5% for withdrawals within 180 days, and progressively drops to a minimum of 15% for investments held for more than 720 days (2 years). The tax applies only to the earnings, not to the principal invested, and is usually withheld automatically at withdrawal."
+                },
+                "es": {
+                  "title": "Cuanto más tiempo, menor la alícuota",
+                  "body": "La mayoría de las inversiones de renta fija en Brasil — como los CDB y el Tesoro Directo — siguen una tabla regresiva del Impuesto sobre la Renta sobre el rendimiento: la alícuota empieza en el 22,5% para rescates dentro de 180 días, y baja progresivamente hasta el mínimo del 15% para inversiones mantenidas por más de 720 días (2 años). El impuesto se aplica solo sobre el rendimiento, no sobre el monto principal invertido, y suele retenerse automáticamente en el rescate."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa resgata um CDB após 100 dias e paga 22,5% de IR sobre o rendimento obtido nesse período. Outra pessoa, que mantém um CDB parecido por 3 anos, paga apenas 15% de IR sobre o rendimento — uma diferença significativa gerada unicamente pelo tempo em que o dinheiro ficou investido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone withdraws a CDB after 100 days and pays 22.5% income tax on the earnings obtained in that period. Another person, who holds a similar CDB for 3 years, pays only 15% income tax on the earnings — a significant difference generated purely by how long the money stayed invested."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona rescata un CDB después de 100 días y paga el 22,5% de IR sobre el rendimiento obtenido en ese período. Otra persona, que mantiene un CDB parecido durante 3 años, paga solo el 15% de IR sobre el rendimiento — una diferencia significativa generada únicamente por el tiempo en que el dinero permaneció invertido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como funciona a tabela regressiva de IR na maioria dos investimentos de renda fixa?",
+                  "options": [
+                    "A alíquota é sempre fixa em 15%, independentemente do prazo",
+                    "A alíquota começa mais alta e diminui quanto mais tempo o dinheiro fica investido, até um mínimo de 15%",
+                    "A alíquota aumenta quanto mais tempo o dinheiro fica investido",
+                    "Não existe cobrança de imposto em renda fixa"
+                  ],
+                  "explanation": "A tabela regressiva recompensa prazos mais longos com alíquotas menores, começando em 22,5% e caindo até 15% para aplicações mantidas por mais de 720 dias."
+                },
+                "en": {
+                  "prompt": "How does the regressive income tax table work for most fixed-income investments?",
+                  "options": [
+                    "The rate is always fixed at 15%, regardless of the term",
+                    "The rate starts higher and decreases the longer the money stays invested, down to a minimum of 15%",
+                    "The rate increases the longer the money stays invested",
+                    "There's no tax charged on fixed income"
+                  ],
+                  "explanation": "The regressive table rewards longer terms with lower rates, starting at 22.5% and dropping to 15% for investments held for more than 720 days."
+                },
+                "es": {
+                  "prompt": "¿Cómo funciona la tabla regresiva del IR en la mayoría de las inversiones de renta fija?",
+                  "options": [
+                    "La alícuota siempre es fija en el 15%, sin importar el plazo",
+                    "La alícuota empieza más alta y disminuye cuanto más tiempo el dinero permanece invertido, hasta un mínimo del 15%",
+                    "La alícuota aumenta cuanto más tiempo el dinero permanece invertido",
+                    "No existe cobro de impuesto en renta fija"
+                  ],
+                  "explanation": "La tabla regresiva recompensa plazos más largos con alícuotas menores, empezando en el 22,5% y bajando hasta el 15% para inversiones mantenidas por más de 720 días."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que resgatar um investimento de renda fixa cedo demais pode gerar uma alíquota de IR mais alta. Como essa informação se conecta com o que você aprendeu sobre risco de liquidez em outra lição?",
+                  "options": [
+                    "Não se conecta, tributação e liquidez são assuntos completamente separados",
+                    "Reforça a importância de considerar o prazo antes de investir: resgatar cedo pode significar tanto menos liquidez imediata em outros produtos quanto uma alíquota de IR mais alta em renda fixa",
+                    "Significa que resgatar cedo nunca tem nenhuma consequência",
+                    "Indica que a tabela regressiva se aplica apenas a quem tem muito dinheiro investido"
+                  ],
+                  "explanation": "Assim como o risco de liquidez, a tabela regressiva de IR é mais um motivo para pensar no prazo antes de investir — resgatar antes do previsto pode custar tanto em flexibilidade quanto em uma alíquota de imposto mais alta."
+                },
+                "en": {
+                  "prompt": "You already understand that withdrawing a fixed-income investment too early can generate a higher income tax rate. How does that connect with what you learned about liquidity risk in another lesson?",
+                  "options": [
+                    "It doesn't connect, taxation and liquidity are completely separate topics",
+                    "It reinforces the importance of considering the time frame before investing: withdrawing early can mean both less immediate liquidity in other products and a higher income tax rate in fixed income",
+                    "It means withdrawing early never has any consequence",
+                    "It indicates the regressive table only applies to people with a lot of money invested"
+                  ],
+                  "explanation": "Just like liquidity risk, the regressive income tax table is one more reason to think about the time frame before investing — withdrawing earlier than planned can cost you both in flexibility and in a higher tax rate."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que rescatar una inversión de renta fija demasiado pronto puede generar una alícuota de IR más alta. ¿Cómo se conecta esa información con lo que aprendiste sobre el riesgo de liquidez en otra lección?",
+                  "options": [
+                    "No se conecta, la tributación y la liquidez son temas completamente separados",
+                    "Refuerza la importancia de considerar el plazo antes de invertir: rescatar temprano puede significar tanto menos liquidez inmediata en otros productos como una alícuota de IR más alta en renta fija",
+                    "Significa que rescatar temprano nunca tiene ninguna consecuencia",
+                    "Indica que la tabla regresiva solo se aplica a quien tiene mucho dinero invertido"
+                  ],
+                  "explanation": "Al igual que el riesgo de liquidez, la tabla regresiva del IR es un motivo más para pensar en el plazo antes de invertir — rescatar antes de lo previsto puede costar tanto en flexibilidad como en una alícuota de impuesto más alta."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A tabela regressiva de IR em renda fixa vai de 22,5% (até 180 dias) a 15% (acima de 720 dias).",
+                    "O imposto incide apenas sobre o rendimento, não sobre o principal.",
+                    "Resgatar cedo demais custa tanto em liquidez quanto em uma alíquota de imposto mais alta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The regressive income tax table for fixed income ranges from 22.5% (up to 180 days) to 15% (over 720 days).",
+                    "The tax applies only to the earnings, not to the principal.",
+                    "Withdrawing too early costs both in liquidity and in a higher tax rate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tabla regresiva del IR en renta fija va del 22,5% (hasta 180 días) al 15% (más de 720 días).",
+                    "El impuesto se aplica solo sobre el rendimiento, no sobre el principal.",
+                    "Rescatar demasiado pronto cuesta tanto en liquidez como en una alícuota de impuesto más alta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_stocks",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tributação de Ações"
+            },
+            "en": {
+              "title": "Stock Taxation"
+            },
+            "es": {
+              "title": "Tributación de Acciones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Isenção mensal e responsabilidade do investidor",
+                  "body": "Pela legislação atual, o ganho de capital com a venda de ações comuns (fora do day trade) é isento de Imposto de Renda para pessoas físicas quando o total vendido no mês não ultrapassa R$20.000, considerando a soma de todas as vendas. Acima desse limite, incide uma alíquota de 15% sobre o lucro obtido, e diferente da renda fixa, não há retenção automática — o próprio investidor é responsável por calcular e recolher o imposto devido."
+                },
+                "en": {
+                  "title": "Monthly exemption and investor responsibility",
+                  "body": "Under current legislation, capital gains from selling common stocks (outside of day trading) are exempt from income tax for individuals when the total sold in the month doesn't exceed R$20,000, considering the sum of all sales. Above that limit, a 15% rate applies to the profit obtained, and unlike fixed income, there's no automatic withholding — the investor themselves is responsible for calculating and paying the tax owed."
+                },
+                "es": {
+                  "title": "Exención mensual y responsabilidad del inversor",
+                  "body": "Según la legislación actual, la ganancia de capital por la venta de acciones comunes (fuera del day trade) está exenta del Impuesto sobre la Renta para personas físicas cuando el total vendido en el mes no supera los R$20.000, considerando la suma de todas las ventas. Por encima de ese límite, se aplica una alícuota del 15% sobre la ganancia obtenida, y a diferencia de la renta fija, no hay retención automática — el propio inversor es responsable de calcular y pagar el impuesto adeudado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vende R$15.000 em ações em um mês, com lucro de R$2.000 — como o total vendido está abaixo de R$20.000, esse lucro é isento de IR. No mês seguinte, ele vende R$25.000 em ações, com lucro de R$3.000 — como o total vendido ultrapassou R$20.000, ele precisa calcular e pagar 15% de IR sobre esse lucro, por conta própria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sells R$15,000 in stocks in a month, with a R$2,000 profit — since the total sold is below R$20,000, that profit is exempt from income tax. The next month, they sell R$25,000 in stocks, with a R$3,000 profit — since the total sold exceeded R$20,000, they need to calculate and pay 15% income tax on that profit, on their own."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vende R$15.000 en acciones en un mes, con una ganancia de R$2.000 — como el total vendido está por debajo de R$20.000, esa ganancia está exenta de IR. Al mes siguiente, vende R$25.000 en acciones, con una ganancia de R$3.000 — como el total vendido superó los R$20.000, necesita calcular y pagar el 15% de IR sobre esa ganancia, por su cuenta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Pela regra vigente, quando o ganho de capital com venda de ações comuns é isento de Imposto de Renda?",
+                  "options": [
+                    "Sempre, não importa o valor vendido",
+                    "Quando o total vendido no mês, somando todas as vendas, não ultrapassa R$20.000",
+                    "Apenas para quem investe através de uma única corretora",
+                    "Nunca, ações sempre pagam imposto"
+                  ],
+                  "explanation": "A isenção vale para o total de vendas de ações comuns dentro do mês, somando todas as operações — acima de R$20.000 vendidos, o lucro passa a ser tributado."
+                },
+                "en": {
+                  "prompt": "Under current rules, when is the capital gain from selling common stocks exempt from income tax?",
+                  "options": [
+                    "Always, no matter the amount sold",
+                    "When the total sold in the month, adding up all sales, doesn't exceed R$20,000",
+                    "Only for those investing through a single broker",
+                    "Never, stocks always pay tax"
+                  ],
+                  "explanation": "The exemption applies to the total of common stock sales within the month, adding up all transactions — above R$20,000 sold, the profit becomes taxable."
+                },
+                "es": {
+                  "prompt": "Según la regla vigente, ¿cuándo está exenta de Impuesto sobre la Renta la ganancia de capital por la venta de acciones comunes?",
+                  "options": [
+                    "Siempre, sin importar el monto vendido",
+                    "Cuando el total vendido en el mes, sumando todas las ventas, no supera los R$20.000",
+                    "Solo para quien invierte a través de una única correduría",
+                    "Nunca, las acciones siempre pagan impuesto"
+                  ],
+                  "explanation": "La exención vale para el total de ventas de acciones comunes dentro del mes, sumando todas las operaciones — por encima de R$20.000 vendidos, la ganancia pasa a ser gravada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Diferente da renda fixa, onde o imposto costuma ser retido automaticamente, a tributação de ações funciona de outra forma. O que isso implica na prática para o investidor?",
+                  "options": [
+                    "Nenhuma implicação, o processo é idêntico ao da renda fixa",
+                    "Que o investidor é responsável por calcular e recolher o imposto devido por conta própria, quando aplicável",
+                    "Que ações nunca são tributadas, ao contrário da renda fixa",
+                    "Que apenas a corretora precisa se preocupar com o cálculo do imposto"
+                  ],
+                  "explanation": "Sem a retenção automática que existe na renda fixa, cabe ao investidor calcular o imposto devido sobre ações e recolhê-lo — algo que exige atenção e organização, diferente do que costuma acontecer em outros tipos de investimento."
+                },
+                "en": {
+                  "prompt": "Unlike fixed income, where the tax is usually withheld automatically, stock taxation works differently. What does this mean in practice for the investor?",
+                  "options": [
+                    "No implication, the process is identical to that of fixed income",
+                    "That the investor is responsible for calculating and paying the tax owed on their own, when applicable",
+                    "That stocks are never taxed, unlike fixed income",
+                    "That only the broker needs to worry about calculating the tax"
+                  ],
+                  "explanation": "Without the automatic withholding that exists in fixed income, it's up to the investor to calculate the tax owed on stocks and pay it — something that requires attention and organization, unlike what usually happens with other types of investment."
+                },
+                "es": {
+                  "prompt": "A diferencia de la renta fija, donde el impuesto suele retenerse automáticamente, la tributación de acciones funciona de otra forma. ¿Qué implica esto en la práctica para el inversor?",
+                  "options": [
+                    "Ninguna implicación, el proceso es idéntico al de la renta fija",
+                    "Que el inversor es responsable de calcular y pagar el impuesto adeudado por su cuenta, cuando corresponda",
+                    "Que las acciones nunca se gravan, a diferencia de la renta fija",
+                    "Que solo la correduría necesita preocuparse por el cálculo del impuesto"
+                  ],
+                  "explanation": "Sin la retención automática que existe en la renta fija, corresponde al inversor calcular el impuesto adeudado sobre las acciones y pagarlo — algo que exige atención y organización, a diferencia de lo que suele ocurrir con otros tipos de inversión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Vendas de ações comuns até R$20.000 por mês são isentas de IR sobre o lucro.",
+                    "Acima desse limite, incide 15% sobre o ganho de capital.",
+                    "Diferente da renda fixa, não há retenção automática — o investidor é responsável por calcular e recolher o imposto."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Common stock sales up to R$20,000 a month are exempt from income tax on the profit.",
+                    "Above that limit, 15% applies to the capital gain.",
+                    "Unlike fixed income, there's no automatic withholding — the investor is responsible for calculating and paying the tax."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las ventas de acciones comunes hasta R$20.000 al mes están exentas de IR sobre la ganancia.",
+                    "Por encima de ese límite, se aplica el 15% sobre la ganancia de capital.",
+                    "A diferencia de la renta fija, no hay retención automática — el inversor es responsable de calcular y pagar el impuesto."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_fiis",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tributação de FIIs"
+            },
+            "en": {
+              "title": "REIT Taxation (FIIs)"
+            },
+            "es": {
+              "title": "Tributación de FII"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dividendos isentos, ganho de capital tributado",
+                  "body": "Fundos de Investimento Imobiliário (FIIs) têm um tratamento tributário particular. Pela regra vigente, os rendimentos distribuídos mensalmente (parecidos com dividendos) são isentos de Imposto de Renda para pessoas físicas, desde que o FII cumpra certos requisitos — como ter cotas negociadas exclusivamente em bolsa e um número mínimo de cotistas. Já o ganho de capital obtido na venda das cotas do fundo, se houver lucro, é tributado à alíquota de 20%, sem o limite de isenção mensal que existe para ações comuns."
+                },
+                "en": {
+                  "title": "Exempt income, taxed capital gains",
+                  "body": "Real Estate Investment Funds (FIIs) have a particular tax treatment. Under current rules, the monthly distributed income (similar to dividends) is exempt from income tax for individuals, as long as the FII meets certain requirements — like having shares traded exclusively on the exchange and a minimum number of shareholders. The capital gain obtained from selling the fund's shares, if there's a profit, is taxed at a 20% rate, without the monthly exemption threshold that exists for common stocks."
+                },
+                "es": {
+                  "title": "Rendimientos exentos, ganancia de capital gravada",
+                  "body": "Los Fondos de Inversión Inmobiliaria (FII) tienen un tratamiento tributario particular. Según la regla vigente, los rendimientos distribuidos mensualmente (similares a dividendos) están exentos del Impuesto sobre la Renta para personas físicas, siempre que el FII cumpla ciertos requisitos — como tener cuotas negociadas exclusivamente en bolsa y un número mínimo de cuotistas. En cambio, la ganancia de capital obtenida en la venta de las cuotas del fondo, si hay ganancia, se grava con una alícuota del 20%, sin el límite de exención mensual que existe para las acciones comunes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor recebe R$300 em rendimentos mensais de um FII que atende aos requisitos de isenção — esse valor chega inteiro a ele, sem desconto de IR. Meses depois, ele vende suas cotas desse fundo com um lucro de R$1.000; sobre esse lucro específico, incide 20% de IR, mesmo que o valor total vendido seja pequeno."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor receives R$300 in monthly income from a FII that meets the exemption requirements — that amount reaches them in full, with no income tax deducted. Months later, they sell their shares in that fund with a R$1,000 profit; on that specific profit, 20% income tax applies, even if the total amount sold is small."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor recibe R$300 en rendimientos mensuales de un FII que cumple los requisitos de exención — ese monto le llega completo, sin descuento de IR. Meses después, vende sus cuotas de ese fondo con una ganancia de R$1.000; sobre esa ganancia específica, se aplica el 20% de IR, aunque el monto total vendido sea pequeño."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Pela regra vigente, o que costuma ser isento de Imposto de Renda em um FII que atende aos requisitos legais?",
+                  "options": [
+                    "O ganho de capital na venda das cotas",
+                    "Os rendimentos distribuídos mensalmente aos cotistas",
+                    "Qualquer valor recebido pelo investidor, sem exceção",
+                    "Nada é isento em FIIs"
+                  ],
+                  "explanation": "Os rendimentos mensais distribuídos por um FII que atende aos requisitos legais são isentos de IR para pessoa física — diferente do ganho de capital na venda das cotas, que é tributado."
+                },
+                "en": {
+                  "prompt": "Under current rules, what is usually exempt from income tax in a FII that meets the legal requirements?",
+                  "options": [
+                    "The capital gain from selling the shares",
+                    "The income distributed monthly to shareholders",
+                    "Any amount received by the investor, without exception",
+                    "Nothing is exempt in FIIs"
+                  ],
+                  "explanation": "The monthly income distributed by a FII that meets the legal requirements is exempt from income tax for individuals — unlike the capital gain from selling the shares, which is taxed."
+                },
+                "es": {
+                  "prompt": "Según la regla vigente, ¿qué suele estar exento del Impuesto sobre la Renta en un FII que cumple los requisitos legales?",
+                  "options": [
+                    "La ganancia de capital en la venta de las cuotas",
+                    "Los rendimientos distribuidos mensualmente a los cuotistas",
+                    "Cualquier monto recibido por el inversor, sin excepción",
+                    "Nada está exento en los FII"
+                  ],
+                  "explanation": "Los rendimientos mensuales distribuidos por un FII que cumple los requisitos legales están exentos de IR para persona física — a diferencia de la ganancia de capital en la venta de las cuotas, que sí se grava."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor pensa: 'FIIs são totalmente isentos de imposto, então nunca vou pagar nada investindo neles'. O que está incompleto nesse raciocínio?",
+                  "options": [
+                    "Nada, FIIs realmente nunca pagam nenhum tipo de imposto",
+                    "A isenção vale para os rendimentos mensais distribuídos, mas o ganho de capital obtido na venda das cotas é tributado à parte, à alíquota de 20%",
+                    "FIIs nunca pagam rendimentos, então a isenção não importa",
+                    "A isenção só existe para quem investe menos de R$1.000"
+                  ],
+                  "explanation": "A isenção de FIIs se aplica especificamente aos rendimentos mensais distribuídos, não ao ganho de capital eventual na venda das cotas — tratar os dois como a mesma coisa é um erro comum."
+                },
+                "en": {
+                  "prompt": "An investor thinks: 'FIIs are completely tax-exempt, so I'll never pay anything investing in them.' What's incomplete about that reasoning?",
+                  "options": [
+                    "Nothing, FIIs really never pay any type of tax",
+                    "The exemption applies to the monthly distributed income, but the capital gain obtained from selling the shares is taxed separately, at a 20% rate",
+                    "FIIs never pay income, so the exemption doesn't matter",
+                    "The exemption only exists for those investing less than R$1,000"
+                  ],
+                  "explanation": "The FII exemption applies specifically to the monthly distributed income, not to any eventual capital gain from selling the shares — treating the two as the same thing is a common mistake."
+                },
+                "es": {
+                  "prompt": "Un inversor piensa: 'los FII están totalmente exentos de impuesto, así que nunca voy a pagar nada invirtiendo en ellos'. ¿Qué es incompleto en ese razonamiento?",
+                  "options": [
+                    "Nada, los FII realmente nunca pagan ningún tipo de impuesto",
+                    "La exención vale para los rendimientos mensuales distribuidos, pero la ganancia de capital obtenida en la venta de las cuotas se grava aparte, con la alícuota del 20%",
+                    "Los FII nunca pagan rendimientos, así que la exención no importa",
+                    "La exención solo existe para quien invierte menos de R$1.000"
+                  ],
+                  "explanation": "La exención de los FII se aplica específicamente a los rendimientos mensuales distribuidos, no a la eventual ganancia de capital en la venta de las cuotas — tratar ambas cosas como lo mismo es un error común."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Rendimentos mensais de FIIs que atendem aos requisitos legais são isentos de IR.",
+                    "Ganho de capital na venda de cotas de FII é tributado à alíquota de 20%.",
+                    "As duas formas de retorno de um FII têm tratamentos tributários diferentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Monthly income from FIIs that meet the legal requirements is exempt from income tax.",
+                    "Capital gain from selling FII shares is taxed at a 20% rate.",
+                    "A FII's two forms of return have different tax treatments."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los rendimientos mensuales de FII que cumplen los requisitos legales están exentos de IR.",
+                    "La ganancia de capital en la venta de cuotas de FII se grava con la alícuota del 20%.",
+                    "Las dos formas de retorno de un FII tienen tratamientos tributarios diferentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_crypto",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tributação de Criptoativos"
+            },
+            "en": {
+              "title": "Cryptocurrency Taxation"
+            },
+            "es": {
+              "title": "Tributación de Criptoactivos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ganho de capital com limite de isenção próprio",
+                  "body": "No Brasil, criptoativos são tratados, para fins tributários, de forma parecida com outros bens sujeitos a ganho de capital. Pela regra vigente, o lucro obtido na venda de criptoativos é isento de Imposto de Renda quando o total vendido no mês, somando todas as operações e todas as criptomoedas, não ultrapassa R$35.000. Acima desse limite, o lucro é tributado por uma tabela progressiva que começa em 15% e pode chegar a 22,5% para valores mais altos."
+                },
+                "en": {
+                  "title": "Capital gains with their own exemption threshold",
+                  "body": "In Brazil, cryptoassets are treated, for tax purposes, similarly to other assets subject to capital gains. Under current rules, the profit obtained from selling cryptoassets is exempt from income tax when the total sold in the month, adding up all transactions and all cryptocurrencies, doesn't exceed R$35,000. Above that limit, the profit is taxed under a progressive table that starts at 15% and can reach 22.5% for higher amounts."
+                },
+                "es": {
+                  "title": "Ganancia de capital con límite de exención propio",
+                  "body": "En Brasil, los criptoactivos se tratan, a efectos tributarios, de forma similar a otros bienes sujetos a ganancia de capital. Según la regla vigente, la ganancia obtenida en la venta de criptoactivos está exenta del Impuesto sobre la Renta cuando el total vendido en el mes, sumando todas las operaciones y todas las criptomonedas, no supera los R$35.000. Por encima de ese límite, la ganancia se grava con una tabla progresiva que empieza en el 15% y puede llegar al 22,5% para montos más altos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vende R$20.000 em criptoativos em um mês, com lucro de R$5.000 — como o total vendido está abaixo de R$35.000, esse lucro é isento. No mês seguinte, ele vende R$40.000, somando diferentes criptomoedas, com lucro de R$8.000 — como o total ultrapassou R$35.000, ele precisa calcular e recolher o imposto devido sobre esse lucro, por conta própria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sells R$20,000 in cryptoassets in a month, with a R$5,000 profit — since the total sold is below R$35,000, that profit is exempt. The next month, they sell R$40,000, adding up different cryptocurrencies, with an R$8,000 profit — since the total exceeded R$35,000, they need to calculate and pay the tax owed on that profit, on their own."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vende R$20.000 en criptoactivos en un mes, con una ganancia de R$5.000 — como el total vendido está por debajo de R$35.000, esa ganancia está exenta. Al mes siguiente, vende R$40.000, sumando diferentes criptomonedas, con una ganancia de R$8.000 — como el total superó los R$35.000, necesita calcular y pagar el impuesto adeudado sobre esa ganancia, por su cuenta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Pela regra vigente, até qual valor de vendas mensais de criptoativos o lucro é isento de Imposto de Renda?",
+                  "options": [
+                    "R$20.000",
+                    "R$35.000",
+                    "R$100.000",
+                    "Não existe isenção para criptoativos"
+                  ],
+                  "explanation": "O limite de isenção mensal para vendas de criptoativos, somando todas as operações e moedas, é de R$35.000, pela regra vigente — diferente do limite de R$20.000 aplicável a ações comuns."
+                },
+                "en": {
+                  "prompt": "Under current rules, up to what amount of monthly cryptoasset sales is the profit exempt from income tax?",
+                  "options": [
+                    "R$20,000",
+                    "R$35,000",
+                    "R$100,000",
+                    "There's no exemption for cryptoassets"
+                  ],
+                  "explanation": "The monthly exemption threshold for cryptoasset sales, adding up all transactions and currencies, is R$35,000 under current rules — different from the R$20,000 threshold that applies to common stocks."
+                },
+                "es": {
+                  "prompt": "Según la regla vigente, ¿hasta qué monto de ventas mensuales de criptoactivos la ganancia está exenta del Impuesto sobre la Renta?",
+                  "options": [
+                    "R$20.000",
+                    "R$35.000",
+                    "R$100.000",
+                    "No existe exención para criptoactivos"
+                  ],
+                  "explanation": "El límite de exención mensual para ventas de criptoactivos, sumando todas las operaciones y monedas, es de R$35.000 según la regla vigente — diferente del límite de R$20.000 aplicable a las acciones comunes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já aprendeu que ações comuns têm um limite de isenção mensal de R$20.000, e criptoativos têm um limite de R$35.000. O que isso ensina sobre assumir regras tributárias como universais entre diferentes tipos de ativo?",
+                  "options": [
+                    "Que todas as regras de isenção são sempre idênticas entre tipos diferentes de ativo",
+                    "Que cada tipo de ativo pode ter suas próprias regras específicas de tributação, então vale sempre confirmar a regra aplicável ao ativo específico antes de assumir um limite",
+                    "Que apenas criptoativos têm algum tipo de isenção",
+                    "Que o limite de isenção de ações também se aplica automaticamente a criptoativos"
+                  ],
+                  "explanation": "Assumir que a regra de um tipo de ativo se aplica a outro é um erro comum — cada categoria (ações, FIIs, criptoativos, renda fixa) pode ter regras tributárias próprias, com limites e alíquotas diferentes."
+                },
+                "en": {
+                  "prompt": "You already learned that common stocks have a monthly exemption threshold of R$20,000, and cryptoassets have a threshold of R$35,000. What does this teach you about assuming tax rules are universal across different types of assets?",
+                  "options": [
+                    "That all exemption rules are always identical across different types of assets",
+                    "That each type of asset can have its own specific tax rules, so it's always worth confirming the rule that applies to that specific asset before assuming a threshold",
+                    "That only cryptoassets have any kind of exemption",
+                    "That the stock exemption threshold also automatically applies to cryptoassets"
+                  ],
+                  "explanation": "Assuming that one asset type's rule applies to another is a common mistake — each category (stocks, FIIs, cryptoassets, fixed income) can have its own tax rules, with different thresholds and rates."
+                },
+                "es": {
+                  "prompt": "Ya aprendiste que las acciones comunes tienen un límite de exención mensual de R$20.000, y los criptoactivos tienen un límite de R$35.000. ¿Qué te enseña esto sobre asumir que las reglas tributarias son universales entre diferentes tipos de activo?",
+                  "options": [
+                    "Que todas las reglas de exención son siempre idénticas entre diferentes tipos de activo",
+                    "Que cada tipo de activo puede tener sus propias reglas específicas de tributación, así que siempre vale la pena confirmar la regla aplicable al activo específico antes de asumir un límite",
+                    "Que solo los criptoactivos tienen algún tipo de exención",
+                    "Que el límite de exención de acciones también se aplica automáticamente a los criptoactivos"
+                  ],
+                  "explanation": "Asumir que la regla de un tipo de activo se aplica a otro es un error común — cada categoría (acciones, FII, criptoactivos, renta fija) puede tener reglas tributarias propias, con límites y alícuotas diferentes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Vendas de criptoativos até R$35.000 por mês são isentas de IR sobre o lucro.",
+                    "Acima desse limite, o lucro é tributado por uma tabela progressiva de 15% a 22,5%.",
+                    "Cada tipo de ativo pode ter suas próprias regras tributárias específicas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Cryptoasset sales up to R$35,000 a month are exempt from income tax on the profit.",
+                    "Above that limit, the profit is taxed under a progressive table from 15% to 22.5%.",
+                    "Each type of asset can have its own specific tax rules."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las ventas de criptoactivos hasta R$35.000 al mes están exentas de IR sobre la ganancia.",
+                    "Por encima de ese límite, la ganancia se grava con una tabla progresiva del 15% al 22,5%.",
+                    "Cada tipo de activo puede tener sus propias reglas tributarias específicas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_darf_and_compliance",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "DARF e a Responsabilidade pelo Recolhimento"
+            },
+            "en": {
+              "title": "DARF and the Responsibility to Pay"
+            },
+            "es": {
+              "title": "DARF y la Responsabilidad del Pago"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quem calcula e quem recolhe",
+                  "body": "Nem todo investimento tem o imposto retido automaticamente. Em renda fixa, a corretora ou instituição costuma reter e recolher o IR direto na fonte, no momento do resgate. Já em ações, FIIs e criptoativos, quando há imposto devido, cabe ao próprio investidor calcular o valor e gerar uma guia chamada DARF (Documento de Arrecadação de Receitas Federais) para pagamento, normalmente até o último dia útil do mês seguinte à operação. Deixar de recolher o imposto devido pode gerar multa e juros sobre o valor não pago."
+                },
+                "en": {
+                  "title": "Who calculates and who pays",
+                  "body": "Not every investment has tax withheld automatically. In fixed income, the broker or institution usually withholds and pays the income tax directly at the source, at the time of withdrawal. In stocks, FIIs and cryptoassets, however, when tax is owed, it's up to the investor themselves to calculate the amount and generate a payment slip called a DARF (Federal Revenue Collection Document), normally due by the last business day of the month following the transaction. Failing to pay the tax owed can result in fines and interest on the unpaid amount."
+                },
+                "es": {
+                  "title": "Quién calcula y quién paga",
+                  "body": "No todas las inversiones tienen el impuesto retenido automáticamente. En renta fija, la correduría o institución suele retener y pagar el IR directamente en la fuente, en el momento del rescate. En cambio, en acciones, FII y criptoactivos, cuando hay impuesto adeudado, corresponde al propio inversor calcular el monto y generar un formulario llamado DARF (Documento de Recaudación de Ingresos Federales) para el pago, normalmente hasta el último día hábil del mes siguiente a la operación. No pagar el impuesto adeudado puede generar multa e intereses sobre el monto no pagado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vende ações em um mês e apura um lucro tributável, acima do limite de isenção. Diferente do que aconteceria com um CDB, ninguém desconta esse imposto automaticamente da conta dele — ele mesmo precisa calcular os 15% devidos, gerar o DARF correspondente e pagá-lo até o prazo, sob risco de multa se deixar de fazer isso."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sells stocks in a month and realizes a taxable profit, above the exemption threshold. Unlike what would happen with a CDB, nobody automatically deducts this tax from their account — they themselves need to calculate the 15% owed, generate the corresponding DARF, and pay it by the deadline, risking a fine if they fail to do so."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vende acciones en un mes y obtiene una ganancia gravable, por encima del límite de exención. A diferencia de lo que ocurriría con un CDB, nadie descuenta ese impuesto automáticamente de su cuenta — él mismo necesita calcular el 15% adeudado, generar el DARF correspondiente y pagarlo dentro del plazo, bajo riesgo de multa si no lo hace."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um DARF, no contexto de investimentos como ações e criptoativos?",
+                  "options": [
+                    "Um tipo de conta de investimento",
+                    "A guia usada para pagar, por conta própria, o imposto devido quando não há retenção automática",
+                    "Um indicador de análise fundamentalista",
+                    "Um certificado emitido pela bolsa de valores"
+                  ],
+                  "explanation": "DARF é a guia de pagamento usada para recolher, por iniciativa do próprio investidor, impostos que não são retidos automaticamente — como o IR devido sobre lucros com ações ou criptoativos acima do limite de isenção."
+                },
+                "en": {
+                  "prompt": "What is a DARF, in the context of investments like stocks and cryptoassets?",
+                  "options": [
+                    "A type of investment account",
+                    "The payment slip used to pay, on your own initiative, tax owed when there's no automatic withholding",
+                    "A fundamental analysis indicator",
+                    "A certificate issued by the stock exchange"
+                  ],
+                  "explanation": "DARF is the payment slip used to pay, on the investor's own initiative, taxes that aren't automatically withheld — like income tax owed on stock or cryptoasset profits above the exemption threshold."
+                },
+                "es": {
+                  "prompt": "¿Qué es un DARF, en el contexto de inversiones como acciones y criptoactivos?",
+                  "options": [
+                    "Un tipo de cuenta de inversión",
+                    "El formulario usado para pagar, por cuenta propia, el impuesto adeudado cuando no hay retención automática",
+                    "Un indicador de análisis fundamental",
+                    "Un certificado emitido por la bolsa de valores"
+                  ],
+                  "explanation": "El DARF es el formulario de pago usado para recaudar, por iniciativa del propio inversor, impuestos que no se retienen automáticamente — como el IR adeudado sobre ganancias con acciones o criptoactivos por encima del límite de exención."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que renda fixa tem retenção automática de IR, mas ações, FIIs e criptoativos costumam depender do próprio investidor para calcular e recolher o imposto via DARF. O que essa diferença sugere sobre organização financeira?",
+                  "options": [
+                    "Nada, a responsabilidade é sempre da corretora, em qualquer tipo de investimento",
+                    "Que investir em ativos sem retenção automática exige mais atenção e organização pessoal para não esquecer de calcular e pagar o imposto devido",
+                    "Que ações e criptoativos nunca geram imposto a pagar",
+                    "Que o DARF é opcional e pode ser ignorado sem consequências"
+                  ],
+                  "explanation": "A ausência de retenção automática em certos ativos transfere a responsabilidade de calcular e recolher o imposto para o investidor — isso exige um cuidado extra de organização que não é necessário, por exemplo, na renda fixa."
+                },
+                "en": {
+                  "prompt": "You already understand that fixed income has automatic income tax withholding, but stocks, FIIs and cryptoassets usually rely on the investor themselves to calculate and pay the tax via DARF. What does this difference suggest about financial organization?",
+                  "options": [
+                    "Nothing, the responsibility always falls on the broker, for any type of investment",
+                    "That investing in assets without automatic withholding requires more attention and personal organization to avoid forgetting to calculate and pay the tax owed",
+                    "That stocks and cryptoassets never generate tax to pay",
+                    "That the DARF is optional and can be ignored without consequences"
+                  ],
+                  "explanation": "The absence of automatic withholding on certain assets shifts the responsibility of calculating and paying the tax onto the investor — that requires extra organizational care that isn't necessary, for example, with fixed income."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que la renta fija tiene retención automática de IR, pero las acciones, FII y criptoactivos suelen depender del propio inversor para calcular y pagar el impuesto vía DARF. ¿Qué sugiere esta diferencia sobre la organización financiera?",
+                  "options": [
+                    "Nada, la responsabilidad siempre es de la correduría, en cualquier tipo de inversión",
+                    "Que invertir en activos sin retención automática exige más atención y organización personal para no olvidar calcular y pagar el impuesto adeudado",
+                    "Que las acciones y criptoactivos nunca generan impuesto a pagar",
+                    "Que el DARF es opcional y puede ignorarse sin consecuencias"
+                  ],
+                  "explanation": "La ausencia de retención automática en ciertos activos transfiere la responsabilidad de calcular y pagar el impuesto al inversor — eso exige un cuidado extra de organización que no es necesario, por ejemplo, en la renta fija."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Renda fixa costuma ter retenção automática de IR; ações, FIIs e criptoativos geralmente não.",
+                    "Quando devido, o investidor precisa gerar e pagar um DARF por conta própria.",
+                    "Você concluiu o módulo de fundamentos da tributação de investimentos."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Fixed income usually has automatic income tax withholding; stocks, FIIs and cryptoassets generally don't.",
+                    "When owed, the investor needs to generate and pay a DARF on their own.",
+                    "You've completed the investment taxation fundamentals module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "La renta fija suele tener retención automática de IR; las acciones, FII y criptoactivos generalmente no.",
+                    "Cuando corresponde, el inversor necesita generar y pagar un DARF por su cuenta.",
+                    "Completaste el módulo de fundamentos de la tributación de inversiones."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "taxation_advanced",
+      "order": 2,
+      "iconKey": "receipt_long_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "taxation_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Tributação Avançada",
+          "description": "Day trade, compensação de prejuízos, ITCMD, declaração anual de bens e a diferença entre come-cotas e tributação na venda."
+        },
+        "en": {
+          "title": "Advanced Taxation",
+          "description": "Day trade, loss carryforward, ITCMD, annual asset declaration and the difference between periodic withholding and taxation at sale."
+        },
+        "es": {
+          "title": "Tributación Avanzada",
+          "description": "Day trade, compensación de pérdidas, ITCMD, declaración anual de bienes y la diferencia entre anticipo periódico y tributación en la venta."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "taxation_day_trade",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Day Trade: Tributação Sem Isenção"
+            },
+            "en": {
+              "title": "Day Trading: Taxation Without an Exemption"
+            },
+            "es": {
+              "title": "Day Trading: Tributación Sin Exención"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comprar e vender no mesmo dia muda a regra",
+                  "body": "Operações de day trade — quando a compra e a venda do mesmo ativo acontecem no mesmo dia — têm uma tributação diferente da venda comum de ações (o chamado swing trade). Pela legislação atual, o lucro em operações de day trade é tributado a uma alíquota de 20%, sem nenhuma faixa de isenção mensal, independentemente do valor total operado no mês. Além disso, há retenção na fonte de uma pequena alíquota a título de antecipação, mas isso não substitui o cálculo e recolhimento do imposto total devido pelo próprio investidor."
+                },
+                "en": {
+                  "title": "Buying and selling on the same day changes the rule",
+                  "body": "Day trade operations — when buying and selling the same asset happen on the same day — are taxed differently from a regular stock sale (known as swing trade). Under current law, day trade profit is taxed at a 20% rate, with no monthly exemption bracket at all, regardless of the total amount traded in the month. There's also a small withholding at the source as an advance payment, but that doesn't replace the investor's own calculation and payment of the total tax owed."
+                },
+                "es": {
+                  "title": "Comprar y vender el mismo día cambia la regla",
+                  "body": "Las operaciones de day trade — cuando la compra y la venta del mismo activo ocurren el mismo día — tienen una tributación diferente a la venta común de acciones (llamada swing trade). Según la legislación actual, la ganancia en operaciones de day trade se grava con una alícuota del 20%, sin ninguna franja de exención mensual, sin importar el monto total operado en el mes. Además, hay una pequeña retención en la fuente como anticipo, pero eso no reemplaza el cálculo y pago del impuesto total debido por el propio inversor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra e vende ações da mesma empresa no mesmo dia, obtendo um lucro de R$500 — mesmo sendo um valor pequeno, esse lucro não tem direito a nenhuma isenção, ao contrário do que aconteceria em uma venda comum de ações abaixo do limite mensal isento. Ele precisa calcular e recolher 20% de imposto sobre esse ganho."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys and sells shares of the same company on the same day, making a profit of R$500 — even though it's a small amount, that profit isn't entitled to any exemption, unlike what would happen in a regular stock sale below the monthly exempt threshold. They need to calculate and pay 20% tax on that gain."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra y vende acciones de la misma empresa el mismo día, obteniendo una ganancia de R$500 — aunque sea un monto pequeño, esa ganancia no tiene derecho a ninguna exención, a diferencia de lo que pasaría en una venta común de acciones por debajo del límite mensual exento. Necesita calcular y pagar el 20% de impuesto sobre esa ganancia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual a principal diferença entre a tributação de day trade e a de uma venda comum de ações (swing trade)?",
+                  "options": [
+                    "Day trade sempre tem uma isenção mensal maior do que o swing trade",
+                    "Day trade é tributado a 20%, sem nenhuma faixa de isenção mensal, diferente do swing trade",
+                    "Não existe nenhuma diferença de tributação entre os dois tipos de operação",
+                    "Apenas o swing trade é tributado; day trade é sempre isento"
+                  ],
+                  "explanation": "Day trade tem uma alíquota fixa de 20%, sem a faixa de isenção mensal que existe para vendas comuns de ações abaixo de um determinado valor total."
+                },
+                "en": {
+                  "prompt": "What's the main difference between day trade taxation and taxation on a regular stock sale (swing trade)?",
+                  "options": [
+                    "Day trade always has a larger monthly exemption than swing trade",
+                    "Day trade is taxed at 20%, with no monthly exemption bracket, unlike swing trade",
+                    "There's no difference in taxation at all between the two operation types",
+                    "Only swing trade is taxed; day trade is always exempt"
+                  ],
+                  "explanation": "Day trade has a fixed 20% rate, without the monthly exemption bracket that exists for regular stock sales below a certain total amount."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre la tributación del day trade y la de una venta común de acciones (swing trade)?",
+                  "options": [
+                    "El day trade siempre tiene una exención mensual mayor que el swing trade",
+                    "El day trade se grava al 20%, sin ninguna franja de exención mensual, a diferencia del swing trade",
+                    "No existe ninguna diferencia de tributación entre los dos tipos de operación",
+                    "Solo el swing trade se grava; el day trade siempre está exento"
+                  ],
+                  "explanation": "El day trade tiene una alícuota fija del 20%, sin la franja de exención mensual que existe para ventas comunes de acciones por debajo de un monto total determinado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a venda comum de ações é isenta de Imposto de Renda quando o total vendido no mês fica até R$20.000. Um investidor que fez apenas uma operação de day trade no mês, com lucro pequeno e dentro desse mesmo limite de R$20.000 em valor operado, pode aplicar essa mesma isenção?",
+                  "options": [
+                    "Não, porque a isenção de R$20.000 é específica para vendas comuns de ações (swing trade) e não se aplica a operações de day trade, que são tributadas a 20% independentemente do valor",
+                    "Sim, porque qualquer operação com ações abaixo de R$20.000 no mês é sempre isenta",
+                    "Sim, mas apenas se o investidor operar exclusivamente ações de empresas de pequeno porte",
+                    "Não, porque day trade é sempre isento de qualquer imposto, tornando a pergunta sobre isenção irrelevante"
+                  ],
+                  "explanation": "A isenção de R$20.000 mensal é uma regra específica da venda comum de ações; operações de day trade seguem uma regra própria, sem isenção, mesmo que o valor operado seja pequeno."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that a regular stock sale is exempt from income tax when the total sold in the month stays up to R$20,000. Can an investor who made just one day trade operation in the month, with a small profit and within that same R$20,000 traded amount, apply that same exemption?",
+                  "options": [
+                    "No, because the R$20,000 exemption is specific to regular stock sales (swing trade) and doesn't apply to day trade operations, which are taxed at 20% regardless of amount",
+                    "Yes, because any stock operation below R$20,000 in the month is always exempt",
+                    "Yes, but only if the investor trades exclusively small-cap company stocks",
+                    "No, because day trade is always exempt from any tax, making the exemption question irrelevant"
+                  ],
+                  "explanation": "The R$20,000 monthly exemption is a rule specific to regular stock sales; day trade operations follow their own rule, with no exemption, even if the traded amount is small."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la venta común de acciones está exenta de Impuesto a la Renta cuando el total vendido en el mes queda hasta R$20.000. ¿Puede un inversor que hizo solo una operación de day trade en el mes, con una ganancia pequeña y dentro de ese mismo límite de R$20.000 en monto operado, aplicar esa misma exención?",
+                  "options": [
+                    "No, porque la exención de R$20.000 es específica para ventas comunes de acciones (swing trade) y no se aplica a operaciones de day trade, que se gravan al 20% sin importar el monto",
+                    "Sí, porque cualquier operación con acciones por debajo de R$20.000 en el mes siempre está exenta",
+                    "Sí, pero solo si el inversor opera exclusivamente acciones de empresas pequeñas",
+                    "No, porque el day trade siempre está exento de cualquier impuesto, haciendo irrelevante la pregunta sobre exención"
+                  ],
+                  "explanation": "La exención mensual de R$20.000 es una regla específica de la venta común de acciones; las operaciones de day trade siguen una regla propia, sin exención, aunque el monto operado sea pequeño."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Operações de day trade são tributadas a 20%, sem nenhuma faixa de isenção mensal.",
+                    "Essa regra é diferente da venda comum de ações, que tem isenção até um determinado valor mensal.",
+                    "A distinção entre day trade e swing trade depende de a compra e a venda ocorrerem no mesmo dia."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Day trade operations are taxed at 20%, with no monthly exemption bracket at all.",
+                    "This rule differs from regular stock sales, which have an exemption up to a certain monthly amount.",
+                    "The distinction between day trade and swing trade depends on the buy and sell happening on the same day."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las operaciones de day trade se gravan al 20%, sin ninguna franja de exención mensual.",
+                    "Esta regla es diferente de la venta común de acciones, que tiene exención hasta un monto mensual determinado.",
+                    "La distinción entre day trade y swing trade depende de que la compra y la venta ocurran el mismo día."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_loss_carryforward",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Compensação de Prejuízos"
+            },
+            "en": {
+              "title": "Loss Carryforward"
+            },
+            "es": {
+              "title": "Compensación de Pérdidas"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Perdas de hoje podem reduzir impostos de amanhã",
+                  "body": "Quando um investidor tem prejuízo em uma operação, esse prejuízo pode, em geral, ser usado para abater o lucro tributável de operações futuras dentro da mesma categoria de ativo — por exemplo, prejuízos com ações podem compensar ganhos futuros com ações, mas não necessariamente com outra categoria, como criptoativos. Não há prazo de validade para usar esse prejuízo acumulado, mas ele precisa ser devidamente registrado pelo próprio investidor para ser aproveitado no futuro."
+                },
+                "en": {
+                  "title": "Today's losses can reduce tomorrow's taxes",
+                  "body": "When an investor has a loss on an operation, that loss can generally be used to offset the taxable profit from future operations within the same asset category — for example, losses on stocks can offset future gains on stocks, but not necessarily on a different category, like cryptoassets. There's no expiration date for using this accumulated loss, but it needs to be properly recorded by the investor themselves to be used in the future."
+                },
+                "es": {
+                  "title": "Las pérdidas de hoy pueden reducir los impuestos de mañana",
+                  "body": "Cuando un inversor tiene una pérdida en una operación, esa pérdida generalmente puede usarse para reducir la ganancia gravable de operaciones futuras dentro de la misma categoría de activo — por ejemplo, las pérdidas con acciones pueden compensar ganancias futuras con acciones, pero no necesariamente con otra categoría, como los criptoactivos. No hay plazo de vencimiento para usar esta pérdida acumulada, pero debe ser debidamente registrada por el propio inversor para poder aprovecharla en el futuro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor tem um prejuízo de R$3.000 com ações em um mês. No mês seguinte, ele tem um lucro de R$5.000 também com ações. Em vez de pagar imposto sobre os R$5.000 inteiros, ele pode abater o prejuízo anterior, pagando imposto apenas sobre os R$2.000 de lucro líquido acumulado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor has a R$3,000 loss on stocks in one month. The following month, they have a R$5,000 profit, also on stocks. Instead of paying tax on the full R$5,000, they can offset the prior loss, paying tax only on the R$2,000 of accumulated net profit."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor tiene una pérdida de R$3.000 con acciones en un mes. Al mes siguiente, tiene una ganancia de R$5.000 también con acciones. En lugar de pagar impuesto sobre los R$5.000 completos, puede compensar la pérdida anterior, pagando impuesto solo sobre los R$2.000 de ganancia neta acumulada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é compensação de prejuízos, no contexto de tributação de investimentos?",
+                  "options": [
+                    "A possibilidade de usar um prejuízo para abater o lucro tributável de operações futuras dentro da mesma categoria de ativo",
+                    "Um reembolso automático em dinheiro pago pelo governo sempre que há prejuízo",
+                    "A eliminação completa da obrigação de declarar qualquer operação futura",
+                    "Uma regra que só se aplica a operações de day trade"
+                  ],
+                  "explanation": "Compensação de prejuízos permite abater um prejuízo anterior do lucro tributável de operações futuras dentro da mesma categoria de ativo, reduzindo o imposto devido sobre o ganho líquido."
+                },
+                "en": {
+                  "prompt": "What is loss carryforward, in the context of investment taxation?",
+                  "options": [
+                    "The ability to use a loss to offset the taxable profit of future operations within the same asset category",
+                    "An automatic cash refund paid by the government whenever there's a loss",
+                    "The complete elimination of the obligation to declare any future operation",
+                    "A rule that only applies to day trade operations"
+                  ],
+                  "explanation": "Loss carryforward allows offsetting a prior loss against the taxable profit of future operations within the same asset category, reducing the tax owed on the net gain."
+                },
+                "es": {
+                  "prompt": "¿Qué es la compensación de pérdidas, en el contexto de la tributación de inversiones?",
+                  "options": [
+                    "La posibilidad de usar una pérdida para reducir la ganancia gravable de operaciones futuras dentro de la misma categoría de activo",
+                    "Un reembolso automático en efectivo pagado por el gobierno cada vez que hay una pérdida",
+                    "La eliminación completa de la obligación de declarar cualquier operación futura",
+                    "Una regla que solo se aplica a operaciones de day trade"
+                  ],
+                  "explanation": "La compensación de pérdidas permite reducir una pérdida anterior de la ganancia gravable de operaciones futuras dentro de la misma categoría de activo, reduciendo el impuesto debido sobre la ganancia neta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que day trade e swing trade (venda comum de ações) têm regras de tributação diferentes. Isso sugere o que sobre a possibilidade de compensar um prejuízo de day trade com um lucro de swing trade, ou vice-versa?",
+                  "options": [
+                    "Como são regras de tributação diferentes, é razoável esperar que a compensação de prejuízos entre essas duas modalidades siga regras próprias e específicas, sem uma equivalência automática entre elas",
+                    "Prejuízos de day trade sempre podem compensar qualquer lucro, sem nenhuma restrição de categoria",
+                    "Não é possível compensar nenhum prejuízo em nenhuma circunstância",
+                    "Day trade e swing trade são exatamente a mesma coisa para fins de compensação de prejuízos"
+                  ],
+                  "explanation": "Como day trade e swing trade seguem regras de tributação distintas, faz sentido que a legislação trate a compensação entre essas modalidades de forma específica, em vez de simplesmente somar tudo automaticamente — reforçando a importância de entender as categorias em separado antes de assumir que um prejuízo compensa qualquer ganho."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that day trade and swing trade (a regular stock sale) have different taxation rules. What does that suggest about offsetting a day trade loss against a swing trade profit, or vice versa?",
+                  "options": [
+                    "Since these are different taxation rules, it's reasonable to expect that offsetting losses between these two modalities follows its own specific rules, without an automatic equivalence between them",
+                    "Day trade losses can always offset any profit, with no category restriction at all",
+                    "It's not possible to offset any loss under any circumstance",
+                    "Day trade and swing trade are exactly the same thing for loss carryforward purposes"
+                  ],
+                  "explanation": "Since day trade and swing trade follow distinct taxation rules, it makes sense that the legislation treats offsetting between these modalities specifically, rather than simply lumping everything together automatically — reinforcing the importance of understanding the categories separately before assuming a loss offsets any gain."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el day trade y el swing trade (venta común de acciones) tienen reglas de tributación diferentes. ¿Qué sugiere esto sobre la posibilidad de compensar una pérdida de day trade con una ganancia de swing trade, o viceversa?",
+                  "options": [
+                    "Como son reglas de tributación diferentes, es razonable esperar que la compensación de pérdidas entre esas dos modalidades siga reglas propias y específicas, sin una equivalencia automática entre ellas",
+                    "Las pérdidas de day trade siempre pueden compensar cualquier ganancia, sin ninguna restricción de categoría",
+                    "No es posible compensar ninguna pérdida bajo ninguna circunstancia",
+                    "Day trade y swing trade son exactamente lo mismo a efectos de compensación de pérdidas"
+                  ],
+                  "explanation": "Como el day trade y el swing trade siguen reglas de tributación distintas, tiene sentido que la legislación trate la compensación entre esas modalidades de forma específica, en lugar de simplemente sumarlo todo automáticamente — reforzando la importancia de entender las categorías por separado antes de asumir que una pérdida compensa cualquier ganancia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Prejuízos podem, em geral, ser usados para abater o lucro tributável de operações futuras na mesma categoria de ativo.",
+                    "Não há prazo de validade para usar um prejuízo acumulado, mas ele precisa ser registrado pelo investidor.",
+                    "Modalidades com regras de tributação diferentes, como day trade e swing trade, seguem regras próprias de compensação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Losses can generally be used to offset the taxable profit of future operations in the same asset category.",
+                    "There's no expiration date for using an accumulated loss, but it needs to be recorded by the investor.",
+                    "Modalities with different taxation rules, like day trade and swing trade, follow their own offsetting rules."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las pérdidas generalmente pueden usarse para reducir la ganancia gravable de operaciones futuras en la misma categoría de activo.",
+                    "No hay plazo de vencimiento para usar una pérdida acumulada, pero debe ser registrada por el inversor.",
+                    "Modalidades con reglas de tributación diferentes, como day trade y swing trade, siguen reglas propias de compensación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_itcmd_inheritance",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "ITCMD: Imposto sobre Herança e Doação"
+            },
+            "en": {
+              "title": "ITCMD: Inheritance and Gift Tax"
+            },
+            "es": {
+              "title": "ITCMD: Impuesto sobre Herencia y Donación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um imposto estadual sobre transmissão de patrimônio",
+                  "body": "O ITCMD (Imposto sobre Transmissão Causa Mortis e Doação) incide sobre a transferência de patrimônio por herança ou doação, incluindo investimentos financeiros. Diferente de tributos federais como o Imposto de Renda, o ITCMD é de competência estadual, o que significa que cada estado brasileiro define sua própria alíquota, dentro de um teto máximo estabelecido pelo Senado Federal — por isso, o valor devido pode variar bastante dependendo do estado onde o processo é aberto."
+                },
+                "en": {
+                  "title": "A state tax on transferring wealth",
+                  "body": "ITCMD (the Brazilian inheritance and gift tax) applies to the transfer of wealth through inheritance or gift, including financial investments. Unlike federal taxes such as income tax, ITCMD falls under state jurisdiction, meaning each Brazilian state sets its own rate, within a maximum ceiling set by the Federal Senate — so the amount owed can vary quite a bit depending on the state where the process takes place."
+                },
+                "es": {
+                  "title": "Un impuesto estatal sobre la transmisión de patrimonio",
+                  "body": "El ITCMD (Impuesto sobre Transmisión por Causa de Muerte y Donación) grava la transferencia de patrimonio por herencia o donación, incluyendo inversiones financieras. A diferencia de tributos federales como el Impuesto a la Renta, el ITCMD es de competencia estatal, lo que significa que cada estado brasileño define su propia alícuota, dentro de un techo máximo establecido por el Senado Federal — por eso, el monto debido puede variar bastante según el estado donde se tramite el proceso."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa herda uma carteira de investimentos de um familiar. Antes de os ativos serem transferidos para seu nome, o inventário precisa apurar e recolher o ITCMD devido ao estado, com uma alíquota que pode ser bem diferente da aplicada em outro estado, para o mesmo valor de patrimônio herdado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person inherits an investment portfolio from a family member. Before the assets are transferred into their name, the probate process needs to calculate and pay the ITCMD owed to the state, at a rate that can be quite different from the one applied in another state, for the same amount of inherited wealth."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona hereda una cartera de inversiones de un familiar. Antes de que los activos se transfieran a su nombre, el proceso de sucesión necesita calcular y pagar el ITCMD debido al estado, con una alícuota que puede ser bastante diferente a la aplicada en otro estado, para el mismo monto de patrimonio heredado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que o valor do ITCMD pode variar bastante dependendo de onde o processo é aberto?",
+                  "options": [
+                    "Porque o ITCMD é definido por uma alíquota única, igual em todo o Brasil",
+                    "Porque o ITCMD é de competência estadual, e cada estado define sua própria alíquota dentro de um teto federal",
+                    "Porque o ITCMD só existe em alguns estados do Brasil",
+                    "Porque o valor do ITCMD depende exclusivamente da idade do herdeiro"
+                  ],
+                  "explanation": "Por ser um imposto estadual, cada estado brasileiro tem autonomia para definir sua própria alíquota de ITCMD, respeitando um teto máximo estabelecido em nível federal."
+                },
+                "en": {
+                  "prompt": "Why can the ITCMD amount vary quite a bit depending on where the process takes place?",
+                  "options": [
+                    "Because ITCMD is set by a single rate, the same across all of Brazil",
+                    "Because ITCMD falls under state jurisdiction, and each state sets its own rate within a federal ceiling",
+                    "Because ITCMD only exists in some Brazilian states",
+                    "Because the ITCMD amount depends exclusively on the heir's age"
+                  ],
+                  "explanation": "Being a state tax, each Brazilian state has the autonomy to set its own ITCMD rate, respecting a maximum ceiling set at the federal level."
+                },
+                "es": {
+                  "prompt": "¿Por qué el monto del ITCMD puede variar bastante según dónde se tramite el proceso?",
+                  "options": [
+                    "Porque el ITCMD lo define una alícuota única, igual en todo Brasil",
+                    "Porque el ITCMD es de competencia estatal, y cada estado define su propia alícuota dentro de un techo federal",
+                    "Porque el ITCMD solo existe en algunos estados de Brasil",
+                    "Porque el monto del ITCMD depende exclusivamente de la edad del heredero"
+                  ],
+                  "explanation": "Al ser un impuesto estatal, cada estado brasileño tiene autonomía para definir su propia alícuota de ITCMD, respetando un techo máximo establecido a nivel federal."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição de outra escola, que planos de previdência privada como PGBL e VGBL costumam ser pagos diretamente aos beneficiários indicados, sem precisar aguardar a conclusão do inventário. Como isso se relaciona com o ITCMD discutido aqui?",
+                  "options": [
+                    "Mesmo pagos fora do processo de inventário, esses valores ainda podem estar sujeitos ao ITCMD conforme a legislação de cada estado — o pagamento direto ao beneficiário agiliza o acesso ao dinheiro, mas não necessariamente elimina a incidência do imposto",
+                    "Planos de previdência privada estão sempre isentos de qualquer imposto estadual, incluindo o ITCMD",
+                    "O ITCMD só incide sobre imóveis, nunca sobre investimentos financeiros de qualquer tipo",
+                    "Não existe nenhuma relação entre planejamento sucessório com previdência privada e o ITCMD"
+                  ],
+                  "explanation": "A agilidade de não depender do inventário é uma vantagem prática de instrumentos como PGBL e VGBL, mas isso é uma questão distinta da incidência tributária: dependendo da legislação estadual, o ITCMD ainda pode incidir sobre o valor transmitido."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in another school, that private pension plans like PGBL and VGBL are usually paid directly to the named beneficiaries, without needing to wait for probate to finish. How does that relate to the ITCMD discussed here?",
+                  "options": [
+                    "Even when paid outside the probate process, those amounts can still be subject to ITCMD under each state's legislation — direct payment to the beneficiary speeds up access to the money, but doesn't necessarily eliminate the tax",
+                    "Private pension plans are always exempt from any state tax, including ITCMD",
+                    "ITCMD only applies to real estate, never to financial investments of any kind",
+                    "There's no relation at all between succession planning with private pensions and ITCMD"
+                  ],
+                  "explanation": "The speed of not depending on probate is a practical advantage of instruments like PGBL and VGBL, but that's a separate question from tax incidence: depending on state legislation, ITCMD can still apply to the transferred amount."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de otra escuela, que los planes de previsión privada como PGBL y VGBL suelen pagarse directamente a los beneficiarios indicados, sin necesidad de esperar a que concluya la sucesión. ¿Cómo se relaciona esto con el ITCMD discutido aquí?",
+                  "options": [
+                    "Aunque se paguen fuera del proceso de sucesión, esos montos todavía pueden estar sujetos al ITCMD según la legislación de cada estado — el pago directo al beneficiario agiliza el acceso al dinero, pero no elimina necesariamente la incidencia del impuesto",
+                    "Los planes de previsión privada siempre están exentos de cualquier impuesto estatal, incluido el ITCMD",
+                    "El ITCMD solo grava inmuebles, nunca inversiones financieras de ningún tipo",
+                    "No existe ninguna relación entre la planificación sucesoria con previsión privada y el ITCMD"
+                  ],
+                  "explanation": "La agilidad de no depender de la sucesión es una ventaja práctica de instrumentos como PGBL y VGBL, pero eso es una cuestión distinta de la incidencia tributaria: según la legislación estatal, el ITCMD todavía puede aplicarse al monto transmitido."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O ITCMD é um imposto estadual sobre a transmissão de patrimônio por herança ou doação.",
+                    "Cada estado define sua própria alíquota, dentro de um teto máximo estabelecido a nível federal.",
+                    "Instrumentos que agilizam o acesso a recursos, como PGBL e VGBL, não necessariamente eliminam a incidência do ITCMD."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "ITCMD is a state tax on the transfer of wealth through inheritance or gift.",
+                    "Each state sets its own rate, within a maximum ceiling set at the federal level.",
+                    "Instruments that speed up access to funds, like PGBL and VGBL, don't necessarily eliminate ITCMD incidence."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El ITCMD es un impuesto estatal sobre la transmisión de patrimonio por herencia o donación.",
+                    "Cada estado define su propia alícuota, dentro de un techo máximo establecido a nivel federal.",
+                    "Los instrumentos que agilizan el acceso a los recursos, como PGBL y VGBL, no eliminan necesariamente la incidencia del ITCMD."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_annual_return_bens_e_direitos",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Declaração Anual de Bens e Direitos"
+            },
+            "en": {
+              "title": "Annual Asset Declaration"
+            },
+            "es": {
+              "title": "Declaración Anual de Bienes y Derechos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Declarar não é o mesmo que pagar imposto",
+                  "body": "Além de recolher o imposto devido sobre eventuais ganhos, investidores pessoas físicas geralmente precisam informar a posição de seus investimentos na declaração anual de Imposto de Renda, na ficha de bens e direitos — mesmo em anos em que não houve venda com lucro, ou até mesmo prejuízo. Declarar a posição de um ativo não gera, por si só, nenhum imposto adicional: a declaração serve para que a Receita Federal tenha visibilidade do patrimônio declarado ao longo do tempo, permitindo cruzar informações com operações futuras."
+                },
+                "en": {
+                  "title": "Declaring isn't the same as paying tax",
+                  "body": "Besides paying any tax owed on gains, individual investors generally need to report their investment holdings in the annual income tax return, on the assets and rights form — even in years with no profitable sale, or even a loss. Declaring an asset's position doesn't, by itself, generate any additional tax: the declaration lets the tax authority track declared wealth over time, allowing it to cross-reference information with future operations."
+                },
+                "es": {
+                  "title": "Declarar no es lo mismo que pagar impuesto",
+                  "body": "Además de pagar el impuesto debido sobre eventuales ganancias, los inversores personas físicas generalmente necesitan informar la posición de sus inversiones en la declaración anual de Impuesto a la Renta, en el formulario de bienes y derechos — incluso en años sin ventas con ganancia, o incluso con pérdida. Declarar la posición de un activo no genera, por sí solo, ningún impuesto adicional: la declaración sirve para que la autoridad tributaria tenga visibilidad del patrimonio declarado a lo largo del tiempo, permitiendo cruzar información con operaciones futuras."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra ações e as mantém sem vender durante todo o ano, sem realizar nenhum lucro. Mesmo assim, ele precisa informar a posição dessas ações na sua declaração anual, na ficha de bens e direitos, pelo valor de custo de aquisição — a ausência de venda não elimina a obrigação de declarar a posse do ativo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys stocks and holds them without selling throughout the year, realizing no profit. Even so, they need to report that stock position on their annual return, on the assets and rights form, at acquisition cost — not selling doesn't eliminate the obligation to declare holding the asset."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra acciones y las mantiene sin vender durante todo el año, sin realizar ninguna ganancia. Aun así, necesita informar la posición de esas acciones en su declaración anual, en el formulario de bienes y derechos, por el valor de costo de adquisición — la ausencia de venta no elimina la obligación de declarar la posesión del activo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Declarar a posição de um investimento na ficha de bens e direitos, sem tê-lo vendido no ano, gera imposto adicional a pagar?",
+                  "options": [
+                    "Não, declarar a posição de um ativo não gera, por si só, nenhum imposto adicional",
+                    "Sim, qualquer ativo declarado gera automaticamente 15% de imposto sobre seu valor total",
+                    "Sim, mas apenas se o investidor tiver mais de um ativo declarado",
+                    "Não é possível declarar um ativo que não foi vendido no ano"
+                  ],
+                  "explanation": "A declaração de posição serve para informar o patrimônio à Receita Federal, sem gerar, por si só, nenhum imposto — o imposto só incide sobre ganhos efetivamente realizados em vendas."
+                },
+                "en": {
+                  "prompt": "Does declaring an investment position on the assets and rights form, without having sold it during the year, generate additional tax to pay?",
+                  "options": [
+                    "No, declaring an asset's position doesn't, by itself, generate any additional tax",
+                    "Yes, any declared asset automatically generates 15% tax on its total value",
+                    "Yes, but only if the investor has more than one declared asset",
+                    "It's not possible to declare an asset that wasn't sold during the year"
+                  ],
+                  "explanation": "Declaring a position serves to report wealth to the tax authority, without generating, by itself, any tax — tax only applies to gains actually realized in sales."
+                },
+                "es": {
+                  "prompt": "¿Declarar la posición de una inversión en el formulario de bienes y derechos, sin haberla vendido en el año, genera impuesto adicional a pagar?",
+                  "options": [
+                    "No, declarar la posición de un activo no genera, por sí solo, ningún impuesto adicional",
+                    "Sí, cualquier activo declarado genera automáticamente un 15% de impuesto sobre su valor total",
+                    "Sí, pero solo si el inversor tiene más de un activo declarado",
+                    "No es posible declarar un activo que no fue vendido en el año"
+                  ],
+                  "explanation": "La declaración de posición sirve para informar el patrimonio a la autoridad tributaria, sin generar, por sí sola, ningún impuesto — el impuesto solo grava las ganancias efectivamente realizadas en ventas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a compensação de prejuízos exige que o investidor registre corretamente os valores envolvidos para poder aproveitá-los no futuro. Como a declaração anual de bens e direitos se conecta a essa necessidade de registro?",
+                  "options": [
+                    "A declaração anual não tem nenhuma relação com o controle de prejuízos ou custos de aquisição de um investidor",
+                    "A declaração anual é um dos registros formais que ajudam a documentar a posição e o custo de aquisição dos ativos ao longo do tempo, apoiando o controle necessário para compensações futuras",
+                    "A declaração anual substitui completamente a necessidade de guardar qualquer nota de corretagem ou comprovante de compra",
+                    "Apenas investidores que nunca tiveram prejuízo precisam declarar seus bens e direitos"
+                  ],
+                  "explanation": "Manter a declaração anual atualizada, com o custo de aquisição correto de cada ativo, é parte da documentação que sustenta tanto o cálculo de ganhos futuros quanto a compensação de eventuais prejuízos acumulados."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that loss carryforward requires the investor to correctly record the amounts involved in order to use them in the future. How does the annual assets and rights declaration connect to that need for record-keeping?",
+                  "options": [
+                    "The annual declaration has no relation at all to tracking an investor's losses or acquisition costs",
+                    "The annual declaration is one of the formal records that help document assets' position and acquisition cost over time, supporting the tracking needed for future offsets",
+                    "The annual declaration completely replaces the need to keep any brokerage note or purchase receipt",
+                    "Only investors who never had a loss need to declare their assets and rights"
+                  ],
+                  "explanation": "Keeping the annual declaration up to date, with each asset's correct acquisition cost, is part of the documentation that supports both calculating future gains and offsetting any accumulated losses."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la compensación de pérdidas exige que el inversor registre correctamente los montos involucrados para poder aprovecharlos en el futuro. ¿Cómo se conecta la declaración anual de bienes y derechos con esa necesidad de registro?",
+                  "options": [
+                    "La declaración anual no tiene ninguna relación con el control de pérdidas o costos de adquisición de un inversor",
+                    "La declaración anual es uno de los registros formales que ayudan a documentar la posición y el costo de adquisición de los activos a lo largo del tiempo, apoyando el control necesario para compensaciones futuras",
+                    "La declaración anual reemplaza por completo la necesidad de guardar cualquier nota de corretaje o comprobante de compra",
+                    "Solo los inversores que nunca tuvieron una pérdida necesitan declarar sus bienes y derechos"
+                  ],
+                  "explanation": "Mantener la declaración anual actualizada, con el costo de adquisición correcto de cada activo, es parte de la documentación que sustenta tanto el cálculo de ganancias futuras como la compensación de eventuales pérdidas acumuladas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Investidores geralmente precisam declarar a posição de seus ativos na ficha de bens e direitos, mesmo sem vendas.",
+                    "Declarar uma posição não gera, por si só, nenhum imposto adicional.",
+                    "Manter a declaração atualizada apoia o controle de custos e a compensação de prejuízos ao longo do tempo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Investors generally need to declare their asset positions on the assets and rights form, even without sales.",
+                    "Declaring a position doesn't, by itself, generate any additional tax.",
+                    "Keeping the declaration up to date supports cost tracking and loss offsetting over time."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los inversores generalmente necesitan declarar la posición de sus activos en el formulario de bienes y derechos, aun sin ventas.",
+                    "Declarar una posición no genera, por sí sola, ningún impuesto adicional.",
+                    "Mantener la declaración actualizada apoya el control de costos y la compensación de pérdidas a lo largo del tiempo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_come_cotas_vs_definitive",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Come-Cotas vs. Tributação na Venda"
+            },
+            "en": {
+              "title": "Periodic Withholding vs. Taxation Only at Sale"
+            },
+            "es": {
+              "title": "Anticipo Periódico vs. Tributación Solo en la Venta"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas lógicas diferentes de quando o imposto é cobrado",
+                  "body": "Diferentes tipos de investimento seguem lógicas distintas sobre quando o imposto é efetivamente cobrado. A maioria dos fundos tradicionais está sujeita ao come-cotas, um adiantamento semestral automático de Imposto de Renda. Já ações, ETFs e FIIs seguem uma lógica de tributação definitiva apenas no momento da venda com lucro — não há nenhum adiantamento automático ao longo do tempo, e o próprio investidor é responsável por calcular e recolher o imposto quando ele efetivamente incide."
+                },
+                "en": {
+                  "title": "Two different logics for when tax is charged",
+                  "body": "Different types of investment follow distinct logics about when tax is actually charged. Most traditional funds are subject to periodic automatic withholding, an advance income tax payment taken twice a year. Stocks, ETFs and FIIs, on the other hand, follow a logic of definitive taxation only at the moment of a profitable sale — there's no automatic advance over time, and the investor themselves is responsible for calculating and paying the tax when it actually applies."
+                },
+                "es": {
+                  "title": "Dos lógicas diferentes sobre cuándo se cobra el impuesto",
+                  "body": "Diferentes tipos de inversión siguen lógicas distintas sobre cuándo se cobra efectivamente el impuesto. La mayoría de los fondos tradicionales están sujetos a un anticipo semestral automático de Impuesto a la Renta. En cambio, las acciones, los ETF y los FII siguen una lógica de tributación definitiva solo en el momento de la venta con ganancia — no hay ningún anticipo automático a lo largo del tiempo, y el propio inversor es responsable de calcular y pagar el impuesto cuando efectivamente corresponde."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor com dinheiro em um fundo de renda fixa tradicional vê uma parte de suas cotas ser convertida em imposto automaticamente a cada seis meses, mesmo sem ter vendido nada. Já um investidor com o mesmo valor em ações de uma empresa só vai calcular e pagar imposto no momento em que decidir vender essas ações com lucro — antes disso, nenhum imposto é cobrado sobre a posição."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor with money in a traditional fixed-income fund sees part of their shares automatically converted into tax every six months, even without having sold anything. An investor with the same amount in a company's stock, on the other hand, will only calculate and pay tax at the moment they decide to sell those shares at a profit — before that, no tax is charged on the position."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor con dinero en un fondo tradicional de renta fija ve una parte de sus cuotas convertida automáticamente en impuesto cada seis meses, aunque no haya vendido nada. Un inversor con el mismo monto en acciones de una empresa, en cambio, solo calculará y pagará impuesto en el momento en que decida vender esas acciones con ganancia — antes de eso, no se cobra ningún impuesto sobre la posición."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a diferença central entre o come-cotas e a tributação definitiva de ações na venda?",
+                  "options": [
+                    "Não existe diferença nenhuma; ambos cobram imposto exatamente da mesma forma",
+                    "O come-cotas antecipa automaticamente parte do imposto periodicamente, enquanto ações só são tributadas no momento da venda com lucro",
+                    "Ações são tributadas automaticamente todo mês, exatamente como o come-cotas",
+                    "O come-cotas só existe para ações, nunca para fundos de renda fixa"
+                  ],
+                  "explanation": "O come-cotas é uma antecipação automática e periódica de imposto, enquanto a tributação de ações só ocorre no momento em que o investidor realiza uma venda com lucro."
+                },
+                "en": {
+                  "prompt": "What's the central difference between periodic withholding (come-cotas) and definitive stock taxation at sale?",
+                  "options": [
+                    "There's no difference at all; both charge tax in exactly the same way",
+                    "Periodic withholding automatically advances part of the tax at regular intervals, while stocks are only taxed at the moment of a profitable sale",
+                    "Stocks are automatically taxed every month, exactly like periodic withholding",
+                    "Periodic withholding only exists for stocks, never for fixed-income funds"
+                  ],
+                  "explanation": "Periodic withholding is an automatic, regular tax advance, while stock taxation only happens at the moment the investor makes a profitable sale."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia central entre el anticipo periódico (come-cotas) y la tributación definitiva de las acciones en la venta?",
+                  "options": [
+                    "No existe ninguna diferencia; ambos cobran impuesto exactamente de la misma forma",
+                    "El anticipo periódico adelanta automáticamente parte del impuesto de forma regular, mientras que las acciones solo se gravan en el momento de una venta con ganancia",
+                    "Las acciones se gravan automáticamente cada mes, exactamente igual que el anticipo periódico",
+                    "El anticipo periódico solo existe para acciones, nunca para fondos de renta fija"
+                  ],
+                  "explanation": "El anticipo periódico es un adelanto automático y regular de impuesto, mientras que la tributación de acciones solo ocurre en el momento en que el inversor realiza una venta con ganancia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores desta escola, tanto o come-cotas quanto a lógica de compensação de prejuízos. Por que a compensação de prejuízos costuma ser mais relevante na prática para quem investe em ações do que para quem investe em fundos sujeitos ao come-cotas?",
+                  "options": [
+                    "Porque, como o imposto sobre ações só é apurado no momento da venda, há mais espaço para o investidor controlar ativamente quando realizar ganhos e perdas e como compensá-los, diferente do come-cotas, que já antecipa o imposto periodicamente de forma automática",
+                    "Porque fundos sujeitos ao come-cotas nunca podem gerar prejuízo para o investidor",
+                    "Porque ações nunca podem ser compensadas com prejuízos de nenhuma forma",
+                    "Não existe nenhuma relação entre o momento de tributação e a possibilidade de compensar prejuízos"
+                  ],
+                  "explanation": "Como o come-cotas já antecipa parte do imposto automaticamente, o investidor tem menos controle ativo sobre o momento da tributação — já na tributação definitiva de ações, o próprio investidor decide quando vender, o que torna a gestão ativa de ganhos e perdas (e sua compensação) mais relevante na prática."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this school, both periodic withholding and the logic of loss carryforward. Why does loss carryforward tend to be more practically relevant for stock investors than for investors in funds subject to periodic withholding?",
+                  "options": [
+                    "Because, since stock tax is only assessed at the moment of sale, there's more room for the investor to actively control when to realize gains and losses and how to offset them, unlike periodic withholding, which already advances the tax automatically on a regular basis",
+                    "Because funds subject to periodic withholding can never generate a loss for the investor",
+                    "Because stocks can never be offset against losses in any way",
+                    "There's no relation at all between the timing of taxation and the possibility of offsetting losses"
+                  ],
+                  "explanation": "Since periodic withholding already advances part of the tax automatically, the investor has less active control over the timing of taxation — with definitive stock taxation, the investor themselves decides when to sell, which makes actively managing gains and losses (and offsetting them) more practically relevant."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de esta escuela, tanto el anticipo periódico como la lógica de compensación de pérdidas. ¿Por qué la compensación de pérdidas suele ser más relevante en la práctica para quien invierte en acciones que para quien invierte en fondos sujetos al anticipo periódico?",
+                  "options": [
+                    "Porque, como el impuesto sobre acciones solo se calcula en el momento de la venta, hay más margen para que el inversor controle activamente cuándo realizar ganancias y pérdidas y cómo compensarlas, a diferencia del anticipo periódico, que ya adelanta el impuesto automáticamente de forma regular",
+                    "Porque los fondos sujetos al anticipo periódico nunca pueden generar una pérdida para el inversor",
+                    "Porque las acciones nunca pueden compensarse con pérdidas de ninguna forma",
+                    "No existe ninguna relación entre el momento de la tributación y la posibilidad de compensar pérdidas"
+                  ],
+                  "explanation": "Como el anticipo periódico ya adelanta parte del impuesto automáticamente, el inversor tiene menos control activo sobre el momento de la tributación — en cambio, en la tributación definitiva de acciones, el propio inversor decide cuándo vender, lo que hace que la gestión activa de ganancias y pérdidas (y su compensación) sea más relevante en la práctica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Fundos sujeitos ao come-cotas antecipam parte do imposto automaticamente, a cada seis meses.",
+                    "Ações, ETFs e FIIs seguem uma lógica de tributação definitiva apenas no momento da venda com lucro.",
+                    "Você concluiu o módulo avançado de tributação: day trade, compensação de prejuízos, ITCMD, declaração anual e come-cotas vs. tributação na venda."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Funds subject to periodic withholding advance part of the tax automatically, every six months.",
+                    "Stocks, ETFs and FIIs follow a logic of definitive taxation only at the moment of a profitable sale.",
+                    "You've completed the advanced taxation module: day trade, loss carryforward, ITCMD, annual declaration and periodic withholding vs. taxation at sale."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los fondos sujetos al anticipo periódico adelantan parte del impuesto automáticamente, cada seis meses.",
+                    "Las acciones, ETF y FII siguen una lógica de tributación definitiva solo en el momento de la venta con ganancia.",
+                    "Completaste el módulo avanzado de tributación: day trade, compensación de pérdidas, ITCMD, declaración anual y anticipo periódico vs. tributación en la venta."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "taxation_regulation_specialist",
+      "order": 3,
+      "iconKey": "gavel_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "taxation_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Tributação e Regulação: Nível Especialista",
+          "description": "Isenção de LCI/LCA, tributação de PGBL/VGBL, investimentos no exterior, reguladores do mercado (CVM, Banco Central, B3) e mecanismos de proteção ao investidor."
+        },
+        "en": {
+          "title": "Taxation and Regulation: Expert Level",
+          "description": "LCI/LCA exemption, PGBL/VGBL taxation, foreign investments, market regulators (CVM, Central Bank, B3), and investor protection mechanisms."
+        },
+        "es": {
+          "title": "Tributación y Regulación: Nivel Experto",
+          "description": "Exención de LCI/LCA, tributación de PGBL/VGBL, inversiones en el exterior, reguladores del mercado (CVM, Banco Central, B3) y mecanismos de protección al inversor."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "taxation_lci_lca_exemption",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Isenção de LCI e LCA"
+            },
+            "en": {
+              "title": "LCI and LCA Tax Exemption"
+            },
+            "es": {
+              "title": "Exención de LCI y LCA"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um benefício fiscal específico para incentivar certos setores",
+                  "body": "LCI e LCA são títulos de renda fixa emitidos por bancos, lastreados em créditos dos setores imobiliário e do agronegócio, respectivamente. Diferente da maioria dos investimentos de renda fixa, esses títulos contam com isenção de Imposto de Renda para pessoas físicas — um benefício fiscal concedido pelo governo especificamente para incentivar o financiamento privado desses dois setores considerados estratégicos."
+                },
+                "en": {
+                  "title": "A specific tax break to encourage certain sectors",
+                  "body": "LCI and LCA are fixed-income securities issued by banks, backed by credit from the real estate and agribusiness sectors, respectively. Unlike most fixed-income investments, these securities are exempt from income tax for individuals — a tax benefit granted by the government specifically to encourage private financing of these two sectors considered strategic."
+                },
+                "es": {
+                  "title": "Un beneficio fiscal específico para incentivar ciertos sectores",
+                  "body": "LCI y LCA son títulos de renta fija emitidos por bancos, respaldados por créditos de los sectores inmobiliario y agropecuario, respectivamente. A diferencia de la mayoría de las inversiones de renta fija, estos títulos cuentan con exención de Impuesto a la Renta para personas físicas — un beneficio fiscal otorgado por el gobierno específicamente para incentivar el financiamiento privado de estos dos sectores considerados estratégicos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compara um CDB pagando 100% do CDI com uma LCI pagando 90% do CDI. Apesar da taxa nominal mais baixa, a LCI pode entregar um retorno líquido maior, já que o CDB sofre desconto de Imposto de Renda pela tabela regressiva, enquanto a LCI é isenta — a comparação justa entre os dois exige olhar para o retorno líquido de impostos, não apenas para a taxa anunciada."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor compares a CDB paying 100% of the CDI with an LCI paying 90% of the CDI. Despite the lower nominal rate, the LCI can deliver a higher net return, since the CDB is subject to income tax under the regressive table, while the LCI is exempt — a fair comparison between the two requires looking at the after-tax return, not just the advertised rate."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compara un CDB que paga el 100% del CDI con una LCI que paga el 90% del CDI. A pesar de la tasa nominal más baja, la LCI puede entregar un retorno neto mayor, ya que el CDB sufre descuento de Impuesto a la Renta según la tabla regresiva, mientras que la LCI está exenta — la comparación justa entre ambos exige mirar el retorno neto de impuestos, no solo la tasa anunciada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que LCI e LCA contam com isenção de Imposto de Renda para pessoas físicas?",
+                  "options": [
+                    "Como um benefício fiscal do governo para incentivar o financiamento privado dos setores imobiliário e do agronegócio",
+                    "Porque todos os investimentos de renda fixa no Brasil são isentos de Imposto de Renda",
+                    "Porque LCI e LCA nunca pagam nenhum tipo de rendimento ao investidor",
+                    "Porque apenas investidores institucionais podem comprar esses títulos"
+                  ],
+                  "explanation": "A isenção de LCI e LCA é um benefício fiscal específico, concedido para incentivar o financiamento privado desses dois setores, e não uma regra geral aplicada a toda a renda fixa."
+                },
+                "en": {
+                  "prompt": "Why do LCI and LCA carry income tax exemption for individuals?",
+                  "options": [
+                    "As a government tax benefit to encourage private financing of the real estate and agribusiness sectors",
+                    "Because all fixed-income investments in Brazil are exempt from income tax",
+                    "Because LCI and LCA never pay any kind of return to the investor",
+                    "Because only institutional investors can buy these securities"
+                  ],
+                  "explanation": "The LCI and LCA exemption is a specific tax benefit, granted to encourage private financing of these two sectors, not a general rule applied to all fixed income."
+                },
+                "es": {
+                  "prompt": "¿Por qué LCI y LCA cuentan con exención de Impuesto a la Renta para personas físicas?",
+                  "options": [
+                    "Como un beneficio fiscal del gobierno para incentivar el financiamiento privado de los sectores inmobiliario y agropecuario",
+                    "Porque todas las inversiones de renta fija en Brasil están exentas de Impuesto a la Renta",
+                    "Porque LCI y LCA nunca pagan ningún tipo de rendimiento al inversor",
+                    "Porque solo los inversores institucionales pueden comprar estos títulos"
+                  ],
+                  "explanation": "La exención de LCI y LCA es un beneficio fiscal específico, otorgado para incentivar el financiamiento privado de esos dos sectores, y no una regla general aplicada a toda la renta fija."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que a tabela regressiva do Imposto de Renda reduz a alíquota conforme o prazo de um investimento de renda fixa aumenta. Como a isenção de LCI e LCA se compara a essa tabela regressiva ao avaliar o retorno líquido de dois títulos com taxas nominais parecidas?",
+                  "options": [
+                    "A tabela regressiva e a isenção de LCI/LCA levam sempre ao mesmo retorno líquido final, tornando a comparação desnecessária",
+                    "Enquanto um título sujeito à tabela regressiva sempre perde uma parcela do rendimento para o Imposto de Renda (ainda que decrescente com o tempo), uma LCI ou LCA isenta não sofre esse desconto em nenhum momento, o que pode torná-la mais vantajosa mesmo com uma taxa nominal um pouco menor",
+                    "A tabela regressiva se aplica igualmente a LCI e LCA, sem nenhuma diferença em relação a um CDB",
+                    "Isenção de Imposto de Renda só existe para investimentos de prazo muito curto"
+                  ],
+                  "explanation": "A tabela regressiva ainda desconta algum imposto do rendimento de um título comum, mesmo em prazos longos onde a alíquota é menor; uma LCI ou LCA isenta não sofre nenhum desconto, o que pode compensar uma taxa nominal menor ao se comparar o retorno líquido final."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that the regressive income tax table lowers the rate as a fixed-income investment's term increases. How does the LCI/LCA exemption compare to that regressive table when assessing the net return of two securities with similar nominal rates?",
+                  "options": [
+                    "The regressive table and the LCI/LCA exemption always lead to the same final net return, making the comparison unnecessary",
+                    "While a security subject to the regressive table always loses some portion of its return to income tax (even if decreasing over time), an exempt LCI or LCA never suffers that deduction, which can make it more advantageous even with a slightly lower nominal rate",
+                    "The regressive table applies equally to LCI and LCA, with no difference relative to a CDB",
+                    "Income tax exemption only exists for very short-term investments"
+                  ],
+                  "explanation": "The regressive table still deducts some tax from a regular security's return, even at longer terms where the rate is lower; an exempt LCI or LCA suffers no deduction at all, which can offset a lower nominal rate when comparing the final net return."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que la tabla regresiva del Impuesto a la Renta reduce la alícuota a medida que aumenta el plazo de una inversión de renta fija. ¿Cómo se compara la exención de LCI y LCA con esa tabla regresiva al evaluar el retorno neto de dos títulos con tasas nominales parecidas?",
+                  "options": [
+                    "La tabla regresiva y la exención de LCI/LCA siempre llevan al mismo retorno neto final, haciendo innecesaria la comparación",
+                    "Mientras que un título sujeto a la tabla regresiva siempre pierde una parte del rendimiento por el Impuesto a la Renta (aunque decreciente con el tiempo), una LCI o LCA exenta no sufre ese descuento en ningún momento, lo que puede hacerla más ventajosa incluso con una tasa nominal un poco menor",
+                    "La tabla regresiva se aplica igualmente a LCI y LCA, sin ninguna diferencia respecto a un CDB",
+                    "La exención de Impuesto a la Renta solo existe para inversiones de plazo muy corto"
+                  ],
+                  "explanation": "La tabla regresiva todavía descuenta algo de impuesto del rendimiento de un título común, incluso en plazos largos donde la alícuota es menor; una LCI o LCA exenta no sufre ningún descuento, lo que puede compensar una tasa nominal menor al comparar el retorno neto final."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "LCI e LCA contam com isenção de Imposto de Renda, um benefício fiscal para incentivar seus setores.",
+                    "Essa isenção é diferente da tabela regressiva aplicada à maioria dos investimentos de renda fixa.",
+                    "Comparar retorno líquido, não apenas a taxa nominal, é essencial para avaliar o benefício real da isenção."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "LCI and LCA carry income tax exemption, a tax benefit to encourage their sectors.",
+                    "This exemption differs from the regressive table applied to most fixed-income investments.",
+                    "Comparing net return, not just the nominal rate, is essential to assess the exemption's real benefit."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "LCI y LCA cuentan con exención de Impuesto a la Renta, un beneficio fiscal para incentivar sus sectores.",
+                    "Esta exención es diferente de la tabla regresiva aplicada a la mayoría de las inversiones de renta fija.",
+                    "Comparar el retorno neto, no solo la tasa nominal, es esencial para evaluar el beneficio real de la exención."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_pgbl_vgbl_taxation",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tributação de PGBL e VGBL"
+            },
+            "en": {
+              "title": "PGBL and VGBL Taxation"
+            },
+            "es": {
+              "title": "Tributación de PGBL y VGBL"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas regras de tributação bem diferentes para planos parecidos",
+                  "body": "PGBL e VGBL, os dois principais tipos de previdência privada, têm regras de tributação bem diferentes entre si. Contribuições ao PGBL podem ser deduzidas da base de cálculo do Imposto de Renda na declaração anual, até o limite de 12% da renda bruta tributável — mas, no resgate, o imposto incide sobre o valor total resgatado, incluindo o principal aportado. No VGBL, não há dedução na contribuição, mas o imposto no resgate incide apenas sobre o rendimento, não sobre o valor principal."
+                },
+                "en": {
+                  "title": "Two quite different taxation rules for similar plans",
+                  "body": "PGBL and VGBL, the two main types of private pension plans, have quite different taxation rules from each other. PGBL contributions can be deducted from the income tax calculation base on the annual return, up to a limit of 12% of taxable gross income — but, at withdrawal, tax applies to the entire withdrawn amount, including the principal contributed. With VGBL, there's no deduction on contribution, but tax at withdrawal applies only to the earnings, not the principal."
+                },
+                "es": {
+                  "title": "Dos reglas de tributación bastante diferentes para planes parecidos",
+                  "body": "PGBL y VGBL, los dos principales tipos de previsión privada, tienen reglas de tributación bastante diferentes entre sí. Los aportes al PGBL pueden deducirse de la base de cálculo del Impuesto a la Renta en la declaración anual, hasta el límite del 12% del ingreso bruto tributable — pero, al retirar, el impuesto grava el monto total retirado, incluyendo el principal aportado. En el VGBL, no hay deducción en el aporte, pero el impuesto al retirar grava solo el rendimiento, no el monto principal."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que declara Imposto de Renda pelo modelo completo e contribui para um PGBL pode deduzir esse valor da base tributável, reduzindo o imposto a pagar no ano da contribuição. Mas, ao resgatar o PGBL décadas depois, o imposto incidirá sobre o valor total resgatado. Já quem contribui para um VGBL não tem essa dedução anual, mas paga imposto apenas sobre o rendimento obtido, não sobre o que foi originalmente aportado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person who files taxes under the full/itemized model and contributes to a PGBL can deduct that amount from the taxable base, reducing the tax owed in the contribution year. But when withdrawing the PGBL decades later, tax will apply to the entire withdrawn amount. Someone who contributes to a VGBL, meanwhile, doesn't get that annual deduction, but pays tax only on the earnings obtained, not on what was originally contributed."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que declara el Impuesto a la Renta bajo el modelo completo y aporta a un PGBL puede deducir ese monto de la base tributable, reduciendo el impuesto a pagar en el año del aporte. Pero, al retirar el PGBL décadas después, el impuesto gravará el monto total retirado. Quien aporta a un VGBL, en cambio, no tiene esa deducción anual, pero paga impuesto solo sobre el rendimiento obtenido, no sobre lo que fue originalmente aportado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é uma diferença central na tributação entre PGBL e VGBL?",
+                  "options": [
+                    "Ambos são tributados de forma idêntica, sem nenhuma diferença",
+                    "No PGBL, o imposto no resgate incide sobre o valor total resgatado; no VGBL, incide apenas sobre o rendimento",
+                    "VGBL sempre permite dedução das contribuições, e PGBL nunca permite",
+                    "Apenas o PGBL pode ser resgatado; o VGBL não pode ser resgatado em nenhuma hipótese"
+                  ],
+                  "explanation": "A diferença central é que o PGBL permite deduzir contribuições (mas tributa o resgate integral), enquanto o VGBL não permite dedução (mas tributa apenas o rendimento no resgate)."
+                },
+                "en": {
+                  "prompt": "What's a central difference in taxation between PGBL and VGBL?",
+                  "options": [
+                    "Both are taxed identically, with no difference at all",
+                    "In PGBL, tax at withdrawal applies to the entire withdrawn amount; in VGBL, it applies only to the earnings",
+                    "VGBL always allows deducting contributions, and PGBL never allows it",
+                    "Only PGBL can be withdrawn; VGBL can never be withdrawn under any circumstance"
+                  ],
+                  "explanation": "The central difference is that PGBL allows deducting contributions (but taxes the full withdrawal), while VGBL doesn't allow deduction (but taxes only the earnings at withdrawal)."
+                },
+                "es": {
+                  "prompt": "¿Cuál es una diferencia central en la tributación entre PGBL y VGBL?",
+                  "options": [
+                    "Ambos se gravan de forma idéntica, sin ninguna diferencia",
+                    "En el PGBL, el impuesto al retirar grava el monto total retirado; en el VGBL, grava solo el rendimiento",
+                    "El VGBL siempre permite deducir los aportes, y el PGBL nunca lo permite",
+                    "Solo el PGBL puede retirarse; el VGBL no puede retirarse bajo ninguna circunstancia"
+                  ],
+                  "explanation": "La diferencia central es que el PGBL permite deducir aportes (pero grava el retiro íntegro), mientras que el VGBL no permite deducción (pero grava solo el rendimiento al retirar)."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que planos de previdência privada também podem envolver a escolha entre regime regressivo e progressivo de tributação, além da própria decisão entre PGBL e VGBL. Como essas duas decisões (PGBL vs. VGBL, e regime de tributação) se combinam na prática?",
+                  "options": [
+                    "São duas decisões independentes que se combinam: primeiro escolhe-se entre PGBL ou VGBL (afetando o que é tributado no resgate), depois entre regime regressivo ou progressivo (afetando a alíquota aplicada sobre essa base)",
+                    "PGBL e VGBL são apenas nomes alternativos para os regimes regressivo e progressivo, sem nenhuma diferença real entre eles",
+                    "Escolher entre PGBL e VGBL automaticamente determina o regime de tributação, sem nenhuma decisão adicional necessária",
+                    "Apenas um desses dois fatores (tipo de plano ou regime de tributação) afeta o resultado final, nunca os dois ao mesmo tempo"
+                  ],
+                  "explanation": "PGBL/VGBL determina o que será tributado no resgate (valor total ou apenas o rendimento), enquanto o regime regressivo ou progressivo determina a alíquota aplicada sobre essa base — são duas escolhas distintas que se combinam para definir a tributação final."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that private pension plans can also involve choosing between a regressive and progressive tax regime, on top of the PGBL vs. VGBL decision itself. How do these two decisions (PGBL vs. VGBL, and tax regime) combine in practice?",
+                  "options": [
+                    "They're two independent decisions that combine: first choosing between PGBL or VGBL (affecting what gets taxed at withdrawal), then between regressive or progressive regime (affecting the rate applied to that base)",
+                    "PGBL and VGBL are just alternative names for the regressive and progressive regimes, with no real difference between them",
+                    "Choosing between PGBL and VGBL automatically determines the tax regime, with no additional decision needed",
+                    "Only one of these two factors (plan type or tax regime) affects the final result, never both at the same time"
+                  ],
+                  "explanation": "PGBL/VGBL determines what gets taxed at withdrawal (the full amount or just the earnings), while the regressive or progressive regime determines the rate applied to that base — two distinct choices that combine to define the final taxation."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que los planes de previsión privada también pueden implicar elegir entre un régimen de tributación regresivo y progresivo, además de la propia decisión entre PGBL y VGBL. ¿Cómo se combinan estas dos decisiones (PGBL vs. VGBL, y régimen de tributación) en la práctica?",
+                  "options": [
+                    "Son dos decisiones independientes que se combinan: primero se elige entre PGBL o VGBL (afectando qué se grava al retirar), luego entre régimen regresivo o progresivo (afectando la alícuota aplicada sobre esa base)",
+                    "PGBL y VGBL son solo nombres alternativos para los regímenes regresivo y progresivo, sin ninguna diferencia real entre ellos",
+                    "Elegir entre PGBL y VGBL determina automáticamente el régimen de tributación, sin ninguna decisión adicional necesaria",
+                    "Solo uno de estos dos factores (tipo de plan o régimen de tributación) afecta el resultado final, nunca ambos a la vez"
+                  ],
+                  "explanation": "PGBL/VGBL determina qué se grava al retirar (el monto total o solo el rendimiento), mientras que el régimen regresivo o progresivo determina la alícuota aplicada sobre esa base — dos elecciones distintas que se combinan para definir la tributación final."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "PGBL permite deduzir contribuições, mas tributa o valor total no resgate.",
+                    "VGBL não permite dedução, mas tributa apenas o rendimento no resgate.",
+                    "A escolha entre PGBL/VGBL e entre regime regressivo/progressivo são decisões distintas que se combinam."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "PGBL allows deducting contributions, but taxes the full amount at withdrawal.",
+                    "VGBL doesn't allow deduction, but taxes only the earnings at withdrawal.",
+                    "The choice between PGBL/VGBL and between regressive/progressive regime are distinct decisions that combine."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El PGBL permite deducir aportes, pero grava el monto total al retirar.",
+                    "El VGBL no permite deducción, pero grava solo el rendimiento al retirar.",
+                    "La elección entre PGBL/VGBL y entre régimen regresivo/progresivo son decisiones distintas que se combinan."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_international_investments_tax",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Tributação de Investimentos no Exterior"
+            },
+            "en": {
+              "title": "Taxation of Foreign Investments"
+            },
+            "es": {
+              "title": "Tributación de Inversiones en el Exterior"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Regras próprias para quem investe fora do país",
+                  "body": "Ganhos de capital com a venda de ativos mantidos diretamente no exterior seguem uma tabela de alíquotas progressivas específica, diferente da isenção de R$20.000 mensais aplicada a ações negociadas na bolsa brasileira. Além disso, investimentos mantidos no exterior — incluindo contas em corretoras estrangeiras — geralmente precisam ser declarados anualmente ao Banco Central quando o valor total ultrapassa um determinado limite, uma obrigação adicional que não existe para investimentos domésticos."
+                },
+                "en": {
+                  "title": "Its own rules for those investing abroad",
+                  "body": "Capital gains from selling assets held directly abroad follow a specific progressive tax rate table, different from the R$20,000 monthly exemption applied to stocks traded on the Brazilian exchange. Additionally, investments held abroad — including accounts at foreign brokers — generally need to be declared annually to the Central Bank when the total amount exceeds a certain threshold, an additional obligation that doesn't exist for domestic investments."
+                },
+                "es": {
+                  "title": "Reglas propias para quien invierte fuera del país",
+                  "body": "Las ganancias de capital por la venta de activos mantenidos directamente en el exterior siguen una tabla de alícuotas progresivas específica, diferente de la exención de R$20.000 mensuales aplicada a las acciones negociadas en la bolsa brasileña. Además, las inversiones mantenidas en el exterior — incluyendo cuentas en corredoras extranjeras — generalmente necesitan declararse anualmente al Banco Central cuando el monto total supera un determinado límite, una obligación adicional que no existe para las inversiones domésticas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vende ações de uma empresa americana, mantidas diretamente em uma corretora nos Estados Unidos, com lucro. Diferente de uma venda de ações na B3, não existe isenção mensal de R$20.000 para esse ganho — o imposto é calculado por uma tabela progressiva própria para ativos no exterior, e o investidor também precisa considerar suas obrigações de declaração desses ativos ao Banco Central."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sells shares of an American company, held directly at a brokerage in the United States, at a profit. Unlike a stock sale on the B3, there's no monthly R$20,000 exemption for that gain — the tax is calculated using a separate progressive table for foreign assets, and the investor also needs to consider their obligation to declare these assets to the Central Bank."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vende acciones de una empresa estadounidense, mantenidas directamente en una correduría en Estados Unidos, con ganancia. A diferencia de una venta de acciones en la B3, no existe exención mensual de R$20.000 para esa ganancia — el impuesto se calcula mediante una tabla progresiva propia para activos en el exterior, y el inversor también necesita considerar su obligación de declarar esos activos al Banco Central."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "A isenção mensal de R$20.000 aplicada à venda comum de ações na bolsa brasileira também se aplica à venda de ativos mantidos diretamente no exterior?",
+                  "options": [
+                    "Sim, a mesma isenção se aplica igualmente a ativos no exterior",
+                    "Não, ganhos de capital com ativos mantidos diretamente no exterior seguem uma tabela de alíquotas progressivas própria, diferente dessa isenção",
+                    "Investimentos no exterior são sempre completamente isentos de qualquer imposto",
+                    "Essa pergunta não tem resposta, já que investir no exterior é proibido para pessoas físicas"
+                  ],
+                  "explanation": "Ativos mantidos diretamente no exterior seguem regras de tributação próprias, distintas da isenção de R$20.000 mensais que se aplica especificamente à venda comum de ações na bolsa brasileira."
+                },
+                "en": {
+                  "prompt": "Does the R$20,000 monthly exemption applied to a regular stock sale on the Brazilian exchange also apply to selling assets held directly abroad?",
+                  "options": [
+                    "Yes, the same exemption applies equally to foreign assets",
+                    "No, capital gains from assets held directly abroad follow their own progressive tax rate table, different from that exemption",
+                    "Foreign investments are always completely exempt from any tax",
+                    "This question has no answer, since investing abroad is prohibited for individuals"
+                  ],
+                  "explanation": "Assets held directly abroad follow their own taxation rules, distinct from the R$20,000 monthly exemption that applies specifically to regular stock sales on the Brazilian exchange."
+                },
+                "es": {
+                  "prompt": "¿La exención mensual de R$20.000 aplicada a la venta común de acciones en la bolsa brasileña también se aplica a la venta de activos mantenidos directamente en el exterior?",
+                  "options": [
+                    "Sí, la misma exención se aplica igualmente a activos en el exterior",
+                    "No, las ganancias de capital con activos mantenidos directamente en el exterior siguen una tabla de alícuotas progresivas propia, diferente de esa exención",
+                    "Las inversiones en el exterior siempre están completamente exentas de cualquier impuesto",
+                    "Esta pregunta no tiene respuesta, ya que invertir en el exterior está prohibido para personas físicas"
+                  ],
+                  "explanation": "Los activos mantenidos directamente en el exterior siguen reglas de tributación propias, distintas de la exención de R$20.000 mensuales que se aplica específicamente a la venta común de acciones en la bolsa brasileña."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que BDRs permitem investir indiretamente em empresas estrangeiras através de um recibo negociado na bolsa brasileira. Como a tributação de um BDR provavelmente se compara à tributação de um ativo mantido diretamente no exterior, dado que um é negociado na B3 e o outro não?",
+                  "options": [
+                    "Como o BDR é negociado na B3, ele tende a seguir as regras de tributação de ativos negociados na bolsa brasileira, potencialmente incluindo a isenção mensal — diferente de um ativo mantido diretamente no exterior, sujeito à tabela progressiva própria discutida nesta lição",
+                    "BDRs e ativos mantidos diretamente no exterior são sempre tributados de forma absolutamente idêntica, sem nenhuma distinção",
+                    "BDRs nunca podem ser vendidos com lucro, tornando essa comparação irrelevante",
+                    "A tributação de um BDR depende exclusivamente do país da empresa que ele representa, nunca de onde o BDR é negociado"
+                  ],
+                  "explanation": "A localização de onde o ativo é efetivamente negociado — B3 para o BDR, uma corretora estrangeira para o ativo direto — tende a ser o fator determinante de qual regra de tributação se aplica, já que as regras estudadas nesta escola distinguem exatamente por esse critério."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that BDRs allow indirectly investing in foreign companies through a receipt traded on the Brazilian exchange. How does a BDR's taxation likely compare to the taxation of an asset held directly abroad, given that one trades on the B3 and the other doesn't?",
+                  "options": [
+                    "Since the BDR trades on the B3, it tends to follow the taxation rules for assets traded on the Brazilian exchange, potentially including the monthly exemption — unlike an asset held directly abroad, subject to the separate progressive table discussed in this lesson",
+                    "BDRs and assets held directly abroad are always taxed in an absolutely identical way, with no distinction at all",
+                    "BDRs can never be sold at a profit, making this comparison irrelevant",
+                    "A BDR's taxation depends exclusively on the country of the company it represents, never on where the BDR itself trades"
+                  ],
+                  "explanation": "The location where the asset is actually traded — the B3 for the BDR, a foreign broker for the direct asset — tends to be the determining factor for which taxation rule applies, since the rules studied in this school distinguish exactly by that criterion."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que los BDR permiten invertir indirectamente en empresas extranjeras a través de un recibo negociado en la bolsa brasileña. ¿Cómo se compara probablemente la tributación de un BDR con la tributación de un activo mantenido directamente en el exterior, dado que uno se negocia en la B3 y el otro no?",
+                  "options": [
+                    "Como el BDR se negocia en la B3, tiende a seguir las reglas de tributación de activos negociados en la bolsa brasileña, potencialmente incluyendo la exención mensual — a diferencia de un activo mantenido directamente en el exterior, sujeto a la tabla progresiva propia discutida en esta lección",
+                    "Los BDR y los activos mantenidos directamente en el exterior siempre se gravan de forma absolutamente idéntica, sin ninguna distinción",
+                    "Los BDR nunca pueden venderse con ganancia, haciendo irrelevante esta comparación",
+                    "La tributación de un BDR depende exclusivamente del país de la empresa que representa, nunca de dónde se negocia el BDR"
+                  ],
+                  "explanation": "El lugar donde el activo se negocia efectivamente — la B3 para el BDR, una correduría extranjera para el activo directo — tiende a ser el factor determinante de qué regla de tributación se aplica, ya que las reglas estudiadas en esta escuela distinguen exactamente por ese criterio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ganhos com ativos mantidos diretamente no exterior seguem uma tabela progressiva própria, sem a isenção de R$20.000 mensais.",
+                    "Investimentos no exterior acima de um certo valor geralmente exigem declaração anual ao Banco Central.",
+                    "Onde o ativo é efetivamente negociado (B3 ou uma corretora estrangeira) tende a determinar qual regra de tributação se aplica."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Gains from assets held directly abroad follow their own progressive table, without the R$20,000 monthly exemption.",
+                    "Foreign investments above a certain amount generally require an annual declaration to the Central Bank.",
+                    "Where the asset is actually traded (the B3 or a foreign broker) tends to determine which taxation rule applies."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las ganancias con activos mantenidos directamente en el exterior siguen una tabla progresiva propia, sin la exención de R$20.000 mensuales.",
+                    "Las inversiones en el exterior por encima de cierto monto generalmente exigen declaración anual al Banco Central.",
+                    "Dónde se negocia efectivamente el activo (la B3 o una correduría extranjera) tiende a determinar qué regla de tributación se aplica."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_regulatory_bodies",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "CVM, Banco Central e B3: Quem Regula o Mercado"
+            },
+            "en": {
+              "title": "CVM, Central Bank, and B3: Who Regulates the Market"
+            },
+            "es": {
+              "title": "CVM, Banco Central y B3: Quién Regula el Mercado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Diferentes reguladores para diferentes partes do sistema",
+                  "body": "O mercado financeiro brasileiro é supervisionado por diferentes órgãos, cada um com uma área de atuação específica. A Comissão de Valores Mobiliários (CVM) regula e fiscaliza o mercado de valores mobiliários, incluindo ações, fundos de investimento e ofertas públicas. O Banco Central supervisiona instituições financeiras, como bancos, e conduz a política monetária. A B3 é a bolsa de valores brasileira, responsável por organizar e operar o ambiente de negociação, sob a supervisão da CVM."
+                },
+                "en": {
+                  "title": "Different regulators for different parts of the system",
+                  "body": "The Brazilian financial market is overseen by different agencies, each with a specific area of responsibility. The Securities and Exchange Commission (CVM) regulates and oversees the securities market, including stocks, investment funds, and public offerings. The Central Bank supervises financial institutions, like banks, and conducts monetary policy. The B3 is the Brazilian stock exchange, responsible for organizing and operating the trading environment, under CVM's supervision."
+                },
+                "es": {
+                  "title": "Diferentes reguladores para diferentes partes del sistema",
+                  "body": "El mercado financiero brasileño es supervisado por diferentes organismos, cada uno con un área de actuación específica. La Comisión de Valores Mobiliarios (CVM) regula y fiscaliza el mercado de valores mobiliarios, incluyendo acciones, fondos de inversión y ofertas públicas. El Banco Central supervisa a las instituciones financieras, como los bancos, y conduce la política monetaria. La B3 es la bolsa de valores brasileña, responsable de organizar y operar el ambiente de negociación, bajo la supervisión de la CVM."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa que quer abrir capital e vender ações ao público pela primeira vez precisa registrar essa oferta junto à CVM, que analisa e fiscaliza o processo para proteger os investidores. Já um banco que capta depósitos e oferece CDBs está sob supervisão do Banco Central, que monitora sua saúde financeira. Ambos os mercados são organizados fisicamente na B3, mas respondem a reguladores diferentes conforme o tipo de atividade."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company that wants to go public and sell shares to the public for the first time needs to register that offering with the CVM, which reviews and oversees the process to protect investors. A bank that takes deposits and offers CDBs, meanwhile, is supervised by the Central Bank, which monitors its financial health. Both markets are physically organized on the B3, but answer to different regulators depending on the type of activity."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa que quiere salir a bolsa y vender acciones al público por primera vez necesita registrar esa oferta ante la CVM, que analiza y fiscaliza el proceso para proteger a los inversores. Un banco que capta depósitos y ofrece CDB, en cambio, está bajo la supervisión del Banco Central, que monitorea su salud financiera. Ambos mercados están organizados físicamente en la B3, pero responden a reguladores diferentes según el tipo de actividad."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual órgão regula e fiscaliza especificamente o mercado de valores mobiliários, incluindo ações e fundos de investimento?",
+                  "options": [
+                    "O Banco Central",
+                    "A Comissão de Valores Mobiliários (CVM)",
+                    "A B3, sozinha, sem nenhuma supervisão externa",
+                    "Nenhum órgão regula esse mercado no Brasil"
+                  ],
+                  "explanation": "A CVM é o órgão responsável por regular e fiscalizar especificamente o mercado de valores mobiliários, como ações, fundos de investimento e ofertas públicas."
+                },
+                "en": {
+                  "prompt": "Which agency specifically regulates and oversees the securities market, including stocks and investment funds?",
+                  "options": [
+                    "The Central Bank",
+                    "The Securities and Exchange Commission (CVM)",
+                    "The B3, alone, with no external oversight",
+                    "No agency regulates this market in Brazil"
+                  ],
+                  "explanation": "The CVM is the agency responsible for specifically regulating and overseeing the securities market, such as stocks, investment funds, and public offerings."
+                },
+                "es": {
+                  "prompt": "¿Qué organismo regula y fiscaliza específicamente el mercado de valores mobiliarios, incluyendo acciones y fondos de inversión?",
+                  "options": [
+                    "El Banco Central",
+                    "La Comisión de Valores Mobiliarios (CVM)",
+                    "La B3, sola, sin ninguna supervisión externa",
+                    "Ningún organismo regula ese mercado en Brasil"
+                  ],
+                  "explanation": "La CVM es el organismo responsable de regular y fiscalizar específicamente el mercado de valores mobiliarios, como acciones, fondos de inversión y ofertas públicas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que a regulação de criptoativos no Brasil envolve o Banco Central supervisionando prestadoras de serviços de ativos virtuais. Diante do que você aprendeu aqui sobre a divisão de responsabilidades entre reguladores, por que faz sentido que seja o Banco Central, e não a CVM, o principal responsável por essa supervisão específica?",
+                  "options": [
+                    "Porque exchanges de criptoativos funcionam de forma mais parecida com prestadoras de serviços financeiros (como instituições que custodiam e movimentam recursos), uma área mais próxima da atuação tradicional do Banco Central do que da CVM, focada em valores mobiliários",
+                    "Porque a CVM nunca tem nenhuma responsabilidade sobre nenhum tipo de ativo financeiro",
+                    "Porque criptoativos são legalmente classificados como valores mobiliários, o que deveria colocá-los sob a CVM, mas isso nunca acontece na prática",
+                    "Não existe nenhuma lógica por trás de qual regulador supervisiona qual tipo de ativo; é uma escolha arbitrária"
+                  ],
+                  "explanation": "A divisão de responsabilidades entre reguladores costuma seguir a natureza da atividade: supervisão de instituições que custodiam e movimentam recursos financeiros tende a ficar mais próxima do papel tradicional do Banco Central, enquanto a CVM foca especificamente em valores mobiliários e proteção de investidores nesse mercado."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that cryptoasset regulation in Brazil involves the Central Bank supervising virtual asset service providers. Given what you learned here about the division of responsibilities between regulators, why does it make sense that the Central Bank, rather than the CVM, is the main body responsible for that specific oversight?",
+                  "options": [
+                    "Because crypto exchanges function more like financial service providers (institutions that custody and move funds), an area closer to the Central Bank's traditional role than to the CVM's, which focuses on securities",
+                    "Because the CVM never has any responsibility over any type of financial asset",
+                    "Because cryptoassets are legally classified as securities, which should put them under the CVM, but that never happens in practice",
+                    "There's no logic at all behind which regulator oversees which type of asset; it's an arbitrary choice"
+                  ],
+                  "explanation": "The division of responsibilities between regulators usually follows the nature of the activity: oversight of institutions that custody and move financial funds tends to sit closer to the Central Bank's traditional role, while the CVM focuses specifically on securities and investor protection in that market."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que la regulación de criptoactivos en Brasil implica que el Banco Central supervise a los proveedores de servicios de activos virtuales. Ante lo que aprendiste aquí sobre la división de responsabilidades entre reguladores, ¿por qué tiene sentido que sea el Banco Central, y no la CVM, el principal responsable de esa supervisión específica?",
+                  "options": [
+                    "Porque las casas de cambio de criptoactivos funcionan de forma más parecida a proveedores de servicios financieros (instituciones que custodian y mueven recursos), un área más cercana a la actuación tradicional del Banco Central que a la de la CVM, enfocada en valores mobiliarios",
+                    "Porque la CVM nunca tiene ninguna responsabilidad sobre ningún tipo de activo financiero",
+                    "Porque los criptoactivos están legalmente clasificados como valores mobiliarios, lo que debería ponerlos bajo la CVM, pero eso nunca ocurre en la práctica",
+                    "No existe ninguna lógica detrás de qué regulador supervisa qué tipo de activo; es una elección arbitraria"
+                  ],
+                  "explanation": "La división de responsabilidades entre reguladores suele seguir la naturaleza de la actividad: la supervisión de instituciones que custodian y mueven recursos financieros tiende a estar más cerca del papel tradicional del Banco Central, mientras que la CVM se enfoca específicamente en valores mobiliarios y la protección de inversores en ese mercado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A CVM regula o mercado de valores mobiliários; o Banco Central supervisiona instituições financeiras e conduz a política monetária.",
+                    "A B3 organiza o ambiente de negociação, sob supervisão da CVM.",
+                    "A divisão de responsabilidades entre reguladores costuma seguir a natureza da atividade supervisionada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The CVM regulates the securities market; the Central Bank supervises financial institutions and conducts monetary policy.",
+                    "The B3 organizes the trading environment, under CVM supervision.",
+                    "The division of responsibilities between regulators usually follows the nature of the supervised activity."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La CVM regula el mercado de valores mobiliarios; el Banco Central supervisa instituciones financieras y conduce la política monetaria.",
+                    "La B3 organiza el ambiente de negociación, bajo supervisión de la CVM.",
+                    "La división de responsabilidades entre reguladores suele seguir la naturaleza de la actividad supervisada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "taxation_investor_protection_funds",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "jurisdiction": "BR",
+          "translations": {
+            "pt": {
+              "title": "Mecanismos de Proteção ao Investidor"
+            },
+            "en": {
+              "title": "Investor Protection Mechanisms"
+            },
+            "es": {
+              "title": "Mecanismos de Protección al Inversor"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Diferentes redes de segurança para diferentes riscos",
+                  "body": "Além da supervisão contínua exercida por reguladores como a CVM e o Banco Central, o sistema financeiro brasileiro conta com mecanismos específicos de proteção ao investidor. O FGC (Fundo Garantidor de Créditos) protege depósitos e alguns investimentos de renda fixa até um determinado valor por instituição, em caso de quebra do banco emissor. Já a CVM mantém um mecanismo de ressarcimento para prejuízos causados especificamente por falhas ou irregularidades de corretoras e distribuidoras, um risco diferente do risco de crédito coberto pelo FGC."
+                },
+                "en": {
+                  "title": "Different safety nets for different risks",
+                  "body": "Besides the ongoing oversight exercised by regulators like the CVM and the Central Bank, the Brazilian financial system has specific investor protection mechanisms. The FGC (Credit Guarantee Fund) protects deposits and some fixed-income investments up to a certain amount per institution, in case the issuing bank fails. The CVM, meanwhile, maintains a reimbursement mechanism for losses caused specifically by brokerage and distributor failures or irregularities, a different risk from the credit risk covered by the FGC."
+                },
+                "es": {
+                  "title": "Diferentes redes de seguridad para diferentes riesgos",
+                  "body": "Además de la supervisión continua ejercida por reguladores como la CVM y el Banco Central, el sistema financiero brasileño cuenta con mecanismos específicos de protección al inversor. El FGC (Fondo Garantizador de Créditos) protege depósitos y algunas inversiones de renta fija hasta un determinado monto por institución, en caso de quiebra del banco emisor. La CVM, por su parte, mantiene un mecanismo de resarcimiento para pérdidas causadas específicamente por fallas o irregularidades de corredoras y distribuidoras, un riesgo diferente del riesgo de crédito cubierto por el FGC."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se um banco emissor de um CDB falir, o FGC cobre o valor investido até o limite estabelecido, protegendo o investidor do risco de crédito daquele banco. Já se uma corretora cometer uma fraude específica, como usar indevidamente recursos de clientes, o mecanismo de ressarcimento da CVM pode entrar em ação para cobrir esse tipo diferente de prejuízo — os dois mecanismos cobrem riscos distintos, e não são intercambiáveis."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If a bank that issued a CDB fails, the FGC covers the invested amount up to the established limit, protecting the investor from that bank's credit risk. If a brokerage commits a specific fraud, like improperly using client funds, the CVM's reimbursement mechanism can step in to cover that different type of loss — the two mechanisms cover distinct risks, and aren't interchangeable."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si un banco emisor de un CDB quiebra, el FGC cubre el monto invertido hasta el límite establecido, protegiendo al inversor del riesgo de crédito de ese banco. Si una correduría comete un fraude específico, como usar indebidamente recursos de clientes, el mecanismo de resarcimiento de la CVM puede entrar en acción para cubrir ese tipo diferente de pérdida — los dos mecanismos cubren riesgos distintos, y no son intercambiables."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a diferença central entre o FGC e o mecanismo de ressarcimento da CVM?",
+                  "options": [
+                    "Não existe nenhuma diferença; os dois cobrem exatamente o mesmo tipo de risco",
+                    "O FGC cobre o risco de crédito de bancos emissores, enquanto o mecanismo da CVM cobre prejuízos causados por falhas ou irregularidades de corretoras e distribuidoras",
+                    "O FGC só existe para proteger ações, nunca renda fixa",
+                    "O mecanismo da CVM substitui completamente a necessidade do FGC"
+                  ],
+                  "explanation": "FGC e o mecanismo de ressarcimento da CVM cobrem riscos distintos: risco de crédito de instituições emissoras, no caso do FGC, e falhas ou irregularidades de intermediários, no caso da CVM."
+                },
+                "en": {
+                  "prompt": "What's the central difference between the FGC and the CVM's reimbursement mechanism?",
+                  "options": [
+                    "There's no difference at all; both cover exactly the same type of risk",
+                    "The FGC covers issuing banks' credit risk, while the CVM's mechanism covers losses caused by brokerage and distributor failures or irregularities",
+                    "The FGC only exists to protect stocks, never fixed income",
+                    "The CVM's mechanism completely replaces the need for the FGC"
+                  ],
+                  "explanation": "The FGC and the CVM's reimbursement mechanism cover distinct risks: issuing institutions' credit risk, in the FGC's case, and intermediary failures or irregularities, in the CVM's case."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia central entre el FGC y el mecanismo de resarcimiento de la CVM?",
+                  "options": [
+                    "No existe ninguna diferencia; ambos cubren exactamente el mismo tipo de riesgo",
+                    "El FGC cubre el riesgo de crédito de bancos emisores, mientras que el mecanismo de la CVM cubre pérdidas causadas por fallas o irregularidades de corredoras y distribuidoras",
+                    "El FGC solo existe para proteger acciones, nunca renta fija",
+                    "El mecanismo de la CVM reemplaza por completo la necesidad del FGC"
+                  ],
+                  "explanation": "El FGC y el mecanismo de resarcimiento de la CVM cubren riesgos distintos: riesgo de crédito de instituciones emisoras, en el caso del FGC, y fallas o irregularidades de intermediarios, en el caso de la CVM."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que o SIPC nos Estados Unidos protege investidores contra a falência de uma corretora, de forma parecida com o papel do FGC no Brasil, mas cobrindo um risco diferente do risco de mercado. Como isso se conecta ao que você aprendeu aqui sobre o FGC e o mecanismo de ressarcimento da CVM cobrirem riscos distintos entre si?",
+                  "options": [
+                    "O princípio se repete: diferentes mecanismos de proteção — seja entre países, seja dentro do mesmo país — tendem a cobrir riscos específicos e distintos, e nenhum deles cobre perdas decorrentes simplesmente de o preço de um investimento cair",
+                    "SIPC, FGC e o mecanismo da CVM cobrem exatamente o mesmo risco, apenas com nomes diferentes em cada país",
+                    "O SIPC substitui completamente a necessidade de qualquer mecanismo de proteção no Brasil",
+                    "Mecanismos de proteção ao investidor nunca cobrem riscos relacionados a corretoras, apenas a bancos"
+                  ],
+                  "explanation": "Assim como o FGC e o mecanismo da CVM cobrem riscos distintos entre si no Brasil, o SIPC nos Estados Unidos também cobre um risco específico (falência da corretora) — nenhum desses mecanismos, em nenhum país, cobre a simples desvalorização de mercado de um investimento."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that the SIPC in the United States protects investors against a brokerage's failure, similar to the FGC's role in Brazil, but covering a different risk from market risk. How does that connect to what you learned here about the FGC and the CVM's reimbursement mechanism covering distinct risks from each other?",
+                  "options": [
+                    "The principle repeats itself: different protection mechanisms — whether across countries or within the same country — tend to cover specific, distinct risks, and none of them cover losses simply from an investment's price falling",
+                    "SIPC, FGC, and the CVM's mechanism cover exactly the same risk, just with different names in each country",
+                    "The SIPC completely replaces the need for any protection mechanism in Brazil",
+                    "Investor protection mechanisms never cover risks related to brokerages, only banks"
+                  ],
+                  "explanation": "Just as the FGC and the CVM's mechanism cover distinct risks from each other in Brazil, the SIPC in the United States also covers a specific risk (brokerage failure) — none of these mechanisms, in any country, cover a simple market-driven decline in an investment's price."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que el SIPC en Estados Unidos protege a los inversores contra la quiebra de una correduría, de forma parecida al papel del FGC en Brasil, pero cubriendo un riesgo diferente al riesgo de mercado. ¿Cómo se conecta esto con lo que aprendiste aquí sobre que el FGC y el mecanismo de resarcimiento de la CVM cubren riesgos distintos entre sí?",
+                  "options": [
+                    "El principio se repite: diferentes mecanismos de protección — ya sea entre países, ya sea dentro del mismo país — tienden a cubrir riesgos específicos y distintos, y ninguno de ellos cubre pérdidas derivadas simplemente de que el precio de una inversión caiga",
+                    "SIPC, FGC y el mecanismo de la CVM cubren exactamente el mismo riesgo, solo con nombres diferentes en cada país",
+                    "El SIPC reemplaza por completo la necesidad de cualquier mecanismo de protección en Brasil",
+                    "Los mecanismos de protección al inversor nunca cubren riesgos relacionados con corredoras, solo con bancos"
+                  ],
+                  "explanation": "Así como el FGC y el mecanismo de la CVM cubren riesgos distintos entre sí en Brasil, el SIPC en Estados Unidos también cubre un riesgo específico (quiebra de la correduría) — ninguno de estos mecanismos, en ningún país, cubre una simple caída de mercado en el precio de una inversión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "O FGC cobre risco de crédito de instituições emissoras; a CVM tem mecanismo próprio para falhas de intermediários.",
+                    "Esses mecanismos cobrem riscos específicos e distintos, nunca a simples desvalorização de mercado de um investimento.",
+                    "Você concluiu o módulo especializado de tributação e regulação: LCI/LCA, PGBL/VGBL, investimentos no exterior, reguladores e proteção ao investidor."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "The FGC covers issuing institutions' credit risk; the CVM has its own mechanism for intermediary failures.",
+                    "These mechanisms cover specific, distinct risks, never a simple market-driven decline in an investment's value.",
+                    "You've completed the specialized taxation and regulation module: LCI/LCA, PGBL/VGBL, foreign investments, regulators, and investor protection."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El FGC cubre el riesgo de crédito de instituciones emisoras; la CVM tiene un mecanismo propio para fallas de intermediarios.",
+                    "Estos mecanismos cubren riesgos específicos y distintos, nunca la simple desvalorización de mercado de una inversión.",
+                    "Completaste el módulo especializado de tributación y regulación: LCI/LCA, PGBL/VGBL, inversiones en el exterior, reguladores y protección al inversor."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

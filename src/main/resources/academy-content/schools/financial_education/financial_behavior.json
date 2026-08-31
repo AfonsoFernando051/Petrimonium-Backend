@@ -1,0 +1,2533 @@
+{
+  "schoolId": "financial_behavior",
+  "domainId": "financial_education",
+  "order": 11,
+  "iconKey": "psychology_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Comportamento Financeiro",
+      "description": "Como vieses, emoções e hábitos afetam suas decisões financeiras — às vezes mais do que o próprio mercado."
+    },
+    "en": {
+      "title": "Financial Behavior",
+      "description": "How biases, emotions and habits shape your financial decisions — sometimes more than the market itself."
+    },
+    "es": {
+      "title": "Comportamiento Financiero",
+      "description": "Cómo los sesgos, las emociones y los hábitos moldean tus decisiones financieras — a veces más que el propio mercado."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "behavioral_biases_basics",
+      "order": 1,
+      "iconKey": "psychology_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "FOUNDATION",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Vieses Comportamentais Básicos",
+          "description": "Aversão à perda, ancoragem, efeito manada e viés de confirmação — e como automatizar decisões reduz o espaço para eles."
+        },
+        "en": {
+          "title": "Basic Behavioral Biases",
+          "description": "Loss aversion, anchoring, herd mentality and confirmation bias — and how automating decisions reduces room for them."
+        },
+        "es": {
+          "title": "Sesgos Comportamentales Básicos",
+          "description": "Aversión a la pérdida, anclaje, efecto manada y sesgo de confirmación — y cómo automatizar decisiones reduce el espacio para ellos."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "behavioral_loss_aversion",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Aversão à Perda"
+            },
+            "en": {
+              "title": "Loss Aversion"
+            },
+            "es": {
+              "title": "Aversión a la Pérdida"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Perder dói mais do que ganhar dá prazer",
+                  "body": "Aversão à perda é a tendência de sentir o desconforto de uma perda com mais intensidade do que o prazer de um ganho equivalente. Para a maioria das pessoas, perder R$100 dói psicologicamente mais do que ganhar R$100 agrada. Esse viés pode levar a decisões que fazem sentido emocionalmente no curto prazo, mas não fazem sentido financeiro no longo prazo."
+                },
+                "en": {
+                  "title": "Losing hurts more than gaining feels good",
+                  "body": "Loss aversion is the tendency to feel the discomfort of a loss more intensely than the pleasure of an equivalent gain. For most people, losing R$100 hurts psychologically more than gaining R$100 feels good. This bias can lead to decisions that make emotional sense in the short term, but don't make financial sense in the long term."
+                },
+                "es": {
+                  "title": "Perder duele más de lo que ganar agrada",
+                  "body": "La aversión a la pérdida es la tendencia a sentir el malestar de una pérdida con más intensidad que el placer de una ganancia equivalente. Para la mayoría de las personas, perder R$100 duele psicológicamente más de lo que agrada ganar R$100. Este sesgo puede llevar a decisiones que tienen sentido emocional a corto plazo, pero no tienen sentido financiero a largo plazo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vê um ativo cair 15% e, mesmo acreditando nos fundamentos de longo prazo, vende tudo só para 'parar de sentir a dor' de ver o prejuízo na tela — mesmo sem nenhuma mudança real na razão original de ter investido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sees an asset drop 15% and, even while still believing in its long-term fundamentals, sells everything just to 'stop feeling the pain' of watching the loss on screen — even though nothing about the original reason for investing has actually changed."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor ve que un activo cae un 15% y, aunque sigue creyendo en sus fundamentos a largo plazo, vende todo solo para 'dejar de sentir el dolor' de ver la pérdida en pantalla — aunque nada haya cambiado realmente en la razón original para invertir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza a aversão à perda?",
+                  "options": [
+                    "A tendência de sempre vender na baixa",
+                    "Sentir o desconforto de uma perda com mais intensidade do que o prazer de um ganho equivalente",
+                    "O medo de investir em qualquer ativo",
+                    "A certeza de que o mercado vai cair"
+                  ],
+                  "explanation": "Aversão à perda é sobre a intensidade emocional desigual entre perder e ganhar o mesmo valor — não é, por si só, sobre vender ou não vender."
+                },
+                "en": {
+                  "prompt": "What characterizes loss aversion?",
+                  "options": [
+                    "The tendency to always sell at a low",
+                    "Feeling the discomfort of a loss more intensely than the pleasure of an equivalent gain",
+                    "The fear of investing in any asset",
+                    "The certainty that the market will fall"
+                  ],
+                  "explanation": "Loss aversion is about the unequal emotional intensity between losing and gaining the same amount — it isn't, by itself, about whether or not to sell."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a la aversión a la pérdida?",
+                  "options": [
+                    "La tendencia a siempre vender en la baja",
+                    "Sentir el malestar de una pérdida con más intensidad que el placer de una ganancia equivalente",
+                    "El miedo a invertir en cualquier activo",
+                    "La certeza de que el mercado va a caer"
+                  ],
+                  "explanation": "La aversión a la pérdida trata sobre la intensidad emocional desigual entre perder y ganar el mismo monto — no se trata, por sí sola, de vender o no vender."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que está prestes a vender um investimento só porque não aguenta mais ver o número vermelho na tela, sem que nada tenha mudado nos motivos originais do investimento. O que isso pode indicar?",
+                  "options": [
+                    "Que a decisão está totalmente correta, prejuízo deve sempre ser cortado imediatamente",
+                    "Que o investimento é definitivamente ruim",
+                    "Que a aversão à perda pode estar pesando mais na decisão do que uma reavaliação real dos fundamentos",
+                    "Que não existe nenhuma influência emocional em decisões financeiras"
+                  ],
+                  "explanation": "Reconhecer quando uma decisão está sendo guiada pelo desconforto emocional da perda, e não por uma reavaliação real da situação, é o primeiro passo para lidar com esse viés."
+                },
+                "en": {
+                  "prompt": "You notice you're about to sell an investment just because you can't stand seeing the red number on the screen anymore, even though nothing has changed about the original reasons for investing. What might that indicate?",
+                  "options": [
+                    "That the decision is completely correct, losses should always be cut immediately",
+                    "That the investment is definitely bad",
+                    "That loss aversion might be weighing more on the decision than an actual reassessment of the fundamentals",
+                    "That there's no emotional influence on financial decisions at all"
+                  ],
+                  "explanation": "Recognizing when a decision is being driven by the emotional discomfort of a loss, rather than an actual reassessment of the situation, is the first step in dealing with this bias."
+                },
+                "es": {
+                  "prompt": "Te das cuenta de que estás a punto de vender una inversión solo porque ya no soportas ver el número rojo en la pantalla, sin que nada haya cambiado en los motivos originales de la inversión. ¿Qué podría indicar esto?",
+                  "options": [
+                    "Que la decisión es totalmente correcta, las pérdidas siempre deben cortarse de inmediato",
+                    "Que la inversión es definitivamente mala",
+                    "Que la aversión a la pérdida puede estar pesando más en la decisión que una reevaluación real de los fundamentos",
+                    "Que no existe ninguna influencia emocional en las decisiones financieras"
+                  ],
+                  "explanation": "Reconocer cuándo una decisión está siendo guiada por el malestar emocional de la pérdida, y no por una reevaluación real de la situación, es el primer paso para lidiar con este sesgo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Aversão à perda faz o desconforto de perder pesar mais do que o prazer de ganhar o mesmo valor.",
+                    "Esse viés pode levar a decisões guiadas por emoção, não por reavaliação real dos fatos.",
+                    "Perceber quando esse viés está em ação é o primeiro passo para lidar com ele."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Loss aversion makes the discomfort of losing weigh more than the pleasure of gaining the same amount.",
+                    "This bias can lead to decisions driven by emotion, not by an actual reassessment of the facts.",
+                    "Noticing when this bias is at play is the first step in dealing with it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La aversión a la pérdida hace que el malestar de perder pese más que el placer de ganar el mismo monto.",
+                    "Este sesgo puede llevar a decisiones guiadas por la emoción, no por una reevaluación real de los hechos.",
+                    "Notar cuándo este sesgo está en acción es el primer paso para lidiar con él."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_anchoring",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ancoragem"
+            },
+            "en": {
+              "title": "Anchoring"
+            },
+            "es": {
+              "title": "Anclaje"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Presos a um número de referência",
+                  "body": "Ancoragem é a tendência de se apegar demais a uma informação inicial — a 'âncora' — ao tomar decisões, mesmo quando essa informação não é mais relevante. Um preço que você viu uma vez pode continuar influenciando sua percepção do que é 'caro' ou 'barato', mesmo que o cenário tenha mudado completamente."
+                },
+                "en": {
+                  "title": "Stuck to a reference number",
+                  "body": "Anchoring is the tendency to rely too heavily on an initial piece of information — the 'anchor' — when making decisions, even when that information is no longer relevant. A price you once saw can keep influencing your sense of what's 'expensive' or 'cheap,' even if the situation has changed completely."
+                },
+                "es": {
+                  "title": "Atados a un número de referencia",
+                  "body": "El anclaje es la tendencia a apoyarse demasiado en una información inicial — el 'ancla' — al tomar decisiones, incluso cuando esa información ya no es relevante. Un precio que viste una vez puede seguir influyendo en tu percepción de lo que es 'caro' o 'barato', aunque el escenario haya cambiado por completo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor viu uma ação valendo R$50 no passado. Meses depois, ela está a R$30, e ele pensa 'está barata, vai voltar para R$50' — mesmo sem analisar se algo mudou na empresa que justificasse esse valor. O R$50 virou uma âncora, não uma análise."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor once saw a stock priced at R$50. Months later, it's at R$30, and they think 'it's cheap, it'll go back to R$50' — without actually checking whether anything changed at the company that would justify that value. The R$50 became an anchor, not an analysis."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vio una acción que valía R$50 en el pasado. Meses después, está a R$30, y piensa 'está barata, va a volver a R$50' — sin analizar si algo cambió en la empresa que justifique ese valor. El R$50 se convirtió en un ancla, no en un análisis."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é ancoragem, no contexto de decisões financeiras?",
+                  "options": [
+                    "A tendência de se apegar demais a uma informação inicial, mesmo quando ela não é mais relevante",
+                    "A prática de diversificar investimentos",
+                    "Um tipo de taxa de juros",
+                    "A garantia de que um preço vai sempre subir"
+                  ],
+                  "explanation": "Ancoragem é sobre dar peso excessivo a um número ou informação de referência, mesmo depois que o contexto que o gerou já mudou."
+                },
+                "en": {
+                  "prompt": "What is anchoring, in the context of financial decisions?",
+                  "options": [
+                    "The tendency to rely too heavily on an initial piece of information, even when it's no longer relevant",
+                    "The practice of diversifying investments",
+                    "A type of interest rate",
+                    "The guarantee that a price will always rise"
+                  ],
+                  "explanation": "Anchoring is about giving excessive weight to a reference number or piece of information, even after the context that produced it has already changed."
+                },
+                "es": {
+                  "prompt": "¿Qué es el anclaje, en el contexto de las decisiones financieras?",
+                  "options": [
+                    "La tendencia a apoyarse demasiado en una información inicial, incluso cuando ya no es relevante",
+                    "La práctica de diversificar inversiones",
+                    "Un tipo de tasa de interés",
+                    "La garantía de que un precio siempre va a subir"
+                  ],
+                  "explanation": "El anclaje trata sobre dar un peso excesivo a un número o información de referencia, incluso después de que el contexto que lo generó ya cambió."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você se pega pensando 'esse ativo está barato porque já valeu o dobro' sem examinar se algo mudou nos fundamentos da empresa desde então. O que essa afirmação revela?",
+                  "options": [
+                    "Que o ativo definitivamente vai voltar ao preço antigo",
+                    "Que preços antigos sempre são um bom guia para o futuro",
+                    "Que você pode estar ancorado em um preço passado, em vez de avaliar a situação atual da empresa",
+                    "Que não existe nenhum problema em pensar assim"
+                  ],
+                  "explanation": "Usar um preço passado como referência automática, sem reavaliar os fundamentos atuais, é um sinal clássico de ancoragem."
+                },
+                "en": {
+                  "prompt": "You catch yourself thinking 'this asset is cheap because it was once worth double' without checking whether anything changed in the company's fundamentals since then. What does that statement reveal?",
+                  "options": [
+                    "That the asset will definitely go back to its old price",
+                    "That old prices are always a good guide for the future",
+                    "That you might be anchored to a past price, instead of assessing the company's current situation",
+                    "That there's nothing wrong with thinking that way"
+                  ],
+                  "explanation": "Using a past price as an automatic reference, without reassessing current fundamentals, is a classic sign of anchoring."
+                },
+                "es": {
+                  "prompt": "Te descubres pensando 'este activo está barato porque alguna vez valió el doble' sin examinar si algo cambió en los fundamentos de la empresa desde entonces. ¿Qué revela esa afirmación?",
+                  "options": [
+                    "Que el activo definitivamente va a volver al precio anterior",
+                    "Que los precios antiguos siempre son una buena guía para el futuro",
+                    "Que puedes estar anclado a un precio pasado, en lugar de evaluar la situación actual de la empresa",
+                    "Que no hay ningún problema en pensar así"
+                  ],
+                  "explanation": "Usar un precio pasado como referencia automática, sin reevaluar los fundamentos actuales, es una señal clásica de anclaje."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ancoragem é dar peso excessivo a uma referência inicial, mesmo quando ela perdeu relevância.",
+                    "Preços passados podem continuar influenciando decisões, mesmo sem justificativa nos fundamentos atuais.",
+                    "Vale sempre perguntar: essa referência ainda faz sentido, ou é só um número que ficou na memória?"
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Anchoring means giving excessive weight to an initial reference, even after it's lost relevance.",
+                    "Past prices can keep influencing decisions, even without justification in current fundamentals.",
+                    "It's always worth asking: does this reference still make sense, or is it just a number that stuck in memory?"
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El anclaje es dar un peso excesivo a una referencia inicial, incluso cuando ya perdió relevancia.",
+                    "Los precios pasados pueden seguir influyendo en las decisiones, aunque no haya justificación en los fundamentos actuales.",
+                    "Siempre vale la pena preguntarse: ¿esa referencia todavía tiene sentido, o es solo un número que quedó en la memoria?"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_herd_mentality",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Efeito Manada"
+            },
+            "en": {
+              "title": "Herd Mentality"
+            },
+            "es": {
+              "title": "Efecto Manada"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Seguir a multidão",
+                  "body": "Efeito manada é a tendência de seguir o comportamento da maioria, especialmente em momentos de forte alta ou queda no mercado, em vez de tomar uma decisão baseada em análise própria. Isso é amplificado por redes sociais e pela sensação de estar 'ficando de fora' de algo que todo mundo parece estar fazendo — o chamado FOMO (fear of missing out)."
+                },
+                "en": {
+                  "title": "Following the crowd",
+                  "body": "Herd mentality is the tendency to follow the behavior of the majority, especially during strong market rallies or crashes, instead of making a decision based on your own analysis. This is amplified by social media and the feeling of 'missing out' on something everyone else seems to be doing — often called FOMO (fear of missing out)."
+                },
+                "es": {
+                  "title": "Seguir a la multitud",
+                  "body": "El efecto manada es la tendencia a seguir el comportamiento de la mayoría, especialmente en momentos de fuerte alza o caída en el mercado, en lugar de tomar una decisión basada en un análisis propio. Esto se amplifica con las redes sociales y la sensación de estar 'quedándose fuera' de algo que todos parecen estar haciendo — lo que se conoce como FOMO (fear of missing out)."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um ativo sobe rapidamente e vira assunto em todo lugar. Uma pessoa que nunca tinha ouvido falar dele antes compra apenas porque 'todo mundo está comprando', sem entender o que está por trás do movimento nem qual é o risco envolvido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An asset rises rapidly and becomes the talk of the town. Someone who had never heard of it before buys in simply because 'everyone is buying it,' without understanding what's behind the move or what risk is involved."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un activo sube rápidamente y se convierte en tema en todas partes. Una persona que nunca había oído hablar de él antes compra solo porque 'todo el mundo está comprando', sin entender qué hay detrás del movimiento ni cuál es el riesgo involucrado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o efeito manada?",
+                  "options": [
+                    "Analisar cuidadosamente os fundamentos antes de investir",
+                    "Seguir o comportamento da maioria, em vez de uma decisão baseada em análise própria",
+                    "Diversificar entre vários ativos diferentes",
+                    "Investir apenas em renda fixa"
+                  ],
+                  "explanation": "Efeito manada é sobre decidir com base no que a maioria está fazendo, não em uma avaliação própria da situação."
+                },
+                "en": {
+                  "prompt": "What characterizes herd mentality?",
+                  "options": [
+                    "Carefully analyzing fundamentals before investing",
+                    "Following the behavior of the majority, instead of a decision based on your own analysis",
+                    "Diversifying across several different assets",
+                    "Investing only in fixed income"
+                  ],
+                  "explanation": "Herd mentality is about deciding based on what the majority is doing, not on your own assessment of the situation."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al efecto manada?",
+                  "options": [
+                    "Analizar cuidadosamente los fundamentos antes de invertir",
+                    "Seguir el comportamiento de la mayoría, en lugar de una decisión basada en un análisis propio",
+                    "Diversificar entre varios activos diferentes",
+                    "Invertir solo en renta fija"
+                  ],
+                  "explanation": "El efecto manada trata sobre decidir en función de lo que hace la mayoría, no de una evaluación propia de la situación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um ativo está subindo muito e sendo comentado em todo lugar. Antes de comprar só porque 'todo mundo está comprando', o que faz mais sentido investigar primeiro?",
+                  "options": [
+                    "Nada, se todo mundo está comprando, deve ser uma boa oportunidade",
+                    "O que está por trás desse movimento, e se ele se encaixa nos seus próprios objetivos e tolerância a risco",
+                    "Apenas quanto as pessoas mais seguidas nas redes sociais estão ganhando",
+                    "Se dá tempo de comprar antes que o preço suba ainda mais"
+                  ],
+                  "explanation": "Popularidade não é sinônimo de fundamento sólido — vale investigar o que está por trás do movimento e se ele realmente se encaixa nos seus próprios objetivos, antes de seguir a multidão."
+                },
+                "en": {
+                  "prompt": "An asset is rising a lot and being talked about everywhere. Before buying just because 'everyone is buying it,' what makes more sense to investigate first?",
+                  "options": [
+                    "Nothing, if everyone is buying it, it must be a good opportunity",
+                    "What's actually behind that move, and whether it fits your own goals and risk tolerance",
+                    "Only how much the most-followed people on social media are earning",
+                    "Whether there's still time to buy before the price rises even more"
+                  ],
+                  "explanation": "Popularity isn't the same as solid fundamentals — it's worth investigating what's actually behind the move and whether it truly fits your own goals, before following the crowd."
+                },
+                "es": {
+                  "prompt": "Un activo está subiendo mucho y se habla de él en todas partes. Antes de comprar solo porque 'todo el mundo está comprando', ¿qué tiene más sentido investigar primero?",
+                  "options": [
+                    "Nada, si todo el mundo está comprando, debe ser una buena oportunidad",
+                    "Qué hay detrás de ese movimiento, y si encaja con tus propios objetivos y tolerancia al riesgo",
+                    "Solo cuánto están ganando las personas más seguidas en redes sociales",
+                    "Si todavía hay tiempo de comprar antes de que el precio suba aún más"
+                  ],
+                  "explanation": "La popularidad no es sinónimo de fundamentos sólidos — vale la pena investigar qué hay detrás del movimiento y si realmente encaja con tus propios objetivos, antes de seguir a la multitud."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Efeito manada é seguir a maioria em vez de uma análise própria.",
+                    "Momentos de forte alta ou queda tendem a amplificar esse comportamento.",
+                    "Popularidade de um ativo não substitui entender o que está por trás do movimento."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Herd mentality means following the majority instead of your own analysis.",
+                    "Moments of strong rallies or crashes tend to amplify this behavior.",
+                    "An asset's popularity doesn't replace understanding what's actually behind the move."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El efecto manada es seguir a la mayoría en lugar de un análisis propio.",
+                    "Los momentos de fuerte alza o caída tienden a amplificar este comportamiento.",
+                    "La popularidad de un activo no reemplaza entender qué hay detrás del movimiento."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_confirmation_bias",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Viés de Confirmação"
+            },
+            "en": {
+              "title": "Confirmation Bias"
+            },
+            "es": {
+              "title": "Sesgo de Confirmación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Buscando razão para concordar com você mesmo",
+                  "body": "Viés de confirmação é a tendência de buscar, notar e valorizar mais as informações que confirmam o que você já acredita, enquanto ignora ou minimiza informações que contradizem essa crença. Depois de investir em algo, é comum passar a prestar mais atenção em notícias positivas sobre esse investimento e a descartar as negativas."
+                },
+                "en": {
+                  "title": "Looking for reasons to agree with yourself",
+                  "body": "Confirmation bias is the tendency to seek out, notice, and give more weight to information that confirms what you already believe, while ignoring or downplaying information that contradicts that belief. After investing in something, it's common to start paying more attention to positive news about that investment and to dismiss the negative."
+                },
+                "es": {
+                  "title": "Buscando razones para estar de acuerdo contigo mismo",
+                  "body": "El sesgo de confirmación es la tendencia a buscar, notar y darle más peso a la información que confirma lo que ya crees, mientras ignoras o minimizas la información que contradice esa creencia. Después de invertir en algo, es común empezar a prestar más atención a las noticias positivas sobre esa inversión y descartar las negativas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de comprar ações de uma empresa, um investidor começa a seguir apenas analistas otimistas sobre ela e ignora relatórios que apontam riscos — não porque esses relatórios sejam necessariamente errados, mas porque contradizem uma decisão que ele já tomou."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After buying shares in a company, an investor starts following only analysts who are optimistic about it and ignores reports pointing out risks — not necessarily because those reports are wrong, but because they contradict a decision the investor already made."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Después de comprar acciones de una empresa, un inversor empieza a seguir solo a analistas optimistas sobre ella e ignora informes que señalan riesgos — no necesariamente porque esos informes estén equivocados, sino porque contradicen una decisión que ya tomó."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é viés de confirmação?",
+                  "options": [
+                    "A tendência de sempre discordar de especialistas",
+                    "A prática de diversificar uma carteira de investimentos",
+                    "A tendência de valorizar mais informações que confirmam o que você já acredita, e ignorar as que contradizem",
+                    "Um indicador técnico usado para prever preços"
+                  ],
+                  "explanation": "Viés de confirmação é sobre buscar e valorizar seletivamente informações que reforçam uma crença já existente, em vez de avaliar tudo com o mesmo peso."
+                },
+                "en": {
+                  "prompt": "What is confirmation bias?",
+                  "options": [
+                    "The tendency to always disagree with experts",
+                    "The practice of diversifying an investment portfolio",
+                    "The tendency to give more weight to information that confirms what you already believe, and ignore what contradicts it",
+                    "A technical indicator used to predict prices"
+                  ],
+                  "explanation": "Confirmation bias is about selectively seeking and valuing information that reinforces an existing belief, instead of weighing everything equally."
+                },
+                "es": {
+                  "prompt": "¿Qué es el sesgo de confirmación?",
+                  "options": [
+                    "La tendencia a siempre estar en desacuerdo con los expertos",
+                    "La práctica de diversificar una cartera de inversiones",
+                    "La tendencia a darle más peso a la información que confirma lo que ya crees, e ignorar la que lo contradice",
+                    "Un indicador técnico usado para predecir precios"
+                  ],
+                  "explanation": "El sesgo de confirmación trata sobre buscar y valorar selectivamente información que refuerza una creencia ya existente, en lugar de evaluar todo con el mismo peso."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que, desde que investiu em um ativo, só lê notícias que falam bem dele e ignora análises críticas. Como lidar com isso de forma mais equilibrada?",
+                  "options": [
+                    "Continuar ignorando análises críticas, já que a decisão de investir já foi tomada",
+                    "Buscar ativamente também as análises que discordam da sua posição, para ter uma visão mais completa antes de decidir manter ou não o investimento",
+                    "Parar de ler qualquer notícia sobre o assunto",
+                    "Assumir que toda análise crítica é sempre falsa"
+                  ],
+                  "explanation": "Buscar ativamente pontos de vista que desafiam sua posição ajuda a compensar a tendência natural de só notar o que já confirma o que você acredita."
+                },
+                "en": {
+                  "prompt": "You notice that, since investing in an asset, you only read news that speaks well of it and ignore critical analyses. How can you handle this in a more balanced way?",
+                  "options": [
+                    "Keep ignoring critical analyses, since the decision to invest has already been made",
+                    "Actively seek out analyses that disagree with your position too, to get a more complete picture before deciding whether to keep the investment",
+                    "Stop reading any news about the topic",
+                    "Assume any critical analysis is always false"
+                  ],
+                  "explanation": "Actively seeking out viewpoints that challenge your position helps counteract the natural tendency to only notice what already confirms what you believe."
+                },
+                "es": {
+                  "prompt": "Te das cuenta de que, desde que invertiste en un activo, solo lees noticias que hablan bien de él e ignoras análisis críticos. ¿Cómo lidiar con esto de forma más equilibrada?",
+                  "options": [
+                    "Seguir ignorando los análisis críticos, ya que la decisión de invertir ya fue tomada",
+                    "Buscar activamente también los análisis que discrepan de tu posición, para tener una visión más completa antes de decidir si mantener o no la inversión",
+                    "Dejar de leer cualquier noticia sobre el tema",
+                    "Asumir que todo análisis crítico es siempre falso"
+                  ],
+                  "explanation": "Buscar activamente puntos de vista que desafíen tu posición ayuda a compensar la tendencia natural a notar solo lo que ya confirma lo que crees."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Viés de confirmação é valorizar mais o que confirma o que você já acredita.",
+                    "Depois de investir, é comum passar a filtrar informações de forma seletiva.",
+                    "Buscar ativamente pontos de vista contrários ajuda a equilibrar essa tendência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Confirmation bias means giving more weight to what confirms what you already believe.",
+                    "After investing, it's common to start filtering information selectively.",
+                    "Actively seeking out opposing viewpoints helps balance out this tendency."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El sesgo de confirmación es darle más peso a lo que confirma lo que ya crees.",
+                    "Después de invertir, es común empezar a filtrar la información de forma selectiva.",
+                    "Buscar activamente puntos de vista opuestos ayuda a equilibrar esta tendencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_habits_automation",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Hábitos e Automação"
+            },
+            "en": {
+              "title": "Habits and Automation"
+            },
+            "es": {
+              "title": "Hábitos y Automatización"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Tirando a força de vontade da equação",
+                  "body": "Decisões financeiras repetidas, como investir todo mês, dependem menos de força de vontade quando viram um hábito automático — como uma transferência programada logo após o recebimento do salário. Automatizar reduz o espaço para que vieses do dia a dia, como aversão à perda ou efeito manada, interfiram em decisões que deveriam ser rotineiras."
+                },
+                "en": {
+                  "title": "Taking willpower out of the equation",
+                  "body": "Repeated financial decisions, like investing every month, depend less on willpower once they become an automatic habit — like a transfer scheduled right after your paycheck arrives. Automating reduces the room for everyday biases, like loss aversion or herd mentality, to interfere with decisions that should be routine."
+                },
+                "es": {
+                  "title": "Quitando la fuerza de voluntad de la ecuación",
+                  "body": "Las decisiones financieras repetidas, como invertir todos los meses, dependen menos de la fuerza de voluntad cuando se convierten en un hábito automático — como una transferencia programada justo después de recibir el salario. Automatizar reduce el espacio para que sesgos del día a día, como la aversión a la pérdida o el efecto manada, interfieran en decisiones que deberían ser rutinarias."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas querem investir R$300 por mês. Uma decide 'lembrar' de fazer isso manualmente todo mês — e acaba pulando meses em que o mercado está em queda, por medo. A outra programa uma transferência automática no dia do salário, que acontece independentemente do humor do mercado naquele mês."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people want to invest R$300 a month. One decides to 'remember' to do it manually every month — and ends up skipping months when the market is down, out of fear. The other sets up an automatic transfer on payday, which happens regardless of the market's mood that month."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas quieren invertir R$300 al mes. Una decide 'acordarse' de hacerlo manualmente cada mes — y termina saltándose meses en los que el mercado está en baja, por miedo. La otra programa una transferencia automática el día del salario, que ocurre independientemente del humor del mercado ese mes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que automatizar uma decisão financeira repetida pode ajudar a lidar com vieses comportamentais?",
+                  "options": [
+                    "Porque reduz o espaço para que emoções do momento interfiram em uma decisão que deveria ser rotineira",
+                    "Porque garante que o investimento nunca vai ter prejuízo",
+                    "Porque elimina completamente a necessidade de acompanhar os investimentos",
+                    "Porque só funciona para pessoas com muito dinheiro"
+                  ],
+                  "explanation": "A automação retira parte da decisão das mãos do 'eu emocional do momento', tornando o comportamento mais consistente ao longo do tempo."
+                },
+                "en": {
+                  "prompt": "Why can automating a repeated financial decision help deal with behavioral biases?",
+                  "options": [
+                    "Because it reduces the room for in-the-moment emotions to interfere with a decision that should be routine",
+                    "Because it guarantees the investment will never lose money",
+                    "Because it completely eliminates the need to track your investments",
+                    "Because it only works for people with a lot of money"
+                  ],
+                  "explanation": "Automation takes part of the decision out of the hands of the 'emotional self of the moment,' making behavior more consistent over time."
+                },
+                "es": {
+                  "prompt": "¿Por qué automatizar una decisión financiera repetida puede ayudar a lidiar con sesgos comportamentales?",
+                  "options": [
+                    "Porque reduce el espacio para que las emociones del momento interfieran en una decisión que debería ser rutinaria",
+                    "Porque garantiza que la inversión nunca tendrá pérdidas",
+                    "Porque elimina por completo la necesidad de seguir tus inversiones",
+                    "Porque solo funciona para personas con mucho dinero"
+                  ],
+                  "explanation": "La automatización quita parte de la decisión de manos del 'yo emocional del momento', haciendo que el comportamiento sea más consistente con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já aprendeu sobre aversão à perda, ancoragem, efeito manada e viés de confirmação. Como esses conceitos se conectam com a ideia de automatizar decisões financeiras repetidas?",
+                  "options": [
+                    "Não se conectam, automação é um assunto totalmente separado desses vieses",
+                    "Automatizar só serve para pessoas que não entendem de investimentos",
+                    "Automatizar decisões rotineiras reduz as chances de esses vieses interferirem justamente nos momentos em que as emoções estão mais fortes",
+                    "Vieses comportamentais só afetam quem investe manualmente todo dia"
+                  ],
+                  "explanation": "Automatizar decisões que deveriam ser rotineiras — como um aporte mensal — reduz a exposição dessas decisões aos vieses que você estudou, que tendem a pesar mais quando há uma escolha ativa a ser feita no calor do momento."
+                },
+                "en": {
+                  "prompt": "You've already learned about loss aversion, anchoring, herd mentality and confirmation bias. How do these concepts connect to the idea of automating repeated financial decisions?",
+                  "options": [
+                    "They don't connect, automation is a completely separate topic from these biases",
+                    "Automation is only useful for people who don't understand investing",
+                    "Automating routine decisions reduces the chances of these biases interfering exactly in the moments when emotions run strongest",
+                    "Behavioral biases only affect people who invest manually every day"
+                  ],
+                  "explanation": "Automating decisions that should be routine — like a monthly contribution — reduces how exposed those decisions are to the biases you studied, which tend to weigh more heavily when there's an active choice to be made in the heat of the moment."
+                },
+                "es": {
+                  "prompt": "Ya aprendiste sobre la aversión a la pérdida, el anclaje, el efecto manada y el sesgo de confirmación. ¿Cómo se conectan estos conceptos con la idea de automatizar decisiones financieras repetidas?",
+                  "options": [
+                    "No se conectan, la automatización es un tema totalmente separado de estos sesgos",
+                    "Automatizar solo sirve para personas que no entienden de inversiones",
+                    "Automatizar decisiones rutinarias reduce las posibilidades de que estos sesgos interfieran justo en los momentos en que las emociones están más fuertes",
+                    "Los sesgos comportamentales solo afectan a quien invierte manualmente todos los días"
+                  ],
+                  "explanation": "Automatizar decisiones que deberían ser rutinarias — como un aporte mensual — reduce la exposición de esas decisiones a los sesgos que estudiaste, que tienden a pesar más cuando hay una elección activa por hacer en el calor del momento."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Automatizar decisões financeiras repetidas reduz a dependência de força de vontade.",
+                    "Isso também reduz o espaço para vieses como aversão à perda e efeito manada interferirem.",
+                    "Você concluiu o módulo sobre vieses comportamentais básicos."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Automating repeated financial decisions reduces the reliance on willpower.",
+                    "This also reduces the room for biases like loss aversion and herd mentality to interfere.",
+                    "You've completed the module on basic behavioral biases."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Automatizar decisiones financieras repetidas reduce la dependencia de la fuerza de voluntad.",
+                    "Esto también reduce el espacio para que sesgos como la aversión a la pérdida y el efecto manada interfieran.",
+                    "Completaste el módulo sobre sesgos comportamentales básicos."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "advanced_behavioral_biases",
+      "order": 2,
+      "iconKey": "psychology_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "FOUNDATION",
+      "prerequisites": [
+        "behavioral_biases_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Mais Vieses Comportamentais",
+          "description": "Excesso de confiança, custo afundado, viés do presente e contabilidade mental."
+        },
+        "en": {
+          "title": "More Behavioral Biases",
+          "description": "Overconfidence, sunk cost fallacy, present bias and mental accounting."
+        },
+        "es": {
+          "title": "Más Sesgos Comportamentales",
+          "description": "Exceso de confianza, falacia del costo hundido, sesgo del presente y contabilidad mental."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "behavioral_overconfidence",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Excesso de Confiança"
+            },
+            "en": {
+              "title": "Overconfidence"
+            },
+            "es": {
+              "title": "Exceso de Confianza"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Achar que sabe mais do que sabe",
+                  "body": "Excesso de confiança é a tendência de superestimar o próprio conhecimento, habilidade ou capacidade de prever resultados. Em investimentos, isso pode levar a assumir riscos maiores do que o razoável, negociar com mais frequência do que o necessário, ou ignorar informações que contradizem a própria opinião — tudo isso baseado em uma confiança que não é totalmente justificada pelos fatos."
+                },
+                "en": {
+                  "title": "Thinking you know more than you do",
+                  "body": "Overconfidence is the tendency to overestimate one's own knowledge, skill, or ability to predict outcomes. In investing, this can lead to taking on more risk than is reasonable, trading more often than necessary, or ignoring information that contradicts one's own opinion — all based on a confidence that isn't fully justified by the facts."
+                },
+                "es": {
+                  "title": "Creer que sabes más de lo que sabes",
+                  "body": "El exceso de confianza es la tendencia a sobrestimar el propio conocimiento, habilidad o capacidad de predecir resultados. En las inversiones, esto puede llevar a asumir riesgos mayores de lo razonable, negociar con más frecuencia de la necesaria, o ignorar información que contradice la propia opinión — todo basado en una confianza que no está totalmente justificada por los hechos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor que acertou algumas apostas seguidas passa a acreditar que tem um talento especial para prever o mercado, e começa a apostar valores cada vez maiores em posições concentradas — ignorando que uma sequência de acertos também pode ser, em parte, resultado de sorte."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor who got a few bets right in a row starts believing they have a special talent for predicting the market, and begins betting increasingly larger amounts on concentrated positions — ignoring that a winning streak can also be, in part, the result of luck."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor que acertó algunas apuestas seguidas empieza a creer que tiene un talento especial para predecir el mercado, y comienza a apostar montos cada vez mayores en posiciones concentradas — ignorando que una racha de aciertos también puede ser, en parte, resultado de la suerte."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o excesso de confiança?",
+                  "options": [
+                    "A tendência de sempre subestimar o próprio conhecimento",
+                    "A tendência de superestimar o próprio conhecimento, habilidade ou capacidade de prever resultados",
+                    "O medo de tomar qualquer decisão de investimento",
+                    "A certeza de que qualquer investimento vai dar prejuízo"
+                  ],
+                  "explanation": "Excesso de confiança é sobre superestimar a própria capacidade, o que pode levar a riscos maiores do que o razoável ou a ignorar informações contrárias."
+                },
+                "en": {
+                  "prompt": "What characterizes overconfidence?",
+                  "options": [
+                    "The tendency to always underestimate one's own knowledge",
+                    "The tendency to overestimate one's own knowledge, skill, or ability to predict outcomes",
+                    "The fear of making any investment decision",
+                    "The certainty that any investment will result in a loss"
+                  ],
+                  "explanation": "Overconfidence is about overestimating one's own ability, which can lead to greater-than-reasonable risk or ignoring contrary information."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al exceso de confianza?",
+                  "options": [
+                    "La tendencia a siempre subestimar el propio conocimiento",
+                    "La tendencia a sobrestimar el propio conocimiento, habilidad o capacidad de predecir resultados",
+                    "El miedo a tomar cualquier decisión de inversión",
+                    "La certeza de que cualquier inversión dará pérdidas"
+                  ],
+                  "explanation": "El exceso de confianza trata sobre sobrestimar la propia capacidad, lo que puede llevar a riesgos mayores de lo razonable o a ignorar información contraria."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você acertou suas últimas 3 decisões de investimento e sente que agora consegue prever o mercado com bastante segurança. O que vale a pena considerar antes de aumentar significativamente o risco assumido?",
+                  "options": [
+                    "Nada, três acertos seguidos são prova suficiente de habilidade previsível",
+                    "Que uma sequência curta de acertos pode envolver bastante sorte, e não necessariamente uma habilidade de previsão consistente e replicável",
+                    "Que a partir de agora você nunca mais vai errar",
+                    "Que aumentar o risco é sempre a decisão certa depois de acertos seguidos"
+                  ],
+                  "explanation": "Sequências curtas de acertos podem ser resultado parcial de sorte — reconhecer essa possibilidade ajuda a evitar decisões guiadas por excesso de confiança."
+                },
+                "en": {
+                  "prompt": "You got your last 3 investment decisions right and feel like you can now predict the market with quite a bit of confidence. What's worth considering before significantly increasing the risk you take on?",
+                  "options": [
+                    "Nothing, three wins in a row is enough proof of predictable skill",
+                    "That a short winning streak can involve a fair amount of luck, and not necessarily a consistent, repeatable forecasting skill",
+                    "That from now on you'll never be wrong again",
+                    "That increasing risk is always the right decision after consecutive wins"
+                  ],
+                  "explanation": "Short winning streaks can be partly the result of luck — recognizing that possibility helps avoid decisions driven by overconfidence."
+                },
+                "es": {
+                  "prompt": "Acertaste tus últimas 3 decisiones de inversión y sientes que ahora puedes predecir el mercado con bastante seguridad. ¿Qué vale la pena considerar antes de aumentar significativamente el riesgo asumido?",
+                  "options": [
+                    "Nada, tres aciertos seguidos son prueba suficiente de habilidad predecible",
+                    "Que una racha corta de aciertos puede involucrar bastante suerte, y no necesariamente una habilidad de predicción consistente y replicable",
+                    "Que a partir de ahora nunca más te vas a equivocar",
+                    "Que aumentar el riesgo siempre es la decisión correcta después de aciertos seguidos"
+                  ],
+                  "explanation": "Las rachas cortas de aciertos pueden ser resultado parcial de la suerte — reconocer esa posibilidad ayuda a evitar decisiones guiadas por el exceso de confianza."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Excesso de confiança é superestimar o próprio conhecimento ou capacidade de prever resultados.",
+                    "Sequências curtas de acertos podem envolver bastante sorte.",
+                    "Reconhecer os limites do próprio conhecimento ajuda a evitar riscos desproporcionais."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Overconfidence means overestimating one's own knowledge or ability to predict outcomes.",
+                    "Short winning streaks can involve a fair amount of luck.",
+                    "Recognizing the limits of one's own knowledge helps avoid disproportionate risks."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El exceso de confianza es sobrestimar el propio conocimiento o capacidad de predecir resultados.",
+                    "Las rachas cortas de aciertos pueden involucrar bastante suerte.",
+                    "Reconocer los límites del propio conocimiento ayuda a evitar riesgos desproporcionados."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_sunk_cost",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custo Afundado"
+            },
+            "en": {
+              "title": "Sunk Cost Fallacy"
+            },
+            "es": {
+              "title": "Falacia del Costo Hundido"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O dinheiro já gasto não deveria decidir o futuro",
+                  "body": "Custo afundado é um valor que já foi gasto e não pode ser recuperado, independentemente da decisão futura. A falácia do custo afundado é a tendência de continuar investindo tempo ou dinheiro em algo só porque já se investiu bastante nele, mesmo quando as evidências atuais sugerem que a melhor decisão seria parar. Decisões racionais deveriam olhar para frente — o que fazer a partir de agora — e não para trás, para o que já foi gasto."
+                },
+                "en": {
+                  "title": "Money already spent shouldn't decide the future",
+                  "body": "A sunk cost is an amount already spent that can't be recovered, regardless of any future decision. The sunk cost fallacy is the tendency to keep investing time or money into something just because a lot has already been invested in it, even when current evidence suggests the best decision would be to stop. Rational decisions should look forward — what to do from now on — not backward, at what's already been spent."
+                },
+                "es": {
+                  "title": "El dinero ya gastado no debería decidir el futuro",
+                  "body": "Un costo hundido es un monto ya gastado que no se puede recuperar, sin importar la decisión futura. La falacia del costo hundido es la tendencia a seguir invirtiendo tiempo o dinero en algo solo porque ya se invirtió bastante en ello, incluso cuando la evidencia actual sugiere que la mejor decisión sería detenerse. Las decisiones racionales deberían mirar hacia adelante — qué hacer a partir de ahora — y no hacia atrás, a lo que ya se gastó."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor colocou R$10.000 em um ativo que perdeu 60% do valor, e os fundamentos que justificaram a compra original claramente pioraram. Mesmo assim, ele continua adicionando mais dinheiro, pensando 'já perdi tanto, não posso desistir agora' — em vez de avaliar se, considerando apenas a situação atual, ainda faria sentido investir naquele ativo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor put R$10,000 into an asset that lost 60% of its value, and the fundamentals that justified the original purchase have clearly worsened. Even so, they keep adding more money, thinking 'I've already lost so much, I can't give up now' — instead of assessing whether, considering only the current situation, it would still make sense to invest in that asset."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor puso R$10.000 en un activo que perdió el 60% de su valor, y los fundamentos que justificaron la compra original claramente empeoraron. Aun así, sigue agregando más dinero, pensando 'ya perdí tanto, no puedo rendirme ahora' — en lugar de evaluar si, considerando solo la situación actual, todavía tendría sentido invertir en ese activo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é a falácia do custo afundado?",
+                  "options": [
+                    "A tendência de sempre vender um investimento no primeiro sinal de queda",
+                    "A tendência de continuar investindo em algo só porque já se investiu bastante nele, mesmo quando as evidências sugerem parar",
+                    "Um tipo de taxa cobrada por corretoras",
+                    "A certeza de que um investimento nunca vai se recuperar"
+                  ],
+                  "explanation": "A falácia do custo afundado é deixar decisões futuras serem guiadas pelo que já foi gasto no passado, em vez de avaliar a situação atual de forma independente."
+                },
+                "en": {
+                  "prompt": "What is the sunk cost fallacy?",
+                  "options": [
+                    "The tendency to always sell an investment at the first sign of a drop",
+                    "The tendency to keep investing in something just because a lot has already been invested in it, even when the evidence suggests stopping",
+                    "A type of fee charged by brokers",
+                    "The certainty that an investment will never recover"
+                  ],
+                  "explanation": "The sunk cost fallacy is letting future decisions be guided by what was already spent in the past, instead of independently assessing the current situation."
+                },
+                "es": {
+                  "prompt": "¿Qué es la falacia del costo hundido?",
+                  "options": [
+                    "La tendencia a siempre vender una inversión ante la primera señal de caída",
+                    "La tendencia a seguir invirtiendo en algo solo porque ya se invirtió bastante en ello, incluso cuando la evidencia sugiere detenerse",
+                    "Un tipo de tasa cobrada por las correduras",
+                    "La certeza de que una inversión nunca se recuperará"
+                  ],
+                  "explanation": "La falacia del costo hundido es dejar que las decisiones futuras se guíen por lo que ya se gastó en el pasado, en lugar de evaluar la situación actual de forma independiente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já perdeu uma quantia significativa em um investimento cujos fundamentos pioraram claramente. Segundo o conceito de custo afundado, o que deveria pesar mais na sua próxima decisão?",
+                  "options": [
+                    "Quanto dinheiro você já perdeu até agora",
+                    "A situação atual do investimento e suas perspectivas futuras, independentemente de quanto já foi perdido",
+                    "O tempo que você já dedicou acompanhando esse investimento",
+                    "A vergonha de admitir que a decisão original não deu certo"
+                  ],
+                  "explanation": "O dinheiro já perdido não pode ser recuperado com a decisão de hoje — o que importa para uma decisão racional é a situação atual e as perspectivas futuras, não o histórico de perdas."
+                },
+                "en": {
+                  "prompt": "You've already lost a significant amount in an investment whose fundamentals have clearly worsened. According to the sunk cost concept, what should weigh more heavily in your next decision?",
+                  "options": [
+                    "How much money you've already lost so far",
+                    "The investment's current situation and future prospects, regardless of how much has already been lost",
+                    "The time you've already spent tracking that investment",
+                    "The embarrassment of admitting the original decision didn't work out"
+                  ],
+                  "explanation": "Money already lost can't be recovered by today's decision — what matters for a rational decision is the current situation and future prospects, not the history of losses."
+                },
+                "es": {
+                  "prompt": "Ya perdiste una cantidad significativa en una inversión cuyos fundamentos empeoraron claramente. Según el concepto de costo hundido, ¿qué debería pesar más en tu próxima decisión?",
+                  "options": [
+                    "Cuánto dinero ya perdiste hasta ahora",
+                    "La situación actual de la inversión y sus perspectivas futuras, sin importar cuánto ya se perdió",
+                    "El tiempo que ya dedicaste siguiendo esa inversión",
+                    "La vergüenza de admitir que la decisión original no funcionó"
+                  ],
+                  "explanation": "El dinero ya perdido no puede recuperarse con la decisión de hoy — lo que importa para una decisión racional es la situación actual y las perspectivas futuras, no el historial de pérdidas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Custo afundado é um valor já gasto que não pode ser recuperado.",
+                    "A falácia do custo afundado é deixar decisões futuras serem guiadas pelo que já foi gasto.",
+                    "Decisões racionais deveriam olhar para a situação atual e futura, não para o passado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A sunk cost is an amount already spent that can't be recovered.",
+                    "The sunk cost fallacy is letting future decisions be guided by what was already spent.",
+                    "Rational decisions should look at the current and future situation, not the past."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El costo hundido es un monto ya gastado que no se puede recuperar.",
+                    "La falacia del costo hundido es dejar que las decisiones futuras se guíen por lo ya gastado.",
+                    "Las decisiones racionales deberían mirar la situación actual y futura, no el pasado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_present_bias",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Viés do Presente"
+            },
+            "en": {
+              "title": "Present Bias"
+            },
+            "es": {
+              "title": "Sesgo del Presente"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Valorizar demais a recompensa de agora",
+                  "body": "Viés do presente é a tendência de dar peso desproporcional a recompensas imediatas, em detrimento de recompensas maiores no futuro. Esse viés ajuda a explicar por que pode ser difícil poupar ou investir para objetivos distantes, como a aposentadoria: o benefício de gastar o dinheiro agora é sentido imediatamente, enquanto o benefício de investir só aparece muito depois."
+                },
+                "en": {
+                  "title": "Overvaluing the reward of right now",
+                  "body": "Present bias is the tendency to give disproportionate weight to immediate rewards, at the expense of larger rewards in the future. This bias helps explain why it can be hard to save or invest for distant goals, like retirement: the benefit of spending the money now is felt immediately, while the benefit of investing only shows up much later."
+                },
+                "es": {
+                  "title": "Valorar demasiado la recompensa de ahora",
+                  "body": "El sesgo del presente es la tendencia a darle un peso desproporcionado a las recompensas inmediatas, en detrimento de recompensas mayores en el futuro. Este sesgo ayuda a explicar por qué puede ser difícil ahorrar o invertir para objetivos distantes, como la jubilación: el beneficio de gastar el dinero ahora se siente de inmediato, mientras que el beneficio de invertir solo aparece mucho después."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Diante da escolha entre gastar um bônus em algo imediatamente prazeroso ou investir esse valor para a aposentadoria, muitas pessoas escolhem o gasto imediato, mesmo sabendo racionalmente que o valor investido cresceria significativamente ao longo de décadas — a recompensa imediata pesa mais na decisão do que o benefício futuro maior, mas distante."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Faced with the choice between spending a bonus on something immediately enjoyable or investing that amount for retirement, many people choose the immediate spending, even while rationally knowing the invested amount would grow significantly over decades — the immediate reward weighs more in the decision than the larger, but distant, future benefit."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Ante la elección entre gastar un bono en algo inmediatamente placentero o invertir ese monto para la jubilación, muchas personas eligen el gasto inmediato, aunque saben racionalmente que el monto invertido crecería significativamente a lo largo de décadas — la recompensa inmediata pesa más en la decisión que el beneficio futuro mayor, pero distante."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o viés do presente?",
+                  "options": [
+                    "A tendência de sempre investir todo o dinheiro disponível",
+                    "A tendência de dar peso desproporcional a recompensas imediatas, em detrimento de recompensas maiores no futuro",
+                    "Um tipo de indicador macroeconômico",
+                    "A certeza de que o futuro é sempre melhor do que o presente"
+                  ],
+                  "explanation": "O viés do presente é sobre valorizar excessivamente a recompensa imediata, mesmo quando isso significa abrir mão de um benefício maior no futuro."
+                },
+                "en": {
+                  "prompt": "What is present bias?",
+                  "options": [
+                    "The tendency to always invest all available money",
+                    "The tendency to give disproportionate weight to immediate rewards, at the expense of larger rewards in the future",
+                    "A type of macroeconomic indicator",
+                    "The certainty that the future is always better than the present"
+                  ],
+                  "explanation": "Present bias is about overvaluing the immediate reward, even when it means giving up a larger benefit in the future."
+                },
+                "es": {
+                  "prompt": "¿Qué es el sesgo del presente?",
+                  "options": [
+                    "La tendencia a siempre invertir todo el dinero disponible",
+                    "La tendencia a darle un peso desproporcional a las recompensas inmediatas, en detrimento de recompensas mayores en el futuro",
+                    "Un tipo de indicador macroeconómico",
+                    "La certeza de que el futuro siempre es mejor que el presente"
+                  ],
+                  "explanation": "El sesgo del presente trata sobre valorar excesivamente la recompensa inmediata, incluso cuando eso significa renunciar a un beneficio mayor en el futuro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende juros compostos e o quanto começar cedo importa para a aposentadoria. Como o viés do presente ajuda a explicar por que, mesmo sabendo disso, tantas pessoas adiam o início dos investimentos?",
+                  "options": [
+                    "Porque juros compostos não funcionam de verdade",
+                    "Porque a recompensa de gastar o dinheiro agora é sentida imediatamente, enquanto o benefício de investir para a aposentadoria só aparece décadas depois, e o viés do presente favorece a recompensa imediata",
+                    "Porque investir para a aposentadoria é sempre uma má decisão",
+                    "Porque o viés do presente não tem relação nenhuma com decisões financeiras"
+                  ],
+                  "explanation": "O viés do presente explica por que a recompensa imediata do consumo pesa mais na decisão do que o benefício maior, porém distante, de investir cedo — mesmo quando a pessoa entende racionalmente a matemática dos juros compostos."
+                },
+                "en": {
+                  "prompt": "You already understand compound interest and how much starting early matters for retirement. How does present bias help explain why, even knowing this, so many people delay starting to invest?",
+                  "options": [
+                    "Because compound interest doesn't actually work",
+                    "Because the reward of spending the money now is felt immediately, while the benefit of investing for retirement only shows up decades later, and present bias favors the immediate reward",
+                    "Because investing for retirement is always a bad decision",
+                    "Because present bias has no relation to financial decisions at all"
+                  ],
+                  "explanation": "Present bias explains why the immediate reward of spending weighs more in the decision than the larger, but distant, benefit of investing early — even when the person rationally understands the math of compound interest."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el interés compuesto y cuánto importa empezar temprano para la jubilación. ¿Cómo ayuda el sesgo del presente a explicar por qué, incluso sabiendo esto, tantas personas posponen el inicio de sus inversiones?",
+                  "options": [
+                    "Porque el interés compuesto en realidad no funciona",
+                    "Porque la recompensa de gastar el dinero ahora se siente de inmediato, mientras que el beneficio de invertir para la jubilación solo aparece décadas después, y el sesgo del presente favorece la recompensa inmediata",
+                    "Porque invertir para la jubilación siempre es una mala decisión",
+                    "Porque el sesgo del presente no tiene ninguna relación con las decisiones financieras"
+                  ],
+                  "explanation": "El sesgo del presente explica por qué la recompensa inmediata del consumo pesa más en la decisión que el beneficio mayor, pero distante, de invertir temprano — incluso cuando la persona entiende racionalmente la matemática del interés compuesto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Viés do presente é dar peso desproporcional a recompensas imediatas.",
+                    "Ele ajuda a explicar a dificuldade de poupar para objetivos distantes, como a aposentadoria.",
+                    "Automatizar investimentos, como você viu em outra lição, ajuda a driblar esse viés."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Present bias is giving disproportionate weight to immediate rewards.",
+                    "It helps explain the difficulty of saving for distant goals, like retirement.",
+                    "Automating investments, as you saw in another lesson, helps work around this bias."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El sesgo del presente es darle un peso desproporcional a las recompensas inmediatas.",
+                    "Ayuda a explicar la dificultad de ahorrar para objetivos distantes, como la jubilación.",
+                    "Automatizar inversiones, como viste en otra lección, ayuda a sortear este sesgo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_mental_accounting",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Contabilidade Mental"
+            },
+            "en": {
+              "title": "Mental Accounting"
+            },
+            "es": {
+              "title": "Contabilidad Mental"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Tratar o mesmo dinheiro de formas diferentes",
+                  "body": "Contabilidade mental é a tendência de tratar valores de dinheiro de forma diferente dependendo da origem ou do rótulo mental associado a eles, mesmo que, na prática, o dinheiro seja completamente intercambiável. Um real ganho em um bônus inesperado, por exemplo, costuma ser tratado com menos cuidado do que um real ganho com esforço no salário mensal, mesmo valendo exatamente o mesmo."
+                },
+                "en": {
+                  "title": "Treating the same money differently",
+                  "body": "Mental accounting is the tendency to treat amounts of money differently depending on their source or the mental label attached to them, even though, in practice, money is completely interchangeable. A dollar earned from an unexpected bonus, for example, is often treated with less care than a dollar earned through effort in the monthly paycheck, even though they're worth exactly the same."
+                },
+                "es": {
+                  "title": "Tratar el mismo dinero de formas diferentes",
+                  "body": "La contabilidad mental es la tendencia a tratar los montos de dinero de forma diferente según su origen o la etiqueta mental asociada a ellos, aunque, en la práctica, el dinero sea completamente intercambiable. Un real ganado en un bono inesperado, por ejemplo, suele tratarse con menos cuidado que un real ganado con esfuerzo en el salario mensual, aunque valga exactamente lo mismo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que nunca gastaria R$500 do próprio salário em algo supérfluo pode gastar R$500 de um prêmio recebido em uma loteria sem pensar duas vezes, tratando esse dinheiro como se fosse 'menos real' do que o salário — mesmo que, uma vez na conta, os dois valores sejam idênticos e igualmente úteis para qualquer objetivo financeiro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who would never spend R$500 of their own salary on something frivolous might spend R$500 won in a lottery prize without a second thought, treating that money as if it were 'less real' than their salary — even though, once in the account, both amounts are identical and equally useful for any financial goal."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que nunca gastaría R$500 de su propio salario en algo superfluo puede gastar R$500 de un premio de lotería sin pensarlo dos veces, tratando ese dinero como si fuera 'menos real' que el salario — aunque, una vez en la cuenta, ambos montos son idénticos e igualmente útiles para cualquier objetivo financiero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é contabilidade mental?",
+                  "options": [
+                    "Um método formal de contabilidade usado por empresas",
+                    "A tendência de tratar valores de dinheiro de forma diferente dependendo da origem, mesmo sendo o mesmo dinheiro",
+                    "Um tipo de imposto sobre ganhos inesperados",
+                    "A prática de nunca guardar dinheiro em mais de uma conta"
+                  ],
+                  "explanation": "Contabilidade mental é sobre a tendência de dar tratamentos diferentes a valores de dinheiro dependendo de sua origem ou rótulo mental, mesmo que o dinheiro seja completamente intercambiável na prática."
+                },
+                "en": {
+                  "prompt": "What is mental accounting?",
+                  "options": [
+                    "A formal accounting method used by companies",
+                    "The tendency to treat amounts of money differently depending on their source, even though it's the same money",
+                    "A type of tax on unexpected earnings",
+                    "The practice of never keeping money in more than one account"
+                  ],
+                  "explanation": "Mental accounting is about the tendency to treat amounts of money differently depending on their source or mental label, even though the money is completely interchangeable in practice."
+                },
+                "es": {
+                  "prompt": "¿Qué es la contabilidad mental?",
+                  "options": [
+                    "Un método formal de contabilidad usado por empresas",
+                    "La tendencia a tratar montos de dinero de forma diferente según su origen, aunque sea el mismo dinero",
+                    "Un tipo de impuesto sobre ganancias inesperadas",
+                    "La práctica de nunca guardar dinero en más de una cuenta"
+                  ],
+                  "explanation": "La contabilidad mental trata sobre la tendencia a dar tratamientos diferentes a montos de dinero según su origen o etiqueta mental, aunque el dinero sea completamente intercambiable en la práctica."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebeu um bônus inesperado no trabalho e está tentado a gastá-lo integralmente, algo que nunca faria com o mesmo valor do seu salário mensal. O que a contabilidade mental sugere sobre essa diferença de tratamento?",
+                  "options": [
+                    "Que o bônus realmente vale menos do que o salário",
+                    "Que, na prática, os dois valores são igualmente úteis para qualquer objetivo financeiro, e tratá-los de forma diferente é um efeito psicológico, não uma diferença real no dinheiro",
+                    "Que bônus sempre devem ser gastos imediatamente, por definição",
+                    "Que contabilidade mental só se aplica a grandes quantias"
+                  ],
+                  "explanation": "Reconhecer que dinheiro é intercambiável, independentemente da origem, ajuda a tomar decisões mais consistentes sobre gastar, poupar ou investir, sem deixar rótulos mentais influenciarem indevidamente a escolha."
+                },
+                "en": {
+                  "prompt": "You received an unexpected bonus at work and are tempted to spend it entirely, something you'd never do with the same amount from your monthly salary. What does mental accounting suggest about this difference in treatment?",
+                  "options": [
+                    "That the bonus is really worth less than the salary",
+                    "That, in practice, both amounts are equally useful for any financial goal, and treating them differently is a psychological effect, not a real difference in the money",
+                    "That bonuses should always be spent immediately, by definition",
+                    "That mental accounting only applies to large amounts"
+                  ],
+                  "explanation": "Recognizing that money is interchangeable, regardless of its source, helps make more consistent decisions about spending, saving, or investing, without letting mental labels unduly influence the choice."
+                },
+                "es": {
+                  "prompt": "Recibiste un bono inesperado en el trabajo y estás tentado a gastarlo por completo, algo que nunca harías con el mismo monto de tu salario mensual. ¿Qué sugiere la contabilidad mental sobre esta diferencia de tratamiento?",
+                  "options": [
+                    "Que el bono realmente vale menos que el salario",
+                    "Que, en la práctica, ambos montos son igualmente útiles para cualquier objetivo financiero, y tratarlos de forma diferente es un efecto psicológico, no una diferencia real en el dinero",
+                    "Que los bonos siempre deben gastarse de inmediato, por definición",
+                    "Que la contabilidad mental solo se aplica a grandes cantidades"
+                  ],
+                  "explanation": "Reconocer que el dinero es intercambiable, sin importar su origen, ayuda a tomar decisiones más consistentes sobre gastar, ahorrar o invertir, sin dejar que etiquetas mentales influyan indebidamente en la elección."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Contabilidade mental é tratar o mesmo dinheiro de forma diferente dependendo da origem.",
+                    "Na prática, dinheiro é intercambiável, independentemente do rótulo mental associado a ele."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Mental accounting is treating the same money differently depending on its source.",
+                    "In practice, money is interchangeable, regardless of the mental label attached to it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La contabilidad mental es tratar el mismo dinero de forma diferente según su origen.",
+                    "En la práctica, el dinero es intercambiable, sin importar la etiqueta mental asociada a él."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+              "lessonId": "behavioral_endowment_effect",
+              "order": 5,
+              "xpReward": 20,
+              "competency": "APPLY",
+              "estimatedMinutes": 3,
+              "translations": {
+                "pt": {
+                  "title": "Efeito Dotação",
+                  "learningObjective": "Reconhecer quando o simples fato de possuir um ativo está inflando sua avaliação sobre o valor dele, independentemente dos fundamentos."
+                },
+                "en": {
+                  "title": "Endowment Effect",
+                  "learningObjective": "Recognize when the simple fact of owning an asset is inflating your assessment of its value, regardless of the fundamentals."
+                },
+                "es": {
+                  "title": "Efecto Dotación",
+                  "learningObjective": "Reconocer cuándo el simple hecho de poseer un activo está inflando tu evaluación de su valor, independientemente de los fundamentos."
+                }
+              },
+              "steps": [
+                {
+                  "type": "explanation",
+                  "order": 1,
+                  "translations": {
+                    "pt": {
+                      "title": "Vale mais só porque é seu",
+                      "body": "Efeito dotação é a tendência de atribuir mais valor a algo simplesmente porque você já o possui, comparado a quanto você pagaria para adquirir a mesma coisa caso ainda não a tivesse. Em investimentos, isso pode levar a pedir um preço mais alto para vender um ativo do que se estaria disposto a pagar para comprá-lo, mesmo sem nenhuma diferença real nos fundamentos — o simples fato de já ser seu já muda a percepção de valor."
+                    },
+                    "en": {
+                      "title": "It's worth more just because it's yours",
+                      "body": "The endowment effect is the tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire that same thing if you didn't have it yet. In investing, this can lead to asking a higher price to sell an asset than you'd be willing to pay to buy it, even with no real difference in the fundamentals — the mere fact of already owning it changes the perception of value."
+                    },
+                    "es": {
+                      "title": "Vale más solo porque es tuyo",
+                      "body": "El efecto dotación es la tendencia a atribuir más valor a algo simplemente porque ya lo posees, comparado con cuánto pagarías por adquirir esa misma cosa si todavía no la tuvieras. En las inversiones, esto puede llevar a pedir un precio más alto para vender un activo del que estarías dispuesto a pagar para comprarlo, incluso sin ninguna diferencia real en los fundamentos — el simple hecho de ya poseerlo cambia la percepción de valor."
+                    }
+                  }
+                },
+                {
+                  "type": "example",
+                  "order": 2,
+                  "translations": {
+                    "pt": {
+                      "title": "Na prática",
+                      "body": "Um investidor recebeu ações de uma empresa como herança e, embora nunca compraria essas mesmas ações hoje pelo preço atual de mercado, se recusa a vendê-las por esse mesmo preço — 'são minhas, valem mais do que isso'. O valor de mercado é o mesmo dos dois lados da decisão; o que mudou foi apenas o fato de ele já possuir o ativo."
+                    },
+                    "en": {
+                      "title": "In practice",
+                      "body": "An investor inherited shares in a company and, although they would never buy those same shares today at the current market price, they refuse to sell them at that same price — 'they're mine, they're worth more than that.' The market value is the same on both sides of the decision; what changed was simply the fact that they already own the asset."
+                    },
+                    "es": {
+                      "title": "En la práctica",
+                      "body": "Un inversor heredó acciones de una empresa y, aunque nunca compraría esas mismas acciones hoy al precio actual de mercado, se niega a venderlas a ese mismo precio — 'son mías, valen más que eso'. El valor de mercado es el mismo en ambos lados de la decisión; lo que cambió fue simplemente el hecho de que ya posee el activo."
+                    }
+                  }
+                },
+                {
+                  "type": "choice_question",
+                  "order": 3,
+                  "framing": "micro_exercise",
+                  "correctIndex": 1,
+                  "translations": {
+                    "pt": {
+                      "prompt": "O que caracteriza o efeito dotação?",
+                      "options": [
+                        "A tendência de nunca vender nenhum ativo, independentemente do preço",
+                        "A tendência de atribuir mais valor a algo simplesmente por já possuí-lo, comparado a quanto se pagaria para adquiri-lo",
+                        "Um tipo de taxa cobrada na venda de ativos herdados",
+                        "A certeza de que ativos herdados sempre valorizam mais do que os comprados"
+                      ],
+                      "explanation": "Efeito dotação é sobre a diferença de valor percebido entre possuir algo e não possuir, mesmo quando o valor de mercado objetivo é exatamente o mesmo."
+                    },
+                    "en": {
+                      "prompt": "What characterizes the endowment effect?",
+                      "options": [
+                        "The tendency to never sell any asset, regardless of price",
+                        "The tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire it",
+                        "A type of fee charged on the sale of inherited assets",
+                        "The certainty that inherited assets always appreciate more than purchased ones"
+                      ],
+                      "explanation": "The endowment effect is about the difference in perceived value between owning something and not owning it, even when the objective market value is exactly the same."
+                    },
+                    "es": {
+                      "prompt": "¿Qué caracteriza al efecto dotación?",
+                      "options": [
+                        "La tendencia a nunca vender ningún activo, sin importar el precio",
+                        "La tendencia a atribuir más valor a algo simplemente por ya poseerlo, comparado con cuánto se pagaría para adquirirlo",
+                        "Un tipo de tasa cobrada en la venta de activos heredados",
+                        "La certeza de que los activos heredados siempre se valorizan más que los comprados"
+                      ],
+                      "explanation": "El efecto dotación trata sobre la diferencia de valor percibido entre poseer algo y no poseerlo, incluso cuando el valor de mercado objetivo es exactamente el mismo."
+                    }
+                  }
+                },
+                {
+                  "type": "choice_question",
+                  "order": 4,
+                  "framing": "apply",
+                  "correctIndex": 1,
+                  "translations": {
+                    "pt": {
+                      "prompt": "Você já entende aversão à perda de outra lição. Por que abrir mão de um ativo que você já possui pode ser sentido como uma perda, inflando o valor que você atribui a ele para vendê-lo?",
+                      "options": [
+                        "Porque vender um ativo nunca envolve nenhum tipo de emoção",
+                        "Porque, assim como a aversão à perda faz o desconforto de perder pesar mais do que o prazer de ganhar, desfazer-se de algo que já é seu pode ser sentido como uma perda, o que ajuda a explicar por que se pede mais para vender do que se pagaria para comprar",
+                        "Porque aversão à perda só se aplica a dinheiro, nunca a ativos possuídos",
+                        "Porque o efeito dotação e a aversão à perda não têm nenhuma relação entre si"
+                      ],
+                      "explanation": "O efeito dotação está relacionado à aversão à perda: desfazer-se de algo que já se possui pode ser sentido como uma perda, o que ajuda a explicar por que o preço mínimo de venda tende a ser maior do que o preço máximo de compra para o mesmo ativo."
+                    },
+                    "en": {
+                      "prompt": "You already understand loss aversion from another lesson. Why can giving up an asset you already own be felt as a loss, inflating the value you assign to it in order to sell it?",
+                      "options": [
+                        "Because selling an asset never involves any kind of emotion",
+                        "Because, just as loss aversion makes the discomfort of losing weigh more than the pleasure of gaining, giving up something that's already yours can be felt as a loss, which helps explain why people ask for more to sell than they'd pay to buy",
+                        "Because loss aversion only applies to money, never to owned assets",
+                        "Because the endowment effect and loss aversion have no relation to each other"
+                      ],
+                      "explanation": "The endowment effect is related to loss aversion: giving up something you already own can be felt as a loss, which helps explain why the minimum selling price tends to be higher than the maximum buying price for the same asset."
+                    },
+                    "es": {
+                      "prompt": "Ya entiendes la aversión a la pérdida de otra lección. ¿Por qué renunciar a un activo que ya posees puede sentirse como una pérdida, inflando el valor que le atribuyes para venderlo?",
+                      "options": [
+                        "Porque vender un activo nunca involucra ningún tipo de emoción",
+                        "Porque, así como la aversión a la pérdida hace que el malestar de perder pese más que el placer de ganar, desprenderse de algo que ya es tuyo puede sentirse como una pérdida, lo que ayuda a explicar por qué se pide más para vender de lo que se pagaría para comprar",
+                        "Porque la aversión a la pérdida solo se aplica al dinero, nunca a activos poseídos",
+                        "Porque el efecto dotación y la aversión a la pérdida no tienen ninguna relación entre sí"
+                      ],
+                      "explanation": "El efecto dotación está relacionado con la aversión a la pérdida: desprenderse de algo que ya se posee puede sentirse como una pérdida, lo que ayuda a explicar por qué el precio mínimo de venta tiende a ser mayor que el precio máximo de compra para el mismo activo."
+                    }
+                  }
+                },
+                {
+                  "type": "summary",
+                  "order": 5,
+                  "translations": {
+                    "pt": {
+                      "title": "O que você aprendeu",
+                      "takeaways": [
+                        "Efeito dotação é atribuir mais valor a algo simplesmente por já possuí-lo.",
+                        "Isso pode levar a pedir mais para vender um ativo do que se pagaria para comprá-lo, sem diferença real nos fundamentos.",
+                        "Esse viés está relacionado à aversão à perda, já estudada em outra lição."
+                      ]
+                    },
+                    "en": {
+                      "title": "What you learned",
+                      "takeaways": [
+                        "The endowment effect is attributing more value to something simply because you already own it.",
+                        "This can lead to asking more to sell an asset than you'd pay to buy it, with no real difference in the fundamentals.",
+                        "This bias is related to loss aversion, already studied in another lesson."
+                      ]
+                    },
+                    "es": {
+                      "title": "Lo que aprendiste",
+                      "takeaways": [
+                        "El efecto dotación es atribuir más valor a algo simplemente por ya poseerlo.",
+                        "Esto puede llevar a pedir más para vender un activo del que se pagaría para comprarlo, sin diferencia real en los fundamentos.",
+                        "Este sesgo está relacionado con la aversión a la pérdida, ya estudiada en otra lección."
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "moduleId": "expert_behavioral_biases",
+      "order": 3,
+      "iconKey": "psychology_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "advanced_behavioral_biases"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Vieses Comportamentais: Nível Especialista",
+          "description": "Heurística da disponibilidade, falácia do jogador, viés do status quo, efeito disposição e viés de recência."
+        },
+        "en": {
+          "title": "Behavioral Biases: Expert Level",
+          "description": "Availability heuristic, gambler's fallacy, status quo bias, the disposition effect and recency bias."
+        },
+        "es": {
+          "title": "Sesgos Conductuales: Nivel Experto",
+          "description": "Heurística de la disponibilidad, falacia del jugador, sesgo del statu quo, efecto disposición y sesgo de recencia."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "behavioral_availability_heuristic",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Heurística da Disponibilidade"
+            },
+            "en": {
+              "title": "Availability Heuristic"
+            },
+            "es": {
+              "title": "Heurística de la Disponibilidad"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Julgando pela facilidade de lembrar, não pela frequência real",
+                  "body": "A heurística da disponibilidade é a tendência de julgar a probabilidade de um evento com base em quão facilmente exemplos dele vêm à mente, em vez de com base em dados estatísticos reais. Eventos recentes, vívidos ou muito divulgados pela mídia tendem a parecer mais prováveis do que realmente são, simplesmente porque são mais fáceis de lembrar, enquanto eventos mais comuns, mas menos chamativos, podem parecer menos prováveis do que de fato são."
+                },
+                "en": {
+                  "title": "Judging by ease of recall, not actual frequency",
+                  "body": "The availability heuristic is the tendency to judge the probability of an event based on how easily examples of it come to mind, rather than on actual statistical data. Recent, vivid, or heavily media-covered events tend to seem more likely than they really are, simply because they're easier to recall, while more common but less attention-grabbing events can seem less likely than they actually are."
+                },
+                "es": {
+                  "title": "Juzgando por la facilidad de recordar, no por la frecuencia real",
+                  "body": "La heurística de la disponibilidad es la tendencia a juzgar la probabilidad de un evento según qué tan fácilmente vienen a la mente ejemplos de él, en lugar de basarse en datos estadísticos reales. Los eventos recientes, vívidos o muy divulgados por los medios tienden a parecer más probables de lo que realmente son, simplemente porque son más fáciles de recordar, mientras que eventos más comunes, pero menos llamativos, pueden parecer menos probables de lo que de hecho son."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de ver várias notícias sobre uma fraude específica em um tipo de investimento, um investidor passa a superestimar a chance de sofrer esse mesmo golpe, mesmo que estatisticamente esse tipo de fraude seja raro — a disponibilidade recente dessas notícias na memória distorce sua percepção de risco real."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After seeing several news stories about a specific fraud in a type of investment, an investor starts overestimating the chance of falling for that same scam, even though statistically that type of fraud is rare — the recent availability of those news stories in memory distorts their perception of actual risk."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Después de ver varias noticias sobre un fraude específico en un tipo de inversión, un inversor empieza a sobrestimar la probabilidad de sufrir esa misma estafa, aunque estadísticamente ese tipo de fraude sea raro — la disponibilidad reciente de esas noticias en la memoria distorsiona su percepción del riesgo real."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza a heurística da disponibilidade?",
+                  "options": [
+                    "Julgar a probabilidade de um evento com base em quão facilmente exemplos dele vêm à mente, em vez de dados estatísticos reais",
+                    "Julgar a probabilidade de um evento exclusivamente com base em cálculos estatísticos precisos",
+                    "A tendência de nunca lembrar de nenhum evento passado",
+                    "Um método formal usado por atuários para calcular riscos com precisão"
+                  ],
+                  "explanation": "A heurística da disponibilidade é justamente esse atalho mental de julgar probabilidade pela facilidade de lembrança, não pelos dados reais."
+                },
+                "en": {
+                  "prompt": "What characterizes the availability heuristic?",
+                  "options": [
+                    "Judging the probability of an event based on how easily examples of it come to mind, rather than actual statistical data",
+                    "Judging the probability of an event exclusively based on precise statistical calculations",
+                    "The tendency to never remember any past event",
+                    "A formal method used by actuaries to calculate risks precisely"
+                  ],
+                  "explanation": "The availability heuristic is precisely this mental shortcut of judging probability by ease of recall, not by actual data."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a la heurística de la disponibilidad?",
+                  "options": [
+                    "Juzgar la probabilidad de un evento según qué tan fácilmente vienen a la mente ejemplos de él, en lugar de datos estadísticos reales",
+                    "Juzgar la probabilidad de un evento exclusivamente con base en cálculos estadísticos precisos",
+                    "La tendencia a nunca recordar ningún evento pasado",
+                    "Un método formal usado por actuarios para calcular riesgos con precisión"
+                  ],
+                  "explanation": "La heurística de la disponibilidad es justamente ese atajo mental de juzgar la probabilidad por la facilidad de recordar, no por los datos reales."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que o efeito manada leva pessoas a seguir o comportamento de um grupo, mesmo sem uma análise própria. Como a heurística da disponibilidade pode alimentar o efeito manada durante uma cobertura intensa da mídia sobre um determinado ativo?",
+                  "options": [
+                    "Não existe nenhuma relação entre esses dois vieses",
+                    "A cobertura intensa torna exemplos daquele ativo mais 'disponíveis' na memória das pessoas, o que pode aumentar a percepção de que 'todo mundo está investindo nele', reforçando o comportamento de manada",
+                    "A heurística da disponibilidade sempre reduz o efeito manada, nunca o aumenta",
+                    "Esses dois vieses só afetam profissionais do mercado financeiro, nunca investidores individuais"
+                  ],
+                  "explanation": "Quando um ativo recebe cobertura intensa da mídia, exemplos dele ficam mais disponíveis na memória das pessoas, o que pode alimentar a percepção de popularidade generalizada e reforçar o comportamento de seguir o grupo, mesmo sem uma análise independente."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that herd mentality leads people to follow a group's behavior, even without their own analysis. How can the availability heuristic feed herd mentality during intense media coverage of a given asset?",
+                  "options": [
+                    "There's no relation at all between these two biases",
+                    "Intense coverage makes examples of that asset more 'available' in people's memory, which can increase the perception that 'everyone is investing in it,' reinforcing herd behavior",
+                    "The availability heuristic always reduces herd mentality, never increases it",
+                    "These two biases only affect financial market professionals, never individual investors"
+                  ],
+                  "explanation": "When an asset gets intense media coverage, examples of it become more available in people's memory, which can feed the perception of widespread popularity and reinforce the behavior of following the group, even without independent analysis."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la mentalidad de manada lleva a las personas a seguir el comportamiento de un grupo, incluso sin un análisis propio. ¿Cómo puede la heurística de la disponibilidad alimentar la mentalidad de manada durante una cobertura mediática intensa sobre un activo determinado?",
+                  "options": [
+                    "No existe ninguna relación entre estos dos sesgos",
+                    "La cobertura intensa hace que los ejemplos de ese activo estén más 'disponibles' en la memoria de las personas, lo que puede aumentar la percepción de que 'todo el mundo está invirtiendo en él', reforzando el comportamiento de manada",
+                    "La heurística de la disponibilidad siempre reduce la mentalidad de manada, nunca la aumenta",
+                    "Estos dos sesgos solo afectan a profesionales del mercado financiero, nunca a inversores individuales"
+                  ],
+                  "explanation": "Cuando un activo recibe cobertura mediática intensa, los ejemplos de él quedan más disponibles en la memoria de las personas, lo que puede alimentar la percepción de popularidad generalizada y reforzar el comportamiento de seguir al grupo, incluso sin un análisis independiente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A heurística da disponibilidade julga probabilidade pela facilidade de lembrar exemplos, não por dados reais.",
+                    "Eventos recentes ou muito divulgados tendem a parecer mais prováveis do que realmente são.",
+                    "Esse viés pode alimentar o efeito manada durante períodos de cobertura intensa da mídia sobre um ativo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The availability heuristic judges probability by ease of recalling examples, not by actual data.",
+                    "Recent or heavily covered events tend to seem more likely than they really are.",
+                    "This bias can feed herd mentality during periods of intense media coverage of an asset."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La heurística de la disponibilidad juzga la probabilidad por la facilidad de recordar ejemplos, no por datos reales.",
+                    "Los eventos recientes o muy divulgados tienden a parecer más probables de lo que realmente son.",
+                    "Este sesgo puede alimentar la mentalidad de manada durante períodos de cobertura mediática intensa sobre un activo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_gamblers_fallacy",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Falácia do Jogador"
+            },
+            "en": {
+              "title": "Gambler's Fallacy"
+            },
+            "es": {
+              "title": "Falacia del Jugador"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Achar que o passado 'deve' se equilibrar no futuro",
+                  "body": "A falácia do jogador é a crença equivocada de que, se um evento aleatório aconteceu com mais frequência do que o esperado recentemente, ele deve acontecer com menos frequência em seguida, para 'equilibrar' as coisas — como se eventos independentes entre si tivessem memória do que já aconteceu antes. Em processos verdadeiramente aleatórios ou próximos disso, cada evento é independente dos anteriores, e resultados passados não alteram as probabilidades futuras."
+                },
+                "en": {
+                  "title": "Believing the past 'must' balance out in the future",
+                  "body": "The gambler's fallacy is the mistaken belief that, if a random event has happened more often than expected recently, it should happen less often next, to 'balance things out' — as if events independent of each other had memory of what already happened before. In truly random processes, or close to it, each event is independent of previous ones, and past results don't change future probabilities."
+                },
+                "es": {
+                  "title": "Creer que el pasado 'debe' equilibrarse en el futuro",
+                  "body": "La falacia del jugador es la creencia equivocada de que, si un evento aleatorio ocurrió con más frecuencia de la esperada recientemente, debería ocurrir con menos frecuencia después, para 'equilibrar' las cosas — como si eventos independientes entre sí tuvieran memoria de lo que ya sucedió antes. En procesos verdaderamente aleatorios, o cercanos a eso, cada evento es independiente de los anteriores, y los resultados pasados no alteran las probabilidades futuras."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor observa que um determinado ativo subiu por cinco dias seguidos e conclui que 'está na hora de cair', como se o mercado precisasse compensar essa sequência. Mas movimentos de curto prazo de um ativo não seguem necessariamente uma lógica de compensação automática — a sequência passada, por si só, não determina o próximo movimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor observes that a given asset has risen for five straight days and concludes it's 'due for a drop,' as if the market needed to compensate for that streak. But an asset's short-term movements don't necessarily follow an automatic compensation logic — the past streak, by itself, doesn't determine the next move."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor observa que un determinado activo subió durante cinco días seguidos y concluye que 'ya le toca caer', como si el mercado necesitara compensar esa racha. Pero los movimientos de corto plazo de un activo no siguen necesariamente una lógica de compensación automática — la racha pasada, por sí sola, no determina el próximo movimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é a falácia do jogador?",
+                  "options": [
+                    "A crença correta de que eventos aleatórios sempre se compensam ao longo do tempo",
+                    "A crença equivocada de que um evento aleatório 'deve' acontecer com menos frequência depois de ter acontecido mais do que o esperado, como se eventos independentes tivessem memória",
+                    "Um método estatístico usado para calcular probabilidades com precisão",
+                    "A tendência de sempre repetir exatamente a mesma decisão de investimento"
+                  ],
+                  "explanation": "A falácia do jogador trata especificamente do erro de achar que eventos independentes 'devem' se compensar, quando, na realidade, cada evento independente não é afetado pelos anteriores."
+                },
+                "en": {
+                  "prompt": "What is the gambler's fallacy?",
+                  "options": [
+                    "The correct belief that random events always balance out over time",
+                    "The mistaken belief that a random event 'should' happen less often after happening more than expected, as if independent events had memory",
+                    "A statistical method used to calculate probabilities precisely",
+                    "The tendency to always repeat exactly the same investment decision"
+                  ],
+                  "explanation": "The gambler's fallacy is specifically about the mistake of thinking independent events 'must' balance out, when, in reality, each independent event is unaffected by previous ones."
+                },
+                "es": {
+                  "prompt": "¿Qué es la falacia del jugador?",
+                  "options": [
+                    "La creencia correcta de que los eventos aleatorios siempre se compensan con el tiempo",
+                    "La creencia equivocada de que un evento aleatorio 'debería' ocurrir con menos frecuencia después de haber ocurrido más de lo esperado, como si eventos independientes tuvieran memoria",
+                    "Un método estadístico usado para calcular probabilidades con precisión",
+                    "La tendencia a repetir siempre exactamente la misma decisión de inversión"
+                  ],
+                  "explanation": "La falacia del jugador trata específicamente del error de pensar que eventos independientes 'deben' compensarse, cuando, en realidad, cada evento independiente no se ve afectado por los anteriores."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que ancoragem é a tendência de se apegar excessivamente a uma referência inicial ao tomar decisões. Como a falácia do jogador pode ser vista como um tipo específico de ancoragem, no caso ancorada em uma sequência de resultados passados?",
+                  "options": [
+                    "A pessoa se ancora na sequência recente de resultados e assume, incorretamente, que essa referência deve influenciar o próximo resultado independente, da mesma forma que uma âncora de preço pode influenciar indevidamente uma decisão",
+                    "Falácia do jogador e ancoragem são exatamente o mesmo viés, sem nenhuma diferença entre eles",
+                    "A falácia do jogador nunca envolve nenhum tipo de referência ou ponto de ancoragem",
+                    "Ancoragem só se aplica a preços de ativos, nunca a sequências de eventos aleatórios"
+                  ],
+                  "explanation": "Assim como a ancoragem faz alguém se apegar excessivamente a uma referência inicial, a falácia do jogador ancora a expectativa sobre o próximo resultado na sequência recente observada, mesmo quando os eventos são estatisticamente independentes entre si."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that anchoring is the tendency to overly rely on an initial reference point when making decisions. How can the gambler's fallacy be seen as a specific type of anchoring, in this case anchored on a sequence of past results?",
+                  "options": [
+                    "The person anchors on the recent sequence of results and incorrectly assumes that reference should influence the next independent result, the same way a price anchor can improperly influence a decision",
+                    "The gambler's fallacy and anchoring are exactly the same bias, with no difference between them",
+                    "The gambler's fallacy never involves any type of reference or anchor point",
+                    "Anchoring only applies to asset prices, never to sequences of random events"
+                  ],
+                  "explanation": "Just as anchoring makes someone overly rely on an initial reference point, the gambler's fallacy anchors the expectation about the next result on the recently observed sequence, even when the events are statistically independent of each other."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el anclaje es la tendencia a aferrarse excesivamente a una referencia inicial al tomar decisiones. ¿Cómo puede verse la falacia del jugador como un tipo específico de anclaje, en este caso anclado en una secuencia de resultados pasados?",
+                  "options": [
+                    "La persona se ancla en la secuencia reciente de resultados y asume, incorrectamente, que esa referencia debería influir en el próximo resultado independiente, de la misma forma que un ancla de precio puede influir indebidamente en una decisión",
+                    "La falacia del jugador y el anclaje son exactamente el mismo sesgo, sin ninguna diferencia entre ellos",
+                    "La falacia del jugador nunca implica ningún tipo de referencia o punto de anclaje",
+                    "El anclaje solo se aplica a precios de activos, nunca a secuencias de eventos aleatorios"
+                  ],
+                  "explanation": "Así como el anclaje hace que alguien se aferre excesivamente a una referencia inicial, la falacia del jugador ancla la expectativa sobre el próximo resultado en la secuencia reciente observada, incluso cuando los eventos son estadísticamente independientes entre sí."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A falácia do jogador é achar que eventos independentes 'devem' se compensar ao longo do tempo.",
+                    "Em processos aleatórios, resultados passados não alteram as probabilidades de eventos futuros independentes.",
+                    "Esse viés pode ser visto como uma forma de ancoragem, apegada a uma sequência recente de resultados."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The gambler's fallacy is thinking independent events 'must' balance out over time.",
+                    "In random processes, past results don't change the probabilities of future independent events.",
+                    "This bias can be seen as a form of anchoring, attached to a recent sequence of results."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La falacia del jugador es pensar que eventos independientes 'deben' compensarse con el tiempo.",
+                    "En procesos aleatorios, los resultados pasados no cambian las probabilidades de eventos futuros independientes.",
+                    "Este sesgo puede verse como una forma de anclaje, aferrado a una secuencia reciente de resultados."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_status_quo_bias",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Viés do Status Quo"
+            },
+            "en": {
+              "title": "Status Quo Bias"
+            },
+            "es": {
+              "title": "Sesgo del Statu Quo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A preferência por deixar tudo como está",
+                  "body": "O viés do status quo é a tendência de preferir manter a situação atual, mesmo quando mudar traria benefícios claros, simplesmente porque mudar exige esforço, envolve alguma incerteza, ou porque uma perda percebida com a mudança pesa mais do que um ganho equivalente (uma conexão direta com a aversão à perda). Isso leva pessoas a manter investimentos, contas ou hábitos financeiros desatualizados por muito mais tempo do que faria sentido, apenas pela inércia de não tomar uma decisão ativa."
+                },
+                "en": {
+                  "title": "The preference for leaving everything as it is",
+                  "body": "Status quo bias is the tendency to prefer keeping the current situation, even when changing would bring clear benefits, simply because changing requires effort, involves some uncertainty, or because a perceived loss from changing weighs more than an equivalent gain (a direct connection to loss aversion). This leads people to keep outdated investments, accounts, or financial habits for much longer than would make sense, just out of the inertia of not making an active decision."
+                },
+                "es": {
+                  "title": "La preferencia por dejar todo como está",
+                  "body": "El sesgo del statu quo es la tendencia a preferir mantener la situación actual, incluso cuando cambiar traería beneficios claros, simplemente porque cambiar exige esfuerzo, implica cierta incertidumbre, o porque una pérdida percibida con el cambio pesa más que una ganancia equivalente (una conexión directa con la aversión a la pérdida). Esto lleva a las personas a mantener inversiones, cuentas o hábitos financieros desactualizados por mucho más tiempo del que tendría sentido, solo por la inercia de no tomar una decisión activa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa mantém seu dinheiro em uma conta que rende muito pouco há anos, mesmo sabendo que existem opções mais vantajosas e igualmente seguras disponíveis, simplesmente porque migrar exigiria um esforço de pesquisa e preenchimento de formulários que ela continua adiando indefinidamente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person keeps their money in an account that earns very little for years, even knowing there are more advantageous and equally safe options available, simply because switching would require the effort of research and filling out forms that they keep indefinitely postponing."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona mantiene su dinero en una cuenta que rinde muy poco durante años, aunque sabe que existen opciones más ventajosas e igualmente seguras disponibles, simplemente porque cambiar exigiría un esfuerzo de investigación y de completar formularios que sigue posponiendo indefinidamente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o viés do status quo?",
+                  "options": [
+                    "A tendência de preferir manter a situação atual, mesmo quando mudar traria benefícios claros",
+                    "A tendência de sempre buscar ativamente a melhor opção disponível no mercado",
+                    "Um viés que só afeta decisões sobre imóveis, nunca sobre investimentos financeiros",
+                    "A preferência sistemática por qualquer mudança, independentemente do benefício"
+                  ],
+                  "explanation": "O viés do status quo é justamente a preferência por manter as coisas como estão, mesmo diante de uma alternativa objetivamente melhor."
+                },
+                "en": {
+                  "prompt": "What characterizes status quo bias?",
+                  "options": [
+                    "The tendency to prefer keeping the current situation, even when changing would bring clear benefits",
+                    "The tendency to always actively seek the best option available in the market",
+                    "A bias that only affects decisions about real estate, never financial investments",
+                    "A systematic preference for any change, regardless of the benefit"
+                  ],
+                  "explanation": "Status quo bias is precisely the preference for keeping things as they are, even in the face of an objectively better alternative."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al sesgo del statu quo?",
+                  "options": [
+                    "La tendencia a preferir mantener la situación actual, incluso cuando cambiar traería beneficios claros",
+                    "La tendencia a buscar siempre activamente la mejor opción disponible en el mercado",
+                    "Un sesgo que solo afecta decisiones sobre bienes raíces, nunca inversiones financieras",
+                    "La preferencia sistemática por cualquier cambio, sin importar el beneficio"
+                  ],
+                  "explanation": "El sesgo del statu quo es justamente la preferencia por mantener las cosas como están, incluso ante una alternativa objetivamente mejor."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a aversão à perda faz uma perda parecer psicologicamente mais pesada do que um ganho equivalente. Como isso ajuda a explicar por que o viés do status quo é tão persistente em decisões financeiras?",
+                  "options": [
+                    "Mudar de opção pode ser percebido como um risco de 'perder' o que já se tem (mesmo que a mudança seja objetivamente vantajosa), e essa perda percebida pesa mais psicologicamente do que o ganho potencial da mudança, reforçando a preferência por não mudar",
+                    "Aversão à perda não tem nenhuma relação com a preferência por manter a situação atual",
+                    "O viés do status quo só ocorre em pessoas que nunca ouviram falar em aversão à perda",
+                    "Aversão à perda sempre incentiva as pessoas a mudar de opção rapidamente, nunca a permanecer como estão"
+                  ],
+                  "explanation": "A conexão entre os dois vieses é direta: como perdas pesam mais psicologicamente do que ganhos equivalentes, o risco percebido de 'perder' ao mudar de opção pode superar, na mente da pessoa, o ganho potencial de fazer essa mudança, reforçando a inércia do status quo."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that loss aversion makes a loss feel psychologically heavier than an equivalent gain. How does that help explain why status quo bias is so persistent in financial decisions?",
+                  "options": [
+                    "Switching options can be perceived as a risk of 'losing' what one already has (even when the switch is objectively advantageous), and that perceived loss weighs more psychologically than the potential gain from switching, reinforcing the preference not to change",
+                    "Loss aversion has no relation at all to the preference for keeping the current situation",
+                    "Status quo bias only occurs in people who have never heard of loss aversion",
+                    "Loss aversion always encourages people to switch options quickly, never to stay as they are"
+                  ],
+                  "explanation": "The connection between the two biases is direct: since losses weigh more psychologically than equivalent gains, the perceived risk of 'losing' by switching options can outweigh, in the person's mind, the potential gain from making that switch, reinforcing status quo inertia."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la aversión a la pérdida hace que una pérdida se sienta psicológicamente más pesada que una ganancia equivalente. ¿Cómo ayuda esto a explicar por qué el sesgo del statu quo es tan persistente en las decisiones financieras?",
+                  "options": [
+                    "Cambiar de opción puede percibirse como un riesgo de 'perder' lo que ya se tiene (aunque el cambio sea objetivamente ventajoso), y esa pérdida percibida pesa más psicológicamente que la ganancia potencial del cambio, reforzando la preferencia por no cambiar",
+                    "La aversión a la pérdida no tiene ninguna relación con la preferencia por mantener la situación actual",
+                    "El sesgo del statu quo solo ocurre en personas que nunca escucharon hablar de la aversión a la pérdida",
+                    "La aversión a la pérdida siempre anima a las personas a cambiar de opción rápidamente, nunca a permanecer como están"
+                  ],
+                  "explanation": "La conexión entre los dos sesgos es directa: como las pérdidas pesan más psicológicamente que las ganancias equivalentes, el riesgo percibido de 'perder' al cambiar de opción puede superar, en la mente de la persona, la ganancia potencial de hacer ese cambio, reforzando la inercia del statu quo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O viés do status quo é a preferência por manter a situação atual, mesmo diante de alternativas melhores.",
+                    "Ele se conecta diretamente à aversão à perda: mudar é percebido como um risco de perda.",
+                    "Esse viés pode levar a manter investimentos ou contas desatualizadas por inércia, não por escolha racional."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Status quo bias is the preference for keeping the current situation, even facing better alternatives.",
+                    "It connects directly to loss aversion: switching is perceived as a risk of loss.",
+                    "This bias can lead to keeping outdated investments or accounts out of inertia, not rational choice."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El sesgo del statu quo es la preferencia por mantener la situación actual, aun ante alternativas mejores.",
+                    "Se conecta directamente con la aversión a la pérdida: cambiar se percibe como un riesgo de pérdida.",
+                    "Este sesgo puede llevar a mantener inversiones o cuentas desactualizadas por inercia, no por elección racional."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_disposition_effect",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Efeito Disposição"
+            },
+            "en": {
+              "title": "Disposition Effect"
+            },
+            "es": {
+              "title": "Efecto Disposición"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Vender cedo demais os ganhos, segurar tempo demais as perdas",
+                  "body": "O efeito disposição é a tendência observada de investidores venderem ativos com ganho relativamente cedo, para 'garantir' o lucro, enquanto seguram ativos com prejuízo por mais tempo do que seria racional, na esperança de que o preço se recupere antes de realizar a perda. Esse padrão é uma manifestação direta da aversão à perda aplicada especificamente ao momento de decidir vender ou manter um investimento."
+                },
+                "en": {
+                  "title": "Selling winners too early, holding losers too long",
+                  "body": "The disposition effect is the observed tendency of investors to sell assets with a gain relatively early, to 'lock in' the profit, while holding onto assets with a loss for longer than would be rational, hoping the price recovers before realizing the loss. This pattern is a direct manifestation of loss aversion applied specifically to the moment of deciding whether to sell or hold an investment."
+                },
+                "es": {
+                  "title": "Vender ganadores demasiado pronto, sostener perdedores demasiado tiempo",
+                  "body": "El efecto disposición es la tendencia observada de los inversores a vender activos con ganancia relativamente pronto, para 'asegurar' la ganancia, mientras mantienen activos con pérdida por más tiempo del que sería racional, con la esperanza de que el precio se recupere antes de realizar la pérdida. Este patrón es una manifestación directa de la aversión a la pérdida aplicada específicamente al momento de decidir vender o mantener una inversión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor tem duas posições: uma com ganho de 10% e outra com perda de 10%. Ele vende rapidamente a posição com ganho, para 'garantir' o lucro, mas segura a posição com perda por meses, esperando que ela volte ao menos ao preço de compra — mesmo que, avaliando os fundamentos de cada ativo isoladamente, a decisão racional pudesse ser exatamente o oposto."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor has two positions: one with a 10% gain and another with a 10% loss. They quickly sell the position with a gain, to 'lock in' the profit, but hold the position with a loss for months, hoping it returns at least to the purchase price — even though, evaluating each asset's fundamentals separately, the rational decision could be exactly the opposite."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor tiene dos posiciones: una con ganancia del 10% y otra con pérdida del 10%. Vende rápidamente la posición con ganancia, para 'asegurar' la utilidad, pero mantiene la posición con pérdida durante meses, esperando que vuelva al menos al precio de compra — aunque, evaluando los fundamentos de cada activo por separado, la decisión racional podría ser exactamente la opuesta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o efeito disposição?",
+                  "options": [
+                    "A tendência de vender rapidamente ativos com prejuízo e segurar por muito tempo ativos com ganho",
+                    "A tendência de vender relativamente cedo ativos com ganho e segurar por mais tempo do que seria racional ativos com prejuízo",
+                    "A tendência de nunca vender nenhum ativo, independentemente do resultado",
+                    "Um padrão que só ocorre com ativos de renda fixa, nunca com ações"
+                  ],
+                  "explanation": "O efeito disposição é especificamente o padrão de vender ganhos cedo e segurar perdas por mais tempo do que seria racional, buscando adiar a realização de uma perda."
+                },
+                "en": {
+                  "prompt": "What characterizes the disposition effect?",
+                  "options": [
+                    "The tendency to quickly sell losing assets and hold onto winning assets for a long time",
+                    "The tendency to sell winning assets relatively early and hold losing assets longer than would be rational",
+                    "The tendency to never sell any asset, regardless of the outcome",
+                    "A pattern that only occurs with fixed-income assets, never with stocks"
+                  ],
+                  "explanation": "The disposition effect is specifically the pattern of selling winners early and holding losers longer than would be rational, seeking to delay realizing a loss."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al efecto disposición?",
+                  "options": [
+                    "La tendencia a vender rápidamente activos con pérdida y mantener por mucho tiempo activos con ganancia",
+                    "La tendencia a vender relativamente pronto activos con ganancia y mantener por más tiempo del que sería racional activos con pérdida",
+                    "La tendencia a nunca vender ningún activo, sin importar el resultado",
+                    "Un patrón que solo ocurre con activos de renta fija, nunca con acciones"
+                  ],
+                  "explanation": "El efecto disposición es específicamente el patrón de vender ganancias pronto y mantener pérdidas por más tiempo del que sería racional, buscando posponer la realización de una pérdida."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a aversão à perda faz uma perda parecer psicologicamente mais pesada do que um ganho equivalente. Como isso explica diretamente o efeito disposição?",
+                  "options": [
+                    "Vender um ativo com prejuízo torna a perda definitiva e 'real', o que é psicologicamente mais doloroso do que mantê-la apenas 'no papel' — por isso investidores adiam essa realização, enquanto se apressam para 'garantir' ganhos antes que desapareçam",
+                    "Aversão à perda não tem nenhuma relação com a decisão de vender ou manter um investimento",
+                    "O efeito disposição ocorre porque investidores preferem sempre realizar perdas o mais rápido possível",
+                    "Aversão à perda e efeito disposição descrevem exatamente o mesmo comportamento, sem nenhuma relação causal entre eles"
+                  ],
+                  "explanation": "O efeito disposição é, na prática, uma consequência direta da aversão à perda: realizar (vender) uma perda a torna definitiva e psicologicamente mais dolorosa do que apenas mantê-la como um prejuízo não realizado 'no papel', o que leva a adiar essa decisão mesmo quando não é a mais racional."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that loss aversion makes a loss feel psychologically heavier than an equivalent gain. How does that directly explain the disposition effect?",
+                  "options": [
+                    "Selling a losing asset makes the loss definitive and 'real,' which is psychologically more painful than keeping it just 'on paper' — so investors delay that realization, while rushing to 'lock in' gains before they disappear",
+                    "Loss aversion has no relation at all to the decision to sell or hold an investment",
+                    "The disposition effect happens because investors always prefer to realize losses as quickly as possible",
+                    "Loss aversion and the disposition effect describe exactly the same behavior, with no causal relation between them"
+                  ],
+                  "explanation": "The disposition effect is, in practice, a direct consequence of loss aversion: realizing (selling) a loss makes it definitive and psychologically more painful than just keeping it as an unrealized loss 'on paper,' which leads to delaying that decision even when it isn't the most rational one."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la aversión a la pérdida hace que una pérdida se sienta psicológicamente más pesada que una ganancia equivalente. ¿Cómo explica esto directamente el efecto disposición?",
+                  "options": [
+                    "Vender un activo con pérdida hace que esta sea definitiva y 'real', lo cual es psicológicamente más doloroso que mantenerla solo 'en el papel' — por eso los inversores posponen esa realización, mientras se apresuran a 'asegurar' ganancias antes de que desaparezcan",
+                    "La aversión a la pérdida no tiene ninguna relación con la decisión de vender o mantener una inversión",
+                    "El efecto disposición ocurre porque los inversores siempre prefieren realizar pérdidas lo más rápido posible",
+                    "Aversión a la pérdida y efecto disposición describen exactamente el mismo comportamiento, sin ninguna relación causal entre ellos"
+                  ],
+                  "explanation": "El efecto disposición es, en la práctica, una consecuencia directa de la aversión a la pérdida: realizar (vender) una pérdida la hace definitiva y psicológicamente más dolorosa que mantenerla solo como una pérdida no realizada 'en el papel', lo que lleva a posponer esa decisión incluso cuando no es la más racional."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O efeito disposição é vender ganhos relativamente cedo e segurar perdas por mais tempo do que seria racional.",
+                    "Esse padrão é uma consequência direta da aversão à perda aplicada à decisão de vender ou manter.",
+                    "Realizar uma perda a torna psicologicamente mais dolorosa do que mantê-la apenas como um prejuízo não realizado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The disposition effect is selling gains relatively early and holding losses longer than would be rational.",
+                    "This pattern is a direct consequence of loss aversion applied to the decision to sell or hold.",
+                    "Realizing a loss makes it psychologically more painful than keeping it just as an unrealized loss."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El efecto disposición es vender ganancias relativamente pronto y mantener pérdidas por más tiempo del que sería racional.",
+                    "Este patrón es una consecuencia directa de la aversión a la pérdida aplicada a la decisión de vender o mantener.",
+                    "Realizar una pérdida la hace psicológicamente más dolorosa que mantenerla solo como una pérdida no realizada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_recency_bias",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Viés de Recência"
+            },
+            "en": {
+              "title": "Recency Bias"
+            },
+            "es": {
+              "title": "Sesgo de Recencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dar peso excessivo ao que aconteceu por último",
+                  "body": "O viés de recência é a tendência de dar peso desproporcional a eventos recentes ao formar expectativas sobre o futuro, em detrimento de um histórico mais longo e completo. Depois de um período de fortes ganhos, investidores tendem a esperar que os ganhos continuem; depois de um período de perdas, tendem a esperar mais perdas — mesmo que o histórico de longo prazo sugira um comportamento diferente do extrapolar simplesmente o que aconteceu por último."
+                },
+                "en": {
+                  "title": "Giving excessive weight to what happened last",
+                  "body": "Recency bias is the tendency to give disproportionate weight to recent events when forming expectations about the future, at the expense of a longer, more complete track record. After a period of strong gains, investors tend to expect gains to continue; after a period of losses, they tend to expect more losses — even when the longer-term record suggests behavior different from simply extrapolating what happened last."
+                },
+                "es": {
+                  "title": "Dar peso excesivo a lo que pasó por última vez",
+                  "body": "El sesgo de recencia es la tendencia a dar un peso desproporcionado a eventos recientes al formar expectativas sobre el futuro, en detrimento de un historial más largo y completo. Después de un período de fuertes ganancias, los inversores tienden a esperar que las ganancias continúen; después de un período de pérdidas, tienden a esperar más pérdidas — aunque el historial de largo plazo sugiera un comportamiento diferente al de simplemente extrapolar lo que pasó por última vez."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de alguns anos seguidos de fortes retornos em um determinado tipo de investimento, muitos investidores passam a alocar uma parte maior de sua carteira nele, extrapolando esse desempenho recente para o futuro — mesmo que um histórico mais longo mostre que aquele mesmo investimento também já passou por períodos de retornos bem mais fracos, em ciclos que se alternam ao longo do tempo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After a few consecutive years of strong returns in a given type of investment, many investors start allocating a larger part of their portfolio to it, extrapolating that recent performance into the future — even when a longer track record shows that same investment has also gone through periods of much weaker returns, in cycles that alternate over time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Después de algunos años seguidos de retornos fuertes en un determinado tipo de inversión, muchos inversores empiezan a asignar una parte mayor de su cartera a ella, extrapolando ese desempeño reciente hacia el futuro — aunque un historial más largo muestre que esa misma inversión también ya pasó por períodos de retornos bastante más débiles, en ciclos que se alternan con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o viés de recência?",
+                  "options": [
+                    "Dar peso desproporcional a eventos recentes ao formar expectativas sobre o futuro, em vez de considerar um histórico mais longo",
+                    "Dar peso exclusivamente a eventos muito antigos, ignorando qualquer informação recente",
+                    "A tendência de nunca formar nenhuma expectativa sobre o futuro",
+                    "Um viés que só afeta decisões sobre imóveis, nunca sobre investimentos financeiros"
+                  ],
+                  "explanation": "O viés de recência é justamente essa tendência de superestimar a relevância de eventos recentes, em detrimento de um histórico mais longo e completo."
+                },
+                "en": {
+                  "prompt": "What characterizes recency bias?",
+                  "options": [
+                    "Giving disproportionate weight to recent events when forming expectations about the future, instead of considering a longer track record",
+                    "Giving weight exclusively to very old events, ignoring any recent information",
+                    "The tendency to never form any expectation about the future",
+                    "A bias that only affects decisions about real estate, never financial investments"
+                  ],
+                  "explanation": "Recency bias is precisely this tendency to overestimate the relevance of recent events, at the expense of a longer, more complete track record."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al sesgo de recencia?",
+                  "options": [
+                    "Dar un peso desproporcionado a eventos recientes al formar expectativas sobre el futuro, en lugar de considerar un historial más largo",
+                    "Dar peso exclusivamente a eventos muy antiguos, ignorando cualquier información reciente",
+                    "La tendencia a nunca formar ninguna expectativa sobre el futuro",
+                    "Un sesgo que solo afecta decisiones sobre bienes raíces, nunca inversiones financieras"
+                  ],
+                  "explanation": "El sesgo de recencia es justamente esa tendencia a sobrestimar la relevancia de eventos recientes, en detrimento de un historial más largo y completo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, tanto a heurística da disponibilidade quanto a falácia do jogador. Como o viés de recência se relaciona com esses dois vieses, todos ligados à forma como o cérebro lida com informações ao longo do tempo?",
+                  "options": [
+                    "Os três vieses compartilham a característica de dar peso desproporcional a informações mais fáceis de acessar ou mais recentes na memória, em vez de uma avaliação estatística mais completa e de longo prazo",
+                    "Esses três vieses não têm absolutamente nenhuma relação entre si",
+                    "Apenas o viés de recência é influenciado pela memória; os outros dois são puramente lógicos e racionais",
+                    "A falácia do jogador e o viés de recência levam sempre exatamente à mesma conclusão prática em qualquer situação"
+                  ],
+                  "explanation": "Heurística da disponibilidade, falácia do jogador e viés de recência compartilham uma raiz comum: todos distorcem o julgamento ao dar peso excessivo a informações recentes ou facilmente acessíveis na memória, em vez de uma avaliação mais completa e estatisticamente sólida."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, both the availability heuristic and the gambler's fallacy. How does recency bias relate to these two biases, all tied to how the brain handles information over time?",
+                  "options": [
+                    "All three biases share the trait of giving disproportionate weight to information that's easier to access or more recent in memory, instead of a more complete, long-term statistical assessment",
+                    "These three biases have absolutely no relation to each other",
+                    "Only recency bias is influenced by memory; the other two are purely logical and rational",
+                    "The gambler's fallacy and recency bias always lead to exactly the same practical conclusion in any situation"
+                  ],
+                  "explanation": "Availability heuristic, gambler's fallacy, and recency bias share a common root: they all distort judgment by giving excessive weight to recent or easily accessible information in memory, instead of a more complete, statistically sound assessment."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, tanto la heurística de la disponibilidad como la falacia del jugador. ¿Cómo se relaciona el sesgo de recencia con estos dos sesgos, todos ligados a cómo el cerebro maneja la información a lo largo del tiempo?",
+                  "options": [
+                    "Los tres sesgos comparten la característica de dar un peso desproporcionado a la información más fácil de acceder o más reciente en la memoria, en lugar de una evaluación estadística más completa y de largo plazo",
+                    "Estos tres sesgos no tienen absolutamente ninguna relación entre sí",
+                    "Solo el sesgo de recencia está influenciado por la memoria; los otros dos son puramente lógicos y racionales",
+                    "La falacia del jugador y el sesgo de recencia siempre llevan exactamente a la misma conclusión práctica en cualquier situación"
+                  ],
+                  "explanation": "Heurística de la disponibilidad, falacia del jugador y sesgo de recencia comparten una raíz común: todos distorsionan el juicio al dar un peso excesivo a información reciente o fácilmente accesible en la memoria, en lugar de una evaluación más completa y estadísticamente sólida."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "O viés de recência dá peso desproporcional a eventos recentes, em detrimento de um histórico mais longo.",
+                    "Ele compartilha uma raiz comum com a heurística da disponibilidade e a falácia do jogador.",
+                    "Você concluiu o módulo avançado de vieses comportamentais: disponibilidade, falácia do jogador, status quo, efeito disposição e recência."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Recency bias gives disproportionate weight to recent events, at the expense of a longer track record.",
+                    "It shares a common root with the availability heuristic and the gambler's fallacy.",
+                    "You've completed the advanced behavioral biases module: availability, gambler's fallacy, status quo, disposition effect and recency."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El sesgo de recencia da un peso desproporcionado a eventos recientes, en detrimento de un historial más largo.",
+                    "Comparte una raíz común con la heurística de la disponibilidad y la falacia del jugador.",
+                    "Completaste el módulo avanzado de sesgos conductuales: disponibilidad, falacia del jugador, statu quo, efecto disposición y recencia."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2532 @@
+{
+  "schoolId": "real_life_simulations",
+  "domainId": "simulations_practice",
+  "order": 19,
+  "iconKey": "map_outlined",
+  "contentAvailable": true,
+  "prerequisites": [
+    "investment_fundamentals"
+  ],
+  "translations": {
+    "pt": {
+      "title": "Simulações da Vida Real",
+      "description": "Cenários práticos — primeiro salário, primeira dívida, uma queda de mercado — para aplicar o que você aprendeu."
+    },
+    "en": {
+      "title": "Real-Life Financial Simulations",
+      "description": "Practical scenarios — first paycheck, first debt, a market downturn — to apply what you learned."
+    },
+    "es": {
+      "title": "Simulaciones de la Vida Real",
+      "description": "Escenarios prácticos — primer sueldo, primera deuda, una caída del mercado — para aplicar lo aprendido."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "real_life_scenarios",
+      "order": 1,
+      "iconKey": "map_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Cenários da Vida Real",
+          "description": "O primeiro salário, a primeira dívida, uma queda de mercado e um dinheiro extra inesperado — aplicando o que você já aprendeu."
+        },
+        "en": {
+          "title": "Real-Life Scenarios",
+          "description": "The first paycheck, the first debt, a market downturn and an unexpected windfall — applying what you've already learned."
+        },
+        "es": {
+          "title": "Escenarios de la Vida Real",
+          "description": "El primer sueldo, la primera deuda, una caída del mercado y un dinero extra inesperado — aplicando lo que ya aprendiste."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "simulation_first_paycheck",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Seu Primeiro Salário"
+            },
+            "en": {
+              "title": "Simulation: Your First Paycheck"
+            },
+            "es": {
+              "title": "Simulación: Tu Primer Sueldo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você acabou de receber seu primeiro salário e precisa decidir o que fazer com o dinheiro que sobra depois das contas básicas. Você já estudou reserva de emergência, diversificação, perfil de investidor e objetivos e horizonte de tempo — esta simulação é sobre juntar esses conceitos em uma decisão prática, sem nenhuma resposta única e certa, mas com alguns princípios que ajudam a organizar o raciocínio."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You just received your first paycheck and need to decide what to do with the money left over after basic expenses. You've already studied emergency funds, diversification, investor profile, and goals and time horizon — this simulation is about bringing those concepts together into a practical decision, with no single right answer, but with some principles that help organize the reasoning."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Acabas de recibir tu primer sueldo y necesitas decidir qué hacer con el dinero que sobra después de los gastos básicos. Ya estudiaste fondo de emergencia, diversificación, perfil de inversor, y objetivos y horizonte de tiempo — esta simulación se trata de juntar esos conceptos en una decisión práctica, sin una única respuesta correcta, pero con algunos principios que ayudan a organizar el razonamiento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Sem nenhuma reserva de emergência ainda, colocar o dinheiro extra diretamente em um investimento de longo prazo, com baixa liquidez, deixaria a pessoa vulnerável caso surgisse um imprevisto no meio do caminho. Priorizar a formação de uma reserva de emergência líquida antes de outros objetivos costuma ser o primeiro passo mais sólido, antes de pensar em investimentos de prazos mais longos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "With no emergency fund yet, putting the extra money directly into a long-term investment with low liquidity would leave the person vulnerable if something unexpected came up along the way. Prioritizing a liquid emergency fund before other goals tends to be the more solid first step, before thinking about longer-term investments."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Sin ningún fondo de emergencia todavía, poner el dinero extra directamente en una inversión a largo plazo, con baja liquidez, dejaría a la persona vulnerable si surgiera un imprevisto en el camino. Priorizar la formación de un fondo de emergencia líquido antes que otros objetivos suele ser el primer paso más sólido, antes de pensar en inversiones de plazos más largos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebeu seu primeiro salário e ainda não tem nenhuma reserva de emergência. O que faz mais sentido priorizar com o dinheiro que sobra?",
+                  "options": [
+                    "Investir tudo imediatamente em um título de renda fixa sem liquidez diária, travado por vários anos",
+                    "Começar a formar uma reserva de emergência líquida, antes de comprometer o dinheiro com investimentos de prazo mais longo",
+                    "Gastar tudo, já que reserva de emergência não é importante no início da vida financeira",
+                    "Esperar vários anos antes de tomar qualquer decisão sobre o dinheiro"
+                  ],
+                  "explanation": "Sem uma reserva de emergência, qualquer imprevisto pode forçar a pessoa a resgatar investimentos de longo prazo em más condições, ou recorrer a dívidas caras — por isso, formar essa reserva costuma vir primeiro."
+                },
+                "en": {
+                  "prompt": "You received your first paycheck and don't have any emergency fund yet. What makes the most sense to prioritize with the money left over?",
+                  "options": [
+                    "Investing it all immediately in a fixed-income bond with no daily liquidity, locked up for several years",
+                    "Starting to build a liquid emergency fund, before committing the money to longer-term investments",
+                    "Spending it all, since an emergency fund isn't important early in your financial life",
+                    "Waiting several years before making any decision about the money"
+                  ],
+                  "explanation": "Without an emergency fund, any unexpected event can force the person to withdraw long-term investments under bad conditions, or resort to expensive debt — that's why building this fund usually comes first."
+                },
+                "es": {
+                  "prompt": "Recibiste tu primer sueldo y todavía no tienes ningún fondo de emergencia. ¿Qué tiene más sentido priorizar con el dinero que sobra?",
+                  "options": [
+                    "Invertir todo de inmediato en un título de renta fija sin liquidez diaria, bloqueado por varios años",
+                    "Empezar a formar un fondo de emergencia líquido, antes de comprometer el dinero con inversiones de plazo más largo",
+                    "Gastarlo todo, ya que el fondo de emergencia no es importante al inicio de la vida financiera",
+                    "Esperar varios años antes de tomar cualquier decisión sobre el dinero"
+                  ],
+                  "explanation": "Sin un fondo de emergencia, cualquier imprevisto puede obligar a la persona a rescatar inversiones a largo plazo en malas condiciones, o recurrir a deudas caras — por eso, formar ese fondo suele ser lo primero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Depois de formar uma reserva de emergência sólida, essa mesma pessoa quer começar a pensar em objetivos de mais longo prazo. O que faz sentido considerar antes de escolher onde investir?",
+                  "options": [
+                    "Nada, basta escolher o investimento com a maior taxa de retorno anunciada",
+                    "Seus objetivos específicos, o horizonte de tempo de cada um, e seu perfil de investidor — como você estudou em outras lições",
+                    "Apenas o que está sendo mais comentado no momento nas redes sociais",
+                    "É melhor não pensar em nenhum objetivo específico, só investir de forma genérica"
+                  ],
+                  "explanation": "Definir objetivos, horizonte de tempo e perfil de investidor antes de escolher onde investir ajuda a alinhar a escolha com a situação real da pessoa, em vez de seguir apenas a taxa anunciada ou uma tendência do momento."
+                },
+                "en": {
+                  "prompt": "After building a solid emergency fund, this same person wants to start thinking about longer-term goals. What makes sense to consider before choosing where to invest?",
+                  "options": [
+                    "Nothing, it's enough to choose the investment with the highest advertised return",
+                    "Their specific goals, the time horizon of each one, and their investor profile — as you studied in other lessons",
+                    "Only whatever is being talked about most right now on social media",
+                    "It's better not to think about any specific goal, and just invest generically"
+                  ],
+                  "explanation": "Defining goals, time horizon, and investor profile before choosing where to invest helps align the choice with the person's real situation, instead of just following the advertised rate or a current trend."
+                },
+                "es": {
+                  "prompt": "Después de formar un fondo de emergencia sólido, esa misma persona quiere empezar a pensar en objetivos de más largo plazo. ¿Qué tiene sentido considerar antes de elegir dónde invertir?",
+                  "options": [
+                    "Nada, basta con elegir la inversión con la mayor tasa de retorno anunciada",
+                    "Sus objetivos específicos, el horizonte de tiempo de cada uno, y su perfil de inversor — como estudiaste en otras lecciones",
+                    "Solo lo que se comenta más en este momento en redes sociales",
+                    "Es mejor no pensar en ningún objetivo específico, solo invertir de forma genérica"
+                  ],
+                  "explanation": "Definir objetivos, horizonte de tiempo y perfil de inversor antes de elegir dónde invertir ayuda a alinear la elección con la situación real de la persona, en lugar de seguir solo la tasa anunciada o una tendencia del momento."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Reserva de emergência líquida costuma vir antes de investimentos de longo prazo.",
+                    "Objetivos, horizonte de tempo e perfil de investidor ajudam a guiar decisões de onde investir.",
+                    "Combinar conceitos aprendidos separadamente ajuda a tomar decisões financeiras mais consistentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "A liquid emergency fund usually comes before long-term investments.",
+                    "Goals, time horizon, and investor profile help guide decisions about where to invest.",
+                    "Combining concepts learned separately helps make more consistent financial decisions."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Un fondo de emergencia líquido suele ir antes que las inversiones a largo plazo.",
+                    "Los objetivos, el horizonte de tiempo y el perfil de inversor ayudan a guiar las decisiones sobre dónde invertir.",
+                    "Combinar conceptos aprendidos por separado ayuda a tomar decisiones financieras más consistentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_first_debt",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Sua Primeira Dívida"
+            },
+            "en": {
+              "title": "Simulation: Your First Debt"
+            },
+            "es": {
+              "title": "Simulación: Tu Primera Deuda"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você tem uma dívida no cartão de crédito com juros altos, e também tem um dinheiro guardado em um investimento de renda fixa com uma taxa bem mais baixa do que os juros da dívida. Você já entende ativos, passivos, juros compostos e taxa real — esta simulação pede para aplicar esses conceitos a uma decisão comum: vale a pena resgatar o investimento para quitar a dívida?"
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You have credit card debt with a high interest rate, and you also have money set aside in a fixed-income investment with a much lower rate than the debt's interest. You already understand assets, liabilities, compound interest, and real rate — this simulation asks you to apply those concepts to a common decision: is it worth withdrawing the investment to pay off the debt?"
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Tienes una deuda en la tarjeta de crédito con intereses altos, y también tienes dinero guardado en una inversión de renta fija con una tasa bastante más baja que los intereses de la deuda. Ya entiendes activos, pasivos, interés compuesto y tasa real — esta simulación te pide aplicar esos conceptos a una decisión común: ¿vale la pena rescatar la inversión para saldar la deuda?"
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "A dívida no cartão cobra 12% ao mês. O investimento rende algo próximo de 1% ao mês. Manter o dinheiro investido enquanto a dívida cara continua crescendo significa, na prática, pagar muito mais em juros do que se ganha com o investimento — o passivo está crescendo mais rápido do que o ativo consegue compensar."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "The credit card debt charges 12% a month. The investment earns something close to 1% a month. Keeping the money invested while the expensive debt keeps growing means, in practice, paying much more in interest than what's being earned on the investment — the liability is growing faster than the asset can offset."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "La deuda de la tarjeta cobra el 12% mensual. La inversión rinde algo cercano al 1% mensual. Mantener el dinero invertido mientras la deuda cara sigue creciendo significa, en la práctica, pagar mucho más en intereses de lo que se gana con la inversión — el pasivo está creciendo más rápido de lo que el activo puede compensar."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Sua dívida no cartão cobra juros bem mais altos do que o rendimento do seu investimento em renda fixa. Considerando o que você já aprendeu sobre ativos e passivos, o que geralmente faz mais sentido?",
+                  "options": [
+                    "Manter o dinheiro investido, ignorando completamente a diferença entre as taxas",
+                    "Considerar usar parte do investimento para quitar ou reduzir a dívida mais cara, já que os juros da dívida costumam superar de longe o rendimento do investimento",
+                    "Pedir um empréstimo novo para pagar o cartão, sem considerar a taxa desse novo empréstimo",
+                    "Nunca usar investimentos para quitar dívidas, em nenhuma circunstância"
+                  ],
+                  "explanation": "Quando os juros de uma dívida são muito mais altos do que o rendimento de um investimento, manter os dois ao mesmo tempo geralmente significa perder dinheiro na diferença — avaliar quitar a dívida mais cara costuma fazer mais sentido financeiro."
+                },
+                "en": {
+                  "prompt": "Your credit card debt charges interest much higher than your fixed-income investment's return. Considering what you already learned about assets and liabilities, what generally makes more sense?",
+                  "options": [
+                    "Keeping the money invested, completely ignoring the gap between the rates",
+                    "Considering using part of the investment to pay off or reduce the more expensive debt, since debt interest usually far exceeds the investment's return",
+                    "Taking out a new loan to pay the credit card, without considering that new loan's rate",
+                    "Never using investments to pay off debts, under any circumstances"
+                  ],
+                  "explanation": "When a debt's interest is much higher than an investment's return, keeping both at the same time generally means losing money on the difference — considering paying off the more expensive debt usually makes more financial sense."
+                },
+                "es": {
+                  "prompt": "Tu deuda de tarjeta cobra intereses mucho más altos que el rendimiento de tu inversión de renta fija. Considerando lo que ya aprendiste sobre activos y pasivos, ¿qué generalmente tiene más sentido?",
+                  "options": [
+                    "Mantener el dinero invertido, ignorando por completo la diferencia entre las tasas",
+                    "Considerar usar parte de la inversión para saldar o reducir la deuda más cara, ya que los intereses de la deuda suelen superar por mucho el rendimiento de la inversión",
+                    "Pedir un préstamo nuevo para pagar la tarjeta, sin considerar la tasa de ese nuevo préstamo",
+                    "Nunca usar inversiones para saldar deudas, bajo ninguna circunstancia"
+                  ],
+                  "explanation": "Cuando los intereses de una deuda son mucho más altos que el rendimiento de una inversión, mantener ambos al mismo tiempo generalmente significa perder dinero en la diferencia — considerar saldar la deuda más cara suele tener más sentido financiero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Antes de resgatar todo o investimento para quitar a dívida, o que também vale a pena considerar, com base no que você aprendeu sobre reserva de emergência?",
+                  "options": [
+                    "Nada, é sempre melhor zerar toda e qualquer reserva para quitar qualquer dívida",
+                    "Se parte desse investimento é a reserva de emergência, vale avaliar se ainda restará alguma proteção líquida para imprevistos, em vez de esvaziar completamente essa reserva",
+                    "Reserva de emergência não tem relação nenhuma com decisões sobre dívidas",
+                    "É melhor nunca usar nenhuma parte de um investimento para quitar dívidas, mesmo com juros muito altos"
+                  ],
+                  "explanation": "Mesmo quando quitar uma dívida cara faz sentido financeiro, vale considerar se isso deixaria a pessoa sem nenhuma proteção líquida para o próximo imprevisto — o equilíbrio entre os dois objetivos importa."
+                },
+                "en": {
+                  "prompt": "Before withdrawing the entire investment to pay off the debt, what's also worth considering, based on what you learned about emergency funds?",
+                  "options": [
+                    "Nothing, it's always better to zero out any and all reserves to pay off any debt",
+                    "If part of that investment is the emergency fund, it's worth assessing whether any liquid protection for unexpected events would remain, instead of completely emptying that reserve",
+                    "Emergency funds have no relation at all to debt decisions",
+                    "It's better to never use any part of an investment to pay off debts, even with very high interest"
+                  ],
+                  "explanation": "Even when paying off an expensive debt makes financial sense, it's worth considering whether that would leave the person with no liquid protection for the next unexpected event — the balance between the two goals matters."
+                },
+                "es": {
+                  "prompt": "Antes de rescatar toda la inversión para saldar la deuda, ¿qué también vale la pena considerar, según lo que aprendiste sobre el fondo de emergencia?",
+                  "options": [
+                    "Nada, siempre es mejor vaciar toda reserva para saldar cualquier deuda",
+                    "Si parte de esa inversión es el fondo de emergencia, vale evaluar si quedará alguna protección líquida para imprevistos, en lugar de vaciar por completo esa reserva",
+                    "El fondo de emergencia no tiene ninguna relación con las decisiones sobre deudas",
+                    "Es mejor nunca usar ninguna parte de una inversión para saldar deudas, incluso con intereses muy altos"
+                  ],
+                  "explanation": "Incluso cuando saldar una deuda cara tiene sentido financiero, vale la pena considerar si eso dejaría a la persona sin ninguna protección líquida para el próximo imprevisto — el equilibrio entre ambos objetivos importa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Dívidas com juros muito mais altos do que o rendimento de um investimento costumam merecer prioridade de quitação.",
+                    "Vale comparar as taxas envolvidas antes de decidir manter um investimento com uma dívida cara em aberto.",
+                    "Mesmo quitando uma dívida, vale preservar alguma proteção líquida para imprevistos."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Debts with interest much higher than an investment's return usually deserve priority for payoff.",
+                    "It's worth comparing the rates involved before deciding to keep an investment alongside an expensive open debt.",
+                    "Even when paying off a debt, it's worth preserving some liquid protection for unexpected events."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Las deudas con intereses mucho más altos que el rendimiento de una inversión suelen merecer prioridad de pago.",
+                    "Vale la pena comparar las tasas involucradas antes de decidir mantener una inversión junto a una deuda cara pendiente.",
+                    "Incluso al saldar una deuda, vale la pena preservar alguna protección líquida para imprevistos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_market_downturn",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Uma Queda de Mercado"
+            },
+            "en": {
+              "title": "Simulation: A Market Downturn"
+            },
+            "es": {
+              "title": "Simulación: Una Caída del Mercado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "O mercado caiu 20% em poucas semanas, e o valor da sua carteira de investimentos caiu junto. Você já entende aversão à perda, efeito manada, diversificação e risco de mercado — esta simulação pede para aplicar esses conceitos em um momento emocionalmente desafiador, quando a tentação de agir por impulso costuma ser maior."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "The market fell 20% in a few weeks, and the value of your investment portfolio fell along with it. You already understand loss aversion, herd mentality, diversification, and market risk — this simulation asks you to apply those concepts in an emotionally challenging moment, when the temptation to act on impulse tends to be greater."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "El mercado cayó un 20% en pocas semanas, y el valor de tu cartera de inversiones cayó junto con él. Ya entiendes la aversión a la pérdida, el efecto manada, la diversificación y el riesgo de mercado — esta simulación te pide aplicar esos conceptos en un momento emocionalmente desafiante, cuando la tentación de actuar por impulso suele ser mayor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Nada mudou nos fundamentos dos investimentos que essa pessoa escolheu originalmente, e o dinheiro investido não é necessário no curto prazo — os objetivos e o horizonte de tempo continuam os mesmos de antes da queda. A queda em si, sem nenhuma mudança nos fundamentos ou nos planos originais, não é necessariamente motivo para uma decisão precipitada."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Nothing has changed in the fundamentals of the investments this person originally chose, and the invested money isn't needed in the short term — the goals and time horizon remain the same as before the drop. The drop itself, with no change in fundamentals or original plans, isn't necessarily reason for a hasty decision."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Nada cambió en los fundamentos de las inversiones que esta persona eligió originalmente, y el dinero invertido no se necesita a corto plazo — los objetivos y el horizonte de tiempo siguen siendo los mismos que antes de la caída. La caída en sí, sin ningún cambio en los fundamentos o en los planes originales, no es necesariamente motivo para una decisión precipitada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Sua carteira caiu 20% e você sente um forte impulso de vender tudo agora, mesmo sem precisar desse dinheiro no curto prazo e sem nenhuma mudança nos fundamentos dos seus investimentos. O que você já aprendeu sobre aversão à perda sugere sobre esse impulso?",
+                  "options": [
+                    "Que o impulso de vender é sempre a decisão mais racional, e deve ser seguido imediatamente",
+                    "Que esse impulso pode estar sendo guiado pelo desconforto emocional da perda, e não por uma reavaliação real dos fundamentos ou dos objetivos originais",
+                    "Que aversão à perda não tem relação nenhuma com quedas de mercado",
+                    "Que vender é obrigatório sempre que o mercado cai mais de 10%"
+                  ],
+                  "explanation": "Reconhecer que o impulso de vender pode vir da aversão à perda, e não de uma mudança real nos fundamentos, ajuda a separar reação emocional de decisão racional."
+                },
+                "en": {
+                  "prompt": "Your portfolio dropped 20% and you feel a strong urge to sell everything right now, even though you don't need that money in the short term and nothing has changed in your investments' fundamentals. What does what you learned about loss aversion suggest about that urge?",
+                  "options": [
+                    "That the urge to sell is always the most rational decision, and should be followed immediately",
+                    "That this urge might be driven by the emotional discomfort of the loss, not by an actual reassessment of the fundamentals or the original goals",
+                    "That loss aversion has no relation to market downturns at all",
+                    "That selling is mandatory whenever the market drops more than 10%"
+                  ],
+                  "explanation": "Recognizing that the urge to sell might come from loss aversion, not from an actual change in fundamentals, helps separate emotional reaction from rational decision."
+                },
+                "es": {
+                  "prompt": "Tu cartera cayó un 20% y sientes un fuerte impulso de vender todo ahora, aunque no necesitas ese dinero a corto plazo y no hay ningún cambio en los fundamentos de tus inversiones. ¿Qué sugiere sobre ese impulso lo que aprendiste sobre la aversión a la pérdida?",
+                  "options": [
+                    "Que el impulso de vender siempre es la decisión más racional, y debe seguirse de inmediato",
+                    "Que ese impulso puede estar siendo guiado por el malestar emocional de la pérdida, y no por una reevaluación real de los fundamentos o los objetivos originales",
+                    "Que la aversión a la pérdida no tiene ninguna relación con las caídas de mercado",
+                    "Que vender es obligatorio siempre que el mercado caiga más del 10%"
+                  ],
+                  "explanation": "Reconocer que el impulso de vender puede venir de la aversión a la pérdida, y no de un cambio real en los fundamentos, ayuda a separar la reacción emocional de la decisión racional."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que boa parte das pessoas ao seu redor está vendendo tudo em pânico durante essa queda. Com base no que você já entende sobre efeito manada, como isso deveria (ou não) influenciar sua própria decisão?",
+                  "options": [
+                    "Você deveria vender só porque as outras pessoas estão vendendo, sem nenhuma análise própria",
+                    "O comportamento da maioria, por si só, não é motivo suficiente para uma decisão — vale avaliar sua própria situação, objetivos e os fundamentos dos seus investimentos, em vez de simplesmente seguir a multidão",
+                    "O efeito manada garante que a maioria sempre está certa em momentos de queda",
+                    "Efeito manada só existe em momentos de alta do mercado, nunca em quedas"
+                  ],
+                  "explanation": "Seguir a maioria sem uma análise própria é justamente o padrão descrito pelo efeito manada — vale avaliar sua própria situação antes de replicar automaticamente o comportamento generalizado."
+                },
+                "en": {
+                  "prompt": "You notice that a lot of people around you are panic-selling everything during this downturn. Based on what you already understand about herd mentality, how should this (or shouldn't it) influence your own decision?",
+                  "options": [
+                    "You should sell just because other people are selling, with no analysis of your own",
+                    "The majority's behavior, by itself, isn't reason enough for a decision — it's worth assessing your own situation, goals, and your investments' fundamentals, instead of simply following the crowd",
+                    "Herd mentality guarantees the majority is always right during downturns",
+                    "Herd mentality only exists during market rallies, never during downturns"
+                  ],
+                  "explanation": "Following the majority with no analysis of your own is exactly the pattern described by herd mentality — it's worth assessing your own situation before automatically replicating the generalized behavior."
+                },
+                "es": {
+                  "prompt": "Notas que gran parte de la gente a tu alrededor está vendiendo todo en pánico durante esta caída. Según lo que ya entiendes sobre el efecto manada, ¿cómo debería (o no) influir esto en tu propia decisión?",
+                  "options": [
+                    "Deberías vender solo porque otras personas están vendiendo, sin ningún análisis propio",
+                    "El comportamiento de la mayoría, por sí solo, no es motivo suficiente para una decisión — vale evaluar tu propia situación, objetivos y los fundamentos de tus inversiones, en lugar de simplemente seguir a la multitud",
+                    "El efecto manada garantiza que la mayoría siempre tiene razón en momentos de caída",
+                    "El efecto manada solo existe en momentos de alza del mercado, nunca en caídas"
+                  ],
+                  "explanation": "Seguir a la mayoría sin un análisis propio es justamente el patrón descrito por el efecto manada — vale evaluar tu propia situación antes de replicar automáticamente el comportamiento generalizado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Uma queda de mercado, por si só, não muda automaticamente os fundamentos de um investimento.",
+                    "Vale separar o impulso emocional da aversão à perda de uma reavaliação racional da situação.",
+                    "Seguir o comportamento da maioria sem análise própria é o padrão descrito pelo efeito manada."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "A market downturn, by itself, doesn't automatically change an investment's fundamentals.",
+                    "It's worth separating the emotional impulse of loss aversion from a rational reassessment of the situation.",
+                    "Following the majority's behavior with no analysis of your own is the pattern described by herd mentality."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Una caída de mercado, por sí sola, no cambia automáticamente los fundamentos de una inversión.",
+                    "Vale la pena separar el impulso emocional de la aversión a la pérdida de una reevaluación racional de la situación.",
+                    "Seguir el comportamiento de la mayoría sin análisis propio es el patrón descrito por el efecto manada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_unexpected_windfall",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Um Dinheiro Extra Inesperado"
+            },
+            "en": {
+              "title": "Simulation: An Unexpected Windfall"
+            },
+            "es": {
+              "title": "Simulación: Un Dinero Extra Inesperado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você recebeu um valor inesperado — um bônus, uma herança, um prêmio — bem maior do que está acostumado a lidar. Você já entende diversificação, risco de concentração, perfil de investidor e vieses como ancoragem e efeito manada — esta simulação pede para aplicar esses conceitos a uma decisão que costuma vir acompanhada de pressa e de muitas sugestões de terceiros."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You received an unexpected amount — a bonus, an inheritance, a prize — much larger than you're used to handling. You already understand diversification, concentration risk, investor profile, and biases like anchoring and herd mentality — this simulation asks you to apply those concepts to a decision that usually comes with a sense of urgency and plenty of suggestions from other people."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Recibiste un monto inesperado — un bono, una herencia, un premio — mucho mayor de lo que estás acostumbrado a manejar. Ya entiendes la diversificación, el riesgo de concentración, el perfil de inversor y sesgos como el anclaje y el efecto manada — esta simulación te pide aplicar esos conceptos a una decisión que suele venir acompañada de prisa y de muchas sugerencias de terceros."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Vários amigos e conhecidos sugerem, com convicção, onde essa pessoa deveria colocar todo o dinheiro de uma vez — cada um recomendando algo diferente. Sem uma reavaliação de objetivos, prazo e perfil de risco, seguir qualquer uma dessas sugestões de forma apressada, só por confiança nas pessoas que as deram, ignora todo o processo de decisão estudado até aqui."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Several friends and acquaintances confidently suggest where this person should put all the money at once — each recommending something different. Without reassessing goals, time frame, and risk profile, hastily following any of these suggestions, just out of trust in the people who gave them, ignores the entire decision process studied so far."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Varios amigos y conocidos sugieren, con convicción, dónde debería poner esa persona todo el dinero de una vez — cada uno recomendando algo diferente. Sin una reevaluación de objetivos, plazo y perfil de riesgo, seguir cualquiera de esas sugerencias de forma apresurada, solo por confianza en las personas que las dieron, ignora todo el proceso de decisión estudiado hasta aquí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebeu um valor grande e inesperado, e várias pessoas ao seu redor têm opiniões fortes sobre onde você deveria investir tudo imediatamente. Qual abordagem é mais consistente com o que você aprendeu até aqui?",
+                  "options": [
+                    "Seguir a sugestão da pessoa que falou com mais confiança, sem verificar mais nada",
+                    "Reavaliar seus próprios objetivos, horizonte de tempo e perfil de investidor antes de tomar qualquer decisão, mesmo sob pressão de terceiros",
+                    "Colocar tudo em um único ativo o mais rápido possível, para não perder tempo",
+                    "Ignorar completamente qualquer planejamento, já que o valor é inesperado"
+                  ],
+                  "explanation": "Um valor inesperado não muda o processo de decisão — objetivos, horizonte de tempo e perfil de investidor continuam sendo o ponto de partida, independentemente da pressa ou das opiniões de terceiros."
+                },
+                "en": {
+                  "prompt": "You received a large, unexpected amount, and several people around you have strong opinions about where you should invest it all immediately. Which approach is most consistent with what you've learned so far?",
+                  "options": [
+                    "Following the suggestion of whoever spoke with the most confidence, without checking anything else",
+                    "Reassessing your own goals, time horizon, and investor profile before making any decision, even under pressure from others",
+                    "Putting it all into a single asset as fast as possible, so as not to waste time",
+                    "Completely ignoring any planning, since the amount is unexpected"
+                  ],
+                  "explanation": "An unexpected amount doesn't change the decision process — goals, time horizon, and investor profile remain the starting point, regardless of urgency or other people's opinions."
+                },
+                "es": {
+                  "prompt": "Recibiste un monto grande e inesperado, y varias personas a tu alrededor tienen opiniones fuertes sobre dónde deberías invertirlo todo de inmediato. ¿Qué enfoque es más consistente con lo que aprendiste hasta ahora?",
+                  "options": [
+                    "Seguir la sugerencia de quien habló con más confianza, sin verificar nada más",
+                    "Reevaluar tus propios objetivos, horizonte de tiempo y perfil de inversor antes de tomar cualquier decisión, incluso bajo presión de terceros",
+                    "Poner todo en un único activo lo más rápido posible, para no perder tiempo",
+                    "Ignorar por completo cualquier planificación, ya que el monto es inesperado"
+                  ],
+                  "explanation": "Un monto inesperado no cambia el proceso de decisión — los objetivos, el horizonte de tiempo y el perfil de inversor siguen siendo el punto de partida, sin importar la prisa o las opiniones de terceros."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco de concentração de outra lição. Como esse conceito se aplica à tentação de colocar todo esse dinheiro extra em um único ativo, só porque alguém recomendou com muita convicção?",
+                  "options": [
+                    "Não se aplica, risco de concentração só existe em investimentos pequenos",
+                    "Colocar todo o valor em um único ativo criaria uma concentração significativa, amplificando o impacto se esse ativo específico tiver um problema — diversificar reduziria esse risco",
+                    "Concentrar tudo em um único ativo é sempre a melhor estratégia para valores grandes",
+                    "Risco de concentração deixa de existir quando o valor investido é muito alto"
+                  ],
+                  "explanation": "Colocar um valor grande em um único ativo é uma forma clara de risco de concentração — distribuir esse valor entre diferentes ativos, de acordo com objetivos e perfil, tende a reduzir o impacto de um problema isolado."
+                },
+                "en": {
+                  "prompt": "You already understand concentration risk from another lesson. How does that concept apply to the temptation of putting all this extra money into a single asset, just because someone recommended it very confidently?",
+                  "options": [
+                    "It doesn't apply, concentration risk only exists in small investments",
+                    "Putting the entire amount into a single asset would create significant concentration, amplifying the impact if that specific asset has a problem — diversifying would reduce that risk",
+                    "Concentrating everything in a single asset is always the best strategy for large amounts",
+                    "Concentration risk stops existing when the invested amount is very high"
+                  ],
+                  "explanation": "Putting a large amount into a single asset is a clear form of concentration risk — spreading that amount across different assets, according to goals and profile, tends to reduce the impact of an isolated problem."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo de concentración de otra lección. ¿Cómo se aplica ese concepto a la tentación de poner todo este dinero extra en un único activo, solo porque alguien lo recomendó con mucha convicción?",
+                  "options": [
+                    "No se aplica, el riesgo de concentración solo existe en inversiones pequeñas",
+                    "Poner todo el monto en un único activo crearía una concentración significativa, amplificando el impacto si ese activo específico tiene un problema — diversificar reduciría ese riesgo",
+                    "Concentrar todo en un único activo siempre es la mejor estrategia para montos grandes",
+                    "El riesgo de concentración deja de existir cuando el monto invertido es muy alto"
+                  ],
+                  "explanation": "Poner un monto grande en un único activo es una forma clara de riesgo de concentración — distribuir ese monto entre diferentes activos, de acuerdo con objetivos y perfil, tiende a reducir el impacto de un problema aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Um valor inesperado não muda o processo de decisão: objetivos, horizonte e perfil continuam o ponto de partida.",
+                    "Concentrar um valor grande em um único ativo, mesmo bem recomendado, amplifica o risco."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "An unexpected amount doesn't change the decision process: goals, time horizon and profile remain the starting point.",
+                    "Concentrating a large amount in a single asset, even a well-recommended one, amplifies risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Un monto inesperado no cambia el proceso de decisión: los objetivos, el horizonte y el perfil siguen siendo el punto de partida.",
+                    "Concentrar un monto grande en un único activo, aunque esté bien recomendado, amplifica el riesgo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_guaranteed_return_pitch",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Uma Dica de Investimento com Retorno Garantido"
+            },
+            "en": {
+              "title": "Simulation: A Guaranteed-Return Investment Tip"
+            },
+            "es": {
+              "title": "Simulación: Una Recomendación de Inversión con Retorno Garantido"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Um conhecido, muito animado, sugere que você entre em uma 'oportunidade' que promete um retorno alto todo mês, 'garantido', com pouco tempo para decidir. Você já entende a relação entre risco e retorno — esta simulação pede para aplicar esse conceito, junto com um pouco de ceticismo saudável, diante de uma promessa que soa boa demais para ser verdade."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "An acquaintance, very excited, suggests you get into an 'opportunity' that promises a high, 'guaranteed' return every month, with little time to decide. You already understand the relationship between risk and return — this simulation asks you to apply that concept, along with some healthy skepticism, when facing a promise that sounds too good to be true."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Un conocido, muy entusiasmado, te sugiere entrar en una 'oportunidad' que promete un retorno alto todos los meses, 'garantizado', con poco tiempo para decidir. Ya entiendes la relación entre riesgo y retorno — esta simulación te pide aplicar ese concepto, junto con algo de escepticismo saludable, ante una promesa que suena demasiado buena para ser verdad."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "A 'oportunidade' promete 10% ao mês, 'sem risco nenhum', enquanto investimentos de renda fixa considerados seguros costumam render uma fração disso no mesmo período. A pressa para decidir e a dificuldade em explicar claramente como esse retorno é gerado são sinais que merecem atenção, além do próprio número, que já contraria a relação normal entre risco e retorno."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "The 'opportunity' promises 10% a month, 'with zero risk,' while fixed-income investments considered safe usually yield a fraction of that over the same period. The pressure to decide quickly and the difficulty in clearly explaining how that return is generated are signs worth paying attention to, on top of the number itself, which already contradicts the normal risk-return relationship."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "La 'oportunidad' promete un 10% mensual, 'sin ningún riesgo', mientras que las inversiones de renta fija consideradas seguras suelen rendir una fracción de eso en el mismo período. La prisa para decidir y la dificultad para explicar claramente cómo se genera ese retorno son señales que merecen atención, además del propio número, que ya contradice la relación normal entre riesgo y retorno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o principal sinal de alerta em uma oferta de investimento que promete um retorno alto e 'garantido', sem nenhum risco?",
+                  "options": [
+                    "Nenhum, retornos altos e garantidos sem risco são comuns no mercado",
+                    "Ela contraria a relação básica entre risco e retorno: retornos mais altos normalmente vêm acompanhados de mais risco, não de uma garantia",
+                    "O sinal de alerta é apenas o valor mínimo exigido para investir",
+                    "Promessas de retorno garantido são sempre um sinal positivo de segurança"
+                  ],
+                  "explanation": "Uma promessa de retorno alto e garantido, sem nenhum risco associado, contraria a relação entre risco e retorno observada no mercado, e costuma ser o principal sinal de alerta a se investigar antes de qualquer decisão."
+                },
+                "en": {
+                  "prompt": "What is the main warning sign in an investment offer that promises a high, 'guaranteed' return with no risk at all?",
+                  "options": [
+                    "None, high guaranteed returns with no risk are common in the market",
+                    "It contradicts the basic risk-return relationship: higher returns are normally accompanied by more risk, not a guarantee",
+                    "The warning sign is only the minimum amount required to invest",
+                    "Promises of guaranteed return are always a positive sign of safety"
+                  ],
+                  "explanation": "A promise of a high, guaranteed return with no associated risk contradicts the risk-return relationship observed in the market, and tends to be the main warning sign worth investigating before any decision."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal señal de alerta en una oferta de inversión que promete un retorno alto y 'garantizado', sin ningún riesgo?",
+                  "options": [
+                    "Ninguna, los retornos altos y garantizados sin riesgo son comunes en el mercado",
+                    "Contradice la relación básica entre riesgo y retorno: los retornos más altos normalmente vienen acompañados de más riesgo, no de una garantía",
+                    "La señal de alerta es solo el monto mínimo exigido para invertir",
+                    "Las promesas de retorno garantizado siempre son una señal positiva de seguridad"
+                  ],
+                  "explanation": "Una promesa de retorno alto y garantizado, sin ningún riesgo asociado, contradice la relación entre riesgo y retorno observada en el mercado, y suele ser la principal señal de alerta a investigar antes de cualquier decisión."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição, a relação entre risco e retorno. Como esse conceito ajuda a avaliar a dica de um retorno de 10% ao mês 'garantido, sem risco'?",
+                  "options": [
+                    "Não ajuda em nada, risco e retorno não têm relação com esse tipo de oferta",
+                    "Como retorno e risco normalmente andam juntos, uma oferta que promete um retorno bem acima do mercado sem nenhum risco correspondente é inconsistente com o que se observa nos investimentos em geral, e merece investigação antes de qualquer decisão",
+                    "Isso confirma que a oferta é genuína, já que qualquer retorno alto é sempre justificado",
+                    "A relação entre risco e retorno só se aplica a ações, nunca a esse tipo de oportunidade"
+                  ],
+                  "explanation": "Reconhecer que retorno e risco normalmente caminham juntos ajuda a identificar quando uma oferta foge do padrão observado no mercado, o que é justamente o caso de uma promessa de retorno alto sem nenhum risco correspondente."
+                },
+                "en": {
+                  "prompt": "You already understand the risk-return relationship from another lesson. How does that concept help you evaluate the tip about a 'guaranteed, no-risk' 10% monthly return?",
+                  "options": [
+                    "It doesn't help at all, risk and return have no relation to this kind of offer",
+                    "Since return and risk normally move together, an offer promising a return well above the market with no corresponding risk is inconsistent with what's observed in investments in general, and deserves investigation before any decision",
+                    "This confirms the offer is genuine, since any high return is always justified",
+                    "The risk-return relationship only applies to stocks, never to this kind of opportunity"
+                  ],
+                  "explanation": "Recognizing that return and risk normally move together helps identify when an offer strays from the pattern observed in the market, which is exactly the case with a promise of a high return with no corresponding risk."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección, la relación entre riesgo y retorno. ¿Cómo ayuda ese concepto a evaluar la recomendación de un retorno del 10% mensual 'garantizado, sin riesgo'?",
+                  "options": [
+                    "No ayuda en nada, el riesgo y el retorno no tienen relación con este tipo de oferta",
+                    "Como el retorno y el riesgo normalmente van de la mano, una oferta que promete un retorno muy por encima del mercado sin ningún riesgo correspondiente es inconsistente con lo que se observa en las inversiones en general, y merece investigación antes de cualquier decisión",
+                    "Esto confirma que la oferta es genuina, ya que cualquier retorno alto siempre está justificado",
+                    "La relación entre riesgo y retorno solo se aplica a las acciones, nunca a este tipo de oportunidad"
+                  ],
+                  "explanation": "Reconocer que el retorno y el riesgo normalmente van de la mano ayuda a identificar cuándo una oferta se aleja del patrón observado en el mercado, que es justamente el caso de una promesa de retorno alto sin ningún riesgo correspondiente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Retorno e risco normalmente andam juntos — uma promessa de retorno alto sem risco correspondente foge desse padrão.",
+                    "Pressa para decidir e falta de clareza sobre como o retorno é gerado são sinais que merecem atenção.",
+                    "Comparar a oferta com o que investimentos considerados seguros costumam render ajuda a avaliar se a promessa faz sentido."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Return and risk normally move together — a promise of high return with no corresponding risk strays from that pattern.",
+                    "Pressure to decide quickly and a lack of clarity about how the return is generated are signs worth paying attention to.",
+                    "Comparing the offer with what investments considered safe usually yield helps assess whether the promise makes sense."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "El retorno y el riesgo normalmente van de la mano — una promesa de retorno alto sin riesgo correspondiente se aleja de ese patrón.",
+                    "La prisa para decidir y la falta de claridad sobre cómo se genera el retorno son señales que merecen atención.",
+                    "Comparar la oferta con lo que suelen rendir las inversiones consideradas seguras ayuda a evaluar si la promesa tiene sentido."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "more_real_life_scenarios",
+      "order": 2,
+      "iconKey": "map_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "real_life_scenarios"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Mais Cenários da Vida Real",
+          "description": "Comprar um imóvel financiado, perder o emprego, receber uma herança e investir em um negócio próprio."
+        },
+        "en": {
+          "title": "More Real-Life Scenarios",
+          "description": "Buying a financed property, losing your job, receiving an inheritance, and investing in your own business."
+        },
+        "es": {
+          "title": "Más Escenarios de la Vida Real",
+          "description": "Comprar un inmueble financiado, perder el empleo, recibir una herencia e invertir en un negocio propio."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "simulation_buying_financed_property",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Comprando um Imóvel Financiado"
+            },
+            "en": {
+              "title": "Simulation: Buying a Financed Property"
+            },
+            "es": {
+              "title": "Simulación: Comprando un Inmueble Financiado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você está decidindo entre comprar um imóvel financiado agora ou continuar investindo enquanto aluga, para comprar à vista mais adiante. Você já entende sistemas de amortização, custo de oportunidade e juros compostos — esta simulação pede para aplicar esses conceitos a uma das decisões financeiras mais significativas que muitas pessoas tomam ao longo da vida."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You're deciding between buying a financed property now or continuing to invest while renting, to buy in cash later. You already understand amortization systems, opportunity cost, and compound interest — this simulation asks you to apply those concepts to one of the most significant financial decisions many people make over their lifetime."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Estás decidiendo entre comprar un inmueble financiado ahora o seguir invirtiendo mientras alquilas, para comprar al contado más adelante. Ya entiendes los sistemas de amortización, el costo de oportunidad y el interés compuesto — esta simulación te pide aplicar esos conceptos a una de las decisiones financieras más significativas que muchas personas toman a lo largo de la vida."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Financiar um imóvel significa pagar juros ao longo de muitos anos, mas permite morar no imóvel imediatamente. Continuar alugando e investindo significa acumular um patrimônio que pode, eventualmente, comprar o imóvel à vista, evitando os juros do financiamento — mas exige disciplina para realmente investir a diferença, em vez de gastá-la, e depende de quanto o valor do imóvel sobe nesse meio tempo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Financing a property means paying interest over many years, but allows living in the property immediately. Continuing to rent and invest means accumulating wealth that could, eventually, buy the property in cash, avoiding the financing's interest — but it requires discipline to actually invest the difference, instead of spending it, and depends on how much the property's value rises in the meantime."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Financiar un inmueble significa pagar intereses durante muchos años, pero permite vivir en el inmueble de inmediato. Seguir alquilando e invirtiendo significa acumular un patrimonio que puede, eventualmente, comprar el inmueble al contado, evitando los intereses del financiamiento — pero exige disciplina para realmente invertir la diferencia, en lugar de gastarla, y depende de cuánto suba el valor del inmueble mientras tanto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que sistemas de amortização como Price geram um custo total de juros ao longo do financiamento. Antes de decidir financiar um imóvel, o que vale a pena calcular e comparar?",
+                  "options": [
+                    "Apenas o valor da parcela mensal, sem considerar mais nada",
+                    "O custo total de juros pagos ao longo de todo o financiamento, comparado ao que esse dinheiro poderia render se fosse investido enquanto se aluga um imóvel parecido",
+                    "O financiamento nunca deve ser comparado com nenhuma alternativa",
+                    "Basta escolher o financiamento com a parcela mais baixa, sem olhar o prazo total"
+                  ],
+                  "explanation": "Comparar o custo total de juros do financiamento com o retorno potencial de investir e alugar, considerando o prazo e o custo de oportunidade envolvidos, ajuda a tomar essa decisão de forma mais informada."
+                },
+                "en": {
+                  "prompt": "You already understand that amortization systems like Price generate a total interest cost over the loan. Before deciding to finance a property, what's worth calculating and comparing?",
+                  "options": [
+                    "Only the monthly installment value, without considering anything else",
+                    "The total interest cost paid over the entire loan, compared to what that money could earn if invested while renting a similar property",
+                    "Financing should never be compared with any alternative",
+                    "It's enough to choose the financing with the lowest installment, without looking at the total term"
+                  ],
+                  "explanation": "Comparing the loan's total interest cost with the potential return of investing and renting, considering the term and opportunity cost involved, helps make this decision more informedly."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que sistemas de amortización como el Price generan un costo total de intereses a lo largo del financiamiento. Antes de decidir financiar un inmueble, ¿qué vale la pena calcular y comparar?",
+                  "options": [
+                    "Solo el valor de la cuota mensual, sin considerar nada más",
+                    "El costo total de intereses pagados a lo largo de todo el financiamiento, comparado con lo que ese dinero podría rendir si se invirtiera mientras se alquila un inmueble parecido",
+                    "El financiamiento nunca debe compararse con ninguna alternativa",
+                    "Basta con elegir el financiamiento con la cuota más baja, sin mirar el plazo total"
+                  ],
+                  "explanation": "Comparar el costo total de intereses del financiamiento con el retorno potencial de invertir y alquilar, considerando el plazo y el costo de oportunidad involucrados, ayuda a tomar esta decisión de forma más informada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Alguém diz: 'alugar é sempre jogar dinheiro fora, financiar é sempre a melhor escolha'. Com base no que você aprendeu sobre custo de oportunidade, o que está incompleto nessa afirmação?",
+                  "options": [
+                    "Nada, financiar é sempre objetivamente melhor do que alugar",
+                    "O aluguel tem um custo real, mas financiar também tem um custo real em juros — a melhor escolha depende de comparar os dois custos e o retorno potencial do dinheiro que não foi usado na entrada e nas parcelas mais altas",
+                    "Alugar nunca envolve nenhum tipo de custo",
+                    "Financiamento nunca envolve juros, apenas o aluguel envolve custo"
+                  ],
+                  "explanation": "Tanto alugar quanto financiar envolvem custos reais — a decisão mais informada compara o custo total do financiamento com o custo de morar de aluguel mais o retorno potencial de investir a diferença, em vez de assumir que uma opção é sempre superior."
+                },
+                "en": {
+                  "prompt": "Someone says: 'renting is always throwing money away, financing is always the best choice.' Based on what you learned about opportunity cost, what's incomplete about that statement?",
+                  "options": [
+                    "Nothing, financing is always objectively better than renting",
+                    "Renting has a real cost, but financing also has a real cost in interest — the best choice depends on comparing both costs and the potential return of the money not used on the down payment and higher installments",
+                    "Renting never involves any type of cost",
+                    "Financing never involves interest, only renting involves cost"
+                  ],
+                  "explanation": "Both renting and financing involve real costs — the more informed decision compares the loan's total cost with the cost of renting plus the potential return of investing the difference, instead of assuming one option is always superior."
+                },
+                "es": {
+                  "prompt": "Alguien dice: 'alquilar siempre es tirar el dinero, financiar siempre es la mejor elección'. Según lo que aprendiste sobre el costo de oportunidad, ¿qué es incompleto en esa afirmación?",
+                  "options": [
+                    "Nada, financiar siempre es objetivamente mejor que alquilar",
+                    "El alquiler tiene un costo real, pero financiar también tiene un costo real en intereses — la mejor elección depende de comparar ambos costos y el retorno potencial del dinero no usado en la entrada y en las cuotas más altas",
+                    "Alquilar nunca implica ningún tipo de costo",
+                    "El financiamiento nunca implica intereses, solo el alquiler implica costo"
+                  ],
+                  "explanation": "Tanto alquilar como financiar implican costos reales — la decisión más informada compara el costo total del financiamiento con el costo de vivir de alquiler más el retorno potencial de invertir la diferencia, en lugar de asumir que una opción siempre es superior."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Financiar um imóvel envolve um custo real de juros ao longo de muitos anos.",
+                    "Continuar alugando e investindo é uma alternativa com seu próprio custo e potencial de retorno.",
+                    "A melhor escolha depende de comparar os dois cenários, não de assumir que um é sempre superior."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Financing a property involves a real interest cost over many years.",
+                    "Continuing to rent and invest is an alternative with its own cost and return potential.",
+                    "The best choice depends on comparing both scenarios, not assuming one is always superior."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Financiar un inmueble implica un costo real de intereses a lo largo de muchos años.",
+                    "Seguir alquilando e invirtiendo es una alternativa con su propio costo y potencial de retorno.",
+                    "La mejor elección depende de comparar ambos escenarios, no de asumir que uno siempre es superior."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_job_loss",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Perda de Emprego"
+            },
+            "en": {
+              "title": "Simulation: Job Loss"
+            },
+            "es": {
+              "title": "Simulación: Pérdida de Empleo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você perdeu o emprego inesperadamente e não sabe quanto tempo vai levar para conseguir uma nova posição. Você já entende reserva de emergência, risco de liquidez e vieses como aversão à perda — esta simulação pede para aplicar esses conceitos em um momento de instabilidade financeira real, quando decisões precisam ser tomadas sob pressão."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You unexpectedly lost your job and don't know how long it will take to find a new position. You already understand emergency funds, liquidity risk, and biases like loss aversion — this simulation asks you to apply those concepts in a moment of real financial instability, when decisions need to be made under pressure."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Perdiste el empleo inesperadamente y no sabes cuánto tiempo tardarás en conseguir una nueva posición. Ya entiendes el fondo de emergencia, el riesgo de liquidez y sesgos como la aversión a la pérdida — esta simulación te pide aplicar esos conceptos en un momento de inestabilidad financiera real, cuando hay que tomar decisiones bajo presión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa com reserva de emergência equivalente a 6 meses de despesas consegue manter seus investimentos de longo prazo intactos enquanto procura um novo emprego, usando a reserva líquida para cobrir as despesas do dia a dia. Sem essa reserva, ela provavelmente precisaria resgatar investimentos de longo prazo em condições desfavoráveis, ou recorrer a dívidas caras, justamente no pior momento para isso."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone with an emergency fund equivalent to 6 months of expenses manages to keep their long-term investments intact while looking for a new job, using the liquid reserve to cover day-to-day expenses. Without that reserve, they would likely need to withdraw long-term investments under unfavorable conditions, or resort to expensive debt, at exactly the worst moment to do so."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona con un fondo de emergencia equivalente a 6 meses de gastos logra mantener sus inversiones a largo plazo intactas mientras busca un nuevo empleo, usando la reserva líquida para cubrir los gastos del día a día. Sin esa reserva, probablemente necesitaría rescatar inversiones a largo plazo en condiciones desfavorables, o recurrir a deudas caras, justo en el peor momento para hacerlo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você acabou de perder o emprego e tem uma reserva de emergência equivalente a 6 meses de despesas, além de investimentos de longo prazo. Qual fonte de recursos faz mais sentido usar primeiro para cobrir as despesas do dia a dia?",
+                  "options": [
+                    "Os investimentos de longo prazo, resgatando-os imediatamente, mesmo em condições desfavoráveis",
+                    "A reserva de emergência, já que ela foi construída justamente para situações como essa, preservando os investimentos de longo prazo",
+                    "Um novo empréstimo com juros altos, evitando tocar em qualquer reserva",
+                    "Não faz diferença qual fonte usar primeiro"
+                  ],
+                  "explanation": "A reserva de emergência existe exatamente para cobrir imprevistos como a perda de emprego, permitindo que investimentos de longo prazo continuem intactos até que a situação se resolva."
+                },
+                "en": {
+                  "prompt": "You just lost your job and have an emergency fund equivalent to 6 months of expenses, plus long-term investments. Which source of funds makes the most sense to use first to cover day-to-day expenses?",
+                  "options": [
+                    "The long-term investments, withdrawing them immediately, even under unfavorable conditions",
+                    "The emergency fund, since it was built exactly for situations like this, preserving the long-term investments",
+                    "A new high-interest loan, avoiding touching any reserve",
+                    "It doesn't matter which source is used first"
+                  ],
+                  "explanation": "The emergency fund exists exactly to cover unexpected events like job loss, allowing long-term investments to remain intact until the situation resolves."
+                },
+                "es": {
+                  "prompt": "Acabas de perder el empleo y tienes un fondo de emergencia equivalente a 6 meses de gastos, además de inversiones a largo plazo. ¿Qué fuente de recursos tiene más sentido usar primero para cubrir los gastos del día a día?",
+                  "options": [
+                    "Las inversiones a largo plazo, rescatándolas de inmediato, incluso en condiciones desfavorables",
+                    "El fondo de emergencia, ya que se construyó justamente para situaciones como esta, preservando las inversiones a largo plazo",
+                    "Un nuevo préstamo con intereses altos, evitando tocar cualquier reserva",
+                    "No hace diferencia qué fuente usar primero"
+                  ],
+                  "explanation": "El fondo de emergencia existe exactamente para cubrir imprevistos como la pérdida de empleo, permitiendo que las inversiones a largo plazo permanezcan intactas hasta que la situación se resuelva."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Depois de dois meses sem recolocação, você sente um forte impulso de resgatar tudo dos investimentos de longo prazo 'por segurança', mesmo ainda tendo parte da reserva de emergência disponível. O que você já aprendeu sobre aversão à perda sugere sobre esse impulso?",
+                  "options": [
+                    "Que resgatar tudo imediatamente é sempre a decisão mais racional nessa situação",
+                    "Que esse impulso pode estar sendo amplificado pela ansiedade da situação, e vale reavaliar com calma se a reserva de emergência ainda cobre o período estimado antes de tomar uma decisão precipitada sobre os investimentos de longo prazo",
+                    "Aversão à perda não tem relação nenhuma com situações de desemprego",
+                    "Investimentos de longo prazo devem sempre ser resgatados ao primeiro sinal de instabilidade"
+                  ],
+                  "explanation": "Momentos de estresse financeiro tendem a amplificar reações emocionais — reavaliar a situação com calma, considerando quanto da reserva de emergência ainda resta, ajuda a evitar decisões precipitadas guiadas pela ansiedade."
+                },
+                "en": {
+                  "prompt": "After two months without finding a new job, you feel a strong urge to withdraw everything from your long-term investments 'for safety,' even though you still have part of the emergency fund available. What does what you learned about loss aversion suggest about that urge?",
+                  "options": [
+                    "That withdrawing everything immediately is always the most rational decision in this situation",
+                    "That this urge might be amplified by the situation's anxiety, and it's worth calmly reassessing whether the emergency fund still covers the estimated period before making a hasty decision about the long-term investments",
+                    "Loss aversion has no relation at all to unemployment situations",
+                    "Long-term investments should always be withdrawn at the first sign of instability"
+                  ],
+                  "explanation": "Moments of financial stress tend to amplify emotional reactions — calmly reassessing the situation, considering how much of the emergency fund remains, helps avoid hasty decisions driven by anxiety."
+                },
+                "es": {
+                  "prompt": "Después de dos meses sin recolocarte, sientes un fuerte impulso de rescatar todo de tus inversiones a largo plazo 'por seguridad', aunque todavía tienes parte del fondo de emergencia disponible. ¿Qué sugiere sobre ese impulso lo que aprendiste sobre la aversión a la pérdida?",
+                  "options": [
+                    "Que rescatar todo de inmediato siempre es la decisión más racional en esta situación",
+                    "Que ese impulso puede estar siendo amplificado por la ansiedad de la situación, y vale la pena reevaluar con calma si el fondo de emergencia todavía cubre el período estimado antes de tomar una decisión precipitada sobre las inversiones a largo plazo",
+                    "La aversión a la pérdida no tiene ninguna relación con situaciones de desempleo",
+                    "Las inversiones a largo plazo siempre deben rescatarse ante la primera señal de inestabilidad"
+                  ],
+                  "explanation": "Los momentos de estrés financiero tienden a amplificar las reacciones emocionales — reevaluar la situación con calma, considerando cuánto queda del fondo de emergencia, ayuda a evitar decisiones precipitadas guiadas por la ansiedad."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Reserva de emergência deve ser a primeira fonte de recursos em uma perda de emprego.",
+                    "Isso preserva investimentos de longo prazo de resgates em condições desfavoráveis.",
+                    "Momentos de estresse financeiro podem amplificar impulsos guiados por aversão à perda."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "The emergency fund should be the first source of funds during a job loss.",
+                    "This preserves long-term investments from withdrawals under unfavorable conditions.",
+                    "Moments of financial stress can amplify impulses driven by loss aversion."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "El fondo de emergencia debe ser la primera fuente de recursos ante una pérdida de empleo.",
+                    "Esto preserva las inversiones a largo plazo de rescates en condiciones desfavorables.",
+                    "Los momentos de estrés financiero pueden amplificar impulsos guiados por la aversión a la pérdida."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_inheritance",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Recebendo uma Herança"
+            },
+            "en": {
+              "title": "Simulation: Receiving an Inheritance"
+            },
+            "es": {
+              "title": "Simulación: Recibiendo una Herencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você recebeu uma herança inesperada, em um momento emocionalmente difícil por causa da perda de um familiar. Você já entende contabilidade mental, diversificação e a importância de reavaliar objetivos antes de investir — esta simulação pede para aplicar esses conceitos em um cenário que combina uma decisão financeira importante com uma carga emocional significativa."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You received an unexpected inheritance, at an emotionally difficult time because of the loss of a family member. You already understand mental accounting, diversification, and the importance of reassessing goals before investing — this simulation asks you to apply those concepts in a scenario that combines an important financial decision with significant emotional weight."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Recibiste una herencia inesperada, en un momento emocionalmente difícil por la pérdida de un familiar. Ya entiendes la contabilidad mental, la diversificación y la importancia de reevaluar objetivos antes de invertir — esta simulación te pide aplicar esos conceptos en un escenario que combina una decisión financiera importante con una carga emocional significativa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa recebe uma herança substancial e, tomada pela emoção do momento, tem pressa de tomar decisões financeiras importantes, ou passa a tratar esse dinheiro como algo 'diferente' do resto do seu patrimônio, sem segui-lo com o mesmo cuidado que teria com dinheiro ganho com esforço próprio. Dar-se tempo para processar a situação, antes de tomar decisões financeiras irreversíveis, tende a levar a escolhas mais alinhadas com os próprios objetivos de longo prazo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone receives a substantial inheritance and, overtaken by the emotion of the moment, rushes to make important financial decisions, or starts treating that money as somehow 'different' from the rest of their wealth, without handling it with the same care they'd give money earned through their own effort. Giving themselves time to process the situation, before making irreversible financial decisions, tends to lead to choices more aligned with their own long-term goals."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona recibe una herencia sustancial y, dominada por la emoción del momento, tiene prisa por tomar decisiones financieras importantes, o pasa a tratar ese dinero como algo 'diferente' del resto de su patrimonio, sin manejarlo con el mismo cuidado que tendría con dinero ganado con esfuerzo propio. Darse tiempo para procesar la situación, antes de tomar decisiones financieras irreversibles, tiende a llevar a elecciones más alineadas con los propios objetivos a largo plazo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende contabilidade mental de outra lição. Como esse conceito se aplica a tratar dinheiro de uma herança de forma diferente do resto do seu patrimônio?",
+                  "options": [
+                    "Não se aplica, herança é sempre um tipo diferente de dinheiro, na prática e não só psicologicamente",
+                    "Assim como um bônus, o dinheiro de uma herança é intercambiável com qualquer outro dinheiro — tratá-lo como algo à parte, sem o mesmo cuidado de planejamento, é um efeito psicológico da contabilidade mental, não uma diferença real",
+                    "Herança deve sempre ser gasta rapidamente, diferente de outros tipos de dinheiro",
+                    "Contabilidade mental só se aplica a bônus de trabalho, nunca a heranças"
+                  ],
+                  "explanation": "Assim como visto com bônus inesperados, o dinheiro de uma herança é financeiramente intercambiável com qualquer outro — a tendência de tratá-lo de forma diferente é um efeito da contabilidade mental, não uma diferença real na utilidade desse dinheiro."
+                },
+                "en": {
+                  "prompt": "You already understand mental accounting from another lesson. How does that concept apply to treating inheritance money differently from the rest of your wealth?",
+                  "options": [
+                    "It doesn't apply, inheritance is always a different type of money, in practice and not just psychologically",
+                    "Just like a bonus, inheritance money is interchangeable with any other money — treating it as something separate, without the same planning care, is a psychological effect of mental accounting, not a real difference",
+                    "Inheritance should always be spent quickly, unlike other types of money",
+                    "Mental accounting only applies to work bonuses, never to inheritances"
+                  ],
+                  "explanation": "Just as seen with unexpected bonuses, inheritance money is financially interchangeable with any other — the tendency to treat it differently is a mental accounting effect, not a real difference in that money's usefulness."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la contabilidad mental de otra lección. ¿Cómo se aplica ese concepto a tratar el dinero de una herencia de forma diferente al resto de tu patrimonio?",
+                  "options": [
+                    "No se aplica, la herencia siempre es un tipo diferente de dinero, en la práctica y no solo psicológicamente",
+                    "Al igual que un bono, el dinero de una herencia es intercambiable con cualquier otro dinero — tratarlo como algo aparte, sin el mismo cuidado de planificación, es un efecto psicológico de la contabilidad mental, no una diferencia real",
+                    "La herencia siempre debe gastarse rápidamente, a diferencia de otros tipos de dinero",
+                    "La contabilidad mental solo se aplica a bonos de trabajo, nunca a herencias"
+                  ],
+                  "explanation": "Tal como se vio con bonos inesperados, el dinero de una herencia es financieramente intercambiable con cualquier otro — la tendencia a tratarlo de forma diferente es un efecto de la contabilidad mental, no una diferencia real en la utilidad de ese dinero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Logo depois de receber a herança, várias pessoas ao seu redor sugerem decisões financeiras rápidas. Considerando o momento emocional e o que você já aprendeu sobre planejamento, o que faz mais sentido?",
+                  "options": [
+                    "Tomar todas as decisões imediatamente, seguindo a primeira sugestão recebida",
+                    "Dar-se tempo para processar a situação emocionalmente e reavaliar objetivos com calma, antes de tomar decisões financeiras irreversíveis sobre um valor significativo",
+                    "Ignorar completamente a herança e nunca planejar o que fazer com ela",
+                    "Decisões financeiras importantes nunca devem levar em conta o estado emocional da pessoa"
+                  ],
+                  "explanation": "Momentos de forte carga emocional não costumam ser os melhores para decisões financeiras irreversíveis — dar-se tempo para reavaliar objetivos com mais clareza tende a levar a escolhas mais alinhadas com o que realmente importa no longo prazo."
+                },
+                "en": {
+                  "prompt": "Right after receiving the inheritance, several people around you suggest quick financial decisions. Considering the emotional moment and what you already learned about planning, what makes the most sense?",
+                  "options": [
+                    "Making all decisions immediately, following the first suggestion received",
+                    "Giving yourself time to emotionally process the situation and calmly reassess goals, before making irreversible financial decisions about a significant amount",
+                    "Completely ignoring the inheritance and never planning what to do with it",
+                    "Important financial decisions should never take a person's emotional state into account"
+                  ],
+                  "explanation": "Moments of strong emotional weight usually aren't the best for irreversible financial decisions — giving yourself time to reassess goals with more clarity tends to lead to choices more aligned with what really matters in the long run."
+                },
+                "es": {
+                  "prompt": "Justo después de recibir la herencia, varias personas a tu alrededor sugieren decisiones financieras rápidas. Considerando el momento emocional y lo que ya aprendiste sobre planificación, ¿qué tiene más sentido?",
+                  "options": [
+                    "Tomar todas las decisiones de inmediato, siguiendo la primera sugerencia recibida",
+                    "Darte tiempo para procesar la situación emocionalmente y reevaluar objetivos con calma, antes de tomar decisiones financieras irreversibles sobre un monto significativo",
+                    "Ignorar por completo la herencia y nunca planificar qué hacer con ella",
+                    "Las decisiones financieras importantes nunca deben tener en cuenta el estado emocional de la persona"
+                  ],
+                  "explanation": "Los momentos de fuerte carga emocional no suelen ser los mejores para decisiones financieras irreversibles — darte tiempo para reevaluar objetivos con más claridad tiende a llevar a elecciones más alineadas con lo que realmente importa a largo plazo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Dinheiro de herança é financeiramente intercambiável com qualquer outro dinheiro, apesar do peso emocional.",
+                    "Momentos de forte emoção não costumam ser ideais para decisões financeiras irreversíveis.",
+                    "Dar-se tempo para reavaliar objetivos tende a levar a escolhas mais alinhadas com o longo prazo."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Inheritance money is financially interchangeable with any other money, despite its emotional weight.",
+                    "Moments of strong emotion usually aren't ideal for irreversible financial decisions.",
+                    "Giving yourself time to reassess goals tends to lead to choices more aligned with the long run."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "El dinero de herencia es financieramente intercambiable con cualquier otro dinero, a pesar de su peso emocional.",
+                    "Los momentos de fuerte emoción no suelen ser ideales para decisiones financieras irreversibles.",
+                    "Darte tiempo para reevaluar objetivos tiende a llevar a elecciones más alineadas con el largo plazo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_starting_a_business",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Investindo as Economias em um Negócio Próprio"
+            },
+            "en": {
+              "title": "Simulation: Investing Your Savings in Your Own Business"
+            },
+            "es": {
+              "title": "Simulación: Invirtiendo tus Ahorros en un Negocio Propio"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você está pensando em usar boa parte das suas economias para abrir um negócio próprio. Você já entende risco de concentração, reserva de emergência e diversificação — esta simulação pede para aplicar esses conceitos a uma decisão que, diferente de investir em ativos financeiros diversificados, costuma envolver concentrar uma quantia significativa em um único empreendimento, com riscos e potencial de retorno bem diferentes."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You're thinking about using a large part of your savings to start your own business. You already understand concentration risk, emergency funds, and diversification — this simulation asks you to apply those concepts to a decision that, unlike investing in diversified financial assets, usually involves concentrating a significant amount in a single venture, with quite different risks and return potential."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Estás pensando en usar gran parte de tus ahorros para abrir un negocio propio. Ya entiendes el riesgo de concentración, el fondo de emergencia y la diversificación — esta simulación te pide aplicar esos conceptos a una decisión que, a diferencia de invertir en activos financieros diversificados, suele implicar concentrar un monto significativo en un único emprendimiento, con riesgos y potencial de retorno bastante diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém usa 100% das suas economias, incluindo a reserva de emergência, para abrir um negócio, sem nenhuma proteção financeira caso o empreendimento demore para gerar receita ou não dê certo. Outra pessoa, com uma ideia parecida, mantém uma reserva separada intocada e investe apenas parte das economias no negócio, preservando alguma segurança financeira enquanto assume o risco do empreendimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone uses 100% of their savings, including the emergency fund, to open a business, with no financial protection in case the venture takes time to generate revenue or doesn't work out. Another person, with a similar idea, keeps a separate reserve untouched and invests only part of their savings in the business, preserving some financial security while taking on the venture's risk."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien usa el 100% de sus ahorros, incluyendo el fondo de emergencia, para abrir un negocio, sin ninguna protección financiera en caso de que el emprendimiento tarde en generar ingresos o no funcione. Otra persona, con una idea parecida, mantiene una reserva separada intacta e invierte solo parte de los ahorros en el negocio, preservando algo de seguridad financiera mientras asume el riesgo del emprendimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco de concentração de outra lição. Como esse conceito se aplica a usar 100% das suas economias, incluindo a reserva de emergência, para abrir um negócio próprio?",
+                  "options": [
+                    "Não se aplica, negócios próprios nunca envolvem risco de concentração",
+                    "Usar todas as economias em um único empreendimento é uma forma extrema de concentração — se o negócio enfrentar dificuldades, a pessoa fica sem nenhuma proteção financeira, ao mesmo tempo em que perde a fonte de renda que o negócio deveria gerar",
+                    "Risco de concentração só existe em investimentos financeiros, nunca em negócios",
+                    "Quanto mais dinheiro investido no próprio negócio, menor o risco"
+                  ],
+                  "explanation": "Colocar todas as economias, incluindo a reserva de emergência, em um único negócio é uma concentração extrema — combina o risco do empreendimento com a ausência total de qualquer proteção financeira caso as coisas não saiam como planejado."
+                },
+                "en": {
+                  "prompt": "You already understand concentration risk from another lesson. How does that concept apply to using 100% of your savings, including the emergency fund, to open your own business?",
+                  "options": [
+                    "It doesn't apply, own businesses never involve concentration risk",
+                    "Using all your savings in a single venture is an extreme form of concentration — if the business runs into trouble, the person is left with no financial protection at all, while also losing the income source the business was supposed to generate",
+                    "Concentration risk only exists in financial investments, never in businesses",
+                    "The more money invested in your own business, the lower the risk"
+                  ],
+                  "explanation": "Putting all your savings, including the emergency fund, into a single business is an extreme concentration — it combines the venture's risk with the total absence of any financial protection if things don't go as planned."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo de concentración de otra lección. ¿Cómo se aplica ese concepto a usar el 100% de tus ahorros, incluyendo el fondo de emergencia, para abrir un negocio propio?",
+                  "options": [
+                    "No se aplica, los negocios propios nunca implican riesgo de concentración",
+                    "Usar todos los ahorros en un único emprendimiento es una forma extrema de concentración — si el negocio enfrenta dificultades, la persona se queda sin ninguna protección financiera, al mismo tiempo que pierde la fuente de ingresos que el negocio debía generar",
+                    "El riesgo de concentración solo existe en inversiones financieras, nunca en negocios",
+                    "Cuanto más dinero invertido en el propio negocio, menor el riesgo"
+                  ],
+                  "explanation": "Poner todos los ahorros, incluyendo el fondo de emergencia, en un único negocio es una concentración extrema — combina el riesgo del emprendimiento con la ausencia total de cualquier protección financiera si las cosas no salen como se planeó."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está estruturando quanto vai investir no próprio negócio. Com base no que você aprendeu sobre reserva de emergência e concentração, o que faz mais sentido considerar?",
+                  "options": [
+                    "Investir tudo no negócio, incluindo a reserva de emergência, para maximizar as chances de sucesso",
+                    "Preservar uma reserva de emergência separada e intocada, investindo no negócio apenas uma parte das economias que a pessoa está disposta a arriscar por completo",
+                    "Não investir nada no próprio negócio, mesmo acreditando na ideia",
+                    "A reserva de emergência deixa de ser necessária quando se abre um negócio próprio"
+                  ],
+                  "explanation": "Manter uma reserva de emergência separada, investindo no negócio apenas o quanto se está disposto a potencialmente perder por completo, equilibra o risco do empreendimento com alguma proteção financeira básica."
+                },
+                "en": {
+                  "prompt": "You're figuring out how much to invest in your own business. Based on what you learned about emergency funds and concentration, what makes the most sense to consider?",
+                  "options": [
+                    "Investing everything in the business, including the emergency fund, to maximize the chances of success",
+                    "Preserving a separate, untouched emergency fund, investing in the business only a portion of savings the person is willing to risk entirely",
+                    "Not investing anything in your own business, even while believing in the idea",
+                    "The emergency fund stops being necessary once you open your own business"
+                  ],
+                  "explanation": "Keeping a separate emergency fund, investing in the business only what you're willing to potentially lose entirely, balances the venture's risk with some basic financial protection."
+                },
+                "es": {
+                  "prompt": "Estás estructurando cuánto vas a invertir en tu propio negocio. Según lo que aprendiste sobre el fondo de emergencia y la concentración, ¿qué tiene más sentido considerar?",
+                  "options": [
+                    "Invertir todo en el negocio, incluyendo el fondo de emergencia, para maximizar las posibilidades de éxito",
+                    "Preservar un fondo de emergencia separado e intacto, invirtiendo en el negocio solo una parte de los ahorros que la persona está dispuesta a arriesgar por completo",
+                    "No invertir nada en el propio negocio, incluso creyendo en la idea",
+                    "El fondo de emergencia deja de ser necesario al abrir un negocio propio"
+                  ],
+                  "explanation": "Mantener un fondo de emergencia separado, invirtiendo en el negocio solo lo que se está dispuesto a perder potencialmente por completo, equilibra el riesgo del emprendimiento con alguna protección financiera básica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Investir em um negócio próprio costuma envolver concentração significativa de recursos.",
+                    "Preservar uma reserva de emergência separada ajuda a equilibrar esse risco.",
+                    "Arriscar apenas o que se está disposto a perder por completo equilibra o empreendimento com alguma proteção financeira básica."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Investing in your own business usually involves significant concentration of resources.",
+                    "Preserving a separate emergency fund helps balance that risk.",
+                    "Risking only what you're willing to lose entirely balances the venture with some basic financial protection."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Invertir en un negocio propio suele implicar una concentración significativa de recursos.",
+                    "Preservar un fondo de emergencia separado ayuda a equilibrar ese riesgo.",
+                    "Arriesgar solo lo que se está dispuesto a perder por completo equilibra el emprendimiento con alguna protección financiera básica."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_salary_raise",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Recebendo um Aumento de Salário"
+            },
+            "en": {
+              "title": "Simulation: Getting a Raise"
+            },
+            "es": {
+              "title": "Simulación: Recibiendo un Aumento de Salario"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você recebeu um aumento significativo de salário e sente vontade de elevar seu padrão de vida na mesma proporção — um carro melhor, um aluguel mais caro, mais jantares fora. Você já entende orçamento, objetivos financeiros e o efeito dos juros compostos ao longo do tempo — esta simulação pede para aplicar esses conceitos a uma tentação comum quando a renda sobe: gastar automaticamente tudo o que passou a entrar a mais."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You received a significant raise and feel the urge to raise your standard of living by the same proportion — a better car, a more expensive rent, more dinners out. You already understand budgeting, financial goals, and the effect of compound interest over time — this simulation asks you to apply those concepts to a common temptation when income rises: automatically spending all of the extra amount now coming in."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Recibiste un aumento significativo de salario y sientes ganas de elevar tu nivel de vida en la misma proporción — un auto mejor, un alquiler más caro, más cenas afuera. Ya entiendes el presupuesto, los objetivos financieros y el efecto del interés compuesto con el tiempo — esta simulación te pide aplicar esos conceptos a una tentación común cuando sube el ingreso: gastar automáticamente todo el monto extra que empezó a entrar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas recebem o mesmo aumento de 20% no salário. Uma delas ajusta imediatamente seus gastos fixos para cima na mesma proporção, terminando o mês com a mesma sobra de antes. A outra mantém seu padrão de vida praticamente igual e direciona a maior parte do aumento para investimentos — ao longo dos anos, essa segunda pessoa acumula um patrimônio bem maior, mesmo tendo recebido exatamente o mesmo aumento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people receive the same 20% raise. One of them immediately adjusts their fixed expenses upward by the same proportion, ending the month with the same leftover as before. The other keeps their standard of living roughly the same and directs most of the raise into investments — over the years, this second person accumulates considerably more wealth, despite having received exactly the same raise."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas reciben el mismo aumento del 20% en el salario. Una de ellas ajusta de inmediato sus gastos fijos hacia arriba en la misma proporción, terminando el mes con el mismo remanente que antes. La otra mantiene su nivel de vida prácticamente igual y destina la mayor parte del aumento a inversiones — con los años, esta segunda persona acumula un patrimonio bastante mayor, aunque haya recibido exactamente el mismo aumento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebeu um aumento de 20% no salário e está decidindo o que fazer com o valor extra. Com base no que você aprendeu sobre orçamento e objetivos financeiros, o que tende a ser mais consistente com aumentar seu patrimônio no longo prazo?",
+                  "options": [
+                    "Ajustar imediatamente todos os gastos fixos para cima na mesma proporção do aumento",
+                    "Manter o padrão de vida praticamente igual e direcionar a maior parte do valor extra para investimentos alinhados com seus objetivos",
+                    "Gastar o aumento inteiro em itens de consumo imediato, sem nenhum planejamento",
+                    "Não faz diferença nenhuma o que se faz com um aumento de salário"
+                  ],
+                  "explanation": "Manter o padrão de vida relativamente estável e direcionar o valor extra para investimentos aproveita o aumento de renda para acelerar objetivos financeiros, em vez de absorvê-lo integralmente em gastos maiores."
+                },
+                "en": {
+                  "prompt": "You received a 20% raise and are deciding what to do with the extra amount. Based on what you learned about budgeting and financial goals, what tends to be more consistent with growing your wealth in the long run?",
+                  "options": [
+                    "Immediately adjusting all fixed expenses upward by the same proportion as the raise",
+                    "Keeping your standard of living roughly the same and directing most of the extra amount into investments aligned with your goals",
+                    "Spending the entire raise on immediate consumption items, with no planning at all",
+                    "It makes no difference at all what you do with a raise"
+                  ],
+                  "explanation": "Keeping your standard of living relatively stable and directing the extra amount into investments uses the income increase to accelerate financial goals, instead of fully absorbing it into higher spending."
+                },
+                "es": {
+                  "prompt": "Recibiste un aumento del 20% en el salario y estás decidiendo qué hacer con el monto extra. Según lo que aprendiste sobre presupuesto y objetivos financieros, ¿qué tiende a ser más consistente con aumentar tu patrimonio a largo plazo?",
+                  "options": [
+                    "Ajustar de inmediato todos los gastos fijos hacia arriba en la misma proporción del aumento",
+                    "Mantener el nivel de vida prácticamente igual y destinar la mayor parte del monto extra a inversiones alineadas con tus objetivos",
+                    "Gastar todo el aumento en artículos de consumo inmediato, sin ninguna planificación",
+                    "No hace ninguna diferencia qué se hace con un aumento de salario"
+                  ],
+                  "explanation": "Mantener el nivel de vida relativamente estable y destinar el monto extra a inversiones aprovecha el aumento de ingreso para acelerar objetivos financieros, en lugar de absorberlo por completo en gastos mayores."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição deste mesmo módulo escolar, que decisões sobre dinheiro extra devem considerar reserva de emergência, objetivos e horizonte de tempo, não apenas o impulso do momento. Como esse mesmo raciocínio se aplica a decidir o que fazer com um aumento de salário recorrente?",
+                  "options": [
+                    "Não se aplica, aumento de salário é um tipo de dinheiro completamente diferente de um bônus único",
+                    "O mesmo raciocínio se aplica: antes de elevar o padrão de vida automaticamente, vale reavaliar objetivos e prioridades, e decidir conscientemente quanto do aumento direcionar para investimentos versus consumo",
+                    "Aumentos de salário devem ser sempre gastos integralmente, diferente de outros tipos de dinheiro extra",
+                    "Reserva de emergência só é relevante para valores recebidos uma única vez, nunca para aumentos recorrentes de renda"
+                  ],
+                  "explanation": "Assim como visto com o primeiro salário, receber mais dinheiro — seja de forma recorrente, como um aumento, ou única, como um bônus — pede uma decisão consciente sobre prioridades, em vez de elevar automaticamente os gastos na mesma proporção."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson in this same school module, that decisions about extra money should consider the emergency fund, goals, and time horizon, not just the impulse of the moment. How does that same reasoning apply to deciding what to do with a recurring raise?",
+                  "options": [
+                    "It doesn't apply, a raise is a completely different type of money from a one-time bonus",
+                    "The same reasoning applies: before automatically raising your standard of living, it's worth reassessing goals and priorities, and consciously deciding how much of the raise to direct toward investments versus consumption",
+                    "Raises should always be spent entirely, unlike other types of extra money",
+                    "The emergency fund is only relevant for amounts received once, never for recurring income increases"
+                  ],
+                  "explanation": "Just as seen with the first paycheck, receiving more money — whether recurring, like a raise, or one-time, like a bonus — calls for a conscious decision about priorities, instead of automatically raising spending in the same proportion."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección de este mismo módulo escolar, que las decisiones sobre dinero extra deben considerar el fondo de emergencia, los objetivos y el horizonte de tiempo, no solo el impulso del momento. ¿Cómo se aplica ese mismo razonamiento a decidir qué hacer con un aumento de salario recurrente?",
+                  "options": [
+                    "No se aplica, un aumento de salario es un tipo de dinero completamente diferente a un bono único",
+                    "El mismo razonamiento se aplica: antes de elevar el nivel de vida automáticamente, vale la pena reevaluar objetivos y prioridades, y decidir conscientemente cuánto del aumento destinar a inversiones versus consumo",
+                    "Los aumentos de salario siempre deben gastarse por completo, a diferencia de otros tipos de dinero extra",
+                    "El fondo de emergencia solo es relevante para montos recibidos una sola vez, nunca para aumentos recurrentes de ingreso"
+                  ],
+                  "explanation": "Tal como se vio con el primer sueldo, recibir más dinero — ya sea de forma recurrente, como un aumento, o única, como un bono — exige una decisión consciente sobre prioridades, en lugar de elevar automáticamente los gastos en la misma proporción."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Aumentar os gastos na mesma proporção de um aumento de salário é uma tentação comum, mas reduz o potencial de acumular patrimônio.",
+                    "Manter o padrão de vida relativamente estável libera o valor extra para investimentos alinhados com objetivos.",
+                    "Decisões sobre renda extra recorrente merecem a mesma reavaliação consciente que decisões sobre dinheiro recebido uma única vez."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Increasing spending in the same proportion as a raise is a common temptation, but it reduces the potential to build wealth.",
+                    "Keeping your standard of living relatively stable frees up the extra amount for investments aligned with your goals.",
+                    "Decisions about recurring extra income deserve the same conscious reassessment as decisions about one-time money received."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Aumentar los gastos en la misma proporción que un aumento salarial es una tentación común, pero reduce el potencial de acumular patrimonio.",
+                    "Mantener el nivel de vida relativamente estable libera el monto extra para inversiones alineadas con objetivos.",
+                    "Las decisiones sobre ingreso extra recurrente merecen la misma reevaluación consciente que las decisiones sobre dinero recibido una sola vez."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "even_more_real_life_scenarios",
+      "order": 3,
+      "iconKey": "map_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "more_real_life_scenarios"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Ainda Mais Cenários da Vida Real",
+          "description": "Finanças compartilhadas no casamento, chegada de um filho, renda variável como autônomo, emergência médica e proposta de demissão incentivada."
+        },
+        "en": {
+          "title": "Even More Real-Life Scenarios",
+          "description": "Shared finances in marriage, a new child, variable freelance income, a medical emergency and a voluntary severance offer."
+        },
+        "es": {
+          "title": "Aún Más Escenarios de la Vida Real",
+          "description": "Finanzas compartidas en el matrimonio, llegada de un hijo, ingreso variable como autónomo, emergencia médica y oferta de retiro voluntario."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "simulation_shared_finances",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Casamento e Finanças Compartilhadas"
+            },
+            "en": {
+              "title": "Simulation: Marriage and Shared Finances"
+            },
+            "es": {
+              "title": "Simulación: Matrimonio y Finanzas Compartidas"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você vai se casar e precisa decidir, junto com seu parceiro, como organizar as finanças do casal — contas conjuntas, contas separadas, ou uma combinação dos dois. Você já estudou orçamento, objetivos financeiros e horizonte de tempo — esta simulação é sobre aplicar esses conceitos a uma decisão que agora envolve duas pessoas com hábitos e prioridades que podem ser diferentes, sem uma resposta única e certa para todos os casais."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You're getting married and need to decide, together with your partner, how to organize the couple's finances — joint accounts, separate accounts, or a combination of both. You've already studied budgeting, financial goals and time horizon — this simulation is about applying those concepts to a decision that now involves two people with habits and priorities that can differ, with no single right answer for every couple."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Te vas a casar y necesitas decidir, junto con tu pareja, cómo organizar las finanzas de la pareja — cuentas conjuntas, cuentas separadas, o una combinación de ambas. Ya estudiaste presupuesto, objetivos financieros y horizonte de tiempo — esta simulación se trata de aplicar esos conceptos a una decisión que ahora involucra a dos personas con hábitos y prioridades que pueden ser diferentes, sin una única respuesta correcta para todas las parejas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um casal decide manter contas individuais para gastos pessoais, mas cria uma conta conjunta para despesas compartilhadas, como aluguel e contas domésticas, com uma contribuição proporcional à renda de cada um. Essa estrutura preserva alguma autonomia individual, ao mesmo tempo em que organiza objetivos e despesas comuns do casal."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A couple decides to keep individual accounts for personal spending, but creates a joint account for shared expenses, like rent and household bills, with a contribution proportional to each person's income. This structure preserves some individual autonomy, while organizing the couple's shared goals and expenses."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una pareja decide mantener cuentas individuales para gastos personales, pero crea una cuenta conjunta para gastos compartidos, como alquiler y cuentas del hogar, con una contribución proporcional al ingreso de cada uno. Esta estructura preserva algo de autonomía individual, mientras organiza objetivos y gastos comunes de la pareja."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um dos parceiros tem uma renda bem maior do que o outro. Diante do que você já estudou sobre orçamento e objetivos compartilhados, qual abordagem tende a ser mais equilibrada para dividir despesas conjuntas?",
+                  "options": [
+                    "Dividir todas as despesas conjuntas exatamente pela metade, independentemente da renda de cada um",
+                    "Dividir as despesas conjuntas de forma proporcional à renda de cada parceiro, preservando um padrão de vida mais equilibrado para ambos",
+                    "Toda a responsabilidade financeira deveria recair sobre quem ganha mais, sem nenhuma contribuição do outro",
+                    "A divisão de despesas nunca deveria ser discutida entre o casal"
+                  ],
+                  "explanation": "Uma divisão proporcional à renda tende a preservar um esforço financeiro mais equilibrado entre os parceiros, em vez de uma divisão igualitária que pesaria proporcionalmente mais sobre quem ganha menos."
+                },
+                "en": {
+                  "prompt": "One partner has a much higher income than the other. Given what you've already studied about budgeting and shared goals, which approach tends to be more balanced for splitting joint expenses?",
+                  "options": [
+                    "Splitting every joint expense exactly in half, regardless of each person's income",
+                    "Splitting joint expenses proportionally to each partner's income, preserving a more balanced standard of living for both",
+                    "All financial responsibility should fall on whoever earns more, with no contribution from the other",
+                    "Splitting expenses should never be discussed between the couple"
+                  ],
+                  "explanation": "A split proportional to income tends to preserve a more balanced financial effort between partners, instead of an equal split that would weigh proportionally more on whoever earns less."
+                },
+                "es": {
+                  "prompt": "Uno de los miembros de la pareja tiene un ingreso bastante mayor que el otro. Ante lo que ya estudiaste sobre presupuesto y objetivos compartidos, ¿qué enfoque tiende a ser más equilibrado para dividir los gastos conjuntos?",
+                  "options": [
+                    "Dividir todos los gastos conjuntos exactamente por la mitad, sin importar el ingreso de cada uno",
+                    "Dividir los gastos conjuntos de forma proporcional al ingreso de cada miembro, preservando un nivel de vida más equilibrado para ambos",
+                    "Toda la responsabilidad financiera debería recaer sobre quien gana más, sin ninguna contribución del otro",
+                    "La división de gastos nunca debería discutirse entre la pareja"
+                  ],
+                  "explanation": "Una división proporcional al ingreso tiende a preservar un esfuerzo financiero más equilibrado entre los miembros de la pareja, en lugar de una división igualitaria que pesaría proporcionalmente más sobre quien gana menos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que ter objetivos financeiros claros ajuda a orientar decisões de alocação. Como isso se aplica quando os dois parceiros têm objetivos financeiros individuais diferentes, além dos objetivos compartilhados do casal?",
+                  "options": [
+                    "Faz sentido conversar abertamente sobre objetivos individuais e compartilhados, encontrando um equilíbrio entre autonomia financeira pessoal e o planejamento conjunto do casal",
+                    "Objetivos financeiros individuais deveriam ser completamente abandonados assim que o casamento acontece",
+                    "Não há necessidade de discutir objetivos financeiros dentro de um casamento",
+                    "Apenas um dos parceiros deveria ter permissão para definir objetivos financeiros para o casal"
+                  ],
+                  "explanation": "Assim como objetivos financeiros individuais orientam decisões pessoais, um casal se beneficia de alinhar objetivos compartilhados sem necessariamente eliminar a autonomia e os objetivos individuais de cada parceiro."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that having clear financial goals helps guide allocation decisions. How does that apply when both partners have different individual financial goals, on top of the couple's shared goals?",
+                  "options": [
+                    "It makes sense to talk openly about individual and shared goals, finding a balance between personal financial autonomy and the couple's joint planning",
+                    "Individual financial goals should be completely abandoned as soon as the marriage happens",
+                    "There's no need to discuss financial goals within a marriage",
+                    "Only one partner should be allowed to set financial goals for the couple"
+                  ],
+                  "explanation": "Just as individual financial goals guide personal decisions, a couple benefits from aligning shared goals without necessarily eliminating each partner's individual autonomy and goals."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que tener objetivos financieros claros ayuda a orientar decisiones de asignación. ¿Cómo se aplica esto cuando ambos miembros de la pareja tienen objetivos financieros individuales diferentes, además de los objetivos compartidos de la pareja?",
+                  "options": [
+                    "Tiene sentido conversar abiertamente sobre objetivos individuales y compartidos, encontrando un equilibrio entre la autonomía financiera personal y la planificación conjunta de la pareja",
+                    "Los objetivos financieros individuales deberían abandonarse por completo apenas ocurre el matrimonio",
+                    "No hay necesidad de discutir objetivos financieros dentro de un matrimonio",
+                    "Solo uno de los miembros de la pareja debería tener permiso para definir objetivos financieros para la pareja"
+                  ],
+                  "explanation": "Así como los objetivos financieros individuales orientan decisiones personales, una pareja se beneficia de alinear objetivos compartidos sin necesariamente eliminar la autonomía y los objetivos individuales de cada miembro."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Organizar finanças a dois pode combinar contas conjuntas e individuais, sem uma fórmula única.",
+                    "Dividir despesas proporcionalmente à renda tende a ser mais equilibrado do que uma divisão igualitária.",
+                    "Alinhar objetivos compartilhados não precisa eliminar a autonomia e os objetivos individuais de cada parceiro."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Organizing finances as a couple can combine joint and individual accounts, with no single formula.",
+                    "Splitting expenses proportionally to income tends to be more balanced than an equal split.",
+                    "Aligning shared goals doesn't need to eliminate each partner's individual autonomy and goals."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Organizar las finanzas en pareja puede combinar cuentas conjuntas e individuales, sin una fórmula única.",
+                    "Dividir los gastos proporcionalmente al ingreso tiende a ser más equilibrado que una división igualitaria.",
+                    "Alinear objetivos compartidos no necesita eliminar la autonomía y los objetivos individuales de cada miembro."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_new_child",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Chegada de um Filho"
+            },
+            "en": {
+              "title": "Simulation: A New Child"
+            },
+            "es": {
+              "title": "Simulación: Llegada de un Hijo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você e seu parceiro estão esperando um filho e precisam ajustar o planejamento financeiro da família para os novos custos que virão — desde despesas imediatas até objetivos de longo prazo, como educação. Você já estudou reserva de emergência e objetivos de longo prazo — esta simulação é sobre como esses conceitos se aplicam quando um novo dependente entra na equação financeira da família."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You and your partner are expecting a child and need to adjust the family's financial planning for the new costs ahead — from immediate expenses to long-term goals, like education. You've already studied emergency funds and long-term goals — this simulation is about how those concepts apply when a new dependent enters the family's financial equation."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Tú y tu pareja están esperando un hijo y necesitan ajustar la planificación financiera de la familia para los nuevos costos que vendrán — desde gastos inmediatos hasta objetivos de largo plazo, como la educación. Ya estudiaste fondo de emergencia y objetivos de largo plazo — esta simulación se trata de cómo esos conceptos se aplican cuando un nuevo dependiente entra en la ecuación financiera de la familia."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Diante do aumento de despesas recorrentes com um novo filho, o casal revisa sua reserva de emergência, aumentando o valor-alvo para refletir o novo padrão de gastos mensais da família — uma reserva de emergência dimensionada para o padrão de vida anterior pode não ser mais suficiente diante das novas despesas fixas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Facing an increase in recurring expenses with a new child, the couple reviews their emergency fund, raising the target amount to reflect the family's new monthly spending pattern — an emergency fund sized for the previous standard of living might no longer be enough given the new fixed expenses."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Ante el aumento de gastos recurrentes con un nuevo hijo, la pareja revisa su fondo de emergencia, aumentando el monto objetivo para reflejar el nuevo patrón de gastos mensuales de la familia — un fondo de emergencia dimensionado para el nivel de vida anterior puede ya no ser suficiente ante los nuevos gastos fijos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que a chegada de um filho tende a exigir uma revisão do tamanho da reserva de emergência da família?",
+                  "options": [
+                    "Porque as despesas mensais recorrentes da família tendem a aumentar, o que muda a base de cálculo usada para dimensionar a reserva",
+                    "Porque reservas de emergência deixam de ser necessárias quando há um filho na família",
+                    "Porque o tamanho da reserva de emergência nunca depende do nível de despesas mensais",
+                    "Porque um filho elimina qualquer necessidade de planejamento financeiro futuro"
+                  ],
+                  "explanation": "Como a reserva de emergência costuma ser dimensionada em função das despesas mensais recorrentes, um aumento nessas despesas com a chegada de um filho tende a exigir uma reserva maior para manter o mesmo nível de proteção."
+                },
+                "en": {
+                  "prompt": "Why does a new child usually require revisiting the size of a family's emergency fund?",
+                  "options": [
+                    "Because the family's recurring monthly expenses tend to increase, which changes the base used to size the fund",
+                    "Because emergency funds stop being necessary once there's a child in the family",
+                    "Because the size of an emergency fund never depends on the level of monthly expenses",
+                    "Because a child eliminates any need for future financial planning"
+                  ],
+                  "explanation": "Since an emergency fund is usually sized based on recurring monthly expenses, an increase in those expenses with a new child tends to require a larger fund to maintain the same level of protection."
+                },
+                "es": {
+                  "prompt": "¿Por qué la llegada de un hijo suele exigir revisar el tamaño del fondo de emergencia de la familia?",
+                  "options": [
+                    "Porque los gastos mensuales recurrentes de la familia tienden a aumentar, lo que cambia la base de cálculo usada para dimensionar el fondo",
+                    "Porque los fondos de emergencia dejan de ser necesarios cuando hay un hijo en la familia",
+                    "Porque el tamaño del fondo de emergencia nunca depende del nivel de gastos mensuales",
+                    "Porque un hijo elimina cualquier necesidad de planificación financiera futura"
+                  ],
+                  "explanation": "Como el fondo de emergencia suele dimensionarse en función de los gastos mensuales recurrentes, un aumento en esos gastos con la llegada de un hijo tiende a exigir un fondo mayor para mantener el mismo nivel de protección."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que objetivos com horizontes de tempo diferentes podem justificar alocações diferentes. Diante de um objetivo de longo prazo como a educação de um filho recém-nascido, o que essa lógica sugere sobre a alocação inicial desse objetivo específico?",
+                  "options": [
+                    "A alocação deveria ser idêntica à de uma reserva de emergência, já que ambos são objetivos financeiros da família",
+                    "Como o horizonte até esse objetivo é de muitos anos, uma alocação inicialmente mais arrojada pode fazer sentido, sendo ajustada gradualmente à medida que o objetivo se aproxima",
+                    "Esse objetivo deveria ser completamente ignorado até que a criança esteja perto da idade escolar",
+                    "Não existe nenhuma relação entre horizonte de tempo e a alocação de um objetivo de educação"
+                  ],
+                  "explanation": "Como o horizonte até um objetivo de educação de um recém-nascido costuma ser de muitos anos, essa lógica de horizonte e alocação sugere que uma abordagem inicialmente mais arrojada, ajustada gradualmente ao longo do tempo, pode ser adequada para esse objetivo específico."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that goals with different time horizons can justify different allocations. Faced with a long-term goal like a newborn's future education, what does that logic suggest about the initial allocation for that specific goal?",
+                  "options": [
+                    "The allocation should be identical to an emergency fund's, since both are family financial goals",
+                    "Since the horizon to that goal is many years away, an initially more aggressive allocation can make sense, adjusted gradually as the goal approaches",
+                    "That goal should be completely ignored until the child is close to school age",
+                    "There's no relation at all between time horizon and the allocation for an education goal"
+                  ],
+                  "explanation": "Since the horizon to a newborn's education goal is usually many years away, that horizon-and-allocation logic suggests an initially more aggressive approach, gradually adjusted over time, can be suitable for that specific goal."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que objetivos con horizontes de tiempo diferentes pueden justificar asignaciones diferentes. Ante un objetivo de largo plazo como la educación de un hijo recién nacido, ¿qué sugiere esa lógica sobre la asignación inicial de ese objetivo específico?",
+                  "options": [
+                    "La asignación debería ser idéntica a la de un fondo de emergencia, ya que ambos son objetivos financieros de la familia",
+                    "Como el horizonte hasta ese objetivo es de muchos años, una asignación inicialmente más agresiva puede tener sentido, ajustándose gradualmente a medida que el objetivo se acerca",
+                    "Ese objetivo debería ignorarse por completo hasta que el niño esté cerca de la edad escolar",
+                    "No existe ninguna relación entre el horizonte de tiempo y la asignación de un objetivo de educación"
+                  ],
+                  "explanation": "Como el horizonte hasta un objetivo de educación de un recién nacido suele ser de muchos años, esa lógica de horizonte y asignación sugiere que un enfoque inicialmente más agresivo, ajustado gradualmente con el tiempo, puede ser adecuado para ese objetivo específico."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A chegada de um filho tende a aumentar as despesas recorrentes, exigindo revisar a reserva de emergência.",
+                    "Objetivos de longo prazo, como educação, podem começar com uma alocação mais arrojada, ajustada com o tempo.",
+                    "Planejar para um novo dependente combina ajustes de curto prazo (reserva) e de longo prazo (educação)."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A new child tends to increase recurring expenses, requiring a review of the emergency fund.",
+                    "Long-term goals, like education, can start with a more aggressive allocation, adjusted over time.",
+                    "Planning for a new dependent combines short-term (emergency fund) and long-term (education) adjustments."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La llegada de un hijo tiende a aumentar los gastos recurrentes, exigiendo revisar el fondo de emergencia.",
+                    "Los objetivos de largo plazo, como la educación, pueden comenzar con una asignación más agresiva, ajustada con el tiempo.",
+                    "Planificar para un nuevo dependiente combina ajustes de corto plazo (fondo de emergencia) y de largo plazo (educación)."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_freelance_income",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Renda Variável Como Autônomo"
+            },
+            "en": {
+              "title": "Simulation: Variable Income as a Freelancer"
+            },
+            "es": {
+              "title": "Simulación: Ingreso Variable Como Autónomo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você deixou um emprego com salário fixo para trabalhar como autônomo, e agora sua renda mensal varia bastante de um mês para o outro. Você já estudou orçamento e reserva de emergência — esta simulação é sobre como adaptar esses conceitos a uma realidade de renda irregular, em que não existe um valor fixo e previsível chegando todo mês."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You left a fixed-salary job to work as a freelancer, and now your monthly income varies quite a bit from one month to the next. You've already studied budgeting and emergency funds — this simulation is about adapting those concepts to a reality of irregular income, where there's no fixed, predictable amount coming in every month."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Dejaste un empleo con salario fijo para trabajar como autónomo, y ahora tu ingreso mensual varía bastante de un mes a otro. Ya estudiaste presupuesto y fondo de emergencia — esta simulación se trata de cómo adaptar esos conceptos a una realidad de ingreso irregular, en la que no hay un monto fijo y predecible llegando cada mes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em vez de basear seu orçamento mensal no melhor mês do ano, um autônomo com renda variável passa a planejar seus gastos fixos com base em uma estimativa mais conservadora, próxima aos meses mais fracos, guardando o excedente dos meses melhores em uma reserva maior do que a que teria como empregado com salário fixo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Instead of basing their monthly budget on the best month of the year, a freelancer with variable income starts planning their fixed expenses based on a more conservative estimate, close to the weaker months, saving the surplus from better months into a reserve larger than they would have needed as an employee with a fixed salary."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En lugar de basar su presupuesto mensual en el mejor mes del año, un autónomo con ingreso variable empieza a planificar sus gastos fijos según una estimación más conservadora, cercana a los meses más flojos, guardando el excedente de los meses mejores en una reserva mayor de la que necesitaría como empleado con salario fijo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Ao planejar um orçamento com renda mensal variável, qual abordagem tende a ser mais prudente?",
+                  "options": [
+                    "Basear os gastos fixos mensais no melhor mês do ano, assumindo que a renda sempre vai se manter naquele patamar",
+                    "Basear os gastos fixos mensais em uma estimativa mais conservadora, próxima aos meses mais fracos, guardando o excedente dos meses melhores",
+                    "Gastar imediatamente toda a renda recebida em cada mês, independentemente do valor",
+                    "Ignorar completamente a variação de renda ao planejar o orçamento"
+                  ],
+                  "explanation": "Basear despesas fixas em uma estimativa conservadora, próxima aos meses mais fracos, reduz o risco de descasamento entre despesas fixas e uma renda que pode cair em meses ruins."
+                },
+                "en": {
+                  "prompt": "When planning a budget with variable monthly income, which approach tends to be more prudent?",
+                  "options": [
+                    "Basing monthly fixed expenses on the best month of the year, assuming income will always stay at that level",
+                    "Basing monthly fixed expenses on a more conservative estimate, close to the weaker months, saving the surplus from better months",
+                    "Immediately spending all the income received each month, regardless of the amount",
+                    "Completely ignoring income variation when planning the budget"
+                  ],
+                  "explanation": "Basing fixed expenses on a conservative estimate, close to the weaker months, reduces the risk of a mismatch between fixed expenses and income that can drop in bad months."
+                },
+                "es": {
+                  "prompt": "Al planificar un presupuesto con ingreso mensual variable, ¿qué enfoque tiende a ser más prudente?",
+                  "options": [
+                    "Basar los gastos fijos mensuales en el mejor mes del año, asumiendo que el ingreso siempre se mantendrá en ese nivel",
+                    "Basar los gastos fijos mensuales en una estimación más conservadora, cercana a los meses más flojos, guardando el excedente de los meses mejores",
+                    "Gastar inmediatamente todo el ingreso recibido en cada mes, sin importar el monto",
+                    "Ignorar por completo la variación de ingreso al planificar el presupuesto"
+                  ],
+                  "explanation": "Basar los gastos fijos en una estimación conservadora, cercana a los meses más flojos, reduce el riesgo de desajuste entre los gastos fijos y un ingreso que puede caer en meses malos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a reserva de emergência costuma ser dimensionada em função das despesas mensais recorrentes. Diante de uma renda mensal variável e imprevisível, por que essa reserva tende a precisar ser maior do que a de alguém com salário fixo e estável?",
+                  "options": [
+                    "Porque a reserva precisa cobrir não apenas imprevistos, mas também meses em que a própria renda variável pode ficar abaixo do necessário para cobrir as despesas fixas",
+                    "Porque autônomos nunca precisam de nenhuma reserva de emergência",
+                    "Porque renda variável elimina completamente a necessidade de uma reserva de emergência",
+                    "O tamanho da reserva de emergência nunca varia dependendo do tipo de renda da pessoa"
+                  ],
+                  "explanation": "Para quem tem renda variável, a reserva de emergência cumpre uma função dupla: cobrir imprevistos tradicionais e também amortecer meses em que a própria renda do trabalho fica abaixo do esperado, o que geralmente justifica uma reserva maior."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that an emergency fund is usually sized based on recurring monthly expenses. Given a variable, unpredictable monthly income, why does that fund tend to need to be larger than for someone with a fixed, stable salary?",
+                  "options": [
+                    "Because the fund needs to cover not just unexpected events, but also months when the variable income itself falls below what's needed to cover fixed expenses",
+                    "Because freelancers never need any emergency fund",
+                    "Because variable income completely eliminates the need for an emergency fund",
+                    "The size of an emergency fund never varies depending on a person's type of income"
+                  ],
+                  "explanation": "For someone with variable income, the emergency fund serves a double function: covering traditional unexpected events and also cushioning months when the work income itself falls below expectations, which generally justifies a larger fund."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el fondo de emergencia suele dimensionarse en función de los gastos mensuales recurrentes. Ante un ingreso mensual variable e impredecible, ¿por qué ese fondo tiende a necesitar ser mayor que el de alguien con salario fijo y estable?",
+                  "options": [
+                    "Porque el fondo necesita cubrir no solo imprevistos tradicionales, sino también meses en los que el propio ingreso variable puede quedar por debajo de lo necesario para cubrir los gastos fijos",
+                    "Porque los autónomos nunca necesitan ningún fondo de emergencia",
+                    "Porque el ingreso variable elimina por completo la necesidad de un fondo de emergencia",
+                    "El tamaño del fondo de emergencia nunca varía según el tipo de ingreso de la persona"
+                  ],
+                  "explanation": "Para quien tiene ingreso variable, el fondo de emergencia cumple una función doble: cubrir imprevistos tradicionales y también amortiguar meses en que el propio ingreso del trabajo queda por debajo de lo esperado, lo que generalmente justifica un fondo mayor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Com renda variável, planejar despesas fixas com base em uma estimativa conservadora reduz risco.",
+                    "O excedente dos meses melhores deve ser guardado para cobrir os meses mais fracos.",
+                    "A reserva de emergência de quem tem renda variável costuma precisar ser maior, cobrindo também a própria variação de renda."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "With variable income, planning fixed expenses based on a conservative estimate reduces risk.",
+                    "The surplus from better months should be saved to cover the weaker months.",
+                    "The emergency fund for someone with variable income usually needs to be larger, also covering income variation itself."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Con ingreso variable, planificar los gastos fijos según una estimación conservadora reduce el riesgo.",
+                    "El excedente de los meses mejores debe guardarse para cubrir los meses más flojos.",
+                    "El fondo de emergencia de quien tiene ingreso variable suele necesitar ser mayor, cubriendo también la propia variación de ingreso."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_medical_emergency",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Emergência Médica Inesperada"
+            },
+            "en": {
+              "title": "Simulation: Unexpected Medical Emergency"
+            },
+            "es": {
+              "title": "Simulación: Emergencia Médica Inesperada"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Um problema de saúde inesperado gera despesas médicas significativas e não planejadas. Você já estudou reserva de emergência e seguro como proteção de risco — esta simulação é sobre como esses dois conceitos se complementam diante de um imprevisto real, e o que fazer quando as despesas superam o que a reserva sozinha consegue cobrir."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "An unexpected health problem generates significant, unplanned medical expenses. You've already studied emergency funds and insurance as risk protection — this simulation is about how these two concepts complement each other in a real unexpected event, and what to do when expenses exceed what the emergency fund alone can cover."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Un problema de salud inesperado genera gastos médicos significativos y no planificados. Ya estudiaste fondo de emergencia y seguro como protección de riesgo — esta simulación se trata de cómo estos dos conceptos se complementan ante un imprevisto real, y qué hacer cuando los gastos superan lo que el fondo por sí solo puede cubrir."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa com um seguro-saúde robusto enfrenta uma emergência médica cara, mas grande parte do custo é coberta pelo seguro, restando apenas uma parcela relativamente pequena a ser paga com a reserva de emergência. Sem esse seguro, a mesma emergência poderia ter esgotado completamente a reserva, ou até exigido dívida para cobrir o restante."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person with robust health insurance faces an expensive medical emergency, but most of the cost is covered by the insurance, leaving only a relatively small portion to be paid from the emergency fund. Without that insurance, the same emergency could have completely depleted the fund, or even required debt to cover the rest."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona con un seguro de salud robusto enfrenta una emergencia médica costosa, pero gran parte del costo es cubierto por el seguro, quedando solo una porción relativamente pequeña por pagar con el fondo de emergencia. Sin ese seguro, la misma emergencia podría haber agotado por completo el fondo, o incluso exigido deuda para cubrir el resto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Como o seguro-saúde e a reserva de emergência se complementam diante de uma emergência médica?",
+                  "options": [
+                    "O seguro cobre a maior parte de custos médicos grandes e imprevistos, enquanto a reserva de emergência cobre a parcela restante ou despesas menores não cobertas",
+                    "Reserva de emergência e seguro cobrem exatamente o mesmo tipo de risco, tornando um deles desnecessário",
+                    "O seguro-saúde elimina completamente a necessidade de qualquer reserva de emergência",
+                    "A reserva de emergência sempre é suficiente para cobrir qualquer emergência médica, tornando o seguro desnecessário"
+                  ],
+                  "explanation": "O seguro-saúde transfere o risco de custos médicos grandes e imprevisíveis para a seguradora, enquanto a reserva de emergência cobre parcelas menores ou despesas não cobertas — as duas ferramentas se complementam, cada uma lidando com uma parte diferente do risco."
+                },
+                "en": {
+                  "prompt": "How do health insurance and an emergency fund complement each other during a medical emergency?",
+                  "options": [
+                    "Insurance covers most of large, unexpected medical costs, while the emergency fund covers the remaining portion or smaller uncovered expenses",
+                    "An emergency fund and insurance cover exactly the same type of risk, making one of them unnecessary",
+                    "Health insurance completely eliminates the need for any emergency fund",
+                    "An emergency fund is always enough to cover any medical emergency, making insurance unnecessary"
+                  ],
+                  "explanation": "Health insurance transfers the risk of large, unpredictable medical costs to the insurer, while the emergency fund covers smaller portions or uncovered expenses — the two tools complement each other, each handling a different part of the risk."
+                },
+                "es": {
+                  "prompt": "¿Cómo se complementan el seguro de salud y el fondo de emergencia ante una emergencia médica?",
+                  "options": [
+                    "El seguro cubre la mayor parte de costos médicos grandes e imprevistos, mientras que el fondo de emergencia cubre la porción restante o gastos menores no cubiertos",
+                    "El fondo de emergencia y el seguro cubren exactamente el mismo tipo de riesgo, haciendo innecesario a uno de ellos",
+                    "El seguro de salud elimina por completo la necesidad de cualquier fondo de emergencia",
+                    "El fondo de emergencia siempre es suficiente para cubrir cualquier emergencia médica, haciendo innecesario el seguro"
+                  ],
+                  "explanation": "El seguro de salud transfiere el riesgo de costos médicos grandes e impredecibles a la aseguradora, mientras que el fondo de emergencia cubre porciones menores o gastos no cubiertos — ambas herramientas se complementan, cada una atendiendo una parte diferente del riesgo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que seguro funciona transferindo um risco para uma seguradora em troca do pagamento de um prêmio. Diante de uma pessoa sem nenhum seguro-saúde e com uma reserva de emergência pequena, o que essa combinação sugere sobre sua exposição a um imprevisto médico grave?",
+                  "options": [
+                    "Essa pessoa está completamente protegida contra qualquer emergência médica, independentemente do custo",
+                    "Essa pessoa está mais exposta ao risco de uma emergência médica grave esgotar rapidamente sua reserva ou até exigir dívida, já que não tem a proteção adicional de um seguro",
+                    "A ausência de seguro-saúde nunca representa nenhum risco adicional para ninguém",
+                    "Reserva de emergência pequena e ausência de seguro são exatamente a mesma coisa, sem diferença de risco"
+                  ],
+                  "explanation": "Sem a transferência de risco que um seguro-saúde ofereceria, uma pessoa com reserva pequena fica mais exposta a ter seu patrimônio esgotado rapidamente, ou precisar recorrer a dívida, diante de uma emergência médica de custo elevado."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that insurance works by transferring a risk to an insurer in exchange for paying a premium. Given a person with no health insurance and a small emergency fund, what does that combination suggest about their exposure to a serious medical emergency?",
+                  "options": [
+                    "That person is completely protected against any medical emergency, regardless of cost",
+                    "That person is more exposed to the risk of a serious medical emergency quickly depleting their fund or even requiring debt, since they lack the extra protection of insurance",
+                    "The absence of health insurance never represents any additional risk for anyone",
+                    "A small emergency fund and no insurance are exactly the same thing, with no difference in risk"
+                  ],
+                  "explanation": "Without the risk transfer that health insurance would offer, a person with a small fund is more exposed to having their wealth quickly depleted, or needing to resort to debt, in the face of a high-cost medical emergency."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el seguro funciona transfiriendo un riesgo a una aseguradora a cambio del pago de una prima. Ante una persona sin ningún seguro de salud y con un fondo de emergencia pequeño, ¿qué sugiere esa combinación sobre su exposición a un imprevisto médico grave?",
+                  "options": [
+                    "Esa persona está completamente protegida contra cualquier emergencia médica, sin importar el costo",
+                    "Esa persona está más expuesta al riesgo de que una emergencia médica grave agote rápidamente su fondo o incluso exija deuda, ya que no tiene la protección adicional de un seguro",
+                    "La ausencia de seguro de salud nunca representa ningún riesgo adicional para nadie",
+                    "Fondo de emergencia pequeño y ausencia de seguro son exactamente lo mismo, sin diferencia de riesgo"
+                  ],
+                  "explanation": "Sin la transferencia de riesgo que ofrecería un seguro de salud, una persona con un fondo pequeño queda más expuesta a que su patrimonio se agote rápidamente, o a necesitar recurrir a deuda, ante una emergencia médica de costo elevado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Seguro-saúde transfere o risco de custos médicos grandes e imprevisíveis para a seguradora.",
+                    "A reserva de emergência complementa o seguro, cobrindo parcelas menores ou despesas não cobertas.",
+                    "Sem seguro, uma pessoa com reserva pequena fica mais exposta a ter o patrimônio esgotado por uma emergência médica."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Health insurance transfers the risk of large, unpredictable medical costs to the insurer.",
+                    "The emergency fund complements insurance, covering smaller portions or uncovered expenses.",
+                    "Without insurance, a person with a small fund is more exposed to having their wealth depleted by a medical emergency."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El seguro de salud transfiere el riesgo de costos médicos grandes e impredecibles a la aseguradora.",
+                    "El fondo de emergencia complementa al seguro, cubriendo porciones menores o gastos no cubiertos.",
+                    "Sin seguro, una persona con un fondo pequeño está más expuesta a que su patrimonio se agote por una emergencia médica."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_buyout_offer",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Proposta de Demissão Incentivada"
+            },
+            "en": {
+              "title": "Simulation: A Voluntary Severance Offer"
+            },
+            "es": {
+              "title": "Simulación: Oferta de Retiro Voluntario"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Sua empresa oferece um programa de demissão voluntária incentivada, com uma indenização adicional para quem aceitar sair. Você já entende, de várias lições anteriores desta escola e de outras, reserva de emergência, orçamento com renda variável, objetivos de longo prazo e planejamento de aposentadoria — esta simulação final combina tudo isso em uma única decisão de vida real, sem uma resposta certa universal."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "Your company offers a voluntary severance program, with an additional payout for those who accept leaving. From several earlier lessons in this school and others, you already understand emergency funds, budgeting with variable income, long-term goals and retirement planning — this final simulation combines all of that into a single real-life decision, with no universally right answer."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Tu empresa ofrece un programa de retiro voluntario incentivado, con una indemnización adicional para quien acepte irse. De varias lecciones anteriores de esta escuela y de otras, ya entiendes fondo de emergencia, presupuesto con ingreso variable, objetivos de largo plazo y planificación de jubilación — esta simulación final combina todo eso en una única decisión de la vida real, sin una respuesta correcta universal."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa avalia a proposta considerando vários fatores ao mesmo tempo: o valor da indenização oferecida, quanto tempo essa quantia sustentaria seus gastos caso decida buscar um novo emprego com calma, se tem uma reserva de emergência sólida, e se a saída abriria espaço para um objetivo de longo prazo, como empreender ou mudar de carreira — não existe uma resposta genérica, e sim uma combinação de fatores pessoais."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person evaluates the offer considering several factors at once: the amount of the payout offered, how long that amount would sustain their expenses if they decide to look for a new job without rushing, whether they have a solid emergency fund, and whether leaving would open space for a long-term goal, like starting a business or changing careers — there's no generic answer, but rather a combination of personal factors."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona evalúa la propuesta considerando varios factores a la vez: el monto de la indemnización ofrecida, cuánto tiempo ese monto sostendría sus gastos si decide buscar un nuevo empleo con calma, si tiene un fondo de emergencia sólido, y si la salida abriría espacio para un objetivo de largo plazo, como emprender o cambiar de carrera — no existe una respuesta genérica, sino una combinación de factores personales."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Diante de uma proposta de demissão incentivada, qual combinação de fatores tende a ser mais relevante para avaliar a decisão?",
+                  "options": [
+                    "O valor da indenização, o tamanho da reserva de emergência existente, e como a saída se conecta a objetivos de longo prazo da pessoa",
+                    "Apenas o valor da indenização, sem considerar nenhum outro fator financeiro",
+                    "A decisão deveria ser tomada exclusivamente com base no que outros colegas de trabalho decidiram fazer",
+                    "Nenhum fator financeiro é relevante para esse tipo de decisão"
+                  ],
+                  "explanation": "Avaliar essa decisão bem exige combinar múltiplos fatores — o valor recebido, a proteção que a reserva de emergência já oferece, e como a mudança se encaixa nos objetivos de longo prazo da pessoa — em vez de olhar para um único número isoladamente."
+                },
+                "en": {
+                  "prompt": "Faced with a voluntary severance offer, which combination of factors tends to be most relevant for evaluating the decision?",
+                  "options": [
+                    "The payout amount, the size of the existing emergency fund, and how leaving connects to the person's long-term goals",
+                    "Only the payout amount, without considering any other financial factor",
+                    "The decision should be made exclusively based on what other coworkers decided to do",
+                    "No financial factor is relevant to this type of decision"
+                  ],
+                  "explanation": "Properly evaluating this decision requires combining multiple factors — the amount received, the protection the emergency fund already offers, and how the change fits the person's long-term goals — rather than looking at a single number in isolation."
+                },
+                "es": {
+                  "prompt": "Ante una oferta de retiro voluntario incentivado, ¿qué combinación de factores tiende a ser más relevante para evaluar la decisión?",
+                  "options": [
+                    "El monto de la indemnización, el tamaño del fondo de emergencia existente, y cómo se conecta la salida con los objetivos de largo plazo de la persona",
+                    "Solo el monto de la indemnización, sin considerar ningún otro factor financiero",
+                    "La decisión debería tomarse exclusivamente según lo que otros colegas de trabajo decidieron hacer",
+                    "Ningún factor financiero es relevante para este tipo de decisión"
+                  ],
+                  "explanation": "Evaluar bien esta decisión exige combinar múltiples factores — el monto recibido, la protección que ya ofrece el fondo de emergencia, y cómo el cambio encaja en los objetivos de largo plazo de la persona — en lugar de mirar un único número de forma aislada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores em diferentes escolas, tanto reserva de emergência quanto planejamento com renda variável. Se essa pessoa aceitar a proposta e ficar temporariamente sem renda fixa enquanto busca um novo emprego, quais desses conceitos anteriores se tornam diretamente relevantes?",
+                  "options": [
+                    "Nenhum desses conceitos tem qualquer relação com essa situação específica",
+                    "Tanto a reserva de emergência (para sustentar despesas durante o período sem renda) quanto os princípios de planejamento com renda variável (para lidar com a incerteza sobre quando a renda vai se normalizar) se tornam diretamente relevantes",
+                    "Apenas o planejamento de aposentadoria é relevante nessa situação, e mais nenhum outro conceito",
+                    "Reserva de emergência só é relevante para quem nunca teve nenhuma mudança de emprego"
+                  ],
+                  "explanation": "Um período de transição de carreira, temporariamente sem renda fixa, combina exatamente os desafios discutidos em lições anteriores sobre reserva de emergência e sobre planejamento financeiro em condições de renda incerta ou variável."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in different schools, both emergency funds and planning with variable income. If this person accepts the offer and is temporarily without fixed income while looking for a new job, which of these earlier concepts become directly relevant?",
+                  "options": [
+                    "None of these concepts have any relation to this specific situation",
+                    "Both the emergency fund (to sustain expenses during the period without income) and the principles of planning with variable income (to handle uncertainty about when income will normalize) become directly relevant",
+                    "Only retirement planning is relevant in this situation, and no other concept",
+                    "An emergency fund is only relevant for someone who never had any job change"
+                  ],
+                  "explanation": "A career transition period, temporarily without fixed income, combines exactly the challenges discussed in earlier lessons about emergency funds and about financial planning under uncertain or variable income conditions."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores en diferentes escuelas, tanto el fondo de emergencia como la planificación con ingreso variable. Si esta persona acepta la propuesta y queda temporalmente sin ingreso fijo mientras busca un nuevo empleo, ¿cuáles de estos conceptos anteriores se vuelven directamente relevantes?",
+                  "options": [
+                    "Ninguno de estos conceptos tiene alguna relación con esta situación específica",
+                    "Tanto el fondo de emergencia (para sostener gastos durante el período sin ingreso) como los principios de planificación con ingreso variable (para manejar la incertidumbre sobre cuándo se normalizará el ingreso) se vuelven directamente relevantes",
+                    "Solo la planificación de jubilación es relevante en esta situación, y ningún otro concepto más",
+                    "El fondo de emergencia solo es relevante para quien nunca tuvo ningún cambio de empleo"
+                  ],
+                  "explanation": "Un período de transición de carrera, temporalmente sin ingreso fijo, combina exactamente los desafíos discutidos en lecciones anteriores sobre el fondo de emergencia y sobre la planificación financiera en condiciones de ingreso incierto o variable."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Avaliar uma proposta de demissão incentivada combina múltiplos fatores financeiros pessoais.",
+                    "Reserva de emergência e planejamento com renda variável se tornam diretamente relevantes durante uma transição de carreira.",
+                    "Você concluiu o módulo de mais cenários avançados: finanças compartilhadas, filhos, renda autônoma, emergência médica e proposta de demissão."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Evaluating a voluntary severance offer combines multiple personal financial factors.",
+                    "Emergency funds and planning with variable income become directly relevant during a career transition.",
+                    "You've completed the module of more advanced scenarios: shared finances, children, freelance income, medical emergency and severance offer."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Evaluar una oferta de retiro voluntario combina múltiples factores financieros personales.",
+                    "El fondo de emergencia y la planificación con ingreso variable se vuelven directamente relevantes durante una transición de carrera.",
+                    "Completaste el módulo de más escenarios avanzados: finanzas compartidas, hijos, ingreso autónomo, emergencia médica y oferta de retiro."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

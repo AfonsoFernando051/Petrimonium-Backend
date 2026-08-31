@@ -1,0 +1,2535 @@
+{
+  "schoolId": "trading",
+  "domainId": "advanced_markets",
+  "order": 18,
+  "iconKey": "candlestick_chart_outlined",
+  "contentAvailable": true,
+  "prerequisites": [
+    "derivatives_advanced_markets"
+  ],
+  "translations": {
+    "pt": {
+      "title": "Trading",
+      "description": "Day trade, swing trade e gestão de risco de curto prazo — sem prometer um caminho fácil."
+    },
+    "en": {
+      "title": "Trading",
+      "description": "Day trading, swing trading and short-term risk management — without promising an easy path."
+    },
+    "es": {
+      "title": "Trading",
+      "description": "Day trading, swing trading y gestión de riesgo de corto plazo — sin prometer un camino fácil."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "trading_basics",
+      "order": 1,
+      "iconKey": "candlestick_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos de Trading",
+          "description": "Day trade x swing trade, os riscos e custos envolvidos, e por que gestão de risco é mais importante do que acertar operações."
+        },
+        "en": {
+          "title": "Trading Fundamentals",
+          "description": "Day trading vs. swing trading, the risks and costs involved, and why risk management matters more than being right on trades."
+        },
+        "es": {
+          "title": "Fundamentos de Trading",
+          "description": "Day trade vs. swing trade, los riesgos y costos involucrados, y por qué la gestión de riesgo importa más que acertar operaciones."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "trading_day_vs_swing",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Day Trade x Swing Trade"
+            },
+            "en": {
+              "title": "Day Trading vs. Swing Trading"
+            },
+            "es": {
+              "title": "Day Trade vs. Swing Trade"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A diferença está no tempo que a posição fica aberta",
+                  "body": "Trading é a prática de comprar e vender ativos em prazos curtos, buscando lucrar com movimentos de preço de curto prazo, em vez de manter o investimento por anos. Day trade é quando a compra e a venda de um ativo acontecem no mesmo dia, sem manter posição da noite para o dia. Swing trade é quando a posição fica aberta por alguns dias ou semanas, buscando capturar movimentos um pouco mais longos do que o day trade, mas ainda de curto prazo."
+                },
+                "en": {
+                  "title": "The difference is how long the position stays open",
+                  "body": "Trading is the practice of buying and selling assets over short time frames, aiming to profit from short-term price movements, instead of holding the investment for years. Day trading is when buying and selling an asset happens on the same day, without holding a position overnight. Swing trading is when a position stays open for a few days or weeks, aiming to capture somewhat longer movements than day trading, but still short-term."
+                },
+                "es": {
+                  "title": "La diferencia está en cuánto tiempo la posición permanece abierta",
+                  "body": "El trading es la práctica de comprar y vender activos en plazos cortos, buscando ganar con movimientos de precio de corto plazo, en lugar de mantener la inversión durante años. El day trade es cuando la compra y venta de un activo ocurren el mismo día, sin mantener la posición de un día para otro. El swing trade es cuando la posición permanece abierta durante algunos días o semanas, buscando capturar movimientos un poco más largos que el day trade, pero aún de corto plazo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um day trader compra e vende uma ação dentro do mesmo pregão, fechando a posição antes do mercado fechar, sem carregar risco de um dia para o outro. Um swing trader, por outro lado, pode comprar uma ação em uma segunda-feira e vendê-la na sexta-feira seguinte, mantendo a posição aberta por vários dias enquanto acompanha o movimento do preço."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A day trader buys and sells a stock within the same trading session, closing the position before the market closes, without carrying risk from one day to the next. A swing trader, on the other hand, might buy a stock on a Monday and sell it the following Friday, keeping the position open for several days while tracking the price movement."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un day trader compra y vende una acción dentro de la misma sesión de negociación, cerrando la posición antes de que cierre el mercado, sin cargar riesgo de un día para otro. Un swing trader, en cambio, puede comprar una acción un lunes y venderla el viernes siguiente, manteniendo la posición abierta durante varios días mientras sigue el movimiento del precio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre day trade e swing trade?",
+                  "options": [
+                    "Day trade nunca envolve ações, só moedas",
+                    "Day trade fecha a posição no mesmo dia; swing trade mantém a posição aberta por dias ou semanas",
+                    "Swing trade é sempre mais arriscado do que investir a longo prazo",
+                    "Não existe diferença real entre os dois"
+                  ],
+                  "explanation": "A diferença central está no tempo que a posição fica aberta: day trade fecha tudo no mesmo dia; swing trade mantém a posição por um período um pouco mais longo, de dias a semanas."
+                },
+                "en": {
+                  "prompt": "What is the main difference between day trading and swing trading?",
+                  "options": [
+                    "Day trading never involves stocks, only currencies",
+                    "Day trading closes the position the same day; swing trading keeps the position open for days or weeks",
+                    "Swing trading is always riskier than long-term investing",
+                    "There's no real difference between the two"
+                  ],
+                  "explanation": "The key difference is how long the position stays open: day trading closes everything the same day; swing trading holds the position for a somewhat longer period, from days to weeks."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre day trade y swing trade?",
+                  "options": [
+                    "El day trade nunca involucra acciones, solo monedas",
+                    "El day trade cierra la posición el mismo día; el swing trade mantiene la posición abierta por días o semanas",
+                    "El swing trade siempre es más riesgoso que invertir a largo plazo",
+                    "No existe una diferencia real entre ambos"
+                  ],
+                  "explanation": "La diferencia central está en cuánto tiempo la posición permanece abierta: el day trade cierra todo el mismo día; el swing trade mantiene la posición por un período un poco más largo, de días a semanas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende investir a longo prazo, com o objetivo de acompanhar o crescimento de um negócio ao longo de anos. Como o objetivo do trading, seja day trade ou swing trade, se diferencia disso?",
+                  "options": [
+                    "Não se diferencia, trading e investir a longo prazo são exatamente a mesma coisa",
+                    "O trading busca lucrar com movimentos de preço de curto prazo, independentemente da qualidade do negócio no longo prazo — o foco está no movimento do preço, não no crescimento do negócio ao longo de anos",
+                    "Trading é apenas outra forma de dizer investir a longo prazo",
+                    "Trading elimina completamente qualquer tipo de risco"
+                  ],
+                  "explanation": "Trading e investir a longo prazo têm objetivos diferentes: um busca capturar movimentos de preço no curto prazo, enquanto o outro busca acompanhar a criação de valor de um negócio ao longo de anos — são abordagens distintas, com riscos e exigências diferentes."
+                },
+                "en": {
+                  "prompt": "You already understand long-term investing, aiming to track a business's growth over years. How does the goal of trading, whether day trading or swing trading, differ from that?",
+                  "options": [
+                    "It doesn't differ, trading and long-term investing are exactly the same thing",
+                    "Trading seeks to profit from short-term price movements, regardless of the business's long-term quality — the focus is on the price movement, not the business's growth over years",
+                    "Trading is just another way of saying long-term investing",
+                    "Trading completely eliminates any type of risk"
+                  ],
+                  "explanation": "Trading and long-term investing have different goals: one seeks to capture short-term price movements, while the other seeks to track a business's value creation over years — they're distinct approaches, with different risks and demands."
+                },
+                "es": {
+                  "prompt": "Ya entiendes invertir a largo plazo, con el objetivo de seguir el crecimiento de un negocio a lo largo de años. ¿Cómo se diferencia de esto el objetivo del trading, ya sea day trade o swing trade?",
+                  "options": [
+                    "No se diferencia, el trading y la inversión a largo plazo son exactamente lo mismo",
+                    "El trading busca ganar con movimientos de precio de corto plazo, sin importar la calidad del negocio a largo plazo — el foco está en el movimiento del precio, no en el crecimiento del negocio a lo largo de años",
+                    "El trading es solo otra forma de decir inversión a largo plazo",
+                    "El trading elimina por completo cualquier tipo de riesgo"
+                  ],
+                  "explanation": "El trading y la inversión a largo plazo tienen objetivos diferentes: uno busca capturar movimientos de precio en el corto plazo, mientras que el otro busca seguir la creación de valor de un negocio a lo largo de años — son enfoques distintos, con riesgos y exigencias diferentes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Day trade fecha posições no mesmo dia; swing trade mantém posições por dias ou semanas.",
+                    "Ambos buscam lucrar com movimentos de preço de curto prazo.",
+                    "O foco do trading é diferente do foco de investir a longo prazo, acompanhando o crescimento de um negócio."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Day trading closes positions the same day; swing trading holds positions for days or weeks.",
+                    "Both aim to profit from short-term price movements.",
+                    "Trading's focus differs from long-term investing's focus of tracking a business's growth."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El day trade cierra posiciones el mismo día; el swing trade mantiene posiciones por días o semanas.",
+                    "Ambos buscan ganar con movimientos de precio de corto plazo.",
+                    "El foco del trading es diferente del foco de invertir a largo plazo, siguiendo el crecimiento de un negocio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_costs_and_odds",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custos e Probabilidades no Trading"
+            },
+            "en": {
+              "title": "Costs and Odds in Trading"
+            },
+            "es": {
+              "title": "Costos y Probabilidades en el Trading"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Cada operação tem um custo, ganhando ou perdendo",
+                  "body": "Toda operação de trading envolve custos — corretagem, taxas de bolsa, e o chamado spread (diferença entre o preço de compra e venda) — que incidem independentemente de a operação dar lucro ou prejuízo. Quanto maior o número de operações realizadas, maior o peso acumulado desses custos sobre o resultado final. Isso significa que uma estratégia de trading precisa, na média, superar não só o 'empate', mas também esses custos recorrentes para ser rentável."
+                },
+                "en": {
+                  "title": "Every trade has a cost, whether it wins or loses",
+                  "body": "Every trading transaction involves costs — brokerage fees, exchange fees, and the so-called spread (the gap between the buy and sell price) — that apply regardless of whether the trade turns a profit or a loss. The more transactions carried out, the greater the accumulated weight of these costs on the final result. This means a trading strategy needs to, on average, beat not just a 'break-even' outcome, but also these recurring costs, to be profitable."
+                },
+                "es": {
+                  "title": "Cada operación tiene un costo, ganando o perdiendo",
+                  "body": "Toda operación de trading implica costos — corretaje, tasas de bolsa, y el llamado spread (diferencia entre el precio de compra y venta) — que se aplican independientemente de que la operación dé ganancia o pérdida. Cuanto mayor sea el número de operaciones realizadas, mayor es el peso acumulado de esos costos sobre el resultado final. Esto significa que una estrategia de trading necesita, en promedio, superar no solo el 'empate', sino también esos costos recurrentes para ser rentable."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader realiza 100 operações em um mês, pagando R$5 de custo em cada uma, ganhando ou perdendo. Mesmo que ele acerte exatamente metade das operações, os R$500 em custos acumulados ao longo do mês já representam um obstáculo real a ser superado antes de qualquer lucro líquido aparecer."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader makes 100 transactions in a month, paying R$5 in costs on each one, whether they win or lose. Even if they get exactly half the trades right, the R$500 in costs accumulated over the month already represents a real obstacle to overcome before any net profit shows up."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader realiza 100 operaciones en un mes, pagando R$5 de costo en cada una, ganando o perdiendo. Aunque acierte exactamente la mitad de las operaciones, los R$500 en costos acumulados a lo largo del mes ya representan un obstáculo real que superar antes de que aparezca cualquier ganancia neta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que os custos de cada operação são especialmente relevantes no trading?",
+                  "options": [
+                    "Porque só existem custos quando a operação dá prejuízo",
+                    "Porque incidem em toda operação, ganhando ou perdendo, e se acumulam conforme o número de operações aumenta",
+                    "Porque não têm nenhum impacto sobre o resultado final",
+                    "Porque são cobrados apenas uma vez por ano, independentemente do número de operações"
+                  ],
+                  "explanation": "Corretagem, taxas e spread incidem em toda operação, independentemente do resultado — quanto mais operações, maior o peso acumulado desses custos."
+                },
+                "en": {
+                  "prompt": "Why are the costs of each transaction especially relevant in trading?",
+                  "options": [
+                    "Because costs only exist when the transaction results in a loss",
+                    "Because they apply to every transaction, whether it wins or loses, and accumulate as the number of transactions increases",
+                    "Because they have no impact on the final result",
+                    "Because they're charged only once a year, regardless of the number of transactions"
+                  ],
+                  "explanation": "Brokerage fees, exchange fees and the spread apply to every transaction, regardless of the outcome — the more transactions, the greater the accumulated weight of these costs."
+                },
+                "es": {
+                  "prompt": "¿Por qué los costos de cada operación son especialmente relevantes en el trading?",
+                  "options": [
+                    "Porque solo existen costos cuando la operación resulta en pérdida",
+                    "Porque se aplican a toda operación, ganando o perdiendo, y se acumulan conforme aumenta el número de operaciones",
+                    "Porque no tienen ningún impacto sobre el resultado final",
+                    "Porque se cobran solo una vez al año, sin importar el número de operaciones"
+                  ],
+                  "explanation": "El corretaje, las tasas y el spread se aplican a toda operación, sin importar el resultado — cuantas más operaciones, mayor es el peso acumulado de esos costos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um trader acerta exatamente 50% das suas operações, com ganhos e perdas de tamanho parecido. Considerando os custos que incidem em toda operação, o que isso sugere sobre o resultado final dele?",
+                  "options": [
+                    "Que ele certamente vai terminar com lucro, já que acertou metade das operações",
+                    "Que, mesmo acertando metade, os custos acumulados de cada operação tendem a corroer o resultado, tornando difícil terminar no lucro apenas com 50% de acerto",
+                    "Que os custos de operação não afetam esse cálculo de forma alguma",
+                    "Que 50% de acerto é sempre suficiente para qualquer estratégia de trading"
+                  ],
+                  "explanation": "Como cada operação tem um custo associado, ganhando ou perdendo, um trader com 50% de acerto e ganhos/perdas de tamanho parecido tende a ter um resultado líquido negativo, já que os custos acumulados pesam contra ele."
+                },
+                "en": {
+                  "prompt": "A trader gets exactly 50% of their trades right, with wins and losses of similar size. Considering the costs that apply to every transaction, what does this suggest about their final result?",
+                  "options": [
+                    "That they'll certainly end up with a profit, since they got half the trades right",
+                    "That, even getting half right, the accumulated costs of each transaction tend to erode the result, making it hard to end up profitable with just 50% accuracy",
+                    "That transaction costs don't affect this calculation at all",
+                    "That 50% accuracy is always enough for any trading strategy"
+                  ],
+                  "explanation": "Since every transaction has an associated cost, whether it wins or loses, a trader with 50% accuracy and similarly sized wins/losses tends to have a negative net result, since the accumulated costs weigh against them."
+                },
+                "es": {
+                  "prompt": "Un trader acierta exactamente el 50% de sus operaciones, con ganancias y pérdidas de tamaño parecido. Considerando los costos que se aplican a toda operación, ¿qué sugiere esto sobre su resultado final?",
+                  "options": [
+                    "Que seguramente terminará con ganancias, ya que acertó la mitad de las operaciones",
+                    "Que, incluso acertando la mitad, los costos acumulados de cada operación tienden a erosionar el resultado, dificultando terminar con ganancias con solo un 50% de acierto",
+                    "Que los costos de operación no afectan este cálculo en absoluto",
+                    "Que un 50% de acierto siempre es suficiente para cualquier estrategia de trading"
+                  ],
+                  "explanation": "Como cada operación tiene un costo asociado, ganando o perdiendo, un trader con un 50% de acierto y ganancias/pérdidas de tamaño parecido tiende a tener un resultado neto negativo, ya que los costos acumulados pesan en su contra."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Toda operação de trading tem custos, independentemente do resultado.",
+                    "Esses custos se acumulam conforme o número de operações aumenta.",
+                    "Uma estratégia precisa superar não só o empate, mas também esses custos recorrentes, para ser rentável."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Every trading transaction has costs, regardless of the outcome.",
+                    "These costs accumulate as the number of transactions increases.",
+                    "A strategy needs to beat not just a break-even outcome, but also these recurring costs, to be profitable."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Toda operación de trading tiene costos, sin importar el resultado.",
+                    "Esos costos se acumulan conforme aumenta el número de operaciones.",
+                    "Una estrategia necesita superar no solo el empate, sino también esos costos recurrentes, para ser rentable."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_position_sizing",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Dimensionamento de Posição"
+            },
+            "en": {
+              "title": "Position Sizing"
+            },
+            "es": {
+              "title": "Dimensionamiento de Posición"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto arriscar em cada operação",
+                  "body": "Dimensionamento de posição é a decisão de quanto do capital total disponível colocar em risco em cada operação individual. Uma prática comum entre traders é limitar o risco de qualquer operação isolada a uma pequena fração do capital total — por exemplo, 1% ou 2% — de forma que uma sequência de perdas não seja capaz de comprometer todo o capital de uma só vez."
+                },
+                "en": {
+                  "title": "How much to risk in each trade",
+                  "body": "Position sizing is the decision of how much of the total available capital to put at risk in each individual trade. A common practice among traders is limiting the risk of any single trade to a small fraction of total capital — for example, 1% or 2% — so that a losing streak isn't able to wipe out all the capital at once."
+                },
+                "es": {
+                  "title": "Cuánto arriesgar en cada operación",
+                  "body": "El dimensionamiento de posición es la decisión de cuánto del capital total disponible poner en riesgo en cada operación individual. Una práctica común entre traders es limitar el riesgo de cualquier operación aislada a una pequeña fracción del capital total — por ejemplo, 1% o 2% — de forma que una racha de pérdidas no sea capaz de comprometer todo el capital de una sola vez."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader com R$50.000 de capital decide arriscar no máximo 1% desse valor, ou R$500, em cada operação. Mesmo se ele encadear 10 perdas seguidas — algo raro, mas possível —, ele ainda teria a maior parte do capital preservado, diferente de alguém que arrisca 20% do capital por operação e poderia ser eliminado com poucas perdas seguidas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader with R$50,000 in capital decides to risk at most 1% of that amount, or R$500, on each trade. Even if they string together 10 losses in a row — rare, but possible — they'd still have most of their capital preserved, unlike someone risking 20% of capital per trade, who could be wiped out after just a few consecutive losses."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader con R$50.000 de capital decide arriesgar como máximo el 1% de ese monto, o R$500, en cada operación. Aunque encadene 10 pérdidas seguidas — algo raro, pero posible —, aún tendría la mayor parte del capital preservado, a diferencia de alguien que arriesga el 20% del capital por operación y podría quedar eliminado con pocas pérdidas seguidas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo de limitar o risco de cada operação a uma pequena fração do capital total?",
+                  "options": [
+                    "Garantir que toda operação individual vai dar lucro",
+                    "Fazer com que uma sequência de perdas não seja capaz de comprometer todo o capital de uma só vez",
+                    "Aumentar o custo de cada operação",
+                    "Eliminar completamente a possibilidade de perdas"
+                  ],
+                  "explanation": "Limitar o risco por operação protege o capital total contra sequências de perdas, que são estatisticamente possíveis mesmo em uma estratégia com boa taxa de acerto no longo prazo."
+                },
+                "en": {
+                  "prompt": "What is the goal of limiting the risk of each trade to a small fraction of total capital?",
+                  "options": [
+                    "Guaranteeing that every individual trade will be profitable",
+                    "Making it so a losing streak isn't able to wipe out all the capital at once",
+                    "Increasing the cost of each trade",
+                    "Completely eliminating the possibility of losses"
+                  ],
+                  "explanation": "Limiting risk per trade protects the total capital against losing streaks, which are statistically possible even in a strategy with a good win rate over the long run."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo de limitar el riesgo de cada operación a una pequeña fracción del capital total?",
+                  "options": [
+                    "Garantizar que toda operación individual dará ganancias",
+                    "Hacer que una racha de pérdidas no sea capaz de comprometer todo el capital de una sola vez",
+                    "Aumentar el costo de cada operación",
+                    "Eliminar por completo la posibilidad de pérdidas"
+                  ],
+                  "explanation": "Limitar el riesgo por operación protege el capital total contra rachas de pérdidas, que son estadísticamente posibles incluso en una estrategia con buena tasa de acierto a largo plazo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Dois traders têm a mesma taxa de acerto ao longo de um ano. Um arrisca 1% do capital por operação; o outro arrisca 15%. Se ambos passarem por uma sequência de perdas seguidas em algum momento, o que provavelmente diferencia o resultado dos dois?",
+                  "options": [
+                    "Nenhuma diferença, a taxa de acerto igual garante o mesmo resultado para os dois",
+                    "O trader que arrisca menos por operação tende a preservar mais capital durante a sequência de perdas, permitindo que ele continue operando; o outro corre risco maior de ficar sem capital suficiente para continuar",
+                    "O que arrisca mais sempre termina com mais lucro, independentemente das perdas",
+                    "Dimensionamento de posição não tem nenhuma relação com sequências de perdas"
+                  ],
+                  "explanation": "Mesmo com a mesma taxa de acerto, o dimensionamento de posição determina o quanto uma sequência de perdas compromete o capital total — arriscar menos por operação preserva mais capital para continuar operando depois de uma fase ruim."
+                },
+                "en": {
+                  "prompt": "Two traders have the same win rate over a year. One risks 1% of capital per trade; the other risks 15%. If both go through a losing streak at some point, what likely differentiates their outcomes?",
+                  "options": [
+                    "No difference, the equal win rate guarantees the same result for both",
+                    "The trader who risks less per trade tends to preserve more capital during the losing streak, allowing them to keep operating; the other faces a greater risk of running out of enough capital to continue",
+                    "The one who risks more always ends up with more profit, regardless of losses",
+                    "Position sizing has no relation to losing streaks"
+                  ],
+                  "explanation": "Even with the same win rate, position sizing determines how much a losing streak eats into the total capital — risking less per trade preserves more capital to keep operating after a rough stretch."
+                },
+                "es": {
+                  "prompt": "Dos traders tienen la misma tasa de acierto durante un año. Uno arriesga el 1% del capital por operación; el otro arriesga el 15%. Si ambos atraviesan una racha de pérdidas seguidas en algún momento, ¿qué probablemente diferencia el resultado de ambos?",
+                  "options": [
+                    "Ninguna diferencia, la misma tasa de acierto garantiza el mismo resultado para ambos",
+                    "El trader que arriesga menos por operación tiende a preservar más capital durante la racha de pérdidas, permitiéndole seguir operando; el otro corre mayor riesgo de quedarse sin capital suficiente para continuar",
+                    "El que arriesga más siempre termina con más ganancias, sin importar las pérdidas",
+                    "El dimensionamiento de posición no tiene ninguna relación con las rachas de pérdidas"
+                  ],
+                  "explanation": "Incluso con la misma tasa de acierto, el dimensionamiento de posición determina cuánto compromete una racha de pérdidas el capital total — arriesgar menos por operación preserva más capital para seguir operando después de una fase mala."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Dimensionamento de posição é decidir quanto arriscar em cada operação individual.",
+                    "Limitar o risco por operação protege o capital contra sequências de perdas.",
+                    "Mesmo com a mesma taxa de acerto, o dimensionamento afeta bastante a sobrevivência de uma estratégia."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Position sizing is deciding how much to risk in each individual trade.",
+                    "Limiting risk per trade protects capital against losing streaks.",
+                    "Even with the same win rate, sizing significantly affects a strategy's survival."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El dimensionamiento de posición es decidir cuánto arriesgar en cada operación individual.",
+                    "Limitar el riesgo por operación protege el capital contra rachas de pérdidas.",
+                    "Incluso con la misma tasa de acierto, el dimensionamiento afecta bastante la supervivencia de una estrategia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_realistic_expectations",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Expectativas Realistas sobre Trading"
+            },
+            "en": {
+              "title": "Realistic Expectations About Trading"
+            },
+            "es": {
+              "title": "Expectativas Realistas sobre el Trading"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma atividade exigente, não um atalho",
+                  "body": "Trading de curto prazo exige tempo dedicado, disciplina emocional, gestão de risco consistente e resistência a perdas frequentes — mesmo estratégias bem construídas passam por sequências de perdas. Promessas de retornos altos e rápidos, sem menção a esses desafios, tendem a ignorar a realidade estatística da atividade: a maioria das pessoas que tenta viver exclusivamente de trading de curto prazo enfrenta dificuldade em manter resultados consistentes ao longo do tempo."
+                },
+                "en": {
+                  "title": "A demanding activity, not a shortcut",
+                  "body": "Short-term trading demands dedicated time, emotional discipline, consistent risk management, and resilience to frequent losses — even well-built strategies go through losing streaks. Promises of high, fast returns, with no mention of these challenges, tend to ignore the statistical reality of the activity: most people who try to make a living exclusively from short-term trading struggle to maintain consistent results over time."
+                },
+                "es": {
+                  "title": "Una actividad exigente, no un atajo",
+                  "body": "El trading de corto plazo exige tiempo dedicado, disciplina emocional, gestión de riesgo consistente y resiliencia ante pérdidas frecuentes — incluso estrategias bien construidas atraviesan rachas de pérdidas. Las promesas de retornos altos y rápidos, sin mencionar estos desafíos, tienden a ignorar la realidad estadística de la actividad: la mayoría de las personas que intentan vivir exclusivamente del trading de corto plazo enfrenta dificultades para mantener resultados consistentes con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um anúncio promete 'ganhos garantidos de 10% ao mês fazendo trading, sem esforço'. Alguém que já entende custos operacionais, gestão de risco e a natureza estatística de sequências de perdas reconhece essa promessa como irrealista — nenhuma estratégia legítima consegue garantir um retorno fixo e alto dessa forma."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An ad promises 'guaranteed 10% monthly gains trading, with no effort.' Someone who already understands operating costs, risk management, and the statistical nature of losing streaks recognizes that promise as unrealistic — no legitimate strategy can guarantee a fixed, high return that way."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un anuncio promete 'ganancias garantizadas del 10% mensual haciendo trading, sin esfuerzo'. Alguien que ya entiende los costos operativos, la gestión de riesgo y la naturaleza estadística de las rachas de pérdidas reconoce esa promesa como poco realista — ninguna estrategia legítima puede garantizar un retorno fijo y alto de esa forma."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma promessa irrealista sobre trading?",
+                  "options": [
+                    "Mencionar que existe risco de perda nas operações",
+                    "Prometer retornos altos e garantidos, sem mencionar riscos, custos ou a possibilidade de sequências de perdas",
+                    "Explicar que trading exige disciplina e gestão de risco",
+                    "Recomendar dimensionamento de posição cuidadoso"
+                  ],
+                  "explanation": "Promessas de retorno garantido, alto e sem esforço, ignorando riscos e custos reais, são um sinal claro de expectativa irrealista sobre a atividade."
+                },
+                "en": {
+                  "prompt": "What characterizes an unrealistic promise about trading?",
+                  "options": [
+                    "Mentioning that there's a risk of loss in trades",
+                    "Promising high, guaranteed returns, with no mention of risks, costs, or the possibility of losing streaks",
+                    "Explaining that trading requires discipline and risk management",
+                    "Recommending careful position sizing"
+                  ],
+                  "explanation": "Promises of guaranteed, high, effortless returns, ignoring real risks and costs, are a clear sign of an unrealistic expectation about the activity."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una promesa poco realista sobre el trading?",
+                  "options": [
+                    "Mencionar que existe riesgo de pérdida en las operaciones",
+                    "Prometer retornos altos y garantizados, sin mencionar riesgos, costos o la posibilidad de rachas de pérdidas",
+                    "Explicar que el trading exige disciplina y gestión de riesgo",
+                    "Recomendar un dimensionamiento de posición cuidadoso"
+                  ],
+                  "explanation": "Las promesas de retorno garantizado, alto y sin esfuerzo, ignorando riesgos y costos reales, son una señal clara de una expectativa poco realista sobre la actividad."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende os custos de cada operação, a importância do dimensionamento de posição, e que até estratégias boas passam por sequências de perdas. Como esse conhecimento te ajuda a avaliar um curso que promete 'lucro garantido todos os meses, sem exceção'?",
+                  "options": [
+                    "Esse conhecimento não ajuda em nada a avaliar esse tipo de promessa",
+                    "Ele ajuda a reconhecer que essa promessa contradiz o que você já sabe sobre custos, risco e a natureza estatística de sequências de perdas — nenhuma estratégia legítima pode garantir lucro em todos os meses, sem exceção",
+                    "Ele confirma que essa promessa provavelmente é verdadeira, já que trading pode ser lucrativo",
+                    "Ele indica que qualquer promessa de lucro deve ser aceita sem questionamento"
+                  ],
+                  "explanation": "Entender custos, dimensionamento de posição e a inevitabilidade estatística de sequências de perdas ajuda a reconhecer promessas de 'lucro garantido sempre' como incompatíveis com a realidade da atividade."
+                },
+                "en": {
+                  "prompt": "You already understand the costs of each transaction, the importance of position sizing, and that even good strategies go through losing streaks. How does this knowledge help you evaluate a course that promises 'guaranteed profit every month, no exceptions'?",
+                  "options": [
+                    "This knowledge doesn't help at all in evaluating this kind of promise",
+                    "It helps recognize that this promise contradicts what you already know about costs, risk, and the statistical nature of losing streaks — no legitimate strategy can guarantee profit every single month, with no exceptions",
+                    "It confirms that this promise is probably true, since trading can be profitable",
+                    "It indicates that any profit promise should be accepted without question"
+                  ],
+                  "explanation": "Understanding costs, position sizing, and the statistical inevitability of losing streaks helps recognize promises of 'always guaranteed profit' as incompatible with the reality of the activity."
+                },
+                "es": {
+                  "prompt": "Ya entiendes los costos de cada operación, la importancia del dimensionamiento de posición, y que incluso las buenas estrategias atraviesan rachas de pérdidas. ¿Cómo te ayuda este conocimiento a evaluar un curso que promete 'ganancia garantizada todos los meses, sin excepción'?",
+                  "options": [
+                    "Ese conocimiento no ayuda en nada a evaluar este tipo de promesa",
+                    "Ayuda a reconocer que esa promesa contradice lo que ya sabes sobre costos, riesgo y la naturaleza estadística de las rachas de pérdidas — ninguna estrategia legítima puede garantizar ganancias todos los meses, sin excepción",
+                    "Confirma que esa promesa probablemente es verdadera, ya que el trading puede ser rentable",
+                    "Indica que cualquier promesa de ganancia debe aceptarse sin cuestionamientos"
+                  ],
+                  "explanation": "Entender los costos, el dimensionamiento de posición y la inevitabilidad estadística de las rachas de pérdidas ayuda a reconocer las promesas de 'ganancia siempre garantizada' como incompatibles con la realidad de la actividad."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Trading exige tempo, disciplina e gestão de risco consistente — não é um atalho para ganhos fáceis.",
+                    "Mesmo boas estratégias passam por sequências de perdas.",
+                    "Promessas de lucro garantido, alto e sem esforço são um sinal de alerta claro."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Trading demands time, discipline, and consistent risk management — it's not a shortcut to easy gains.",
+                    "Even good strategies go through losing streaks.",
+                    "Promises of guaranteed, high, effortless profit are a clear red flag."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El trading exige tiempo, disciplina y gestión de riesgo consistente — no es un atajo hacia ganancias fáciles.",
+                    "Incluso las buenas estrategias atraviesan rachas de pérdidas.",
+                    "Las promesas de ganancia garantizada, alta y sin esfuerzo son una clara señal de alerta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_technical_vs_fundamental_analysis",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Análise Técnica x Análise Fundamentalista"
+            },
+            "en": {
+              "title": "Technical Analysis vs. Fundamental Analysis"
+            },
+            "es": {
+              "title": "Análisis Técnico vs. Análisis Fundamental"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas diferentes de olhar para um ativo",
+                  "body": "Análise técnica estuda o histórico de preço e volume de um ativo, buscando padrões que possam indicar tendências ou pontos de entrada e saída — é a abordagem mais comum entre traders de curto prazo. Análise fundamentalista, por outro lado, estuda a saúde financeira e o valor de um negócio — receita, lucro, dívida — para tentar estimar quanto ele realmente vale. Nenhuma das duas abordagens garante acerto: ambas são formas de organizar informação para embasar uma decisão, não fórmulas infalíveis."
+                },
+                "en": {
+                  "title": "Two different ways of looking at an asset",
+                  "body": "Technical analysis studies an asset's price and volume history, looking for patterns that might indicate trends or entry and exit points — it's the most common approach among short-term traders. Fundamental analysis, on the other hand, studies a business's financial health and value — revenue, profit, debt — to try to estimate what it's really worth. Neither approach guarantees being right: both are ways of organizing information to inform a decision, not infallible formulas."
+                },
+                "es": {
+                  "title": "Dos formas diferentes de mirar un activo",
+                  "body": "El análisis técnico estudia el historial de precio y volumen de un activo, buscando patrones que puedan indicar tendencias o puntos de entrada y salida — es el enfoque más común entre los traders de corto plazo. El análisis fundamental, por otro lado, estudia la salud financiera y el valor de un negocio — ingresos, ganancias, deuda — para intentar estimar cuánto vale realmente. Ninguno de los dos enfoques garantiza acierto: ambos son formas de organizar información para fundamentar una decisión, no fórmulas infalibles."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um day trader decide comprar uma ação porque o gráfico de preço mostra um padrão que ele associa a uma alta iminente, sem considerar os balanços financeiros da empresa — uma decisão baseada em análise técnica. Já um investidor de longo prazo evita essa mesma ação porque a empresa está com dívida crescente e lucro em queda, uma conclusão baseada em análise fundamentalista, independentemente do que o gráfico de preço esteja mostrando naquele momento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A day trader decides to buy a stock because the price chart shows a pattern they associate with an imminent rise, without considering the company's financial statements — a decision based on technical analysis. A long-term investor, on the other hand, avoids that same stock because the company has rising debt and falling profit, a conclusion based on fundamental analysis, regardless of what the price chart is showing at that moment."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un day trader decide comprar una acción porque el gráfico de precio muestra un patrón que asocia con una subida inminente, sin considerar los balances financieros de la empresa — una decisión basada en análisis técnico. Un inversor de largo plazo, en cambio, evita esa misma acción porque la empresa tiene deuda creciente y ganancias en caída, una conclusión basada en análisis fundamental, sin importar lo que el gráfico de precio esté mostrando en ese momento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre análise técnica e análise fundamentalista?",
+                  "options": [
+                    "Análise técnica estuda balanços financeiros; análise fundamentalista estuda gráficos de preço",
+                    "Análise técnica estuda padrões de preço e volume; análise fundamentalista estuda a saúde financeira e o valor de um negócio",
+                    "As duas são exatamente a mesma coisa, apenas com nomes diferentes",
+                    "Análise fundamentalista garante acerto; análise técnica nunca funciona"
+                  ],
+                  "explanation": "Análise técnica foca em padrões de preço e volume históricos; análise fundamentalista foca na saúde financeira e no valor estimado de um negócio — são abordagens diferentes, nenhuma delas infalível."
+                },
+                "en": {
+                  "prompt": "What is the main difference between technical analysis and fundamental analysis?",
+                  "options": [
+                    "Technical analysis studies financial statements; fundamental analysis studies price charts",
+                    "Technical analysis studies price and volume patterns; fundamental analysis studies a business's financial health and value",
+                    "They're exactly the same thing, just with different names",
+                    "Fundamental analysis guarantees being right; technical analysis never works"
+                  ],
+                  "explanation": "Technical analysis focuses on historical price and volume patterns; fundamental analysis focuses on a business's financial health and estimated value — they're different approaches, neither infallible."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre el análisis técnico y el análisis fundamental?",
+                  "options": [
+                    "El análisis técnico estudia balances financieros; el análisis fundamental estudia gráficos de precio",
+                    "El análisis técnico estudia patrones de precio y volumen; el análisis fundamental estudia la salud financiera y el valor de un negocio",
+                    "Ambos son exactamente lo mismo, solo con nombres diferentes",
+                    "El análisis fundamental garantiza acierto; el análisis técnico nunca funciona"
+                  ],
+                  "explanation": "El análisis técnico se enfoca en patrones históricos de precio y volumen; el análisis fundamental se enfoca en la salud financiera y el valor estimado de un negocio — son enfoques diferentes, ninguno infalible."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição deste módulo, a diferença entre day trade e swing trade. Um day trader e um swing trader usam análise técnica, mas em prazos diferentes de gráfico. Isso é compatível com o que você aprendeu sobre análise técnica?",
+                  "options": [
+                    "Não, análise técnica só pode ser usada em operações fechadas no mesmo dia",
+                    "Sim — análise técnica estuda padrões de preço e volume, e pode ser aplicada em diferentes prazos, seja no gráfico de minutos de um day trader ou no gráfico diário de um swing trader",
+                    "Análise técnica é incompatível com qualquer prazo além de um dia",
+                    "Análise técnica e análise fundamentalista são a mesma ferramenta, usada em prazos diferentes"
+                  ],
+                  "explanation": "Análise técnica não é restrita a um único prazo de gráfico — ela pode ser aplicada tanto no curtíssimo prazo do day trade quanto no prazo um pouco mais longo do swing trade, sempre como referência, não garantia."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson in this module, the difference between day trading and swing trading. A day trader and a swing trader both use technical analysis, but on different chart timeframes. Is that compatible with what you learned about technical analysis?",
+                  "options": [
+                    "No, technical analysis can only be used in trades closed the same day",
+                    "Yes — technical analysis studies price and volume patterns, and can be applied across different timeframes, whether a day trader's minute chart or a swing trader's daily chart",
+                    "Technical analysis is incompatible with any timeframe beyond a single day",
+                    "Technical analysis and fundamental analysis are the same tool, used on different timeframes"
+                  ],
+                  "explanation": "Technical analysis isn't restricted to a single chart timeframe — it can be applied both to a day trade's very short term and to a swing trade's somewhat longer term, always as a reference, never a guarantee."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección de este módulo, la diferencia entre day trade y swing trade. Un day trader y un swing trader usan análisis técnico, pero en plazos de gráfico diferentes. ¿Es esto compatible con lo que aprendiste sobre el análisis técnico?",
+                  "options": [
+                    "No, el análisis técnico solo puede usarse en operaciones cerradas el mismo día",
+                    "Sí — el análisis técnico estudia patrones de precio y volumen, y puede aplicarse en diferentes plazos, ya sea en el gráfico de minutos de un day trader o en el gráfico diario de un swing trader",
+                    "El análisis técnico es incompatible con cualquier plazo más allá de un día",
+                    "El análisis técnico y el análisis fundamental son la misma herramienta, usada en plazos diferentes"
+                  ],
+                  "explanation": "El análisis técnico no está restringido a un único plazo de gráfico — puede aplicarse tanto en el cortísimo plazo del day trade como en el plazo un poco más largo del swing trade, siempre como referencia, no como garantía."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Análise técnica estuda padrões de preço e volume; análise fundamentalista estuda a saúde financeira de um negócio.",
+                    "Nenhuma das duas abordagens garante acerto — são referências para embasar decisões, não fórmulas infalíveis.",
+                    "Análise técnica pode ser aplicada em diferentes prazos, do day trade ao swing trade."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Technical analysis studies price and volume patterns; fundamental analysis studies a business's financial health.",
+                    "Neither approach guarantees being right — they're references to inform decisions, not infallible formulas.",
+                    "Technical analysis can be applied across different timeframes, from day trading to swing trading."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El análisis técnico estudia patrones de precio y volumen; el análisis fundamental estudia la salud financiera de un negocio.",
+                    "Ninguno de los dos enfoques garantiza acierto — son referencias para fundamentar decisiones, no fórmulas infalibles.",
+                    "El análisis técnico puede aplicarse en diferentes plazos, desde el day trade hasta el swing trade."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "trading_tools_and_risks",
+      "order": 2,
+      "iconKey": "candlestick_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "trading_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Ferramentas e Riscos do Trading",
+          "description": "Tipos de ordens, alavancagem, overtrading e a importância de um registro de operações."
+        },
+        "en": {
+          "title": "Trading Tools and Risks",
+          "description": "Order types, leverage, overtrading and the importance of a trading journal."
+        },
+        "es": {
+          "title": "Herramientas y Riesgos del Trading",
+          "description": "Tipos de órdenes, apalancamiento, overtrading y la importancia de un registro de operaciones."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "trading_order_types",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tipos de Ordens"
+            },
+            "en": {
+              "title": "Order Types"
+            },
+            "es": {
+              "title": "Tipos de Órdenes"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Diferentes formas de entrar e sair de uma posição",
+                  "body": "Uma ordem a mercado executa imediatamente, ao melhor preço disponível no momento — priorizando velocidade em detrimento do controle sobre o preço exato. Uma ordem limitada só executa em um preço específico ou melhor, dando controle sobre o preço, mas sem garantia de execução. Uma ordem stop, ou stop loss, é programada para disparar automaticamente quando o preço atinge um determinado nível, sendo usada com frequência para limitar perdas em uma posição."
+                },
+                "en": {
+                  "title": "Different ways to enter and exit a position",
+                  "body": "A market order executes immediately, at the best price available at the time — prioritizing speed over control of the exact price. A limit order only executes at a specific price or better, giving control over the price, but without a guarantee of execution. A stop order, or stop loss, is set to trigger automatically when the price reaches a certain level, often used to limit losses on a position."
+                },
+                "es": {
+                  "title": "Diferentes formas de entrar y salir de una posición",
+                  "body": "Una orden a mercado se ejecuta de inmediato, al mejor precio disponible en el momento — priorizando la velocidad sobre el control del precio exacto. Una orden limitada solo se ejecuta a un precio específico o mejor, dando control sobre el precio, pero sin garantía de ejecución. Una orden stop, o stop loss, está programada para dispararse automáticamente cuando el precio alcanza cierto nivel, usada con frecuencia para limitar pérdidas en una posición."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader compra uma ação e imediatamente programa uma ordem stop loss 5% abaixo do preço de compra. Se o preço cair até esse nível, a venda é disparada automaticamente, limitando a perda a aproximadamente 5%, mesmo que o trader não esteja acompanhando o mercado naquele exato momento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader buys a stock and immediately sets a stop loss order 5% below the purchase price. If the price falls to that level, the sale is triggered automatically, limiting the loss to roughly 5%, even if the trader isn't watching the market at that exact moment."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader compra una acción e inmediatamente programa una orden stop loss un 5% por debajo del precio de compra. Si el precio cae hasta ese nivel, la venta se dispara automáticamente, limitando la pérdida a aproximadamente el 5%, incluso si el trader no está siguiendo el mercado en ese momento exacto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que uma ordem stop loss faz?",
+                  "options": [
+                    "Ela garante que uma posição sempre terá lucro",
+                    "Ela dispara automaticamente uma venda quando o preço atinge um determinado nível, ajudando a limitar perdas",
+                    "Ela impede qualquer negociação futura naquele ativo",
+                    "Ela só pode ser usada em contratos futuros"
+                  ],
+                  "explanation": "A ordem stop loss é programada para vender automaticamente quando o preço cai até um nível definido, ajudando a limitar o tamanho de uma perda sem exigir acompanhamento constante."
+                },
+                "en": {
+                  "prompt": "What does a stop loss order do?",
+                  "options": [
+                    "It guarantees a position will always be profitable",
+                    "It automatically triggers a sale when the price reaches a certain level, helping to limit losses",
+                    "It prevents any future trading in that asset",
+                    "It can only be used in futures contracts"
+                  ],
+                  "explanation": "A stop loss order is set to automatically sell when the price falls to a defined level, helping to limit the size of a loss without requiring constant monitoring."
+                },
+                "es": {
+                  "prompt": "¿Qué hace una orden stop loss?",
+                  "options": [
+                    "Garantiza que una posición siempre tendrá ganancias",
+                    "Dispara automáticamente una venta cuando el precio alcanza cierto nivel, ayudando a limitar pérdidas",
+                    "Impide cualquier negociación futura en ese activo",
+                    "Solo puede usarse en contratos futuros"
+                  ],
+                  "explanation": "La orden stop loss está programada para vender automáticamente cuando el precio cae hasta un nivel definido, ayudando a limitar el tamaño de una pérdida sin exigir seguimiento constante."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende dimensionamento de posição de outra lição. Como uma ordem stop loss se conecta com a ideia de limitar o risco de cada operação?",
+                  "options": [
+                    "Não se conecta, são conceitos completamente independentes",
+                    "Uma ordem stop loss ajuda a colocar em prática o limite de risco definido pelo dimensionamento de posição, executando a saída automaticamente antes que a perda ultrapasse o planejado",
+                    "Stop loss elimina completamente qualquer necessidade de dimensionar posições",
+                    "Dimensionamento de posição só importa se não houver nenhuma ordem stop loss configurada"
+                  ],
+                  "explanation": "Dimensionamento de posição define quanto arriscar; a ordem stop loss é uma ferramenta prática para colocar esse limite em ação, executando a saída automaticamente no nível planejado."
+                },
+                "en": {
+                  "prompt": "You already understand position sizing from another lesson. How does a stop loss order connect with the idea of limiting the risk of each trade?",
+                  "options": [
+                    "It doesn't connect, they're completely independent concepts",
+                    "A stop loss order helps put into practice the risk limit defined by position sizing, executing the exit automatically before the loss exceeds what was planned",
+                    "Stop loss completely eliminates any need to size positions",
+                    "Position sizing only matters if there's no stop loss order set up"
+                  ],
+                  "explanation": "Position sizing defines how much to risk; the stop loss order is a practical tool to put that limit into action, executing the exit automatically at the planned level."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el dimensionamiento de posición de otra lección. ¿Cómo se conecta una orden stop loss con la idea de limitar el riesgo de cada operación?",
+                  "options": [
+                    "No se conecta, son conceptos completamente independientes",
+                    "Una orden stop loss ayuda a poner en práctica el límite de riesgo definido por el dimensionamiento de posición, ejecutando la salida automáticamente antes de que la pérdida supere lo planeado",
+                    "El stop loss elimina por completo cualquier necesidad de dimensionar posiciones",
+                    "El dimensionamiento de posición solo importa si no hay ninguna orden stop loss configurada"
+                  ],
+                  "explanation": "El dimensionamiento de posición define cuánto arriesgar; la orden stop loss es una herramienta práctica para poner ese límite en acción, ejecutando la salida automáticamente en el nivel planeado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ordem a mercado prioriza velocidade; ordem limitada prioriza controle do preço.",
+                    "Ordem stop loss dispara automaticamente uma venda ao atingir um nível definido.",
+                    "Stop loss ajuda a colocar em prática o limite de risco definido pelo dimensionamento de posição."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Market orders prioritize speed; limit orders prioritize price control.",
+                    "A stop loss order automatically triggers a sale upon reaching a defined level.",
+                    "Stop loss helps put into practice the risk limit defined by position sizing."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La orden a mercado prioriza la velocidad; la orden limitada prioriza el control del precio.",
+                    "La orden stop loss dispara automáticamente una venta al alcanzar un nivel definido.",
+                    "El stop loss ayuda a poner en práctica el límite de riesgo definido por el dimensionamiento de posición."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_leverage",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Alavancagem"
+            },
+            "en": {
+              "title": "Leverage"
+            },
+            "es": {
+              "title": "Apalancamiento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Operando com mais dinheiro do que se tem",
+                  "body": "Alavancagem é a prática de operar com um valor maior do que o capital próprio disponível, geralmente usando dinheiro emprestado pela corretora ou instrumentos derivativos. Ela amplifica tanto os ganhos quanto as perdas na mesma proporção: uma alavancagem de 5 vezes, por exemplo, multiplica por 5 tanto o lucro quanto o prejuízo percentual de uma operação, em relação ao capital próprio investido."
+                },
+                "en": {
+                  "title": "Trading with more money than you have",
+                  "body": "Leverage is the practice of trading with an amount larger than the capital actually available, usually using money borrowed from the broker or derivative instruments. It amplifies both gains and losses in the same proportion: a 5x leverage, for example, multiplies by 5 both the profit and the percentage loss of a trade, relative to the investor's own capital."
+                },
+                "es": {
+                  "title": "Operando con más dinero del que se tiene",
+                  "body": "El apalancamiento es la práctica de operar con un monto mayor al capital propio disponible, generalmente usando dinero prestado por la correduría o instrumentos derivados. Amplifica tanto las ganancias como las pérdidas en la misma proporción: un apalancamiento de 5 veces, por ejemplo, multiplica por 5 tanto la ganancia como la pérdida porcentual de una operación, en relación al capital propio invertido."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader tem R$1.000 e usa alavancagem de 10 vezes, operando com R$10.000. Se o ativo sobe 5%, o ganho sobre o valor operado é de R$500 — metade do capital próprio original. Mas se o ativo cai 5%, a perda também é de R$500, o que representa metade de todo o capital que o trader realmente tinha."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader has R$1,000 and uses 10x leverage, trading with R$10,000. If the asset rises 5%, the gain on the traded amount is R$500 — half of the original own capital. But if the asset falls 5%, the loss is also R$500, which represents half of all the capital the trader actually had."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader tiene R$1.000 y usa un apalancamiento de 10 veces, operando con R$10.000. Si el activo sube un 5%, la ganancia sobre el monto operado es de R$500 — la mitad del capital propio original. Pero si el activo cae un 5%, la pérdida también es de R$500, lo que representa la mitad de todo el capital que el trader realmente tenía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a alavancagem faz com os resultados de uma operação?",
+                  "options": [
+                    "Ela reduz tanto ganhos quanto perdas, proporcionalmente",
+                    "Ela amplifica tanto ganhos quanto perdas, na mesma proporção",
+                    "Ela só amplifica ganhos, nunca perdas",
+                    "Ela elimina completamente o risco de perda"
+                  ],
+                  "explanation": "Alavancagem multiplica o resultado percentual sobre o capital próprio, tanto para cima (ganhos) quanto para baixo (perdas), na mesma proporção."
+                },
+                "en": {
+                  "prompt": "What does leverage do to a trade's results?",
+                  "options": [
+                    "It reduces both gains and losses, proportionally",
+                    "It amplifies both gains and losses, in the same proportion",
+                    "It only amplifies gains, never losses",
+                    "It completely eliminates the risk of loss"
+                  ],
+                  "explanation": "Leverage multiplies the percentage result on one's own capital, both upward (gains) and downward (losses), in the same proportion."
+                },
+                "es": {
+                  "prompt": "¿Qué hace el apalancamiento con los resultados de una operación?",
+                  "options": [
+                    "Reduce tanto las ganancias como las pérdidas, proporcionalmente",
+                    "Amplifica tanto las ganancias como las pérdidas, en la misma proporción",
+                    "Solo amplifica las ganancias, nunca las pérdidas",
+                    "Elimina por completo el riesgo de pérdida"
+                  ],
+                  "explanation": "El apalancamiento multiplica el resultado porcentual sobre el capital propio, tanto hacia arriba (ganancias) como hacia abajo (pérdidas), en la misma proporción."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um anúncio promove alavancagem alta como uma forma de 'multiplicar seus ganhos rapidamente', sem mencionar o outro lado. Com base no que você aprendeu, o que essa descrição está deixando de fora?",
+                  "options": [
+                    "Nada, alavancagem só amplifica ganhos, nunca perdas",
+                    "Que a mesma alavancagem que amplifica ganhos amplifica perdas na mesma proporção, podendo comprometer boa parte do capital rapidamente em um movimento contrário",
+                    "Que alavancagem é ilegal em qualquer mercado",
+                    "Que alavancagem só existe para investidores institucionais"
+                  ],
+                  "explanation": "Qualquer descrição de alavancagem que menciona só o lado dos ganhos, sem falar da amplificação equivalente das perdas, está incompleta — os dois lados sempre andam juntos."
+                },
+                "en": {
+                  "prompt": "An ad promotes high leverage as a way to 'multiply your gains quickly,' without mentioning the other side. Based on what you learned, what is this description leaving out?",
+                  "options": [
+                    "Nothing, leverage only amplifies gains, never losses",
+                    "That the same leverage that amplifies gains amplifies losses in the same proportion, potentially wiping out a large part of the capital quickly in an adverse move",
+                    "That leverage is illegal in any market",
+                    "That leverage only exists for institutional investors"
+                  ],
+                  "explanation": "Any description of leverage that mentions only the gains side, without discussing the equivalent amplification of losses, is incomplete — both sides always go together."
+                },
+                "es": {
+                  "prompt": "Un anuncio promueve un alto apalancamiento como una forma de 'multiplicar tus ganancias rápidamente', sin mencionar el otro lado. Según lo que aprendiste, ¿qué está dejando fuera esta descripción?",
+                  "options": [
+                    "Nada, el apalancamiento solo amplifica ganancias, nunca pérdidas",
+                    "Que el mismo apalancamiento que amplifica ganancias amplifica pérdidas en la misma proporción, pudiendo comprometer gran parte del capital rápidamente en un movimiento contrario",
+                    "Que el apalancamiento es ilegal en cualquier mercado",
+                    "Que el apalancamiento solo existe para inversores institucionales"
+                  ],
+                  "explanation": "Cualquier descripción de apalancamiento que mencione solo el lado de las ganancias, sin hablar de la amplificación equivalente de las pérdidas, está incompleta — ambos lados siempre van juntos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Alavancagem é operar com um valor maior do que o capital próprio disponível.",
+                    "Ela amplifica ganhos e perdas na mesma proporção.",
+                    "Descrições que mencionam só os ganhos potenciais da alavancagem, sem falar do risco equivalente, estão incompletas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Leverage is trading with an amount larger than the capital actually available.",
+                    "It amplifies gains and losses in the same proportion.",
+                    "Descriptions that mention only leverage's potential gains, without discussing the equivalent risk, are incomplete."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El apalancamiento es operar con un monto mayor al capital propio disponible.",
+                    "Amplifica ganancias y pérdidas en la misma proporción.",
+                    "Las descripciones que mencionan solo las ganancias potenciales del apalancamiento, sin hablar del riesgo equivalente, están incompletas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_overtrading",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Overtrading e Revenge Trading"
+            },
+            "en": {
+              "title": "Overtrading and Revenge Trading"
+            },
+            "es": {
+              "title": "Overtrading y Revenge Trading"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Operar demais ou operar com raiva",
+                  "body": "Overtrading é operar com uma frequência maior do que a estratégia original justificaria, muitas vezes motivado por tédio, ansiedade ou excesso de confiança após uma sequência de ganhos. Revenge trading é uma forma específica de overtrading: tentar recuperar uma perda recente imediatamente, com operações maiores ou mais arriscadas do que o planejado, motivado pela frustração emocional da perda, e não por uma análise fria da situação."
+                },
+                "en": {
+                  "title": "Trading too much, or trading angry",
+                  "body": "Overtrading is trading more frequently than the original strategy would justify, often driven by boredom, anxiety, or overconfidence after a winning streak. Revenge trading is a specific form of overtrading: trying to immediately recover a recent loss, with larger or riskier trades than planned, driven by the emotional frustration of the loss, rather than a cold analysis of the situation."
+                },
+                "es": {
+                  "title": "Operar de más, o operar con rabia",
+                  "body": "El overtrading es operar con una frecuencia mayor de la que justificaría la estrategia original, muchas veces motivado por el aburrimiento, la ansiedad o el exceso de confianza después de una racha de ganancias. El revenge trading es una forma específica de overtrading: intentar recuperar una pérdida reciente de inmediato, con operaciones más grandes o más arriesgadas de lo planeado, motivado por la frustración emocional de la pérdida, y no por un análisis frío de la situación."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader perde uma operação e, em vez de seguir seu plano original, imediatamente abre uma posição bem maior do que o habitual, tentando 'recuperar' a perda rapidamente. Essa decisão não vem de uma nova análise da situação, mas da frustração com a perda anterior — um padrão que costuma agravar, em vez de resolver, o prejuízo inicial."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader loses a trade and, instead of sticking to their original plan, immediately opens a much larger position than usual, trying to 'recover' the loss quickly. This decision doesn't come from a fresh analysis of the situation, but from frustration with the earlier loss — a pattern that tends to worsen, rather than fix, the initial loss."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader pierde una operación y, en lugar de seguir su plan original, de inmediato abre una posición mucho más grande de lo habitual, intentando 'recuperar' la pérdida rápidamente. Esta decisión no viene de un nuevo análisis de la situación, sino de la frustración por la pérdida anterior — un patrón que suele agravar, en lugar de resolver, la pérdida inicial."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o revenge trading?",
+                  "options": [
+                    "Seguir rigorosamente a estratégia original, mesmo depois de uma perda",
+                    "Tentar recuperar uma perda recente imediatamente, com operações maiores ou mais arriscadas, motivado pela frustração emocional",
+                    "Reduzir o número de operações depois de uma perda, para reavaliar a estratégia com calma",
+                    "Um tipo de ordem usada para limitar perdas"
+                  ],
+                  "explanation": "Revenge trading é operar de forma impulsiva para tentar 'recuperar' uma perda, motivado pela emoção da frustração, e não por uma reavaliação racional da situação."
+                },
+                "en": {
+                  "prompt": "What characterizes revenge trading?",
+                  "options": [
+                    "Strictly following the original strategy, even after a loss",
+                    "Trying to immediately recover a recent loss, with larger or riskier trades, driven by emotional frustration",
+                    "Reducing the number of trades after a loss, to calmly reassess the strategy",
+                    "A type of order used to limit losses"
+                  ],
+                  "explanation": "Revenge trading is trading impulsively to try to 'recover' a loss, driven by the emotion of frustration, rather than a rational reassessment of the situation."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al revenge trading?",
+                  "options": [
+                    "Seguir rigurosamente la estrategia original, incluso después de una pérdida",
+                    "Intentar recuperar una pérdida reciente de inmediato, con operaciones más grandes o más arriesgadas, motivado por la frustración emocional",
+                    "Reducir el número de operaciones después de una pérdida, para reevaluar la estrategia con calma",
+                    "Un tipo de orden usada para limitar pérdidas"
+                  ],
+                  "explanation": "El revenge trading es operar de forma impulsiva para intentar 'recuperar' una pérdida, motivado por la emoción de la frustración, y no por una reevaluación racional de la situación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende dimensionamento de posição e aversão à perda de outras lições. Como esses conceitos ajudam a explicar por que revenge trading costuma agravar, em vez de resolver, um prejuízo inicial?",
+                  "options": [
+                    "Não ajudam, esses conceitos não têm relação nenhuma com revenge trading",
+                    "Porque revenge trading tipicamente envolve aumentar o tamanho da posição além do planejado, quebrando o dimensionamento de risco original, e é motivado pela aversão à perda em vez de uma análise fria da situação",
+                    "Porque revenge trading sempre segue rigorosamente o dimensionamento de posição original",
+                    "Porque aversão à perda garante que revenge trading sempre funciona"
+                  ],
+                  "explanation": "Revenge trading tende a violar o dimensionamento de posição planejado, aumentando o risco justamente no momento em que a decisão está sendo guiada pela emoção da perda, e não por uma reavaliação racional."
+                },
+                "en": {
+                  "prompt": "You already understand position sizing and loss aversion from other lessons. How do these concepts help explain why revenge trading tends to worsen, rather than fix, an initial loss?",
+                  "options": [
+                    "They don't help, these concepts have no relation to revenge trading at all",
+                    "Because revenge trading typically involves increasing the position size beyond what was planned, breaking the original risk sizing, and is driven by loss aversion rather than a cold analysis of the situation",
+                    "Because revenge trading always strictly follows the original position sizing",
+                    "Because loss aversion guarantees revenge trading always works"
+                  ],
+                  "explanation": "Revenge trading tends to violate the planned position sizing, increasing risk exactly at the moment when the decision is being driven by the emotion of the loss, rather than a rational reassessment."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el dimensionamiento de posición y la aversión a la pérdida de otras lecciones. ¿Cómo ayudan estos conceptos a explicar por qué el revenge trading suele agravar, en lugar de resolver, una pérdida inicial?",
+                  "options": [
+                    "No ayudan, estos conceptos no tienen ninguna relación con el revenge trading",
+                    "Porque el revenge trading típicamente implica aumentar el tamaño de la posición más allá de lo planeado, rompiendo el dimensionamiento de riesgo original, y está motivado por la aversión a la pérdida en lugar de un análisis frío de la situación",
+                    "Porque el revenge trading siempre sigue rigurosamente el dimensionamiento de posición original",
+                    "Porque la aversión a la pérdida garantiza que el revenge trading siempre funcione"
+                  ],
+                  "explanation": "El revenge trading tiende a violar el dimensionamiento de posición planeado, aumentando el riesgo justo en el momento en que la decisión está siendo guiada por la emoción de la pérdida, y no por una reevaluación racional."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Overtrading é operar com frequência maior do que a estratégia justificaria.",
+                    "Revenge trading é tentar recuperar uma perda imediatamente, motivado pela frustração emocional.",
+                    "Esse padrão costuma violar o dimensionamento de risco planejado, agravando o prejuízo inicial."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Overtrading is trading more frequently than the strategy would justify.",
+                    "Revenge trading is trying to immediately recover a loss, driven by emotional frustration.",
+                    "This pattern tends to violate the planned risk sizing, worsening the initial loss."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El overtrading es operar con una frecuencia mayor de la que justificaría la estrategia.",
+                    "El revenge trading es intentar recuperar una pérdida de inmediato, motivado por la frustración emocional.",
+                    "Este patrón suele violar el dimensionamiento de riesgo planeado, agravando la pérdida inicial."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_journal_discipline",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Registro de Operações e Disciplina"
+            },
+            "en": {
+              "title": "Trade Journaling and Discipline"
+            },
+            "es": {
+              "title": "Registro de Operaciones y Disciplina"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Aprendendo com o próprio histórico",
+                  "body": "Um registro de operações (trading journal) é um histórico detalhado de cada operação realizada — incluindo o motivo da entrada, o tamanho da posição, o resultado e as emoções envolvidas na decisão. Manter esse registro ajuda a identificar padrões no próprio comportamento, como uma tendência a repetir overtrading depois de perdas, ou a abandonar o plano original em momentos de estresse — padrões que costumam ser difíceis de perceber sem um registro objetivo para consultar depois."
+                },
+                "en": {
+                  "title": "Learning from your own history",
+                  "body": "A trading journal is a detailed record of each trade made — including the reason for entering, the position size, the result, and the emotions involved in the decision. Keeping this record helps identify patterns in one's own behavior, like a tendency to repeat overtrading after losses, or to abandon the original plan during moments of stress — patterns that tend to be hard to notice without an objective record to review later."
+                },
+                "es": {
+                  "title": "Aprendiendo del propio historial",
+                  "body": "Un registro de operaciones (trading journal) es un historial detallado de cada operación realizada — incluyendo el motivo de la entrada, el tamaño de la posición, el resultado y las emociones involucradas en la decisión. Mantener este registro ayuda a identificar patrones en el propio comportamiento, como una tendencia a repetir overtrading después de pérdidas, o a abandonar el plan original en momentos de estrés — patrones que suelen ser difíciles de percibir sin un registro objetivo para consultar después."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Ao revisar seu registro de operações depois de alguns meses, um trader percebe um padrão claro: suas piores operações, em termos de resultado, costumam acontecer logo depois de uma perda, quando ele estava operando fora do seu plano original. Sem esse registro, esse padrão específico provavelmente passaria despercebido, escondido entre memórias seletivas de operações isoladas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Reviewing their trade journal after a few months, a trader notices a clear pattern: their worst trades, in terms of results, tend to happen right after a loss, when they were trading outside their original plan. Without this record, that specific pattern would likely go unnoticed, hidden among selective memories of isolated trades."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Al revisar su registro de operaciones después de algunos meses, un trader nota un patrón claro: sus peores operaciones, en términos de resultado, suelen ocurrir justo después de una pérdida, cuando estaba operando fuera de su plan original. Sin ese registro, ese patrón específico probablemente pasaría desapercibido, escondido entre recuerdos selectivos de operaciones aisladas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal utilidade de um registro de operações?",
+                  "options": [
+                    "Garantir que todas as operações futuras vão dar lucro",
+                    "Ajudar a identificar padrões no próprio comportamento, que seriam difíceis de perceber sem um histórico objetivo",
+                    "Substituir completamente a necessidade de uma estratégia definida",
+                    "Eliminar qualquer custo associado às operações"
+                  ],
+                  "explanation": "O registro de operações funciona como uma fonte objetiva de dados sobre o próprio comportamento, ajudando a identificar padrões que a memória seletiva tende a esconder."
+                },
+                "en": {
+                  "prompt": "What is a trading journal's main use?",
+                  "options": [
+                    "Guaranteeing all future trades will be profitable",
+                    "Helping identify patterns in one's own behavior, which would be hard to notice without an objective record",
+                    "Completely replacing the need for a defined strategy",
+                    "Eliminating any cost associated with trading"
+                  ],
+                  "explanation": "The trading journal works as an objective source of data about one's own behavior, helping identify patterns that selective memory tends to hide."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal utilidad de un registro de operaciones?",
+                  "options": [
+                    "Garantizar que todas las operaciones futuras darán ganancias",
+                    "Ayudar a identificar patrones en el propio comportamiento, que serían difíciles de percibir sin un historial objetivo",
+                    "Reemplazar por completo la necesidad de una estrategia definida",
+                    "Eliminar cualquier costo asociado a las operaciones"
+                  ],
+                  "explanation": "El registro de operaciones funciona como una fuente objetiva de datos sobre el propio comportamiento, ayudando a identificar patrones que la memoria selectiva tiende a esconder."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende revenge trading e overtrading de outra lição. Como um registro de operações poderia ajudar alguém a perceber que está caindo nesses padrões?",
+                  "options": [
+                    "Não ajudaria em nada, esses padrões são impossíveis de identificar",
+                    "Revisando o registro, a pessoa poderia notar, por exemplo, que opera com tamanho de posição maior logo após perdas — um sinal objetivo de revenge trading que a memória subjetiva poderia minimizar ou esquecer",
+                    "Um registro de operações só serve para calcular impostos",
+                    "Registro de operações é útil apenas para day trade, nunca para swing trade"
+                  ],
+                  "explanation": "Um registro objetivo captura dados que a memória subjetiva tende a distorcer ou esquecer, como um padrão de aumentar o tamanho das posições logo após perdas — um sinal característico de revenge trading."
+                },
+                "en": {
+                  "prompt": "You already understand revenge trading and overtrading from another lesson. How could a trading journal help someone notice they're falling into these patterns?",
+                  "options": [
+                    "It wouldn't help at all, these patterns are impossible to identify",
+                    "By reviewing the journal, the person could notice, for example, that they trade with a larger position size right after losses — an objective sign of revenge trading that subjective memory might minimize or forget",
+                    "A trading journal only serves to calculate taxes",
+                    "A trading journal is only useful for day trading, never for swing trading"
+                  ],
+                  "explanation": "An objective record captures data that subjective memory tends to distort or forget, like a pattern of increasing position size right after losses — a characteristic sign of revenge trading."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el revenge trading y el overtrading de otra lección. ¿Cómo podría ayudar un registro de operaciones a que alguien note que está cayendo en estos patrones?",
+                  "options": [
+                    "No ayudaría en nada, estos patrones son imposibles de identificar",
+                    "Revisando el registro, la persona podría notar, por ejemplo, que opera con un tamaño de posición mayor justo después de pérdidas — una señal objetiva de revenge trading que la memoria subjetiva podría minimizar u olvidar",
+                    "Un registro de operaciones solo sirve para calcular impuestos",
+                    "El registro de operaciones es útil solo para day trade, nunca para swing trade"
+                  ],
+                  "explanation": "Un registro objetivo captura datos que la memoria subjetiva tiende a distorsionar u olvidar, como un patrón de aumentar el tamaño de las posiciones justo después de pérdidas — una señal característica del revenge trading."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Um registro de operações documenta o motivo, o tamanho e o resultado de cada operação.",
+                    "Ele ajuda a identificar padrões de comportamento difíceis de perceber sem dados objetivos.",
+                    "Você concluiu o módulo de ferramentas e riscos do trading."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "A trading journal documents the reason, size, and result of each trade.",
+                    "It helps identify behavioral patterns that are hard to notice without objective data.",
+                    "You've completed the trading tools and risks module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Un registro de operaciones documenta el motivo, el tamaño y el resultado de cada operación.",
+                    "Ayuda a identificar patrones de comportamiento difíciles de percibir sin datos objetivos.",
+                    "Completaste el módulo de herramientas y riesgos del trading."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_slippage",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Slippage (Deslizamento de Preço)"
+            },
+            "en": {
+              "title": "Slippage"
+            },
+            "es": {
+              "title": "Slippage (Deslizamiento de Precio)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando o preço muda entre o clique e a execução",
+                  "body": "Slippage é a diferença entre o preço que o trader esperava obter em uma operação e o preço pelo qual ela realmente é executada. Ele é mais comum em ordens a mercado, que priorizam velocidade de execução em vez de um preço específico, e tende a se acentuar em momentos de baixa liquidez ou alta volatilidade, quando o preço pode mudar significativamente no intervalo entre o envio da ordem e sua execução efetiva."
+                },
+                "en": {
+                  "title": "When the price changes between the click and the fill",
+                  "body": "Slippage is the difference between the price a trader expected to get on a trade and the price at which it's actually executed. It's most common with market orders, which prioritize execution speed over a specific price, and tends to become more pronounced during periods of low liquidity or high volatility, when the price can shift meaningfully between the moment the order is sent and the moment it's actually filled."
+                },
+                "es": {
+                  "title": "Cuando el precio cambia entre el clic y la ejecución",
+                  "body": "El slippage es la diferencia entre el precio que el trader esperaba obtener en una operación y el precio al que realmente se ejecuta. Es más común en las órdenes a mercado, que priorizan la velocidad de ejecución sobre un precio específico, y tiende a acentuarse en momentos de baja liquidez o alta volatilidad, cuando el precio puede cambiar de forma significativa en el intervalo entre el envío de la orden y su ejecución efectiva."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader envia uma ordem a mercado para comprar uma ação cotada a R$50, esperando pagar esse valor. Mas, no instante em que a ordem chega à bolsa, uma onda de outras ordens de compra já empurrou o preço para R$50,30, e é nesse preço que a operação acaba sendo executada — uma diferença pequena, mas que ilustra o slippage, especialmente relevante em ativos pouco líquidos ou em momentos de forte movimento de preço."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader sends a market order to buy a stock quoted at R$50, expecting to pay that amount. But by the instant the order reaches the exchange, a wave of other buy orders has already pushed the price to R$50.30, and that's the price at which the trade ends up being executed — a small difference, but one that illustrates slippage, especially relevant in illiquid assets or during periods of sharp price movement."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader envía una orden a mercado para comprar una acción cotizada a R$50, esperando pagar ese monto. Pero, en el instante en que la orden llega a la bolsa, una ola de otras órdenes de compra ya empujó el precio a R$50,30, y es a ese precio que la operación termina ejecutándose — una diferencia pequeña, pero que ilustra el slippage, especialmente relevante en activos poco líquidos o en momentos de fuerte movimiento de precio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é slippage?",
+                  "options": [
+                    "Uma taxa fixa cobrada pela corretora em toda operação",
+                    "A diferença entre o preço esperado de uma operação e o preço pelo qual ela é realmente executada",
+                    "Um tipo de ordem que garante sempre o melhor preço possível",
+                    "O lucro obtido ao operar com alavancagem"
+                  ],
+                  "explanation": "Slippage é justamente essa diferença entre o preço esperado e o preço de execução efetivo, mais comum em ordens a mercado e em momentos de baixa liquidez ou alta volatilidade."
+                },
+                "en": {
+                  "prompt": "What is slippage?",
+                  "options": [
+                    "A fixed fee charged by the broker on every trade",
+                    "The difference between the expected price of a trade and the price at which it's actually executed",
+                    "A type of order that always guarantees the best possible price",
+                    "The profit obtained from trading with leverage"
+                  ],
+                  "explanation": "Slippage is precisely this difference between the expected price and the actual execution price, most common with market orders and during periods of low liquidity or high volatility."
+                },
+                "es": {
+                  "prompt": "¿Qué es el slippage?",
+                  "options": [
+                    "Una tasa fija cobrada por la correduría en toda operación",
+                    "La diferencia entre el precio esperado de una operación y el precio al que realmente se ejecuta",
+                    "Un tipo de orden que siempre garantiza el mejor precio posible",
+                    "La ganancia obtenida al operar con apalancamiento"
+                  ],
+                  "explanation": "El slippage es precisamente esa diferencia entre el precio esperado y el precio de ejecución efectivo, más común en órdenes a mercado y en momentos de baja liquidez o alta volatilidad."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição deste módulo, que uma ordem a mercado prioriza velocidade de execução em vez de controle sobre o preço exato. Como essa característica se conecta com o risco de slippage?",
+                  "options": [
+                    "Como a ordem a mercado aceita o preço disponível no momento, ela é justamente o tipo de ordem mais exposto ao slippage, especialmente em condições de baixa liquidez ou alta volatilidade — uma ordem limitada evita esse risco, mas sem garantia de execução",
+                    "Ordens a mercado nunca sofrem slippage, apenas ordens limitadas",
+                    "Slippage só acontece quando o trader está operando sem nenhuma conexão com a internet",
+                    "Ordens a mercado e ordens limitadas têm exatamente o mesmo risco de slippage"
+                  ],
+                  "explanation": "Justamente por priorizar velocidade em vez de um preço específico, a ordem a mercado aceita o preço disponível no instante da execução, o que a torna mais suscetível a slippage do que uma ordem limitada, que só executa no preço definido ou melhor."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson in this module, that a market order prioritizes execution speed over control of the exact price. How does that trade-off connect with the risk of slippage?",
+                  "options": [
+                    "Since a market order accepts whatever price is available at that moment, it's precisely the type of order most exposed to slippage, especially in low-liquidity or high-volatility conditions — a limit order avoids this risk, but with no guarantee of execution",
+                    "Market orders never suffer slippage, only limit orders do",
+                    "Slippage only happens when the trader has no internet connection at all",
+                    "Market orders and limit orders carry exactly the same slippage risk"
+                  ],
+                  "explanation": "Precisely because it prioritizes speed over a specific price, a market order accepts whatever price is available at the instant of execution, which makes it more susceptible to slippage than a limit order, which only executes at the defined price or better."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección de este módulo, que una orden a mercado prioriza la velocidad de ejecución sobre el control del precio exacto. ¿Cómo se conecta esa característica con el riesgo de slippage?",
+                  "options": [
+                    "Como la orden a mercado acepta el precio disponible en el momento, es justamente el tipo de orden más expuesto al slippage, especialmente en condiciones de baja liquidez o alta volatilidad — una orden limitada evita ese riesgo, pero sin garantía de ejecución",
+                    "Las órdenes a mercado nunca sufren slippage, solo las órdenes limitadas",
+                    "El slippage solo ocurre cuando el trader no tiene ninguna conexión a internet",
+                    "Las órdenes a mercado y las órdenes limitadas tienen exactamente el mismo riesgo de slippage"
+                  ],
+                  "explanation": "Justamente por priorizar la velocidad sobre un precio específico, la orden a mercado acepta el precio disponible en el instante de la ejecución, lo que la hace más susceptible al slippage que una orden limitada, que solo se ejecuta al precio definido o mejor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Slippage é a diferença entre o preço esperado de uma operação e o preço de execução efetivo.",
+                    "Ele é mais comum em ordens a mercado, e se acentua em baixa liquidez ou alta volatilidade.",
+                    "Uma ordem limitada evita esse risco, mas sem garantir que a operação será executada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Slippage is the difference between a trade's expected price and its actual execution price.",
+                    "It's most common with market orders, and becomes more pronounced during low liquidity or high volatility.",
+                    "A limit order avoids this risk, but without guaranteeing the trade will be executed."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El slippage es la diferencia entre el precio esperado de una operación y su precio de ejecución efectivo.",
+                    "Es más común en órdenes a mercado, y se acentúa en baja liquidez o alta volatilidad.",
+                    "Una orden limitada evita ese riesgo, pero sin garantizar que la operación se ejecutará."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "trading_advanced_techniques",
+      "order": 3,
+      "iconKey": "candlestick_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "trading_tools_and_risks"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Trading: Técnicas Avançadas",
+          "description": "Suporte e resistência, médias móveis e RSI, relação risco-retorno, liquidez/spread bid-ask e a matemática dos drawdowns."
+        },
+        "en": {
+          "title": "Trading: Advanced Techniques",
+          "description": "Support and resistance, moving averages and RSI, risk-reward ratio, liquidity/bid-ask spread and drawdown math."
+        },
+        "es": {
+          "title": "Trading: Técnicas Avanzadas",
+          "description": "Soporte y resistencia, medias móviles y RSI, relación riesgo-retorno, liquidez/spread bid-ask y la matemática de los drawdowns."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "trading_support_and_resistance",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Suporte e Resistência"
+            },
+            "en": {
+              "title": "Support and Resistance"
+            },
+            "es": {
+              "title": "Soporte y Resistencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Níveis de preço que o mercado parece respeitar",
+                  "body": "Suporte é uma faixa de preço em que, historicamente, a demanda por um ativo tende a superar a oferta, dificultando quedas adicionais naquele nível. Resistência é o oposto: uma faixa em que a oferta tende a superar a demanda, dificultando altas adicionais. Esses níveis são identificados observando onde o preço já reagiu no passado, mas não representam uma garantia de comportamento futuro — são apenas uma referência observacional de como outros participantes do mercado já reagiram naquela região de preço."
+                },
+                "en": {
+                  "title": "Price levels the market seems to respect",
+                  "body": "Support is a price range where, historically, demand for an asset tends to outweigh supply, making further declines at that level harder. Resistance is the opposite: a range where supply tends to outweigh demand, making further rallies harder. These levels are identified by observing where the price has already reacted in the past, but they don't represent a guarantee of future behavior — they're just an observational reference for how other market participants have reacted in that price region before."
+                },
+                "es": {
+                  "title": "Niveles de precio que el mercado parece respetar",
+                  "body": "El soporte es un rango de precio en el que, históricamente, la demanda por un activo tiende a superar la oferta, dificultando caídas adicionales en ese nivel. La resistencia es lo opuesto: un rango en el que la oferta tiende a superar la demanda, dificultando subidas adicionales. Estos niveles se identifican observando dónde el precio ya reaccionó en el pasado, pero no representan una garantía de comportamiento futuro — son solo una referencia observacional de cómo otros participantes del mercado ya reaccionaron en esa región de precio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma ação cai até R$20 três vezes ao longo de alguns meses e, em cada uma dessas vezes, o preço volta a subir a partir desse nível — um trader pode passar a tratar R$20 como um suporte relevante. Mas se, em uma quarta tentativa, o preço rompe esse nível e continua caindo, fica claro que o suporte era apenas uma tendência observada no passado, não uma barreira garantida."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A stock falls to $20 three times over a few months and, each time, the price bounces back up from that level — a trader might start treating $20 as a relevant support. But if, on a fourth attempt, the price breaks through that level and keeps falling, it becomes clear support was just an observed past tendency, not a guaranteed barrier."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una acción cae hasta R$20 tres veces a lo largo de algunos meses y, cada una de esas veces, el precio vuelve a subir desde ese nivel — un trader puede empezar a tratar R$20 como un soporte relevante. Pero si, en un cuarto intento, el precio rompe ese nivel y sigue cayendo, queda claro que el soporte era solo una tendencia observada en el pasado, no una barrera garantizada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um nível de suporte?",
+                  "options": [
+                    "Uma faixa de preço em que, historicamente, a demanda tende a superar a oferta, dificultando quedas adicionais",
+                    "Uma garantia legal de que o preço de um ativo nunca vai cair abaixo daquele nível",
+                    "Uma faixa de preço definida oficialmente por uma bolsa de valores",
+                    "Um nível que só existe em mercados de criptoativos"
+                  ],
+                  "explanation": "Suporte é uma referência observacional de preço, baseada em reações passadas de demanda superando oferta naquele nível — não uma garantia de comportamento futuro."
+                },
+                "en": {
+                  "prompt": "What is a support level?",
+                  "options": [
+                    "A price range where, historically, demand tends to outweigh supply, making further declines harder",
+                    "A legal guarantee that an asset's price will never fall below that level",
+                    "A price range officially defined by a stock exchange",
+                    "A level that only exists in cryptoasset markets"
+                  ],
+                  "explanation": "Support is an observational price reference, based on past reactions where demand outweighed supply at that level — not a guarantee of future behavior."
+                },
+                "es": {
+                  "prompt": "¿Qué es un nivel de soporte?",
+                  "options": [
+                    "Un rango de precio en el que, históricamente, la demanda tiende a superar a la oferta, dificultando caídas adicionales",
+                    "Una garantía legal de que el precio de un activo nunca caerá por debajo de ese nivel",
+                    "Un rango de precio definido oficialmente por una bolsa de valores",
+                    "Un nivel que solo existe en mercados de criptoactivos"
+                  ],
+                  "explanation": "El soporte es una referencia observacional de precio, basada en reacciones pasadas donde la demanda superó a la oferta en ese nivel — no una garantía de comportamiento futuro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que expectativas realistas sobre trading reconhecem que nenhum método garante acerto constante. Como isso deveria moldar a forma como um trader usa níveis de suporte e resistência na prática?",
+                  "options": [
+                    "Ele deveria tratar suporte e resistência como garantias absolutas de que o preço vai reverter naqueles níveis",
+                    "Ele deveria usar esses níveis como referências probabilísticas para embasar decisões, sempre considerando a possibilidade de o preço rompê-los, e não como certezas",
+                    "Ele deveria ignorar completamente qualquer nível de suporte ou resistência, já que eles nunca funcionam",
+                    "Ele deveria assumir que suporte e resistência funcionam de forma idêntica em qualquer ativo, sem exceção"
+                  ],
+                  "explanation": "Assim como qualquer ferramenta de análise técnica, suporte e resistência são referências baseadas em comportamento passado, não garantias — tratá-los com expectativas realistas significa reconhecer que o preço pode rompê-los a qualquer momento."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that realistic trading expectations recognize that no method guarantees consistent success. How should that shape how a trader uses support and resistance levels in practice?",
+                  "options": [
+                    "They should treat support and resistance as absolute guarantees that the price will reverse at those levels",
+                    "They should use these levels as probabilistic references to inform decisions, always considering the possibility the price breaks through them, rather than as certainties",
+                    "They should completely ignore any support or resistance level, since they never work",
+                    "They should assume support and resistance work identically in any asset, without exception"
+                  ],
+                  "explanation": "Like any technical analysis tool, support and resistance are references based on past behavior, not guarantees — treating them with realistic expectations means recognizing the price can break through them at any moment."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que las expectativas realistas sobre el trading reconocen que ningún método garantiza acierto constante. ¿Cómo debería moldear eso la forma en que un trader usa los niveles de soporte y resistencia en la práctica?",
+                  "options": [
+                    "Debería tratar el soporte y la resistencia como garantías absolutas de que el precio va a revertir en esos niveles",
+                    "Debería usar esos niveles como referencias probabilísticas para fundamentar decisiones, considerando siempre la posibilidad de que el precio los rompa, y no como certezas",
+                    "Debería ignorar por completo cualquier nivel de soporte o resistencia, ya que nunca funcionan",
+                    "Debería asumir que el soporte y la resistencia funcionan de forma idéntica en cualquier activo, sin excepción"
+                  ],
+                  "explanation": "Al igual que cualquier herramienta de análisis técnico, el soporte y la resistencia son referencias basadas en comportamiento pasado, no garantías — tratarlos con expectativas realistas significa reconocer que el precio puede romperlos en cualquier momento."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Suporte é uma faixa onde a demanda historicamente supera a oferta; resistência, o oposto.",
+                    "Esses níveis são identificados por reações passadas de preço, sem garantia de repetição futura.",
+                    "Expectativas realistas tratam suporte e resistência como referências probabilísticas, não certezas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Support is a range where demand historically outweighs supply; resistance is the opposite.",
+                    "These levels are identified by past price reactions, with no guarantee of future repetition.",
+                    "Realistic expectations treat support and resistance as probabilistic references, not certainties."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El soporte es un rango donde la demanda históricamente supera a la oferta; la resistencia, lo opuesto.",
+                    "Estos niveles se identifican por reacciones pasadas de precio, sin garantía de repetición futura.",
+                    "Las expectativas realistas tratan el soporte y la resistencia como referencias probabilísticas, no certezas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_moving_averages_rsi",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Médias Móveis e RSI"
+            },
+            "en": {
+              "title": "Moving Averages and RSI"
+            },
+            "es": {
+              "title": "Medias Móviles y RSI"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Suavizando o ruído para enxergar uma tendência",
+                  "body": "Médias móveis calculam o preço médio de um ativo ao longo de um número definido de períodos, suavizando oscilações de curto prazo para ajudar a visualizar uma tendência mais ampla. O índice de força relativa (RSI) é um indicador diferente, que mede a velocidade e a magnitude de variações recentes de preço, geralmente numa escala de 0 a 100, sendo usado por alguns traders como referência para identificar condições consideradas de sobrecompra ou sobrevenda."
+                },
+                "en": {
+                  "title": "Smoothing out the noise to see a trend",
+                  "body": "Moving averages calculate an asset's average price over a defined number of periods, smoothing out short-term swings to help visualize a broader trend. The relative strength index (RSI) is a different indicator, which measures the speed and magnitude of recent price changes, usually on a 0-to-100 scale, used by some traders as a reference to identify conditions considered overbought or oversold."
+                },
+                "es": {
+                  "title": "Suavizando el ruido para ver una tendencia",
+                  "body": "Las medias móviles calculan el precio promedio de un activo a lo largo de un número definido de períodos, suavizando oscilaciones de corto plazo para ayudar a visualizar una tendencia más amplia. El índice de fuerza relativa (RSI) es un indicador diferente, que mide la velocidad y magnitud de variaciones recientes de precio, generalmente en una escala de 0 a 100, usado por algunos traders como referencia para identificar condiciones consideradas de sobrecompra o sobreventa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader observa que o preço de uma ação está consistentemente acima de sua média móvel de 50 dias, interpretando isso como um sinal de tendência de alta no médio prazo. Ao mesmo tempo, ele nota que o RSI dessa ação está acima de 70, um nível que ele usa como referência para uma possível condição de sobrecompra — mas reconhece que nenhum dos dois indicadores garante o que vai acontecer a seguir."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader observes that a stock's price is consistently above its 50-day moving average, interpreting that as a medium-term uptrend signal. At the same time, they notice that stock's RSI is above 70, a level they use as a reference for a possible overbought condition — but they recognize that neither indicator guarantees what happens next."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader observa que el precio de una acción está consistentemente por encima de su media móvil de 50 días, interpretando eso como una señal de tendencia alcista en el mediano plazo. Al mismo tiempo, nota que el RSI de esa acción está por encima de 70, un nivel que usa como referencia para una posible condición de sobrecompra — pero reconoce que ninguno de los dos indicadores garantiza lo que pasará a continuación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que uma média móvel ajuda a fazer?",
+                  "options": [
+                    "Prever com certeza o preço exato de um ativo no futuro",
+                    "Suavizar oscilações de curto prazo, ajudando a visualizar uma tendência mais ampla",
+                    "Eliminar completamente qualquer risco de uma operação",
+                    "Garantir que o preço de um ativo sempre subirá"
+                  ],
+                  "explanation": "A média móvel suaviza o ruído de curto prazo, tornando mais fácil observar uma tendência de preço ao longo de um período mais amplo, sem oferecer nenhuma garantia sobre o futuro."
+                },
+                "en": {
+                  "prompt": "What does a moving average help do?",
+                  "options": [
+                    "Predict with certainty an asset's exact future price",
+                    "Smooth out short-term swings, helping visualize a broader trend",
+                    "Completely eliminate any risk from an operation",
+                    "Guarantee that an asset's price will always rise"
+                  ],
+                  "explanation": "A moving average smooths out short-term noise, making it easier to observe a price trend over a broader period, without offering any guarantee about the future."
+                },
+                "es": {
+                  "prompt": "¿Qué ayuda a hacer una media móvil?",
+                  "options": [
+                    "Predecir con certeza el precio exacto de un activo en el futuro",
+                    "Suavizar oscilaciones de corto plazo, ayudando a visualizar una tendencia más amplia",
+                    "Eliminar por completo cualquier riesgo de una operación",
+                    "Garantizar que el precio de un activo siempre subirá"
+                  ],
+                  "explanation": "La media móvil suaviza el ruido de corto plazo, facilitando observar una tendencia de precio a lo largo de un período más amplio, sin ofrecer ninguna garantía sobre el futuro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que suporte e resistência são referências probabilísticas baseadas em comportamento passado, não garantias. Como esse mesmo princípio se aplica a médias móveis e ao RSI?",
+                  "options": [
+                    "Assim como suporte e resistência, médias móveis e RSI também são ferramentas baseadas em dados passados, que oferecem referências probabilísticas, não previsões garantidas do comportamento futuro do preço",
+                    "Médias móveis e RSI são matematicamente diferentes de suporte e resistência, por isso oferecem garantias que essas outras ferramentas não oferecem",
+                    "Apenas o RSI é uma ferramenta confiável; médias móveis nunca deveriam ser usadas",
+                    "Médias móveis e RSI eliminam completamente a incerteza que existe ao usar suporte e resistência"
+                  ],
+                  "explanation": "Todas essas ferramentas de análise técnica — suporte e resistência, médias móveis, RSI — compartilham a mesma natureza: são baseadas em dados históricos e oferecem referências probabilísticas, não certezas sobre o comportamento futuro do preço."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that support and resistance are probabilistic references based on past behavior, not guarantees. How does that same principle apply to moving averages and RSI?",
+                  "options": [
+                    "Like support and resistance, moving averages and RSI are also tools based on past data, offering probabilistic references, not guaranteed predictions of future price behavior",
+                    "Moving averages and RSI are mathematically different from support and resistance, which is why they offer guarantees those other tools don't",
+                    "Only RSI is a reliable tool; moving averages should never be used",
+                    "Moving averages and RSI completely eliminate the uncertainty that exists when using support and resistance"
+                  ],
+                  "explanation": "All these technical analysis tools — support and resistance, moving averages, RSI — share the same nature: they're based on historical data and offer probabilistic references, not certainties about future price behavior."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el soporte y la resistencia son referencias probabilísticas basadas en comportamiento pasado, no garantías. ¿Cómo se aplica ese mismo principio a las medias móviles y al RSI?",
+                  "options": [
+                    "Al igual que el soporte y la resistencia, las medias móviles y el RSI también son herramientas basadas en datos pasados, que ofrecen referencias probabilísticas, no predicciones garantizadas del comportamiento futuro del precio",
+                    "Las medias móviles y el RSI son matemáticamente diferentes del soporte y la resistencia, por lo que ofrecen garantías que esas otras herramientas no ofrecen",
+                    "Solo el RSI es una herramienta confiable; las medias móviles nunca deberían usarse",
+                    "Las medias móviles y el RSI eliminan por completo la incertidumbre que existe al usar soporte y resistencia"
+                  ],
+                  "explanation": "Todas estas herramientas de análisis técnico — soporte y resistencia, medias móviles, RSI — comparten la misma naturaleza: se basan en datos históricos y ofrecen referencias probabilísticas, no certezas sobre el comportamiento futuro del precio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Médias móveis suavizam oscilações de curto prazo para ajudar a visualizar uma tendência.",
+                    "O RSI mede a velocidade e magnitude de variações recentes de preço, numa escala de 0 a 100.",
+                    "Como qualquer ferramenta de análise técnica, ambos oferecem referências probabilísticas, não garantias."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Moving averages smooth out short-term swings to help visualize a trend.",
+                    "RSI measures the speed and magnitude of recent price changes, on a 0-to-100 scale.",
+                    "Like any technical analysis tool, both offer probabilistic references, not guarantees."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las medias móviles suavizan oscilaciones de corto plazo para ayudar a visualizar una tendencia.",
+                    "El RSI mide la velocidad y magnitud de variaciones recientes de precio, en una escala de 0 a 100.",
+                    "Como cualquier herramienta de análisis técnico, ambos ofrecen referencias probabilísticas, no garantías."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_risk_reward_ratio",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Relação Risco-Retorno em Operações"
+            },
+            "en": {
+              "title": "Risk-Reward Ratio in Trades"
+            },
+            "es": {
+              "title": "Relación Riesgo-Retorno en Operaciones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto se arrisca para quanto se espera ganhar",
+                  "body": "A relação risco-retorno de uma operação compara o quanto se está disposto a perder (a distância até um stop-loss, por exemplo) com o quanto se espera ganhar (a distância até um alvo de saída). Uma relação de 1 para 3, por exemplo, significa que o ganho potencial esperado é três vezes maior do que a perda potencial assumida. Definir essa relação antes de entrar em uma operação ajuda a avaliar se o risco assumido faz sentido em relação ao potencial de retorno, independentemente de saber, de antemão, se a operação vai dar certo."
+                },
+                "en": {
+                  "title": "How much is risked for how much is expected in return",
+                  "body": "A trade's risk-reward ratio compares how much one is willing to lose (the distance to a stop-loss, for example) with how much one expects to gain (the distance to an exit target). A ratio of 1 to 3, for example, means the expected potential gain is three times larger than the potential loss taken on. Defining that ratio before entering a trade helps assess whether the risk taken makes sense relative to the return potential, regardless of knowing beforehand whether the trade will work out."
+                },
+                "es": {
+                  "title": "Cuánto se arriesga por cuánto se espera ganar",
+                  "body": "La relación riesgo-retorno de una operación compara cuánto se está dispuesto a perder (la distancia hasta un stop-loss, por ejemplo) con cuánto se espera ganar (la distancia hasta un objetivo de salida). Una relación de 1 a 3, por ejemplo, significa que la ganancia potencial esperada es tres veces mayor que la pérdida potencial asumida. Definir esa relación antes de entrar en una operación ayuda a evaluar si el riesgo asumido tiene sentido en relación con el potencial de retorno, sin importar saber de antemano si la operación va a resultar bien."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader entra em uma operação disposto a perder R$100 (definindo um stop-loss nesse ponto) e mirando um ganho potencial de R$300 (seu alvo de saída) — uma relação risco-retorno de 1 para 3. Mesmo que essa operação específica dê errado, se ele mantiver essa mesma relação de forma consistente ao longo de muitas operações, poderá ter resultado positivo mesmo acertando menos da metade das vezes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader enters a trade willing to lose $100 (setting a stop-loss at that point) and aiming for a potential gain of $300 (their exit target) — a 1-to-3 risk-reward ratio. Even if this specific trade goes wrong, if they keep that same ratio consistently across many trades, they can end up with a positive result even winning less than half the time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader entra en una operación dispuesto a perder R$100 (fijando un stop-loss en ese punto) y apuntando a una ganancia potencial de R$300 (su objetivo de salida) — una relación riesgo-retorno de 1 a 3. Aunque esa operación específica salga mal, si mantiene esa misma relación de forma consistente a lo largo de muchas operaciones, puede terminar con un resultado positivo aunque acierte menos de la mitad de las veces."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que significa uma relação risco-retorno de 1 para 3 em uma operação?",
+                  "options": [
+                    "O ganho potencial esperado é três vezes maior do que a perda potencial assumida",
+                    "A operação tem 3 vezes mais chance de dar certo do que de dar errado",
+                    "O trader precisa fazer 3 operações para cada uma que planeja",
+                    "A perda potencial é sempre três vezes maior do que o ganho esperado"
+                  ],
+                  "explanation": "A relação risco-retorno compara o tamanho do ganho potencial com o tamanho da perda potencial assumida, não a probabilidade de acerto da operação."
+                },
+                "en": {
+                  "prompt": "What does a 1-to-3 risk-reward ratio mean in a trade?",
+                  "options": [
+                    "The expected potential gain is three times larger than the potential loss taken on",
+                    "The trade has 3 times more chance of working out than not",
+                    "The trader needs to make 3 trades for every one they plan",
+                    "The potential loss is always three times larger than the expected gain"
+                  ],
+                  "explanation": "The risk-reward ratio compares the size of the potential gain to the size of the potential loss taken on, not the trade's probability of success."
+                },
+                "es": {
+                  "prompt": "¿Qué significa una relación riesgo-retorno de 1 a 3 en una operación?",
+                  "options": [
+                    "La ganancia potencial esperada es tres veces mayor que la pérdida potencial asumida",
+                    "La operación tiene 3 veces más probabilidad de salir bien que de salir mal",
+                    "El trader necesita hacer 3 operaciones por cada una que planea",
+                    "La pérdida potencial siempre es tres veces mayor que la ganancia esperada"
+                  ],
+                  "explanation": "La relación riesgo-retorno compara el tamaño de la ganancia potencial con el tamaño de la pérdida potencial asumida, no la probabilidad de acierto de la operación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que custos e probabilidades afetam o resultado de longo prazo do trading, e que a taxa de acerto sozinha não conta a história toda. Como a relação risco-retorno se conecta a essa ideia?",
+                  "options": [
+                    "Uma relação risco-retorno favorável pode permitir que um trader tenha resultado positivo mesmo acertando menos da metade das operações, já que os ganhos das operações certas superam as perdas das erradas",
+                    "A relação risco-retorno só importa se a taxa de acerto for de 100%",
+                    "Taxa de acerto e relação risco-retorno medem exatamente a mesma coisa, sem nenhuma diferença",
+                    "A relação risco-retorno elimina completamente a necessidade de considerar custos de operação"
+                  ],
+                  "explanation": "Assim como a lição sobre custos e probabilidades já discutia, o resultado de longo prazo do trading depende da combinação entre taxa de acerto e o tamanho relativo de ganhos e perdas — uma relação risco-retorno favorável é justamente o que permite ter resultado positivo mesmo com uma taxa de acerto abaixo de 50%."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that costs and odds affect trading's long-term outcome, and that win rate alone doesn't tell the whole story. How does risk-reward ratio connect to that idea?",
+                  "options": [
+                    "A favorable risk-reward ratio can let a trader end up with a positive result even winning less than half their trades, since the gains from winning trades outweigh the losses from losing ones",
+                    "Risk-reward ratio only matters if the win rate is 100%",
+                    "Win rate and risk-reward ratio measure exactly the same thing, with no difference at all",
+                    "Risk-reward ratio completely eliminates the need to consider trading costs"
+                  ],
+                  "explanation": "Just as the lesson on costs and odds already discussed, trading's long-term outcome depends on the combination of win rate and the relative size of gains and losses — a favorable risk-reward ratio is precisely what allows a positive result even with a win rate below 50%."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que los costos y las probabilidades afectan el resultado a largo plazo del trading, y que la tasa de acierto por sí sola no cuenta toda la historia. ¿Cómo se conecta la relación riesgo-retorno con esa idea?",
+                  "options": [
+                    "Una relación riesgo-retorno favorable puede permitir que un trader obtenga un resultado positivo aunque acierte menos de la mitad de las operaciones, ya que las ganancias de las operaciones acertadas superan las pérdidas de las erradas",
+                    "La relación riesgo-retorno solo importa si la tasa de acierto es del 100%",
+                    "Tasa de acierto y relación riesgo-retorno miden exactamente lo mismo, sin ninguna diferencia",
+                    "La relación riesgo-retorno elimina por completo la necesidad de considerar los costos de operación"
+                  ],
+                  "explanation": "Tal como ya discutía la lección sobre costos y probabilidades, el resultado a largo plazo del trading depende de la combinación entre la tasa de acierto y el tamaño relativo de ganancias y pérdidas — una relación riesgo-retorno favorable es justamente lo que permite un resultado positivo incluso con una tasa de acierto por debajo del 50%."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A relação risco-retorno compara o ganho potencial esperado com a perda potencial assumida em uma operação.",
+                    "Definir essa relação antes de operar ajuda a avaliar se o risco faz sentido, independentemente do resultado de uma operação específica.",
+                    "Uma relação favorável pode gerar resultado positivo no longo prazo mesmo com taxa de acerto abaixo de 50%."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk-reward ratio compares the expected potential gain with the potential loss taken on in a trade.",
+                    "Defining that ratio before trading helps assess whether the risk makes sense, regardless of a specific trade's outcome.",
+                    "A favorable ratio can generate a positive long-term result even with a win rate below 50%."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La relación riesgo-retorno compara la ganancia potencial esperada con la pérdida potencial asumida en una operación.",
+                    "Definir esa relación antes de operar ayuda a evaluar si el riesgo tiene sentido, sin importar el resultado de una operación específica.",
+                    "Una relación favorable puede generar un resultado positivo a largo plazo aunque la tasa de acierto sea inferior al 50%."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_liquidity_and_spread",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Liquidez e Spread Bid-Ask"
+            },
+            "en": {
+              "title": "Liquidity and the Bid-Ask Spread"
+            },
+            "es": {
+              "title": "Liquidez y Spread Bid-Ask"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O custo escondido de comprar e vender rápido",
+                  "body": "O spread bid-ask é a diferença entre o maior preço que compradores estão dispostos a pagar por um ativo (bid) e o menor preço que vendedores estão dispostos a aceitar (ask). Ativos com maior liquidez — ou seja, com grande volume de negociação e muitos participantes — costumam ter spreads mais estreitos, tornando mais barato entrar e sair de posições rapidamente. Ativos com baixa liquidez costumam ter spreads mais largos, o que representa um custo adicional embutido em cada operação, especialmente relevante para quem opera com frequência."
+                },
+                "en": {
+                  "title": "The hidden cost of buying and selling quickly",
+                  "body": "The bid-ask spread is the difference between the highest price buyers are willing to pay for an asset (bid) and the lowest price sellers are willing to accept (ask). Assets with higher liquidity — meaning high trading volume and many participants — usually have narrower spreads, making it cheaper to enter and exit positions quickly. Low-liquidity assets usually have wider spreads, which represents an extra cost built into every trade, especially relevant for someone who trades frequently."
+                },
+                "es": {
+                  "title": "El costo oculto de comprar y vender rápido",
+                  "body": "El spread bid-ask es la diferencia entre el precio más alto que los compradores están dispuestos a pagar por un activo (bid) y el precio más bajo que los vendedores están dispuestos a aceptar (ask). Los activos con mayor liquidez — es decir, con gran volumen de negociación y muchos participantes — suelen tener spreads más estrechos, haciendo más barato entrar y salir de posiciones rápidamente. Los activos con baja liquidez suelen tener spreads más amplios, lo que representa un costo adicional incorporado en cada operación, especialmente relevante para quien opera con frecuencia."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma ação muito negociada tem um spread de apenas alguns centavos entre o bid e o ask, tornando o custo de comprar e vender rapidamente quase irrelevante. Já uma ação pouco negociada pode ter um spread de vários pontos percentuais do preço, o que significa que, mesmo sem nenhuma variação real de preço, o trader já começa a operação com uma pequena desvantagem, só por causa da diferença entre comprar e vender."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A heavily traded stock has a spread of just a few cents between bid and ask, making the cost of quickly buying and selling almost irrelevant. A thinly traded stock, on the other hand, can have a spread of several percentage points of the price, meaning that, even without any real price movement, the trader already starts the trade at a slight disadvantage, just because of the difference between buying and selling."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una acción muy negociada tiene un spread de solo unos centavos entre el bid y el ask, haciendo que el costo de comprar y vender rápidamente sea casi irrelevante. Una acción poco negociada, en cambio, puede tener un spread de varios puntos porcentuales del precio, lo que significa que, incluso sin ninguna variación real de precio, el trader ya empieza la operación con una pequeña desventaja, solo por la diferencia entre comprar y vender."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que geralmente caracteriza o spread bid-ask de um ativo com baixa liquidez?",
+                  "options": [
+                    "Ele costuma ser mais estreito do que o de ativos com alta liquidez",
+                    "Ele costuma ser mais largo, representando um custo adicional embutido em cada operação",
+                    "Ele deixa de existir para ativos pouco negociados",
+                    "Ele é sempre idêntico ao spread de ativos com alta liquidez"
+                  ],
+                  "explanation": "Ativos com baixa liquidez costumam ter spreads mais largos entre o preço de compra e o de venda, representando um custo extra para quem precisa entrar ou sair rapidamente da posição."
+                },
+                "en": {
+                  "prompt": "What generally characterizes the bid-ask spread of a low-liquidity asset?",
+                  "options": [
+                    "It's usually narrower than that of high-liquidity assets",
+                    "It's usually wider, representing an extra cost built into every trade",
+                    "It stops existing for thinly traded assets",
+                    "It's always identical to the spread of high-liquidity assets"
+                  ],
+                  "explanation": "Low-liquidity assets usually have wider spreads between the buy and sell price, representing an extra cost for someone who needs to quickly enter or exit the position."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza generalmente el spread bid-ask de un activo con baja liquidez?",
+                  "options": [
+                    "Suele ser más estrecho que el de activos con alta liquidez",
+                    "Suele ser más amplio, representando un costo adicional incorporado en cada operación",
+                    "Deja de existir para activos poco negociados",
+                    "Siempre es idéntico al spread de activos con alta liquidez"
+                  ],
+                  "explanation": "Los activos con baja liquidez suelen tener spreads más amplios entre el precio de compra y el de venta, representando un costo extra para quien necesita entrar o salir rápidamente de la posición."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que custos de operação corroem o resultado do trading ao longo de muitas operações. Como o spread bid-ask se soma a esses custos, especialmente para quem opera com alta frequência em ativos pouco líquidos?",
+                  "options": [
+                    "O spread é um custo implícito adicional, pago a cada operação de entrada e saída, que se soma a taxas explícitas de corretagem e se torna mais relevante quanto mais frequente for a negociação em ativos pouco líquidos",
+                    "O spread bid-ask não é considerado um custo de operação, apenas as taxas de corretagem contam",
+                    "O spread só existe em operações de compra, nunca em operações de venda",
+                    "Ativos pouco líquidos nunca têm spread, apenas ativos muito negociados"
+                  ],
+                  "explanation": "O spread bid-ask funciona como um custo implícito, pago silenciosamente a cada entrada e saída de posição — ele se soma a custos explícitos, como taxas de corretagem, e pesa mais para quem negocia com frequência ativos de baixa liquidez."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that trading costs erode results across many trades. How does the bid-ask spread add to those costs, especially for someone trading frequently in illiquid assets?",
+                  "options": [
+                    "The spread is an additional implicit cost, paid on every entry and exit, that adds to explicit brokerage fees and becomes more relevant the more frequently one trades illiquid assets",
+                    "The bid-ask spread isn't considered a trading cost, only brokerage fees count",
+                    "The spread only exists on buy trades, never on sell trades",
+                    "Illiquid assets never have a spread, only heavily traded ones do"
+                  ],
+                  "explanation": "The bid-ask spread works as an implicit cost, silently paid on every entry and exit — it adds to explicit costs like brokerage fees, and weighs more for someone frequently trading low-liquidity assets."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que los costos de operación erosionan el resultado del trading a lo largo de muchas operaciones. ¿Cómo se suma el spread bid-ask a esos costos, especialmente para quien opera con alta frecuencia en activos poco líquidos?",
+                  "options": [
+                    "El spread es un costo implícito adicional, pagado en cada entrada y salida de operación, que se suma a comisiones explícitas de corretaje y se vuelve más relevante cuanto más frecuente sea la negociación en activos poco líquidos",
+                    "El spread bid-ask no se considera un costo de operación, solo cuentan las comisiones de corretaje",
+                    "El spread solo existe en operaciones de compra, nunca en operaciones de venta",
+                    "Los activos poco líquidos nunca tienen spread, solo los activos muy negociados"
+                  ],
+                  "explanation": "El spread bid-ask funciona como un costo implícito, pagado silenciosamente en cada entrada y salida de posición — se suma a costos explícitos, como las comisiones de corretaje, y pesa más para quien negocia con frecuencia activos de baja liquidez."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O spread bid-ask é a diferença entre o maior preço de compra e o menor preço de venda de um ativo.",
+                    "Ativos com maior liquidez costumam ter spreads mais estreitos; ativos pouco líquidos, spreads mais largos.",
+                    "O spread funciona como um custo implícito que se soma a taxas explícitas, pesando mais para quem opera com frequência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The bid-ask spread is the difference between an asset's highest buy price and lowest sell price.",
+                    "Higher-liquidity assets usually have narrower spreads; illiquid assets, wider spreads.",
+                    "The spread works as an implicit cost that adds to explicit fees, weighing more for frequent traders."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El spread bid-ask es la diferencia entre el precio de compra más alto y el precio de venta más bajo de un activo.",
+                    "Los activos con mayor liquidez suelen tener spreads más estrechos; los activos poco líquidos, spreads más amplios.",
+                    "El spread funciona como un costo implícito que se suma a las comisiones explícitas, pesando más para quien opera con frecuencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "trading_drawdowns_and_recovery",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Drawdowns e a Matemática da Recuperação"
+            },
+            "en": {
+              "title": "Drawdowns and the Math of Recovery"
+            },
+            "es": {
+              "title": "Drawdowns y la Matemática de la Recuperación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Perdas maiores exigem recuperações desproporcionalmente maiores",
+                  "body": "Drawdown é a queda percentual de um capital em relação ao seu pico mais recente. A matemática por trás da recuperação de um drawdown é assimétrica: uma perda de 10% exige um ganho de aproximadamente 11% para retornar ao patamar anterior, mas uma perda de 50% exige um ganho de 100% para a mesma recuperação. Essa assimetria cresce rapidamente à medida que o drawdown aumenta, o que reforça a importância de limitar perdas grandes, já que elas ficam desproporcionalmente mais difíceis de reverter."
+                },
+                "en": {
+                  "title": "Bigger losses require disproportionately bigger recoveries",
+                  "body": "Drawdown is the percentage decline of capital relative to its most recent peak. The math behind recovering from a drawdown is asymmetric: a 10% loss requires roughly an 11% gain to return to the previous level, but a 50% loss requires a 100% gain for the same recovery. That asymmetry grows quickly as the drawdown increases, which reinforces the importance of limiting large losses, since they become disproportionately harder to reverse."
+                },
+                "es": {
+                  "title": "Pérdidas mayores exigen recuperaciones desproporcionadamente mayores",
+                  "body": "El drawdown es la caída porcentual de un capital respecto a su pico más reciente. La matemática detrás de la recuperación de un drawdown es asimétrica: una pérdida del 10% exige una ganancia de aproximadamente el 11% para volver al nivel anterior, pero una pérdida del 50% exige una ganancia del 100% para la misma recuperación. Esa asimetría crece rápidamente a medida que aumenta el drawdown, lo que refuerza la importancia de limitar pérdidas grandes, ya que se vuelven desproporcionadamente más difíciles de revertir."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader com R$10.000 sofre uma sequência de perdas e chega a R$5.000, um drawdown de 50%. Para voltar aos R$10.000 originais, ele precisaria dobrar o capital restante, um ganho de 100% — uma meta muito mais difícil de alcançar do que evitar, desde o início, ter chegado a esse nível de perda."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader with $10,000 suffers a string of losses and drops to $5,000, a 50% drawdown. To get back to the original $10,000, they would need to double the remaining capital, a 100% gain — a much harder goal to reach than avoiding, from the start, reaching that level of loss."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader con R$10.000 sufre una secuencia de pérdidas y llega a R$5.000, un drawdown del 50%. Para volver a los R$10.000 originales, necesitaría duplicar el capital restante, una ganancia del 100% — una meta mucho más difícil de alcanzar que evitar, desde el principio, haber llegado a ese nivel de pérdida."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que um drawdown de 50% exige um ganho de 100% para ser recuperado?",
+                  "options": [
+                    "Porque a matemática de recuperação é sempre simétrica, exigindo exatamente o mesmo percentual da perda",
+                    "Porque, após a perda, o capital restante é menor, e um ganho percentual sobre uma base menor precisa ser maior para voltar ao valor original",
+                    "Porque isso é apenas uma convenção de mercado, sem nenhuma base matemática",
+                    "Porque drawdowns de 50% nunca podem ser recuperados, independentemente do ganho percentual"
+                  ],
+                  "explanation": "Como o ganho percentual necessário para recuperação é calculado sobre uma base de capital já reduzida, a matemática se torna assimétrica: quanto maior a perda percentual, desproporcionalmente maior o ganho percentual necessário para recuperá-la."
+                },
+                "en": {
+                  "prompt": "Why does a 50% drawdown require a 100% gain to recover?",
+                  "options": [
+                    "Because recovery math is always symmetric, requiring exactly the same percentage as the loss",
+                    "Because, after the loss, the remaining capital is smaller, and a percentage gain on a smaller base needs to be larger to return to the original amount",
+                    "Because this is just a market convention, with no mathematical basis",
+                    "Because 50% drawdowns can never be recovered, regardless of the percentage gain"
+                  ],
+                  "explanation": "Since the percentage gain needed for recovery is calculated on an already-reduced capital base, the math becomes asymmetric: the larger the percentage loss, the disproportionately larger the percentage gain needed to recover it."
+                },
+                "es": {
+                  "prompt": "¿Por qué un drawdown del 50% requiere una ganancia del 100% para recuperarse?",
+                  "options": [
+                    "Porque la matemática de recuperación siempre es simétrica, exigiendo exactamente el mismo porcentaje que la pérdida",
+                    "Porque, después de la pérdida, el capital restante es menor, y una ganancia porcentual sobre una base menor necesita ser mayor para volver al monto original",
+                    "Porque esto es solo una convención de mercado, sin ninguna base matemática",
+                    "Porque los drawdowns del 50% nunca pueden recuperarse, sin importar la ganancia porcentual"
+                  ],
+                  "explanation": "Como la ganancia porcentual necesaria para la recuperación se calcula sobre una base de capital ya reducida, la matemática se vuelve asimétrica: cuanto mayor la pérdida porcentual, desproporcionadamente mayor la ganancia porcentual necesaria para recuperarla."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores desta escola, tanto o dimensionamento de posição quanto a relação risco-retorno em operações. Como a matemática assimétrica da recuperação de drawdowns reforça a importância dessas duas práticas juntas?",
+                  "options": [
+                    "Como perdas grandes exigem recuperações desproporcionalmente maiores, dimensionar posições de forma a limitar o tamanho de qualquer perda individual, combinado com uma relação risco-retorno favorável, ajuda a evitar drawdowns tão profundos que se tornem matematicamente muito difíceis de reverter",
+                    "A matemática de recuperação de drawdowns não tem nenhuma relação com dimensionamento de posição ou relação risco-retorno",
+                    "Dimensionamento de posição e relação risco-retorno só importam depois que um drawdown severo já aconteceu",
+                    "Drawdowns profundos são sempre fáceis de recuperar, independentemente de qualquer prática de gestão de risco"
+                  ],
+                  "explanation": "Conectando os conceitos, fica claro por que limitar o tamanho de cada perda individual — através de dimensionamento de posição cuidadoso e de uma relação risco-retorno favorável — é tão importante: evitar um drawdown profundo evita também a matemática desproporcional necessária para se recuperar dele."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this school, both position sizing and risk-reward ratio in trades. How does the asymmetric math of drawdown recovery reinforce the importance of these two practices together?",
+                  "options": [
+                    "Since big losses require disproportionately bigger recoveries, sizing positions to limit the size of any individual loss, combined with a favorable risk-reward ratio, helps avoid drawdowns so deep they become mathematically very hard to reverse",
+                    "Drawdown recovery math has no relation at all to position sizing or risk-reward ratio",
+                    "Position sizing and risk-reward ratio only matter after a severe drawdown has already happened",
+                    "Deep drawdowns are always easy to recover from, regardless of any risk management practice"
+                  ],
+                  "explanation": "Connecting the concepts, it becomes clear why limiting the size of each individual loss — through careful position sizing and a favorable risk-reward ratio — matters so much: avoiding a deep drawdown also avoids the disproportionate math needed to recover from it."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de esta escuela, tanto el dimensionamiento de posición como la relación riesgo-retorno en las operaciones. ¿Cómo refuerza la matemática asimétrica de la recuperación de drawdowns la importancia de estas dos prácticas juntas?",
+                  "options": [
+                    "Como las pérdidas grandes exigen recuperaciones desproporcionadamente mayores, dimensionar posiciones para limitar el tamaño de cualquier pérdida individual, combinado con una relación riesgo-retorno favorable, ayuda a evitar drawdowns tan profundos que se vuelvan matemáticamente muy difíciles de revertir",
+                    "La matemática de recuperación de drawdowns no tiene ninguna relación con el dimensionamiento de posición o la relación riesgo-retorno",
+                    "El dimensionamiento de posición y la relación riesgo-retorno solo importan después de que ya ocurrió un drawdown severo",
+                    "Los drawdowns profundos siempre son fáciles de recuperar, sin importar ninguna práctica de gestión de riesgo"
+                  ],
+                  "explanation": "Conectando los conceptos, queda claro por qué limitar el tamaño de cada pérdida individual — mediante un dimensionamiento de posición cuidadoso y una relación riesgo-retorno favorable — es tan importante: evitar un drawdown profundo también evita la matemática desproporcionada necesaria para recuperarse de él."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Drawdown é a queda percentual de um capital em relação ao seu pico mais recente.",
+                    "A matemática de recuperação é assimétrica: perdas maiores exigem ganhos percentuais desproporcionalmente maiores.",
+                    "Você concluiu o módulo especializado de trading: suporte/resistência, médias móveis e RSI, relação risco-retorno, liquidez/spread e drawdowns."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Drawdown is the percentage decline of capital relative to its most recent peak.",
+                    "Recovery math is asymmetric: bigger losses require disproportionately bigger percentage gains.",
+                    "You've completed the specialized trading module: support/resistance, moving averages and RSI, risk-reward ratio, liquidity/spread and drawdowns."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El drawdown es la caída porcentual de un capital respecto a su pico más reciente.",
+                    "La matemática de recuperación es asimétrica: pérdidas mayores exigen ganancias porcentuales desproporcionadamente mayores.",
+                    "Completaste el módulo especializado de trading: soporte/resistencia, medias móviles y RSI, relación riesgo-retorno, liquidez/spread y drawdowns."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2549 @@
+{
+  "schoolId": "fundamental_analysis",
+  "domainId": "analysis_valuation",
+  "order": 7,
+  "iconKey": "analytics_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Análise Fundamentalista",
+      "description": "Como ler balanços, margens, indicadores de retorno e endividamento de uma empresa."
+    },
+    "en": {
+      "title": "Fundamental Analysis",
+      "description": "How to read financial statements, margins, return and debt indicators of a company."
+    },
+    "es": {
+      "title": "Análisis Fundamental",
+      "description": "Cómo leer balances, márgenes, indicadores de retorno y endeudamiento de una empresa."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "fundamental_analysis",
+      "order": 1,
+      "iconKey": "analytics_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Análise Fundamentalista",
+          "description": "P/L, P/VP, ROE, margens e endividamento — ferramentas para investigar uma empresa, não sinais de compra."
+        },
+        "en": {
+          "title": "Fundamental Analysis",
+          "description": "P/E, P/B, ROE, margins and debt — tools for investigating a company, not buy signals."
+        },
+        "es": {
+          "title": "Análisis Fundamental",
+          "description": "P/E, P/VC, ROE, márgenes y endeudamiento — herramientas para investigar una empresa, no señales de compra."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "fundamental_analysis_what_is_it",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que é Análise Fundamentalista?"
+            },
+            "en": {
+              "title": "What Is Fundamental Analysis?"
+            },
+            "es": {
+              "title": "¿Qué es el Análisis Fundamental?"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Investigar o negócio, não prever o preço",
+                  "body": "Análise fundamentalista é o estudo dos números e da situação de uma empresa — como receita, lucro, dívidas e margens — para entender a saúde e o valor do negócio por trás de uma ação. O objetivo não é prever o preço de amanhã, mas investigar se o negócio é sólido e como ele se compara a outras opções. Os indicadores que você vai estudar nas próximas lições são ferramentas de investigação, não sinais automáticos de compra ou venda."
+                },
+                "en": {
+                  "title": "Investigating the business, not predicting the price",
+                  "body": "Fundamental analysis is the study of a company's numbers and situation — like revenue, profit, debt, and margins — to understand the health and value of the business behind a stock. The goal isn't to predict tomorrow's price, but to investigate whether the business is solid and how it compares to other options. The indicators you'll study in the next lessons are investigation tools, not automatic buy or sell signals."
+                },
+                "es": {
+                  "title": "Investigar el negocio, no predecir el precio",
+                  "body": "El análisis fundamental es el estudio de los números y la situación de una empresa — como ingresos, ganancias, deudas y márgenes — para entender la salud y el valor del negocio detrás de una acción. El objetivo no es predecir el precio de mañana, sino investigar si el negocio es sólido y cómo se compara con otras opciones. Los indicadores que estudiarás en las próximas lecciones son herramientas de investigación, no señales automáticas de compra o venta."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor lê o balanço de uma empresa e percebe que a receita cresce, mas a dívida cresce ainda mais rápido. Ele não conclui automaticamente 'vender' ou 'comprar' — ele passa a investigar por que a dívida está crescendo tão rápido, comparando com empresas do mesmo setor antes de tirar qualquer conclusão."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor reads a company's financial statements and notices revenue is growing, but debt is growing even faster. They don't automatically conclude 'sell' or 'buy' — they start investigating why debt is growing so fast, comparing it with companies in the same sector before drawing any conclusion."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor lee el balance de una empresa y nota que los ingresos crecen, pero la deuda crece aún más rápido. No concluye automáticamente 'vender' o 'comprar' — empieza a investigar por qué la deuda está creciendo tan rápido, comparándola con empresas del mismo sector antes de sacar cualquier conclusión."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo da análise fundamentalista?",
+                  "options": [
+                    "Prever com certeza o preço de uma ação amanhã",
+                    "Investigar a saúde e o valor do negócio por trás de uma ação, usando seus números",
+                    "Seguir apenas o que a maioria dos investidores está fazendo",
+                    "Garantir que um investimento nunca vai cair de preço"
+                  ],
+                  "explanation": "Análise fundamentalista é sobre investigar o negócio em si — seus números, sua saúde financeira — não sobre prever movimentos futuros de preço com certeza."
+                },
+                "en": {
+                  "prompt": "What is the goal of fundamental analysis?",
+                  "options": [
+                    "Predicting with certainty tomorrow's stock price",
+                    "Investigating the health and value of the business behind a stock, using its numbers",
+                    "Only following what most other investors are doing",
+                    "Guaranteeing an investment will never drop in price"
+                  ],
+                  "explanation": "Fundamental analysis is about investigating the business itself — its numbers, its financial health — not about predicting future price movements with certainty."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo del análisis fundamental?",
+                  "options": [
+                    "Predecir con certeza el precio de una acción mañana",
+                    "Investigar la salud y el valor del negocio detrás de una acción, usando sus números",
+                    "Seguir solo lo que hace la mayoría de los inversores",
+                    "Garantizar que una inversión nunca bajará de precio"
+                  ],
+                  "explanation": "El análisis fundamental trata sobre investigar el negocio en sí — sus números, su salud financiera — no sobre predecir movimientos futuros de precio con certeza."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um amigo diz: 'estudei o P/L dessa empresa e ele é baixo, então com certeza vou ganhar dinheiro comprando essa ação'. O que está errado nesse raciocínio?",
+                  "options": [
+                    "Nada, um P/L baixo sempre garante lucro",
+                    "Um único indicador isolado, sem investigar o contexto e outros números da empresa, não garante resultado nenhum — indicadores são ferramentas de investigação, não certezas",
+                    "P/L não tem nenhuma relação com análise fundamentalista",
+                    "Análise fundamentalista sempre prevê o futuro com precisão"
+                  ],
+                  "explanation": "Nenhum indicador isolado garante um resultado — eles ajudam a investigar e comparar, mas sempre fazem parte de uma análise mais ampla do negócio, nunca de uma certeza sobre o futuro."
+                },
+                "en": {
+                  "prompt": "A friend says: 'I studied this company's P/E ratio and it's low, so I'm definitely going to make money buying this stock.' What's wrong with that reasoning?",
+                  "options": [
+                    "Nothing, a low P/E always guarantees profit",
+                    "A single isolated indicator, without investigating the company's context and other numbers, guarantees no result at all — indicators are investigation tools, not certainties",
+                    "P/E has no relation to fundamental analysis",
+                    "Fundamental analysis always predicts the future accurately"
+                  ],
+                  "explanation": "No isolated indicator guarantees a result — they help investigate and compare, but they're always part of a broader analysis of the business, never a certainty about the future."
+                },
+                "es": {
+                  "prompt": "Un amigo dice: 'estudié el P/E de esa empresa y es bajo, así que seguro voy a ganar dinero comprando esa acción'. ¿Qué está mal en ese razonamiento?",
+                  "options": [
+                    "Nada, un P/E bajo siempre garantiza ganancias",
+                    "Un único indicador aislado, sin investigar el contexto y otros números de la empresa, no garantiza ningún resultado — los indicadores son herramientas de investigación, no certezas",
+                    "El P/E no tiene ninguna relación con el análisis fundamental",
+                    "El análisis fundamental siempre predice el futuro con precisión"
+                  ],
+                  "explanation": "Ningún indicador aislado garantiza un resultado — ayudan a investigar y comparar, pero siempre forman parte de un análisis más amplio del negocio, nunca de una certeza sobre el futuro."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Análise fundamentalista investiga a saúde e o valor de um negócio através de seus números.",
+                    "O objetivo não é prever preços, mas entender o negócio por trás da ação.",
+                    "Indicadores são ferramentas de investigação, nunca sinais automáticos de compra ou venda."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Fundamental analysis investigates a business's health and value through its numbers.",
+                    "The goal isn't to predict prices, but to understand the business behind the stock.",
+                    "Indicators are investigation tools, never automatic buy or sell signals."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El análisis fundamental investiga la salud y el valor de un negocio a través de sus números.",
+                    "El objetivo no es predecir precios, sino entender el negocio detrás de la acción.",
+                    "Los indicadores son herramientas de investigación, nunca señales automáticas de compra o venta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_pl_pvp",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "portfolioConcepts": [
+            "pe",
+            "pvp"
+          ],
+          "translations": {
+            "pt": {
+              "title": "P/L e P/VP"
+            },
+            "en": {
+              "title": "P/E and P/B"
+            },
+            "es": {
+              "title": "P/E y P/VC"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comparando preço com lucro e patrimônio",
+                  "body": "O P/L (Preço sobre Lucro) divide o preço da ação pelo lucro por ação, mostrando quantos anos de lucro atual seriam necessários, em teoria, para 'pagar' o preço pago pela ação. O P/VP (Preço sobre Valor Patrimonial) divide o preço da ação pelo valor patrimonial por ação, mostrando quanto o mercado está pagando em relação ao patrimônio contábil da empresa. Um P/L ou P/VP baixo não significa automaticamente que uma ação está 'barata' — pode refletir também um risco maior percebido pelo mercado."
+                },
+                "en": {
+                  "title": "Comparing price with earnings and equity",
+                  "body": "The P/E ratio (Price to Earnings) divides the stock price by earnings per share, showing how many years of current earnings would theoretically be needed to 'pay off' the price paid for the stock. The P/B ratio (Price to Book) divides the stock price by book value per share, showing how much the market is paying relative to the company's accounting equity. A low P/E or P/B doesn't automatically mean a stock is 'cheap' — it can also reflect a higher risk perceived by the market."
+                },
+                "es": {
+                  "title": "Comparando precio con ganancia y patrimonio",
+                  "body": "El P/E (Precio sobre Ganancia) divide el precio de la acción por la ganancia por acción, mostrando cuántos años de ganancia actual se necesitarían, en teoría, para 'pagar' el precio de la acción. El P/VC (Precio sobre Valor Contable) divide el precio de la acción por el valor contable por acción, mostrando cuánto está pagando el mercado en relación al patrimonio contable de la empresa. Un P/E o P/VC bajo no significa automáticamente que una acción está 'barata' — también puede reflejar un mayor riesgo percibido por el mercado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa tem lucro de R$2 por ação e a ação é negociada a R$20 — um P/L de 10. Outra empresa do mesmo setor tem P/L de 20. Isso pode significar que a primeira está mais barata em relação ao lucro atual, ou que o mercado enxerga mais risco ou menos crescimento futuro nela do que na segunda — por isso, vale investigar o motivo da diferença, não só comparar o número."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company has earnings of R$2 per share and the stock trades at R$20 — a P/E of 10. Another company in the same sector has a P/E of 20. This could mean the first is cheaper relative to current earnings, or that the market sees more risk or less future growth in it than in the second — so it's worth investigating the reason for the difference, not just comparing the number."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa tiene una ganancia de R$2 por acción y la acción se negocia a R$20 — un P/E de 10. Otra empresa del mismo sector tiene un P/E de 20. Esto podría significar que la primera está más barata en relación a la ganancia actual, o que el mercado percibe más riesgo o menos crecimiento futuro en ella que en la segunda — por eso vale la pena investigar el motivo de la diferencia, no solo comparar el número."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o indicador P/L mostra?",
+                  "options": [
+                    "A dívida total da empresa",
+                    "Quantos anos de lucro atual, em teoria, seriam necessários para 'pagar' o preço da ação",
+                    "A margem de lucro da empresa",
+                    "O valor de mercado total da empresa"
+                  ],
+                  "explanation": "P/L divide o preço da ação pelo lucro por ação, mostrando essa relação teórica entre preço pago e lucro atual gerado."
+                },
+                "en": {
+                  "prompt": "What does the P/E ratio show?",
+                  "options": [
+                    "The company's total debt",
+                    "How many years of current earnings would theoretically be needed to 'pay off' the stock's price",
+                    "The company's profit margin",
+                    "The company's total market value"
+                  ],
+                  "explanation": "P/E divides the stock price by earnings per share, showing this theoretical relationship between the price paid and the current earnings generated."
+                },
+                "es": {
+                  "prompt": "¿Qué muestra el indicador P/E?",
+                  "options": [
+                    "La deuda total de la empresa",
+                    "Cuántos años de ganancia actual, en teoría, serían necesarios para 'pagar' el precio de la acción",
+                    "El margen de ganancia de la empresa",
+                    "El valor de mercado total de la empresa"
+                  ],
+                  "explanation": "El P/E divide el precio de la acción por la ganancia por acción, mostrando esa relación teórica entre el precio pagado y la ganancia actual generada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você vê duas empresas do mesmo setor: uma com P/L de 8, outra com P/L de 25. Antes de concluir que a primeira é uma 'pechincha', o que faz mais sentido investigar?",
+                  "options": [
+                    "Nada, P/L mais baixo é sempre sinônimo de melhor investimento",
+                    "Por que existe essa diferença — pode ser risco maior percebido, crescimento esperado menor, ou outros fatores específicos daquele negócio",
+                    "Apenas o preço da ação em reais, ignorando o lucro",
+                    "Qual empresa tem o nome mais conhecido"
+                  ],
+                  "explanation": "Um P/L mais baixo pode refletir uma oportunidade, mas também pode refletir um risco maior ou expectativas piores sobre o futuro da empresa — o número sozinho não conta a história toda."
+                },
+                "en": {
+                  "prompt": "You see two companies in the same sector: one with a P/E of 8, the other with a P/E of 25. Before concluding the first is a 'bargain,' what makes more sense to investigate?",
+                  "options": [
+                    "Nothing, a lower P/E is always synonymous with a better investment",
+                    "Why that difference exists — it could be a higher perceived risk, lower expected growth, or other factors specific to that business",
+                    "Only the stock's price in dollars, ignoring earnings",
+                    "Which company has the more well-known name"
+                  ],
+                  "explanation": "A lower P/E can reflect an opportunity, but it can also reflect a higher risk or worse expectations about the company's future — the number alone doesn't tell the whole story."
+                },
+                "es": {
+                  "prompt": "Ves dos empresas del mismo sector: una con P/E de 8, otra con P/E de 25. Antes de concluir que la primera es una 'ganga', ¿qué tiene más sentido investigar?",
+                  "options": [
+                    "Nada, un P/E más bajo siempre es sinónimo de mejor inversión",
+                    "Por qué existe esa diferencia — puede ser un mayor riesgo percibido, un crecimiento esperado menor, u otros factores específicos de ese negocio",
+                    "Solo el precio de la acción en reales, ignorando la ganancia",
+                    "Qué empresa tiene el nombre más conocido"
+                  ],
+                  "explanation": "Un P/E más bajo puede reflejar una oportunidad, pero también puede reflejar un mayor riesgo o peores expectativas sobre el futuro de la empresa — el número por sí solo no cuenta toda la historia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "P/L compara o preço da ação com o lucro por ação.",
+                    "P/VP compara o preço da ação com o valor patrimonial por ação.",
+                    "Um indicador baixo não significa automaticamente uma pechincha — vale investigar o motivo da diferença."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "P/E compares the stock's price with earnings per share.",
+                    "P/B compares the stock's price with book value per share.",
+                    "A low indicator doesn't automatically mean a bargain — it's worth investigating the reason for the difference."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El P/E compara el precio de la acción con la ganancia por acción.",
+                    "El P/VC compara el precio de la acción con el valor contable por acción.",
+                    "Un indicador bajo no significa automáticamente una ganga — vale la pena investigar el motivo de la diferencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_roe",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "portfolioConcepts": [
+            "roe"
+          ],
+          "translations": {
+            "pt": {
+              "title": "ROE"
+            },
+            "en": {
+              "title": "ROE"
+            },
+            "es": {
+              "title": "ROE"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto o negócio gera com o que já tem",
+                  "body": "ROE (Return on Equity, ou Retorno sobre o Patrimônio Líquido) mede quanto lucro uma empresa gera em relação ao patrimônio líquido dos acionistas. É uma forma de avaliar a eficiência com que a empresa usa o capital que já tem para gerar retorno. Um ROE mais alto, de forma consistente ao longo do tempo, costuma indicar um negócio mais eficiente em gerar lucro com os recursos disponíveis — mas vale sempre comparar empresas do mesmo setor, já que a média varia bastante entre setores diferentes."
+                },
+                "en": {
+                  "title": "How much the business generates with what it already has",
+                  "body": "ROE (Return on Equity) measures how much profit a company generates relative to shareholders' equity. It's a way to assess how efficiently the company uses the capital it already has to generate a return. A consistently higher ROE over time tends to indicate a business that's more efficient at generating profit with available resources — but it's always worth comparing companies in the same sector, since the average varies a lot between different sectors."
+                },
+                "es": {
+                  "title": "Cuánto genera el negocio con lo que ya tiene",
+                  "body": "El ROE (Retorno sobre el Patrimonio) mide cuánta ganancia genera una empresa en relación al patrimonio neto de los accionistas. Es una forma de evaluar la eficiencia con la que la empresa usa el capital que ya tiene para generar retorno. Un ROE más alto, de forma consistente en el tiempo, suele indicar un negocio más eficiente en generar ganancias con los recursos disponibles — pero siempre vale la pena comparar empresas del mismo sector, ya que el promedio varía bastante entre sectores diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas têm o mesmo lucro em reais, mas uma tem um patrimônio líquido bem menor que a outra. A empresa com patrimônio menor está gerando o mesmo lucro com menos capital próprio — ou seja, tem um ROE mais alto, o que sugere maior eficiência no uso do capital disponível."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies have the same profit in dollar terms, but one has much smaller shareholders' equity than the other. The company with smaller equity is generating the same profit with less of its own capital — in other words, it has a higher ROE, which suggests greater efficiency in using available capital."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas tienen la misma ganancia en reales, pero una tiene un patrimonio neto mucho menor que la otra. La empresa con menor patrimonio está generando la misma ganancia con menos capital propio — es decir, tiene un ROE más alto, lo que sugiere una mayor eficiencia en el uso del capital disponible."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o ROE mede?",
+                  "options": [
+                    "A dívida total da empresa em relação às vendas",
+                    "Quanto lucro uma empresa gera em relação ao patrimônio líquido dos acionistas",
+                    "O preço da ação em relação ao lucro por ação",
+                    "A quantidade de funcionários da empresa"
+                  ],
+                  "explanation": "ROE mede a eficiência da empresa em gerar lucro a partir do patrimônio líquido que ela já tem disponível."
+                },
+                "en": {
+                  "prompt": "What does ROE measure?",
+                  "options": [
+                    "The company's total debt relative to sales",
+                    "How much profit a company generates relative to shareholders' equity",
+                    "The stock's price relative to earnings per share",
+                    "The number of employees at the company"
+                  ],
+                  "explanation": "ROE measures the company's efficiency in generating profit from the shareholders' equity it already has available."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el ROE?",
+                  "options": [
+                    "La deuda total de la empresa en relación a las ventas",
+                    "Cuánta ganancia genera una empresa en relación al patrimonio neto de los accionistas",
+                    "El precio de la acción en relación a la ganancia por acción",
+                    "La cantidad de empleados de la empresa"
+                  ],
+                  "explanation": "El ROE mide la eficiencia de la empresa en generar ganancias a partir del patrimonio neto que ya tiene disponible."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está comparando o ROE de uma empresa de tecnologia com o de um banco tradicional, e os números são bem diferentes. O que isso te ensina sobre como usar esse indicador?",
+                  "options": [
+                    "Que ROE só serve para empresas de tecnologia",
+                    "Que comparar ROE entre setores muito diferentes pode ser enganoso, já que a média varia bastante conforme o tipo de negócio — melhor comparar empresas do mesmo setor",
+                    "Que o setor com o ROE mais baixo sempre é o pior investimento",
+                    "Que ROE não tem relação nenhuma com a eficiência da empresa"
+                  ],
+                  "explanation": "Setores diferentes têm estruturas de capital e modelos de negócio muito distintos — por isso, ROE costuma ser mais útil quando comparado entre empresas do mesmo setor, e não entre setores totalmente diferentes."
+                },
+                "en": {
+                  "prompt": "You're comparing the ROE of a technology company with that of a traditional bank, and the numbers are quite different. What does this teach you about how to use this indicator?",
+                  "options": [
+                    "That ROE is only useful for technology companies",
+                    "That comparing ROE across very different sectors can be misleading, since the average varies a lot depending on the type of business — it's better to compare companies within the same sector",
+                    "That the sector with the lowest ROE is always the worst investment",
+                    "That ROE has no relation to the company's efficiency"
+                  ],
+                  "explanation": "Different sectors have very different capital structures and business models — that's why ROE tends to be more useful when compared between companies in the same sector, rather than across completely different sectors."
+                },
+                "es": {
+                  "prompt": "Estás comparando el ROE de una empresa de tecnología con el de un banco tradicional, y los números son bastante diferentes. ¿Qué te enseña esto sobre cómo usar este indicador?",
+                  "options": [
+                    "Que el ROE solo sirve para empresas de tecnología",
+                    "Que comparar el ROE entre sectores muy diferentes puede ser engañoso, ya que el promedio varía bastante según el tipo de negocio — mejor comparar empresas del mismo sector",
+                    "Que el sector con el ROE más bajo siempre es la peor inversión",
+                    "Que el ROE no tiene ninguna relación con la eficiencia de la empresa"
+                  ],
+                  "explanation": "Sectores diferentes tienen estructuras de capital y modelos de negocio muy distintos — por eso, el ROE suele ser más útil cuando se compara entre empresas del mismo sector, y no entre sectores totalmente diferentes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "ROE mede a eficiência de uma empresa em gerar lucro a partir do patrimônio líquido.",
+                    "Um ROE consistentemente mais alto costuma indicar maior eficiência no uso do capital.",
+                    "Comparações de ROE são mais úteis entre empresas do mesmo setor."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "ROE measures a company's efficiency in generating profit from shareholders' equity.",
+                    "A consistently higher ROE tends to indicate greater efficiency in using capital.",
+                    "ROE comparisons are more useful between companies in the same sector."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El ROE mide la eficiencia de una empresa en generar ganancias a partir del patrimonio neto.",
+                    "Un ROE consistentemente más alto suele indicar una mayor eficiencia en el uso del capital.",
+                    "Las comparaciones de ROE son más útiles entre empresas del mismo sector."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_margins",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "portfolioConcepts": [
+            "net_margin"
+          ],
+          "translations": {
+            "pt": {
+              "title": "Margens"
+            },
+            "en": {
+              "title": "Margins"
+            },
+            "es": {
+              "title": "Márgenes"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto sobra em cada etapa",
+                  "body": "Margens medem quanto de cada real de receita 'sobra' em diferentes etapas do resultado de uma empresa. A margem bruta mostra o que sobra depois dos custos diretos de produção. A margem líquida mostra o que sobra depois de todos os custos, despesas e impostos — o lucro final como proporção da receita. Comparar margens ao longo do tempo, e entre empresas do mesmo setor, ajuda a entender se uma empresa está conseguindo manter ou melhorar sua eficiência."
+                },
+                "en": {
+                  "title": "How much is left at each stage",
+                  "body": "Margins measure how much of each dollar of revenue is 'left over' at different stages of a company's results. Gross margin shows what's left after direct production costs. Net margin shows what's left after all costs, expenses and taxes — the final profit as a proportion of revenue. Comparing margins over time, and between companies in the same sector, helps understand whether a company is managing to maintain or improve its efficiency."
+                },
+                "es": {
+                  "title": "Cuánto queda en cada etapa",
+                  "body": "Los márgenes miden cuánto de cada real de ingreso 'queda' en diferentes etapas del resultado de una empresa. El margen bruto muestra lo que queda después de los costos directos de producción. El margen neto muestra lo que queda después de todos los costos, gastos e impuestos — la ganancia final como proporción del ingreso. Comparar márgenes a lo largo del tiempo, y entre empresas del mismo sector, ayuda a entender si una empresa está logrando mantener o mejorar su eficiencia."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa de varejo tem receita de R$100 milhões e margem líquida de 5% — ou seja, R$5 milhões viram lucro final. Uma empresa de software, com a mesma receita, pode ter margem líquida de 25%, porque tem custos de produção muito menores. Isso não significa automaticamente que a segunda é 'melhor' — modelos de negócio diferentes costumam ter margens naturalmente diferentes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A retail company has revenue of R$100 million and a net margin of 5% — meaning R$5 million becomes final profit. A software company, with the same revenue, might have a net margin of 25%, because it has much lower production costs. That doesn't automatically mean the second is 'better' — different business models tend to have naturally different margins."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa minorista tiene ingresos de R$100 millones y un margen neto del 5% — es decir, R$5 millones se convierten en ganancia final. Una empresa de software, con el mismo ingreso, puede tener un margen neto del 25%, porque tiene costos de producción mucho menores. Eso no significa automáticamente que la segunda sea 'mejor' — modelos de negocio diferentes suelen tener márgenes naturalmente distintos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a margem líquida mostra?",
+                  "options": [
+                    "O total de receita da empresa, sem nenhum desconto",
+                    "O que sobra do lucro final como proporção da receita, depois de todos os custos, despesas e impostos",
+                    "Apenas os custos diretos de produção",
+                    "A dívida total da empresa"
+                  ],
+                  "explanation": "Margem líquida é o lucro final da empresa dividido pela receita — mostra quanto realmente sobra de cada real vendido, depois de todos os descontos."
+                },
+                "en": {
+                  "prompt": "What does net margin show?",
+                  "options": [
+                    "The company's total revenue, with no deductions",
+                    "What's left of the final profit as a proportion of revenue, after all costs, expenses and taxes",
+                    "Only the direct production costs",
+                    "The company's total debt"
+                  ],
+                  "explanation": "Net margin is the company's final profit divided by revenue — it shows how much is really left from each dollar sold, after all deductions."
+                },
+                "es": {
+                  "prompt": "¿Qué muestra el margen neto?",
+                  "options": [
+                    "El total de ingresos de la empresa, sin ningún descuento",
+                    "Lo que queda de la ganancia final como proporción del ingreso, después de todos los costos, gastos e impuestos",
+                    "Solo los costos directos de producción",
+                    "La deuda total de la empresa"
+                  ],
+                  "explanation": "El margen neto es la ganancia final de la empresa dividida por el ingreso — muestra cuánto realmente queda de cada real vendido, después de todos los descuentos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você compara a margem líquida de uma rede de supermercados com a de uma empresa de software e percebe que a primeira é bem menor. O que isso provavelmente reflete?",
+                  "options": [
+                    "Que a rede de supermercados é um negócio ruim",
+                    "Que modelos de negócio diferentes costumam ter estruturas de custo e margens naturalmente diferentes, o que torna a comparação direta pouco útil",
+                    "Que toda empresa deveria ter a mesma margem",
+                    "Que margens não têm relação nenhuma com o tipo de negócio"
+                  ],
+                  "explanation": "Setores com estruturas de custo muito diferentes — como varejo, que tem margens naturalmente apertadas, e software, que tem custos de produção bem menores — não devem ser comparados diretamente pela margem, sem considerar o contexto do setor."
+                },
+                "en": {
+                  "prompt": "You compare the net margin of a supermarket chain with that of a software company and notice the first is much lower. What does this likely reflect?",
+                  "options": [
+                    "That the supermarket chain is a bad business",
+                    "That different business models tend to have naturally different cost structures and margins, which makes a direct comparison not very useful",
+                    "That every company should have the same margin",
+                    "That margins have no relation to the type of business"
+                  ],
+                  "explanation": "Sectors with very different cost structures — like retail, which naturally has tight margins, and software, which has much lower production costs — shouldn't be compared directly by margin alone, without considering the sector's context."
+                },
+                "es": {
+                  "prompt": "Comparas el margen neto de una cadena de supermercados con el de una empresa de software y notas que el primero es mucho menor. ¿Qué probablemente refleja esto?",
+                  "options": [
+                    "Que la cadena de supermercados es un mal negocio",
+                    "Que modelos de negocio diferentes suelen tener estructuras de costos y márgenes naturalmente distintos, lo que hace que la comparación directa sea poco útil",
+                    "Que toda empresa debería tener el mismo margen",
+                    "Que los márgenes no tienen ninguna relación con el tipo de negocio"
+                  ],
+                  "explanation": "Sectores con estructuras de costos muy diferentes — como el retail, que naturalmente tiene márgenes ajustados, y el software, que tiene costos de producción mucho menores — no deben compararse directamente por el margen, sin considerar el contexto del sector."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Margens mostram quanto sobra da receita em diferentes etapas do resultado.",
+                    "Margem líquida é o lucro final como proporção da receita.",
+                    "Modelos de negócio diferentes costumam ter margens naturalmente diferentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Margins show how much of revenue is left at different stages of the results.",
+                    "Net margin is the final profit as a proportion of revenue.",
+                    "Different business models tend to have naturally different margins."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los márgenes muestran cuánto queda del ingreso en diferentes etapas del resultado.",
+                    "El margen neto es la ganancia final como proporción del ingreso.",
+                    "Modelos de negocio diferentes suelen tener márgenes naturalmente distintos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_debt",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "portfolioConcepts": [
+            "debt_equity"
+          ],
+          "translations": {
+            "pt": {
+              "title": "Endividamento"
+            },
+            "en": {
+              "title": "Debt"
+            },
+            "es": {
+              "title": "Endeudamiento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto do negócio é financiado por dívida",
+                  "body": "Indicadores de endividamento mostram o quanto uma empresa depende de dívida para financiar suas operações, em comparação com seu patrimônio ou geração de caixa. Um exemplo comum é a relação dívida líquida sobre patrimônio líquido: quanto maior, mais a empresa depende de capital de terceiros em vez de capital próprio. Dívida não é necessariamente ruim — muitas empresas usam dívida de forma saudável para crescer — mas um endividamento muito alto em relação à capacidade de gerar caixa aumenta o risco do negócio."
+                },
+                "en": {
+                  "title": "How much of the business is financed by debt",
+                  "body": "Debt indicators show how much a company depends on debt to finance its operations, compared to its equity or cash generation. A common example is the net debt to equity ratio: the higher it is, the more the company relies on outside capital instead of its own. Debt isn't necessarily bad — many companies use debt in a healthy way to grow — but very high debt relative to cash-generating capacity increases the business's risk."
+                },
+                "es": {
+                  "title": "Cuánto del negocio se financia con deuda",
+                  "body": "Los indicadores de endeudamiento muestran cuánto depende una empresa de la deuda para financiar sus operaciones, en comparación con su patrimonio o generación de caja. Un ejemplo común es la relación deuda neta sobre patrimonio neto: cuanto mayor sea, más depende la empresa de capital de terceros en lugar de capital propio. La deuda no es necesariamente mala — muchas empresas usan deuda de forma saludable para crecer — pero un endeudamiento muy alto en relación a la capacidad de generar caja aumenta el riesgo del negocio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas do mesmo setor têm o mesmo lucro, mas uma tem uma dívida líquida quase três vezes maior que seu patrimônio, enquanto a outra tem uma dívida líquida menor que metade do patrimônio. Em um cenário de juros mais altos ou queda nas vendas, a primeira empresa tende a sentir mais dificuldade para honrar seus compromissos do que a segunda."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies in the same sector have the same profit, but one has net debt almost three times its equity, while the other has net debt lower than half its equity. In a scenario of higher interest rates or falling sales, the first company tends to have more difficulty honoring its obligations than the second."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas del mismo sector tienen la misma ganancia, pero una tiene una deuda neta casi tres veces mayor que su patrimonio, mientras que la otra tiene una deuda neta menor a la mitad de su patrimonio. En un escenario de tasas más altas o caída en las ventas, la primera empresa tiende a tener más dificultad para cumplir sus compromisos que la segunda."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que um indicador de endividamento, como dívida líquida sobre patrimônio líquido, ajuda a avaliar?",
+                  "options": [
+                    "O preço justo de uma ação",
+                    "O quanto a empresa depende de dívida em relação ao seu próprio patrimônio",
+                    "A margem de lucro da empresa",
+                    "O número de funcionários da empresa"
+                  ],
+                  "explanation": "Indicadores de endividamento comparam a dívida da empresa com seu patrimônio ou capacidade de geração de caixa, mostrando o quanto ela depende de capital de terceiros."
+                },
+                "en": {
+                  "prompt": "What does a debt indicator, like net debt to equity, help assess?",
+                  "options": [
+                    "The fair price of a stock",
+                    "How much the company relies on debt relative to its own equity",
+                    "The company's profit margin",
+                    "The number of employees at the company"
+                  ],
+                  "explanation": "Debt indicators compare a company's debt with its equity or cash-generating capacity, showing how much it relies on outside capital."
+                },
+                "es": {
+                  "prompt": "¿Qué ayuda a evaluar un indicador de endeudamiento, como la deuda neta sobre patrimonio neto?",
+                  "options": [
+                    "El precio justo de una acción",
+                    "Cuánto depende la empresa de la deuda en relación a su propio patrimonio",
+                    "El margen de ganancia de la empresa",
+                    "El número de empleados de la empresa"
+                  ],
+                  "explanation": "Los indicadores de endeudamiento comparan la deuda de la empresa con su patrimonio o capacidad de generación de caja, mostrando cuánto depende de capital de terceros."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está comparando duas empresas parecidas, mas uma tem um endividamento bem mais alto que a outra em relação ao patrimônio. Isso significa automaticamente que a mais endividada é um investimento ruim?",
+                  "options": [
+                    "Sim, qualquer nível de dívida torna uma empresa um mau investimento",
+                    "Não necessariamente — dívida pode ser usada de forma saudável para crescer, mas vale investigar se o nível de endividamento é sustentável em relação à geração de caixa da empresa",
+                    "Não, dívida nunca representa nenhum risco adicional",
+                    "Sim, mas apenas se a empresa for do setor de tecnologia"
+                  ],
+                  "explanation": "Dívida não é automaticamente ruim, mas um endividamento alto sem geração de caixa suficiente para sustentá-lo aumenta o risco do negócio — por isso vale sempre investigar o contexto, não só o número isolado."
+                },
+                "en": {
+                  "prompt": "You're comparing two similar companies, but one has much higher debt than the other relative to equity. Does that automatically mean the more indebted one is a bad investment?",
+                  "options": [
+                    "Yes, any level of debt makes a company a bad investment",
+                    "Not necessarily — debt can be used in a healthy way to grow, but it's worth investigating whether the debt level is sustainable relative to the company's cash generation",
+                    "No, debt never represents any additional risk",
+                    "Yes, but only if the company is in the technology sector"
+                  ],
+                  "explanation": "Debt isn't automatically bad, but high debt without enough cash generation to sustain it increases the business's risk — that's why it's always worth investigating the context, not just the isolated number."
+                },
+                "es": {
+                  "prompt": "Estás comparando dos empresas similares, pero una tiene un endeudamiento mucho más alto que la otra en relación al patrimonio. ¿Eso significa automáticamente que la más endeudada es una mala inversión?",
+                  "options": [
+                    "Sí, cualquier nivel de deuda convierte a una empresa en una mala inversión",
+                    "No necesariamente — la deuda puede usarse de forma saludable para crecer, pero vale la pena investigar si el nivel de endeudamiento es sostenible en relación a la generación de caja de la empresa",
+                    "No, la deuda nunca representa ningún riesgo adicional",
+                    "Sí, pero solo si la empresa es del sector tecnológico"
+                  ],
+                  "explanation": "La deuda no es automáticamente mala, pero un endeudamiento alto sin generación de caja suficiente para sostenerlo aumenta el riesgo del negocio — por eso siempre vale la pena investigar el contexto, no solo el número aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Indicadores de endividamento mostram o quanto uma empresa depende de dívida.",
+                    "Dívida não é automaticamente ruim, mas precisa ser sustentável em relação à geração de caixa.",
+                    "Você concluiu o módulo introdutório de análise fundamentalista."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Debt indicators show how much a company relies on debt.",
+                    "Debt isn't automatically bad, but it needs to be sustainable relative to cash generation.",
+                    "You've completed the introductory fundamental analysis module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los indicadores de endeudamiento muestran cuánto depende una empresa de la deuda.",
+                    "La deuda no es automáticamente mala, pero necesita ser sostenible en relación a la generación de caja.",
+                    "Completaste el módulo introductorio de análisis fundamental."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "advanced_fundamental_indicators",
+      "order": 2,
+      "iconKey": "analytics_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "fundamental_analysis"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Indicadores Avançados de Análise Fundamentalista",
+          "description": "Fluxo de caixa livre, dividend yield, payout ratio e CAGR."
+        },
+        "en": {
+          "title": "Advanced Fundamental Analysis Indicators",
+          "description": "Free cash flow, dividend yield, payout ratio and CAGR."
+        },
+        "es": {
+          "title": "Indicadores Avanzados de Análisis Fundamental",
+          "description": "Flujo de caja libre, rentabilidad por dividendos, payout ratio y CAGR."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "fundamental_free_cash_flow",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fluxo de Caixa Livre"
+            },
+            "en": {
+              "title": "Free Cash Flow"
+            },
+            "es": {
+              "title": "Flujo de Caja Libre"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O dinheiro que realmente sobra",
+                  "body": "Fluxo de caixa livre é o dinheiro que uma empresa gera em suas operações e que sobra depois de pagar os investimentos necessários para manter e expandir o negócio (como compra de equipamentos e instalações). Diferente do lucro contábil, que pode incluir itens que não representam saída ou entrada real de caixa, o fluxo de caixa livre mostra quanto dinheiro genuinamente sobra para a empresa pagar dívidas, distribuir dividendos ou recomprar ações."
+                },
+                "en": {
+                  "title": "The money that's genuinely left over",
+                  "body": "Free cash flow is the cash a company generates from its operations that's left over after paying for the investments needed to maintain and grow the business (like purchasing equipment and facilities). Unlike accounting profit, which can include items that don't represent an actual cash outflow or inflow, free cash flow shows how much money genuinely remains for the company to pay down debt, distribute dividends, or buy back shares."
+                },
+                "es": {
+                  "title": "El dinero que realmente sobra",
+                  "body": "El flujo de caja libre es el dinero que una empresa genera en sus operaciones y que sobra después de pagar las inversiones necesarias para mantener y expandir el negocio (como la compra de equipos e instalaciones). A diferencia de la ganancia contable, que puede incluir partidas que no representan una salida o entrada real de caja, el flujo de caja libre muestra cuánto dinero realmente sobra para que la empresa pague deudas, distribuya dividendos o recompre acciones."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa reporta um lucro contábil alto, mas precisa investir pesadamente em novos equipamentos todos os anos só para se manter competitiva — sobrando pouco fluxo de caixa livre no final. Outra empresa, com lucro contábil parecido, mas que precisa investir bem menos para manter suas operações, gera um fluxo de caixa livre bem maior, mesmo com um lucro contábil semelhante."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "One company reports a high accounting profit, but needs to invest heavily in new equipment every year just to stay competitive — leaving little free cash flow at the end. Another company, with a similar accounting profit, but that needs to invest much less to maintain its operations, generates much higher free cash flow, even with a similar accounting profit."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa reporta una ganancia contable alta, pero necesita invertir fuertemente en equipos nuevos todos los años solo para mantenerse competitiva — quedando poco flujo de caja libre al final. Otra empresa, con una ganancia contable parecida, pero que necesita invertir mucho menos para mantener sus operaciones, genera un flujo de caja libre bastante mayor, aunque tenga una ganancia contable similar."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o fluxo de caixa livre mostra que o lucro contábil, sozinho, pode não mostrar?",
+                  "options": [
+                    "O preço da ação no mercado",
+                    "Quanto dinheiro realmente sobra depois de pagar os investimentos necessários para manter e expandir o negócio",
+                    "O número total de funcionários da empresa",
+                    "A taxa de câmbio usada pela empresa"
+                  ],
+                  "explanation": "Fluxo de caixa livre revela o dinheiro genuinamente disponível depois dos investimentos necessários — algo que o lucro contábil, por si só, nem sempre reflete com precisão."
+                },
+                "en": {
+                  "prompt": "What does free cash flow show that accounting profit alone might not?",
+                  "options": [
+                    "The stock's market price",
+                    "How much money genuinely remains after paying the investments needed to maintain and grow the business",
+                    "The company's total number of employees",
+                    "The exchange rate used by the company"
+                  ],
+                  "explanation": "Free cash flow reveals the money genuinely available after necessary investments — something accounting profit alone doesn't always accurately reflect."
+                },
+                "es": {
+                  "prompt": "¿Qué muestra el flujo de caja libre que la ganancia contable, por sí sola, puede no mostrar?",
+                  "options": [
+                    "El precio de la acción en el mercado",
+                    "Cuánto dinero realmente sobra después de pagar las inversiones necesarias para mantener y expandir el negocio",
+                    "El número total de empleados de la empresa",
+                    "El tipo de cambio usado por la empresa"
+                  ],
+                  "explanation": "El flujo de caja libre revela el dinero genuinamente disponible después de las inversiones necesarias — algo que la ganancia contable, por sí sola, no siempre refleja con precisión."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Duas empresas do mesmo setor reportam lucro contábil parecido, mas uma delas precisa investir muito mais em equipamentos todos os anos para se manter competitiva. O que isso sugere sobre o fluxo de caixa livre das duas?",
+                  "options": [
+                    "As duas terão exatamente o mesmo fluxo de caixa livre, já que o lucro contábil é parecido",
+                    "A empresa que precisa investir mais tende a sobrar com menos fluxo de caixa livre, mesmo com lucro contábil parecido ao da outra",
+                    "Fluxo de caixa livre não tem relação nenhuma com a necessidade de investimento da empresa",
+                    "A empresa que investe mais sempre terá o maior fluxo de caixa livre"
+                  ],
+                  "explanation": "Como o fluxo de caixa livre desconta os investimentos necessários, uma empresa que precisa investir mais tende a sobrar com menos caixa livre, mesmo tendo um lucro contábil parecido ao de uma concorrente que investe menos."
+                },
+                "en": {
+                  "prompt": "Two companies in the same sector report similar accounting profit, but one of them needs to invest much more in equipment every year to stay competitive. What does this suggest about the two companies' free cash flow?",
+                  "options": [
+                    "Both will have exactly the same free cash flow, since accounting profit is similar",
+                    "The company that needs to invest more tends to end up with less free cash flow, even with accounting profit similar to the other's",
+                    "Free cash flow has no relation at all to the company's investment needs",
+                    "The company that invests more will always have the higher free cash flow"
+                  ],
+                  "explanation": "Since free cash flow subtracts necessary investments, a company that needs to invest more tends to end up with less free cash, even having accounting profit similar to a competitor that invests less."
+                },
+                "es": {
+                  "prompt": "Dos empresas del mismo sector reportan una ganancia contable parecida, pero una de ellas necesita invertir mucho más en equipos todos los años para mantenerse competitiva. ¿Qué sugiere esto sobre el flujo de caja libre de ambas?",
+                  "options": [
+                    "Ambas tendrán exactamente el mismo flujo de caja libre, ya que la ganancia contable es parecida",
+                    "La empresa que necesita invertir más tiende a quedar con menos flujo de caja libre, incluso con una ganancia contable parecida a la de la otra",
+                    "El flujo de caja libre no tiene ninguna relación con la necesidad de inversión de la empresa",
+                    "La empresa que invierte más siempre tendrá el mayor flujo de caja libre"
+                  ],
+                  "explanation": "Como el flujo de caja libre descuenta las inversiones necesarias, una empresa que necesita invertir más tiende a quedar con menos caja libre, aunque tenga una ganancia contable parecida a la de una competidora que invierte menos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Fluxo de caixa livre é o dinheiro que sobra depois dos investimentos necessários ao negócio.",
+                    "Ele pode diferir bastante do lucro contábil, mesmo entre empresas parecidas.",
+                    "Empresas que precisam investir mais tendem a ter menos fluxo de caixa livre disponível."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Free cash flow is the money left over after the investments the business needs.",
+                    "It can differ quite a bit from accounting profit, even between similar companies.",
+                    "Companies that need to invest more tend to have less free cash flow available."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El flujo de caja libre es el dinero que sobra después de las inversiones que necesita el negocio.",
+                    "Puede diferir bastante de la ganancia contable, incluso entre empresas parecidas.",
+                    "Las empresas que necesitan invertir más tienden a tener menos flujo de caja libre disponible."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_dividend_yield",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "portfolioConcepts": [
+            "dy"
+          ],
+          "translations": {
+            "pt": {
+              "title": "Dividend Yield"
+            },
+            "en": {
+              "title": "Dividend Yield"
+            },
+            "es": {
+              "title": "Rentabilidad por Dividendos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto o dividendo representa em relação ao preço",
+                  "body": "Dividend yield é a relação entre os dividendos pagos por uma ação em um período e o preço atual dessa ação, expressa em percentual. Ele mostra qual seria o retorno em dividendos, no período, para quem comprasse a ação no preço atual — mas não garante que os dividendos futuros serão iguais aos pagos no passado, já que eles dependem do lucro e da política de distribuição da empresa, que podem mudar."
+                },
+                "en": {
+                  "title": "How much the dividend represents relative to the price",
+                  "body": "Dividend yield is the ratio between the dividends paid by a stock over a period and that stock's current price, expressed as a percentage. It shows what the dividend return would be, over the period, for someone buying the stock at the current price — but it doesn't guarantee future dividends will match past ones, since they depend on the company's profit and distribution policy, which can change."
+                },
+                "es": {
+                  "title": "Cuánto representa el dividendo en relación al precio",
+                  "body": "La rentabilidad por dividendos (dividend yield) es la relación entre los dividendos pagados por una acción en un período y el precio actual de esa acción, expresada en porcentaje. Muestra cuál sería el retorno en dividendos, en el período, para quien comprara la acción al precio actual — pero no garantiza que los dividendos futuros serán iguales a los pagados en el pasado, ya que dependen de la ganancia y la política de distribución de la empresa, que pueden cambiar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma ação é negociada a R$100 e pagou R$6 em dividendos ao longo do último ano — um dividend yield de 6%. Se o preço da ação cai para R$80, mantendo o mesmo valor de dividendos, o dividend yield calculado sobe para 7,5%, mesmo sem nenhuma mudança no valor absoluto distribuído — um lembrete de que o yield é sensível tanto ao dividendo quanto ao preço."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A stock trades at R$100 and paid R$6 in dividends over the past year — a 6% dividend yield. If the stock's price falls to R$80, keeping the same dividend amount, the calculated dividend yield rises to 7.5%, even with no change in the absolute amount distributed — a reminder that yield is sensitive to both the dividend and the price."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una acción se negocia a R$100 y pagó R$6 en dividendos durante el último año — una rentabilidad por dividendos del 6%. Si el precio de la acción cae a R$80, manteniendo el mismo monto de dividendos, la rentabilidad calculada sube al 7,5%, aunque no haya ningún cambio en el monto absoluto distribuido — un recordatorio de que la rentabilidad es sensible tanto al dividendo como al precio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o dividend yield mede?",
+                  "options": [
+                    "O lucro total de uma empresa",
+                    "A relação entre os dividendos pagos por uma ação e o preço atual dessa ação",
+                    "A dívida total de uma empresa em relação ao patrimônio",
+                    "O número de ações em circulação"
+                  ],
+                  "explanation": "Dividend yield relaciona o valor de dividendos pagos com o preço atual da ação, mostrando o retorno em dividendos para quem comprasse ao preço de hoje."
+                },
+                "en": {
+                  "prompt": "What does dividend yield measure?",
+                  "options": [
+                    "A company's total profit",
+                    "The ratio between the dividends paid by a stock and that stock's current price",
+                    "A company's total debt relative to equity",
+                    "The number of shares outstanding"
+                  ],
+                  "explanation": "Dividend yield relates the amount of dividends paid to the stock's current price, showing the dividend return for someone buying at today's price."
+                },
+                "es": {
+                  "prompt": "¿Qué mide la rentabilidad por dividendos?",
+                  "options": [
+                    "La ganancia total de una empresa",
+                    "La relación entre los dividendos pagados por una acción y el precio actual de esa acción",
+                    "La deuda total de una empresa en relación al patrimonio",
+                    "El número de acciones en circulación"
+                  ],
+                  "explanation": "La rentabilidad por dividendos relaciona el monto de dividendos pagados con el precio actual de la acción, mostrando el retorno en dividendos para quien comprara al precio de hoy."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que o dividend yield de uma ação subiu bastante recentemente, sem nenhum aumento no valor de dividendos pagos pela empresa. O que provavelmente explica esse aumento no yield calculado?",
+                  "options": [
+                    "A empresa dobrou o valor pago em dividendos",
+                    "O preço da ação provavelmente caiu, o que aumenta o yield calculado mesmo sem mudança no valor absoluto dos dividendos",
+                    "Dividend yield nunca muda ao longo do tempo",
+                    "A empresa parou de pagar impostos"
+                  ],
+                  "explanation": "Como o dividend yield é uma relação entre dividendo e preço, uma queda no preço da ação aumenta o yield calculado, mesmo que o valor de dividendos pagos continue o mesmo — por isso um yield alto nem sempre é só boa notícia, pode refletir também uma queda de preço."
+                },
+                "en": {
+                  "prompt": "You notice a stock's dividend yield rose quite a bit recently, with no increase in the amount of dividends the company paid. What most likely explains that rise in the calculated yield?",
+                  "options": [
+                    "The company doubled the amount paid in dividends",
+                    "The stock's price probably fell, which increases the calculated yield even with no change in the absolute dividend amount",
+                    "Dividend yield never changes over time",
+                    "The company stopped paying taxes"
+                  ],
+                  "explanation": "Since dividend yield is a ratio between dividend and price, a drop in the stock's price increases the calculated yield, even if the amount of dividends paid stays the same — that's why a high yield isn't always just good news, it can also reflect a price decline."
+                },
+                "es": {
+                  "prompt": "Notas que la rentabilidad por dividendos de una acción subió bastante recientemente, sin ningún aumento en el monto de dividendos pagados por la empresa. ¿Qué probablemente explica ese aumento en la rentabilidad calculada?",
+                  "options": [
+                    "La empresa duplicó el monto pagado en dividendos",
+                    "El precio de la acción probablemente cayó, lo que aumenta la rentabilidad calculada aunque no haya cambio en el monto absoluto de los dividendos",
+                    "La rentabilidad por dividendos nunca cambia con el tiempo",
+                    "La empresa dejó de pagar impuestos"
+                  ],
+                  "explanation": "Como la rentabilidad por dividendos es una relación entre dividendo y precio, una caída en el precio de la acción aumenta la rentabilidad calculada, aunque el monto de dividendos pagados siga igual — por eso una rentabilidad alta no siempre es solo buena noticia, puede reflejar también una caída de precio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Dividend yield relaciona dividendos pagos com o preço atual da ação.",
+                    "Ele pode subir tanto por aumento de dividendos quanto por queda no preço da ação.",
+                    "Dividendos futuros não são garantidos, mesmo com um histórico consistente no passado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Dividend yield relates dividends paid to the stock's current price.",
+                    "It can rise both from an increase in dividends and from a drop in the stock's price.",
+                    "Future dividends aren't guaranteed, even with a consistent track record in the past."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La rentabilidad por dividendos relaciona los dividendos pagados con el precio actual de la acción.",
+                    "Puede subir tanto por un aumento de dividendos como por una caída en el precio de la acción.",
+                    "Los dividendos futuros no están garantizados, incluso con un historial consistente en el pasado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_payout_ratio",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Payout Ratio"
+            },
+            "en": {
+              "title": "Payout Ratio"
+            },
+            "es": {
+              "title": "Payout Ratio"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto do lucro vira dividendo",
+                  "body": "Payout ratio é a proporção do lucro de uma empresa que é distribuída aos acionistas na forma de dividendos, em vez de ser reinvestida no próprio negócio. Um payout ratio de 100%, por exemplo, significa que a empresa distribuiu todo o lucro do período como dividendos, sem reter nada para reinvestir. Não existe um payout ratio universalmente certo — empresas em fase de forte crescimento costumam reter mais lucro para reinvestir, enquanto empresas mais maduras, com menos oportunidades de expansão, tendem a distribuir uma parcela maior."
+                },
+                "en": {
+                  "title": "How much of the profit becomes a dividend",
+                  "body": "Payout ratio is the proportion of a company's profit that's distributed to shareholders as dividends, instead of being reinvested in the business itself. A payout ratio of 100%, for example, means the company distributed all of the period's profit as dividends, retaining nothing to reinvest. There's no universally right payout ratio — companies in a strong growth phase usually retain more profit to reinvest, while more mature companies, with fewer expansion opportunities, tend to distribute a larger share."
+                },
+                "es": {
+                  "title": "Cuánto de la ganancia se convierte en dividendo",
+                  "body": "El payout ratio es la proporción de la ganancia de una empresa que se distribuye a los accionistas en forma de dividendos, en lugar de reinvertirse en el propio negocio. Un payout ratio del 100%, por ejemplo, significa que la empresa distribuyó toda la ganancia del período como dividendos, sin retener nada para reinvertir. No existe un payout ratio universalmente correcto — las empresas en fase de fuerte crecimiento suelen retener más ganancia para reinvertir, mientras que las empresas más maduras, con menos oportunidades de expansión, tienden a distribuir una porción mayor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa de tecnologia em fase de forte expansão reinveste quase todo o lucro em novos projetos, com um payout ratio próximo de 0%. Já uma empresa de energia elétrica, madura e com poucas oportunidades de grande crescimento, distribui 80% do lucro em dividendos — ambas as estratégias podem fazer sentido, dependendo da fase e do setor de cada negócio."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A technology company in a strong expansion phase reinvests almost all of its profit in new projects, with a payout ratio close to 0%. A mature electric utility company, with few opportunities for major growth, distributes 80% of its profit in dividends — both strategies can make sense, depending on each business's stage and sector."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa de tecnología en fase de fuerte expansión reinvierte casi toda la ganancia en nuevos proyectos, con un payout ratio cercano al 0%. En cambio, una empresa de energía eléctrica, madura y con pocas oportunidades de gran crecimiento, distribuye el 80% de la ganancia en dividendos — ambas estrategias pueden tener sentido, dependiendo de la fase y el sector de cada negocio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o payout ratio mede?",
+                  "options": [
+                    "A dívida total de uma empresa",
+                    "A proporção do lucro distribuída aos acionistas como dividendos, em vez de reinvestida no negócio",
+                    "O preço da ação em relação ao lucro por ação",
+                    "O número de funcionários de uma empresa"
+                  ],
+                  "explanation": "Payout ratio mostra qual fração do lucro do período foi distribuída como dividendo, em vez de retida para reinvestimento no próprio negócio."
+                },
+                "en": {
+                  "prompt": "What does the payout ratio measure?",
+                  "options": [
+                    "A company's total debt",
+                    "The proportion of profit distributed to shareholders as dividends, instead of reinvested in the business",
+                    "The stock's price relative to earnings per share",
+                    "A company's number of employees"
+                  ],
+                  "explanation": "Payout ratio shows what fraction of the period's profit was distributed as dividends, instead of retained for reinvestment in the business."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el payout ratio?",
+                  "options": [
+                    "La deuda total de una empresa",
+                    "La proporción de la ganancia distribuida a los accionistas como dividendos, en lugar de reinvertida en el negocio",
+                    "El precio de la acción en relación a la ganancia por acción",
+                    "El número de empleados de una empresa"
+                  ],
+                  "explanation": "El payout ratio muestra qué fracción de la ganancia del período se distribuyó como dividendo, en lugar de retenerse para reinvertir en el propio negocio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você compara duas empresas: uma de tecnologia em forte crescimento, com payout ratio de 5%, e outra de um setor maduro, com payout ratio de 75%. Por que essa diferença não significa automaticamente que uma das empresas é 'melhor' que a outra?",
+                  "options": [
+                    "Porque payout ratio não tem relação nenhuma com a qualidade de uma empresa",
+                    "Porque empresas em fase de crescimento tendem a reter mais lucro para reinvestir, enquanto empresas maduras, com menos oportunidades de expansão, tendem a distribuir mais — cada estratégia pode fazer sentido para a fase daquele negócio",
+                    "Porque toda empresa deveria ter o mesmo payout ratio, independentemente do setor",
+                    "Porque um payout ratio baixo sempre significa que a empresa está em dificuldades"
+                  ],
+                  "explanation": "O payout ratio ideal depende da fase e das oportunidades de reinvestimento de cada negócio — não existe um valor universalmente melhor, e a comparação direta entre empresas em fases muito diferentes pode ser enganosa."
+                },
+                "en": {
+                  "prompt": "You compare two companies: a fast-growing technology company, with a 5% payout ratio, and one from a mature sector, with a 75% payout ratio. Why doesn't this difference automatically mean one of the companies is 'better' than the other?",
+                  "options": [
+                    "Because payout ratio has no relation at all to a company's quality",
+                    "Because growing companies tend to retain more profit to reinvest, while mature companies, with fewer expansion opportunities, tend to distribute more — each strategy can make sense for that business's stage",
+                    "Because every company should have the same payout ratio, regardless of sector",
+                    "Because a low payout ratio always means the company is struggling"
+                  ],
+                  "explanation": "The ideal payout ratio depends on each business's stage and reinvestment opportunities — there's no universally better value, and directly comparing companies at very different stages can be misleading."
+                },
+                "es": {
+                  "prompt": "Comparas dos empresas: una de tecnología en fuerte crecimiento, con un payout ratio del 5%, y otra de un sector maduro, con un payout ratio del 75%. ¿Por qué esta diferencia no significa automáticamente que una de las empresas es 'mejor' que la otra?",
+                  "options": [
+                    "Porque el payout ratio no tiene ninguna relación con la calidad de una empresa",
+                    "Porque las empresas en fase de crecimiento tienden a retener más ganancia para reinvertir, mientras que las empresas maduras, con menos oportunidades de expansión, tienden a distribuir más — cada estrategia puede tener sentido para la fase de ese negocio",
+                    "Porque toda empresa debería tener el mismo payout ratio, sin importar el sector",
+                    "Porque un payout ratio bajo siempre significa que la empresa está en dificultades"
+                  ],
+                  "explanation": "El payout ratio ideal depende de la fase y las oportunidades de reinversión de cada negocio — no existe un valor universalmente mejor, y la comparación directa entre empresas en fases muy diferentes puede ser engañosa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Payout ratio é a proporção do lucro distribuída como dividendo.",
+                    "Não existe um payout ratio universalmente ideal — depende da fase e do setor da empresa.",
+                    "Empresas em crescimento tendem a reter mais; empresas maduras tendem a distribuir mais."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Payout ratio is the proportion of profit distributed as dividends.",
+                    "There's no universally ideal payout ratio — it depends on the company's stage and sector.",
+                    "Growing companies tend to retain more; mature companies tend to distribute more."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El payout ratio es la proporción de la ganancia distribuida como dividendo.",
+                    "No existe un payout ratio universalmente ideal — depende de la fase y el sector de la empresa.",
+                    "Las empresas en crecimiento tienden a retener más; las empresas maduras tienden a distribuir más."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_growth_cagr",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Crescimento e CAGR"
+            },
+            "en": {
+              "title": "Growth and CAGR"
+            },
+            "es": {
+              "title": "Crecimiento y CAGR"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma taxa de crescimento média e justa",
+                  "body": "CAGR (Compound Annual Growth Rate, ou Taxa de Crescimento Anual Composta) é a taxa de crescimento anual média de um indicador — como receita ou lucro — ao longo de um período de vários anos, calculada de forma que incorpore o efeito de juros compostos, suavizando anos de crescimento muito acima ou muito abaixo da média. Ela é mais representativa de uma tendência de longo prazo do que olhar apenas o crescimento de um único ano, que pode ser distorcido por eventos pontuais."
+                },
+                "en": {
+                  "title": "A fair, average growth rate",
+                  "body": "CAGR (Compound Annual Growth Rate) is the average annual growth rate of an indicator — like revenue or profit — over a multi-year period, calculated in a way that incorporates the compound interest effect, smoothing out years of growth well above or well below the average. It's more representative of a long-term trend than looking only at a single year's growth, which can be distorted by one-off events."
+                },
+                "es": {
+                  "title": "Una tasa de crecimiento promedio y justa",
+                  "body": "El CAGR (Compound Annual Growth Rate, o Tasa de Crecimiento Anual Compuesta) es la tasa de crecimiento anual promedio de un indicador — como el ingreso o la ganancia — a lo largo de un período de varios años, calculada de forma que incorpore el efecto del interés compuesto, suavizando años de crecimiento muy por encima o muy por debajo del promedio. Es más representativa de una tendencia a largo plazo que mirar solo el crecimiento de un único año, que puede estar distorsionado por eventos puntuales."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa teve um ano excepcional, com crescimento de receita de 40%, seguido por dois anos de crescimento bem mais modesto, de 5% cada. Olhar isoladamente para o ano de 40% daria uma impressão distorcida do crescimento típico da empresa; o CAGR dos três anos juntos oferece uma visão mais equilibrada da tendência real ao longo do período."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company had an exceptional year, with 40% revenue growth, followed by two years of much more modest growth, at 5% each. Looking only at the 40% year would give a distorted impression of the company's typical growth; the CAGR of all three years together offers a more balanced view of the actual trend over the period."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa tuvo un año excepcional, con un crecimiento de ingresos del 40%, seguido de dos años de crecimiento mucho más modesto, del 5% cada uno. Mirar aisladamente el año del 40% daría una impresión distorsionada del crecimiento típico de la empresa; el CAGR de los tres años juntos ofrece una visión más equilibrada de la tendencia real a lo largo del período."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que o CAGR costuma ser mais representativo do que olhar o crescimento de um único ano?",
+                  "options": [
+                    "Porque ele ignora completamente todos os anos, exceto o mais recente",
+                    "Porque ele suaviza anos de crescimento muito acima ou abaixo da média, oferecendo uma visão mais equilibrada da tendência ao longo do período",
+                    "Porque ele sempre mostra um número maior do que o crescimento de qualquer ano individual",
+                    "Porque ele não considera o efeito de juros compostos"
+                  ],
+                  "explanation": "O CAGR calcula uma taxa média anual que, aplicada de forma composta, levaria ao mesmo resultado final observado ao longo do período — suavizando a distorção de anos atípicos, para cima ou para baixo."
+                },
+                "en": {
+                  "prompt": "Why is CAGR usually more representative than looking at a single year's growth?",
+                  "options": [
+                    "Because it completely ignores every year except the most recent one",
+                    "Because it smooths out years of growth well above or below average, offering a more balanced view of the trend over the period",
+                    "Because it always shows a higher number than any individual year's growth",
+                    "Because it doesn't consider the compound interest effect"
+                  ],
+                  "explanation": "CAGR calculates an average annual rate that, applied compounded, would lead to the same final result observed over the period — smoothing out the distortion of atypical years, up or down."
+                },
+                "es": {
+                  "prompt": "¿Por qué el CAGR suele ser más representativo que mirar el crecimiento de un único año?",
+                  "options": [
+                    "Porque ignora por completo todos los años, excepto el más reciente",
+                    "Porque suaviza años de crecimiento muy por encima o por debajo del promedio, ofreciendo una visión más equilibrada de la tendencia a lo largo del período",
+                    "Porque siempre muestra un número mayor que el crecimiento de cualquier año individual",
+                    "Porque no considera el efecto del interés compuesto"
+                  ],
+                  "explanation": "El CAGR calcula una tasa anual promedio que, aplicada de forma compuesta, llevaría al mismo resultado final observado a lo largo del período — suavizando la distorsión de años atípicos, hacia arriba o hacia abajo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa teve um crescimento de receita excepcional em um único trimestre, por causa de um evento pontual que não deve se repetir. Um relatório destaca só esse número isolado como 'prova' do potencial de crescimento da empresa. Como o conceito de CAGR ajuda a avaliar essa afirmação com mais cautela?",
+                  "options": [
+                    "Ele confirma que esse crescimento pontual vai se repetir todo trimestre a partir de agora",
+                    "Ele sugere olhar a taxa de crescimento média ao longo de um período mais longo, em vez de tirar conclusões de um único evento pontual que pode não se repetir",
+                    "CAGR não tem relação nenhuma com esse tipo de avaliação",
+                    "Ele mostra que eventos pontuais sempre representam a tendência real da empresa"
+                  ],
+                  "explanation": "Assim como você viu com indicadores macroeconômicos isolados, um único evento pontual raramente representa a tendência real — calcular o CAGR ao longo de vários anos ajuda a enxergar o crescimento médio real, sem o efeito distorcido de um evento isolado."
+                },
+                "en": {
+                  "prompt": "A company had exceptional revenue growth in a single quarter, due to a one-off event unlikely to repeat. A report highlights only that isolated number as 'proof' of the company's growth potential. How does the concept of CAGR help evaluate that claim more cautiously?",
+                  "options": [
+                    "It confirms that this one-off growth will repeat every quarter from now on",
+                    "It suggests looking at the average growth rate over a longer period, instead of drawing conclusions from a single one-off event that might not repeat",
+                    "CAGR has no relation at all to this type of evaluation",
+                    "It shows that one-off events always represent the company's real trend"
+                  ],
+                  "explanation": "Just like you saw with isolated macroeconomic indicators, a single one-off event rarely represents the real trend — calculating CAGR over several years helps see the real average growth, without the distorted effect of an isolated event."
+                },
+                "es": {
+                  "prompt": "Una empresa tuvo un crecimiento de ingresos excepcional en un solo trimestre, debido a un evento puntual que no debería repetirse. Un informe destaca solo ese número aislado como 'prueba' del potencial de crecimiento de la empresa. ¿Cómo ayuda el concepto de CAGR a evaluar esa afirmación con más cautela?",
+                  "options": [
+                    "Confirma que ese crecimiento puntual se repetirá cada trimestre a partir de ahora",
+                    "Sugiere mirar la tasa de crecimiento promedio a lo largo de un período más largo, en lugar de sacar conclusiones de un único evento puntual que puede no repetirse",
+                    "El CAGR no tiene ninguna relación con este tipo de evaluación",
+                    "Muestra que los eventos puntuales siempre representan la tendencia real de la empresa"
+                  ],
+                  "explanation": "Tal como viste con indicadores macroeconómicos aislados, un único evento puntual rara vez representa la tendencia real — calcular el CAGR a lo largo de varios años ayuda a ver el crecimiento promedio real, sin el efecto distorsionado de un evento aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "CAGR é a taxa de crescimento anual média, composta, ao longo de vários anos.",
+                    "Ele suaviza a distorção de anos atípicos, para cima ou para baixo.",
+                    "Você concluiu o módulo de indicadores avançados de análise fundamentalista."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "CAGR is the average, compounded annual growth rate over several years.",
+                    "It smooths out the distortion of atypical years, up or down.",
+                    "You've completed the advanced fundamental analysis indicators module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El CAGR es la tasa de crecimiento anual promedio, compuesta, a lo largo de varios años.",
+                    "Suaviza la distorsión de años atípicos, hacia arriba o hacia abajo.",
+                    "Completaste el módulo de indicadores avanzados de análisis fundamental."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_ev_ebitda",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "EV/EBITDA"
+            },
+            "en": {
+              "title": "EV/EBITDA"
+            },
+            "es": {
+              "title": "EV/EBITDA"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um preço que já considera a dívida da empresa",
+                  "body": "EV/EBITDA divide o valor da firma (enterprise value, ou o valor de mercado das ações somado à dívida líquida) pelo EBITDA (lucro antes de juros, impostos, depreciação e amortização). Diferente do P/L, que olha apenas o valor de mercado das ações e o lucro líquido, o EV/EBITDA incorpora a dívida da empresa no cálculo, o que o torna menos distorcido por diferenças de estrutura de capital entre empresas comparadas — duas empresas com o mesmo P/L podem ter EV/EBITDA bem diferentes, dependendo de quanta dívida cada uma carrega."
+                },
+                "en": {
+                  "title": "A price that already accounts for the company's debt",
+                  "body": "EV/EBITDA divides the enterprise value (the market value of the shares plus net debt) by EBITDA (earnings before interest, taxes, depreciation and amortization). Unlike P/E, which only looks at the shares' market value and net income, EV/EBITDA incorporates the company's debt into the calculation, which makes it less distorted by differences in capital structure between the companies being compared — two companies with the same P/E can have quite different EV/EBITDA, depending on how much debt each one carries."
+                },
+                "es": {
+                  "title": "Un precio que ya considera la deuda de la empresa",
+                  "body": "El EV/EBITDA divide el valor de la firma (enterprise value, o el valor de mercado de las acciones sumado a la deuda neta) entre el EBITDA (ganancia antes de intereses, impuestos, depreciación y amortización). A diferencia del P/E, que solo mira el valor de mercado de las acciones y la ganancia neta, el EV/EBITDA incorpora la deuda de la empresa en el cálculo, lo que lo hace menos distorsionado por diferencias en la estructura de capital entre empresas comparadas — dos empresas con el mismo P/E pueden tener un EV/EBITDA bastante diferente, según cuánta deuda cargue cada una."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas do mesmo setor têm exatamente o mesmo P/L, mas uma delas carrega uma dívida líquida bem maior que a outra. Como o P/L olha apenas o valor de mercado das ações, ele não revela essa diferença. Ao calcular o EV/EBITDA — que soma a dívida líquida ao valor de mercado antes de dividir pelo EBITDA — fica claro que a empresa mais endividada está, na verdade, mais cara em relação à geração de caixa operacional do que a comparação de P/L sozinha sugeria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies in the same sector have exactly the same P/E, but one of them carries much higher net debt than the other. Since P/E only looks at the shares' market value, it doesn't reveal that difference. Calculating EV/EBITDA — which adds net debt to the market value before dividing by EBITDA — makes it clear that the more indebted company is actually pricier relative to operating cash generation than the P/E comparison alone suggested."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas del mismo sector tienen exactamente el mismo P/E, pero una de ellas carga una deuda neta bastante mayor que la otra. Como el P/E solo mira el valor de mercado de las acciones, no revela esa diferencia. Al calcular el EV/EBITDA — que suma la deuda neta al valor de mercado antes de dividir por el EBITDA — queda claro que la empresa más endeudada está, en realidad, más cara en relación a la generación de caja operativa de lo que sugería la comparación de P/E por sí sola."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia o EV/EBITDA do P/L?",
+                  "options": [
+                    "EV/EBITDA nunca considera nenhum dado do balanço da empresa",
+                    "EV/EBITDA incorpora a dívida líquida no cálculo, tornando-o menos distorcido por diferenças de estrutura de capital do que o P/L",
+                    "EV/EBITDA e P/L são exatamente o mesmo cálculo, apenas com nomes diferentes",
+                    "EV/EBITDA só pode ser calculado para empresas sem nenhuma dívida"
+                  ],
+                  "explanation": "Ao incluir a dívida líquida no valor da firma, o EV/EBITDA revela diferenças de endividamento entre empresas que o P/L, olhando apenas o valor de mercado das ações, não captura."
+                },
+                "en": {
+                  "prompt": "What differentiates EV/EBITDA from P/E?",
+                  "options": [
+                    "EV/EBITDA never considers any data from the company's balance sheet",
+                    "EV/EBITDA incorporates net debt into the calculation, making it less distorted by capital structure differences than P/E",
+                    "EV/EBITDA and P/E are exactly the same calculation, just with different names",
+                    "EV/EBITDA can only be calculated for companies with no debt at all"
+                  ],
+                  "explanation": "By including net debt in the enterprise value, EV/EBITDA reveals differences in indebtedness between companies that P/E, looking only at the shares' market value, doesn't capture."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia al EV/EBITDA del P/E?",
+                  "options": [
+                    "El EV/EBITDA nunca considera ningún dato del balance de la empresa",
+                    "El EV/EBITDA incorpora la deuda neta en el cálculo, haciéndolo menos distorsionado por diferencias de estructura de capital que el P/E",
+                    "EV/EBITDA y P/E son exactamente el mismo cálculo, solo con nombres diferentes",
+                    "El EV/EBITDA solo puede calcularse para empresas sin ninguna deuda"
+                  ],
+                  "explanation": "Al incluir la deuda neta en el valor de la firma, el EV/EBITDA revela diferencias de endeudamiento entre empresas que el P/E, mirando solo el valor de mercado de las acciones, no captura."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que o P/L divide o preço da ação pelo lucro por ação, mas não leva em conta a dívida da empresa. Duas empresas têm P/L idêntico, mas uma tem uma dívida líquida bem maior. O que olhar o EV/EBITDA revela que o P/L sozinho pode esconder?",
+                  "options": [
+                    "O EV/EBITDA incorpora a dívida líquida ao valor da firma, podendo revelar que a empresa mais endividada está, na verdade, mais cara em relação à geração de caixa operacional, algo que o P/L sozinho não mostra",
+                    "Nada, já que P/L e EV/EBITDA sempre chegam exatamente à mesma conclusão sobre qualquer empresa",
+                    "Que a empresa com dívida líquida maior é automaticamente um investimento pior, sem necessidade de mais investigação",
+                    "Que dívida líquida nunca deve ser considerada ao avaliar uma empresa"
+                  ],
+                  "explanation": "Como o EV/EBITDA soma a dívida líquida ao valor de mercado antes de dividir pelo EBITDA, ele pode revelar uma diferença de custo relativo entre duas empresas que o P/L, ignorando a dívida, deixaria escondida."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that P/E divides the stock's price by earnings per share, but doesn't account for the company's debt. Two companies have identical P/E ratios, but one has much higher net debt. What does looking at EV/EBITDA reveal that P/E alone might hide?",
+                  "options": [
+                    "EV/EBITDA incorporates net debt into the enterprise value, and can reveal that the more indebted company is actually pricier relative to operating cash generation, something P/E alone doesn't show",
+                    "Nothing, since P/E and EV/EBITDA always reach exactly the same conclusion about any company",
+                    "That the company with higher net debt is automatically a worse investment, with no need for further investigation",
+                    "That net debt should never be considered when evaluating a company"
+                  ],
+                  "explanation": "Since EV/EBITDA adds net debt to the market value before dividing by EBITDA, it can reveal a difference in relative cost between two companies that P/E, ignoring debt, would leave hidden."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el P/E divide el precio de la acción por la ganancia por acción, pero no toma en cuenta la deuda de la empresa. Dos empresas tienen un P/E idéntico, pero una tiene una deuda neta bastante mayor. ¿Qué revela mirar el EV/EBITDA que el P/E por sí solo puede esconder?",
+                  "options": [
+                    "El EV/EBITDA incorpora la deuda neta al valor de la firma, y puede revelar que la empresa más endeudada está, en realidad, más cara en relación a la generación de caja operativa, algo que el P/E por sí solo no muestra",
+                    "Nada, ya que el P/E y el EV/EBITDA siempre llegan exactamente a la misma conclusión sobre cualquier empresa",
+                    "Que la empresa con mayor deuda neta es automáticamente una peor inversión, sin necesidad de más investigación",
+                    "Que la deuda neta nunca debe considerarse al evaluar una empresa"
+                  ],
+                  "explanation": "Como el EV/EBITDA suma la deuda neta al valor de mercado antes de dividir por el EBITDA, puede revelar una diferencia de costo relativo entre dos empresas que el P/E, ignorando la deuda, dejaría oculta."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "EV/EBITDA divide o valor da firma (valor de mercado mais dívida líquida) pelo EBITDA.",
+                    "Ele incorpora a dívida da empresa, ao contrário do P/L, que olha só o valor de mercado das ações.",
+                    "Duas empresas com o mesmo P/L podem ter EV/EBITDA bem diferentes, dependendo de quanta dívida cada uma carrega."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "EV/EBITDA divides the enterprise value (market value plus net debt) by EBITDA.",
+                    "It incorporates the company's debt, unlike P/E, which only looks at the shares' market value.",
+                    "Two companies with the same P/E can have quite different EV/EBITDA, depending on how much debt each carries."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El EV/EBITDA divide el valor de la firma (valor de mercado más deuda neta) entre el EBITDA.",
+                    "Incorpora la deuda de la empresa, a diferencia del P/E, que solo mira el valor de mercado de las acciones.",
+                    "Dos empresas con el mismo P/E pueden tener un EV/EBITDA bastante diferente, según cuánta deuda cargue cada una."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "fundamental_analysis_specialist",
+      "order": 3,
+      "iconKey": "analytics_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "advanced_fundamental_indicators"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Análise Fundamentalista: Nível Especialista",
+          "description": "Liquidez corrente e seca, giro de ativos, análise DuPont, capital de giro e leitura de notas explicativas."
+        },
+        "en": {
+          "title": "Fundamental Analysis: Expert Level",
+          "description": "Current and quick ratios, asset turnover, DuPont analysis, working capital, and reading footnotes."
+        },
+        "es": {
+          "title": "Análisis Fundamental: Nivel Experto",
+          "description": "Liquidez corriente y prueba ácida, rotación de activos, análisis DuPont, capital de trabajo y lectura de notas explicativas."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "fundamental_analysis_liquidity_ratios",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Liquidez Corrente e Liquidez Seca"
+            },
+            "en": {
+              "title": "Current Ratio and Quick Ratio"
+            },
+            "es": {
+              "title": "Liquidez Corriente y Prueba Ácida"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A capacidade de pagar contas de curto prazo",
+                  "body": "Liquidez corrente é a razão entre o ativo circulante (bens e direitos que a empresa deve converter em caixa em até um ano) e o passivo circulante (obrigações que vencem no mesmo período), indicando se a empresa tem recursos suficientes para cobrir suas dívidas de curto prazo. Liquidez seca faz o mesmo cálculo, mas exclui os estoques do ativo circulante, já que estoques nem sempre podem ser convertidos em caixa rapidamente — uma medida mais conservadora da capacidade de pagamento imediato."
+                },
+                "en": {
+                  "title": "The ability to pay short-term bills",
+                  "body": "The current ratio is the relationship between current assets (what the company should convert to cash within a year) and current liabilities (obligations due in the same period), indicating whether the company has enough resources to cover its short-term debts. The quick ratio does the same calculation but excludes inventory from current assets, since inventory can't always be converted to cash quickly — a more conservative measure of immediate payment capacity."
+                },
+                "es": {
+                  "title": "La capacidad de pagar cuentas de corto plazo",
+                  "body": "La liquidez corriente es la relación entre el activo circulante (bienes y derechos que la empresa debe convertir en efectivo en hasta un año) y el pasivo circulante (obligaciones que vencen en el mismo período), indicando si la empresa tiene recursos suficientes para cubrir sus deudas de corto plazo. La prueba ácida hace el mismo cálculo, pero excluye los inventarios del activo circulante, ya que los inventarios no siempre pueden convertirse en efectivo rápidamente — una medida más conservadora de la capacidad de pago inmediato."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa tem R$200 milhões em ativo circulante e R$100 milhões em passivo circulante, uma liquidez corrente de 2 — sugerindo folga para cobrir obrigações de curto prazo. Mas se R$150 milhões desse ativo circulante forem estoques de difícil venda, a liquidez seca cai para 0,5, revelando uma situação bem menos confortável quando se exclui um item que pode não virar caixa rapidamente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company has $200 million in current assets and $100 million in current liabilities, a current ratio of 2 — suggesting room to cover short-term obligations. But if $150 million of that current asset figure is hard-to-sell inventory, the quick ratio drops to 0.5, revealing a much less comfortable situation once an item that might not turn into cash quickly is excluded."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa tiene R$200 millones en activo circulante y R$100 millones en pasivo circulante, una liquidez corriente de 2 — sugiriendo margen para cubrir obligaciones de corto plazo. Pero si R$150 millones de ese activo circulante son inventarios difíciles de vender, la prueba ácida cae a 0,5, revelando una situación bastante menos cómoda al excluir un ítem que podría no convertirse en efectivo rápidamente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre liquidez corrente e liquidez seca?",
+                  "options": [
+                    "Não existe nenhuma diferença; são exatamente o mesmo cálculo",
+                    "A liquidez seca exclui os estoques do ativo circulante, oferecendo uma medida mais conservadora de liquidez",
+                    "A liquidez corrente só pode ser calculada para empresas industriais",
+                    "A liquidez seca sempre resulta em um valor maior do que a liquidez corrente"
+                  ],
+                  "explanation": "A liquidez seca é uma versão mais conservadora da liquidez corrente, excluindo estoques por eles nem sempre poderem ser convertidos rapidamente em caixa."
+                },
+                "en": {
+                  "prompt": "What's the main difference between the current ratio and the quick ratio?",
+                  "options": [
+                    "There's no difference at all; they're exactly the same calculation",
+                    "The quick ratio excludes inventory from current assets, offering a more conservative liquidity measure",
+                    "The current ratio can only be calculated for industrial companies",
+                    "The quick ratio always results in a higher value than the current ratio"
+                  ],
+                  "explanation": "The quick ratio is a more conservative version of the current ratio, excluding inventory since it can't always be quickly converted to cash."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre la liquidez corriente y la prueba ácida?",
+                  "options": [
+                    "No existe ninguna diferencia; son exactamente el mismo cálculo",
+                    "La prueba ácida excluye los inventarios del activo circulante, ofreciendo una medida más conservadora de liquidez",
+                    "La liquidez corriente solo puede calcularse para empresas industriales",
+                    "La prueba ácida siempre resulta en un valor mayor que la liquidez corriente"
+                  ],
+                  "explanation": "La prueba ácida es una versión más conservadora de la liquidez corriente, excluyendo los inventarios porque no siempre pueden convertirse rápidamente en efectivo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que o endividamento mede a dependência de uma empresa de capital de terceiros no longo prazo. Como a liquidez corrente e a liquidez seca complementam essa análise, focando em um horizonte diferente?",
+                  "options": [
+                    "Enquanto o endividamento avalia a estrutura de capital no longo prazo, liquidez corrente e seca avaliam especificamente a capacidade de pagamento de obrigações de curto prazo, um risco distinto mesmo para uma empresa com endividamento de longo prazo saudável",
+                    "Liquidez e endividamento medem exatamente a mesma coisa, tornando uma delas desnecessária",
+                    "Uma empresa com baixo endividamento de longo prazo nunca pode ter problemas de liquidez de curto prazo",
+                    "Liquidez corrente e seca substituem completamente a necessidade de analisar o endividamento de longo prazo"
+                  ],
+                  "explanation": "Endividamento e liquidez avaliam riscos financeiros em horizontes diferentes: uma empresa pode ter uma estrutura de capital de longo prazo saudável e ainda assim enfrentar um aperto de caixa no curto prazo, o que reforça por que essas métricas são complementares, não substitutas."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that debt measures a company's dependence on third-party capital in the long run. How do the current and quick ratios complement that analysis, focusing on a different horizon?",
+                  "options": [
+                    "While debt assesses long-term capital structure, current and quick ratios specifically assess the ability to pay short-term obligations, a distinct risk even for a company with healthy long-term debt",
+                    "Liquidity and debt measure exactly the same thing, making one of them unnecessary",
+                    "A company with low long-term debt can never face short-term liquidity problems",
+                    "Current and quick ratios completely replace the need to analyze long-term debt"
+                  ],
+                  "explanation": "Debt and liquidity assess financial risk over different horizons: a company can have a healthy long-term capital structure and still face a short-term cash crunch, which reinforces why these metrics are complementary, not substitutes."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el endeudamiento mide la dependencia de una empresa del capital de terceros en el largo plazo. ¿Cómo complementan la liquidez corriente y la prueba ácida ese análisis, enfocándose en un horizonte diferente?",
+                  "options": [
+                    "Mientras que el endeudamiento evalúa la estructura de capital de largo plazo, la liquidez corriente y la prueba ácida evalúan específicamente la capacidad de pago de obligaciones de corto plazo, un riesgo distinto incluso para una empresa con endeudamiento de largo plazo saludable",
+                    "Liquidez y endeudamiento miden exactamente lo mismo, haciendo innecesaria a una de ellas",
+                    "Una empresa con bajo endeudamiento de largo plazo nunca puede tener problemas de liquidez de corto plazo",
+                    "La liquidez corriente y la prueba ácida reemplazan por completo la necesidad de analizar el endeudamiento de largo plazo"
+                  ],
+                  "explanation": "El endeudamiento y la liquidez evalúan el riesgo financiero en horizontes diferentes: una empresa puede tener una estructura de capital de largo plazo saludable y aun así enfrentar un apretón de caja en el corto plazo, lo que refuerza por qué estas métricas son complementarias, no sustitutas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Liquidez corrente compara ativo circulante e passivo circulante, medindo a capacidade de pagamento de curto prazo.",
+                    "Liquidez seca exclui estoques, oferecendo uma medida mais conservadora.",
+                    "Liquidez e endividamento avaliam riscos financeiros complementares, em horizontes diferentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The current ratio compares current assets and liabilities, measuring short-term payment ability.",
+                    "The quick ratio excludes inventory, offering a more conservative measure.",
+                    "Liquidity and debt assess complementary financial risks, over different horizons."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La liquidez corriente compara el activo circulante y el pasivo circulante, midiendo la capacidad de pago de corto plazo.",
+                    "La prueba ácida excluye los inventarios, ofreciendo una medida más conservadora.",
+                    "Liquidez y endeudamiento evalúan riesgos financieros complementarios, en horizontes diferentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_asset_turnover",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Giro de Ativos"
+            },
+            "en": {
+              "title": "Asset Turnover"
+            },
+            "es": {
+              "title": "Rotación de Activos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quanto de receita cada real em ativos gera",
+                  "body": "Giro de ativos mede quanta receita uma empresa gera para cada unidade monetária investida em seus ativos totais, calculado dividindo a receita líquida pelo total de ativos. Um giro mais alto sugere que a empresa está usando seus ativos de forma mais eficiente para gerar vendas; um giro mais baixo pode indicar ativos ociosos ou um modelo de negócio que naturalmente exige mais capital investido para cada unidade de receita."
+                },
+                "en": {
+                  "title": "How much revenue each currency unit in assets generates",
+                  "body": "Asset turnover measures how much revenue a company generates for each monetary unit invested in its total assets, calculated by dividing net revenue by total assets. A higher turnover suggests the company is using its assets more efficiently to generate sales; a lower turnover can indicate idle assets or a business model that naturally requires more invested capital per unit of revenue."
+                },
+                "es": {
+                  "title": "Cuánto ingreso genera cada unidad monetaria en activos",
+                  "body": "La rotación de activos mide cuánto ingreso genera una empresa por cada unidad monetaria invertida en sus activos totales, calculada dividiendo el ingreso neto entre el total de activos. Una rotación más alta sugiere que la empresa está usando sus activos de forma más eficiente para generar ventas; una rotación más baja puede indicar activos ociosos o un modelo de negocio que naturalmente exige más capital invertido por cada unidad de ingreso."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma rede de supermercados costuma ter giro de ativos alto, já que opera com margens de lucro baixas mas vende um volume grande em relação ao capital investido em lojas e estoque. Já uma empresa de energia elétrica, que investe pesadamente em usinas e infraestrutura de longuíssima duração, costuma ter giro de ativos bem mais baixo, mesmo sendo um negócio saudável — o giro de ativos típico varia bastante entre setores."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A supermarket chain usually has high asset turnover, since it operates on thin profit margins but sells a large volume relative to the capital invested in stores and inventory. A power utility, which invests heavily in plants and very long-lived infrastructure, usually has much lower asset turnover, even as a healthy business — typical asset turnover varies quite a bit across sectors."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una cadena de supermercados suele tener una rotación de activos alta, ya que opera con márgenes de ganancia bajos pero vende un volumen grande en relación con el capital invertido en tiendas e inventario. Una empresa de energía eléctrica, que invierte fuertemente en plantas e infraestructura de larguísima duración, suele tener una rotación de activos bastante más baja, aun siendo un negocio saludable — la rotación de activos típica varía bastante entre sectores."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o giro de ativos mede?",
+                  "options": [
+                    "Quanta receita uma empresa gera para cada unidade monetária investida em seus ativos totais",
+                    "O lucro líquido total de uma empresa em um ano",
+                    "A quantidade de dívida que uma empresa tem em relação ao seu patrimônio",
+                    "O preço de mercado das ações de uma empresa"
+                  ],
+                  "explanation": "Giro de ativos relaciona a receita gerada com o total de ativos investidos, medindo a eficiência de uso desses ativos para gerar vendas."
+                },
+                "en": {
+                  "prompt": "What does asset turnover measure?",
+                  "options": [
+                    "How much revenue a company generates for each monetary unit invested in its total assets",
+                    "A company's total net profit in a year",
+                    "How much debt a company has relative to its equity",
+                    "A company's stock market price"
+                  ],
+                  "explanation": "Asset turnover relates generated revenue to total invested assets, measuring how efficiently those assets are used to generate sales."
+                },
+                "es": {
+                  "prompt": "¿Qué mide la rotación de activos?",
+                  "options": [
+                    "Cuánto ingreso genera una empresa por cada unidad monetaria invertida en sus activos totales",
+                    "La ganancia neta total de una empresa en un año",
+                    "Cuánta deuda tiene una empresa en relación con su patrimonio",
+                    "El precio de mercado de las acciones de una empresa"
+                  ],
+                  "explanation": "La rotación de activos relaciona el ingreso generado con el total de activos invertidos, midiendo la eficiencia con que esos activos se usan para generar ventas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que margens medem quanto lucro sobra de cada unidade de receita. Por que faz sentido considerar giro de ativos e margens juntos, em vez de olhar apenas para um dos dois isoladamente?",
+                  "options": [
+                    "Margens e giro de ativos medem exatamente a mesma coisa, então considerar os dois juntos é redundante",
+                    "Uma empresa pode compensar margens mais baixas com giro de ativos mais alto (ou vice-versa) para chegar a um retorno similar, então avaliar apenas uma das duas métricas isoladamente pode levar a uma conclusão incompleta sobre a eficiência do negócio",
+                    "Giro de ativos só é relevante para empresas com margens negativas",
+                    "Margens sempre importam mais do que giro de ativos, independentemente do setor"
+                  ],
+                  "explanation": "Diferentes modelos de negócio podem combinar margens e giro de ativos de formas distintas para chegar a um retorno parecido — por isso considerar as duas métricas juntas dá um quadro mais completo do que apenas uma delas isoladamente."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that margins measure how much profit is left from each unit of revenue. Why does it make sense to consider asset turnover and margins together, rather than looking at just one of the two in isolation?",
+                  "options": [
+                    "Margins and asset turnover measure exactly the same thing, so considering both together is redundant",
+                    "A company can offset lower margins with higher asset turnover (or vice versa) to arrive at a similar return, so evaluating just one metric in isolation can lead to an incomplete conclusion about the business's efficiency",
+                    "Asset turnover is only relevant for companies with negative margins",
+                    "Margins always matter more than asset turnover, regardless of the sector"
+                  ],
+                  "explanation": "Different business models can combine margins and asset turnover in different ways to arrive at a similar return — which is why considering both metrics together gives a more complete picture than either one alone."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que los márgenes miden cuánta ganancia queda de cada unidad de ingreso. ¿Por qué tiene sentido considerar la rotación de activos y los márgenes juntos, en lugar de mirar solo uno de los dos por separado?",
+                  "options": [
+                    "Márgenes y rotación de activos miden exactamente lo mismo, por lo que considerar ambos juntos es redundante",
+                    "Una empresa puede compensar márgenes más bajos con una rotación de activos más alta (o viceversa) para llegar a un retorno similar, así que evaluar solo una de las dos métricas por separado puede llevar a una conclusión incompleta sobre la eficiencia del negocio",
+                    "La rotación de activos solo es relevante para empresas con márgenes negativos",
+                    "Los márgenes siempre importan más que la rotación de activos, sin importar el sector"
+                  ],
+                  "explanation": "Diferentes modelos de negocio pueden combinar márgenes y rotación de activos de formas distintas para llegar a un retorno parecido — por eso considerar ambas métricas juntas da un panorama más completo que solo una de ellas por separado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Giro de ativos mede quanta receita é gerada para cada unidade monetária investida em ativos totais.",
+                    "O giro de ativos típico varia bastante entre setores, dependendo do modelo de negócio.",
+                    "Margens e giro de ativos podem se compensar mutuamente, por isso vale considerá-los juntos."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Asset turnover measures how much revenue is generated for each monetary unit invested in total assets.",
+                    "Typical asset turnover varies quite a bit across sectors, depending on the business model.",
+                    "Margins and asset turnover can offset each other, which is why it's worth considering them together."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La rotación de activos mide cuánto ingreso se genera por cada unidad monetaria invertida en activos totales.",
+                    "La rotación de activos típica varía bastante entre sectores, según el modelo de negocio.",
+                    "Márgenes y rotación de activos pueden compensarse mutuamente, por eso vale la pena considerarlos juntos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_dupont",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Análise DuPont: Decompondo o ROE"
+            },
+            "en": {
+              "title": "DuPont Analysis: Decomposing ROE"
+            },
+            "es": {
+              "title": "Análisis DuPont: Descomponiendo el ROE"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um mesmo ROE pode vir de fontes bem diferentes",
+                  "body": "A análise DuPont decompõe o ROE em três componentes multiplicados entre si: margem líquida (lucro por unidade de receita), giro de ativos (eficiência no uso dos ativos para gerar receita) e alavancagem financeira (o quanto a empresa usa capital de terceiros em relação ao capital próprio). Duas empresas podem ter exatamente o mesmo ROE chegando lá por caminhos muito diferentes — uma com margens altas e giro baixo, outra com margens baixas, giro alto e mais alavancagem — e essa decomposição revela qual caminho cada uma seguiu."
+                },
+                "en": {
+                  "title": "The same ROE can come from very different sources",
+                  "body": "DuPont analysis decomposes ROE into three components multiplied together: net margin (profit per unit of revenue), asset turnover (efficiency in using assets to generate revenue), and financial leverage (how much the company uses third-party capital relative to its own equity). Two companies can have exactly the same ROE arriving there through very different paths — one with high margins and low turnover, another with low margins, high turnover and more leverage — and this decomposition reveals which path each one followed."
+                },
+                "es": {
+                  "title": "Un mismo ROE puede provenir de fuentes muy diferentes",
+                  "body": "El análisis DuPont descompone el ROE en tres componentes multiplicados entre sí: margen neto (ganancia por unidad de ingreso), rotación de activos (eficiencia en el uso de los activos para generar ingreso) y apalancamiento financiero (cuánto usa la empresa capital de terceros en relación con su capital propio). Dos empresas pueden tener exactamente el mismo ROE llegando allí por caminos muy diferentes — una con márgenes altos y rotación baja, otra con márgenes bajos, rotación alta y más apalancamiento — y esta descomposición revela qué camino siguió cada una."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas têm ROE de 15%. A primeira chega lá com margem líquida alta (10%) e giro de ativos moderado, sem muita alavancagem. A segunda tem margem líquida baixa (2%), giro de ativos muito alto e alavancagem financeira elevada. Embora o ROE final seja idêntico, a análise DuPont revela que a segunda empresa depende bem mais de capital de terceiros para chegar ao mesmo resultado, um perfil de risco diferente do que o número isolado do ROE sugeriria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies have a 15% ROE. The first gets there with a high net margin (10%) and moderate asset turnover, without much leverage. The second has a low net margin (2%), very high asset turnover and elevated financial leverage. Although the final ROE is identical, DuPont analysis reveals the second company depends much more on third-party capital to reach the same result, a different risk profile than the isolated ROE number would suggest."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas tienen un ROE del 15%. La primera llega allí con un margen neto alto (10%) y rotación de activos moderada, sin mucho apalancamiento. La segunda tiene un margen neto bajo (2%), una rotación de activos muy alta y un apalancamiento financiero elevado. Aunque el ROE final es idéntico, el análisis DuPont revela que la segunda empresa depende bastante más del capital de terceros para llegar al mismo resultado, un perfil de riesgo diferente del que sugeriría el número aislado del ROE."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Em quais três componentes a análise DuPont decompõe o ROE?",
+                  "options": [
+                    "Margem líquida, giro de ativos e alavancagem financeira",
+                    "Preço da ação, volume negociado e número de acionistas",
+                    "Receita bruta, custo dos produtos vendidos e despesas operacionais",
+                    "Dividend yield, payout e taxa de crescimento"
+                  ],
+                  "explanation": "A análise DuPont multiplica margem líquida, giro de ativos e alavancagem financeira para chegar ao ROE, revelando de onde vem esse retorno."
+                },
+                "en": {
+                  "prompt": "What three components does DuPont analysis decompose ROE into?",
+                  "options": [
+                    "Net margin, asset turnover, and financial leverage",
+                    "Stock price, trading volume, and number of shareholders",
+                    "Gross revenue, cost of goods sold, and operating expenses",
+                    "Dividend yield, payout ratio, and growth rate"
+                  ],
+                  "explanation": "DuPont analysis multiplies net margin, asset turnover, and financial leverage to arrive at ROE, revealing where that return comes from."
+                },
+                "es": {
+                  "prompt": "¿En qué tres componentes descompone el análisis DuPont al ROE?",
+                  "options": [
+                    "Margen neto, rotación de activos y apalancamiento financiero",
+                    "Precio de la acción, volumen negociado y número de accionistas",
+                    "Ingreso bruto, costo de los productos vendidos y gastos operativos",
+                    "Dividend yield, payout y tasa de crecimiento"
+                  ],
+                  "explanation": "El análisis DuPont multiplica margen neto, rotación de activos y apalancamiento financiero para llegar al ROE, revelando de dónde proviene ese retorno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores desta escola, tanto o giro de ativos quanto o papel do endividamento na estrutura de capital de uma empresa. Diante de duas empresas com o mesmo ROE, por que a análise DuPont é mais informativa do que olhar apenas para o ROE isolado?",
+                  "options": [
+                    "Porque a decomposição revela se o ROE vem principalmente de rentabilidade operacional (margem e giro) ou de alavancagem financeira, o que muda completamente o perfil de risco por trás de um mesmo número final",
+                    "Porque a análise DuPont sempre produz um resultado diferente do ROE calculado diretamente, tornando um dos dois cálculos incorreto",
+                    "Porque giro de ativos e endividamento nunca têm nenhuma relação com o ROE de uma empresa",
+                    "Porque duas empresas com o mesmo ROE são sempre idênticas em todos os outros aspectos financeiros"
+                  ],
+                  "explanation": "A análise DuPont é justamente o que permite enxergar, por trás de um ROE idêntico, se o retorno vem de uma operação genuinamente eficiente (margem e giro) ou de um uso mais agressivo de alavancagem financeira — uma distinção de risco que o número isolado do ROE não revela."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this school, both asset turnover and debt's role in a company's capital structure. Given two companies with the same ROE, why is DuPont analysis more informative than looking at the isolated ROE alone?",
+                  "options": [
+                    "Because the decomposition reveals whether the ROE comes mainly from operational profitability (margin and turnover) or from financial leverage, which completely changes the risk profile behind the same final number",
+                    "Because DuPont analysis always produces a different result from the directly calculated ROE, making one of the two calculations wrong",
+                    "Because asset turnover and debt never have any relation to a company's ROE",
+                    "Because two companies with the same ROE are always identical in every other financial respect"
+                  ],
+                  "explanation": "DuPont analysis is precisely what lets you see, behind an identical ROE, whether the return comes from a genuinely efficient operation (margin and turnover) or from more aggressive use of financial leverage — a risk distinction the isolated ROE number doesn't reveal."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de esta escuela, tanto la rotación de activos como el papel del endeudamiento en la estructura de capital de una empresa. Ante dos empresas con el mismo ROE, ¿por qué el análisis DuPont es más informativo que mirar solo el ROE aislado?",
+                  "options": [
+                    "Porque la descomposición revela si el ROE proviene principalmente de rentabilidad operativa (margen y rotación) o de apalancamiento financiero, lo que cambia por completo el perfil de riesgo detrás de un mismo número final",
+                    "Porque el análisis DuPont siempre produce un resultado diferente al ROE calculado directamente, haciendo incorrecto a uno de los dos cálculos",
+                    "Porque la rotación de activos y el endeudamiento nunca tienen ninguna relación con el ROE de una empresa",
+                    "Porque dos empresas con el mismo ROE son siempre idénticas en todos los demás aspectos financieros"
+                  ],
+                  "explanation": "El análisis DuPont es precisamente lo que permite ver, detrás de un ROE idéntico, si el retorno proviene de una operación genuinamente eficiente (margen y rotación) o de un uso más agresivo del apalancamiento financiero — una distinción de riesgo que el número aislado del ROE no revela."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A análise DuPont decompõe o ROE em margem líquida, giro de ativos e alavancagem financeira.",
+                    "Duas empresas podem ter o mesmo ROE chegando lá por caminhos bem diferentes.",
+                    "Essa decomposição revela se o retorno vem de eficiência operacional ou de alavancagem, um risco que o ROE isolado não mostra."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "DuPont analysis decomposes ROE into net margin, asset turnover, and financial leverage.",
+                    "Two companies can have the same ROE arriving there through very different paths.",
+                    "This decomposition reveals whether the return comes from operational efficiency or leverage, a risk the isolated ROE doesn't show."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El análisis DuPont descompone el ROE en margen neto, rotación de activos y apalancamiento financiero.",
+                    "Dos empresas pueden tener el mismo ROE llegando allí por caminos muy diferentes.",
+                    "Esta descomposición revela si el retorno proviene de eficiencia operativa o de apalancamiento, un riesgo que el ROE aislado no muestra."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_working_capital",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Capital de Giro e Ciclo de Conversão de Caixa"
+            },
+            "en": {
+              "title": "Working Capital and the Cash Conversion Cycle"
+            },
+            "es": {
+              "title": "Capital de Trabajo y Ciclo de Conversión de Caja"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O dinheiro que sustenta a operação do dia a dia",
+                  "body": "Capital de giro é a diferença entre o ativo circulante e o passivo circulante, representando os recursos que uma empresa precisa para sustentar suas operações do dia a dia — pagar fornecedores, manter estoque, financiar vendas a prazo — antes de receber o dinheiro de seus clientes. O ciclo de conversão de caixa mede quantos dias, em média, se passam entre o pagamento a fornecedores e o recebimento das vendas, sendo um indicador de quanto tempo o dinheiro da empresa fica 'preso' na operação antes de voltar como caixa disponível."
+                },
+                "en": {
+                  "title": "The cash that sustains day-to-day operations",
+                  "body": "Working capital is the difference between current assets and current liabilities, representing the resources a company needs to sustain its day-to-day operations — paying suppliers, maintaining inventory, financing sales on credit — before receiving cash from its customers. The cash conversion cycle measures how many days, on average, pass between paying suppliers and receiving payment for sales, an indicator of how long the company's money stays 'tied up' in operations before coming back as available cash."
+                },
+                "es": {
+                  "title": "El efectivo que sostiene la operación diaria",
+                  "body": "El capital de trabajo es la diferencia entre el activo circulante y el pasivo circulante, representando los recursos que una empresa necesita para sostener sus operaciones diarias — pagar proveedores, mantener inventario, financiar ventas a crédito — antes de recibir el dinero de sus clientes. El ciclo de conversión de caja mide cuántos días, en promedio, pasan entre el pago a proveedores y el cobro de las ventas, siendo un indicador de cuánto tiempo el dinero de la empresa queda 'atrapado' en la operación antes de volver como efectivo disponible."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa compra matéria-prima e paga o fornecedor em 30 dias, leva 45 dias para transformar essa matéria-prima em produto vendido, e ainda espera mais 60 dias para receber o pagamento do cliente. Isso resulta em um ciclo de conversão de caixa de 75 dias (45 + 60 - 30) — período em que a empresa precisa financiar sua operação com capital próprio ou de terceiros, antes de o dinheiro voltar para o caixa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company buys raw materials and pays the supplier in 30 days, takes 45 days to turn that raw material into a sold product, and still waits another 60 days to receive payment from the customer. This results in a 75-day cash conversion cycle (45 + 60 - 30) — a period during which the company needs to finance its operation with its own or third-party capital, before the cash comes back."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa compra materia prima y paga al proveedor en 30 días, tarda 45 días en transformar esa materia prima en un producto vendido, y todavía espera otros 60 días para recibir el pago del cliente. Esto resulta en un ciclo de conversión de caja de 75 días (45 + 60 - 30) — período durante el cual la empresa necesita financiar su operación con capital propio o de terceros, antes de que el efectivo regrese."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o ciclo de conversão de caixa mede?",
+                  "options": [
+                    "O lucro líquido total gerado por uma empresa em um ano",
+                    "Quantos dias, em média, se passam entre o pagamento a fornecedores e o recebimento das vendas",
+                    "O valor de mercado total das ações de uma empresa",
+                    "A quantidade de funcionários que uma empresa tem"
+                  ],
+                  "explanation": "O ciclo de conversão de caixa mede o tempo médio entre o desembolso para fornecedores e o recebimento das vendas, indicando por quanto tempo o dinheiro fica preso na operação."
+                },
+                "en": {
+                  "prompt": "What does the cash conversion cycle measure?",
+                  "options": [
+                    "A company's total net profit generated in a year",
+                    "How many days, on average, pass between paying suppliers and receiving payment for sales",
+                    "A company's total stock market value",
+                    "How many employees a company has"
+                  ],
+                  "explanation": "The cash conversion cycle measures the average time between paying suppliers and receiving payment for sales, indicating how long cash stays tied up in operations."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el ciclo de conversión de caja?",
+                  "options": [
+                    "La ganancia neta total generada por una empresa en un año",
+                    "Cuántos días, en promedio, pasan entre el pago a proveedores y el cobro de las ventas",
+                    "El valor de mercado total de las acciones de una empresa",
+                    "La cantidad de empleados que tiene una empresa"
+                  ],
+                  "explanation": "El ciclo de conversión de caja mide el tiempo promedio entre el pago a proveedores y el cobro de las ventas, indicando durante cuánto tiempo el efectivo queda atrapado en la operación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que liquidez corrente e liquidez seca avaliam a capacidade de uma empresa pagar obrigações de curto prazo. Como um ciclo de conversão de caixa muito longo pode pressionar justamente essas métricas de liquidez?",
+                  "options": [
+                    "Um ciclo de conversão de caixa longo significa que a empresa precisa financiar suas operações por mais tempo antes de receber caixa dos clientes, o que pode exigir mais capital de giro e pressionar a posição de liquidez de curto prazo",
+                    "O ciclo de conversão de caixa não tem nenhuma relação com liquidez corrente ou liquidez seca",
+                    "Um ciclo de conversão de caixa longo sempre melhora automaticamente a liquidez de uma empresa",
+                    "Liquidez de curto prazo depende exclusivamente do endividamento de longo prazo, nunca do ciclo operacional"
+                  ],
+                  "explanation": "Quanto mais longo o ciclo de conversão de caixa, mais tempo a empresa precisa sustentar sua operação sem receber caixa dos clientes, o que aumenta a necessidade de capital de giro e pode pressionar diretamente as métricas de liquidez de curto prazo já estudadas."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that the current and quick ratios assess a company's ability to pay short-term obligations. How can a very long cash conversion cycle put pressure specifically on those liquidity metrics?",
+                  "options": [
+                    "A long cash conversion cycle means the company needs to finance its operations for longer before receiving cash from customers, which can require more working capital and pressure short-term liquidity",
+                    "The cash conversion cycle has no relation at all to the current or quick ratio",
+                    "A long cash conversion cycle always automatically improves a company's liquidity",
+                    "Short-term liquidity depends exclusively on long-term debt, never on the operating cycle"
+                  ],
+                  "explanation": "The longer the cash conversion cycle, the longer the company needs to sustain its operation without receiving cash from customers, which increases the need for working capital and can directly pressure the short-term liquidity metrics already studied."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la liquidez corriente y la prueba ácida evalúan la capacidad de una empresa de pagar obligaciones de corto plazo. ¿Cómo puede un ciclo de conversión de caja muy largo presionar justamente esas métricas de liquidez?",
+                  "options": [
+                    "Un ciclo de conversión de caja largo significa que la empresa necesita financiar sus operaciones por más tiempo antes de recibir efectivo de los clientes, lo que puede exigir más capital de trabajo y presionar la posición de liquidez de corto plazo",
+                    "El ciclo de conversión de caja no tiene ninguna relación con la liquidez corriente o la prueba ácida",
+                    "Un ciclo de conversión de caja largo siempre mejora automáticamente la liquidez de una empresa",
+                    "La liquidez de corto plazo depende exclusivamente del endeudamiento de largo plazo, nunca del ciclo operativo"
+                  ],
+                  "explanation": "Cuanto más largo el ciclo de conversión de caja, más tiempo necesita la empresa sostener su operación sin recibir efectivo de los clientes, lo que aumenta la necesidad de capital de trabajo y puede presionar directamente las métricas de liquidez de corto plazo ya estudiadas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Capital de giro é a diferença entre ativo circulante e passivo circulante.",
+                    "O ciclo de conversão de caixa mede quanto tempo o dinheiro fica preso na operação.",
+                    "Um ciclo de conversão de caixa longo pode pressionar diretamente a liquidez de curto prazo de uma empresa."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Working capital is the difference between current assets and current liabilities.",
+                    "The cash conversion cycle measures how long cash stays tied up in operations.",
+                    "A long cash conversion cycle can directly pressure a company's short-term liquidity."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El capital de trabajo es la diferencia entre el activo circulante y el pasivo circulante.",
+                    "El ciclo de conversión de caja mide cuánto tiempo el efectivo queda atrapado en la operación.",
+                    "Un ciclo de conversión de caja largo puede presionar directamente la liquidez de corto plazo de una empresa."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_reading_footnotes",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Notas Explicativas: Lendo Além dos Números"
+            },
+            "en": {
+              "title": "Footnotes: Reading Beyond the Numbers"
+            },
+            "es": {
+              "title": "Notas Explicativas: Leyendo Más Allá de los Números"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Os indicadores contam parte da história",
+                  "body": "Indicadores como ROE, margens e liquidez são calculados a partir dos números principais das demonstrações financeiras, mas as notas explicativas — texto detalhado que acompanha essas demonstrações — costumam revelar informações que não aparecem diretamente nesses números, como mudanças em critérios contábeis, processos judiciais relevantes, obrigações fora do balanço patrimonial e detalhes sobre a composição de itens agregados. Analisar apenas os indicadores calculados, sem revisar essas notas, pode deixar passar informações importantes para entender a real situação de uma empresa."
+                },
+                "en": {
+                  "title": "Indicators tell part of the story",
+                  "body": "Indicators like ROE, margins, and liquidity are calculated from the main numbers in financial statements, but the footnotes — detailed text accompanying those statements — often reveal information that doesn't appear directly in those numbers, such as changes in accounting criteria, relevant lawsuits, off-balance-sheet obligations, and details about the composition of aggregated items. Analyzing only the calculated indicators, without reviewing these notes, can miss information important for understanding a company's real situation."
+                },
+                "es": {
+                  "title": "Los indicadores cuentan parte de la historia",
+                  "body": "Indicadores como el ROE, los márgenes y la liquidez se calculan a partir de los números principales de los estados financieros, pero las notas explicativas — texto detallado que acompaña a esos estados — suelen revelar información que no aparece directamente en esos números, como cambios en criterios contables, procesos judiciales relevantes, obligaciones fuera del balance y detalles sobre la composición de ítems agregados. Analizar solo los indicadores calculados, sin revisar esas notas, puede dejar pasar información importante para entender la situación real de una empresa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa apresenta indicadores de rentabilidade aparentemente sólidos, mas uma nota explicativa revela um processo judicial relevante que pode resultar em uma obrigação significativa não totalmente refletida no balanço atual, ou uma mudança recente no critério de reconhecimento de receita que torna a comparação com anos anteriores menos direta do que parece à primeira vista."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company presents seemingly solid profitability indicators, but a footnote reveals a significant lawsuit that could result in a substantial obligation not fully reflected in the current balance sheet, or a recent change in revenue recognition criteria that makes comparison with previous years less straightforward than it first appears."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa presenta indicadores de rentabilidad aparentemente sólidos, pero una nota explicativa revela un proceso judicial relevante que podría resultar en una obligación significativa no reflejada totalmente en el balance actual, o un cambio reciente en el criterio de reconocimiento de ingresos que hace que la comparación con años anteriores sea menos directa de lo que parece a primera vista."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que analisar apenas os indicadores calculados, sem revisar as notas explicativas, pode ser insuficiente?",
+                  "options": [
+                    "Porque as notas explicativas podem revelar informações relevantes, como processos judiciais ou mudanças contábeis, que não aparecem diretamente nos indicadores calculados",
+                    "Porque as notas explicativas nunca contêm nenhuma informação relevante para investidores",
+                    "Porque indicadores calculados sempre contam a história completa de uma empresa, sem exceção",
+                    "Porque as notas explicativas substituem completamente a necessidade de calcular qualquer indicador"
+                  ],
+                  "explanation": "As notas explicativas frequentemente contêm informações relevantes que não estão refletidas diretamente nos números usados para calcular indicadores, como contingências judiciais e mudanças de critério contábil."
+                },
+                "en": {
+                  "prompt": "Why can analyzing only calculated indicators, without reviewing the footnotes, be insufficient?",
+                  "options": [
+                    "Because footnotes can reveal relevant information, like lawsuits or accounting changes, that doesn't appear directly in calculated indicators",
+                    "Because footnotes never contain any information relevant to investors",
+                    "Because calculated indicators always tell the complete story about a company, without exception",
+                    "Because footnotes completely replace the need to calculate any indicator"
+                  ],
+                  "explanation": "Footnotes frequently contain relevant information not directly reflected in the numbers used to calculate indicators, such as legal contingencies and accounting criteria changes."
+                },
+                "es": {
+                  "prompt": "¿Por qué puede ser insuficiente analizar solo los indicadores calculados, sin revisar las notas explicativas?",
+                  "options": [
+                    "Porque las notas explicativas pueden revelar información relevante, como procesos judiciales o cambios contables, que no aparece directamente en los indicadores calculados",
+                    "Porque las notas explicativas nunca contienen ninguna información relevante para los inversores",
+                    "Porque los indicadores calculados siempre cuentan la historia completa de una empresa, sin excepción",
+                    "Porque las notas explicativas reemplazan por completo la necesidad de calcular cualquier indicador"
+                  ],
+                  "explanation": "Las notas explicativas frecuentemente contienen información relevante que no está reflejada directamente en los números usados para calcular indicadores, como contingencias judiciales y cambios de criterio contable."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, como a análise DuPont revela de onde vem o ROE de uma empresa, além do número isolado. Como essa mesma mentalidade — buscar o que está por trás de um número, não apenas aceitá-lo isoladamente — se aplica à leitura de notas explicativas?",
+                  "options": [
+                    "Assim como a análise DuPont decompõe o ROE para entender sua origem, revisar notas explicativas decompõe os números do balanço para entender o que está por trás deles, em vez de aceitar um indicador aparentemente bom sem investigar mais a fundo",
+                    "Análise DuPont e notas explicativas são ferramentas completamente não relacionadas, sem nenhuma mentalidade em comum",
+                    "Uma vez calculada a análise DuPont, não há mais necessidade de revisar nenhuma outra informação sobre a empresa",
+                    "Notas explicativas só são relevantes para empresas que já apresentam indicadores ruins"
+                  ],
+                  "explanation": "Tanto a análise DuPont quanto a leitura de notas explicativas compartilham o mesmo princípio de investigação: não aceitar um número isolado (ROE, ou qualquer indicador do balanço) pelo valor de face, buscando entender o que está por trás dele antes de tirar conclusões."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, how DuPont analysis reveals where a company's ROE comes from, beyond the isolated number. How does that same mindset — looking for what's behind a number, not just accepting it in isolation — apply to reading footnotes?",
+                  "options": [
+                    "Just as DuPont analysis decomposes ROE to understand its origin, reviewing footnotes decomposes the balance sheet's numbers to understand what's behind them, instead of accepting a seemingly good indicator without investigating further",
+                    "DuPont analysis and footnotes are completely unrelated tools, with no mindset in common",
+                    "Once DuPont analysis is calculated, there's no more need to review any other information about the company",
+                    "Footnotes are only relevant for companies that already present bad indicators"
+                  ],
+                  "explanation": "Both DuPont analysis and reading footnotes share the same investigative principle: not accepting an isolated number (ROE, or any balance sheet indicator) at face value, seeking to understand what's behind it before drawing conclusions."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, cómo el análisis DuPont revela de dónde proviene el ROE de una empresa, más allá del número aislado. ¿Cómo se aplica esa misma mentalidad — buscar qué hay detrás de un número, no solo aceptarlo aisladamente — a la lectura de notas explicativas?",
+                  "options": [
+                    "Así como el análisis DuPont descompone el ROE para entender su origen, revisar notas explicativas descompone los números del balance para entender qué hay detrás de ellos, en lugar de aceptar un indicador aparentemente bueno sin investigar más a fondo",
+                    "El análisis DuPont y las notas explicativas son herramientas completamente no relacionadas, sin ninguna mentalidad en común",
+                    "Una vez calculado el análisis DuPont, ya no hay necesidad de revisar ninguna otra información sobre la empresa",
+                    "Las notas explicativas solo son relevantes para empresas que ya presentan indicadores malos"
+                  ],
+                  "explanation": "Tanto el análisis DuPont como la lectura de notas explicativas comparten el mismo principio investigativo: no aceptar un número aislado (ROE, o cualquier indicador del balance) a valor nominal, buscando entender qué hay detrás de él antes de sacar conclusiones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Notas explicativas revelam informações que não aparecem diretamente nos indicadores calculados.",
+                    "Processos judiciais, mudanças contábeis e obrigações fora do balanço são exemplos do que pode estar nelas.",
+                    "Você concluiu o módulo especializado de análise fundamentalista: liquidez, giro de ativos, DuPont, capital de giro e notas explicativas."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Footnotes reveal information that doesn't appear directly in calculated indicators.",
+                    "Lawsuits, accounting changes, and off-balance-sheet obligations are examples of what can be found in them.",
+                    "You've completed the specialized fundamental analysis module: liquidity, asset turnover, DuPont, working capital, and footnotes."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Las notas explicativas revelan información que no aparece directamente en los indicadores calculados.",
+                    "Procesos judiciales, cambios contables y obligaciones fuera del balance son ejemplos de lo que puede estar en ellas.",
+                    "Completaste el módulo especializado de análisis fundamental: liquidez, rotación de activos, DuPont, capital de trabajo y notas explicativas."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

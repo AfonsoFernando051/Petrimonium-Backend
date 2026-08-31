@@ -1,0 +1,2743 @@
+{
+  "schoolId": "investment_fundamentals",
+  "domainId": "investing",
+  "order": 3,
+  "iconKey": "rocket_launch_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Fundamentos do Investimento",
+      "description": "Por que investir, risco e retorno, perfil de investidor, diversificação e como funciona o sistema financeiro."
+    },
+    "en": {
+      "title": "Investment Fundamentals",
+      "description": "Why invest, risk and return, investor profile, diversification and how the financial system works."
+    },
+    "es": {
+      "title": "Fundamentos de la Inversión",
+      "description": "Por qué invertir, riesgo y retorno, perfil de inversor, diversificación y cómo funciona el sistema financiero."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "investor_foundations",
+      "order": 1,
+      "iconKey": "rocket_launch_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "BEGINNER",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos do Investidor",
+          "description": "A linguagem básica de investir: poupar x investir, patrimônio, inflação, juros compostos, risco e diversificação."
+        },
+        "en": {
+          "title": "Investor Foundations",
+          "description": "The basic language of investing: saving vs. investing, net worth, inflation, compound interest, risk and diversification."
+        },
+        "es": {
+          "title": "Fundamentos del Inversor",
+          "description": "El lenguaje básico de invertir: ahorrar vs. invertir, patrimonio, inflación, interés compuesto, riesgo y diversificación."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "foundations_what_is_investing",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que é Investir?",
+              "learningObjective": "Explicar por que investir significa aceitar algum risco em busca de um retorno potencial, e identificar por que entender seus próprios objetivos deve vir antes de escolher onde investir."
+            },
+            "en": {
+              "title": "What is Investing?",
+              "learningObjective": "Explain why investing means accepting some risk for a potential return, and identify why understanding your own goals should come before choosing where to invest."
+            },
+            "es": {
+              "title": "¿Qué es Invertir?",
+              "learningObjective": "Explicar por qué invertir significa aceptar algún riesgo en busca de un retorno potencial, e identificar por qué entender tus propios objetivos debe venir antes de elegir dónde invertir."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Poupar x Investir",
+                  "body": "Investir é diferente de guardar dinheiro. Poupar é deixar o dinheiro parado; investir é fazer esse dinheiro trabalhar para gerar mais dinheiro ao longo do tempo, aceitando algum risco em troca de um retorno potencial."
+                },
+                "en": {
+                  "title": "Saving vs. Investing",
+                  "body": "Investing is different from saving money. Saving means leaving money untouched; investing means putting that money to work to grow over time, accepting some risk in exchange for a potential return."
+                },
+                "es": {
+                  "title": "Ahorrar vs. Invertir",
+                  "body": "Invertir es diferente de ahorrar dinero. Ahorrar es dejar el dinero quieto; invertir es hacer que ese dinero trabaje para crecer con el tiempo, aceptando algún riesgo a cambio de un retorno potencial."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se você guarda R$100 debaixo do colchão, daqui a 1 ano ainda são R$100. Se você investe esses R$100 a uma taxa de 10% ao ano, você passa a ter R$110."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If you keep R$100 under the mattress, in a year it's still R$100. If you invest that R$100 at a 10% annual rate, you'll have R$110."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si guardas R$100 debajo del colchón, dentro de un año seguirán siendo R$100. Si inviertes esos R$100 a una tasa del 10% anual, tendrás R$110."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual a principal diferença entre poupar e investir?",
+                  "options": [
+                    "Poupar sempre rende mais",
+                    "Investir envolve assumir algum risco em busca de retorno",
+                    "Não há diferença",
+                    "Poupar é proibido no Brasil"
+                  ],
+                  "explanation": "Investir significa aceitar algum grau de risco na expectativa de um retorno maior do que apenas guardar o dinheiro parado."
+                },
+                "en": {
+                  "prompt": "What's the main difference between saving and investing?",
+                  "options": [
+                    "Saving always earns more",
+                    "Investing involves taking on some risk in pursuit of a return",
+                    "There's no difference",
+                    "Saving is illegal in Brazil"
+                  ],
+                  "explanation": "That's right! Investing means accepting some degree of risk in the hope of a return greater than simply leaving money untouched."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre ahorrar e invertir?",
+                  "options": [
+                    "Ahorrar siempre rinde más",
+                    "Invertir implica asumir algún riesgo en busca de un retorno",
+                    "No hay diferencia",
+                    "Ahorrar está prohibido en Brasil"
+                  ],
+                  "explanation": "¡Exacto! Invertir significa aceptar cierto grado de riesgo con la expectativa de un retorno mayor que simplemente dejar el dinero quieto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebeu um dinheiro extra e não vai precisar dele nos próximos 5 anos. O que faz mais sentido investigar primeiro?",
+                  "options": [
+                    "Qual investimento promete o maior retorno, sem mais perguntas",
+                    "Seus objetivos, prazo e o quanto de risco você aceita correr",
+                    "Onde seus amigos estão investindo",
+                    "Qual investimento está em alta nas redes sociais"
+                  ],
+                  "explanation": "Antes de escolher onde investir, é essencial entender seus próprios objetivos, prazo e tolerância a risco — o investimento certo depende de você, não apenas do produto."
+                },
+                "en": {
+                  "prompt": "You received extra money and won't need it for the next 5 years. What's worth investigating first?",
+                  "options": [
+                    "Whichever investment promises the highest return, no further questions asked",
+                    "Your goals, time horizon, and how much risk you're willing to take",
+                    "Where your friends are investing",
+                    "Whatever investment is trending on social media"
+                  ],
+                  "explanation": "Before choosing where to invest, it's essential to understand your own goals, time horizon and risk tolerance — the right investment depends on you, not just the product."
+                },
+                "es": {
+                  "prompt": "Recibiste un dinero extra y no lo necesitarás en los próximos 5 años. ¿Qué tiene más sentido investigar primero?",
+                  "options": [
+                    "Qué inversión promete el mayor retorno, sin más preguntas",
+                    "Tus objetivos, plazo y cuánto riesgo estás dispuesto a asumir",
+                    "Dónde están invirtiendo tus amigos",
+                    "Qué inversión está de moda en redes sociales"
+                  ],
+                  "explanation": "Antes de elegir dónde invertir, es esencial entender tus propios objetivos, plazo y tolerancia al riesgo — la inversión correcta depende de ti, no solo del producto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Poupar é guardar dinheiro parado; investir é buscar fazê-lo crescer.",
+                    "Investir envolve aceitar algum risco em troca de retorno potencial.",
+                    "Entender seus objetivos vem antes de escolher onde investir."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Saving means leaving money untouched; investing means trying to grow it.",
+                    "Investing involves accepting some risk in exchange for a potential return.",
+                    "Understanding your goals comes before choosing where to invest."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Ahorrar es dejar el dinero quieto; invertir es buscar hacerlo crecer.",
+                    "Invertir implica aceptar algún riesgo a cambio de un retorno potencial.",
+                    "Entender tus objetivos viene antes de elegir dónde invertir."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "foundations_assets_liabilities",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ativos, Passivos e Patrimônio",
+              "learningObjective": "Classificar um item como ativo ou passivo e calcular o patrimônio líquido como a diferença entre eles."
+            },
+            "en": {
+              "title": "Assets, Liabilities and Net Worth",
+              "learningObjective": "Classify an item as an asset or a liability and calculate net worth as the difference between them."
+            },
+            "es": {
+              "title": "Activos, Pasivos y Patrimonio",
+              "learningObjective": "Clasificar un elemento como activo o pasivo y calcular el patrimonio neto como la diferencia entre ellos."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas colunas",
+                  "body": "Um ativo é algo que coloca dinheiro no seu bolso ou tem potencial de valorizar — como uma ação ou um imóvel alugado. Um passivo é algo que tira dinheiro do seu bolso, como uma dívida. Seu patrimônio líquido é a diferença entre tudo o que você possui (ativos) e tudo o que você deve (passivos)."
+                },
+                "en": {
+                  "title": "Two columns",
+                  "body": "An asset is something that puts money in your pocket or has the potential to appreciate — like a stock or a rented property. A liability is something that takes money out of your pocket, like debt. Your net worth is the difference between everything you own (assets) and everything you owe (liabilities)."
+                },
+                "es": {
+                  "title": "Dos columnas",
+                  "body": "Un activo es algo que pone dinero en tu bolsillo o tiene potencial de valorizarse — como una acción o un inmueble alquilado. Un pasivo es algo que saca dinero de tu bolsillo, como una deuda. Tu patrimonio neto es la diferencia entre todo lo que posees (activos) y todo lo que debes (pasivos)."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se você tem R$5.000 investidos (ativo) e R$2.000 de dívida no cartão (passivo), seu patrimônio líquido é R$3.000."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If you have R$5,000 invested (an asset) and R$2,000 in credit card debt (a liability), your net worth is R$3,000."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si tienes R$5.000 invertidos (activo) y R$2.000 de deuda en la tarjeta de crédito (pasivo), tu patrimonio neto es R$3.000."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual das opções abaixo é um passivo?",
+                  "options": [
+                    "Uma ação que você comprou",
+                    "Um financiamento de carro em aberto",
+                    "Dinheiro guardado na poupança",
+                    "Um imóvel quitado"
+                  ],
+                  "explanation": "Um financiamento em aberto tira dinheiro do seu bolso todo mês — por isso é um passivo."
+                },
+                "en": {
+                  "prompt": "Which of the options below is a liability?",
+                  "options": [
+                    "A stock you bought",
+                    "An outstanding car loan",
+                    "Money kept in a savings account",
+                    "A fully paid-off property"
+                  ],
+                  "explanation": "An outstanding loan takes money out of your pocket every month — that's why it's a liability."
+                },
+                "es": {
+                  "prompt": "¿Cuál de las siguientes opciones es un pasivo?",
+                  "options": [
+                    "Una acción que compraste",
+                    "Un préstamo de auto pendiente",
+                    "Dinero guardado en una cuenta de ahorros",
+                    "Un inmueble totalmente pagado"
+                  ],
+                  "explanation": "Un préstamo pendiente saca dinero de tu bolsillo cada mes — por eso es un pasivo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Duas pessoas ganham o mesmo salário. Uma tem patrimônio líquido crescente; a outra, decrescente. O que provavelmente explica essa diferença?",
+                  "options": [
+                    "A sorte",
+                    "Como cada uma administra a relação entre ativos e passivos ao longo do tempo",
+                    "Apenas o salário importa",
+                    "Não há explicação possível"
+                  ],
+                  "explanation": "Patrimônio não depende só de quanto você ganha, mas de como você equilibra o que possui com o que deve, mês após mês."
+                },
+                "en": {
+                  "prompt": "Two people earn the same salary. One has a growing net worth; the other, a shrinking one. What most likely explains this difference?",
+                  "options": [
+                    "Luck",
+                    "How each one manages the relationship between assets and liabilities over time",
+                    "Only the salary matters",
+                    "There's no possible explanation"
+                  ],
+                  "explanation": "Net worth doesn't just depend on how much you earn, but on how you balance what you own against what you owe, month after month."
+                },
+                "es": {
+                  "prompt": "Dos personas ganan el mismo salario. Una tiene un patrimonio neto creciente; la otra, decreciente. ¿Qué explica probablemente esta diferencia?",
+                  "options": [
+                    "La suerte",
+                    "Cómo cada una administra la relación entre activos y pasivos a lo largo del tiempo",
+                    "Solo importa el salario",
+                    "No hay explicación posible"
+                  ],
+                  "explanation": "El patrimonio no depende solo de cuánto ganas, sino de cómo equilibras lo que posees con lo que debes, mes tras mes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ativos colocam dinheiro no seu bolso; passivos tiram.",
+                    "Patrimônio líquido = ativos − passivos.",
+                    "Acompanhar essa equação ao longo do tempo é mais revelador do que olhar só o salário."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Assets put money in your pocket; liabilities take it out.",
+                    "Net worth = assets − liabilities.",
+                    "Tracking this equation over time is more revealing than looking at salary alone."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los activos ponen dinero en tu bolsillo; los pasivos lo sacan.",
+                    "Patrimonio neto = activos − pasivos.",
+                    "Seguir esta ecuación con el tiempo revela más que mirar solo el salario."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "foundations_inflation",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Inflação e Poder de Compra",
+              "learningObjective": "Calcular o retorno real comparando o retorno de um investimento com a inflação, e explicar por que um retorno nominal positivo ainda pode representar perda de poder de compra."
+            },
+            "en": {
+              "title": "Inflation and Purchasing Power",
+              "learningObjective": "Calculate real return by comparing an investment's return against inflation, and explain why a positive nominal return can still mean a loss of purchasing power."
+            },
+            "es": {
+              "title": "Inflación y Poder Adquisitivo",
+              "learningObjective": "Calcular el retorno real comparando el retorno de una inversión con la inflación, y explicar por qué un retorno nominal positivo aún puede representar una pérdida de poder adquisitivo."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que é inflação",
+                  "body": "Inflação é o aumento geral dos preços ao longo do tempo, que reduz o poder de compra do seu dinheiro. Se sua renda não cresce pelo menos na mesma proporção, você consegue comprar cada vez menos com o mesmo valor."
+                },
+                "en": {
+                  "title": "What is inflation",
+                  "body": "Inflation is the general rise in prices over time, which reduces the purchasing power of your money. If your income doesn't grow at least as fast as inflation, you can buy less and less with the same amount."
+                },
+                "es": {
+                  "title": "Qué es la inflación",
+                  "body": "La inflación es el aumento general de los precios a lo largo del tiempo, que reduce el poder de compra de tu dinero. Si tus ingresos no crecen al menos al mismo ritmo, puedes comprar cada vez menos con el mismo valor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se um produto custava R$100 e a inflação do ano foi de 5%, esse mesmo produto passa a custar R$105. Se seu dinheiro parado não rendeu nada, ele agora compra menos do que antes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If a product cost R$100 and inflation for the year was 5%, that same product now costs R$105. If your idle money earned nothing, it now buys less than before."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si un producto costaba R$100 y la inflación del año fue del 5%, ese mismo producto ahora cuesta R$105. Si tu dinero parado no rindió nada, ahora compra menos que antes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Se a inflação de um ano foi de 6% e seu investimento rendeu 4% no mesmo período, o que aconteceu com seu poder de compra?",
+                  "options": [
+                    "Aumentou",
+                    "Ficou igual",
+                    "Diminuiu, mesmo com retorno positivo",
+                    "É impossível saber"
+                  ],
+                  "explanation": "Quando o retorno fica abaixo da inflação, o chamado retorno real é negativo — seu dinheiro rendeu, mas perdeu poder de compra."
+                },
+                "en": {
+                  "prompt": "If inflation for a year was 6% and your investment returned 4% in the same period, what happened to your purchasing power?",
+                  "options": [
+                    "It increased",
+                    "It stayed the same",
+                    "It decreased, even with a positive return",
+                    "It's impossible to know"
+                  ],
+                  "explanation": "When the return falls below inflation, the so-called real return is negative — your money grew, but lost purchasing power."
+                },
+                "es": {
+                  "prompt": "Si la inflación de un año fue del 6% y tu inversión rindió el 4% en el mismo período, ¿qué pasó con tu poder de compra?",
+                  "options": [
+                    "Aumentó",
+                    "Se mantuvo igual",
+                    "Disminuyó, aunque el retorno fue positivo",
+                    "Es imposible saberlo"
+                  ],
+                  "explanation": "Cuando el retorno queda por debajo de la inflación, el llamado retorno real es negativo — tu dinero rindió, pero perdió poder de compra."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está escolhendo entre deixar dinheiro parado na conta corrente ou investir em algo que acompanhe a inflação. Por que isso importa no longo prazo?",
+                  "options": [
+                    "Não importa, dinheiro parado nunca perde valor",
+                    "Porque, ao longo dos anos, a inflação corrói o valor real de dinheiro parado",
+                    "Porque a inflação só afeta grandes quantias",
+                    "Porque é apenas uma questão psicológica"
+                  ],
+                  "explanation": "Ao longo dos anos, mesmo uma inflação moderada reduz bastante o poder de compra de dinheiro que fica parado sem render."
+                },
+                "en": {
+                  "prompt": "You're choosing between leaving money in your checking account or investing in something that keeps pace with inflation. Why does this matter in the long run?",
+                  "options": [
+                    "It doesn't matter, idle money never loses value",
+                    "Because, over the years, inflation erodes the real value of idle money",
+                    "Because inflation only affects large amounts",
+                    "Because it's purely a psychological issue"
+                  ],
+                  "explanation": "Over the years, even moderate inflation significantly reduces the purchasing power of money that sits idle without earning anything."
+                },
+                "es": {
+                  "prompt": "Estás eligiendo entre dejar el dinero en la cuenta corriente o invertir en algo que siga el ritmo de la inflación. ¿Por qué importa esto a largo plazo?",
+                  "options": [
+                    "No importa, el dinero parado nunca pierde valor",
+                    "Porque, con los años, la inflación erosiona el valor real del dinero parado",
+                    "Porque la inflación solo afecta a grandes cantidades",
+                    "Porque es solo una cuestión psicológica"
+                  ],
+                  "explanation": "Con los años, incluso una inflación moderada reduce bastante el poder de compra del dinero que queda parado sin rendir."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Inflação reduz o poder de compra do dinheiro ao longo do tempo.",
+                    "Retorno real = retorno obtido − inflação do período.",
+                    "Deixar dinheiro parado tem um custo invisível, mas real."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Inflation reduces the purchasing power of money over time.",
+                    "Real return = return earned − inflation for the period.",
+                    "Leaving money idle has an invisible, but real, cost."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La inflación reduce el poder de compra del dinero con el tiempo.",
+                    "Retorno real = retorno obtenido − inflación del período.",
+                    "Dejar el dinero parado tiene un costo invisible, pero real."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "foundations_compound_interest",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Juros Compostos",
+              "learningObjective": "Explicar por que os juros compostos aceleram o crescimento do dinheiro ao longo do tempo, e comparar dois cronogramas de investimento para identificar por que começar cedo pesa mais do que começar com mais dinheiro."
+            },
+            "en": {
+              "title": "Compound Interest",
+              "learningObjective": "Explain why compound interest accelerates growth over time, and compare two saving timelines to identify why starting earlier outweighs starting with more."
+            },
+            "es": {
+              "title": "Interés Compuesto",
+              "learningObjective": "Explicar por qué el interés compuesto acelera el crecimiento del dinero con el tiempo, y comparar dos cronogramas de inversión para identificar por qué empezar temprano pesa más que empezar con más dinero."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Juros sobre juros",
+                  "body": "Juros compostos são calculados sobre o valor original mais os juros já acumulados — você passa a ganhar juros sobre juros. Isso faz o dinheiro crescer de forma acelerada, especialmente quanto mais tempo ele fica investido."
+                },
+                "en": {
+                  "title": "Interest on interest",
+                  "body": "Compound interest is calculated on the original amount plus interest already accumulated — you start earning interest on interest. This makes money grow at an accelerating pace, especially the longer it stays invested."
+                },
+                "es": {
+                  "title": "Interés sobre interés",
+                  "body": "El interés compuesto se calcula sobre el monto original más los intereses ya acumulados — empiezas a ganar intereses sobre intereses. Esto hace que el dinero crezca de forma acelerada, especialmente cuanto más tiempo permanezca invertido."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "R$1.000 investidos a 10% ao ano viram R$1.100 no primeiro ano. No segundo ano, os 10% incidem sobre R$1.100, não mais sobre R$1.000 — resultando em R$1.210."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "R$1,000 invested at 10% a year becomes R$1,100 after the first year. In the second year, the 10% applies to R$1,100, not R$1,000 anymore — resulting in R$1,210."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "R$1.000 invertidos al 10% anual se convierten en R$1.100 después del primer año. En el segundo año, el 10% se aplica sobre R$1.100, ya no sobre R$1.000 — dando como resultado R$1.210."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que mais potencializa o efeito dos juros compostos?",
+                  "options": [
+                    "Investir uma única vez e esquecer",
+                    "O tempo que o dinheiro permanece investido",
+                    "Trocar de investimento com frequência",
+                    "Investir apenas grandes quantias"
+                  ],
+                  "explanation": "O tempo é o ingrediente mais importante dos juros compostos — quanto mais tempo o dinheiro fica investido, maior o efeito acumulado."
+                },
+                "en": {
+                  "prompt": "What most amplifies the effect of compound interest?",
+                  "options": [
+                    "Investing once and forgetting about it",
+                    "The amount of time the money stays invested",
+                    "Switching investments frequently",
+                    "Only investing large amounts"
+                  ],
+                  "explanation": "Time is the most important ingredient of compound interest — the longer money stays invested, the greater the accumulated effect."
+                },
+                "es": {
+                  "prompt": "¿Qué potencia más el efecto del interés compuesto?",
+                  "options": [
+                    "Invertir una sola vez y olvidarse",
+                    "El tiempo que el dinero permanece invertido",
+                    "Cambiar de inversión con frecuencia",
+                    "Invertir solo grandes cantidades"
+                  ],
+                  "explanation": "El tiempo es el ingrediente más importante del interés compuesto — cuanto más tiempo el dinero permanece invertido, mayor es el efecto acumulado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Duas pessoas investem o mesmo valor mensal, à mesma taxa. Uma começa aos 25 anos, a outra aos 35. Por que a primeira tende a terminar com bem mais dinheiro?",
+                  "options": [
+                    "Porque teve mais sorte",
+                    "Porque seus juros tiveram mais tempo para compor",
+                    "Porque investiu em ativos diferentes",
+                    "Não há diferença relevante"
+                  ],
+                  "explanation": "Dez anos a mais de juros compondo sobre juros fazem uma diferença enorme no resultado final — esse é o poder do tempo combinado com consistência."
+                },
+                "en": {
+                  "prompt": "Two people invest the same monthly amount at the same rate. One starts at age 25, the other at 35. Why does the first one tend to end up with much more money, even investing the same total per month?",
+                  "options": [
+                    "Because they had more luck",
+                    "Because their interest had more time to compound",
+                    "Because they invested in different assets",
+                    "There's no meaningful difference"
+                  ],
+                  "explanation": "Ten extra years of interest compounding on interest make a huge difference in the final result — that's the power of time combined with consistency."
+                },
+                "es": {
+                  "prompt": "Dos personas invierten el mismo monto mensual, a la misma tasa. Una empieza a los 25 años, la otra a los 35. ¿Por qué la primera tiende a terminar con mucho más dinero, incluso invirtiendo el mismo total mensual?",
+                  "options": [
+                    "Porque tuvo más suerte",
+                    "Porque sus intereses tuvieron más tiempo para componerse",
+                    "Porque invirtió en activos diferentes",
+                    "No hay una diferencia relevante"
+                  ],
+                  "explanation": "Diez años más de intereses componiéndose sobre intereses generan una diferencia enorme en el resultado final — ese es el poder del tiempo combinado con la constancia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Juros compostos são juros sobre juros já acumulados.",
+                    "O tempo investido é o fator mais poderoso desse efeito.",
+                    "Começar cedo, mesmo com pouco, tende a valer mais do que começar tarde com mais."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Compound interest is interest on interest already accumulated.",
+                    "Time invested is the most powerful factor in this effect.",
+                    "Starting early, even with little, tends to be worth more than starting late with more."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El interés compuesto es interés sobre intereses ya acumulados.",
+                    "El tiempo invertido es el factor más poderoso de este efecto.",
+                    "Empezar temprano, aunque sea con poco, suele valer más que empezar tarde con más."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "foundations_risk_return",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco e Retorno",
+              "learningObjective": "Avaliar se um retorno esperado maior é automaticamente a melhor escolha, ponderando risco e liquidez junto com ele."
+            },
+            "en": {
+              "title": "Risk and Return",
+              "learningObjective": "Evaluate whether a higher expected return is automatically the better choice, weighing risk and liquidity alongside it."
+            },
+            "es": {
+              "title": "Riesgo y Retorno",
+              "learningObjective": "Evaluar si un retorno esperado más alto es automáticamente la mejor opción, ponderando el riesgo y la liquidez junto con él."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois lados da mesma moeda",
+                  "body": "Risco e retorno costumam andar juntos: investimentos com potencial de retorno mais alto geralmente envolvem maior risco de oscilação ou perda. Não existe retorno alto garantido sem algum risco envolvido."
+                },
+                "en": {
+                  "title": "Two sides of the same coin",
+                  "body": "Risk and return tend to go together: investments with higher potential returns generally carry a greater risk of fluctuation or loss. There's no guaranteed high return without some risk involved."
+                },
+                "es": {
+                  "title": "Dos caras de la misma moneda",
+                  "body": "Riesgo y retorno suelen ir de la mano: las inversiones con mayor potencial de retorno generalmente implican mayor riesgo de oscilación o pérdida. No existe un retorno alto garantizado sin algún riesgo involucrado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investimento que promete o dobro do retorno médio do mercado, sem nenhum risco aparente, deve ser investigado com cautela — normalmente esse equilíbrio não existe."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investment that promises double the market's average return, with no apparent risk, should be investigated carefully — that balance usually doesn't exist."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una inversión que promete el doble del retorno promedio del mercado, sin ningún riesgo aparente, debe investigarse con cautela — ese equilibrio normalmente no existe."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investimento com retorno esperado maior é sempre a melhor escolha?",
+                  "options": [
+                    "Sim, quanto maior o retorno, melhor",
+                    "Não, porque o retorno mais alto costuma vir acompanhado de mais risco ou menos liquidez",
+                    "Sim, desde que esteja em alta no momento",
+                    "Não, porque investimentos com maior retorno são sempre golpes"
+                  ],
+                  "explanation": "Um retorno maior normalmente envolve mais risco, volatilidade ou menos liquidez — a \"melhor\" escolha depende do seu objetivo e tolerância a risco, não apenas do número."
+                },
+                "en": {
+                  "prompt": "Is an investment with a higher expected return always the best choice?",
+                  "options": [
+                    "Yes, the higher the return, the better",
+                    "No, because a higher return usually comes with more risk or less liquidity",
+                    "Yes, as long as it's currently trending",
+                    "No, because investments with higher returns are always scams"
+                  ],
+                  "explanation": "A higher return usually involves more risk, volatility, or less liquidity — the 'best' choice depends on your goal and risk tolerance, not just the number."
+                },
+                "es": {
+                  "prompt": "¿Una inversión con retorno esperado más alto es siempre la mejor opción?",
+                  "options": [
+                    "Sí, cuanto mayor el retorno, mejor",
+                    "No, porque el retorno más alto suele venir acompañado de más riesgo o menos liquidez",
+                    "Sí, siempre que esté de moda en el momento",
+                    "No, porque las inversiones con mayor retorno siempre son estafas"
+                  ],
+                  "explanation": "Un retorno mayor normalmente implica más riesgo, volatilidad o menos liquidez — la 'mejor' opción depende de tu objetivo y tolerancia al riesgo, no solo del número."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Liquidez é a facilidade de transformar um investimento em dinheiro disponível. Por que ela importa ao lado de risco e retorno?",
+                  "options": [
+                    "Não é importante",
+                    "Porque um investimento pode ter bom retorno, mas ser difícil de resgatar quando você precisar do dinheiro",
+                    "Porque liquidez é sempre garantia de segurança",
+                    "Porque só investimentos líquidos rendem"
+                  ],
+                  "explanation": "Mesmo um bom investimento pode não servir para você se o dinheiro ficar preso justamente quando você precisar dele — liquidez é parte da equação."
+                },
+                "en": {
+                  "prompt": "Liquidity is how easily an investment can be turned into available cash. Why does it matter alongside risk and return?",
+                  "options": [
+                    "It isn't important",
+                    "Because an investment can have a good return but be hard to cash out exactly when you need the money",
+                    "Because liquidity always guarantees safety",
+                    "Because only liquid investments earn returns"
+                  ],
+                  "explanation": "Even a good investment might not work for you if the money is locked up exactly when you need it — liquidity is part of the equation."
+                },
+                "es": {
+                  "prompt": "La liquidez es la facilidad de convertir una inversión en dinero disponible. ¿Por qué importa junto al riesgo y el retorno?",
+                  "options": [
+                    "No es importante",
+                    "Porque una inversión puede tener buen retorno, pero ser difícil de rescatar justo cuando necesitas el dinero",
+                    "Porque la liquidez siempre garantiza seguridad",
+                    "Porque solo las inversiones líquidas rinden"
+                  ],
+                  "explanation": "Incluso una buena inversión puede no servirte si el dinero queda atrapado justo cuando lo necesitas — la liquidez es parte de la ecuación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco e retorno costumam estar relacionados.",
+                    "Um retorno mais alto não é automaticamente \"melhor\" — depende do seu contexto.",
+                    "Liquidez também importa: considere quando você pode precisar do dinheiro de volta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk and return tend to be related.",
+                    "A higher return isn't automatically 'better' — it depends on your context.",
+                    "Liquidity matters too: consider when you might need the money back."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Riesgo y retorno suelen estar relacionados.",
+                    "Un retorno más alto no es automáticamente 'mejor' — depende de tu contexto.",
+                    "La liquidez también importa: considera cuándo podrías necesitar el dinero de vuelta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "foundations_diversification",
+          "order": 6,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Diversificação",
+              "learningObjective": "Explicar por que a diversificação reduz o impacto de um investimento específico ir mal, sem implicar que ela elimina o risco."
+            },
+            "en": {
+              "title": "Diversification",
+              "learningObjective": "Explain why diversification reduces the impact of a single investment underperforming, without implying it eliminates risk."
+            },
+            "es": {
+              "title": "Diversificación",
+              "learningObjective": "Explicar por qué la diversificación reduce el impacto de que una inversión específica vaya mal, sin implicar que elimina el riesgo."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Não coloque tudo no mesmo lugar",
+                  "body": "Diversificar é distribuir seus investimentos entre diferentes ativos, setores ou tipos de investimento, em vez de concentrar tudo em um único lugar. O objetivo não é eliminar o risco, mas reduzir o impacto de um único investimento ir mal."
+                },
+                "en": {
+                  "title": "Don't put it all in one place",
+                  "body": "Diversifying means spreading your investments across different assets, sectors or types of investment, instead of concentrating everything in one place. The goal is not to eliminate risk, but to reduce the impact of any single investment going badly."
+                },
+                "es": {
+                  "title": "No pongas todo en el mismo lugar",
+                  "body": "Diversificar significa distribuir tus inversiones entre diferentes activos, sectores o tipos de inversión, en lugar de concentrar todo en un solo lugar. El objetivo no es eliminar el riesgo, sino reducir el impacto de que una sola inversión vaya mal."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se você investe tudo em uma única empresa e ela enfrenta dificuldades, todo o seu patrimônio sofre. Se você distribui entre várias empresas e tipos de ativos, o impacto de um problema isolado tende a ser menor."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If you invest everything in a single company and it runs into trouble, your entire net worth suffers. If you spread it across several companies and asset types, the impact of an isolated problem tends to be smaller."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si inviertes todo en una sola empresa y esta enfrenta dificultades, todo tu patrimonio sufre. Si lo distribuyes entre varias empresas y tipos de activos, el impacto de un problema aislado tiende a ser menor."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual o principal objetivo da diversificação?",
+                  "options": [
+                    "Garantir que você nunca terá prejuízo",
+                    "Reduzir o impacto de um investimento específico ir mal no total da carteira",
+                    "Aumentar garantidamente o retorno",
+                    "Simplificar a carteira ao máximo"
+                  ],
+                  "explanation": "Diversificar não elimina risco nem garante lucro — ajuda a reduzir o impacto de um problema isolado sobre o conjunto da carteira."
+                },
+                "en": {
+                  "prompt": "What is the main goal of diversification?",
+                  "options": [
+                    "Guaranteeing you'll never have a loss",
+                    "Reducing the impact of one specific investment going badly on the portfolio as a whole",
+                    "Guaranteeing higher returns",
+                    "Simplifying the portfolio as much as possible"
+                  ],
+                  "explanation": "Diversifying doesn't eliminate risk or guarantee profit — it helps reduce the impact of an isolated problem on the portfolio as a whole."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el principal objetivo de la diversificación?",
+                  "options": [
+                    "Garantizar que nunca tendrás pérdidas",
+                    "Reducir el impacto de que una inversión específica vaya mal sobre el total de la cartera",
+                    "Garantizar un mayor retorno",
+                    "Simplificar la cartera al máximo"
+                  ],
+                  "explanation": "Diversificar no elimina el riesgo ni garantiza ganancias — ayuda a reducir el impacto de un problema aislado sobre el conjunto de la cartera."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende poupar x investir, patrimônio, inflação e risco. Como isso ajuda a pensar em diversificação?",
+                  "options": [
+                    "Escolhendo apenas o ativo que parece mais na moda no momento",
+                    "Considerando como diferentes tipos de investimento podem se comportar de formas diferentes diante do mesmo cenário",
+                    "Não faz diferença, todos os ativos se comportam igual",
+                    "Diversificação só existe para grandes investidores"
+                  ],
+                  "explanation": "Ativos diferentes reagem de formas diferentes aos mesmos eventos econômicos — é justamente essa diferença que torna a diversificação útil."
+                },
+                "en": {
+                  "prompt": "You already understand saving vs. investing, net worth, inflation and risk. How does that help you think about diversification?",
+                  "options": [
+                    "By choosing only whatever asset seems trendy right now",
+                    "By considering how different types of investment can behave differently facing the same scenario",
+                    "It makes no difference, all assets behave the same",
+                    "Diversification only exists for large investors"
+                  ],
+                  "explanation": "Different assets react differently to the same economic events — it's exactly that difference that makes diversification useful."
+                },
+                "es": {
+                  "prompt": "Ya entiendes ahorrar vs. invertir, patrimonio, inflación y riesgo. ¿Cómo te ayuda esto a pensar en la diversificación?",
+                  "options": [
+                    "Eligiendo solo el activo que parece estar de moda en el momento",
+                    "Considerando cómo diferentes tipos de inversión pueden comportarse de forma distinta ante el mismo escenario",
+                    "No hace diferencia, todos los activos se comportan igual",
+                    "La diversificación solo existe para grandes inversores"
+                  ],
+                  "explanation": "Activos diferentes reaccionan de forma distinta ante los mismos eventos económicos — es justamente esa diferencia la que hace útil la diversificación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Diversificar é distribuir investimentos entre diferentes ativos e categorias.",
+                    "O objetivo é reduzir o impacto de um problema isolado, não eliminar risco.",
+                    "Você já tem a base para começar a explorar renda fixa e ações."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Diversifying is spreading investments across different assets and categories.",
+                    "The goal is to reduce the impact of an isolated problem, not eliminate risk.",
+                    "You now have the foundation to start exploring fixed income and stocks."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Diversificar es distribuir inversiones entre diferentes activos y categorías.",
+                    "El objetivo es reducir el impacto de un problema aislado, no eliminar el riesgo.",
+                    "Ya tienes la base para empezar a explorar la renta fija y las acciones."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "investor_profile_and_system",
+      "order": 2,
+      "iconKey": "psychology_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "BEGINNER",
+      "prerequisites": [
+        "investor_foundations"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Perfil de Investidor e Sistema Financeiro",
+          "description": "Como identificar seu perfil de risco, definir objetivos e horizonte de tempo, e entender como corretoras, bolsa e custódia funcionam."
+        },
+        "en": {
+          "title": "Investor Profile and the Financial System",
+          "description": "How to identify your risk profile, set goals and a time horizon, and understand how brokers, the exchange and custody work."
+        },
+        "es": {
+          "title": "Perfil de Inversor y Sistema Financiero",
+          "description": "Cómo identificar tu perfil de riesgo, definir objetivos y horizonte de tiempo, y entender cómo funcionan las correduras, la bolsa y la custodia."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "investor_profile_risk_tolerance",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Perfil de Investidor",
+              "learningObjective": "Identificar os três perfis comuns de investidor e explicar por que o horizonte de tempo pode se sobrepor ao perfil isoladamente na hora de decidir quanto risco assumir."
+            },
+            "en": {
+              "title": "Investor Profile",
+              "learningObjective": "Identify the three common investor profiles and explain why time horizon can override profile alone when deciding how much risk to take."
+            },
+            "es": {
+              "title": "Perfil de Inversor",
+              "learningObjective": "Identificar los tres perfiles comunes de inversor y explicar por qué el horizonte de tiempo puede prevalecer sobre el perfil por sí solo al decidir cuánto riesgo asumir."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Conservador, moderado ou arrojado",
+                  "body": "Perfil de investidor é o quanto de oscilação e risco você está disposto e capaz de suportar em busca de retorno. Costuma-se dividir em três perfis: conservador (prioriza segurança, aceita pouca oscilação), moderado (aceita alguma oscilação por um retorno maior) e arrojado (aceita bastante oscilação buscando o maior retorno possível no longo prazo)."
+                },
+                "en": {
+                  "title": "Conservative, moderate or aggressive",
+                  "body": "Investor profile is how much fluctuation and risk you're willing and able to handle in pursuit of return. It's usually split into three profiles: conservative (prioritizes safety, accepts little fluctuation), moderate (accepts some fluctuation for a higher potential return), and aggressive (accepts significant fluctuation while aiming for the highest possible long-term return)."
+                },
+                "es": {
+                  "title": "Conservador, moderado o arrojado",
+                  "body": "El perfil de inversor es cuánta oscilación y riesgo estás dispuesto y capaz de soportar en busca de retorno. Suele dividirse en tres perfiles: conservador (prioriza la seguridad, acepta poca oscilación), moderado (acepta algo de oscilación por un retorno mayor) y arrojado (acepta bastante oscilación buscando el mayor retorno posible a largo plazo)."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas recebem R$10.000. A conservadora prefere um investimento que quase não oscila, mesmo que renda menos. A arrojada aceita ver o valor cair 20% em um mês ruim, na expectativa de um retorno maior ao longo dos anos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people each receive R$10,000. The conservative one prefers an investment that barely fluctuates, even if it earns less. The aggressive one accepts seeing the value drop 20% in a bad month, expecting a higher return over the years."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas reciben R$10.000. La conservadora prefiere una inversión que casi no oscile, aunque rinda menos. La arrojada acepta ver el valor caer un 20% en un mes malo, esperando un retorno mayor con los años."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que define, principalmente, o perfil de investidor de alguém?",
+                  "options": [
+                    "A quantidade de dinheiro que a pessoa tem",
+                    "O quanto de oscilação e risco a pessoa está disposta e consegue suportar",
+                    "A idade da pessoa, sem exceções",
+                    "O tipo de investimento mais popular no momento"
+                  ],
+                  "explanation": "Perfil de investidor tem a ver com tolerância e capacidade de suportar oscilações — não com quanto dinheiro você tem ou o que está na moda."
+                },
+                "en": {
+                  "prompt": "What mainly defines someone's investor profile?",
+                  "options": [
+                    "How much money the person has",
+                    "How much fluctuation and risk the person is willing and able to handle",
+                    "The person's age, with no exceptions",
+                    "Whatever investment is most popular right now"
+                  ],
+                  "explanation": "Investor profile is about tolerance and capacity to handle fluctuations — not about how much money you have or what's trending."
+                },
+                "es": {
+                  "prompt": "¿Qué define principalmente el perfil de inversor de alguien?",
+                  "options": [
+                    "La cantidad de dinero que tiene la persona",
+                    "Cuánta oscilación y riesgo la persona está dispuesta y puede soportar",
+                    "La edad de la persona, sin excepciones",
+                    "El tipo de inversión más popular del momento"
+                  ],
+                  "explanation": "El perfil de inversor tiene que ver con la tolerancia y la capacidad de soportar oscilaciones — no con cuánto dinero tienes o qué está de moda."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma pessoa vai precisar do dinheiro em 6 meses para dar entrada em um imóvel. Mesmo que ela se considere \"arrojada\", o que faz mais sentido considerar?",
+                  "options": [
+                    "Investir tudo em algo de alto risco, já que o perfil é arrojado",
+                    "Ignorar o prazo, pois o perfil sempre define a escolha",
+                    "O prazo curto pesa contra assumir muita oscilação, mesmo com perfil arrojado",
+                    "Perfil de investidor não tem relação com prazo"
+                  ],
+                  "explanation": "Perfil de investidor é só uma parte da equação — o prazo em que o dinheiro será usado também limita quanto risco faz sentido assumir, mesmo para quem tem perfil arrojado."
+                },
+                "en": {
+                  "prompt": "Someone will need the money in 6 months for a house down payment. Even though they consider themselves 'aggressive', what makes more sense to consider?",
+                  "options": [
+                    "Investing everything in something high-risk, since the profile is aggressive",
+                    "Ignoring the time horizon, since profile always decides the choice",
+                    "The short time horizon weighs against taking on much fluctuation, even with an aggressive profile",
+                    "Investor profile has no relation to time horizon"
+                  ],
+                  "explanation": "Investor profile is only part of the equation — the time horizon for using the money also limits how much risk makes sense, even for someone with an aggressive profile."
+                },
+                "es": {
+                  "prompt": "Una persona necesitará el dinero en 6 meses para la entrada de una vivienda. Aunque se considere 'arrojada', ¿qué tiene más sentido considerar?",
+                  "options": [
+                    "Invertir todo en algo de alto riesgo, ya que el perfil es arrojado",
+                    "Ignorar el plazo, porque el perfil siempre define la elección",
+                    "El plazo corto pesa en contra de asumir mucha oscilación, incluso con perfil arrojado",
+                    "El perfil de inversor no tiene relación con el plazo"
+                  ],
+                  "explanation": "El perfil de inversor es solo una parte de la ecuación — el plazo en que se usará el dinero también limita cuánto riesgo tiene sentido asumir, incluso para quien tiene perfil arrojado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Perfil de investidor mede quanto risco e oscilação você está disposto e consegue suportar.",
+                    "Os três perfis comuns são conservador, moderado e arrojado.",
+                    "O prazo para usar o dinheiro também deve pesar na decisão, além do perfil."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Investor profile measures how much risk and fluctuation you're willing and able to handle.",
+                    "The three common profiles are conservative, moderate and aggressive.",
+                    "The time horizon for using the money should also weigh into the decision, not just the profile."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El perfil de inversor mide cuánto riesgo y oscilación estás dispuesto y puedes soportar.",
+                    "Los tres perfiles comunes son conservador, moderado y arrojado.",
+                    "El plazo para usar el dinero también debe pesar en la decisión, además del perfil."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investor_profile_goals_horizon",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Objetivos e Horizonte de Tempo",
+              "learningObjective": "Relacionar o horizonte de tempo de um objetivo aos trade-offs de liquidez e risco que ele implica, comparando um objetivo de curto e um de longo prazo lado a lado."
+            },
+            "en": {
+              "title": "Goals and Time Horizon",
+              "learningObjective": "Match an investment goal's time horizon to the liquidity and risk trade-offs it implies, comparing a short-term and long-term goal side by side."
+            },
+            "es": {
+              "title": "Objetivos y Horizonte de Tiempo",
+              "learningObjective": "Relacionar el horizonte de tiempo de un objetivo con los trade-offs de liquidez y riesgo que implica, comparando un objetivo de corto y uno de largo plazo lado a lado."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Para quê e para quando",
+                  "body": "Antes de escolher onde investir, vale a pena definir o objetivo (para quê esse dinheiro serve: reserva de emergência, aposentadoria, uma viagem) e o horizonte de tempo (quando você vai precisar dele). Esses dois fatores ajudam a decidir o quanto de risco e liquidez faz sentido buscar."
+                },
+                "en": {
+                  "title": "What for, and when",
+                  "body": "Before choosing where to invest, it's worth defining the goal (what this money is for: emergency fund, retirement, a trip) and the time horizon (when you'll need it). These two factors help decide how much risk and liquidity makes sense to look for."
+                },
+                "es": {
+                  "title": "Para qué y para cuándo",
+                  "body": "Antes de elegir dónde invertir, vale la pena definir el objetivo (para qué sirve ese dinero: fondo de emergencia, jubilación, un viaje) y el horizonte de tiempo (cuándo lo necesitarás). Estos dos factores ayudan a decidir cuánto riesgo y liquidez tiene sentido buscar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma reserva de emergência precisa de alta liquidez, já que pode ser necessária a qualquer momento. Já um objetivo de aposentadoria daqui a 30 anos permite considerar investimentos com menos liquidez imediata, já que o prazo é longo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An emergency fund needs high liquidity, since it might be needed at any moment. A retirement goal 30 years away, on the other hand, allows considering investments with less immediate liquidity, since the time horizon is long."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo de emergencia necesita alta liquidez, ya que puede ser necesario en cualquier momento. En cambio, un objetivo de jubilación dentro de 30 años permite considerar inversiones con menos liquidez inmediata, ya que el plazo es largo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que uma reserva de emergência exige alta liquidez?",
+                  "options": [
+                    "Porque ela pode precisar ser usada a qualquer momento, sem aviso prévio",
+                    "Porque reservas de emergência não podem render nada",
+                    "Porque liquidez não tem relação com esse tipo de objetivo",
+                    "Porque o valor da reserva deve ser sempre alto"
+                  ],
+                  "explanation": "Uma emergência pode acontecer a qualquer momento — por isso o dinheiro precisa estar disponível rapidamente, mesmo que isso signifique abrir mão de algum retorno."
+                },
+                "en": {
+                  "prompt": "Why does an emergency fund require high liquidity?",
+                  "options": [
+                    "Because it might need to be used at any moment, without warning",
+                    "Because emergency funds can't earn anything",
+                    "Because liquidity has no relation to this kind of goal",
+                    "Because the fund's amount must always be large"
+                  ],
+                  "explanation": "An emergency can happen at any moment — that's why the money needs to be quickly available, even if it means giving up some return."
+                },
+                "es": {
+                  "prompt": "¿Por qué un fondo de emergencia exige alta liquidez?",
+                  "options": [
+                    "Porque puede necesitarse en cualquier momento, sin aviso previo",
+                    "Porque los fondos de emergencia no pueden rendir nada",
+                    "Porque la liquidez no tiene relación con este tipo de objetivo",
+                    "Porque el monto del fondo siempre debe ser alto"
+                  ],
+                  "explanation": "Una emergencia puede ocurrir en cualquier momento — por eso el dinero debe estar disponible rápidamente, incluso si eso significa renunciar a algo de retorno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está definindo objetivos: uma viagem em 1 ano e a aposentadoria em 30 anos. O que faz mais sentido?",
+                  "options": [
+                    "Tratar os dois objetivos exatamente da mesma forma",
+                    "Ignorar o prazo e escolher só pelo maior retorno possível nos dois casos",
+                    "Considerar prazos e liquidez diferentes para cada objetivo, já que os horizontes são bem distintos",
+                    "Usar apenas um único investimento para ambos os objetivos, sem distinção"
+                  ],
+                  "explanation": "Objetivos com prazos muito diferentes costumam pedir estratégias diferentes — o dinheiro da viagem precisa de mais liquidez e previsibilidade no curto prazo do que o da aposentadoria."
+                },
+                "en": {
+                  "prompt": "You're defining goals: a trip in 1 year and retirement in 30 years. What makes the most sense?",
+                  "options": [
+                    "Treating both goals in exactly the same way",
+                    "Ignoring the time horizon and choosing only for the highest possible return in both cases",
+                    "Considering different time horizons and liquidity needs for each goal, since the horizons are quite different",
+                    "Using a single investment for both goals, with no distinction"
+                  ],
+                  "explanation": "Goals with very different time horizons usually call for different strategies — the trip money needs more short-term liquidity and predictability than the retirement money does."
+                },
+                "es": {
+                  "prompt": "Estás definiendo objetivos: un viaje en 1 año y la jubilación en 30 años. ¿Qué tiene más sentido?",
+                  "options": [
+                    "Tratar ambos objetivos exactamente de la misma forma",
+                    "Ignorar el plazo y elegir solo por el mayor retorno posible en ambos casos",
+                    "Considerar plazos y necesidades de liquidez diferentes para cada objetivo, ya que los horizontes son bien distintos",
+                    "Usar una única inversión para ambos objetivos, sin distinción"
+                  ],
+                  "explanation": "Objetivos con plazos muy diferentes suelen requerir estrategias diferentes — el dinero del viaje necesita más liquidez y previsibilidad a corto plazo que el de la jubilación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Definir o objetivo e o horizonte de tempo ajuda a decidir onde investir.",
+                    "Objetivos de curto prazo pedem mais liquidez; objetivos de longo prazo permitem mais flexibilidade.",
+                    "Prazos diferentes costumam pedir estratégias diferentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Defining the goal and time horizon helps decide where to invest.",
+                    "Short-term goals call for more liquidity; long-term goals allow more flexibility.",
+                    "Different time horizons usually call for different strategies."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Definir el objetivo y el horizonte de tiempo ayuda a decidir dónde invertir.",
+                    "Los objetivos a corto plazo requieren más liquidez; los de largo plazo permiten más flexibilidad.",
+                    "Plazos diferentes suelen requerir estrategias diferentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_system_intermediaries",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Como Funciona o Sistema Financeiro",
+              "learningObjective": "Explicar os papéis distintos de uma corretora e de um órgão regulador dentro do sistema financeiro."
+            },
+            "en": {
+              "title": "How the Financial System Works",
+              "learningObjective": "Explain the distinct roles of a broker and a regulator in the financial system."
+            },
+            "es": {
+              "title": "Cómo Funciona el Sistema Financiero",
+              "learningObjective": "Explicar los roles distintos de una correduría y de un organismo regulador dentro del sistema financiero."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quem participa",
+                  "body": "O sistema financeiro conecta quem tem dinheiro sobrando (investidores) a quem precisa de dinheiro (empresas e governos). Bancos e corretoras são os intermediários mais comuns: eles dão acesso aos produtos financeiros e executam as operações. Órgãos reguladores, como a CVM no Brasil, fiscalizam esse mercado para proteger os investidores."
+                },
+                "en": {
+                  "title": "Who's involved",
+                  "body": "The financial system connects people with extra money (investors) to those who need money (companies and governments). Banks and brokers are the most common intermediaries: they give access to financial products and execute transactions. Regulators, like the CVM in Brazil, oversee this market to protect investors."
+                },
+                "es": {
+                  "title": "Quién participa",
+                  "body": "El sistema financiero conecta a quienes tienen dinero disponible (inversores) con quienes necesitan dinero (empresas y gobiernos). Los bancos y las correduras (brokers) son los intermediarios más comunes: dan acceso a los productos financieros y ejecutan las operaciones. Los organismos reguladores, como la CVM en Brasil, supervisan este mercado para proteger a los inversores."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando você compra uma ação por meio de uma corretora, ela executa a ordem de compra na bolsa de valores. O dinheiro sai da sua conta, passa pela corretora, e a ação passa a ser sua — tudo registrado e fiscalizado dentro desse sistema."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When you buy a stock through a broker, they execute the buy order on the stock exchange. The money leaves your account, passes through the broker, and the stock becomes yours — all recorded and overseen within this system."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando compras una acción a través de una correduría (broker), esta ejecuta la orden de compra en la bolsa de valores. El dinero sale de tu cuenta, pasa por la correduría, y la acción pasa a ser tuya — todo registrado y supervisado dentro de este sistema."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual o papel principal de uma corretora?",
+                  "options": [
+                    "Fiscalizar o mercado financeiro como um todo",
+                    "Dar acesso a produtos financeiros e executar as operações do investidor",
+                    "Imprimir dinheiro para os investidores",
+                    "Garantir que nenhum investimento vai dar prejuízo"
+                  ],
+                  "explanation": "A corretora é o intermediário que executa as ordens de compra e venda em nome do investidor — quem fiscaliza o mercado é o órgão regulador."
+                },
+                "en": {
+                  "prompt": "What is a broker's main role?",
+                  "options": [
+                    "Overseeing the financial market as a whole",
+                    "Giving access to financial products and executing the investor's transactions",
+                    "Printing money for investors",
+                    "Guaranteeing that no investment will ever lose money"
+                  ],
+                  "explanation": "The broker is the intermediary that executes buy and sell orders on the investor's behalf — the regulator is the one overseeing the market."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el papel principal de una correduría (broker)?",
+                  "options": [
+                    "Supervisar el mercado financiero en su conjunto",
+                    "Dar acceso a productos financieros y ejecutar las operaciones del inversor",
+                    "Imprimir dinero para los inversores",
+                    "Garantizar que ninguna inversión tendrá pérdidas"
+                  ],
+                  "explanation": "La correduría es el intermediario que ejecuta las órdenes de compra y venta en nombre del inversor — quien supervisa el mercado es el organismo regulador."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que existe um órgão regulador fiscalizando o mercado financeiro?",
+                  "options": [
+                    "Para garantir lucro a todos os investidores",
+                    "Para estabelecer regras e fiscalizar o mercado, buscando proteger os investidores e a integridade do sistema",
+                    "Porque é uma exigência sem propósito prático",
+                    "Para decidir em quais ativos cada pessoa deve investir"
+                  ],
+                  "explanation": "O regulador não garante lucro nem escolhe investimentos por você — ele estabelece regras e fiscaliza para tentar manter o mercado justo e transparente."
+                },
+                "en": {
+                  "prompt": "Why does a regulator oversee the financial market?",
+                  "options": [
+                    "To guarantee profit for all investors",
+                    "To set rules and oversee the market, aiming to protect investors and the system's integrity",
+                    "Because it's a requirement with no practical purpose",
+                    "To decide which assets each person should invest in"
+                  ],
+                  "explanation": "The regulator doesn't guarantee profit or pick investments for you — it sets rules and oversees the market to try to keep it fair and transparent."
+                },
+                "es": {
+                  "prompt": "¿Por qué existe un organismo regulador supervisando el mercado financiero?",
+                  "options": [
+                    "Para garantizar ganancias a todos los inversores",
+                    "Para establecer reglas y supervisar el mercado, buscando proteger a los inversores y la integridad del sistema",
+                    "Porque es una exigencia sin propósito práctico",
+                    "Para decidir en qué activos debe invertir cada persona"
+                  ],
+                  "explanation": "El regulador no garantiza ganancias ni elige inversiones por ti — establece reglas y supervisa para intentar mantener el mercado justo y transparente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O sistema financeiro conecta quem tem dinheiro sobrando a quem precisa dele.",
+                    "Bancos e corretoras são os intermediários mais comuns de acesso aos investimentos.",
+                    "Órgãos reguladores fiscalizam o mercado para proteger investidores."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The financial system connects those with extra money to those who need it.",
+                    "Banks and brokers are the most common intermediaries for accessing investments.",
+                    "Regulators oversee the market to protect investors."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El sistema financiero conecta a quienes tienen dinero disponible con quienes lo necesitan.",
+                    "Los bancos y las correduras son los intermediarios más comunes para acceder a inversiones.",
+                    "Los organismos reguladores supervisan el mercado para proteger a los inversores."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_system_primary_secondary_market",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Mercado Primário e Secundário",
+              "learningObjective": "Distinguir operações de mercado primário e secundário e identificar qual delas efetivamente capta dinheiro novo para uma empresa."
+            },
+            "en": {
+              "title": "Primary and Secondary Market",
+              "learningObjective": "Distinguish primary from secondary market transactions and identify which one actually raises new money for a company."
+            },
+            "es": {
+              "title": "Mercado Primario y Secundario",
+              "learningObjective": "Distinguir operaciones de mercado primario y secundario, e identificar cuál de ellas efectivamente capta dinero nuevo para una empresa."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "De onde vem o dinheiro",
+                  "body": "No mercado primário, uma empresa vende ativos (como ações, em uma oferta pública inicial) diretamente para captar dinheiro novo. No mercado secundário — como a bolsa de valores no dia a dia — os investidores compram e vendem esses ativos entre si, sem que o dinheiro vá diretamente para a empresa."
+                },
+                "en": {
+                  "title": "Where the money comes from",
+                  "body": "In the primary market, a company sells assets (like stocks, in an initial public offering) directly to raise new money. In the secondary market — like the stock exchange on a typical day — investors buy and sell those assets among themselves, without the money going directly to the company."
+                },
+                "es": {
+                  "title": "De dónde viene el dinero",
+                  "body": "En el mercado primario, una empresa vende activos (como acciones, en una oferta pública inicial) directamente para captar dinero nuevo. En el mercado secundario — como la bolsa de valores en el día a día — los inversores compran y venden esos activos entre sí, sin que el dinero vaya directamente a la empresa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando uma empresa faz sua oferta pública inicial (IPO) e vende ações pela primeira vez, isso é mercado primário — o dinheiro vai para a empresa. Depois disso, quando você compra essas ações de outro investidor na bolsa, é mercado secundário — o dinheiro vai para quem vendeu, não para a empresa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When a company does its initial public offering (IPO) and sells shares for the first time, that's the primary market — the money goes to the company. After that, when you buy those shares from another investor on the exchange, that's the secondary market — the money goes to whoever sold them, not to the company."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando una empresa hace su oferta pública inicial (IPO) y vende acciones por primera vez, eso es mercado primario — el dinero va a la empresa. Después de eso, cuando compras esas acciones a otro inversor en la bolsa, es mercado secundario — el dinero va a quien las vendió, no a la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Quando você compra uma ação de outro investidor pela bolsa, esse dinheiro vai para...",
+                  "options": [
+                    "A empresa que emitiu a ação",
+                    "O governo",
+                    "O investidor que vendeu a ação para você",
+                    "Ninguém, o dinheiro desaparece do sistema"
+                  ],
+                  "explanation": "No mercado secundário, a negociação acontece entre investidores — o dinheiro vai para quem vendeu o ativo, não para a empresa."
+                },
+                "en": {
+                  "prompt": "When you buy a stock from another investor through the exchange, that money goes to...",
+                  "options": [
+                    "The company that issued the stock",
+                    "The government",
+                    "The investor who sold you the stock",
+                    "Nobody, the money disappears from the system"
+                  ],
+                  "explanation": "In the secondary market, trading happens between investors — the money goes to whoever sold the asset, not to the company."
+                },
+                "es": {
+                  "prompt": "Cuando compras una acción a otro inversor a través de la bolsa, ese dinero va a...",
+                  "options": [
+                    "La empresa que emitió la acción",
+                    "El gobierno",
+                    "El inversor que te vendió la acción",
+                    "A nadie, el dinero desaparece del sistema"
+                  ],
+                  "explanation": "En el mercado secundario, la negociación ocurre entre inversores — el dinero va a quien vendió el activo, no a la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa precisa captar dinheiro novo para expandir suas operações. Em qual mercado isso acontece?",
+                  "options": [
+                    "No mercado secundário, comprando ações de investidores",
+                    "No mercado primário, emitindo novos ativos diretamente para investidores",
+                    "Em nenhum dos dois, empresas nunca captam dinheiro dessa forma",
+                    "Apenas em bancos, sem envolver o mercado financeiro"
+                  ],
+                  "explanation": "Captar dinheiro novo diretamente do público é justamente a função do mercado primário — é ali que a empresa emite ativos e recebe o valor captado."
+                },
+                "en": {
+                  "prompt": "A company needs to raise new money to expand its operations. In which market does that happen?",
+                  "options": [
+                    "In the secondary market, by buying shares from investors",
+                    "In the primary market, by issuing new assets directly to investors",
+                    "In neither, companies never raise money this way",
+                    "Only through banks, without involving the financial market"
+                  ],
+                  "explanation": "Raising new money directly from the public is exactly the primary market's function — that's where the company issues assets and receives the amount raised."
+                },
+                "es": {
+                  "prompt": "Una empresa necesita captar dinero nuevo para expandir sus operaciones. ¿En qué mercado ocurre esto?",
+                  "options": [
+                    "En el mercado secundario, comprando acciones a inversores",
+                    "En el mercado primario, emitiendo nuevos activos directamente a los inversores",
+                    "En ninguno de los dos, las empresas nunca captan dinero de esta forma",
+                    "Solo a través de bancos, sin involucrar al mercado financiero"
+                  ],
+                  "explanation": "Captar dinero nuevo directamente del público es justamente la función del mercado primario — allí es donde la empresa emite activos y recibe el monto captado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Mercado primário é onde a empresa capta dinheiro novo emitindo ativos.",
+                    "Mercado secundário é onde investidores negociam esses ativos entre si.",
+                    "No dia a dia, a maior parte da negociação na bolsa acontece no mercado secundário."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The primary market is where a company raises new money by issuing assets.",
+                    "The secondary market is where investors trade those assets among themselves.",
+                    "Day to day, most trading on the exchange happens in the secondary market."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El mercado primario es donde la empresa capta dinero nuevo emitiendo activos.",
+                    "El mercado secundario es donde los inversores negocian esos activos entre sí.",
+                    "En el día a día, la mayor parte de la negociación en la bolsa ocurre en el mercado secundario."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_system_custody",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custódia: Onde Fica Seu Dinheiro",
+              "learningObjective": "Explicar contra o que a custódia protege, e usar esse entendimento para avaliar o risco de operar por uma corretora específica."
+            },
+            "en": {
+              "title": "Custody: Where Your Money Actually Sits",
+              "learningObjective": "Explain what custody protects against, and use that understanding to evaluate the risk of trading through a specific broker."
+            },
+            "es": {
+              "title": "Custodia: Dónde Está Realmente tu Dinero",
+              "learningObjective": "Explicar contra qué protege la custodia, y usar ese entendimiento para evaluar el riesgo de operar a través de una correduría específica."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Corretora não é dona do seu dinheiro",
+                  "body": "Custódia é o serviço de guardar e registrar formalmente a titularidade dos seus ativos. No Brasil, por exemplo, ativos como ações costumam ficar custodiados em uma instituição separada, e não diretamente com a corretora — mesmo que você opere por ela. Isso significa que, se a corretora enfrentar problemas, seus ativos custodiados continuam sendo seus."
+                },
+                "en": {
+                  "title": "The broker doesn't own your money",
+                  "body": "Custody is the service of holding and formally registering ownership of your assets. In Brazil, for example, assets like stocks are typically held by a separate custodian institution, not directly by the broker — even though you trade through it. That means if the broker runs into trouble, your custodied assets remain yours."
+                },
+                "es": {
+                  "title": "La correduría no es dueña de tu dinero",
+                  "body": "La custodia es el servicio de guardar y registrar formalmente la titularidad de tus activos. En Brasil, por ejemplo, activos como las acciones suelen estar custodiados en una institución separada, y no directamente en la correduría — aunque operes a través de ella. Esto significa que, si la correduría enfrenta problemas, tus activos custodiados siguen siendo tuyos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se uma corretora fecha as portas, as ações que você comprou por meio dela normalmente continuam registradas em seu nome na instituição de custódia — você pode transferi-las para outra corretora. Isso é diferente de perder o dinheiro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If a broker shuts down, the stocks you bought through it are normally still registered in your name at the custodian institution — you can transfer them to another broker. That's different from losing the money."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si una correduría cierra, las acciones que compraste a través de ella normalmente siguen registradas a tu nombre en la institución de custodia — puedes transferirlas a otra correduría. Eso es distinto de perder el dinero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é custódia, no contexto de investimentos?",
+                  "options": [
+                    "O serviço de guardar e registrar formalmente a titularidade dos seus ativos",
+                    "Um tipo de imposto cobrado sobre investimentos",
+                    "O mesmo que uma corretora",
+                    "Um seguro contra perdas no mercado"
+                  ],
+                  "explanation": "Custódia é sobre onde e como a titularidade dos seus ativos é formalmente registrada — não é um imposto, nem um seguro, nem a corretora em si."
+                },
+                "en": {
+                  "prompt": "What is custody, in the context of investing?",
+                  "options": [
+                    "The service of holding and formally registering the ownership of your assets",
+                    "A type of tax charged on investments",
+                    "The same thing as a broker",
+                    "Insurance against market losses"
+                  ],
+                  "explanation": "Custody is about where and how the ownership of your assets is formally registered — it's not a tax, an insurance, or the broker itself."
+                },
+                "es": {
+                  "prompt": "¿Qué es la custodia, en el contexto de las inversiones?",
+                  "options": [
+                    "El servicio de guardar y registrar formalmente la titularidad de tus activos",
+                    "Un tipo de impuesto cobrado sobre las inversiones",
+                    "Lo mismo que una correduría",
+                    "Un seguro contra pérdidas en el mercado"
+                  ],
+                  "explanation": "La custodia trata sobre dónde y cómo se registra formalmente la titularidad de tus activos — no es un impuesto, ni un seguro, ni la correduría en sí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está avaliando o risco de operar por uma corretora específica. Por que entender custódia ajuda nessa avaliação?",
+                  "options": [
+                    "Não ajuda, custódia é irrelevante para esse tipo de decisão",
+                    "Porque quanto maior a corretora, melhor é sempre a custódia",
+                    "Porque entender que seus ativos podem ficar registrados separadamente da corretora ajuda a avaliar o que aconteceria se ela enfrentasse problemas",
+                    "Porque custódia garante que você nunca terá prejuízo com seus investimentos"
+                  ],
+                  "explanation": "Saber como a custódia funciona ajuda a entender que o risco de operar por uma corretora não é necessariamente o mesmo risco de perder os ativos nela custodiados."
+                },
+                "en": {
+                  "prompt": "You're evaluating the risk of trading through a specific broker. Why does understanding custody help with that evaluation?",
+                  "options": [
+                    "It doesn't, custody is irrelevant to this kind of decision",
+                    "Because the bigger the broker, the better the custody always is",
+                    "Because understanding that your assets may be registered separately from the broker helps assess what would happen if it ran into trouble",
+                    "Because custody guarantees you'll never lose money on your investments"
+                  ],
+                  "explanation": "Knowing how custody works helps you understand that the risk of trading through a broker isn't necessarily the same as the risk of losing the assets held there."
+                },
+                "es": {
+                  "prompt": "Estás evaluando el riesgo de operar a través de una correduría específica. ¿Por qué entender la custodia ayuda en esa evaluación?",
+                  "options": [
+                    "No ayuda, la custodia es irrelevante para este tipo de decisión",
+                    "Porque cuanto más grande la correduría, siempre mejor es la custodia",
+                    "Porque entender que tus activos pueden estar registrados por separado de la correduría ayuda a evaluar qué pasaría si esta enfrentara problemas",
+                    "Porque la custodia garantiza que nunca tendrás pérdidas en tus inversiones"
+                  ],
+                  "explanation": "Saber cómo funciona la custodia ayuda a entender que el riesgo de operar a través de una correduría no es necesariamente el mismo riesgo de perder los activos custodiados allí."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Custódia é o registro formal da titularidade dos seus ativos, separado da corretora.",
+                    "Se uma corretora enfrenta problemas, ativos custodiados continuam sendo seus.",
+                    "Você concluiu o módulo sobre perfil de investidor e sistema financeiro."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Custody is the formal record of your assets' ownership, separate from the broker.",
+                    "If a broker runs into trouble, custodied assets remain yours.",
+                    "You've completed the module on investor profile and the financial system."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "La custodia es el registro formal de la titularidad de tus activos, separado de la correduría.",
+                    "Si una correduría enfrenta problemas, los activos custodiados siguen siendo tuyos.",
+                    "Completaste el módulo sobre perfil de inversor y sistema financiero."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "investment_fundamentals_next_steps",
+      "order": 3,
+      "iconKey": "explore_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "investor_profile_and_system"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos do Investidor: Próximos Passos",
+          "description": "Classes de ativos, tempo no mercado, aportes regulares, rebalanceamento e como montar sua primeira carteira."
+        },
+        "en": {
+          "title": "Investor Fundamentals: Next Steps",
+          "description": "Asset classes, time in the market, dollar-cost averaging, rebalancing, and building your first portfolio."
+        },
+        "es": {
+          "title": "Fundamentos del Inversor: Próximos Pasos",
+          "description": "Clases de activos, tiempo en el mercado, aportes regulares, rebalanceo y cómo armar tu primera cartera."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "investment_fundamentals_asset_classes_overview",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Classes de Ativos: Um Mapa Geral",
+              "learningObjective": "Descrever o que é uma classe de ativos e explicar por que diversificar entre classes diferentes amplia o benefício da diversificação, além de apenas combinar ativos parecidos."
+            },
+            "en": {
+              "title": "Asset Classes: A General Map",
+              "learningObjective": "Describe what an asset class is and explain why diversifying across different classes expands diversification's benefit, beyond just combining similar assets."
+            },
+            "es": {
+              "title": "Clases de Activos: Un Mapa General",
+              "learningObjective": "Describir qué es una clase de activos y explicar por qué diversificar entre clases diferentes amplía el beneficio de la diversificación, más allá de solo combinar activos parecidos."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um mapa antes de explorar cada território",
+                  "body": "Classes de ativos são categorias amplas de investimentos com características de risco e retorno parecidas entre si. Renda fixa (como CDBs e Tesouro Direto) empresta dinheiro a uma taxa combinada; renda variável (como ações) representa participação em empresas, com retorno incerto; fundos e ETFs agrupam vários ativos em uma única cota; fundos imobiliários dão exposição ao setor imobiliário sem comprar um imóvel diretamente; e criptoativos são uma classe mais recente, com volatilidade tipicamente mais alta. Cada uma dessas classes é estudada em profundidade em outra escola específica — esta lição é apenas o mapa geral antes de explorar cada território."
+                },
+                "en": {
+                  "title": "A map before exploring each territory",
+                  "body": "Asset classes are broad categories of investments with similar risk and return characteristics. Fixed income (like CDBs and Treasury bonds) lends money at an agreed rate; equities (like stocks) represent ownership in companies, with uncertain returns; funds and ETFs group several assets into a single share; real estate funds give exposure to the real estate sector without buying a property directly; and cryptoassets are a more recent class, typically with higher volatility. Each of these classes is studied in depth in its own dedicated school — this lesson is just the general map before exploring each territory."
+                },
+                "es": {
+                  "title": "Un mapa antes de explorar cada territorio",
+                  "body": "Las clases de activos son categorías amplias de inversiones con características de riesgo y retorno parecidas entre sí. La renta fija (como los CDB y el Tesoro Directo) presta dinero a una tasa acordada; la renta variable (como las acciones) representa participación en empresas, con retorno incierto; los fondos y ETF agrupan varios activos en una única cuota; los fondos inmobiliarios dan exposición al sector inmobiliario sin comprar una propiedad directamente; y los criptoactivos son una clase más reciente, con volatilidad típicamente más alta. Cada una de estas clases se estudia en profundidad en su propia escuela específica — esta lección es solo el mapa general antes de explorar cada territorio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor iniciante pode se sentir sobrecarregado ao ouvir falar de CDB, ações, ETFs, FIIs e criptoativos ao mesmo tempo. Entender que cada um pertence a uma classe de ativos com uma lógica própria de risco e retorno ajuda a organizar esse conhecimento antes de estudar cada classe em detalhe — como olhar para um mapa do país antes de visitar cada cidade individualmente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A beginning investor might feel overwhelmed hearing about CDBs, stocks, ETFs, FIIs, and cryptoassets all at once. Understanding that each belongs to an asset class with its own risk-and-return logic helps organize that knowledge before studying each class in detail — like looking at a map of the country before visiting each city individually."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor principiante puede sentirse abrumado al escuchar hablar de CDB, acciones, ETF, FII y criptoactivos al mismo tiempo. Entender que cada uno pertenece a una clase de activos con una lógica propia de riesgo y retorno ayuda a organizar ese conocimiento antes de estudiar cada clase en detalle — como mirar un mapa del país antes de visitar cada ciudad individualmente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma classe de ativos?",
+                  "options": [
+                    "Um único ativo específico, como a ação de uma empresa em particular",
+                    "Uma categoria ampla de investimentos com características de risco e retorno parecidas entre si",
+                    "Uma taxa de juros fixa aplicada a todos os investimentos igualmente",
+                    "Um imposto cobrado sobre qualquer tipo de investimento"
+                  ],
+                  "explanation": "Uma classe de ativos agrupa investimentos com características parecidas de risco e retorno, como renda fixa, renda variável ou criptoativos, cada uma com sua própria lógica."
+                },
+                "en": {
+                  "prompt": "What characterizes an asset class?",
+                  "options": [
+                    "A single specific asset, like one particular company's stock",
+                    "A broad category of investments with similar risk and return characteristics",
+                    "A fixed interest rate applied equally to all investments",
+                    "A tax charged on any type of investment"
+                  ],
+                  "explanation": "An asset class groups investments with similar risk and return characteristics, like fixed income, equities, or cryptoassets, each with its own logic."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una clase de activos?",
+                  "options": [
+                    "Un único activo específico, como la acción de una empresa en particular",
+                    "Una categoría amplia de inversiones con características de riesgo y retorno parecidas entre sí",
+                    "Una tasa de interés fija aplicada por igual a todas las inversiones",
+                    "Un impuesto cobrado sobre cualquier tipo de inversión"
+                  ],
+                  "explanation": "Una clase de activos agrupa inversiones con características parecidas de riesgo y retorno, como renta fija, renta variable o criptoactivos, cada una con su propia lógica."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que diversificação envolve combinar ativos diferentes para reduzir risco. Como entender classes de ativos ajuda a aplicar esse princípio de forma mais completa do que apenas combinar ações de empresas diferentes?",
+                  "options": [
+                    "Diversificar entre classes de ativos diferentes (não apenas entre ativos parecidos dentro da mesma classe) tende a reduzir mais o risco, já que classes diferentes costumam reagir de formas distintas às mesmas condições de mercado",
+                    "Classes de ativos não têm nenhuma relação com o conceito de diversificação",
+                    "Diversificar dentro de uma única classe de ativos já elimina completamente qualquer risco",
+                    "Todas as classes de ativos sempre reagem exatamente da mesma forma às condições de mercado, tornando a diversificação entre classes desnecessária"
+                  ],
+                  "explanation": "Combinar ativos de classes diferentes — não apenas ações diferentes dentro da mesma classe — tende a ampliar o benefício da diversificação, já que classes distintas costumam ter comportamentos menos correlacionados entre si diante das mesmas condições de mercado."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that diversification involves combining different assets to reduce risk. How does understanding asset classes help apply that principle more fully than just combining different companies' stocks?",
+                  "options": [
+                    "Diversifying across different asset classes (not just among similar assets within the same class) tends to reduce risk more, since different classes usually react differently to the same market conditions",
+                    "Asset classes have no relation at all to the concept of diversification",
+                    "Diversifying within a single asset class already completely eliminates any risk",
+                    "All asset classes always react in exactly the same way to market conditions, making diversification across classes unnecessary"
+                  ],
+                  "explanation": "Combining assets from different classes — not just different stocks within the same class — tends to expand diversification's benefit, since distinct classes usually behave less correlated with each other under the same market conditions."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la diversificación implica combinar activos diferentes para reducir el riesgo. ¿Cómo ayuda entender las clases de activos a aplicar ese principio de forma más completa que solo combinar acciones de empresas diferentes?",
+                  "options": [
+                    "Diversificar entre clases de activos diferentes (no solo entre activos parecidos dentro de la misma clase) tiende a reducir más el riesgo, ya que clases diferentes suelen reaccionar de formas distintas ante las mismas condiciones de mercado",
+                    "Las clases de activos no tienen ninguna relación con el concepto de diversificación",
+                    "Diversificar dentro de una única clase de activos ya elimina por completo cualquier riesgo",
+                    "Todas las clases de activos siempre reaccionan exactamente de la misma forma ante las condiciones de mercado, haciendo innecesaria la diversificación entre clases"
+                  ],
+                  "explanation": "Combinar activos de clases diferentes — no solo acciones distintas dentro de la misma clase — tiende a ampliar el beneficio de la diversificación, ya que clases distintas suelen comportarse de forma menos correlacionada entre sí ante las mismas condiciones de mercado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Classes de ativos agrupam investimentos com características parecidas de risco e retorno.",
+                    "Renda fixa, renda variável, fundos, fundos imobiliários e criptoativos são exemplos de classes distintas.",
+                    "Diversificar entre classes de ativos diferentes tende a ampliar o benefício da diversificação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Asset classes group investments with similar risk and return characteristics.",
+                    "Fixed income, equities, funds, real estate funds, and cryptoassets are examples of distinct classes.",
+                    "Diversifying across different asset classes tends to expand diversification's benefit."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las clases de activos agrupan inversiones con características parecidas de riesgo y retorno.",
+                    "Renta fija, renta variable, fondos, fondos inmobiliarios y criptoactivos son ejemplos de clases distintas.",
+                    "Diversificar entre clases de activos diferentes tiende a ampliar el beneficio de la diversificación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_time_in_market",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tempo no Mercado vs. Tentar Acertar o Timing",
+              "learningObjective": "Explicar por que permanecer investido de forma consistente ('tempo no mercado') tende a superar tentativas repetidas de prever os melhores momentos de compra e venda ('timing de mercado')."
+            },
+            "en": {
+              "title": "Time in the Market vs. Trying to Time It",
+              "learningObjective": "Explain why staying consistently invested ('time in the market') tends to beat repeated attempts to predict the best buy/sell moments ('market timing')."
+            },
+            "es": {
+              "title": "Tiempo en el Mercado vs. Intentar Acertar el Timing",
+              "learningObjective": "Explicar por qué permanecer invertido de forma consistente ('tiempo en el mercado') tiende a superar los intentos repetidos de predecir los mejores momentos de compra y venta ('timing de mercado')."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ficar investido vs. tentar prever o melhor momento",
+                  "body": "'Tempo no mercado' se refere à estratégia de permanecer investido de forma consistente por um longo período, deixando os juros compostos e o crescimento de longo prazo do investimento trabalharem. 'Timing de mercado' é a tentativa de prever os melhores momentos para comprar (nas baixas) e vender (nas altas), entrando e saindo de posições com frequência. Prever esses momentos de forma consistente e repetida é extremamente difícil, mesmo para profissionais experientes, e tentativas de fazê-lo podem resultar em perder justamente os melhores dias do mercado, que tendem a se concentrar em curtos períodos difíceis de antecipar."
+                },
+                "en": {
+                  "title": "Staying invested vs. trying to predict the best moment",
+                  "body": "'Time in the market' refers to the strategy of remaining consistently invested over a long period, letting compound interest and long-term investment growth do the work. 'Market timing' is the attempt to predict the best moments to buy (at lows) and sell (at highs), entering and exiting positions frequently. Predicting these moments consistently and repeatedly is extremely difficult, even for experienced professionals, and attempts to do so can result in missing exactly the market's best days, which tend to cluster in short periods that are hard to anticipate."
+                },
+                "es": {
+                  "title": "Permanecer invertido vs. intentar predecir el mejor momento",
+                  "body": "'Tiempo en el mercado' se refiere a la estrategia de permanecer invertido de forma consistente durante un período largo, dejando que el interés compuesto y el crecimiento de largo plazo de la inversión hagan su trabajo. 'Timing de mercado' es el intento de predecir los mejores momentos para comprar (en las bajas) y vender (en las altas), entrando y saliendo de posiciones con frecuencia. Predecir esos momentos de forma consistente y repetida es extremadamente difícil, incluso para profesionales experimentados, y los intentos de hacerlo pueden resultar en perderse justamente los mejores días del mercado, que tienden a concentrarse en períodos cortos difíciles de anticipar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor que tenta prever quedas e vende suas ações, esperando recomprar mais barato depois, corre o risco de ficar de fora justamente nos dias de recuperação mais forte, que costumam vir de forma abrupta e imprevisível logo após as maiores quedas — perder apenas alguns desses dias específicos ao longo de anos pode reduzir significativamente o retorno acumulado, em comparação com quem simplesmente permaneceu investido o tempo todo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor who tries to predict downturns and sells their stocks, hoping to buy back cheaper later, risks being out of the market exactly on the strongest recovery days, which tend to come abruptly and unpredictably right after the biggest drops — missing just a few of those specific days over the years can significantly reduce accumulated returns, compared to someone who simply stayed invested the whole time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor que intenta predecir caídas y vende sus acciones, esperando recomprar más barato después, corre el riesgo de quedar afuera justamente en los días de recuperación más fuerte, que suelen llegar de forma abrupta e impredecible justo después de las mayores caídas — perderse solo algunos de esos días específicos a lo largo de los años puede reducir significativamente el retorno acumulado, en comparación con quien simplemente permaneció invertido todo el tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que tentar prever repetidamente os melhores momentos de comprar e vender (timing de mercado) é considerado uma estratégia arriscada?",
+                  "options": [
+                    "Porque prever esses momentos de forma consistente é extremamente difícil, e errar pode significar ficar de fora justamente dos melhores dias de recuperação do mercado",
+                    "Porque timing de mercado sempre garante um retorno maior do que simplesmente permanecer investido",
+                    "Porque não existe absolutamente nenhuma forma de comprar ou vender um ativo no momento errado",
+                    "Porque apenas investidores iniciantes tentam fazer timing de mercado"
+                  ],
+                  "explanation": "A dificuldade de prever repetidamente os melhores momentos, combinada com o risco de ficar de fora de dias de recuperação decisivos, torna o timing de mercado uma estratégia arriscada em comparação com permanecer investido de forma consistente."
+                },
+                "en": {
+                  "prompt": "Why is repeatedly trying to predict the best moments to buy and sell (market timing) considered a risky strategy?",
+                  "options": [
+                    "Because predicting those moments consistently is extremely difficult, and getting it wrong can mean missing exactly the market's best recovery days",
+                    "Because market timing always guarantees a higher return than simply staying invested",
+                    "Because there's absolutely no way to buy or sell an asset at the wrong moment",
+                    "Because only beginning investors try to time the market"
+                  ],
+                  "explanation": "The difficulty of repeatedly predicting the best moments, combined with the risk of missing decisive recovery days, makes market timing a risky strategy compared to staying consistently invested."
+                },
+                "es": {
+                  "prompt": "¿Por qué intentar predecir repetidamente los mejores momentos para comprar y vender (timing de mercado) se considera una estrategia arriesgada?",
+                  "options": [
+                    "Porque predecir esos momentos de forma consistente es extremadamente difícil, y equivocarse puede significar quedar afuera justamente de los mejores días de recuperación del mercado",
+                    "Porque el timing de mercado siempre garantiza un retorno mayor que simplemente permanecer invertido",
+                    "Porque no existe absolutamente ninguna forma de comprar o vender un activo en el momento equivocado",
+                    "Porque solo los inversores principiantes intentan hacer timing de mercado"
+                  ],
+                  "explanation": "La dificultad de predecir repetidamente los mejores momentos, combinada con el riesgo de perderse días de recuperación decisivos, hace del timing de mercado una estrategia arriesgada en comparación con permanecer invertido de forma consistente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que juros compostos fazem um investimento crescer de forma acelerada quanto mais tempo ele permanece rendendo. Como isso se conecta ao argumento de que 'tempo no mercado' tende a superar 'timing de mercado'?",
+                  "options": [
+                    "Entrar e sair de posições com frequência interrompe repetidamente o processo de juros compostos, enquanto permanecer investido de forma consistente permite que esse efeito acumulado atue pelo maior tempo possível",
+                    "Juros compostos não têm nenhuma relação com a decisão entre ficar investido ou tentar prever o timing do mercado",
+                    "Timing de mercado sempre maximiza o efeito dos juros compostos, mais do que permanecer investido continuamente",
+                    "Juros compostos só se aplicam a quem faz timing de mercado com sucesso"
+                  ],
+                  "explanation": "Cada vez que um investidor sai do mercado tentando prever o timing, ele interrompe a continuidade do crescimento composto sobre aquele capital — permanecer investido de forma consistente é o que permite que os juros compostos atuem pelo maior tempo possível, sem interrupções."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that compound interest makes an investment grow at an accelerating pace the longer it stays earning returns. How does that connect to the argument that 'time in the market' tends to beat 'market timing'?",
+                  "options": [
+                    "Frequently entering and exiting positions repeatedly interrupts the compound interest process, while staying consistently invested lets that cumulative effect act for as long as possible",
+                    "Compound interest has no relation at all to the decision between staying invested or trying to predict market timing",
+                    "Market timing always maximizes the compound interest effect, more than staying continuously invested",
+                    "Compound interest only applies to someone who times the market successfully"
+                  ],
+                  "explanation": "Every time an investor exits the market trying to predict timing, they interrupt the continuity of compound growth on that capital — staying consistently invested is what lets compound interest act for as long as possible, without interruptions."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el interés compuesto hace que una inversión crezca de forma acelerada cuanto más tiempo permanece generando rendimiento. ¿Cómo se conecta esto con el argumento de que 'tiempo en el mercado' tiende a superar al 'timing de mercado'?",
+                  "options": [
+                    "Entrar y salir de posiciones con frecuencia interrumpe repetidamente el proceso de interés compuesto, mientras que permanecer invertido de forma consistente permite que ese efecto acumulado actúe durante el mayor tiempo posible",
+                    "El interés compuesto no tiene ninguna relación con la decisión entre permanecer invertido o intentar predecir el timing del mercado",
+                    "El timing de mercado siempre maximiza el efecto del interés compuesto, más que permanecer invertido continuamente",
+                    "El interés compuesto solo se aplica a quien hace timing de mercado con éxito"
+                  ],
+                  "explanation": "Cada vez que un inversor sale del mercado intentando predecir el timing, interrumpe la continuidad del crecimiento compuesto sobre ese capital — permanecer invertido de forma consistente es lo que permite que el interés compuesto actúe durante el mayor tiempo posible, sin interrupciones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Tempo no mercado é permanecer investido de forma consistente; timing de mercado é tentar prever os melhores momentos.",
+                    "Prever repetidamente os melhores momentos é extremamente difícil, mesmo para profissionais.",
+                    "Sair e entrar do mercado com frequência interrompe o efeito acumulado dos juros compostos."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Time in the market is staying consistently invested; market timing is trying to predict the best moments.",
+                    "Repeatedly predicting the best moments is extremely difficult, even for professionals.",
+                    "Frequently exiting and entering the market interrupts compound interest's cumulative effect."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Tiempo en el mercado es permanecer invertido de forma consistente; timing de mercado es intentar predecir los mejores momentos.",
+                    "Predecir repetidamente los mejores momentos es extremadamente difícil, incluso para profesionales.",
+                    "Salir y entrar del mercado con frecuencia interrumpe el efecto acumulado del interés compuesto."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_dollar_cost_averaging",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Aportes Regulares: Investindo aos Poucos ao Longo do Tempo",
+              "learningObjective": "Explicar como aportes regulares (dollar-cost averaging) capturam um preço médio de compra ao longo do tempo, sem depender de prever o melhor momento para investir."
+            },
+            "en": {
+              "title": "Dollar-Cost Averaging: Investing Gradually Over Time",
+              "learningObjective": "Explain how dollar-cost averaging captures an average purchase price over time, without depending on predicting the best moment to invest."
+            },
+            "es": {
+              "title": "Aportes Regulares: Invirtiendo Poco a Poco a lo Largo del Tiempo",
+              "learningObjective": "Explicar cómo los aportes regulares (dollar-cost averaging) capturan un precio promedio de compra a lo largo del tiempo, sin depender de predecir el mejor momento para invertir."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comprando em pequenas parcelas, independentemente do preço",
+                  "body": "Aportes regulares (dollar-cost averaging) é a prática de investir um valor fixo em intervalos regulares — como todo mês — em vez de investir uma quantia grande de uma só vez. Como o valor investido é o mesmo a cada aporte, mais unidades do ativo são compradas quando o preço está baixo, e menos quando está alto, o que tende a resultar em um preço médio de compra ao longo do tempo, sem depender de acertar o melhor momento para investir."
+                },
+                "en": {
+                  "title": "Buying in small installments, regardless of price",
+                  "body": "Dollar-cost averaging is the practice of investing a fixed amount at regular intervals — like every month — instead of investing a large sum all at once. Since the invested amount is the same each time, more units of the asset are bought when the price is low, and fewer when it's high, which tends to result in an average purchase price over time, without depending on getting the best moment to invest right."
+                },
+                "es": {
+                  "title": "Comprando en pequeñas cuotas, sin importar el precio",
+                  "body": "Los aportes regulares (dollar-cost averaging) son la práctica de invertir un monto fijo en intervalos regulares — como cada mes — en lugar de invertir una suma grande de una sola vez. Como el monto invertido es el mismo en cada aporte, se compran más unidades del activo cuando el precio está bajo, y menos cuando está alto, lo que tiende a resultar en un precio promedio de compra a lo largo del tiempo, sin depender de acertar el mejor momento para invertir."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor aporta R$500 todo mês em um ETF, independentemente de o preço estar subindo ou caindo naquele mês específico. Em meses de preço mais baixo, esses R$500 compram mais cotas; em meses de preço mais alto, compram menos — ao longo de vários anos, esse padrão tende a resultar em um preço médio de aquisição, sem que o investidor precise decidir mês a mês se é um bom momento para investir."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor contributes $500 every month to an ETF, regardless of whether the price is rising or falling in that specific month. In lower-price months, that $500 buys more shares; in higher-price months, it buys fewer — over several years, this pattern tends to result in an average acquisition price, without the investor needing to decide month by month whether it's a good time to invest."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor aporta R$500 todos los meses a un ETF, sin importar si el precio está subiendo o bajando en ese mes específico. En meses de precio más bajo, esos R$500 compran más cuotas; en meses de precio más alto, compran menos — a lo largo de varios años, este patrón tiende a resultar en un precio promedio de adquisición, sin que el inversor necesite decidir mes a mes si es un buen momento para invertir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza a estratégia de aportes regulares (dollar-cost averaging)?",
+                  "options": [
+                    "Investir uma única quantia grande de uma só vez, no momento considerado ideal",
+                    "Investir um valor fixo em intervalos regulares, comprando mais unidades quando o preço está baixo e menos quando está alto",
+                    "Vender todos os ativos sempre que o preço cai, para depois recomprar mais barato",
+                    "Uma técnica que só pode ser usada com criptoativos"
+                  ],
+                  "explanation": "Aportes regulares envolvem investir o mesmo valor em intervalos fixos, o que naturalmente compra mais unidades em preços baixos e menos em preços altos, resultando em um preço médio ao longo do tempo."
+                },
+                "en": {
+                  "prompt": "What characterizes the dollar-cost averaging strategy?",
+                  "options": [
+                    "Investing a single large amount all at once, at what's considered the ideal moment",
+                    "Investing a fixed amount at regular intervals, buying more units when the price is low and fewer when it's high",
+                    "Selling all assets whenever the price drops, to buy back cheaper later",
+                    "A technique that can only be used with cryptoassets"
+                  ],
+                  "explanation": "Dollar-cost averaging involves investing the same amount at fixed intervals, which naturally buys more units at low prices and fewer at high prices, resulting in an average price over time."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a la estrategia de aportes regulares (dollar-cost averaging)?",
+                  "options": [
+                    "Invertir una única suma grande de una sola vez, en el momento considerado ideal",
+                    "Invertir un monto fijo en intervalos regulares, comprando más unidades cuando el precio está bajo y menos cuando está alto",
+                    "Vender todos los activos siempre que el precio caiga, para luego recomprar más barato",
+                    "Una técnica que solo puede usarse con criptoactivos"
+                  ],
+                  "explanation": "Los aportes regulares implican invertir el mismo monto en intervalos fijos, lo que naturalmente compra más unidades a precios bajos y menos a precios altos, resultando en un precio promedio a lo largo del tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que tentar prever repetidamente os melhores momentos de comprar (timing de mercado) é extremamente difícil. Como aportes regulares oferecem uma abordagem alternativa a esse problema?",
+                  "options": [
+                    "Aportes regulares removem a necessidade de decidir qual é o melhor momento específico para investir, já que o valor fixo é investido periodicamente independentemente do preço, capturando automaticamente uma média ao longo do tempo",
+                    "Aportes regulares garantem que o investidor sempre compre exatamente no ponto mais baixo de preço possível",
+                    "Aportes regulares são apenas uma forma diferente de fazer timing de mercado, sem nenhuma distinção real",
+                    "Aportes regulares só fazem sentido para quem já consegue prever perfeitamente os movimentos do mercado"
+                  ],
+                  "explanation": "Ao investir um valor fixo em intervalos regulares, independentemente do preço do momento, o investidor evita a necessidade de acertar o timing — a média de preço ao longo do tempo é capturada automaticamente pelo próprio padrão de aportes."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that repeatedly trying to predict the best moments to buy (market timing) is extremely difficult. How does dollar-cost averaging offer an alternative approach to that problem?",
+                  "options": [
+                    "Dollar-cost averaging removes the need to decide the single best specific moment to invest, since the fixed amount is invested periodically regardless of price, automatically capturing an average over time",
+                    "Dollar-cost averaging guarantees the investor always buys at exactly the lowest possible price point",
+                    "Dollar-cost averaging is just a different way of doing market timing, with no real distinction",
+                    "Dollar-cost averaging only makes sense for someone who can already perfectly predict market movements"
+                  ],
+                  "explanation": "By investing a fixed amount at regular intervals, regardless of the price at the time, the investor avoids the need to get the timing right — the average price over time is automatically captured by the contribution pattern itself."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que intentar predecir repetidamente los mejores momentos para comprar (timing de mercado) es extremadamente difícil. ¿Cómo ofrecen los aportes regulares un enfoque alternativo a ese problema?",
+                  "options": [
+                    "Los aportes regulares eliminan la necesidad de decidir cuál es el único mejor momento específico para invertir, ya que el monto fijo se invierte periódicamente sin importar el precio, capturando automáticamente un promedio a lo largo del tiempo",
+                    "Los aportes regulares garantizan que el inversor siempre compre exactamente en el punto más bajo de precio posible",
+                    "Los aportes regulares son solo una forma diferente de hacer timing de mercado, sin ninguna distinción real",
+                    "Los aportes regulares solo tienen sentido para quien ya puede predecir perfectamente los movimientos del mercado"
+                  ],
+                  "explanation": "Al invertir un monto fijo en intervalos regulares, sin importar el precio del momento, el inversor evita la necesidad de acertar el timing — el promedio de precio a lo largo del tiempo se captura automáticamente por el propio patrón de aportes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Aportes regulares investem um valor fixo em intervalos regulares, independentemente do preço.",
+                    "Isso compra mais unidades em preços baixos e menos em preços altos, resultando em um preço médio.",
+                    "Essa estratégia remove a necessidade de tentar prever o melhor momento específico para investir."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Dollar-cost averaging invests a fixed amount at regular intervals, regardless of price.",
+                    "This buys more units at low prices and fewer at high prices, resulting in an average price.",
+                    "This strategy removes the need to try to predict the single best moment to invest."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los aportes regulares invierten un monto fijo en intervalos regulares, sin importar el precio.",
+                    "Esto compra más unidades a precios bajos y menos a precios altos, resultando en un precio promedio.",
+                    "Esta estrategia elimina la necesidad de intentar predecir el mejor momento específico para invertir."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_rebalancing_intro",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Rebalanceamento: Uma Introdução",
+              "learningObjective": "Explicar por que uma carteira diversificada tende a se afastar gradualmente da combinação planejada, e como o rebalanceamento periódico corrige esse desvio."
+            },
+            "en": {
+              "title": "Rebalancing: An Introduction",
+              "learningObjective": "Explain why a diversified portfolio tends to gradually drift from its planned mix, and how periodic rebalancing corrects that drift."
+            },
+            "es": {
+              "title": "Rebalanceo: Una Introducción",
+              "learningObjective": "Explicar por qué una cartera diversificada tiende a alejarse gradualmente de la combinación planeada, y cómo el rebalanceo periódico corrige ese desvío."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Voltando à combinação planejada, de tempos em tempos",
+                  "body": "Rebalanceamento é o ajuste periódico de uma carteira para trazê-la de volta à combinação de ativos originalmente planejada, depois que o desempenho diferente de cada ativo a fez se afastar dessa combinação. Se uma classe de ativos cresce mais do que outra ao longo do tempo, ela passa a representar uma fatia maior da carteira do que o planejado originalmente — rebalancear significa ajustar essa proporção, vendendo um pouco do que cresceu mais e comprando um pouco do que cresceu menos, ou direcionando novos aportes para restabelecer o equilíbrio."
+                },
+                "en": {
+                  "title": "Returning to the planned mix, from time to time",
+                  "body": "Rebalancing is the periodic adjustment of a portfolio to bring it back to the asset mix originally planned, after each asset's different performance made it drift from that mix. If one asset class grows more than another over time, it ends up representing a larger slice of the portfolio than originally planned — rebalancing means adjusting that proportion, selling a bit of what grew more and buying a bit of what grew less, or directing new contributions to restore the balance."
+                },
+                "es": {
+                  "title": "Volviendo a la combinación planeada, de vez en cuando",
+                  "body": "El rebalanceo es el ajuste periódico de una cartera para devolverla a la combinación de activos originalmente planeada, después de que el desempeño distinto de cada activo la hizo alejarse de esa combinación. Si una clase de activos crece más que otra con el tiempo, pasa a representar una porción mayor de la cartera de lo planeado originalmente — rebalancear significa ajustar esa proporción, vendiendo un poco de lo que creció más y comprando un poco de lo que creció menos, o dirigiendo nuevos aportes para restablecer el equilibrio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor planeja manter 60% em renda variável e 40% em renda fixa. Depois de um ano de forte alta nas ações, sua carteira passa a ter 70% em renda variável e 30% em renda fixa — mais arriscada do que o planejado originalmente. Rebalancear significaria vender parte da renda variável e realocar para renda fixa, voltando à proporção de 60/40 que o investidor havia definido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor plans to keep 60% in equities and 40% in fixed income. After a year of strong stock gains, their portfolio ends up at 70% equities and 30% fixed income — riskier than originally planned. Rebalancing would mean selling part of the equities and reallocating to fixed income, returning to the 60/40 proportion the investor had set."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor planea mantener el 60% en renta variable y el 40% en renta fija. Después de un año de fuerte alza en las acciones, su cartera pasa a tener 70% en renta variable y 30% en renta fija — más arriesgada de lo planeado originalmente. Rebalancear significaría vender parte de la renta variable y reasignarla a renta fija, volviendo a la proporción 60/40 que el inversor había definido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é rebalanceamento de carteira?",
+                  "options": [
+                    "O ajuste periódico de uma carteira para trazê-la de volta à combinação de ativos originalmente planejada",
+                    "A venda completa e definitiva de todos os ativos de uma carteira",
+                    "Um imposto cobrado sobre mudanças na composição de uma carteira",
+                    "Uma estratégia que elimina completamente qualquer necessidade de diversificação"
+                  ],
+                  "explanation": "Rebalanceamento é o processo de reajustar periodicamente as proporções de uma carteira, trazendo-a de volta à combinação originalmente planejada."
+                },
+                "en": {
+                  "prompt": "What is portfolio rebalancing?",
+                  "options": [
+                    "The periodic adjustment of a portfolio to bring it back to the originally planned asset mix",
+                    "The complete, permanent sale of all assets in a portfolio",
+                    "A tax charged on changes to a portfolio's composition",
+                    "A strategy that completely eliminates any need for diversification"
+                  ],
+                  "explanation": "Rebalancing is the process of periodically readjusting a portfolio's proportions, bringing it back to the originally planned mix."
+                },
+                "es": {
+                  "prompt": "¿Qué es el rebalanceo de una cartera?",
+                  "options": [
+                    "El ajuste periódico de una cartera para devolverla a la combinación de activos originalmente planeada",
+                    "La venta completa y definitiva de todos los activos de una cartera",
+                    "Un impuesto cobrado sobre cambios en la composición de una cartera",
+                    "Una estrategia que elimina por completo cualquier necesidad de diversificación"
+                  ],
+                  "explanation": "El rebalanceo es el proceso de reajustar periódicamente las proporciones de una cartera, devolviéndola a la combinación originalmente planeada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que diversificar entre classes de ativos ajuda a reduzir risco, e que cada classe pode se comportar de forma diferente ao longo do tempo. Por que essa mesma diferença de comportamento entre classes torna o rebalanceamento necessário com o passar do tempo?",
+                  "options": [
+                    "Diversificação e rebalanceamento não têm nenhuma relação entre si",
+                    "Como classes de ativos diferentes crescem em ritmos distintos, a combinação planejada inicialmente tende a se afastar dela mesma ao longo do tempo, exigindo ajustes periódicos para manter o nível de risco pretendido originalmente",
+                    "Uma vez diversificada, uma carteira nunca mais precisa de nenhum ajuste",
+                    "Rebalanceamento só é necessário quando uma carteira não está diversificada"
+                  ],
+                  "explanation": "Justamente porque classes de ativos diferentes crescem de formas distintas ao longo do tempo, uma carteira diversificada tende a se afastar gradualmente da combinação planejada — o rebalanceamento existe para corrigir esse desvio periodicamente."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that diversifying across asset classes helps reduce risk, and that each class can behave differently over time. Why does that same difference in behavior between classes make rebalancing necessary over time?",
+                  "options": [
+                    "Diversification and rebalancing have no relation to each other",
+                    "Since different asset classes grow at different paces, the initially planned mix tends to drift away from itself over time, requiring periodic adjustments to maintain the originally intended risk level",
+                    "Once diversified, a portfolio never needs any adjustment again",
+                    "Rebalancing is only necessary when a portfolio isn't diversified"
+                  ],
+                  "explanation": "Precisely because different asset classes grow in different ways over time, a diversified portfolio tends to gradually drift from its planned mix — rebalancing exists to periodically correct that drift."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que diversificar entre clases de activos ayuda a reducir el riesgo, y que cada clase puede comportarse de forma diferente con el tiempo. ¿Por qué esa misma diferencia de comportamiento entre clases hace necesario el rebalanceo con el paso del tiempo?",
+                  "options": [
+                    "Diversificación y rebalanceo no tienen ninguna relación entre sí",
+                    "Como las clases de activos diferentes crecen a ritmos distintos, la combinación planeada inicialmente tiende a alejarse de sí misma con el tiempo, exigiendo ajustes periódicos para mantener el nivel de riesgo pretendido originalmente",
+                    "Una vez diversificada, una cartera nunca más necesita ningún ajuste",
+                    "El rebalanceo solo es necesario cuando una cartera no está diversificada"
+                  ],
+                  "explanation": "Precisamente porque las clases de activos diferentes crecen de formas distintas con el tiempo, una cartera diversificada tiende a alejarse gradualmente de la combinación planeada — el rebalanceo existe para corregir ese desvío periódicamente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Rebalanceamento ajusta periodicamente uma carteira, trazendo-a de volta à combinação planejada.",
+                    "Classes de ativos que crescem em ritmos diferentes fazem a carteira se afastar gradualmente do plano original.",
+                    "Rebalancear existe justamente para corrigir esse desvio e manter o nível de risco pretendido."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Rebalancing periodically adjusts a portfolio, bringing it back to the planned mix.",
+                    "Asset classes growing at different paces make the portfolio gradually drift from the original plan.",
+                    "Rebalancing exists precisely to correct that drift and maintain the intended risk level."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El rebalanceo ajusta periódicamente una cartera, devolviéndola a la combinación planeada.",
+                    "Las clases de activos que crecen a ritmos diferentes hacen que la cartera se aleje gradualmente del plan original.",
+                    "Rebalancear existe precisamente para corregir ese desvío y mantener el nivel de riesgo pretendido."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_building_first_portfolio",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Montando Sua Primeira Carteira",
+              "learningObjective": "Combinar perfil de investidor, objetivos, horizonte, classes de ativos, diversificação, aportes regulares e rebalanceamento em um processo coerente para montar uma primeira carteira de investimentos."
+            },
+            "en": {
+              "title": "Building Your First Portfolio",
+              "learningObjective": "Combine investor profile, goals, horizon, asset classes, diversification, dollar-cost averaging, and rebalancing into a coherent process for building a first investment portfolio."
+            },
+            "es": {
+              "title": "Armando Tu Primera Cartera",
+              "learningObjective": "Combinar perfil de inversor, objetivos, horizonte, clases de activos, diversificación, aportes regulares y rebalanceo en un proceso coherente para armar una primera cartera de inversiones."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Juntando tudo o que você já aprendeu",
+                  "body": "Montar uma primeira carteira de investimentos combina vários conceitos já estudados nesta escola: entender seu perfil de investidor e tolerância a risco, definir objetivos e horizonte de tempo para cada meta, escolher uma combinação de classes de ativos alinhada a esse perfil e horizonte, diversificar dentro dessa combinação, e revisar periodicamente através do rebalanceamento. Não existe uma fórmula única correta — mas existe um processo de raciocínio que combina esses elementos de forma coerente."
+                },
+                "en": {
+                  "title": "Bringing together everything you've already learned",
+                  "body": "Building a first investment portfolio combines several concepts already studied in this school: understanding your investor profile and risk tolerance, setting goals and a time horizon for each objective, choosing a mix of asset classes aligned with that profile and horizon, diversifying within that mix, and periodically reviewing through rebalancing. There's no single correct formula — but there is a reasoning process that combines these elements coherently."
+                },
+                "es": {
+                  "title": "Juntando todo lo que ya aprendiste",
+                  "body": "Armar una primera cartera de inversiones combina varios conceptos ya estudiados en esta escuela: entender tu perfil de inversor y tolerancia al riesgo, definir objetivos y horizonte de tiempo para cada meta, elegir una combinación de clases de activos alineada con ese perfil y horizonte, diversificar dentro de esa combinación, y revisar periódicamente mediante el rebalanceo. No existe una fórmula única correcta — pero sí existe un proceso de razonamiento que combina estos elementos de forma coherente."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa com perfil mais conservador e um objetivo de curto prazo prioriza uma combinação com mais renda fixa; outra pessoa com perfil mais arrojado e um objetivo de longo prazo pode incluir uma fatia maior de renda variável e outras classes mais voláteis. Ambas usam o mesmo processo de raciocínio — perfil, objetivo, horizonte, classes de ativos, diversificação e revisão periódica — mas chegam a combinações diferentes, coerentes com suas próprias circunstâncias."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person with a more conservative profile and a short-term goal prioritizes a mix with more fixed income; another person with a bolder profile and a long-term goal might include a larger slice of equities and other more volatile classes. Both use the same reasoning process — profile, goal, horizon, asset classes, diversification, and periodic review — but arrive at different mixes, consistent with their own circumstances."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona con un perfil más conservador y un objetivo de corto plazo prioriza una combinación con más renta fija; otra persona con un perfil más audaz y un objetivo de largo plazo puede incluir una porción mayor de renta variable y otras clases más volátiles. Ambas usan el mismo proceso de razonamiento — perfil, objetivo, horizonte, clases de activos, diversificación y revisión periódica — pero llegan a combinaciones diferentes, coherentes con sus propias circunstancias."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Existe uma única combinação de ativos correta para montar a primeira carteira de qualquer investidor?",
+                  "options": [
+                    "Não — a combinação adequada depende do perfil de investidor, dos objetivos e do horizonte de tempo de cada pessoa",
+                    "Sim, existe uma única fórmula correta que se aplica a todos os investidores igualmente",
+                    "Não, porque nenhuma carteira deveria conter mais de uma classe de ativos",
+                    "Sim, e essa fórmula nunca deveria ser revisada ao longo do tempo"
+                  ],
+                  "explanation": "Não existe uma combinação única correta — a combinação adequada varia conforme o perfil de investidor, os objetivos e o horizonte de tempo específicos de cada pessoa."
+                },
+                "en": {
+                  "prompt": "Is there a single correct asset mix for building any investor's first portfolio?",
+                  "options": [
+                    "No — the right mix depends on each person's investor profile, goals, and time horizon",
+                    "Yes, there's a single correct formula that applies equally to all investors",
+                    "No, because no portfolio should ever contain more than one asset class",
+                    "Yes, and that formula should never be reviewed over time"
+                  ],
+                  "explanation": "There's no single correct mix — the right mix varies according to each person's specific investor profile, goals, and time horizon."
+                },
+                "es": {
+                  "prompt": "¿Existe una única combinación de activos correcta para armar la primera cartera de cualquier inversor?",
+                  "options": [
+                    "No — la combinación adecuada depende del perfil de inversor, los objetivos y el horizonte de tiempo de cada persona",
+                    "Sí, existe una única fórmula correcta que se aplica a todos los inversores por igual",
+                    "No, porque ninguna cartera debería contener más de una clase de activos",
+                    "Sí, y esa fórmula nunca debería revisarse con el tiempo"
+                  ],
+                  "explanation": "No existe una combinación única correcta — la combinación adecuada varía según el perfil de inversor, los objetivos y el horizonte de tiempo específicos de cada persona."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de todas as lições anteriores desta escola, perfil de investidor, objetivos e horizonte, classes de ativos, diversificação, aportes regulares e rebalanceamento. Como esses elementos se conectam em um único processo coerente ao montar uma primeira carteira?",
+                  "options": [
+                    "Perfil e horizonte ajudam a escolher a combinação inicial de classes de ativos; diversificação distribui o risco dentro dessa combinação; aportes regulares constroem a posição ao longo do tempo; e rebalanceamento periódico mantém a combinação alinhada ao plano original conforme o tempo passa",
+                    "Cada um desses conceitos é completamente independente dos outros, sem nenhuma conexão entre eles",
+                    "Apenas o perfil de investidor importa; todos os outros conceitos são irrelevantes para montar uma carteira",
+                    "Rebalanceamento e diversificação são exatamente a mesma coisa, tornando um deles desnecessário"
+                  ],
+                  "explanation": "Montar uma primeira carteira combina esses conceitos em sequência lógica: perfil e horizonte orientam a combinação inicial, diversificação distribui o risco dentro dela, aportes regulares constroem a posição ao longo do tempo, e rebalanceamento periódico mantém tudo alinhado ao plano conforme as condições mudam."
+                },
+                "en": {
+                  "prompt": "You already understand, from every previous lesson in this school, investor profile, goals and horizon, asset classes, diversification, dollar-cost averaging, and rebalancing. How do these elements connect into a single coherent process when building a first portfolio?",
+                  "options": [
+                    "Profile and horizon help choose the initial asset class mix; diversification spreads risk within that mix; dollar-cost averaging builds the position over time; and periodic rebalancing keeps the mix aligned with the original plan as time passes",
+                    "Each of these concepts is completely independent of the others, with no connection between them",
+                    "Only investor profile matters; all the other concepts are irrelevant to building a portfolio",
+                    "Rebalancing and diversification are exactly the same thing, making one of them unnecessary"
+                  ],
+                  "explanation": "Building a first portfolio combines these concepts in logical sequence: profile and horizon guide the initial mix, diversification spreads risk within it, dollar-cost averaging builds the position over time, and periodic rebalancing keeps everything aligned with the plan as conditions change."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de todas las lecciones anteriores de esta escuela, perfil de inversor, objetivos y horizonte, clases de activos, diversificación, aportes regulares y rebalanceo. ¿Cómo se conectan estos elementos en un único proceso coherente al armar una primera cartera?",
+                  "options": [
+                    "Perfil y horizonte ayudan a elegir la combinación inicial de clases de activos; la diversificación distribuye el riesgo dentro de esa combinación; los aportes regulares construyen la posición a lo largo del tiempo; y el rebalanceo periódico mantiene la combinación alineada con el plan original a medida que pasa el tiempo",
+                    "Cada uno de estos conceptos es completamente independiente de los demás, sin ninguna conexión entre ellos",
+                    "Solo el perfil de inversor importa; todos los demás conceptos son irrelevantes para armar una cartera",
+                    "Rebalanceo y diversificación son exactamente lo mismo, haciendo innecesario a uno de ellos"
+                  ],
+                  "explanation": "Armar una primera cartera combina estos conceptos en secuencia lógica: perfil y horizonte orientan la combinación inicial, la diversificación distribuye el riesgo dentro de ella, los aportes regulares construyen la posición a lo largo del tiempo, y el rebalanceo periódico mantiene todo alineado con el plan a medida que cambian las condiciones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Montar uma primeira carteira combina perfil, objetivos, horizonte, classes de ativos, diversificação, aportes regulares e rebalanceamento.",
+                    "Não existe uma combinação única correta — a combinação adequada depende das circunstâncias de cada pessoa.",
+                    "Você concluiu o módulo especializado de fundamentos do investidor: classes de ativos, tempo no mercado, aportes regulares, rebalanceamento e como montar sua primeira carteira."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Building a first portfolio combines profile, goals, horizon, asset classes, diversification, dollar-cost averaging, and rebalancing.",
+                    "There's no single correct mix — the right one depends on each person's own circumstances.",
+                    "You've completed the specialized investor fundamentals module: asset classes, time in the market, dollar-cost averaging, rebalancing, and building your first portfolio."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Armar una primera cartera combina perfil, objetivos, horizonte, clases de activos, diversificación, aportes regulares y rebalanceo.",
+                    "No existe una combinación única correcta — la adecuada depende de las circunstancias de cada persona.",
+                    "Completaste el módulo especializado de fundamentos del inversor: clases de activos, tiempo en el mercado, aportes regulares, rebalanceo y cómo armar tu primera cartera."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2535 @@
+{
+  "schoolId": "valuation",
+  "domainId": "analysis_valuation",
+  "order": 8,
+  "iconKey": "insights_outlined",
+  "contentAvailable": true,
+  "prerequisites": [
+    "fundamental_analysis"
+  ],
+  "translations": {
+    "pt": {
+      "title": "Valuation",
+      "description": "Preço x valor, margem de segurança, múltiplos e fluxo de caixa descontado."
+    },
+    "en": {
+      "title": "Valuation",
+      "description": "Price vs. value, margin of safety, multiples and discounted cash flow."
+    },
+    "es": {
+      "title": "Valuación",
+      "description": "Precio vs. valor, margen de seguridad, múltiplos y flujo de caja descontado."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "valuation_basics",
+      "order": 1,
+      "iconKey": "insights_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos de Valuation",
+          "description": "Preço x valor, margem de segurança, avaliação por múltiplos e a lógica do fluxo de caixa descontado."
+        },
+        "en": {
+          "title": "Valuation Fundamentals",
+          "description": "Price vs. value, margin of safety, multiples-based valuation and the logic of discounted cash flow."
+        },
+        "es": {
+          "title": "Fundamentos de Valuación",
+          "description": "Precio vs. valor, margen de seguridad, valuación por múltiplos y la lógica del flujo de caja descontado."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "valuation_price_vs_value",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Preço x Valor"
+            },
+            "en": {
+              "title": "Price vs. Value"
+            },
+            "es": {
+              "title": "Precio vs. Valor"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas coisas diferentes que só parecem iguais",
+                  "body": "Preço é quanto um ativo está sendo negociado no mercado agora, definido pelo encontro entre compradores e vendedores. Valor é uma estimativa de quanto esse ativo realmente vale, com base nos fundamentos do negócio — sua capacidade de gerar caixa, seus ativos, suas perspectivas. Valuation é justamente o processo de tentar estimar esse valor, que pode estar acima, abaixo ou próximo do preço praticado no mercado em um determinado momento."
+                },
+                "en": {
+                  "title": "Two different things that only look the same",
+                  "body": "Price is how much an asset is trading for in the market right now, set by the meeting of buyers and sellers. Value is an estimate of how much that asset is actually worth, based on the business's fundamentals — its ability to generate cash, its assets, its prospects. Valuation is exactly the process of trying to estimate that value, which can be above, below, or close to the price the market is charging at a given moment."
+                },
+                "es": {
+                  "title": "Dos cosas diferentes que solo parecen iguales",
+                  "body": "El precio es cuánto se está negociando un activo en el mercado ahora, definido por el encuentro entre compradores y vendedores. El valor es una estimación de cuánto vale realmente ese activo, con base en los fundamentos del negocio — su capacidad de generar caja, sus activos, sus perspectivas. La valuación es justamente el proceso de intentar estimar ese valor, que puede estar por encima, por debajo o cerca del precio practicado en el mercado en un momento dado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma ação pode estar sendo negociada a R$30 (o preço), enquanto um investidor, depois de estudar os fundamentos da empresa, estima que ela vale R$40 (o valor). Essa diferença entre preço e valor estimado é o que motiva grande parte das decisões de compra e venda em análise fundamentalista."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A stock might be trading at R$30 (the price), while an investor, after studying the company's fundamentals, estimates it's worth R$40 (the value). This gap between price and estimated value is what drives much of the buy and sell decisions in fundamental analysis."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una acción puede estar negociándose a R$30 (el precio), mientras que un inversor, después de estudiar los fundamentos de la empresa, estima que vale R$40 (el valor). Esa diferencia entre precio y valor estimado es lo que motiva gran parte de las decisiones de compra y venta en el análisis fundamental."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a diferença entre preço e valor de um ativo?",
+                  "options": [
+                    "Não existe diferença, são sempre a mesma coisa",
+                    "Preço é uma opinião pessoal, e valor é um fato imutável",
+                    "Preço é quanto o ativo é negociado no mercado agora; valor é uma estimativa do que ele realmente vale com base em seus fundamentos",
+                    "Valor é definido pelo governo, e preço pelas corretoras"
+                  ],
+                  "explanation": "Preço é o que o mercado está pagando agora; valor é uma estimativa baseada nos fundamentos do negócio, que pode ou não coincidir com o preço praticado."
+                },
+                "en": {
+                  "prompt": "What is the difference between an asset's price and its value?",
+                  "options": [
+                    "There's no difference, they're always the same thing",
+                    "Price is a personal opinion, and value is an immutable fact",
+                    "Price is what the asset trades for in the market right now; value is an estimate of what it's actually worth based on its fundamentals",
+                    "Value is set by the government, and price by brokers"
+                  ],
+                  "explanation": "Price is what the market is paying right now; value is an estimate based on the business's fundamentals, which may or may not match the price being charged."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia entre el precio y el valor de un activo?",
+                  "options": [
+                    "No existe diferencia, siempre son lo mismo",
+                    "El precio es una opinión personal, y el valor es un hecho inmutable",
+                    "El precio es lo que se negocia el activo en el mercado ahora; el valor es una estimación de lo que realmente vale con base en sus fundamentos",
+                    "El valor lo define el gobierno, y el precio las correduras"
+                  ],
+                  "explanation": "El precio es lo que el mercado está pagando ahora; el valor es una estimación basada en los fundamentos del negocio, que puede o no coincidir con el precio practicado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um amigo diz: 'o preço de uma ação é sempre igual ao seu valor justo, então valuation é perda de tempo'. Com base no que você aprendeu, o que está incompleto nessa afirmação?",
+                  "options": [
+                    "Nada, essa afirmação está totalmente correta",
+                    "Preço e valor são conceitos diferentes — o preço reflete a negociação do momento, enquanto o valor é uma estimativa que pode divergir do preço, e é justamente essa possível divergência que motiva o valuation",
+                    "Valuation só serve para calcular o preço, nunca o valor",
+                    "Ações nunca têm um valor além do preço de mercado"
+                  ],
+                  "explanation": "Assumir que preço e valor são sempre idênticos ignora a possibilidade de o mercado precificar um ativo de forma diferente do que os fundamentos sugerem — é justamente essa possível diferença que dá sentido ao processo de valuation."
+                },
+                "en": {
+                  "prompt": "A friend says: 'a stock's price is always equal to its fair value, so valuation is a waste of time.' Based on what you learned, what's incomplete about that statement?",
+                  "options": [
+                    "Nothing, that statement is completely correct",
+                    "Price and value are different concepts — price reflects the current trade, while value is an estimate that can diverge from price, and it's exactly that possible divergence that gives valuation its purpose",
+                    "Valuation only serves to calculate price, never value",
+                    "Stocks never have a value beyond the market price"
+                  ],
+                  "explanation": "Assuming price and value are always identical ignores the possibility that the market might price an asset differently from what its fundamentals suggest — it's exactly that possible gap that gives the valuation process its meaning."
+                },
+                "es": {
+                  "prompt": "Un amigo dice: 'el precio de una acción siempre es igual a su valor justo, así que la valuación es una pérdida de tiempo'. Según lo que aprendiste, ¿qué es incompleto en esa afirmación?",
+                  "options": [
+                    "Nada, esa afirmación es totalmente correcta",
+                    "Precio y valor son conceptos diferentes — el precio refleja la negociación del momento, mientras que el valor es una estimación que puede divergir del precio, y es justamente esa posible divergencia la que motiva la valuación",
+                    "La valuación solo sirve para calcular el precio, nunca el valor",
+                    "Las acciones nunca tienen un valor más allá del precio de mercado"
+                  ],
+                  "explanation": "Asumir que precio y valor son siempre idénticos ignora la posibilidad de que el mercado precifique un activo de forma diferente a lo que sugieren los fundamentos — es justamente esa posible diferencia la que le da sentido al proceso de valuación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Preço é quanto um ativo é negociado agora no mercado.",
+                    "Valor é uma estimativa do que o ativo realmente vale, com base em seus fundamentos.",
+                    "Valuation é o processo de tentar estimar esse valor e compará-lo ao preço."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Price is how much an asset trades for right now in the market.",
+                    "Value is an estimate of what the asset is actually worth, based on its fundamentals.",
+                    "Valuation is the process of trying to estimate that value and comparing it to the price."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El precio es cuánto se negocia un activo ahora en el mercado.",
+                    "El valor es una estimación de lo que el activo realmente vale, con base en sus fundamentos.",
+                    "La valuación es el proceso de intentar estimar ese valor y compararlo con el precio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_margin_of_safety",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Margem de Segurança"
+            },
+            "en": {
+              "title": "Margin of Safety"
+            },
+            "es": {
+              "title": "Margen de Seguridad"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um espaço para o erro",
+                  "body": "Toda estimativa de valor é, por definição, uma aproximação — nenhum valuation é exato. Margem de segurança é a diferença entre o valor estimado de um ativo e o preço pago por ele: quanto maior essa margem, mais espaço existe para erros na estimativa sem que isso comprometa o resultado. Comprar um ativo com uma margem de segurança maior reduz, mas não elimina, o risco de a estimativa de valor estar equivocada."
+                },
+                "en": {
+                  "title": "Room for error",
+                  "body": "Every value estimate is, by definition, an approximation — no valuation is exact. Margin of safety is the gap between an asset's estimated value and the price paid for it: the larger that margin, the more room there is for errors in the estimate without compromising the outcome. Buying an asset with a larger margin of safety reduces, but doesn't eliminate, the risk that the value estimate is wrong."
+                },
+                "es": {
+                  "title": "Un espacio para el error",
+                  "body": "Toda estimación de valor es, por definición, una aproximación — ninguna valuación es exacta. El margen de seguridad es la diferencia entre el valor estimado de un activo y el precio pagado por él: cuanto mayor sea ese margen, más espacio hay para errores en la estimación sin que eso comprometa el resultado. Comprar un activo con un margen de seguridad mayor reduce, pero no elimina, el riesgo de que la estimación de valor esté equivocada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor estima que uma ação vale R$50 e a compra a R$35 — uma margem de segurança de 30%. Se sua estimativa estiver um pouco otimista demais, e o valor real for R$42, ele ainda comprou abaixo desse valor real. Se ele tivesse pago R$48 pela mesma ação, o mesmo erro de estimativa já teria consumido quase toda a margem."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor estimates a stock is worth R$50 and buys it at R$35 — a 30% margin of safety. If their estimate turns out a bit too optimistic, and the real value is R$42, they still bought below that real value. If they had paid R$48 for the same stock, the same estimation error would have already eaten up almost the entire margin."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor estima que una acción vale R$50 y la compra a R$35 — un margen de seguridad del 30%. Si su estimación resulta un poco demasiado optimista, y el valor real es R$42, aún compró por debajo de ese valor real. Si hubiera pagado R$48 por la misma acción, el mismo error de estimación ya habría consumido casi todo el margen."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é margem de segurança, no contexto de valuation?",
+                  "options": [
+                    "Uma garantia legal contra prejuízos em investimentos",
+                    "A diferença entre o valor estimado de um ativo e o preço pago por ele, que reduz o impacto de erros na estimativa",
+                    "Um seguro obrigatório cobrado por corretoras",
+                    "Um indicador que mede apenas a liquidez de um ativo"
+                  ],
+                  "explanation": "Margem de segurança é o espaço entre valor estimado e preço pago, funcionando como uma proteção contra imprecisões na própria estimativa de valor — não é uma garantia formal contra perdas."
+                },
+                "en": {
+                  "prompt": "What is margin of safety, in the context of valuation?",
+                  "options": [
+                    "A legal guarantee against investment losses",
+                    "The gap between an asset's estimated value and the price paid for it, which reduces the impact of errors in the estimate",
+                    "A mandatory insurance charged by brokers",
+                    "An indicator that only measures an asset's liquidity"
+                  ],
+                  "explanation": "Margin of safety is the gap between estimated value and price paid, acting as a cushion against inaccuracies in the value estimate itself — it's not a formal guarantee against losses."
+                },
+                "es": {
+                  "prompt": "¿Qué es el margen de seguridad, en el contexto de la valuación?",
+                  "options": [
+                    "Una garantía legal contra pérdidas en inversiones",
+                    "La diferencia entre el valor estimado de un activo y el precio pagado por él, que reduce el impacto de errores en la estimación",
+                    "Un seguro obligatorio cobrado por las correduras",
+                    "Un indicador que solo mide la liquidez de un activo"
+                  ],
+                  "explanation": "El margen de seguridad es el espacio entre el valor estimado y el precio pagado, funcionando como una protección contra imprecisiones en la propia estimación de valor — no es una garantía formal contra pérdidas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que valuation é uma estimativa, sujeita a erro. Por que isso torna a margem de segurança uma ferramenta relevante?",
+                  "options": [
+                    "Não torna, já que estimativas de valuation nunca erram",
+                    "Justamente porque a estimativa pode estar errada, comprar com uma margem entre preço e valor estimado ajuda a absorver esse erro sem comprometer tanto o resultado",
+                    "Porque margem de segurança elimina completamente qualquer risco",
+                    "Porque valuation deixa de ser uma estimativa quando existe margem de segurança"
+                  ],
+                  "explanation": "A margem de segurança existe justamente para lidar com a incerteza inerente a qualquer estimativa de valor — ela não elimina o risco, mas cria um espaço de proteção contra erros na análise."
+                },
+                "en": {
+                  "prompt": "You already understand that valuation is an estimate, subject to error. Why does this make margin of safety a relevant tool?",
+                  "options": [
+                    "It doesn't, since valuation estimates are never wrong",
+                    "Precisely because the estimate can be wrong, buying with a gap between price and estimated value helps absorb that error without compromising the outcome as much",
+                    "Because margin of safety completely eliminates any risk",
+                    "Because valuation stops being an estimate when there's a margin of safety"
+                  ],
+                  "explanation": "Margin of safety exists precisely to deal with the inherent uncertainty of any value estimate — it doesn't eliminate risk, but it creates a cushion against errors in the analysis."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que la valuación es una estimación, sujeta a error. ¿Por qué esto hace que el margen de seguridad sea una herramienta relevante?",
+                  "options": [
+                    "No lo hace, ya que las estimaciones de valuación nunca se equivocan",
+                    "Justamente porque la estimación puede estar equivocada, comprar con un margen entre precio y valor estimado ayuda a absorber ese error sin comprometer tanto el resultado",
+                    "Porque el margen de seguridad elimina por completo cualquier riesgo",
+                    "Porque la valuación deja de ser una estimación cuando existe margen de seguridad"
+                  ],
+                  "explanation": "El margen de seguridad existe justamente para lidiar con la incertidumbre inherente a cualquier estimación de valor — no elimina el riesgo, pero crea un espacio de protección contra errores en el análisis."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Toda estimativa de valor está sujeita a erro.",
+                    "Margem de segurança é a diferença entre valor estimado e preço pago.",
+                    "Uma margem maior reduz, mas não elimina, o impacto de uma estimativa equivocada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Every value estimate is subject to error.",
+                    "Margin of safety is the gap between estimated value and price paid.",
+                    "A larger margin reduces, but doesn't eliminate, the impact of a mistaken estimate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Toda estimación de valor está sujeta a error.",
+                    "El margen de seguridad es la diferencia entre el valor estimado y el precio pagado.",
+                    "Un margen mayor reduce, pero no elimina, el impacto de una estimación equivocada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_multiples",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Avaliação por Múltiplos"
+            },
+            "en": {
+              "title": "Multiples-Based Valuation"
+            },
+            "es": {
+              "title": "Valuación por Múltiplos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comparando com empresas parecidas",
+                  "body": "Avaliação por múltiplos é uma abordagem que estima o valor de uma empresa comparando indicadores como P/L com os de outras empresas parecidas, do mesmo setor. Se empresas comparáveis costumam negociar a um certo múltiplo de lucro, e uma empresa específica está sendo negociada bem abaixo dessa média, isso pode ser um ponto de partida para investigar — desde que as diferenças entre as empresas sejam levadas em conta antes de qualquer conclusão."
+                },
+                "en": {
+                  "title": "Comparing with similar companies",
+                  "body": "Multiples-based valuation is an approach that estimates a company's value by comparing indicators like P/E with those of other similar companies in the same sector. If comparable companies usually trade at a certain earnings multiple, and a specific company is trading well below that average, that can be a starting point to investigate — as long as the differences between the companies are taken into account before any conclusion."
+                },
+                "es": {
+                  "title": "Comparando con empresas parecidas",
+                  "body": "La valuación por múltiplos es un enfoque que estima el valor de una empresa comparando indicadores como el P/E con los de otras empresas parecidas, del mismo sector. Si empresas comparables suelen negociarse a cierto múltiplo de ganancia, y una empresa específica se está negociando bien por debajo de ese promedio, eso puede ser un punto de partida para investigar — siempre que se tengan en cuenta las diferencias entre las empresas antes de sacar cualquier conclusión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Empresas do setor de varejo costumam negociar a um P/L médio de 15. Uma empresa específica desse setor está sendo negociada a um P/L de 8. Isso não significa automaticamente que ela está subavaliada — pode haver um motivo específico, como um risco maior ou uma perspectiva de crescimento pior — mas é um ponto que merece investigação mais profunda."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Retail sector companies usually trade at an average P/E of 15. A specific company in that sector is trading at a P/E of 8. That doesn't automatically mean it's undervalued — there might be a specific reason, like higher risk or worse growth prospects — but it's a point that deserves deeper investigation."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Las empresas del sector minorista suelen negociarse a un P/E promedio de 15. Una empresa específica de ese sector se está negociando a un P/E de 8. Eso no significa automáticamente que esté subvaluada — puede haber un motivo específico, como un mayor riesgo o una peor perspectiva de crecimiento — pero es un punto que merece una investigación más profunda."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como funciona a avaliação por múltiplos?",
+                  "options": [
+                    "Ela calcula o valor exato de uma empresa sem margem de erro",
+                    "Ela estima o valor de uma empresa comparando seus indicadores com os de empresas parecidas do mesmo setor",
+                    "Ela é usada apenas para empresas que nunca tiveram lucro",
+                    "Ela ignora completamente o setor em que a empresa atua"
+                  ],
+                  "explanation": "Avaliação por múltiplos parte da comparação entre indicadores de empresas parecidas para estimar se uma empresa específica está sendo negociada acima, abaixo, ou em linha com seus pares."
+                },
+                "en": {
+                  "prompt": "How does multiples-based valuation work?",
+                  "options": [
+                    "It calculates a company's exact value with no margin of error",
+                    "It estimates a company's value by comparing its indicators with those of similar companies in the same sector",
+                    "It's only used for companies that never had a profit",
+                    "It completely ignores the sector the company operates in"
+                  ],
+                  "explanation": "Multiples-based valuation starts from comparing indicators of similar companies to estimate whether a specific company is trading above, below, or in line with its peers."
+                },
+                "es": {
+                  "prompt": "¿Cómo funciona la valuación por múltiplos?",
+                  "options": [
+                    "Calcula el valor exacto de una empresa sin margen de error",
+                    "Estima el valor de una empresa comparando sus indicadores con los de empresas parecidas del mismo sector",
+                    "Se usa solo para empresas que nunca tuvieron ganancias",
+                    "Ignora por completo el sector en el que opera la empresa"
+                  ],
+                  "explanation": "La valuación por múltiplos parte de la comparación entre indicadores de empresas parecidas para estimar si una empresa específica se está negociando por encima, por debajo, o en línea con sus pares."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você encontra uma empresa negociada a um múltiplo bem abaixo da média do setor e pensa em comprar imediatamente, só por causa disso. O que você já aprendeu sobre P/L em outra lição sugere que vale a pena investigar antes?",
+                  "options": [
+                    "Nada, um múltiplo baixo é sempre motivo suficiente para comprar",
+                    "Que um múltiplo mais baixo pode refletir risco maior ou piores perspectivas, não apenas uma oportunidade — vale investigar o motivo da diferença antes de concluir algo",
+                    "Que múltiplos nunca devem ser comparados entre empresas do mesmo setor",
+                    "Que essa empresa certamente é uma fraude"
+                  ],
+                  "explanation": "Assim como você viu com P/L, um múltiplo abaixo da média não é automaticamente uma pechincha — pode refletir riscos ou expectativas piores que precisam ser investigados antes de qualquer conclusão."
+                },
+                "en": {
+                  "prompt": "You find a company trading at a multiple well below the sector average and think about buying it immediately, just because of that. What have you already learned about P/E in another lesson that suggests it's worth investigating first?",
+                  "options": [
+                    "Nothing, a low multiple is always reason enough to buy",
+                    "That a lower multiple can reflect higher risk or worse prospects, not just an opportunity — it's worth investigating the reason for the difference before concluding anything",
+                    "That multiples should never be compared between companies in the same sector",
+                    "That this company is certainly a fraud"
+                  ],
+                  "explanation": "Just like you saw with P/E, a below-average multiple isn't automatically a bargain — it can reflect risks or worse expectations that need to be investigated before any conclusion."
+                },
+                "es": {
+                  "prompt": "Encuentras una empresa negociada a un múltiplo bastante por debajo del promedio del sector y piensas en comprarla de inmediato, solo por eso. ¿Qué aprendiste ya sobre el P/E en otra lección que sugiere que vale la pena investigar antes?",
+                  "options": [
+                    "Nada, un múltiplo bajo siempre es motivo suficiente para comprar",
+                    "Que un múltiplo más bajo puede reflejar un mayor riesgo o peores perspectivas, no solo una oportunidad — vale la pena investigar el motivo de la diferencia antes de concluir algo",
+                    "Que los múltiplos nunca deben compararse entre empresas del mismo sector",
+                    "Que esa empresa seguramente es un fraude"
+                  ],
+                  "explanation": "Al igual que viste con el P/E, un múltiplo por debajo del promedio no es automáticamente una ganga — puede reflejar riesgos o expectativas peores que deben investigarse antes de cualquier conclusión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Avaliação por múltiplos compara indicadores de uma empresa com os de empresas parecidas.",
+                    "Um múltiplo abaixo da média do setor é um ponto de partida para investigação, não uma conclusão.",
+                    "Diferenças entre empresas precisam ser consideradas antes de qualquer comparação direta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Multiples-based valuation compares a company's indicators with those of similar companies.",
+                    "A below-average multiple is a starting point for investigation, not a conclusion.",
+                    "Differences between companies need to be considered before any direct comparison."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La valuación por múltiplos compara los indicadores de una empresa con los de empresas parecidas.",
+                    "Un múltiplo por debajo del promedio del sector es un punto de partida para investigar, no una conclusión.",
+                    "Las diferencias entre empresas deben considerarse antes de cualquier comparación directa."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_discounted_cash_flow",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fluxo de Caixa Descontado"
+            },
+            "en": {
+              "title": "Discounted Cash Flow"
+            },
+            "es": {
+              "title": "Flujo de Caja Descontado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O valor de hoje do dinheiro de amanhã",
+                  "body": "Fluxo de caixa descontado é um método de valuation que estima o valor de uma empresa somando todo o caixa que ela deve gerar no futuro, mas trazendo cada um desses valores futuros para o seu equivalente em dinheiro de hoje — usando o conceito de valor do dinheiro no tempo que você já estudou. Quanto mais distante no futuro está o fluxo de caixa, e quanto maior a taxa de desconto usada, menor é o peso desse fluxo no valor presente estimado."
+                },
+                "en": {
+                  "title": "Today's value of tomorrow's money",
+                  "body": "Discounted cash flow is a valuation method that estimates a company's value by adding up all the cash it's expected to generate in the future, but bringing each of those future amounts back to their equivalent value in today's money — using the time value of money concept you already studied. The further in the future a cash flow is, and the higher the discount rate used, the smaller its weight in the estimated present value."
+                },
+                "es": {
+                  "title": "El valor de hoy del dinero de mañana",
+                  "body": "El flujo de caja descontado es un método de valuación que estima el valor de una empresa sumando todo el efectivo que se espera que genere en el futuro, pero trayendo cada uno de esos montos futuros a su equivalente en dinero de hoy — usando el concepto de valor del dinero en el tiempo que ya estudiaste. Cuanto más distante en el futuro esté el flujo de caja, y cuanto mayor sea la tasa de descuento usada, menor es su peso en el valor presente estimado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa deve gerar R$1 milhão de caixa daqui a 1 ano e outro R$1 milhão daqui a 10 anos. Usando uma taxa de desconto razoável, o valor presente do primeiro R$1 milhão é bem mais próximo de R$1 milhão do que o valor presente do segundo, já que o dinheiro distante no tempo vale menos hoje — o mesmo princípio do valor do dinheiro no tempo, aplicado à avaliação de um negócio inteiro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company is expected to generate R$1 million in cash a year from now and another R$1 million 10 years from now. Using a reasonable discount rate, the present value of the first R$1 million is much closer to R$1 million than the present value of the second, since money far off in time is worth less today — the same time value of money principle, applied to valuing an entire business."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Se espera que una empresa genere R$1 millón de caja dentro de 1 año y otro R$1 millón dentro de 10 años. Usando una tasa de descuento razonable, el valor presente del primer R$1 millón está mucho más cerca de R$1 millón que el valor presente del segundo, ya que el dinero lejano en el tiempo vale menos hoy — el mismo principio del valor del dinero en el tiempo, aplicado a la valuación de un negocio entero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o fluxo de caixa descontado faz com os fluxos de caixa futuros de uma empresa?",
+                  "options": [
+                    "Ele soma os valores futuros sem nenhum ajuste",
+                    "Ele traz cada fluxo futuro para seu equivalente em valor presente, usando uma taxa de desconto",
+                    "Ele ignora completamente qualquer fluxo de caixa futuro",
+                    "Ele só considera o caixa gerado no ano corrente"
+                  ],
+                  "explanation": "O método traz cada fluxo de caixa futuro para seu valor presente equivalente, aplicando o conceito de valor do dinheiro no tempo, antes de somar tudo para chegar ao valor estimado da empresa."
+                },
+                "en": {
+                  "prompt": "What does discounted cash flow do with a company's future cash flows?",
+                  "options": [
+                    "It adds up the future amounts with no adjustment at all",
+                    "It brings each future flow back to its present-value equivalent, using a discount rate",
+                    "It completely ignores any future cash flow",
+                    "It only considers cash generated in the current year"
+                  ],
+                  "explanation": "The method brings each future cash flow back to its present-value equivalent, applying the time value of money concept, before adding everything up to reach the company's estimated value."
+                },
+                "es": {
+                  "prompt": "¿Qué hace el flujo de caja descontado con los flujos de caja futuros de una empresa?",
+                  "options": [
+                    "Suma los montos futuros sin ningún ajuste",
+                    "Trae cada flujo futuro a su equivalente en valor presente, usando una tasa de descuento",
+                    "Ignora por completo cualquier flujo de caja futuro",
+                    "Solo considera la caja generada en el año actual"
+                  ],
+                  "explanation": "El método trae cada flujo de caja futuro a su equivalente en valor presente, aplicando el concepto de valor del dinero en el tiempo, antes de sumar todo para llegar al valor estimado de la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende valor do dinheiro no tempo de outra lição. Por que um fluxo de caixa esperado para daqui a 20 anos pesa muito menos no cálculo de fluxo de caixa descontado do que um fluxo esperado para o ano que vem?",
+                  "options": [
+                    "Porque fluxos de caixa distantes nunca são considerados de forma alguma",
+                    "Porque, aplicando o valor do dinheiro no tempo, um valor muito distante no futuro equivale a um valor presente bem menor, mesmo que o número nominal seja o mesmo",
+                    "Porque a empresa provavelmente não vai existir em 20 anos",
+                    "Não existe diferença nenhuma entre os dois horizontes de tempo"
+                  ],
+                  "explanation": "O mesmo princípio de valor do dinheiro no tempo que você já estudou explica por que fluxos distantes no futuro contribuem menos para o valor presente estimado do que fluxos mais próximos, mesmo com o mesmo valor nominal."
+                },
+                "en": {
+                  "prompt": "You already understand the time value of money from another lesson. Why does a cash flow expected 20 years from now weigh much less in the discounted cash flow calculation than a flow expected next year?",
+                  "options": [
+                    "Because distant cash flows are never considered at all",
+                    "Because, applying the time value of money, a value very far in the future equates to a much smaller present value, even if the nominal number is the same",
+                    "Because the company probably won't exist in 20 years",
+                    "There's no difference at all between the two time horizons"
+                  ],
+                  "explanation": "The same time value of money principle you already studied explains why distant future flows contribute less to the estimated present value than closer flows, even with the same nominal amount."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el valor del dinero en el tiempo de otra lección. ¿Por qué un flujo de caja esperado para dentro de 20 años pesa mucho menos en el cálculo del flujo de caja descontado que un flujo esperado para el próximo año?",
+                  "options": [
+                    "Porque los flujos de caja distantes nunca se consideran en absoluto",
+                    "Porque, aplicando el valor del dinero en el tiempo, un valor muy lejano en el futuro equivale a un valor presente mucho menor, aunque el número nominal sea el mismo",
+                    "Porque la empresa probablemente no existirá en 20 años",
+                    "No existe ninguna diferencia entre ambos horizontes de tiempo"
+                  ],
+                  "explanation": "El mismo principio del valor del dinero en el tiempo que ya estudiaste explica por qué los flujos lejanos en el futuro contribuyen menos al valor presente estimado que los flujos más cercanos, incluso con el mismo monto nominal."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Fluxo de caixa descontado estima o valor de uma empresa a partir de seus fluxos futuros de caixa.",
+                    "Cada fluxo futuro é trazido a valor presente, usando o conceito de valor do dinheiro no tempo.",
+                    "Fluxos mais distantes no futuro pesam menos no valor presente estimado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Discounted cash flow estimates a company's value from its future cash flows.",
+                    "Each future flow is brought to present value, using the time value of money concept.",
+                    "Flows further in the future weigh less in the estimated present value."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El flujo de caja descontado estima el valor de una empresa a partir de sus flujos de caja futuros.",
+                    "Cada flujo futuro se trae a valor presente, usando el concepto de valor del dinero en el tiempo.",
+                    "Los flujos más distantes en el futuro pesan menos en el valor presente estimado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_asset_based",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Avaliação por Ativos"
+            },
+            "en": {
+              "title": "Asset-Based Valuation"
+            },
+            "es": {
+              "title": "Valuación por Activos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma terceira abordagem: o que a empresa possui",
+                  "body": "Além de estimar o valor de uma empresa pelos fluxos de caixa que ela deve gerar (fluxo de caixa descontado) ou por comparação com empresas parecidas (múltiplos), existe uma terceira abordagem clássica: estimar o valor a partir do que a empresa efetivamente possui — seus ativos, menos suas dívidas e outras obrigações. Essa abordagem tende a ser mais informativa para negócios com muitos ativos tangíveis, como holdings imobiliárias ou empresas em processo de liquidação, e menos informativa para negócios cujo valor vem principalmente de ativos intangíveis, como marca ou tecnologia, que não aparecem claramente no balanço."
+                },
+                "en": {
+                  "title": "A third approach: what the company actually owns",
+                  "body": "Besides estimating a company's value from the cash flows it's expected to generate (discounted cash flow) or by comparison with similar companies (multiples), there's a third classic approach: estimating value from what the company actually owns — its assets, minus its debts and other obligations. This approach tends to be more informative for businesses with lots of tangible assets, like real estate holding companies or companies in liquidation, and less informative for businesses whose value comes mainly from intangible assets, like brand or technology, which don't show up clearly on the balance sheet."
+                },
+                "es": {
+                  "title": "Un tercer enfoque: lo que la empresa realmente posee",
+                  "body": "Además de estimar el valor de una empresa por los flujos de caja que se espera que genere (flujo de caja descontado) o por comparación con empresas parecidas (múltiplos), existe un tercer enfoque clásico: estimar el valor a partir de lo que la empresa realmente posee — sus activos, menos sus deudas y otras obligaciones. Este enfoque tiende a ser más informativo para negocios con muchos activos tangibles, como holdings inmobiliarias o empresas en proceso de liquidación, y menos informativo para negocios cuyo valor proviene principalmente de activos intangibles, como marca o tecnología, que no aparecen claramente en el balance."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma holding possui imóveis avaliados em R$100 milhões e tem R$20 milhões em dívidas, sem nenhuma operação própria relevante além de deter esses imóveis. O valor patrimonial líquido estimado seria de R$80 milhões. Se essa holding é negociada no mercado por R$50 milhões, essa diferença é um ponto que merece investigação — pode refletir um desconto de liquidez ou obrigações não evidentes, por exemplo — já que fluxo de caixa descontado e múltiplos seriam menos úteis aqui, pois a empresa não gera caixa operacional significativo por conta própria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A holding company owns real estate valued at R$100 million and has R$20 million in debt, with no significant operations of its own beyond holding these properties. The estimated net asset value would be R$80 million. If this holding trades in the market for R$50 million, that gap is a point worth investigating — it might reflect a liquidity discount or non-obvious obligations, for example — since discounted cash flow and multiples would be less useful here, as the company doesn't generate significant operating cash on its own."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una holding posee inmuebles valorados en R$100 millones y tiene R$20 millones en deudas, sin ninguna operación propia relevante más allá de poseer esos inmuebles. El valor patrimonial neto estimado sería de R$80 millones. Si esa holding se negocia en el mercado por R$50 millones, esa diferencia es un punto que merece investigación — puede reflejar un descuento de liquidez u obligaciones no evidentes, por ejemplo — ya que el flujo de caja descontado y los múltiplos serían menos útiles aquí, pues la empresa no genera caja operativa significativa por cuenta propia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "A partir de que a avaliação por ativos estima o valor de uma empresa?",
+                  "options": [
+                    "A partir apenas dos fluxos de caixa futuros esperados",
+                    "A partir dos ativos que a empresa possui, menos suas dívidas e outras obrigações",
+                    "A partir exclusivamente da comparação com múltiplos de outras empresas do setor",
+                    "A partir apenas do preço histórico da ação nos últimos anos"
+                  ],
+                  "explanation": "Avaliação por ativos parte do que a empresa efetivamente possui — seus ativos líquidos de dívidas e obrigações — em vez de projeções de caixa futuro ou comparação com pares."
+                },
+                "en": {
+                  "prompt": "What does asset-based valuation estimate a company's value from?",
+                  "options": [
+                    "Only from the expected future cash flows",
+                    "From the assets the company owns, minus its debts and other obligations",
+                    "Exclusively from comparing multiples with other companies in the sector",
+                    "Only from the stock's historical price over recent years"
+                  ],
+                  "explanation": "Asset-based valuation starts from what the company actually owns — its assets net of debts and obligations — instead of future cash projections or comparison with peers."
+                },
+                "es": {
+                  "prompt": "¿A partir de qué estima la valuación por activos el valor de una empresa?",
+                  "options": [
+                    "Solo a partir de los flujos de caja futuros esperados",
+                    "A partir de los activos que posee la empresa, menos sus deudas y otras obligaciones",
+                    "Exclusivamente a partir de la comparación de múltiplos con otras empresas del sector",
+                    "Solo a partir del precio histórico de la acción en los últimos años"
+                  ],
+                  "explanation": "La valuación por activos parte de lo que la empresa realmente posee — sus activos netos de deudas y obligaciones — en lugar de proyecciones de caja futura o comparación con pares."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição, que o indicador P/VP compara o preço de uma ação com seu valor patrimonial contábil por ação. Como a avaliação por ativos se relaciona com esse indicador?",
+                  "options": [
+                    "Não tem nenhuma relação, são conceitos completamente distintos",
+                    "P/VP usa diretamente o valor contábil já registrado pela empresa, enquanto a avaliação por ativos vai além, tentando reestimar de forma mais independente quanto esses ativos realmente valem",
+                    "P/VP e avaliação por ativos são exatamente o mesmo cálculo, sem nenhuma diferença",
+                    "Avaliação por ativos só pode ser usada quando o P/VP de uma empresa é negativo"
+                  ],
+                  "explanation": "O P/VP parte do valor patrimonial contábil já reportado nas demonstrações financeiras, enquanto a avaliação por ativos busca reestimar o valor real desses ativos de forma mais direta — as duas ideias são parentes, mas não idênticas."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson, that the P/B ratio compares a stock's price with its book value per share. How does asset-based valuation relate to that indicator?",
+                  "options": [
+                    "It has no relation at all, they're completely unrelated concepts",
+                    "P/B directly uses the book value the company already reports, while asset-based valuation goes further, trying to re-estimate more independently how much those assets are actually worth",
+                    "P/B and asset-based valuation are exactly the same calculation, with no difference",
+                    "Asset-based valuation can only be used when a company's P/B is negative"
+                  ],
+                  "explanation": "P/B starts from the book value already reported in the financial statements, while asset-based valuation seeks to re-estimate the real value of those assets more directly — the two ideas are related, but not identical."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección, que el indicador P/VP compara el precio de una acción con su valor patrimonial contable por acción. ¿Cómo se relaciona la valuación por activos con ese indicador?",
+                  "options": [
+                    "No tiene ninguna relación, son conceptos completamente distintos",
+                    "El P/VP usa directamente el valor contable ya registrado por la empresa, mientras que la valuación por activos va más allá, intentando reestimar de forma más independiente cuánto valen realmente esos activos",
+                    "El P/VP y la valuación por activos son exactamente el mismo cálculo, sin ninguna diferencia",
+                    "La valuación por activos solo puede usarse cuando el P/VP de una empresa es negativo"
+                  ],
+                  "explanation": "El P/VP parte del valor patrimonial contable ya reportado en los estados financieros, mientras que la valuación por activos busca reestimar el valor real de esos activos de forma más directa — las dos ideas están relacionadas, pero no son idénticas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Avaliação por ativos estima o valor de uma empresa a partir de seus ativos, menos dívidas e obrigações.",
+                    "Essa abordagem tende a ser mais útil para negócios com muitos ativos tangíveis, e menos útil para negócios com valor concentrado em intangíveis.",
+                    "Ela é uma versão mais aprofundada da lógica por trás de indicadores como o P/VP."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Asset-based valuation estimates a company's value from its assets, minus debts and obligations.",
+                    "This approach tends to be more useful for businesses with many tangible assets, and less useful for businesses whose value is concentrated in intangibles.",
+                    "It's a deeper version of the logic behind indicators like P/B."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La valuación por activos estima el valor de una empresa a partir de sus activos, menos deudas y obligaciones.",
+                    "Este enfoque tiende a ser más útil para negocios con muchos activos tangibles, y menos útil para negocios con valor concentrado en intangibles.",
+                    "Es una versión más profunda de la lógica detrás de indicadores como el P/VP."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "advanced_valuation_topics",
+      "order": 2,
+      "iconKey": "insights_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "valuation_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Tópicos Avançados de Valuation",
+          "description": "EV/EBITDA, modelo de desconto de dividendos, valuation em diferentes fases da empresa e armadilha de valor."
+        },
+        "en": {
+          "title": "Advanced Valuation Topics",
+          "description": "EV/EBITDA, dividend discount model, valuation at different company stages and value traps."
+        },
+        "es": {
+          "title": "Temas Avanzados de Valuación",
+          "description": "EV/EBITDA, modelo de descuento de dividendos, valuación en diferentes fases de la empresa y trampa de valor."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "valuation_ev_ebitda",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "EV/EBITDA"
+            },
+            "en": {
+              "title": "EV/EBITDA"
+            },
+            "es": {
+              "title": "EV/EBITDA"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um múltiplo que considera a dívida",
+                  "body": "EV/EBITDA compara o valor da empresa (Enterprise Value, ou EV — que soma o valor de mercado das ações à dívida líquida) com o EBITDA (lucro antes de juros, impostos, depreciação e amortização). Diferente do P/L, que usa apenas o valor de mercado das ações, o EV/EBITDA leva em conta a dívida da empresa, permitindo comparar negócios com estruturas de capital diferentes — como uma empresa com pouca dívida e outra bastante endividada — de forma mais equilibrada."
+                },
+                "en": {
+                  "title": "A multiple that accounts for debt",
+                  "body": "EV/EBITDA compares a company's Enterprise Value (EV — which adds the market value of the stock to net debt) with EBITDA (earnings before interest, taxes, depreciation, and amortization). Unlike P/E, which uses only the stock's market value, EV/EBITDA accounts for the company's debt, allowing comparison of businesses with different capital structures — like a company with little debt and another that's heavily leveraged — in a more balanced way."
+                },
+                "es": {
+                  "title": "Un múltiplo que considera la deuda",
+                  "body": "El EV/EBITDA compara el valor de la empresa (Enterprise Value, o EV — que suma el valor de mercado de las acciones a la deuda neta) con el EBITDA (ganancia antes de intereses, impuestos, depreciación y amortización). A diferencia del P/E, que usa solo el valor de mercado de las acciones, el EV/EBITDA tiene en cuenta la deuda de la empresa, permitiendo comparar negocios con estructuras de capital diferentes — como una empresa con poca deuda y otra bastante endeudada — de forma más equilibrada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas têm o mesmo valor de mercado em ações, mas uma tem uma dívida líquida muito maior do que a outra. Olhando só o P/L, as duas poderiam parecer parecidas; olhando o EV/EBITDA, que incorpora a dívida no cálculo do valor da empresa, a diferença no nível de endividamento fica mais visível na comparação."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies have the same market value in stock, but one has much higher net debt than the other. Looking only at P/E, the two might seem similar; looking at EV/EBITDA, which incorporates debt into the company's value calculation, the difference in debt level becomes more visible in the comparison."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas tienen el mismo valor de mercado en acciones, pero una tiene una deuda neta mucho mayor que la otra. Mirando solo el P/E, ambas podrían parecer similares; mirando el EV/EBITDA, que incorpora la deuda en el cálculo del valor de la empresa, la diferencia en el nivel de endeudamiento se vuelve más visible en la comparación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia o EV/EBITDA do P/L como indicador de comparação entre empresas?",
+                  "options": [
+                    "Não existe diferença nenhuma entre os dois",
+                    "EV/EBITDA leva em conta a dívida da empresa através do Enterprise Value, enquanto P/L considera apenas o valor de mercado das ações",
+                    "P/L sempre é mais preciso do que EV/EBITDA",
+                    "EV/EBITDA só pode ser usado em empresas sem nenhuma dívida"
+                  ],
+                  "explanation": "EV/EBITDA incorpora a dívida líquida no cálculo do valor da empresa, o que o torna mais adequado para comparar empresas com estruturas de capital diferentes do que o P/L, que olha apenas o valor de mercado das ações."
+                },
+                "en": {
+                  "prompt": "What differentiates EV/EBITDA from P/E as an indicator for comparing companies?",
+                  "options": [
+                    "There's no difference at all between the two",
+                    "EV/EBITDA accounts for the company's debt through Enterprise Value, while P/E considers only the stock's market value",
+                    "P/E is always more accurate than EV/EBITDA",
+                    "EV/EBITDA can only be used for companies with no debt at all"
+                  ],
+                  "explanation": "EV/EBITDA incorporates net debt into the calculation of the company's value, which makes it more suitable for comparing companies with different capital structures than P/E, which looks only at the stock's market value."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia al EV/EBITDA del P/E como indicador de comparación entre empresas?",
+                  "options": [
+                    "No existe ninguna diferencia entre ambos",
+                    "El EV/EBITDA tiene en cuenta la deuda de la empresa a través del Enterprise Value, mientras que el P/E considera solo el valor de mercado de las acciones",
+                    "El P/E siempre es más preciso que el EV/EBITDA",
+                    "El EV/EBITDA solo puede usarse en empresas sin ninguna deuda"
+                  ],
+                  "explanation": "El EV/EBITDA incorpora la deuda neta en el cálculo del valor de la empresa, lo que lo hace más adecuado para comparar empresas con estructuras de capital diferentes que el P/E, que mira solo el valor de mercado de las acciones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende endividamento de outra lição. Por que comparar duas empresas com níveis de dívida muito diferentes usando apenas o P/L pode ser enganoso?",
+                  "options": [
+                    "Não é enganoso, P/L já considera automaticamente a dívida de qualquer empresa",
+                    "Porque P/L ignora a dívida da empresa, então duas empresas com o mesmo P/L podem ter riscos financeiros bem diferentes se uma tiver muito mais dívida do que a outra",
+                    "Porque P/L só pode ser calculado para empresas sem dívida",
+                    "Porque dívida nunca afeta a avaliação de uma empresa"
+                  ],
+                  "explanation": "Como o P/L não considera a dívida, duas empresas com P/L parecido podem ter perfis de risco bem diferentes se o nível de endividamento entre elas variar bastante — o EV/EBITDA ajuda a capturar essa diferença."
+                },
+                "en": {
+                  "prompt": "You already understand debt from another lesson. Why can comparing two companies with very different debt levels using only P/E be misleading?",
+                  "options": [
+                    "It's not misleading, P/E already automatically accounts for any company's debt",
+                    "Because P/E ignores the company's debt, so two companies with the same P/E can have quite different financial risks if one has much more debt than the other",
+                    "Because P/E can only be calculated for companies with no debt",
+                    "Because debt never affects a company's valuation"
+                  ],
+                  "explanation": "Since P/E doesn't account for debt, two companies with similar P/E can have quite different risk profiles if their debt levels vary a lot — EV/EBITDA helps capture that difference."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el endeudamiento de otra lección. ¿Por qué comparar dos empresas con niveles de deuda muy diferentes usando solo el P/E puede ser engañoso?",
+                  "options": [
+                    "No es engañoso, el P/E ya considera automáticamente la deuda de cualquier empresa",
+                    "Porque el P/E ignora la deuda de la empresa, así que dos empresas con el mismo P/E pueden tener riesgos financieros bastante diferentes si una tiene mucha más deuda que la otra",
+                    "Porque el P/E solo puede calcularse para empresas sin deuda",
+                    "Porque la deuda nunca afecta la valuación de una empresa"
+                  ],
+                  "explanation": "Como el P/E no considera la deuda, dos empresas con P/E parecido pueden tener perfiles de riesgo bastante diferentes si el nivel de endeudamiento entre ellas varía mucho — el EV/EBITDA ayuda a capturar esa diferencia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "EV/EBITDA compara o valor da empresa (incluindo dívida) com seu EBITDA.",
+                    "Ele permite comparações mais equilibradas entre empresas com estruturas de capital diferentes.",
+                    "P/L, ao ignorar a dívida, pode esconder diferenças relevantes de risco entre empresas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "EV/EBITDA compares the company's value (including debt) with its EBITDA.",
+                    "It allows more balanced comparisons between companies with different capital structures.",
+                    "P/E, by ignoring debt, can hide relevant risk differences between companies."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El EV/EBITDA compara el valor de la empresa (incluyendo deuda) con su EBITDA.",
+                    "Permite comparaciones más equilibradas entre empresas con estructuras de capital diferentes.",
+                    "El P/E, al ignorar la deuda, puede esconder diferencias relevantes de riesgo entre empresas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_dividend_discount_model",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Modelo de Desconto de Dividendos"
+            },
+            "en": {
+              "title": "Dividend Discount Model"
+            },
+            "es": {
+              "title": "Modelo de Descuento de Dividendos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Valorizando uma ação pelos dividendos futuros",
+                  "body": "O modelo de desconto de dividendos estima o valor de uma ação somando todos os dividendos futuros esperados, trazidos a valor presente — aplicando o mesmo princípio de valor do dinheiro no tempo usado no fluxo de caixa descontado, mas focando especificamente nos dividendos que o acionista deve receber, em vez do caixa gerado pela empresa como um todo. Esse modelo costuma ser mais adequado para empresas maduras, com histórico consistente de distribuição de dividendos, e menos adequado para empresas que não pagam dividendos ou que estão em fase de forte crescimento."
+                },
+                "en": {
+                  "title": "Valuing a stock by its future dividends",
+                  "body": "The dividend discount model estimates a stock's value by adding up all expected future dividends, brought to present value — applying the same time value of money principle used in discounted cash flow, but focusing specifically on the dividends a shareholder is expected to receive, instead of the cash generated by the company as a whole. This model tends to be more suitable for mature companies, with a consistent dividend distribution history, and less suitable for companies that don't pay dividends or are in a strong growth phase."
+                },
+                "es": {
+                  "title": "Valuando una acción por sus dividendos futuros",
+                  "body": "El modelo de descuento de dividendos estima el valor de una acción sumando todos los dividendos futuros esperados, traídos a valor presente — aplicando el mismo principio de valor del dinero en el tiempo usado en el flujo de caja descontado, pero enfocándose específicamente en los dividendos que el accionista debe recibir, en lugar de la caja generada por la empresa en su conjunto. Este modelo suele ser más adecuado para empresas maduras, con historial consistente de distribución de dividendos, y menos adecuado para empresas que no pagan dividendos o que están en fase de fuerte crecimiento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa de energia elétrica, madura e com histórico consistente de dividendos, é uma boa candidata para o modelo de desconto de dividendos — seus dividendos futuros são mais previsíveis. Já uma empresa de tecnologia em fase de forte crescimento, que reinveste todo o lucro e não paga dividendo nenhum, não tem dividendos futuros claros para estimar, tornando esse modelo específico pouco útil nesse caso."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A mature electric utility company, with a consistent dividend history, is a good candidate for the dividend discount model — its future dividends are more predictable. A technology company in a strong growth phase, which reinvests all its profit and pays no dividends at all, has no clear future dividends to estimate, making this specific model not very useful in that case."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa de energía eléctrica, madura y con historial consistente de dividendos, es una buena candidata para el modelo de descuento de dividendos — sus dividendos futuros son más predecibles. En cambio, una empresa de tecnología en fase de fuerte crecimiento, que reinvierte toda la ganancia y no paga ningún dividendo, no tiene dividendos futuros claros para estimar, lo que hace que este modelo específico sea poco útil en ese caso."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como o modelo de desconto de dividendos estima o valor de uma ação?",
+                  "options": [
+                    "Somando apenas o preço atual da ação no mercado",
+                    "Somando todos os dividendos futuros esperados, trazidos a valor presente",
+                    "Ignorando completamente qualquer distribuição futura de caixa",
+                    "Comparando a ação com múltiplos de outras empresas do setor"
+                  ],
+                  "explanation": "O modelo soma os dividendos futuros esperados, descontados a valor presente, aplicando o princípio de valor do dinheiro no tempo especificamente aos pagamentos esperados ao acionista."
+                },
+                "en": {
+                  "prompt": "How does the dividend discount model estimate a stock's value?",
+                  "options": [
+                    "By adding up only the stock's current market price",
+                    "By adding up all expected future dividends, brought to present value",
+                    "By completely ignoring any future cash distribution",
+                    "By comparing the stock with multiples of other companies in the sector"
+                  ],
+                  "explanation": "The model adds up expected future dividends, discounted to present value, applying the time value of money principle specifically to the payments expected by the shareholder."
+                },
+                "es": {
+                  "prompt": "¿Cómo estima el modelo de descuento de dividendos el valor de una acción?",
+                  "options": [
+                    "Sumando solo el precio actual de la acción en el mercado",
+                    "Sumando todos los dividendos futuros esperados, traídos a valor presente",
+                    "Ignorando por completo cualquier distribución futura de caja",
+                    "Comparando la acción con múltiplos de otras empresas del sector"
+                  ],
+                  "explanation": "El modelo suma los dividendos futuros esperados, descontados a valor presente, aplicando el principio del valor del dinero en el tiempo específicamente a los pagos esperados por el accionista."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer aplicar o modelo de desconto de dividendos em uma empresa de tecnologia que nunca pagou dividendos e reinveste 100% do lucro em crescimento. O que isso sugere sobre a adequação desse modelo para essa empresa específica?",
+                  "options": [
+                    "O modelo funciona perfeitamente bem, independentemente de a empresa pagar dividendos ou não",
+                    "Sem dividendos históricos ou esperados no curto e médio prazo, esse modelo específico tende a ser pouco útil para essa empresa — outras abordagens de valuation seriam mais adequadas",
+                    "Isso significa que a empresa não tem nenhum valor",
+                    "O modelo de desconto de dividendos só pode ser usado em empresas de tecnologia"
+                  ],
+                  "explanation": "O modelo de desconto de dividendos depende de estimar dividendos futuros — para uma empresa sem histórico de pagamento e sem planos de pagar no curto ou médio prazo, esse modelo específico não é a ferramenta mais adequada."
+                },
+                "en": {
+                  "prompt": "You want to apply the dividend discount model to a technology company that has never paid dividends and reinvests 100% of its profit in growth. What does this suggest about this model's suitability for this specific company?",
+                  "options": [
+                    "The model works perfectly well, regardless of whether the company pays dividends or not",
+                    "With no historical or expected dividends in the short or medium term, this specific model tends to be not very useful for this company — other valuation approaches would be more suitable",
+                    "This means the company has no value at all",
+                    "The dividend discount model can only be used for technology companies"
+                  ],
+                  "explanation": "The dividend discount model depends on estimating future dividends — for a company with no payment history and no plans to pay in the short or medium term, this specific model isn't the most suitable tool."
+                },
+                "es": {
+                  "prompt": "Quieres aplicar el modelo de descuento de dividendos a una empresa de tecnología que nunca pagó dividendos y reinvierte el 100% de la ganancia en crecimiento. ¿Qué sugiere esto sobre la idoneidad de este modelo para esta empresa específica?",
+                  "options": [
+                    "El modelo funciona perfectamente bien, sin importar si la empresa paga dividendos o no",
+                    "Sin dividendos históricos o esperados en el corto o mediano plazo, este modelo específico tiende a ser poco útil para esta empresa — otros enfoques de valuación serían más adecuados",
+                    "Esto significa que la empresa no tiene ningún valor",
+                    "El modelo de descuento de dividendos solo puede usarse en empresas de tecnología"
+                  ],
+                  "explanation": "El modelo de descuento de dividendos depende de estimar dividendos futuros — para una empresa sin historial de pago y sin planes de pagar en el corto o mediano plazo, este modelo específico no es la herramienta más adecuada."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O modelo de desconto de dividendos soma dividendos futuros esperados, trazidos a valor presente.",
+                    "Ele tende a ser mais adequado para empresas maduras, com histórico consistente de dividendos.",
+                    "Para empresas sem dividendos, outras abordagens de valuation costumam ser mais úteis."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The dividend discount model adds up expected future dividends, brought to present value.",
+                    "It tends to be more suitable for mature companies, with a consistent dividend history.",
+                    "For companies with no dividends, other valuation approaches tend to be more useful."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El modelo de descuento de dividendos suma dividendos futuros esperados, traídos a valor presente.",
+                    "Tiende a ser más adecuado para empresas maduras, con historial consistente de dividendos.",
+                    "Para empresas sin dividendos, otros enfoques de valuación suelen ser más útiles."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_growth_vs_mature",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Valuation em Diferentes Fases da Empresa"
+            },
+            "en": {
+              "title": "Valuation at Different Company Stages"
+            },
+            "es": {
+              "title": "Valuación en Diferentes Fases de la Empresa"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem toda empresa deve ser avaliada da mesma forma",
+                  "body": "Empresas em fases diferentes de maturidade costumam pedir abordagens de valuation diferentes. Empresas em forte crescimento, muitas vezes ainda sem lucro consistente, tendem a ser avaliadas com mais peso nas expectativas futuras de crescimento de receita, já que indicadores como P/L podem não fazer sentido sem lucro atual. Empresas maduras, com fluxos de caixa e dividendos mais previsíveis, tendem a ser mais bem avaliadas por modelos que dependem dessa previsibilidade, como fluxo de caixa descontado ou desconto de dividendos."
+                },
+                "en": {
+                  "title": "Not every company should be valued the same way",
+                  "body": "Companies at different maturity stages usually call for different valuation approaches. Fast-growing companies, often still without consistent profit, tend to be valued with more weight on future revenue growth expectations, since indicators like P/E might not make sense without current earnings. Mature companies, with more predictable cash flows and dividends, tend to be better valued by models that depend on that predictability, like discounted cash flow or dividend discount."
+                },
+                "es": {
+                  "title": "No toda empresa debe valuarse de la misma forma",
+                  "body": "Las empresas en fases diferentes de madurez suelen requerir enfoques de valuación diferentes. Las empresas en fuerte crecimiento, muchas veces todavía sin ganancia consistente, tienden a valuarse con más peso en las expectativas futuras de crecimiento de ingresos, ya que indicadores como el P/E pueden no tener sentido sin ganancia actual. Las empresas maduras, con flujos de caja y dividendos más predecibles, tienden a valuarse mejor con modelos que dependen de esa previsibilidad, como el flujo de caja descontado o el descuento de dividendos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma startup de tecnologia recém-listada em bolsa ainda não é lucrativa, mas cresce receita rapidamente — analistas tendem a focar em projeções de crescimento futuro e no tamanho potencial do mercado que ela pode atender. Já uma distribuidora de energia elétrica, com décadas de operação e fluxo de caixa estável, é avaliada de forma mais tradicional, com foco em fluxo de caixa descontado e dividendos consistentes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A recently listed technology startup isn't profitable yet, but grows revenue quickly — analysts tend to focus on future growth projections and the potential size of the market it can serve. An electric utility, with decades of operation and stable cash flow, is valued more traditionally, with a focus on discounted cash flow and consistent dividends."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una startup de tecnología recientemente listada en bolsa todavía no es rentable, pero crece ingresos rápidamente — los analistas tienden a enfocarse en proyecciones de crecimiento futuro y en el tamaño potencial del mercado que puede atender. En cambio, una distribuidora de energía eléctrica, con décadas de operación y flujo de caja estable, se valúa de forma más tradicional, con foco en el flujo de caja descontado y dividendos consistentes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que empresas em fases de maturidade diferentes costumam pedir abordagens de valuation diferentes?",
+                  "options": [
+                    "Porque não existe diferença real entre avaliar empresas em fases diferentes",
+                    "Porque indicadores como P/L ou modelos que dependem de dividendos previsíveis podem não fazer sentido para empresas sem lucro ou dividendos consistentes ainda",
+                    "Porque empresas em crescimento nunca podem ser avaliadas de nenhuma forma",
+                    "Porque só empresas maduras têm algum valor real"
+                  ],
+                  "explanation": "Indicadores e modelos de valuation costumam pressupor certas condições — como lucro positivo ou dividendos consistentes — que nem toda empresa, especialmente as em fase de forte crescimento, necessariamente atende."
+                },
+                "en": {
+                  "prompt": "Why do companies at different maturity stages usually call for different valuation approaches?",
+                  "options": [
+                    "Because there's no real difference in valuing companies at different stages",
+                    "Because indicators like P/E or models that depend on predictable dividends might not make sense for companies without consistent profit or dividends yet",
+                    "Because growing companies can never be valued in any way",
+                    "Because only mature companies have any real value"
+                  ],
+                  "explanation": "Valuation indicators and models usually assume certain conditions — like positive earnings or consistent dividends — that not every company, especially those in a strong growth phase, necessarily meets."
+                },
+                "es": {
+                  "prompt": "¿Por qué las empresas en fases de madurez diferentes suelen requerir enfoques de valuación diferentes?",
+                  "options": [
+                    "Porque no existe una diferencia real entre valuar empresas en fases diferentes",
+                    "Porque indicadores como el P/E o modelos que dependen de dividendos predecibles pueden no tener sentido para empresas sin ganancia o dividendos consistentes todavía",
+                    "Porque las empresas en crecimiento nunca pueden valuarse de ninguna forma",
+                    "Porque solo las empresas maduras tienen algún valor real"
+                  ],
+                  "explanation": "Los indicadores y modelos de valuación suelen suponer ciertas condiciones — como ganancia positiva o dividendos consistentes — que no toda empresa, especialmente las que están en fase de fuerte crecimiento, necesariamente cumple."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende P/L, EV/EBITDA e o modelo de desconto de dividendos de outras lições. Diante de uma startup recém-listada, sem lucro nem dividendos, qual abordagem provavelmente faria mais sentido considerar primeiro?",
+                  "options": [
+                    "O modelo de desconto de dividendos, já que ele é sempre o mais confiável",
+                    "Uma abordagem com mais peso em projeções de crescimento futuro de receita, já que indicadores baseados em lucro ou dividendos atuais podem não ser aplicáveis ainda",
+                    "Nenhuma abordagem de valuation pode ser usada para empresas sem lucro",
+                    "P/L, ignorando completamente a ausência de lucro"
+                  ],
+                  "explanation": "Para empresas sem lucro ou dividendos consistentes, abordagens baseadas em projeções de crescimento futuro tendem a ser mais relevantes do que indicadores ou modelos que dependem de lucro ou dividendos já estabelecidos."
+                },
+                "en": {
+                  "prompt": "You already understand P/E, EV/EBITDA, and the dividend discount model from other lessons. Faced with a recently listed startup, with no profit or dividends, which approach would likely make more sense to consider first?",
+                  "options": [
+                    "The dividend discount model, since it's always the most reliable",
+                    "An approach with more weight on future revenue growth projections, since indicators based on current profit or dividends might not be applicable yet",
+                    "No valuation approach can be used for companies with no profit",
+                    "P/E, completely ignoring the absence of profit"
+                  ],
+                  "explanation": "For companies with no profit or consistent dividends, approaches based on future growth projections tend to be more relevant than indicators or models that depend on already-established profit or dividends."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el P/E, el EV/EBITDA y el modelo de descuento de dividendos de otras lecciones. Ante una startup recién listada, sin ganancia ni dividendos, ¿qué enfoque probablemente tendría más sentido considerar primero?",
+                  "options": [
+                    "El modelo de descuento de dividendos, ya que siempre es el más confiable",
+                    "Un enfoque con más peso en proyecciones de crecimiento futuro de ingresos, ya que indicadores basados en ganancia o dividendos actuales pueden no ser aplicables todavía",
+                    "Ningún enfoque de valuación puede usarse para empresas sin ganancia",
+                    "El P/E, ignorando por completo la ausencia de ganancia"
+                  ],
+                  "explanation": "Para empresas sin ganancia o dividendos consistentes, los enfoques basados en proyecciones de crecimiento futuro tienden a ser más relevantes que indicadores o modelos que dependen de ganancia o dividendos ya establecidos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Empresas em fases de maturidade diferentes costumam pedir abordagens de valuation diferentes.",
+                    "Empresas em crescimento tendem a ser avaliadas com foco em projeções futuras de receita.",
+                    "Empresas maduras tendem a ser mais bem avaliadas por modelos baseados em fluxo de caixa ou dividendos previsíveis."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Companies at different maturity stages usually call for different valuation approaches.",
+                    "Growing companies tend to be valued with a focus on future revenue projections.",
+                    "Mature companies tend to be better valued by models based on predictable cash flow or dividends."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las empresas en fases de madurez diferentes suelen requerir enfoques de valuación diferentes.",
+                    "Las empresas en crecimiento tienden a valuarse con foco en proyecciones futuras de ingresos.",
+                    "Las empresas maduras tienden a valuarse mejor con modelos basados en flujo de caja o dividendos predecibles."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_value_trap",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Armadilha de Valor (Value Trap)"
+            },
+            "en": {
+              "title": "Value Trap"
+            },
+            "es": {
+              "title": "Trampa de Valor"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando barato demais é um sinal de alerta",
+                  "body": "Uma armadilha de valor (value trap) é uma ação que parece barata segundo indicadores tradicionais — como P/L ou P/VP baixos — mas que continua barata, ou fica ainda mais barata, porque os fundamentos do negócio estão realmente se deteriorando, e não porque o mercado está simplesmente errado sobre o preço. Diferente de uma oportunidade genuína, em que o preço está descolado do valor real por um motivo temporário, a armadilha de valor reflete um problema estrutural que o indicador barato, sozinho, não deixa claro."
+                },
+                "en": {
+                  "title": "When too cheap is a warning sign",
+                  "body": "A value trap is a stock that looks cheap according to traditional indicators — like a low P/E or P/B — but stays cheap, or gets even cheaper, because the business's fundamentals are actually deteriorating, not because the market is simply wrong about the price. Unlike a genuine opportunity, where the price is disconnected from the real value for a temporary reason, a value trap reflects a structural problem that the cheap indicator, by itself, doesn't make clear."
+                },
+                "es": {
+                  "title": "Cuando demasiado barato es una señal de alerta",
+                  "body": "Una trampa de valor (value trap) es una acción que parece barata según indicadores tradicionales — como un P/E o P/VC bajos — pero que sigue barata, o se vuelve aún más barata, porque los fundamentos del negocio realmente se están deteriorando, y no porque el mercado esté simplemente equivocado sobre el precio. A diferencia de una oportunidad genuina, en la que el precio está desconectado del valor real por un motivo temporal, la trampa de valor refleja un problema estructural que el indicador barato, por sí solo, no deja claro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa de um setor em declínio estrutural, como uma tecnologia sendo substituída por alternativas melhores, negocia a um P/L historicamente baixo. Um investidor menos experiente pode ver isso como uma pechincha, sem perceber que o P/L baixo reflete justamente a expectativa do mercado de que os lucros futuros da empresa vão continuar caindo — não um erro de precificação a ser corrigido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company in a structurally declining sector, like a technology being replaced by better alternatives, trades at a historically low P/E. A less experienced investor might see this as a bargain, without realizing the low P/E reflects exactly the market's expectation that the company's future earnings will keep falling — not a mispricing to be corrected."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa de un sector en declive estructural, como una tecnología siendo reemplazada por alternativas mejores, se negocia a un P/E históricamente bajo. Un inversor menos experimentado puede ver esto como una ganga, sin darse cuenta de que el P/E bajo refleja justamente la expectativa del mercado de que las ganancias futuras de la empresa seguirán cayendo — no un error de fijación de precio a corregir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma armadilha de valor (value trap)?",
+                  "options": [
+                    "Uma ação que sobe rapidamente logo após ser comprada",
+                    "Uma ação que parece barata por indicadores tradicionais, mas continua barata porque os fundamentos do negócio estão realmente se deteriorando",
+                    "Um tipo de imposto cobrado sobre ações consideradas baratas",
+                    "Uma ação garantidamente lucrativa no longo prazo"
+                  ],
+                  "explanation": "Armadilha de valor é quando um indicador barato reflete um problema estrutural real do negócio, não um erro de precificação do mercado a ser corrigido."
+                },
+                "en": {
+                  "prompt": "What characterizes a value trap?",
+                  "options": [
+                    "A stock that rises quickly right after being bought",
+                    "A stock that looks cheap by traditional indicators, but stays cheap because the business's fundamentals are actually deteriorating",
+                    "A type of tax charged on stocks considered cheap",
+                    "A stock guaranteed to be profitable in the long run"
+                  ],
+                  "explanation": "A value trap is when a cheap indicator reflects a real structural problem with the business, not a market mispricing to be corrected."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una trampa de valor (value trap)?",
+                  "options": [
+                    "Una acción que sube rápidamente justo después de ser comprada",
+                    "Una acción que parece barata por indicadores tradicionales, pero sigue barata porque los fundamentos del negocio realmente se están deteriorando",
+                    "Un tipo de impuesto cobrado sobre acciones consideradas baratas",
+                    "Una acción garantizadamente rentable a largo plazo"
+                  ],
+                  "explanation": "La trampa de valor es cuando un indicador barato refleja un problema estructural real del negocio, no un error de fijación de precio del mercado a corregir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que um P/L baixo, sozinho, não significa automaticamente uma pechincha — como visto em outra lição. Como esse conhecimento ajuda a evitar cair em uma armadilha de valor?",
+                  "options": [
+                    "Ele não ajuda em nada, P/L baixo é sempre um bom sinal de compra",
+                    "Ele reforça a importância de investigar por que o indicador está baixo — se reflete um problema estrutural real do negócio, e não apenas uma oportunidade temporária de precificação",
+                    "Ele confirma que qualquer ação com P/L baixo deve ser evitada",
+                    "Ele mostra que armadilhas de valor só existem em ações caras"
+                  ],
+                  "explanation": "Entender que um indicador baixo pode refletir risco real, e não apenas uma oportunidade, ajuda a investigar a causa da diferença antes de assumir que se trata de uma pechincha — evitando cair em uma armadilha de valor."
+                },
+                "en": {
+                  "prompt": "You already understand that a low P/E, by itself, doesn't automatically mean a bargain — as seen in another lesson. How does this knowledge help avoid falling into a value trap?",
+                  "options": [
+                    "It doesn't help at all, a low P/E is always a good buy signal",
+                    "It reinforces the importance of investigating why the indicator is low — whether it reflects a real structural problem with the business, and not just a temporary pricing opportunity",
+                    "It confirms that any stock with a low P/E should be avoided",
+                    "It shows that value traps only exist in expensive stocks"
+                  ],
+                  "explanation": "Understanding that a low indicator can reflect real risk, and not just an opportunity, helps investigate the cause of the difference before assuming it's a bargain — avoiding falling into a value trap."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que un P/E bajo, por sí solo, no significa automáticamente una ganga — como se vio en otra lección. ¿Cómo ayuda este conocimiento a evitar caer en una trampa de valor?",
+                  "options": [
+                    "No ayuda en nada, un P/E bajo siempre es una buena señal de compra",
+                    "Refuerza la importancia de investigar por qué el indicador está bajo — si refleja un problema estructural real del negocio, y no solo una oportunidad temporal de fijación de precio",
+                    "Confirma que cualquier acción con P/E bajo debe evitarse",
+                    "Muestra que las trampas de valor solo existen en acciones caras"
+                  ],
+                  "explanation": "Entender que un indicador bajo puede reflejar un riesgo real, y no solo una oportunidad, ayuda a investigar la causa de la diferencia antes de asumir que se trata de una ganga — evitando caer en una trampa de valor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Armadilha de valor é uma ação que parece barata, mas reflete um problema estrutural real.",
+                    "O indicador barato, sozinho, não distingue entre oportunidade genuína e armadilha de valor."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A value trap is a stock that looks cheap, but reflects a real structural problem.",
+                    "The cheap indicator, by itself, doesn't distinguish between a genuine opportunity and a value trap."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La trampa de valor es una acción que parece barata, pero refleja un problema estructural real.",
+                    "El indicador barato, por sí solo, no distingue entre una oportunidad genuina y una trampa de valor."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_relative_vs_intrinsic",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Valuation Relativo x Valuation Intrínseco",
+              "learningObjective": "Diferenciar valuation relativo (baseado na comparação com outras empresas) de valuation intrínseco (baseado nos fundamentos da própria empresa), e reconhecer quando cada abordagem é mais adequada."
+            },
+            "en": {
+              "title": "Relative Valuation vs. Intrinsic Valuation",
+              "learningObjective": "Differentiate relative valuation (based on comparison with other companies) from intrinsic valuation (based on the company's own fundamentals), and recognize when each approach is more suitable."
+            },
+            "es": {
+              "title": "Valuación Relativa vs. Valuación Intrínseca",
+              "learningObjective": "Diferenciar la valuación relativa (basada en la comparación con otras empresas) de la valuación intrínseca (basada en los fundamentos de la propia empresa), y reconocer cuándo cada enfoque es más adecuado."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas famílias de abordagens de valuation",
+                  "body": "As abordagens de valuation costumam se dividir em duas famílias. Valuation relativo estima o valor de uma empresa comparando seus indicadores com os de empresas parecidas — é o caso da avaliação por múltiplos e do EV/EBITDA, que você já estudou. Valuation intrínseco estima o valor de uma empresa a partir de seus próprios fundamentos, sem depender de comparação com outras empresas — é o caso do fluxo de caixa descontado e do modelo de desconto de dividendos. Nenhuma das duas famílias é sempre superior; elas respondem a perguntas diferentes e, na prática, costumam ser usadas em conjunto para checar se as conclusões de uma se sustentam sob a outra."
+                },
+                "en": {
+                  "title": "Two families of valuation approaches",
+                  "body": "Valuation approaches usually split into two families. Relative valuation estimates a company's value by comparing its indicators with those of similar companies — that's the case with multiples-based valuation and EV/EBITDA, which you already studied. Intrinsic valuation estimates a company's value from its own fundamentals, without depending on comparison with other companies — that's the case with discounted cash flow and the dividend discount model. Neither family is always superior; they answer different questions, and in practice they're often used together to check whether one approach's conclusions hold up under the other."
+                },
+                "es": {
+                  "title": "Dos familias de enfoques de valuación",
+                  "body": "Los enfoques de valuación suelen dividirse en dos familias. La valuación relativa estima el valor de una empresa comparando sus indicadores con los de empresas parecidas — es el caso de la valuación por múltiplos y del EV/EBITDA, que ya estudiaste. La valuación intrínseca estima el valor de una empresa a partir de sus propios fundamentos, sin depender de la comparación con otras empresas — es el caso del flujo de caja descontado y del modelo de descuento de dividendos. Ninguna de las dos familias es siempre superior; responden preguntas diferentes y, en la práctica, suelen usarse en conjunto para comprobar si las conclusiones de una se sostienen bajo la otra."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um analista estima que uma empresa vale R$45 por ação usando fluxo de caixa descontado (intrínseco). Ao mesmo tempo, ele nota que a empresa negocia a um P/L bem abaixo da média do setor (relativo). As duas abordagens apontando na mesma direção — de que a ação pode estar barata — dão mais confiança à conclusão do que se apenas uma delas tivesse sido usada."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An analyst estimates a company is worth R$45 per share using discounted cash flow (intrinsic). At the same time, they notice the company trades at a P/E well below the sector average (relative). Both approaches pointing in the same direction — that the stock might be cheap — gives more confidence in the conclusion than if only one of them had been used."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un analista estima que una empresa vale R$45 por acción usando flujo de caja descontado (intrínseca). Al mismo tiempo, nota que la empresa se negocia a un P/E bien por debajo del promedio del sector (relativa). Que ambos enfoques apunten en la misma dirección — que la acción podría estar barata — da más confianza a la conclusión que si solo se hubiera usado uno de ellos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre valuation relativo e valuation intrínseco?",
+                  "options": [
+                    "Não existe diferença, os dois termos descrevem o mesmo processo",
+                    "Valuation relativo compara a empresa com outras parecidas; valuation intrínseco estima o valor a partir dos próprios fundamentos da empresa, sem comparação",
+                    "Valuation relativo só pode ser usado em renda fixa",
+                    "Valuation intrínseco sempre gera um valor menor do que o valuation relativo"
+                  ],
+                  "explanation": "Valuation relativo depende de comparação com pares do mercado; valuation intrínseco depende apenas dos fundamentos da própria empresa, como seus fluxos de caixa ou dividendos futuros esperados."
+                },
+                "en": {
+                  "prompt": "What is the main difference between relative valuation and intrinsic valuation?",
+                  "options": [
+                    "There's no difference, both terms describe the same process",
+                    "Relative valuation compares the company with similar ones; intrinsic valuation estimates value from the company's own fundamentals, without comparison",
+                    "Relative valuation can only be used for fixed income",
+                    "Intrinsic valuation always produces a lower value than relative valuation"
+                  ],
+                  "explanation": "Relative valuation depends on comparison with market peers; intrinsic valuation depends only on the company's own fundamentals, like its expected future cash flows or dividends."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre la valuación relativa y la valuación intrínseca?",
+                  "options": [
+                    "No existe diferencia, ambos términos describen el mismo proceso",
+                    "La valuación relativa compara la empresa con otras parecidas; la valuación intrínseca estima el valor a partir de los propios fundamentos de la empresa, sin comparación",
+                    "La valuación relativa solo puede usarse en renta fija",
+                    "La valuación intrínseca siempre genera un valor menor que la valuación relativa"
+                  ],
+                  "explanation": "La valuación relativa depende de la comparación con pares del mercado; la valuación intrínseca depende solo de los fundamentos de la propia empresa, como sus flujos de caja o dividendos futuros esperados."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende avaliação por múltiplos e fluxo de caixa descontado de outra lição. Ao usar as duas abordagens na mesma empresa e chegar a conclusões parecidas sobre se ela está cara ou barata, o que isso sugere?",
+                  "options": [
+                    "Que uma das duas abordagens certamente está errada, já que só uma pode estar certa",
+                    "Que a convergência entre uma abordagem relativa (múltiplos) e uma intrínseca (fluxo de caixa descontado) reforça a confiança na conclusão, já que elas partem de lógicas diferentes",
+                    "Que múltiplos e fluxo de caixa descontado são sempre a mesma coisa",
+                    "Que usar mais de uma abordagem é sempre desnecessário e uma perda de tempo"
+                  ],
+                  "explanation": "Quando abordagens que partem de lógicas diferentes — uma comparando com pares, outra estimando fundamentos próprios — apontam para a mesma direção, isso reforça a confiança na conclusão, sem eliminar completamente a incerteza de qualquer estimativa de valuation."
+                },
+                "en": {
+                  "prompt": "You already understand multiples-based valuation and discounted cash flow from another lesson. When using both approaches on the same company and reaching similar conclusions about whether it's expensive or cheap, what does that suggest?",
+                  "options": [
+                    "That one of the two approaches must certainly be wrong, since only one can be right",
+                    "That the convergence between a relative approach (multiples) and an intrinsic one (discounted cash flow) reinforces confidence in the conclusion, since they start from different logics",
+                    "That multiples and discounted cash flow are always the same thing",
+                    "That using more than one approach is always unnecessary and a waste of time"
+                  ],
+                  "explanation": "When approaches that start from different logics — one comparing with peers, another estimating a company's own fundamentals — point in the same direction, that reinforces confidence in the conclusion, without completely eliminating the uncertainty of any valuation estimate."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la valuación por múltiplos y el flujo de caja descontado de otra lección. Al usar ambos enfoques en la misma empresa y llegar a conclusiones parecidas sobre si está cara o barata, ¿qué sugiere esto?",
+                  "options": [
+                    "Que uno de los dos enfoques ciertamente está equivocado, ya que solo uno puede tener razón",
+                    "Que la convergencia entre un enfoque relativo (múltiplos) y uno intrínseco (flujo de caja descontado) refuerza la confianza en la conclusión, ya que parten de lógicas diferentes",
+                    "Que los múltiplos y el flujo de caja descontado son siempre lo mismo",
+                    "Que usar más de un enfoque siempre es innecesario y una pérdida de tiempo"
+                  ],
+                  "explanation": "Cuando enfoques que parten de lógicas diferentes — uno comparando con pares, otro estimando fundamentos propios — apuntan en la misma dirección, eso refuerza la confianza en la conclusión, sin eliminar por completo la incertidumbre de cualquier estimación de valuación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Valuation relativo estima valor comparando a empresa com pares do mercado, como em múltiplos e EV/EBITDA.",
+                    "Valuation intrínseco estima valor a partir dos próprios fundamentos da empresa, como em fluxo de caixa descontado e desconto de dividendos.",
+                    "Quando as duas abordagens convergem para uma conclusão parecida, isso reforça a confiança na estimativa."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Relative valuation estimates value by comparing the company with market peers, as in multiples and EV/EBITDA.",
+                    "Intrinsic valuation estimates value from the company's own fundamentals, as in discounted cash flow and dividend discount.",
+                    "When both approaches converge on a similar conclusion, that reinforces confidence in the estimate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La valuación relativa estima el valor comparando la empresa con pares del mercado, como en múltiplos y EV/EBITDA.",
+                    "La valuación intrínseca estima el valor a partir de los propios fundamentos de la empresa, como en el flujo de caja descontado y el descuento de dividendos.",
+                    "Cuando ambos enfoques convergen en una conclusión parecida, eso refuerza la confianza en la estimación."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "valuation_specialized_methods",
+      "order": 3,
+      "iconKey": "insights_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "advanced_valuation_topics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Valuation: Métodos Especializados",
+          "description": "Custo de capital (WACC), valor terminal, múltiplos de comparáveis vs. transações precedentes, índice PEG e soma das partes."
+        },
+        "en": {
+          "title": "Valuation: Specialized Methods",
+          "description": "Cost of capital (WACC), terminal value, comparable vs. precedent transaction multiples, the PEG ratio and sum-of-the-parts."
+        },
+        "es": {
+          "title": "Valuación: Métodos Especializados",
+          "description": "Costo de capital (WACC), valor terminal, múltiplos de comparables vs. transacciones precedentes, índice PEG y suma de las partes."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "valuation_wacc",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custo de Capital (WACC) Como Taxa de Desconto"
+            },
+            "en": {
+              "title": "Cost of Capital (WACC) as the Discount Rate"
+            },
+            "es": {
+              "title": "Costo de Capital (WACC) Como Tasa de Descuento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A taxa que reflete o custo de financiar a empresa",
+                  "body": "O custo médio ponderado de capital (WACC, na sigla em inglês) representa o custo médio que uma empresa paga para financiar suas operações, combinando o custo de sua dívida e o custo de seu capital próprio, ponderados pela proporção de cada um na estrutura de capital da empresa. Em um fluxo de caixa descontado, o WACC costuma ser usado como a taxa de desconto que traz os fluxos de caixa futuros da empresa a valor presente — quanto maior o WACC, menor o valor presente desses fluxos, já que um custo de capital mais alto reflete maior risco percebido."
+                },
+                "en": {
+                  "title": "The rate that reflects the cost of financing the company",
+                  "body": "The weighted average cost of capital (WACC) represents the average cost a company pays to finance its operations, combining the cost of its debt and the cost of its equity, weighted by the proportion of each in the company's capital structure. In a discounted cash flow, WACC is usually used as the discount rate that brings the company's future cash flows to present value — the higher the WACC, the lower the present value of those flows, since a higher cost of capital reflects greater perceived risk."
+                },
+                "es": {
+                  "title": "La tasa que refleja el costo de financiar la empresa",
+                  "body": "El costo promedio ponderado de capital (WACC, por su sigla en inglés) representa el costo promedio que una empresa paga para financiar sus operaciones, combinando el costo de su deuda y el costo de su capital propio, ponderados por la proporción de cada uno en la estructura de capital de la empresa. En un flujo de caja descontado, el WACC suele usarse como la tasa de descuento que trae los flujos de caja futuros de la empresa a valor presente — cuanto mayor el WACC, menor el valor presente de esos flujos, ya que un costo de capital más alto refleja mayor riesgo percibido."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas com fluxos de caixa futuros projetados idênticos podem ter valuations bem diferentes se uma tiver um WACC de 8% e a outra de 14% — a empresa com WACC mais alto, geralmente por ser percebida como mais arriscada ou mais endividada, terá um valor presente menor para os mesmos fluxos futuros."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies with identical projected future cash flows can have quite different valuations if one has an 8% WACC and the other 14% — the company with the higher WACC, usually because it's perceived as riskier or more indebted, will have a lower present value for the same future flows."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas con flujos de caja futuros proyectados idénticos pueden tener valuaciones bastante diferentes si una tiene un WACC del 8% y la otra del 14% — la empresa con WACC más alto, generalmente por percibirse como más riesgosa o más endeudada, tendrá un valor presente menor para los mismos flujos futuros."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o WACC representa?",
+                  "options": [
+                    "O lucro líquido total de uma empresa em um ano",
+                    "O custo médio que uma empresa paga para financiar suas operações, combinando custo de dívida e de capital próprio",
+                    "A taxa de juros paga apenas pelos bancos que emprestam para a empresa",
+                    "O valor de mercado total das ações de uma empresa"
+                  ],
+                  "explanation": "O WACC combina o custo de dívida e o custo de capital próprio, ponderados pela estrutura de capital da empresa, representando seu custo médio de financiamento."
+                },
+                "en": {
+                  "prompt": "What does WACC represent?",
+                  "options": [
+                    "A company's total net profit in a year",
+                    "The average cost a company pays to finance its operations, combining the cost of debt and equity",
+                    "The interest rate paid only by the banks lending to the company",
+                    "The total market value of a company's shares"
+                  ],
+                  "explanation": "WACC combines the cost of debt and the cost of equity, weighted by the company's capital structure, representing its average financing cost."
+                },
+                "es": {
+                  "prompt": "¿Qué representa el WACC?",
+                  "options": [
+                    "La ganancia neta total de una empresa en un año",
+                    "El costo promedio que una empresa paga para financiar sus operaciones, combinando el costo de la deuda y el del capital propio",
+                    "La tasa de interés pagada solo por los bancos que le prestan a la empresa",
+                    "El valor de mercado total de las acciones de una empresa"
+                  ],
+                  "explanation": "El WACC combina el costo de la deuda y el costo del capital propio, ponderados por la estructura de capital de la empresa, representando su costo promedio de financiamiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que o fluxo de caixa descontado traz os fluxos de caixa futuros de uma empresa a valor presente usando uma taxa de desconto. Como uma mudança no WACC usado como essa taxa afeta o valuation resultante, mantendo os mesmos fluxos futuros projetados?",
+                  "options": [
+                    "Um WACC mais alto reduz o valor presente dos mesmos fluxos futuros, enquanto um WACC mais baixo aumenta esse valor presente",
+                    "O WACC não tem nenhuma relação com o resultado de um fluxo de caixa descontado",
+                    "Um WACC mais alto sempre aumenta o valor presente dos fluxos futuros, independentemente de qualquer outro fator",
+                    "O WACC só é usado em múltiplos, nunca em fluxo de caixa descontado"
+                  ],
+                  "explanation": "Como a taxa de desconto usada no fluxo de caixa descontado, o WACC tem uma relação inversa com o valor presente resultante: quanto mais alto, menor o valor presente dos mesmos fluxos futuros."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that discounted cash flow brings a company's future cash flows to present value using a discount rate. How does a change in the WACC used as that rate affect the resulting valuation, holding the same projected future flows constant?",
+                  "options": [
+                    "A higher WACC reduces the present value of the same future flows, while a lower WACC increases that present value",
+                    "WACC has no relation at all to a discounted cash flow's result",
+                    "A higher WACC always increases the present value of future flows, regardless of any other factor",
+                    "WACC is only used in multiples, never in discounted cash flow"
+                  ],
+                  "explanation": "As the discount rate used in discounted cash flow, WACC has an inverse relationship with the resulting present value: the higher it is, the lower the present value of the same future flows."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el flujo de caja descontado trae los flujos de caja futuros de una empresa a valor presente usando una tasa de descuento. ¿Cómo afecta un cambio en el WACC usado como esa tasa a la valuación resultante, manteniendo los mismos flujos futuros proyectados?",
+                  "options": [
+                    "Un WACC más alto reduce el valor presente de los mismos flujos futuros, mientras que un WACC más bajo aumenta ese valor presente",
+                    "El WACC no tiene ninguna relación con el resultado de un flujo de caja descontado",
+                    "Un WACC más alto siempre aumenta el valor presente de los flujos futuros, sin importar ningún otro factor",
+                    "El WACC solo se usa en múltiplos, nunca en flujo de caja descontado"
+                  ],
+                  "explanation": "Como la tasa de descuento usada en el flujo de caja descontado, el WACC tiene una relación inversa con el valor presente resultante: cuanto más alto, menor el valor presente de los mismos flujos futuros."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O WACC combina o custo de dívida e de capital próprio, representando o custo médio de financiamento de uma empresa.",
+                    "Ele costuma ser usado como a taxa de desconto em um fluxo de caixa descontado.",
+                    "Um WACC mais alto reduz o valor presente dos mesmos fluxos futuros projetados."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "WACC combines the cost of debt and equity, representing a company's average financing cost.",
+                    "It's usually used as the discount rate in a discounted cash flow.",
+                    "A higher WACC reduces the present value of the same projected future flows."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El WACC combina el costo de la deuda y del capital propio, representando el costo promedio de financiamiento de una empresa.",
+                    "Suele usarse como la tasa de descuento en un flujo de caja descontado.",
+                    "Un WACC más alto reduce el valor presente de los mismos flujos futuros proyectados."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_terminal_value",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Valor Terminal no Fluxo de Caixa Descontado"
+            },
+            "en": {
+              "title": "Terminal Value in Discounted Cash Flow"
+            },
+            "es": {
+              "title": "Valor Terminal en el Flujo de Caja Descontado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Como estimar tudo o que vem depois do período projetado",
+                  "body": "Projetar fluxos de caixa detalhados de uma empresa indefinidamente no futuro não é prático, então modelos de fluxo de caixa descontado costumam projetar um período explícito (por exemplo, 5 ou 10 anos) e depois estimar um valor terminal, que representa o valor de todos os fluxos de caixa esperados após esse período, geralmente assumindo uma taxa de crescimento estável e perpétua a partir dali. Na prática, o valor terminal costuma representar uma parcela considerável — muitas vezes a maior parte — do valor total estimado pelo modelo, o que faz das premissas usadas para calculá-lo especialmente sensíveis."
+                },
+                "en": {
+                  "title": "How to estimate everything after the projected period",
+                  "body": "Projecting a company's detailed cash flows indefinitely into the future isn't practical, so discounted cash flow models usually project an explicit period (say, 5 or 10 years) and then estimate a terminal value, representing the value of all cash flows expected after that period, generally assuming a stable, perpetual growth rate from then on. In practice, the terminal value usually represents a considerable share — often the majority — of the total value estimated by the model, which makes the assumptions used to calculate it especially sensitive."
+                },
+                "es": {
+                  "title": "Cómo estimar todo lo que viene después del período proyectado",
+                  "body": "Proyectar flujos de caja detallados de una empresa indefinidamente hacia el futuro no es práctico, así que los modelos de flujo de caja descontado suelen proyectar un período explícito (por ejemplo, 5 o 10 años) y luego estimar un valor terminal, que representa el valor de todos los flujos de caja esperados después de ese período, generalmente asumiendo una tasa de crecimiento estable y perpetua a partir de entonces. En la práctica, el valor terminal suele representar una porción considerable — a menudo la mayor parte — del valor total estimado por el modelo, lo que hace que los supuestos usados para calcularlo sean especialmente sensibles."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em um modelo com projeção explícita de 5 anos, o valor terminal pode representar 70% ou mais do valor total estimado da empresa. Uma pequena mudança na taxa de crescimento perpétuo assumida para o valor terminal — de 2% para 3%, por exemplo — pode alterar significativamente o valuation final, mesmo sem nenhuma mudança nas projeções dos 5 anos explícitos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "In a model with an explicit 5-year projection, the terminal value can represent 70% or more of the company's estimated total value. A small change in the perpetual growth rate assumed for the terminal value — from 2% to 3%, for example — can significantly alter the final valuation, even without any change to the explicit 5-year projections."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En un modelo con proyección explícita de 5 años, el valor terminal puede representar el 70% o más del valor total estimado de la empresa. Un pequeño cambio en la tasa de crecimiento perpetuo asumida para el valor terminal — del 2% al 3%, por ejemplo — puede alterar significativamente la valuación final, incluso sin ningún cambio en las proyecciones de los 5 años explícitos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o valor terminal representa em um modelo de fluxo de caixa descontado?",
+                  "options": [
+                    "O valor de todos os fluxos de caixa esperados após o período de projeção explícita",
+                    "O lucro líquido da empresa apenas no último ano projetado",
+                    "O valor de mercado atual das ações da empresa, sem nenhuma projeção futura",
+                    "Um valor fixo que nunca varia entre diferentes modelos"
+                  ],
+                  "explanation": "O valor terminal captura o valor de todos os fluxos de caixa esperados além do período explicitamente projetado, geralmente assumindo uma taxa de crescimento estável a partir dali."
+                },
+                "en": {
+                  "prompt": "What does terminal value represent in a discounted cash flow model?",
+                  "options": [
+                    "The value of all cash flows expected after the explicit projection period",
+                    "The company's net profit only in the last projected year",
+                    "The company's current stock market value, with no future projection at all",
+                    "A fixed value that never varies between different models"
+                  ],
+                  "explanation": "Terminal value captures the value of all cash flows expected beyond the explicitly projected period, usually assuming a stable growth rate from then on."
+                },
+                "es": {
+                  "prompt": "¿Qué representa el valor terminal en un modelo de flujo de caja descontado?",
+                  "options": [
+                    "El valor de todos los flujos de caja esperados después del período de proyección explícita",
+                    "La ganancia neta de la empresa solo en el último año proyectado",
+                    "El valor de mercado actual de las acciones de la empresa, sin ninguna proyección futura",
+                    "Un valor fijo que nunca varía entre diferentes modelos"
+                  ],
+                  "explanation": "El valor terminal captura el valor de todos los flujos de caja esperados más allá del período explícitamente proyectado, generalmente asumiendo una tasa de crecimiento estable a partir de entonces."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que o fluxo de caixa descontado depende de premissas sobre o futuro, o que o torna sensível a pequenas mudanças nessas premissas. Como o fato de o valor terminal representar frequentemente a maior parte do valuation total amplia essa sensibilidade especificamente?",
+                  "options": [
+                    "Como o valor terminal costuma ser a maior parcela do valor total, pequenas mudanças nas premissas usadas para calculá-lo (como a taxa de crescimento perpétuo) tendem a ter um impacto desproporcional sobre o resultado final do modelo",
+                    "O valor terminal nunca representa uma parcela significativa do valuation total, tornando essa preocupação irrelevante",
+                    "Premissas sobre o valor terminal nunca afetam o resultado final de um modelo de fluxo de caixa descontado",
+                    "O valor terminal elimina completamente qualquer sensibilidade do modelo a premissas futuras"
+                  ],
+                  "explanation": "Justamente porque o valor terminal costuma dominar o valuation total, pequenas variações nas premissas usadas para estimá-lo — como a taxa de crescimento perpétuo — tendem a ter um efeito ampliado sobre o resultado final, reforçando a sensibilidade geral do método a premissas sobre o futuro."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that discounted cash flow depends on assumptions about the future, which makes it sensitive to small changes in those assumptions. How does the fact that terminal value often represents most of the total valuation amplify that sensitivity specifically?",
+                  "options": [
+                    "Since terminal value usually is the largest share of the total value, small changes in the assumptions used to calculate it (like the perpetual growth rate) tend to have a disproportionate impact on the model's final result",
+                    "Terminal value never represents a significant share of the total valuation, making this concern irrelevant",
+                    "Assumptions about terminal value never affect a discounted cash flow model's final result",
+                    "Terminal value completely eliminates any sensitivity of the model to future assumptions"
+                  ],
+                  "explanation": "Precisely because terminal value usually dominates the total valuation, small variations in the assumptions used to estimate it — like the perpetual growth rate — tend to have an amplified effect on the final result, reinforcing the method's overall sensitivity to assumptions about the future."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que el flujo de caja descontado depende de supuestos sobre el futuro, lo que lo hace sensible a pequeños cambios en esos supuestos. ¿Cómo amplía esa sensibilidad específicamente el hecho de que el valor terminal represente frecuentemente la mayor parte de la valuación total?",
+                  "options": [
+                    "Como el valor terminal suele ser la mayor porción del valor total, pequeños cambios en los supuestos usados para calcularlo (como la tasa de crecimiento perpetuo) tienden a tener un impacto desproporcionado sobre el resultado final del modelo",
+                    "El valor terminal nunca representa una porción significativa de la valuación total, haciendo irrelevante esta preocupación",
+                    "Los supuestos sobre el valor terminal nunca afectan el resultado final de un modelo de flujo de caja descontado",
+                    "El valor terminal elimina por completo cualquier sensibilidad del modelo a supuestos futuros"
+                  ],
+                  "explanation": "Justamente porque el valor terminal suele dominar la valuación total, pequeñas variaciones en los supuestos usados para estimarlo — como la tasa de crecimiento perpetuo — tienden a tener un efecto amplificado sobre el resultado final, reforzando la sensibilidad general del método a los supuestos sobre el futuro."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Valor terminal representa o valor de todos os fluxos de caixa esperados após o período de projeção explícita.",
+                    "Ele costuma representar uma parcela considerável, muitas vezes a maior parte, do valuation total.",
+                    "Pequenas mudanças nas premissas do valor terminal tendem a ter um impacto desproporcional no resultado final."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Terminal value represents the value of all cash flows expected after the explicit projection period.",
+                    "It usually represents a considerable share, often the majority, of the total valuation.",
+                    "Small changes in terminal value assumptions tend to have a disproportionate impact on the final result."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El valor terminal representa el valor de todos los flujos de caja esperados después del período de proyección explícita.",
+                    "Suele representar una porción considerable, a menudo la mayor parte, de la valuación total.",
+                    "Pequeños cambios en los supuestos del valor terminal tienden a tener un impacto desproporcionado en el resultado final."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_comparable_vs_precedent",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Múltiplos: Comparáveis vs. Transações Precedentes"
+            },
+            "en": {
+              "title": "Multiples: Comparable Companies vs. Precedent Transactions"
+            },
+            "es": {
+              "title": "Múltiplos: Comparables vs. Transacciones Precedentes"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas fontes diferentes para o mesmo tipo de análise",
+                  "body": "Ao usar múltiplos para avaliar uma empresa, existem duas fontes principais de referência. A análise de empresas comparáveis usa múltiplos de empresas semelhantes que já são negociadas na bolsa, refletindo o preço que o mercado está disposto a pagar naquele momento. Já a análise de transações precedentes usa múltiplos pagos em aquisições anteriores de empresas parecidas, o que costuma incluir um prêmio de controle — um valor extra pago para adquirir o controle total de uma empresa, algo que normalmente não está presente no preço de mercado de ações negociadas livremente em bolsa."
+                },
+                "en": {
+                  "title": "Two different sources for the same type of analysis",
+                  "body": "When using multiples to value a company, there are two main reference sources. Comparable company analysis uses multiples from similar companies already trading on the exchange, reflecting the price the market is currently willing to pay. Precedent transaction analysis, on the other hand, uses multiples paid in previous acquisitions of similar companies, which usually includes a control premium — an extra amount paid to acquire full control of a company, something not normally present in the market price of freely traded shares."
+                },
+                "es": {
+                  "title": "Dos fuentes diferentes para el mismo tipo de análisis",
+                  "body": "Al usar múltiplos para valorar una empresa, existen dos fuentes principales de referencia. El análisis de empresas comparables usa múltiplos de empresas similares que ya se negocian en bolsa, reflejando el precio que el mercado está dispuesto a pagar en ese momento. El análisis de transacciones precedentes, en cambio, usa múltiplos pagados en adquisiciones anteriores de empresas parecidas, lo que suele incluir una prima de control — un monto extra pagado para adquirir el control total de una empresa, algo que normalmente no está presente en el precio de mercado de acciones negociadas libremente en bolsa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa é negociada em bolsa a um múltiplo de 10 vezes o lucro. Ao mesmo tempo, uma empresa parecida foi recentemente adquirida por um comprador estratégico a um múltiplo de 14 vezes o lucro — a diferença reflete, em parte, o prêmio de controle que o comprador pagou para assumir o controle total da empresa adquirida, algo que não está embutido no preço de mercado de uma ação negociada livremente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company trades on the exchange at a multiple of 10 times earnings. At the same time, a similar company was recently acquired by a strategic buyer at a multiple of 14 times earnings — the difference reflects, in part, the control premium the buyer paid to take full control of the acquired company, something not embedded in the market price of a freely traded share."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa se negocia en bolsa a un múltiplo de 10 veces la ganancia. Al mismo tiempo, una empresa parecida fue recientemente adquirida por un comprador estratégico a un múltiplo de 14 veces la ganancia — la diferencia refleja, en parte, la prima de control que el comprador pagó para asumir el control total de la empresa adquirida, algo que no está incorporado en el precio de mercado de una acción negociada libremente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia a análise de transações precedentes da análise de empresas comparáveis?",
+                  "options": [
+                    "Transações precedentes usam apenas dados de empresas que nunca foram adquiridas",
+                    "Transações precedentes usam múltiplos pagos em aquisições anteriores, geralmente incluindo um prêmio de controle não presente no preço de mercado de ações negociadas livremente",
+                    "As duas análises usam exatamente a mesma fonte de dados, sem nenhuma diferença",
+                    "Empresas comparáveis só podem ser usadas para empresas de capital fechado"
+                  ],
+                  "explanation": "A análise de transações precedentes usa múltiplos de aquisições passadas, que costumam incluir um prêmio de controle, diferente do preço de mercado refletido pela análise de empresas comparáveis."
+                },
+                "en": {
+                  "prompt": "What differentiates precedent transaction analysis from comparable company analysis?",
+                  "options": [
+                    "Precedent transactions only use data from companies that were never acquired",
+                    "Precedent transactions use multiples paid in past acquisitions, usually including a control premium not present in the market price of freely traded shares",
+                    "Both analyses use exactly the same data source, with no difference at all",
+                    "Comparable companies can only be used for privately held companies"
+                  ],
+                  "explanation": "Precedent transaction analysis uses multiples from past acquisitions, which usually include a control premium, unlike the market price reflected by comparable company analysis."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia el análisis de transacciones precedentes del análisis de empresas comparables?",
+                  "options": [
+                    "Las transacciones precedentes solo usan datos de empresas que nunca fueron adquiridas",
+                    "Las transacciones precedentes usan múltiplos pagados en adquisiciones anteriores, generalmente incluyendo una prima de control no presente en el precio de mercado de acciones negociadas libremente",
+                    "Ambos análisis usan exactamente la misma fuente de datos, sin ninguna diferencia",
+                    "Las empresas comparables solo pueden usarse para empresas de capital cerrado"
+                  ],
+                  "explanation": "El análisis de transacciones precedentes usa múltiplos de adquisiciones pasadas, que suelen incluir una prima de control, a diferencia del precio de mercado reflejado por el análisis de empresas comparables."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que múltiplos servem para comparar rapidamente o preço de diferentes empresas. Diante de um contexto de aquisição de controle total de uma empresa (e não apenas a compra de ações minoritárias em bolsa), qual das duas fontes de múltiplos tende a ser uma referência mais adequada?",
+                  "options": [
+                    "Transações precedentes tendem a ser mais adequadas nesse contexto, já que já embutem o prêmio de controle tipicamente pago para adquirir o controle total de uma empresa",
+                    "Múltiplos de empresas comparáveis são sempre a única referência válida, independentemente do contexto da análise",
+                    "Nenhuma das duas fontes de múltiplos é relevante para decisões de aquisição de controle",
+                    "O prêmio de controle nunca deveria ser considerado em nenhuma análise de valuation"
+                  ],
+                  "explanation": "Como transações precedentes já refletem o prêmio de controle pago em aquisições anteriores, elas tendem a ser uma referência mais adequada especificamente para avaliar o preço de uma aquisição de controle total, diferente de múltiplos de mercado que refletem apenas participações minoritárias."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that multiples serve to quickly compare different companies' prices. Given a context of acquiring full control of a company (not just buying minority shares on the exchange), which of the two multiple sources tends to be a more suitable reference?",
+                  "options": [
+                    "Precedent transactions tend to be more suitable in that context, since they already embed the control premium typically paid to acquire full control of a company",
+                    "Comparable company multiples are always the only valid reference, regardless of the analysis's context",
+                    "Neither multiple source is relevant for control acquisition decisions",
+                    "The control premium should never be considered in any valuation analysis"
+                  ],
+                  "explanation": "Since precedent transactions already reflect the control premium paid in past acquisitions, they tend to be a more suitable reference specifically for assessing the price of a full control acquisition, unlike market multiples that reflect only minority stakes."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que los múltiplos sirven para comparar rápidamente el precio de diferentes empresas. Ante un contexto de adquisición de control total de una empresa (y no solo la compra de acciones minoritarias en bolsa), ¿cuál de las dos fuentes de múltiplos tiende a ser una referencia más adecuada?",
+                  "options": [
+                    "Las transacciones precedentes tienden a ser más adecuadas en ese contexto, ya que ya incorporan la prima de control típicamente pagada para adquirir el control total de una empresa",
+                    "Los múltiplos de empresas comparables son siempre la única referencia válida, sin importar el contexto del análisis",
+                    "Ninguna de las dos fuentes de múltiplos es relevante para decisiones de adquisición de control",
+                    "La prima de control nunca debería considerarse en ningún análisis de valuación"
+                  ],
+                  "explanation": "Como las transacciones precedentes ya reflejan la prima de control pagada en adquisiciones anteriores, tienden a ser una referencia más adecuada específicamente para evaluar el precio de una adquisición de control total, a diferencia de los múltiplos de mercado que reflejan solo participaciones minoritarias."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Análise de comparáveis usa múltiplos de empresas negociadas em bolsa, refletindo o preço de mercado atual.",
+                    "Análise de transações precedentes usa múltiplos de aquisições passadas, geralmente incluindo um prêmio de controle.",
+                    "A fonte mais adequada de múltiplos depende do contexto: participação minoritária ou aquisição de controle total."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Comparable company analysis uses multiples from exchange-traded companies, reflecting the current market price.",
+                    "Precedent transaction analysis uses multiples from past acquisitions, usually including a control premium.",
+                    "The most suitable multiple source depends on the context: minority stake or full control acquisition."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El análisis de comparables usa múltiplos de empresas que se negocian en bolsa, reflejando el precio de mercado actual.",
+                    "El análisis de transacciones precedentes usa múltiplos de adquisiciones pasadas, generalmente incluyendo una prima de control.",
+                    "La fuente más adecuada de múltiplos depende del contexto: participación minoritaria o adquisición de control total."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_peg_ratio",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Índice PEG: Ajustando Múltiplos pelo Crescimento"
+            },
+            "en": {
+              "title": "PEG Ratio: Adjusting Multiples for Growth"
+            },
+            "es": {
+              "title": "Índice PEG: Ajustando Múltiplos por el Crecimiento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um múltiplo alto pode fazer sentido, dependendo do crescimento",
+                  "body": "O índice PEG divide o múltiplo preço/lucro de uma empresa pela sua taxa de crescimento esperada de lucros, buscando avaliar se um múltiplo aparentemente alto é justificado pelo crescimento projetado. Um PEG mais baixo sugere que o preço pago em relação ao crescimento esperado é mais atrativo, enquanto um PEG mais alto sugere que o preço pode estar caro mesmo considerando esse crescimento — permitindo uma comparação mais equilibrada entre empresas com taxas de crescimento bem diferentes."
+                },
+                "en": {
+                  "title": "A high multiple can make sense, depending on growth",
+                  "body": "The PEG ratio divides a company's price-to-earnings multiple by its expected earnings growth rate, seeking to assess whether an apparently high multiple is justified by projected growth. A lower PEG suggests the price paid relative to expected growth is more attractive, while a higher PEG suggests the price might be expensive even accounting for that growth — allowing a more balanced comparison between companies with quite different growth rates."
+                },
+                "es": {
+                  "title": "Un múltiplo alto puede tener sentido, según el crecimiento",
+                  "body": "El índice PEG divide el múltiplo precio/ganancia de una empresa por su tasa de crecimiento esperada de ganancias, buscando evaluar si un múltiplo aparentemente alto se justifica por el crecimiento proyectado. Un PEG más bajo sugiere que el precio pagado en relación con el crecimiento esperado es más atractivo, mientras que un PEG más alto sugiere que el precio puede estar caro incluso considerando ese crecimiento — permitiendo una comparación más equilibrada entre empresas con tasas de crecimiento bastante diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa negocia a um múltiplo preço/lucro de 30, que pode parecer caro isoladamente. Mas se essa empresa tem uma taxa de crescimento esperada de lucros de 30% ao ano, seu PEG fica próximo de 1 — uma referência frequentemente usada como razoável. Já outra empresa com múltiplo de 15, mas crescimento esperado de apenas 5% ao ano, teria um PEG de 3, sugerindo um preço mais esticado em relação ao crescimento projetado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company trades at a price-to-earnings multiple of 30, which might look expensive on its own. But if that company has an expected earnings growth rate of 30% a year, its PEG comes out close to 1 — a reference often used as reasonable. Another company with a multiple of 15, but expected growth of only 5% a year, would have a PEG of 3, suggesting a more stretched price relative to projected growth."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa se negocia a un múltiplo precio/ganancia de 30, que puede parecer caro por sí solo. Pero si esa empresa tiene una tasa de crecimiento esperada de ganancias del 30% anual, su PEG queda cercano a 1 — una referencia frecuentemente usada como razonable. Otra empresa con múltiplo de 15, pero crecimiento esperado de solo el 5% anual, tendría un PEG de 3, sugiriendo un precio más estirado en relación con el crecimiento proyectado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o índice PEG busca avaliar?",
+                  "options": [
+                    "Se um múltiplo preço/lucro aparentemente alto é justificado pela taxa de crescimento esperada de lucros da empresa",
+                    "O valor total de mercado de uma empresa, sem considerar nenhum múltiplo",
+                    "Apenas o dividendo pago por uma empresa, sem relação com lucros",
+                    "A dívida total de uma empresa em relação ao seu patrimônio"
+                  ],
+                  "explanation": "O PEG relaciona o múltiplo preço/lucro com o crescimento esperado, ajudando a avaliar se um múltiplo alto faz sentido diante do potencial de crescimento da empresa."
+                },
+                "en": {
+                  "prompt": "What does the PEG ratio try to assess?",
+                  "options": [
+                    "Whether an apparently high price-to-earnings multiple is justified by the company's expected earnings growth rate",
+                    "A company's total market value, without considering any multiple",
+                    "Only the dividend paid by a company, with no relation to earnings",
+                    "A company's total debt relative to its equity"
+                  ],
+                  "explanation": "PEG relates the price-to-earnings multiple to expected growth, helping assess whether a high multiple makes sense given the company's growth potential."
+                },
+                "es": {
+                  "prompt": "¿Qué busca evaluar el índice PEG?",
+                  "options": [
+                    "Si un múltiplo precio/ganancia aparentemente alto se justifica por la tasa de crecimiento esperada de ganancias de la empresa",
+                    "El valor de mercado total de una empresa, sin considerar ningún múltiplo",
+                    "Solo el dividendo pagado por una empresa, sin relación con las ganancias",
+                    "La deuda total de una empresa en relación con su patrimonio"
+                  ],
+                  "explanation": "El PEG relaciona el múltiplo precio/ganancia con el crecimiento esperado, ayudando a evaluar si un múltiplo alto tiene sentido dado el potencial de crecimiento de la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que valuation em diferentes fases da empresa (crescimento vs. madura) costuma justificar múltiplos bem diferentes entre si. Como o índice PEG oferece uma forma mais direta de capturar essa mesma ideia?",
+                  "options": [
+                    "O PEG incorpora diretamente a taxa de crescimento esperada no cálculo, permitindo comparar empresas de fases diferentes de forma mais equilibrada do que olhar apenas para o múltiplo isolado",
+                    "O PEG ignora completamente a fase de crescimento de uma empresa, tratando todas da mesma forma",
+                    "PEG e a diferença entre empresas em crescimento e maduras são conceitos completamente não relacionados",
+                    "O PEG só pode ser calculado para empresas maduras, nunca para empresas em fase de crescimento"
+                  ],
+                  "explanation": "Ao dividir o múltiplo pelo crescimento esperado, o PEG incorpora diretamente na conta a diferença de fase de crescimento entre empresas, tornando explícita uma comparação que, de outra forma, exigiria uma análise qualitativa separada sobre a fase da empresa."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that valuation at different company stages (growth vs. mature) usually justifies quite different multiples. How does the PEG ratio offer a more direct way to capture that same idea?",
+                  "options": [
+                    "PEG directly incorporates the expected growth rate into the calculation, allowing a more balanced comparison between companies at different stages than looking at the isolated multiple alone",
+                    "PEG completely ignores a company's growth stage, treating all companies the same way",
+                    "PEG and the difference between growing and mature companies are completely unrelated concepts",
+                    "PEG can only be calculated for mature companies, never for companies in a growth stage"
+                  ],
+                  "explanation": "By dividing the multiple by expected growth, PEG directly incorporates into the calculation the difference in growth stage between companies, making explicit a comparison that would otherwise require a separate qualitative analysis of the company's stage."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la valuación en diferentes fases de la empresa (crecimiento vs. madura) suele justificar múltiplos bastante diferentes entre sí. ¿Cómo ofrece el índice PEG una forma más directa de capturar esa misma idea?",
+                  "options": [
+                    "El PEG incorpora directamente la tasa de crecimiento esperada en el cálculo, permitiendo comparar empresas de fases diferentes de forma más equilibrada que mirar solo el múltiplo aislado",
+                    "El PEG ignora por completo la fase de crecimiento de una empresa, tratando a todas de la misma forma",
+                    "PEG y la diferencia entre empresas en crecimiento y maduras son conceptos completamente no relacionados",
+                    "El PEG solo puede calcularse para empresas maduras, nunca para empresas en fase de crecimiento"
+                  ],
+                  "explanation": "Al dividir el múltiplo por el crecimiento esperado, el PEG incorpora directamente en la cuenta la diferencia de fase de crecimiento entre empresas, haciendo explícita una comparación que, de otra forma, requeriría un análisis cualitativo separado sobre la fase de la empresa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O índice PEG divide o múltiplo preço/lucro pela taxa de crescimento esperada de lucros.",
+                    "Um PEG mais baixo sugere um preço mais atrativo em relação ao crescimento esperado.",
+                    "O PEG incorpora diretamente a diferença de fase de crescimento entre empresas na comparação de múltiplos."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The PEG ratio divides the price-to-earnings multiple by the expected earnings growth rate.",
+                    "A lower PEG suggests a more attractive price relative to expected growth.",
+                    "PEG directly incorporates the difference in growth stage between companies into the multiple comparison."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El índice PEG divide el múltiplo precio/ganancia por la tasa de crecimiento esperada de ganancias.",
+                    "Un PEG más bajo sugiere un precio más atractivo en relación con el crecimiento esperado.",
+                    "El PEG incorpora directamente la diferencia de fase de crecimiento entre empresas en la comparación de múltiplos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "valuation_sum_of_the_parts",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Soma das Partes (Sum-of-the-Parts)"
+            },
+            "en": {
+              "title": "Sum-of-the-Parts Valuation"
+            },
+            "es": {
+              "title": "Suma de las Partes (Sum-of-the-Parts)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Avaliando cada negócio separadamente, depois somando",
+                  "body": "Empresas que operam múltiplos negócios distintos e pouco relacionados entre si — um conglomerado com uma divisão industrial e uma divisão financeira, por exemplo — podem ser difíceis de avaliar com um único múltiplo ou uma única taxa de desconto aplicada à empresa inteira. A metodologia de soma das partes avalia cada divisão de negócio separadamente, usando os múltiplos ou fluxos de caixa descontados mais apropriados para cada uma, e depois soma esses valores individuais (ajustando dívida e outros itens corporativos) para chegar a um valor total mais preciso da empresa combinada."
+                },
+                "en": {
+                  "title": "Valuing each business separately, then adding them up",
+                  "body": "Companies that operate multiple, largely unrelated business lines — a conglomerate with an industrial division and a financial division, for example — can be hard to value with a single multiple or a single discount rate applied to the whole company. The sum-of-the-parts methodology values each business division separately, using the multiples or discounted cash flows most appropriate for each one, then adds up those individual values (adjusting for debt and other corporate items) to arrive at a more precise total value for the combined company."
+                },
+                "es": {
+                  "title": "Valorando cada negocio por separado, luego sumando",
+                  "body": "Las empresas que operan múltiples negocios distintos y poco relacionados entre sí — un conglomerado con una división industrial y una división financiera, por ejemplo — pueden ser difíciles de valorar con un único múltiplo o una única tasa de descuento aplicada a toda la empresa. La metodología de suma de las partes valora cada división de negocio por separado, usando los múltiplos o flujos de caja descontados más apropiados para cada una, y luego suma esos valores individuales (ajustando deuda y otros ítems corporativos) para llegar a un valor total más preciso de la empresa combinada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um conglomerado tem uma divisão de varejo, avaliada a um múltiplo típico do setor varejista, e uma divisão de tecnologia, avaliada a um múltiplo bem mais alto, típico de empresas de tecnologia. Aplicar um único múltiplo médio a toda a empresa poderia subestimar ou superestimar seu valor total — avaliar cada divisão separadamente e depois somar tende a capturar melhor o valor combinado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A conglomerate has a retail division, valued at a multiple typical of the retail sector, and a technology division, valued at a much higher multiple, typical of technology companies. Applying a single average multiple to the whole company could underestimate or overestimate its total value — valuing each division separately and then adding them up tends to better capture the combined value."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un conglomerado tiene una división de retail, valorada a un múltiplo típico del sector minorista, y una división de tecnología, valorada a un múltiplo bastante más alto, típico de las empresas tecnológicas. Aplicar un único múltiplo promedio a toda la empresa podría subestimar o sobreestimar su valor total — valorar cada división por separado y luego sumar tiende a capturar mejor el valor combinado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Quando a metodologia de soma das partes costuma ser especialmente útil?",
+                  "options": [
+                    "Ao avaliar empresas com múltiplos negócios distintos e pouco relacionados entre si",
+                    "Ao avaliar apenas empresas com um único negócio muito simples",
+                    "Nunca — um único múltiplo é sempre suficiente para qualquer empresa",
+                    "Apenas para empresas que nunca tiveram nenhuma divisão de negócio"
+                  ],
+                  "explanation": "A soma das partes é especialmente útil para conglomerados ou empresas com divisões de negócio muito diferentes entre si, onde um único múltiplo aplicado à empresa toda pode distorcer o valuation."
+                },
+                "en": {
+                  "prompt": "When is the sum-of-the-parts methodology especially useful?",
+                  "options": [
+                    "When valuing companies with multiple, largely unrelated business lines",
+                    "When valuing only companies with a single, very simple business",
+                    "Never — a single multiple is always enough for any company",
+                    "Only for companies that never had any business division"
+                  ],
+                  "explanation": "Sum-of-the-parts is especially useful for conglomerates or companies with very different business divisions, where a single multiple applied to the whole company can distort the valuation."
+                },
+                "es": {
+                  "prompt": "¿Cuándo suele ser especialmente útil la metodología de suma de las partes?",
+                  "options": [
+                    "Al valorar empresas con múltiples negocios distintos y poco relacionados entre sí",
+                    "Al valorar solo empresas con un único negocio muy simple",
+                    "Nunca — un único múltiplo siempre es suficiente para cualquier empresa",
+                    "Solo para empresas que nunca tuvieron ninguna división de negocio"
+                  ],
+                  "explanation": "La suma de las partes es especialmente útil para conglomerados o empresas con divisiones de negocio muy diferentes entre sí, donde un único múltiplo aplicado a toda la empresa puede distorsionar la valuación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, tanto múltiplos de comparáveis quanto fluxo de caixa descontado com WACC específico. Como a soma das partes combina essas ferramentas de uma forma mais sofisticada do que aplicá-las de forma genérica a uma empresa inteira?",
+                  "options": [
+                    "Ela permite escolher o múltiplo, o WACC ou o método de valuation mais apropriado para cada divisão de negócio separadamente, em vez de forçar uma única premissa genérica sobre toda a empresa combinada",
+                    "Ela elimina completamente a necessidade de usar múltiplos ou fluxo de caixa descontado",
+                    "Ela sempre produz exatamente o mesmo resultado que aplicar um único múltiplo médio à empresa inteira",
+                    "Soma das partes é incompatível com qualquer método de valuation estudado anteriormente"
+                  ],
+                  "explanation": "A soma das partes é, na prática, uma aplicação mais granular das mesmas ferramentas — múltiplos e fluxo de caixa descontado — permitindo que premissas como o múltiplo apropriado ou o WACC variem entre divisões de negócio com perfis de risco e crescimento muito diferentes."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, both comparable multiples and discounted cash flow with a specific WACC. How does sum-of-the-parts combine these tools in a more sophisticated way than applying them generically to a whole company?",
+                  "options": [
+                    "It allows choosing the most appropriate multiple, WACC, or valuation method for each business division separately, instead of forcing a single generic assumption onto the whole combined company",
+                    "It completely eliminates the need to use multiples or discounted cash flow",
+                    "It always produces exactly the same result as applying a single average multiple to the whole company",
+                    "Sum-of-the-parts is incompatible with any valuation method studied previously"
+                  ],
+                  "explanation": "Sum-of-the-parts is, in practice, a more granular application of the same tools — multiples and discounted cash flow — allowing assumptions like the appropriate multiple or WACC to vary across business divisions with very different risk and growth profiles."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, tanto múltiplos de comparables como flujo de caja descontado con un WACC específico. ¿Cómo combina la suma de las partes estas herramientas de una forma más sofisticada que aplicarlas de forma genérica a toda una empresa?",
+                  "options": [
+                    "Permite elegir el múltiplo, el WACC o el método de valuación más apropiado para cada división de negocio por separado, en lugar de forzar un único supuesto genérico sobre toda la empresa combinada",
+                    "Elimina por completo la necesidad de usar múltiplos o flujo de caja descontado",
+                    "Siempre produce exactamente el mismo resultado que aplicar un único múltiplo promedio a toda la empresa",
+                    "La suma de las partes es incompatible con cualquier método de valuación estudiado anteriormente"
+                  ],
+                  "explanation": "La suma de las partes es, en la práctica, una aplicación más granular de las mismas herramientas — múltiplos y flujo de caja descontado — permitiendo que supuestos como el múltiplo apropiado o el WACC varíen entre divisiones de negocio con perfiles de riesgo y crecimiento muy diferentes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Soma das partes avalia cada divisão de negócio separadamente, depois soma os valores individuais.",
+                    "Ela é especialmente útil para conglomerados com negócios distintos e pouco relacionados entre si.",
+                    "Você concluiu o módulo especializado de valuation: WACC, valor terminal, comparáveis vs. transações precedentes, PEG e soma das partes."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Sum-of-the-parts values each business division separately, then adds up the individual values.",
+                    "It's especially useful for conglomerates with distinct, largely unrelated businesses.",
+                    "You've completed the specialized valuation module: WACC, terminal value, comparables vs. precedent transactions, PEG and sum-of-the-parts."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "La suma de las partes valora cada división de negocio por separado, luego suma los valores individuales.",
+                    "Es especialmente útil para conglomerados con negocios distintos y poco relacionados entre sí.",
+                    "Completaste el módulo especializado de valuación: WACC, valor terminal, comparables vs. transacciones precedentes, PEG y suma de las partes."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

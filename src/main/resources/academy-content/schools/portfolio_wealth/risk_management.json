@@ -1,0 +1,2533 @@
+{
+  "schoolId": "risk_management",
+  "domainId": "portfolio_wealth",
+  "order": 10,
+  "iconKey": "gpp_maybe_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Gestão de Risco",
+      "description": "Risco de mercado, crédito, liquidez e concentração — e como avaliar e conviver com eles."
+    },
+    "en": {
+      "title": "Risk Management",
+      "description": "Market, credit, liquidity and concentration risk — and how to assess and live with them."
+    },
+    "es": {
+      "title": "Gestión de Riesgo",
+      "description": "Riesgo de mercado, crédito, liquidez y concentración — y cómo evaluarlos y convivir con ellos."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "risk_types_basics",
+      "order": 1,
+      "iconKey": "gpp_maybe_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Tipos de Risco",
+          "description": "Mercado, crédito, liquidez e concentração — os quatro tipos de risco mais comuns em qualquer carteira de investimentos."
+        },
+        "en": {
+          "title": "Risk Types",
+          "description": "Market, credit, liquidity and concentration — the four most common types of risk in any investment portfolio."
+        },
+        "es": {
+          "title": "Tipos de Riesgo",
+          "description": "Mercado, crédito, liquidez y concentración — los cuatro tipos de riesgo más comunes en cualquier cartera de inversiones."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "risk_market_risk",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Mercado"
+            },
+            "en": {
+              "title": "Market Risk"
+            },
+            "es": {
+              "title": "Riesgo de Mercado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O risco que afeta todo mundo ao mesmo tempo",
+                  "body": "Risco de mercado é a chance de o valor de um investimento variar por causa de movimentos gerais do mercado — como mudanças na taxa de juros, crises econômicas ou eventos políticos — que afetam praticamente todos os ativos de uma categoria, não apenas um emissor específico. Diferente do risco de crédito, ele não tem relação direta com a saúde financeira de uma empresa ou banco específico."
+                },
+                "en": {
+                  "title": "The risk that affects everyone at once",
+                  "body": "Market risk is the chance that an investment's value will change because of broad market movements — such as interest rate changes, economic crises, or political events — that affect virtually all assets in a category, not just one specific issuer. Unlike credit risk, it has no direct relationship to the financial health of a specific company or bank."
+                },
+                "es": {
+                  "title": "El riesgo que afecta a todos al mismo tiempo",
+                  "body": "El riesgo de mercado es la posibilidad de que el valor de una inversión varíe debido a movimientos generales del mercado — como cambios en la tasa de interés, crisis económicas o eventos políticos — que afectan prácticamente a todos los activos de una categoría, no solo a un emisor específico. A diferencia del riesgo de crédito, no tiene relación directa con la salud financiera de una empresa o banco específico."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando o banco central sobe os juros de forma inesperada, o preço de mercado de vários títulos prefixados cai ao mesmo tempo — não porque algum desses emissores ficou menos confiável, mas porque o novo patamar de juros tornou os títulos antigos, com taxas mais baixas, menos atrativos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When the central bank raises interest rates unexpectedly, the market price of many prefixed bonds falls at the same time — not because any of those issuers became less trustworthy, but because the new interest rate level made the older bonds, with lower rates, less attractive."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando el banco central sube las tasas de interés de forma inesperada, el precio de mercado de varios títulos prefijados cae al mismo tiempo — no porque alguno de esos emisores se haya vuelto menos confiable, sino porque el nuevo nivel de tasas hizo que los títulos antiguos, con tasas más bajas, resultaran menos atractivos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia o risco de mercado do risco de crédito?",
+                  "options": [
+                    "Risco de mercado afeta amplamente ativos de uma categoria por movimentos gerais, enquanto risco de crédito está ligado à saúde financeira de um emissor específico",
+                    "Não existe diferença entre os dois",
+                    "Risco de mercado só existe em renda fixa",
+                    "Risco de crédito afeta todos os ativos ao mesmo tempo, e risco de mercado só um emissor"
+                  ],
+                  "explanation": "Risco de mercado vem de movimentos amplos que afetam várias categorias de ativos ao mesmo tempo; risco de crédito está ligado especificamente à capacidade de um emissor pagar o que deve."
+                },
+                "en": {
+                  "prompt": "What differentiates market risk from credit risk?",
+                  "options": [
+                    "Market risk broadly affects assets in a category due to general movements, while credit risk is tied to the financial health of a specific issuer",
+                    "There's no difference between the two",
+                    "Market risk only exists in fixed income",
+                    "Credit risk affects all assets at once, and market risk only one issuer"
+                  ],
+                  "explanation": "Market risk comes from broad movements that affect several asset categories at the same time; credit risk is specifically tied to an issuer's ability to pay what it owes."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia al riesgo de mercado del riesgo de crédito?",
+                  "options": [
+                    "El riesgo de mercado afecta ampliamente a activos de una categoría por movimientos generales, mientras que el riesgo de crédito está ligado a la salud financiera de un emisor específico",
+                    "No existe diferencia entre ambos",
+                    "El riesgo de mercado solo existe en renta fija",
+                    "El riesgo de crédito afecta a todos los activos al mismo tiempo, y el riesgo de mercado solo a un emisor"
+                  ],
+                  "explanation": "El riesgo de mercado proviene de movimientos amplios que afectan a varias categorías de activos al mismo tiempo; el riesgo de crédito está ligado específicamente a la capacidad de un emisor de pagar lo que debe."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma crise política aumenta a incerteza no país e o preço de vários ativos diferentes cai ao mesmo tempo — ações, títulos prefixados, fundos imobiliários. O que isso sugere sobre o tipo de risco envolvido?",
+                  "options": [
+                    "Que todos esses emissores ficaram inadimplentes ao mesmo tempo, por coincidência",
+                    "Que provavelmente é risco de mercado, já que o movimento afeta amplamente diferentes categorias de ativos ao mesmo tempo",
+                    "Que é impossível saber o tipo de risco sem mais informações",
+                    "Que apenas ações sofrem esse tipo de efeito"
+                  ],
+                  "explanation": "Quando um evento amplo afeta várias categorias diferentes de ativos ao mesmo tempo, isso é uma característica típica de risco de mercado, e não de um problema específico de um emissor isolado."
+                },
+                "en": {
+                  "prompt": "A political crisis increases uncertainty in the country and the price of several different assets falls at the same time — stocks, prefixed bonds, real estate funds. What does that suggest about the type of risk involved?",
+                  "options": [
+                    "That all those issuers defaulted at the same time, by coincidence",
+                    "That it's likely market risk, since the movement broadly affects different asset categories at the same time",
+                    "That it's impossible to know the type of risk without more information",
+                    "That only stocks suffer this kind of effect"
+                  ],
+                  "explanation": "When a broad event affects several different asset categories at the same time, that's a typical characteristic of market risk, not a specific problem with an isolated issuer."
+                },
+                "es": {
+                  "prompt": "Una crisis política aumenta la incertidumbre en el país y el precio de varios activos diferentes cae al mismo tiempo — acciones, títulos prefijados, fondos inmobiliarios. ¿Qué sugiere esto sobre el tipo de riesgo involucrado?",
+                  "options": [
+                    "Que todos esos emisores cayeron en incumplimiento al mismo tiempo, por coincidencia",
+                    "Que probablemente es riesgo de mercado, ya que el movimiento afecta ampliamente a diferentes categorías de activos al mismo tiempo",
+                    "Que es imposible saber el tipo de riesgo sin más información",
+                    "Que solo las acciones sufren este tipo de efecto"
+                  ],
+                  "explanation": "Cuando un evento amplio afecta a varias categorías diferentes de activos al mismo tiempo, esa es una característica típica del riesgo de mercado, y no de un problema específico de un emisor aislado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de mercado vem de movimentos amplos que afetam várias categorias de ativos ao mesmo tempo.",
+                    "Ele é diferente do risco de crédito, que está ligado a um emissor específico.",
+                    "Eventos como mudanças de juros ou crises políticas são gatilhos típicos de risco de mercado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Market risk comes from broad movements that affect several asset categories at the same time.",
+                    "It's different from credit risk, which is tied to a specific issuer.",
+                    "Events like interest rate changes or political crises are typical triggers of market risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de mercado proviene de movimientos amplios que afectan a varias categorías de activos al mismo tiempo.",
+                    "Es diferente del riesgo de crédito, que está ligado a un emisor específico.",
+                    "Eventos como cambios de tasas o crisis políticas son gatillos típicos del riesgo de mercado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_credit_risk",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Crédito"
+            },
+            "en": {
+              "title": "Credit Risk"
+            },
+            "es": {
+              "title": "Riesgo de Crédito"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A chance de não receber de volta",
+                  "body": "Risco de crédito é a possibilidade de um emissor — banco, empresa ou governo — não conseguir pagar o que deve, seja o valor combinado, os juros, ou ambos. Esse risco varia de emissor para emissor: instituições maiores e mais sólidas costumam ser vistas como mais seguras, e por isso pagam taxas menores; instituições menores ou mais frágeis costumam pagar mais para atrair investidores, como compensação pelo risco maior."
+                },
+                "en": {
+                  "title": "The chance of not getting it back",
+                  "body": "Credit risk is the possibility that an issuer — a bank, a company, or a government — won't be able to pay what it owes, whether that's the agreed amount, the interest, or both. This risk varies from issuer to issuer: larger, more solid institutions tend to be seen as safer, and so pay lower rates; smaller or weaker institutions tend to pay more to attract investors, as compensation for the higher risk."
+                },
+                "es": {
+                  "title": "La posibilidad de no recuperarlo",
+                  "body": "El riesgo de crédito es la posibilidad de que un emisor — banco, empresa o gobierno — no logre pagar lo que debe, ya sea el monto acordado, los intereses, o ambos. Este riesgo varía de un emisor a otro: las instituciones más grandes y sólidas suelen verse como más seguras, y por eso pagan tasas más bajas; las instituciones más pequeñas o frágiles suelen pagar más para atraer inversores, como compensación por el mayor riesgo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois CDBs oferecem prazos parecidos: um banco grande paga 95% do CDI, um banco pequeno paga 130% do CDI. A diferença na taxa reflete, entre outras coisas, o risco de crédito percebido de cada instituição — o mercado exige mais retorno para compensar um risco maior de calote."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two CDBs offer similar terms: a large bank pays 95% of the CDI, a small bank pays 130% of the CDI. The difference in rate reflects, among other things, the perceived credit risk of each institution — the market demands a higher return to compensate for a greater risk of default."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos CDB ofrecen plazos parecidos: un banco grande paga el 95% del CDI, un banco pequeño paga el 130% del CDI. La diferencia en la tasa refleja, entre otras cosas, el riesgo de crédito percibido de cada institución — el mercado exige un mayor retorno para compensar un mayor riesgo de incumplimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco de crédito?",
+                  "options": [
+                    "O risco de o mercado como um todo cair",
+                    "A possibilidade de um emissor não conseguir pagar o que deve",
+                    "A chance de um investimento não ter liquidez diária",
+                    "O risco de a inflação subir"
+                  ],
+                  "explanation": "Risco de crédito é especificamente sobre a capacidade de um emissor cumprir com suas obrigações de pagamento — diferente de risco de mercado ou de liquidez."
+                },
+                "en": {
+                  "prompt": "What is credit risk?",
+                  "options": [
+                    "The risk of the market as a whole falling",
+                    "The possibility that an issuer won't be able to pay what it owes",
+                    "The chance that an investment lacks daily liquidity",
+                    "The risk of inflation rising"
+                  ],
+                  "explanation": "Credit risk is specifically about an issuer's ability to meet its payment obligations — different from market risk or liquidity risk."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo de crédito?",
+                  "options": [
+                    "El riesgo de que el mercado en su conjunto caiga",
+                    "La posibilidad de que un emisor no logre pagar lo que debe",
+                    "La posibilidad de que una inversión no tenga liquidez diaria",
+                    "El riesgo de que la inflación suba"
+                  ],
+                  "explanation": "El riesgo de crédito trata específicamente sobre la capacidad de un emisor de cumplir con sus obligaciones de pago — diferente del riesgo de mercado o de liquidez."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você vê um investimento oferecendo uma taxa muito acima da média do mercado para o mesmo tipo de produto e prazo. O que isso pode sinalizar sobre o risco de crédito envolvido?",
+                  "options": [
+                    "Nada, taxas mais altas nunca têm relação com risco",
+                    "Provavelmente um risco de crédito maior, já que taxas acima da média costumam compensar um risco percebido mais alto",
+                    "Que esse investimento é sempre uma fraude",
+                    "Que o investimento tem liquidez diária garantida"
+                  ],
+                  "explanation": "Taxas bem acima da média do mercado costumam refletir um risco de crédito mais alto percebido pelo mercado — vale investigar quem é o emissor antes de se atrair só pelo número da taxa."
+                },
+                "en": {
+                  "prompt": "You see an investment offering a rate well above the market average for the same type of product and term. What might that signal about the credit risk involved?",
+                  "options": [
+                    "Nothing, higher rates are never related to risk",
+                    "Probably a higher credit risk, since rates above average usually compensate for a higher perceived risk",
+                    "That this investment is always a scam",
+                    "That the investment has guaranteed daily liquidity"
+                  ],
+                  "explanation": "Rates well above the market average usually reflect a higher credit risk perceived by the market — it's worth investigating who the issuer is before being drawn in just by the rate number."
+                },
+                "es": {
+                  "prompt": "Ves una inversión que ofrece una tasa muy por encima del promedio del mercado para el mismo tipo de producto y plazo. ¿Qué podría señalar esto sobre el riesgo de crédito involucrado?",
+                  "options": [
+                    "Nada, las tasas más altas nunca tienen relación con el riesgo",
+                    "Probablemente un riesgo de crédito mayor, ya que las tasas por encima del promedio suelen compensar un riesgo percibido más alto",
+                    "Que esa inversión siempre es un fraude",
+                    "Que la inversión tiene liquidez diaria garantizada"
+                  ],
+                  "explanation": "Las tasas muy por encima del promedio del mercado suelen reflejar un riesgo de crédito más alto percibido por el mercado — vale la pena investigar quién es el emisor antes de dejarse atraer solo por el número de la tasa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de crédito é a chance de um emissor não pagar o que deve.",
+                    "Taxas mais altas costumam compensar um risco de crédito percebido como maior.",
+                    "Vale investigar quem é o emissor, não só a taxa oferecida."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Credit risk is the chance that an issuer won't pay what it owes.",
+                    "Higher rates usually compensate for a credit risk perceived as greater.",
+                    "It's worth investigating who the issuer is, not just the rate being offered."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de crédito es la posibilidad de que un emisor no pague lo que debe.",
+                    "Las tasas más altas suelen compensar un riesgo de crédito percibido como mayor.",
+                    "Vale la pena investigar quién es el emisor, no solo la tasa ofrecida."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_liquidity_risk",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Liquidez"
+            },
+            "en": {
+              "title": "Liquidity Risk"
+            },
+            "es": {
+              "title": "Riesgo de Liquidez"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ter o ativo não é o mesmo que ter o dinheiro",
+                  "body": "Risco de liquidez é a possibilidade de não conseguir converter um investimento em dinheiro disponível quando você precisar, ou só conseguir fazer isso com uma perda significativa de valor. Alguns ativos são negociados o tempo todo e têm muitos compradores e vendedores; outros podem levar dias, meses, ou exigir vender por um preço bem menor do que o 'justo' para encontrar alguém disposto a comprar."
+                },
+                "en": {
+                  "title": "Owning the asset isn't the same as owning the cash",
+                  "body": "Liquidity risk is the possibility of not being able to convert an investment into available cash when you need it, or only being able to do so with a significant loss of value. Some assets trade constantly and have many buyers and sellers; others might take days, months, or require selling at a much lower price than 'fair' to find someone willing to buy."
+                },
+                "es": {
+                  "title": "Tener el activo no es lo mismo que tener el dinero",
+                  "body": "El riesgo de liquidez es la posibilidad de no poder convertir una inversión en dinero disponible cuando lo necesitas, o solo poder hacerlo con una pérdida significativa de valor. Algunos activos se negocian todo el tiempo y tienen muchos compradores y vendedores; otros pueden tardar días, meses, o exigir vender a un precio bastante menor al 'justo' para encontrar a alguien dispuesto a comprar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor precisa vender um imóvel rapidamente por uma emergência. Como imóveis não têm um mercado tão líquido quanto uma ação, ele pode ter que aceitar um preço bem abaixo do valor de mercado só para conseguir vender rápido — esse desconto forçado é o custo do risco de liquidez se materializando."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor needs to sell a property quickly because of an emergency. Since real estate doesn't have a market as liquid as a stock, they might have to accept a price well below market value just to sell quickly — that forced discount is the cost of liquidity risk playing out."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor necesita vender un inmueble rápidamente por una emergencia. Como los inmuebles no tienen un mercado tan líquido como una acción, puede que tenga que aceptar un precio bastante por debajo del valor de mercado solo para lograr venderlo rápido — ese descuento forzado es el costo del riesgo de liquidez materializándose."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco de liquidez?",
+                  "options": [
+                    "O risco de um emissor não pagar o que deve",
+                    "A possibilidade de não conseguir converter um investimento em dinheiro rapidamente sem perder valor significativo",
+                    "O risco de a inflação subir",
+                    "A chance de um ativo pagar dividendos"
+                  ],
+                  "explanation": "Risco de liquidez está relacionado à facilidade (ou dificuldade) de transformar um ativo em dinheiro disponível, sem grandes perdas de valor no processo."
+                },
+                "en": {
+                  "prompt": "What is liquidity risk?",
+                  "options": [
+                    "The risk that an issuer won't pay what it owes",
+                    "The possibility of not being able to quickly convert an investment into cash without losing significant value",
+                    "The risk of inflation rising",
+                    "The chance that an asset pays dividends"
+                  ],
+                  "explanation": "Liquidity risk is related to how easy (or difficult) it is to turn an asset into available cash, without major losses in value along the way."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo de liquidez?",
+                  "options": [
+                    "El riesgo de que un emisor no pague lo que debe",
+                    "La posibilidad de no poder convertir rápidamente una inversión en dinero sin perder un valor significativo",
+                    "El riesgo de que la inflación suba",
+                    "La posibilidad de que un activo pague dividendos"
+                  ],
+                  "explanation": "El riesgo de liquidez está relacionado con la facilidad (o dificultad) de convertir un activo en dinero disponible, sin grandes pérdidas de valor en el proceso."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está montando sua reserva de emergência e considerando um investimento com ótima taxa, mas que só permite resgate após 5 anos, sem exceções. O que o conceito de risco de liquidez sugere sobre essa escolha?",
+                  "options": [
+                    "Que a taxa alta compensa qualquer problema de liquidez, sempre",
+                    "Que esse tipo de investimento provavelmente não é adequado para uma reserva de emergência, justamente por causa da baixa liquidez",
+                    "Que risco de liquidez não tem relação nenhuma com reservas de emergência",
+                    "Que qualquer investimento serve para uma reserva de emergência, desde que o rendimento seja bom"
+                  ],
+                  "explanation": "Uma reserva de emergência precisa estar disponível quando você menos espera — um investimento com baixa liquidez, mesmo com boa taxa, tende a não ser adequado para esse objetivo específico."
+                },
+                "en": {
+                  "prompt": "You're building your emergency fund and considering an investment with a great rate, but one that only allows withdrawal after 5 years, no exceptions. What does the concept of liquidity risk suggest about this choice?",
+                  "options": [
+                    "That the high rate always compensates for any liquidity problem",
+                    "That this type of investment is probably not suitable for an emergency fund, precisely because of its low liquidity",
+                    "That liquidity risk has no relation to emergency funds at all",
+                    "That any investment works for an emergency fund, as long as the return is good"
+                  ],
+                  "explanation": "An emergency fund needs to be available when you least expect it — an investment with low liquidity, even with a good rate, tends not to be suitable for that specific goal."
+                },
+                "es": {
+                  "prompt": "Estás armando tu fondo de emergencia y consideras una inversión con una excelente tasa, pero que solo permite el retiro después de 5 años, sin excepciones. ¿Qué sugiere el concepto de riesgo de liquidez sobre esta elección?",
+                  "options": [
+                    "Que la tasa alta siempre compensa cualquier problema de liquidez",
+                    "Que este tipo de inversión probablemente no es adecuada para un fondo de emergencia, precisamente por su baja liquidez",
+                    "Que el riesgo de liquidez no tiene ninguna relación con los fondos de emergencia",
+                    "Que cualquier inversión sirve para un fondo de emergencia, siempre que el rendimiento sea bueno"
+                  ],
+                  "explanation": "Un fondo de emergencia necesita estar disponible cuando menos lo esperas — una inversión con baja liquidez, aunque tenga una buena tasa, tiende a no ser adecuada para ese objetivo específico."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de liquidez é a dificuldade de converter um investimento em dinheiro sem perder valor.",
+                    "Ativos diferentes têm níveis de liquidez muito diferentes.",
+                    "Objetivos de curto prazo, como reservas de emergência, pedem atenção especial a esse risco."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Liquidity risk is the difficulty of converting an investment into cash without losing value.",
+                    "Different assets have very different levels of liquidity.",
+                    "Short-term goals, like emergency funds, call for special attention to this risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de liquidez es la dificultad de convertir una inversión en dinero sin perder valor.",
+                    "Activos diferentes tienen niveles de liquidez muy distintos.",
+                    "Los objetivos a corto plazo, como los fondos de emergencia, requieren especial atención a este riesgo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_concentration_risk",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Concentração"
+            },
+            "en": {
+              "title": "Concentration Risk"
+            },
+            "es": {
+              "title": "Riesgo de Concentración"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Todos os ovos na mesma cesta",
+                  "body": "Risco de concentração é o risco adicional que surge quando uma parte muito grande de uma carteira está exposta a um único ativo, setor, emissor ou país. Mesmo que cada investimento individual pareça sólido, concentrar demais amplifica o impacto de qualquer problema específico daquela concentração sobre o patrimônio total."
+                },
+                "en": {
+                  "title": "All eggs in the same basket",
+                  "body": "Concentration risk is the extra risk that arises when a very large part of a portfolio is exposed to a single asset, sector, issuer, or country. Even if each individual investment seems solid, over-concentrating amplifies the impact of any specific problem in that concentration on the total portfolio."
+                },
+                "es": {
+                  "title": "Todos los huevos en la misma canasta",
+                  "body": "El riesgo de concentración es el riesgo adicional que surge cuando una parte muy grande de una cartera está expuesta a un solo activo, sector, emisor o país. Aunque cada inversión individual parezca sólida, concentrarse demasiado amplifica el impacto de cualquier problema específico de esa concentración sobre el patrimonio total."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um funcionário investe a maior parte de suas economias em ações da própria empresa onde trabalha. Se a empresa passa por dificuldades, ele pode perder o emprego e ver seu patrimônio despencar ao mesmo tempo — os dois riscos, antes separados, ficaram concentrados na mesma fonte."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An employee invests most of their savings in shares of the company they work for. If the company runs into trouble, they could lose their job and see their net worth plummet at the same time — two risks that were previously separate became concentrated in the same source."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un empleado invierte la mayor parte de sus ahorros en acciones de la propia empresa donde trabaja. Si la empresa atraviesa dificultades, podría perder su empleo y ver caer su patrimonio al mismo tiempo — dos riesgos que antes estaban separados quedaron concentrados en la misma fuente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco de concentração?",
+                  "options": [
+                    "O risco de a inflação subir de forma inesperada",
+                    "O risco adicional de ter uma parte muito grande da carteira exposta a um único ativo, setor ou emissor",
+                    "O risco de um investimento ter alta liquidez",
+                    "A chance de um ativo pagar juros muito baixos"
+                  ],
+                  "explanation": "Risco de concentração surge quando uma exposição muito grande a uma única fonte amplifica o impacto de qualquer problema específico dela sobre o patrimônio total."
+                },
+                "en": {
+                  "prompt": "What is concentration risk?",
+                  "options": [
+                    "The risk of inflation rising unexpectedly",
+                    "The additional risk of having a very large portion of the portfolio exposed to a single asset, sector or issuer",
+                    "The risk of an investment having high liquidity",
+                    "The chance that an asset pays very low interest"
+                  ],
+                  "explanation": "Concentration risk arises when a very large exposure to a single source amplifies the impact of any specific problem there on the total portfolio."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo de concentración?",
+                  "options": [
+                    "El riesgo de que la inflación suba de forma inesperada",
+                    "El riesgo adicional de tener una parte muy grande de la cartera expuesta a un solo activo, sector o emisor",
+                    "El riesgo de que una inversión tenga alta liquidez",
+                    "La posibilidad de que un activo pague intereses muy bajos"
+                  ],
+                  "explanation": "El riesgo de concentración surge cuando una exposición muy grande a una sola fuente amplifica el impacto de cualquier problema específico de esa fuente sobre el patrimonio total."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco de mercado, crédito e liquidez separadamente. Por que vale a pena pensar também em concentração, mesmo que cada investimento individual pareça seguro?",
+                  "options": [
+                    "Porque concentração não tem relação nenhuma com os outros tipos de risco",
+                    "Porque, mesmo com ativos individualmente sólidos, concentrar demais em uma única fonte amplifica o impacto se algo der errado justamente ali",
+                    "Porque só existe risco de concentração em ações",
+                    "Porque diversificar sempre elimina 100% de qualquer risco"
+                  ],
+                  "explanation": "Concentração é sobre como os riscos individuais se somam quando estão todos apontando para a mesma fonte — por isso vale olhar não só a qualidade de cada investimento, mas também como eles se combinam na carteira como um todo."
+                },
+                "en": {
+                  "prompt": "You already understand market, credit and liquidity risk separately. Why is it also worth thinking about concentration, even if each individual investment seems safe?",
+                  "options": [
+                    "Because concentration has no relation to the other types of risk",
+                    "Because, even with individually solid assets, over-concentrating in a single source amplifies the impact if something goes wrong exactly there",
+                    "Because concentration risk only exists in stocks",
+                    "Because diversifying always eliminates 100% of any risk"
+                  ],
+                  "explanation": "Concentration is about how individual risks add up when they're all pointing at the same source — that's why it's worth looking not just at the quality of each investment, but also at how they combine in the portfolio as a whole."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo de mercado, crédito y liquidez por separado. ¿Por qué vale la pena pensar también en la concentración, aunque cada inversión individual parezca segura?",
+                  "options": [
+                    "Porque la concentración no tiene ninguna relación con los otros tipos de riesgo",
+                    "Porque, incluso con activos individualmente sólidos, concentrarse demasiado en una sola fuente amplifica el impacto si algo sale mal justo ahí",
+                    "Porque el riesgo de concentración solo existe en acciones",
+                    "Porque diversificar siempre elimina el 100% de cualquier riesgo"
+                  ],
+                  "explanation": "La concentración trata sobre cómo se suman los riesgos individuales cuando todos apuntan a la misma fuente — por eso vale la pena mirar no solo la calidad de cada inversión, sino también cómo se combinan en la cartera en su conjunto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de concentração surge quando muito da carteira depende de uma única fonte.",
+                    "Mesmo ativos individualmente sólidos podem gerar um risco combinado alto se muito concentrados.",
+                    "Vale olhar como os investimentos se combinam, não só a qualidade de cada um isoladamente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Concentration risk arises when too much of the portfolio depends on a single source.",
+                    "Even individually solid assets can create a high combined risk if too concentrated.",
+                    "It's worth looking at how investments combine, not just the quality of each one in isolation."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de concentración surge cuando gran parte de la cartera depende de una sola fuente.",
+                    "Incluso activos individualmente sólidos pueden generar un riesgo combinado alto si están muy concentrados.",
+                    "Vale la pena mirar cómo se combinan las inversiones, no solo la calidad de cada una por separado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_diversification_revisited",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Convivendo com o Risco"
+            },
+            "en": {
+              "title": "Living With Risk"
+            },
+            "es": {
+              "title": "Convivir con el Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Gerenciar, não eliminar",
+                  "body": "Nenhum tipo de risco — mercado, crédito, liquidez ou concentração — pode ser completamente eliminado. O objetivo da gestão de risco não é zerar o risco, mas entender quais riscos você está assumindo, o quanto de cada um faz sentido para o seu perfil e objetivos, e distribuí-los de forma consciente em vez de acumular todos no mesmo lugar."
+                },
+                "en": {
+                  "title": "Manage, don't eliminate",
+                  "body": "No type of risk — market, credit, liquidity, or concentration — can be completely eliminated. The goal of risk management isn't to zero out risk, but to understand which risks you're taking on, how much of each makes sense for your profile and goals, and to spread them out deliberately instead of stacking them all in the same place."
+                },
+                "es": {
+                  "title": "Gestionar, no eliminar",
+                  "body": "Ningún tipo de riesgo — mercado, crédito, liquidez o concentración — puede eliminarse por completo. El objetivo de la gestión de riesgo no es reducir el riesgo a cero, sino entender qué riesgos estás asumiendo, cuánto de cada uno tiene sentido para tu perfil y objetivos, y distribuirlos de forma consciente en lugar de acumularlos todos en el mismo lugar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor distribui seu patrimônio entre títulos de diferentes emissores (reduzindo risco de crédito concentrado), diferentes prazos (equilibrando liquidez) e diferentes categorias de ativos (reduzindo o impacto de um único movimento de mercado). Ele não eliminou nenhum risco individual, mas reduziu o impacto de qualquer um deles isoladamente sobre o total."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor spreads their wealth across different issuers' bonds (reducing concentrated credit risk), different terms (balancing liquidity), and different asset categories (reducing the impact of any single market movement). They haven't eliminated any individual risk, but they've reduced the impact any one of them has, on its own, on the total."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor distribuye su patrimonio entre títulos de diferentes emisores (reduciendo el riesgo de crédito concentrado), diferentes plazos (equilibrando la liquidez) y diferentes categorías de activos (reduciendo el impacto de un único movimiento de mercado). No eliminó ningún riesgo individual, pero redujo el impacto de cualquiera de ellos, por sí solo, sobre el total."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo real da gestão de risco?",
+                  "options": [
+                    "Eliminar completamente qualquer risco de uma carteira",
+                    "Entender e distribuir conscientemente os riscos assumidos, em vez de tentar zerá-los",
+                    "Investir apenas em um único ativo considerado 'seguro'",
+                    "Evitar investir para nunca correr nenhum risco"
+                  ],
+                  "explanation": "Gestão de risco não é sobre eliminar risco — algo impossível — mas sobre entendê-lo e distribuí-lo de forma consciente, de acordo com seus objetivos e perfil."
+                },
+                "en": {
+                  "prompt": "What is the real goal of risk management?",
+                  "options": [
+                    "Completely eliminating any risk from a portfolio",
+                    "Understanding and deliberately distributing the risks taken on, instead of trying to zero them out",
+                    "Investing only in a single asset considered 'safe'",
+                    "Avoiding investing altogether to never take on any risk"
+                  ],
+                  "explanation": "Risk management isn't about eliminating risk — something impossible — but about understanding it and distributing it deliberately, according to your goals and profile."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo real de la gestión de riesgo?",
+                  "options": [
+                    "Eliminar por completo cualquier riesgo de una cartera",
+                    "Entender y distribuir conscientemente los riesgos asumidos, en lugar de intentar reducirlos a cero",
+                    "Invertir solo en un único activo considerado 'seguro'",
+                    "Evitar invertir para nunca correr ningún riesgo"
+                  ],
+                  "explanation": "La gestión de riesgo no se trata de eliminar el riesgo — algo imposible — sino de entenderlo y distribuirlo de forma consciente, de acuerdo con tus objetivos y perfil."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já estudou risco de mercado, crédito, liquidez e concentração separadamente. Como esses quatro conceitos se conectam na hora de montar uma carteira de investimentos na prática?",
+                  "options": [
+                    "Eles não se conectam, cada um deve ser avaliado de forma completamente isolada",
+                    "Juntos, ajudam a enxergar de onde vêm as diferentes fontes de risco de uma carteira, permitindo distribuí-las em vez de concentrá-las todas na mesma origem",
+                    "Só o risco de mercado importa de verdade, os outros são secundários",
+                    "Entender esses conceitos garante que a carteira nunca terá prejuízo"
+                  ],
+                  "explanation": "Olhar para os quatro tipos de risco em conjunto ajuda a identificar se diferentes investimentos de uma carteira estão, na prática, expostos à mesma fonte de risco — mesmo parecendo diversificados à primeira vista."
+                },
+                "en": {
+                  "prompt": "You've already studied market, credit, liquidity and concentration risk separately. How do these four concepts connect when actually building an investment portfolio?",
+                  "options": [
+                    "They don't connect, each one should be assessed in complete isolation",
+                    "Together, they help you see where a portfolio's different risk sources come from, allowing you to spread them out instead of concentrating them all in the same origin",
+                    "Only market risk really matters, the others are secondary",
+                    "Understanding these concepts guarantees the portfolio will never have a loss"
+                  ],
+                  "explanation": "Looking at the four types of risk together helps identify whether different investments in a portfolio are, in practice, exposed to the same risk source — even if they seem diversified at first glance."
+                },
+                "es": {
+                  "prompt": "Ya estudiaste el riesgo de mercado, crédito, liquidez y concentración por separado. ¿Cómo se conectan estos cuatro conceptos a la hora de armar una cartera de inversiones en la práctica?",
+                  "options": [
+                    "No se conectan, cada uno debe evaluarse de forma completamente aislada",
+                    "Juntos, ayudan a ver de dónde vienen las diferentes fuentes de riesgo de una cartera, permitiendo distribuirlas en lugar de concentrarlas todas en el mismo origen",
+                    "Solo el riesgo de mercado importa de verdad, los demás son secundarios",
+                    "Entender estos conceptos garantiza que la cartera nunca tendrá pérdidas"
+                  ],
+                  "explanation": "Mirar los cuatro tipos de riesgo en conjunto ayuda a identificar si diferentes inversiones de una cartera están, en la práctica, expuestas a la misma fuente de riesgo — incluso pareciendo diversificadas a primera vista."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Nenhum tipo de risco pode ser completamente eliminado.",
+                    "Gestão de risco é sobre entender e distribuir riscos conscientemente, não zerá-los.",
+                    "Você concluiu o módulo sobre os principais tipos de risco de investimento."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "No type of risk can be completely eliminated.",
+                    "Risk management is about understanding and deliberately distributing risks, not zeroing them out.",
+                    "You've completed the module on the main types of investment risk."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Ningún tipo de riesgo puede eliminarse por completo.",
+                    "La gestión de riesgo trata sobre entender y distribuir los riesgos conscientemente, no reducirlos a cero.",
+                    "Completaste el módulo sobre los principales tipos de riesgo de inversión."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "risk_management_practice",
+      "order": 2,
+      "iconKey": "gpp_maybe_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "risk_types_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Gestão de Risco na Prática",
+          "description": "Correlação entre ativos, rebalanceamento de carteira, teste de cenários e seguro como proteção."
+        },
+        "en": {
+          "title": "Risk Management in Practice",
+          "description": "Correlation between assets, portfolio rebalancing, scenario testing and insurance as protection."
+        },
+        "es": {
+          "title": "Gestión de Riesgo en la Práctica",
+          "description": "Correlación entre activos, rebalanceo de cartera, prueba de escenarios y seguro como protección."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "risk_correlation",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Correlação entre Ativos"
+            },
+            "en": {
+              "title": "Correlation Between Assets"
+            },
+            "es": {
+              "title": "Correlación entre Activos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Diversificar de verdade exige olhar como os ativos se movem juntos",
+                  "body": "Correlação mede o quanto dois ativos tendem a se mover na mesma direção. Ativos com correlação alta tendem a subir e cair juntos; ativos com correlação baixa ou negativa tendem a se comportar de forma mais independente, ou até oposta. Diversificar entre ativos com correlação alta entre si — mesmo que sejam ativos diferentes — oferece menos proteção real do que diversificar entre ativos com correlação mais baixa, já que os primeiros tendem a sofrer os mesmos problemas ao mesmo tempo."
+                },
+                "en": {
+                  "title": "Real diversification requires looking at how assets move together",
+                  "body": "Correlation measures how much two assets tend to move in the same direction. Assets with high correlation tend to rise and fall together; assets with low or negative correlation tend to behave more independently, or even oppositely. Diversifying across assets with high correlation to each other — even if they're technically different assets — offers less real protection than diversifying across assets with lower correlation, since the former tend to suffer the same problems at the same time."
+                },
+                "es": {
+                  "title": "Diversificar de verdad exige mirar cómo se mueven juntos los activos",
+                  "body": "La correlación mide cuánto tienden a moverse dos activos en la misma dirección. Los activos con alta correlación tienden a subir y bajar juntos; los activos con correlación baja o negativa tienden a comportarse de forma más independiente, o incluso opuesta. Diversificar entre activos con alta correlación entre sí — aunque sean técnicamente activos diferentes — ofrece menos protección real que diversificar entre activos con correlación más baja, ya que los primeros tienden a sufrir los mismos problemas al mismo tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra ações de cinco bancos diferentes, achando que está diversificado. Como ações de bancos costumam ter correlação alta entre si — reagindo de forma parecida a mudanças na taxa de juros ou crises no setor financeiro — essa carteira está, na prática, bem menos diversificada do que pareceria à primeira vista, apesar de ter cinco ativos diferentes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys shares of five different banks, thinking they're diversified. Since bank stocks usually have high correlation with each other — reacting similarly to interest rate changes or crises in the financial sector — this portfolio is, in practice, much less diversified than it would seem at first glance, despite having five different assets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra acciones de cinco bancos diferentes, pensando que está diversificado. Como las acciones de bancos suelen tener alta correlación entre sí — reaccionando de forma parecida a cambios en la tasa de interés o crisis en el sector financiero — esta cartera está, en la práctica, bastante menos diversificada de lo que parecería a primera vista, a pesar de tener cinco activos diferentes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a correlação entre dois ativos mede?",
+                  "options": [
+                    "O preço absoluto de cada ativo",
+                    "O quanto dois ativos tendem a se mover na mesma direção",
+                    "A liquidez de um ativo específico",
+                    "A quantidade de dividendos pagos por um ativo"
+                  ],
+                  "explanation": "Correlação mede a relação entre os movimentos de dois ativos — se tendem a subir e cair juntos (correlação alta) ou de forma mais independente (correlação baixa)."
+                },
+                "en": {
+                  "prompt": "What does correlation between two assets measure?",
+                  "options": [
+                    "The absolute price of each asset",
+                    "How much two assets tend to move in the same direction",
+                    "A specific asset's liquidity",
+                    "The amount of dividends paid by an asset"
+                  ],
+                  "explanation": "Correlation measures the relationship between two assets' movements — whether they tend to rise and fall together (high correlation) or more independently (low correlation)."
+                },
+                "es": {
+                  "prompt": "¿Qué mide la correlación entre dos activos?",
+                  "options": [
+                    "El precio absoluto de cada activo",
+                    "Cuánto tienden a moverse dos activos en la misma dirección",
+                    "La liquidez de un activo específico",
+                    "La cantidad de dividendos pagados por un activo"
+                  ],
+                  "explanation": "La correlación mide la relación entre los movimientos de dos activos — si tienden a subir y bajar juntos (correlación alta) o de forma más independiente (correlación baja)."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende diversificação e risco de concentração de outras lições. Um investidor tem ações de cinco empresas diferentes, mas todas do mesmo setor, com correlação historicamente alta entre si. O que isso sugere sobre o nível real de diversificação dessa carteira?",
+                  "options": [
+                    "A carteira está perfeitamente diversificada, já que são cinco empresas diferentes",
+                    "Apesar de ter cinco ativos diferentes, a alta correlação entre eles sugere uma diversificação real menor do que o número de ativos sugere à primeira vista",
+                    "Correlação não tem relação nenhuma com diversificação",
+                    "Ter mais ativos sempre garante diversificação real, independentemente da correlação entre eles"
+                  ],
+                  "explanation": "O número de ativos diferentes, sozinho, não garante diversificação real — se esses ativos têm correlação alta entre si, eles tendem a sofrer os mesmos problemas ao mesmo tempo, reduzindo a proteção que a diversificação deveria oferecer."
+                },
+                "en": {
+                  "prompt": "You already understand diversification and concentration risk from other lessons. An investor holds shares of five different companies, but all from the same sector, with historically high correlation among them. What does this suggest about this portfolio's real level of diversification?",
+                  "options": [
+                    "The portfolio is perfectly diversified, since it's five different companies",
+                    "Despite having five different assets, the high correlation between them suggests a real diversification lower than the number of assets suggests at first glance",
+                    "Correlation has no relation at all to diversification",
+                    "Having more assets always guarantees real diversification, regardless of the correlation between them"
+                  ],
+                  "explanation": "The number of different assets, by itself, doesn't guarantee real diversification — if those assets have high correlation with each other, they tend to suffer the same problems at the same time, reducing the protection diversification should offer."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la diversificación y el riesgo de concentración de otras lecciones. Un inversor tiene acciones de cinco empresas diferentes, pero todas del mismo sector, con correlación históricamente alta entre sí. ¿Qué sugiere esto sobre el nivel real de diversificación de esta cartera?",
+                  "options": [
+                    "La cartera está perfectamente diversificada, ya que son cinco empresas diferentes",
+                    "A pesar de tener cinco activos diferentes, la alta correlación entre ellos sugiere una diversificación real menor de lo que sugiere a primera vista el número de activos",
+                    "La correlación no tiene ninguna relación con la diversificación",
+                    "Tener más activos siempre garantiza diversificación real, sin importar la correlación entre ellos"
+                  ],
+                  "explanation": "El número de activos diferentes, por sí solo, no garantiza diversificación real — si esos activos tienen alta correlación entre sí, tienden a sufrir los mismos problemas al mismo tiempo, reduciendo la protección que la diversificación debería ofrecer."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Correlação mede o quanto dois ativos tendem a se mover juntos.",
+                    "Diversificar entre ativos com correlação alta oferece menos proteção real.",
+                    "O número de ativos diferentes, sozinho, não garante diversificação real."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Correlation measures how much two assets tend to move together.",
+                    "Diversifying across highly correlated assets offers less real protection.",
+                    "The number of different assets, by itself, doesn't guarantee real diversification."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La correlación mide cuánto tienden a moverse juntos dos activos.",
+                    "Diversificar entre activos con alta correlación ofrece menos protección real.",
+                    "El número de activos diferentes, por sí solo, no garantiza diversificación real."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_rebalancing",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Rebalanceamento de Carteira"
+            },
+            "en": {
+              "title": "Portfolio Rebalancing"
+            },
+            "es": {
+              "title": "Rebalanceo de Cartera"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Voltando à distribuição planejada",
+                  "body": "Com o passar do tempo, ativos diferentes de uma carteira se valorizam ou desvalorizam de forma desigual, fazendo com que a proporção original planejada entre eles se altere — um ativo que subiu bastante pode acabar representando uma fatia maior da carteira do que o planejado, aumentando a concentração nele sem uma decisão ativa nesse sentido. Rebalanceamento é o processo de ajustar a carteira periodicamente, vendendo parte do que cresceu além do planejado e comprando o que ficou abaixo, para devolver a carteira à distribuição original definida."
+                },
+                "en": {
+                  "title": "Returning to the planned distribution",
+                  "body": "Over time, different assets in a portfolio appreciate or depreciate unevenly, causing the originally planned proportion between them to shift — an asset that rose a lot might end up representing a larger slice of the portfolio than planned, increasing concentration in it without an active decision to that effect. Rebalancing is the process of periodically adjusting the portfolio, selling part of what grew beyond the plan and buying what fell below it, to bring the portfolio back to the originally defined distribution."
+                },
+                "es": {
+                  "title": "Volviendo a la distribución planeada",
+                  "body": "Con el paso del tiempo, activos diferentes de una cartera se valorizan o desvalorizan de forma desigual, haciendo que la proporción original planeada entre ellos cambie — un activo que subió bastante puede terminar representando una porción mayor de la cartera de lo planeado, aumentando la concentración en él sin una decisión activa en ese sentido. El rebalanceo es el proceso de ajustar la cartera periódicamente, vendiendo parte de lo que creció más allá de lo planeado y comprando lo que quedó por debajo, para devolver la cartera a la distribución original definida."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor define uma carteira com 60% em ações e 40% em renda fixa. Depois de um ano de forte alta nas ações, essa proporção muda para 75% em ações e 25% em renda fixa, sem nenhuma decisão ativa — apenas pela valorização desigual entre as duas classes. Ao rebalancear, ele vende parte das ações e compra mais renda fixa, voltando à proporção original de 60/40, e reduzindo a concentração que se formou passivamente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sets up a portfolio with 60% in stocks and 40% in fixed income. After a year of strong stock gains, that proportion shifts to 75% in stocks and 25% in fixed income, with no active decision — just from the uneven appreciation between the two classes. By rebalancing, they sell part of the stocks and buy more fixed income, returning to the original 60/40 proportion, and reducing the concentration that formed passively."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor define una cartera con el 60% en acciones y el 40% en renta fija. Después de un año de fuerte alza en las acciones, esa proporción cambia al 75% en acciones y el 25% en renta fija, sin ninguna decisión activa — solo por la valorización desigual entre ambas clases. Al rebalancear, vende parte de las acciones y compra más renta fija, volviendo a la proporción original de 60/40, y reduciendo la concentración que se formó pasivamente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é rebalanceamento de carteira?",
+                  "options": [
+                    "Vender toda a carteira de uma só vez",
+                    "O processo de ajustar a carteira periodicamente para devolvê-la à distribuição original planejada entre os ativos",
+                    "Investir sempre no ativo que mais subiu recentemente",
+                    "Um tipo de imposto cobrado sobre a carteira"
+                  ],
+                  "explanation": "Rebalanceamento é ajustar as proporções da carteira de volta ao planejado originalmente, vendendo parte do que cresceu além da proporção e comprando o que ficou abaixo."
+                },
+                "en": {
+                  "prompt": "What is portfolio rebalancing?",
+                  "options": [
+                    "Selling the entire portfolio at once",
+                    "The process of periodically adjusting the portfolio to bring it back to the originally planned distribution between assets",
+                    "Always investing in whatever asset rose the most recently",
+                    "A type of tax charged on the portfolio"
+                  ],
+                  "explanation": "Rebalancing is adjusting the portfolio's proportions back to what was originally planned, selling part of what grew beyond the proportion and buying what fell below."
+                },
+                "es": {
+                  "prompt": "¿Qué es el rebalanceo de cartera?",
+                  "options": [
+                    "Vender toda la cartera de una sola vez",
+                    "El proceso de ajustar la cartera periódicamente para devolverla a la distribución originalmente planeada entre los activos",
+                    "Invertir siempre en el activo que más subió recientemente",
+                    "Un tipo de impuesto cobrado sobre la cartera"
+                  ],
+                  "explanation": "El rebalanceo es ajustar las proporciones de la cartera de vuelta a lo planeado originalmente, vendiendo parte de lo que creció más allá de la proporción y comprando lo que quedó por debajo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco de concentração de outra lição. Como a falta de rebalanceamento ao longo do tempo pode levar a esse tipo de risco, mesmo sem nenhuma decisão ativa do investidor?",
+                  "options": [
+                    "Não tem relação nenhuma, concentração só acontece por decisão ativa do investidor",
+                    "Um ativo que se valoriza bastante, sem rebalanceamento, passa a representar uma fatia cada vez maior da carteira, criando uma concentração passiva que o investidor pode nem perceber",
+                    "Rebalanceamento sempre aumenta o risco de concentração",
+                    "Carteiras nunca mudam de proporção ao longo do tempo, então rebalanceamento é desnecessário"
+                  ],
+                  "explanation": "Sem rebalanceamento, um ativo que se valoriza bastante acaba dominando cada vez mais a carteira, criando uma concentração que surge passivamente, sem nenhuma decisão consciente do investidor de aumentar aquela exposição."
+                },
+                "en": {
+                  "prompt": "You already understand concentration risk from another lesson. How can the lack of rebalancing over time lead to that kind of risk, even without any active decision by the investor?",
+                  "options": [
+                    "It has no relation at all, concentration only happens from an active decision by the investor",
+                    "An asset that appreciates a lot, with no rebalancing, comes to represent an increasingly larger slice of the portfolio, creating a passive concentration the investor might not even notice",
+                    "Rebalancing always increases concentration risk",
+                    "Portfolios never change proportion over time, so rebalancing is unnecessary"
+                  ],
+                  "explanation": "Without rebalancing, an asset that appreciates a lot ends up dominating more and more of the portfolio, creating a concentration that arises passively, with no conscious decision by the investor to increase that exposure."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo de concentración de otra lección. ¿Cómo puede la falta de rebalanceo con el tiempo llevar a ese tipo de riesgo, incluso sin ninguna decisión activa del inversor?",
+                  "options": [
+                    "No tiene ninguna relación, la concentración solo ocurre por decisión activa del inversor",
+                    "Un activo que se valoriza bastante, sin rebalanceo, pasa a representar una porción cada vez mayor de la cartera, creando una concentración pasiva que el inversor puede ni siquiera notar",
+                    "El rebalanceo siempre aumenta el riesgo de concentración",
+                    "Las carteras nunca cambian de proporción con el tiempo, así que el rebalanceo es innecesario"
+                  ],
+                  "explanation": "Sin rebalanceo, un activo que se valoriza bastante termina dominando cada vez más la cartera, creando una concentración que surge pasivamente, sin ninguna decisión consciente del inversor de aumentar esa exposición."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Rebalanceamento ajusta a carteira de volta à distribuição originalmente planejada.",
+                    "Sem rebalanceamento, ativos que se valorizam muito podem dominar a carteira com o tempo.",
+                    "Isso pode criar uma concentração passiva, sem nenhuma decisão ativa do investidor."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Rebalancing adjusts the portfolio back to the originally planned distribution.",
+                    "Without rebalancing, assets that appreciate a lot can come to dominate the portfolio over time.",
+                    "This can create passive concentration, with no active decision by the investor."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El rebalanceo ajusta la cartera de vuelta a la distribución originalmente planeada.",
+                    "Sin rebalanceo, activos que se valorizan mucho pueden llegar a dominar la cartera con el tiempo.",
+                    "Esto puede crear una concentración pasiva, sin ninguna decisión activa del inversor."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_stress_testing",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Testando Cenários (Stress Test)"
+            },
+            "en": {
+              "title": "Scenario Testing (Stress Test)"
+            },
+            "es": {
+              "title": "Prueba de Escenarios (Stress Test)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Imaginando o pior antes que ele aconteça",
+                  "body": "Um teste de estresse (stress test) é o exercício de estimar como uma carteira se comportaria diante de cenários adversos específicos — como uma alta abrupta de juros, uma crise cambial, ou uma queda generalizada do mercado — antes que esses cenários realmente aconteçam. O objetivo não é prever o futuro com precisão, mas entender antecipadamente quais partes da carteira seriam mais afetadas em situações difíceis, para decidir com mais clareza se o nível de risco assumido está de acordo com o que o investidor realmente consegue suportar."
+                },
+                "en": {
+                  "title": "Imagining the worst before it happens",
+                  "body": "A stress test is the exercise of estimating how a portfolio would behave in specific adverse scenarios — like a sudden interest rate hike, a currency crisis, or a broad market downturn — before those scenarios actually happen. The goal isn't to predict the future with precision, but to understand ahead of time which parts of the portfolio would be most affected in difficult situations, in order to decide more clearly whether the level of risk taken on matches what the investor can actually handle."
+                },
+                "es": {
+                  "title": "Imaginando lo peor antes de que ocurra",
+                  "body": "Una prueba de estrés (stress test) es el ejercicio de estimar cómo se comportaría una cartera ante escenarios adversos específicos — como una subida abrupta de tasas, una crisis cambiaria, o una caída generalizada del mercado — antes de que esos escenarios realmente ocurran. El objetivo no es predecir el futuro con precisión, sino entender de antemano qué partes de la cartera se verían más afectadas en situaciones difíciles, para decidir con más claridad si el nivel de riesgo asumido está de acuerdo con lo que el inversor realmente puede soportar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor simula o que aconteceria com sua carteira se as ações caíssem 30% de uma vez, algo já visto historicamente em crises passadas. Ao ver o impacto estimado nesse cenário, ele percebe que perderia mais do que se sente confortável perdendo — um sinal de que talvez seu nível de exposição a ações esteja acima do que seu perfil de risco realmente suporta, mesmo sem essa queda ter acontecido ainda."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor simulates what would happen to their portfolio if stocks fell 30% at once, something already seen historically in past crises. Seeing the estimated impact in that scenario, they realize they'd lose more than they feel comfortable losing — a sign that their level of stock exposure might be above what their risk profile can actually handle, even though that drop hasn't happened yet."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor simula qué pasaría con su cartera si las acciones cayeran un 30% de golpe, algo ya visto históricamente en crisis pasadas. Al ver el impacto estimado en ese escenario, se da cuenta de que perdería más de lo que se siente cómodo perdiendo — una señal de que quizás su nivel de exposición a acciones esté por encima de lo que su perfil de riesgo realmente soporta, incluso sin que esa caída haya ocurrido todavía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo de um teste de estresse (stress test) em uma carteira?",
+                  "options": [
+                    "Prever com certeza absoluta o que vai acontecer no futuro",
+                    "Estimar antecipadamente como a carteira se comportaria em cenários adversos específicos, para avaliar se o risco assumido é adequado",
+                    "Garantir que a carteira nunca terá prejuízo",
+                    "Aumentar automaticamente o retorno esperado da carteira"
+                  ],
+                  "explanation": "O teste de estresse simula cenários adversos para entender antecipadamente o impacto potencial sobre a carteira, ajudando a avaliar se o nível de risco assumido está adequado, sem pretender prever o futuro com certeza."
+                },
+                "en": {
+                  "prompt": "What is the goal of a stress test on a portfolio?",
+                  "options": [
+                    "Predicting with absolute certainty what will happen in the future",
+                    "Estimating ahead of time how the portfolio would behave in specific adverse scenarios, to assess whether the risk taken on is appropriate",
+                    "Guaranteeing the portfolio will never have a loss",
+                    "Automatically increasing the portfolio's expected return"
+                  ],
+                  "explanation": "The stress test simulates adverse scenarios to understand ahead of time the potential impact on the portfolio, helping assess whether the level of risk taken on is appropriate, without claiming to predict the future with certainty."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo de una prueba de estrés (stress test) en una cartera?",
+                  "options": [
+                    "Predecir con certeza absoluta lo que va a pasar en el futuro",
+                    "Estimar de antemano cómo se comportaría la cartera en escenarios adversos específicos, para evaluar si el riesgo asumido es adecuado",
+                    "Garantizar que la cartera nunca tendrá pérdidas",
+                    "Aumentar automáticamente el retorno esperado de la cartera"
+                  ],
+                  "explanation": "La prueba de estrés simula escenarios adversos para entender de antemano el impacto potencial sobre la cartera, ayudando a evaluar si el nivel de riesgo asumido es adecuado, sin pretender predecir el futuro con certeza."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende perfil de investidor de outra lição. Como um teste de estresse pode ajudar alguém a descobrir que seu nível de risco atual não está alinhado com seu perfil, antes de uma crise real acontecer?",
+                  "options": [
+                    "Não ajuda, só é possível descobrir isso depois que a crise já aconteceu de verdade",
+                    "Simulando um cenário adverso específico, a pessoa pode ver a perda estimada e comparar com o quanto ela realmente está disposta a suportar, ajustando a carteira antes que o cenário se torne realidade",
+                    "Teste de estresse serve apenas para aumentar o retorno esperado da carteira",
+                    "Perfil de investidor não tem relação nenhuma com testes de cenário"
+                  ],
+                  "explanation": "Ao estimar o impacto de um cenário adverso antes que ele aconteça, o investidor pode comparar essa perda estimada com sua real tolerância ao risco, e ajustar a carteira proativamente, em vez de descobrir o desalinhamento só durante uma crise real."
+                },
+                "en": {
+                  "prompt": "You already understand investor profile from another lesson. How can a stress test help someone discover their current risk level isn't aligned with their profile, before a real crisis happens?",
+                  "options": [
+                    "It doesn't help, that can only be discovered after the crisis has actually happened",
+                    "By simulating a specific adverse scenario, the person can see the estimated loss and compare it with how much they're actually willing to bear, adjusting the portfolio before the scenario becomes reality",
+                    "A stress test only serves to increase the portfolio's expected return",
+                    "Investor profile has no relation at all to scenario testing"
+                  ],
+                  "explanation": "By estimating the impact of an adverse scenario before it happens, the investor can compare that estimated loss with their real risk tolerance, and proactively adjust the portfolio, instead of discovering the mismatch only during a real crisis."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el perfil de inversor de otra lección. ¿Cómo puede una prueba de estrés ayudar a alguien a descubrir que su nivel de riesgo actual no está alineado con su perfil, antes de que ocurra una crisis real?",
+                  "options": [
+                    "No ayuda, eso solo se puede descubrir después de que la crisis ya haya ocurrido de verdad",
+                    "Simulando un escenario adverso específico, la persona puede ver la pérdida estimada y compararla con cuánto está realmente dispuesta a soportar, ajustando la cartera antes de que el escenario se vuelva realidad",
+                    "La prueba de estrés solo sirve para aumentar el retorno esperado de la cartera",
+                    "El perfil de inversor no tiene ninguna relación con las pruebas de escenario"
+                  ],
+                  "explanation": "Al estimar el impacto de un escenario adverso antes de que ocurra, el inversor puede comparar esa pérdida estimada con su tolerancia real al riesgo, y ajustar la cartera proactivamente, en lugar de descubrir el desajuste solo durante una crisis real."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Teste de estresse simula cenários adversos para estimar seu impacto sobre a carteira.",
+                    "O objetivo é avaliar antecipadamente se o risco assumido é adequado, não prever o futuro.",
+                    "Ele ajuda a comparar a perda estimada com a real tolerância ao risco do investidor."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A stress test simulates adverse scenarios to estimate their impact on the portfolio.",
+                    "The goal is to assess ahead of time whether the risk taken on is appropriate, not to predict the future.",
+                    "It helps compare the estimated loss with the investor's real risk tolerance."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La prueba de estrés simula escenarios adversos para estimar su impacto sobre la cartera.",
+                    "El objetivo es evaluar de antemano si el riesgo asumido es adecuado, no predecir el futuro.",
+                    "Ayuda a comparar la pérdida estimada con la tolerancia real al riesgo del inversor."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_insurance",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Seguro como Proteção de Risco"
+            },
+            "en": {
+              "title": "Insurance as Risk Protection"
+            },
+            "es": {
+              "title": "Seguro como Protección de Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Transferindo um risco específico para outra parte",
+                  "body": "Seguro é um instrumento que transfere um risco específico — como o de um imóvel pegar fogo, ou um problema de saúde grave — para uma seguradora, em troca do pagamento de um prêmio periódico. Diferente de investimentos, cujo objetivo é fazer o dinheiro crescer, o seguro tem como objetivo proteger contra eventos de baixa probabilidade, mas alto impacto financeiro, que poderiam comprometer significativamente o patrimônio ou os planos financeiros de uma pessoa se acontecessem sem essa proteção."
+                },
+                "en": {
+                  "title": "Transferring a specific risk to another party",
+                  "body": "Insurance is an instrument that transfers a specific risk — like a property catching fire, or a serious health problem — to an insurance company, in exchange for paying a periodic premium. Unlike investments, whose goal is to grow money, insurance aims to protect against low-probability, high-financial-impact events, which could significantly compromise a person's wealth or financial plans if they happened without that protection."
+                },
+                "es": {
+                  "title": "Transfiriendo un riesgo específico a otra parte",
+                  "body": "El seguro es un instrumento que transfiere un riesgo específico — como que un inmueble se incendie, o un problema de salud grave — a una aseguradora, a cambio del pago de una prima periódica. A diferencia de las inversiones, cuyo objetivo es hacer crecer el dinero, el seguro tiene como objetivo proteger contra eventos de baja probabilidad, pero alto impacto financiero, que podrían comprometer significativamente el patrimonio o los planes financieros de una persona si ocurrieran sin esa protección."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa paga um prêmio anual de seguro residencial. Na grande maioria dos anos, ela não usa o seguro e o prêmio pago parece, isoladamente, um custo sem retorno direto. Mas se um incêndio destruir o imóvel em algum desses anos, o seguro cobre um prejuízo que poderia comprometer boa parte, ou até todo, o patrimônio acumulado ao longo de anos de trabalho — o valor do seguro está justamente nessa proteção contra o evento raro, mas potencialmente devastador."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person pays an annual homeowner's insurance premium. In the vast majority of years, they don't use the insurance and the premium paid looks, in isolation, like a cost with no direct return. But if a fire destroys the property in one of those years, the insurance covers a loss that could compromise a large part, or even all, of the wealth accumulated over years of work — the insurance's value lies exactly in that protection against the rare, but potentially devastating, event."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona paga una prima anual de seguro residencial. En la gran mayoría de los años, no usa el seguro y la prima pagada parece, aisladamente, un costo sin retorno directo. Pero si un incendio destruye el inmueble en alguno de esos años, el seguro cubre una pérdida que podría comprometer gran parte, o incluso todo, el patrimonio acumulado a lo largo de años de trabajo — el valor del seguro está justamente en esa protección contra el evento raro, pero potencialmente devastador."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo principal de um seguro?",
+                  "options": [
+                    "Fazer o dinheiro crescer ao longo do tempo, como um investimento",
+                    "Transferir um risco específico de baixa probabilidade, mas alto impacto financeiro, para uma seguradora",
+                    "Garantir retorno financeiro todos os anos",
+                    "Substituir completamente a necessidade de uma reserva de emergência"
+                  ],
+                  "explanation": "Seguro tem uma função diferente de investir: ele transfere um risco específico para a seguradora, protegendo contra eventos raros, mas de alto impacto financeiro, em troca de um prêmio periódico."
+                },
+                "en": {
+                  "prompt": "What is insurance's main goal?",
+                  "options": [
+                    "Growing money over time, like an investment",
+                    "Transferring a specific low-probability, but high-financial-impact risk, to an insurance company",
+                    "Guaranteeing a financial return every year",
+                    "Completely replacing the need for an emergency fund"
+                  ],
+                  "explanation": "Insurance has a different function from investing: it transfers a specific risk to the insurance company, protecting against rare, but high-financial-impact events, in exchange for a periodic premium."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo principal de un seguro?",
+                  "options": [
+                    "Hacer crecer el dinero con el tiempo, como una inversión",
+                    "Transferir un riesgo específico de baja probabilidad, pero alto impacto financiero, a una aseguradora",
+                    "Garantizar un retorno financiero todos los años",
+                    "Reemplazar por completo la necesidad de un fondo de emergencia"
+                  ],
+                  "explanation": "El seguro tiene una función diferente a la de invertir: transfiere un riesgo específico a la aseguradora, protegiendo contra eventos raros, pero de alto impacto financiero, a cambio de una prima periódica."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma pessoa diz: 'paguei seguro por 10 anos e nunca precisei usar, então foi dinheiro jogado fora'. Com base no que você aprendeu sobre o objetivo do seguro, o que está incompleto nesse raciocínio?",
+                  "options": [
+                    "Nada, se o seguro nunca foi usado, realmente foi um desperdício de dinheiro",
+                    "O valor do seguro está na proteção contra um evento raro mas de alto impacto — não precisar usá-lo na maioria dos anos é justamente o resultado esperado, não um fracasso do produto",
+                    "Seguro deveria sempre gerar algum retorno financeiro direto, como um investimento",
+                    "Seguro só vale a pena se for usado todos os anos"
+                  ],
+                  "explanation": "Seguro não é um investimento que deveria gerar retorno direto — seu valor está em proteger contra um evento raro e de alto impacto; não precisar usá-lo é o cenário mais comum e esperado, não uma falha da proteção."
+                },
+                "en": {
+                  "prompt": "Someone says: 'I paid insurance for 10 years and never needed to use it, so it was money thrown away.' Based on what you learned about insurance's purpose, what's incomplete about that reasoning?",
+                  "options": [
+                    "Nothing, if the insurance was never used, it really was a waste of money",
+                    "Insurance's value lies in the protection against a rare but high-impact event — not needing to use it in most years is exactly the expected outcome, not a product failure",
+                    "Insurance should always generate some direct financial return, like an investment",
+                    "Insurance is only worth it if it's used every year"
+                  ],
+                  "explanation": "Insurance isn't an investment expected to generate a direct return — its value is in protecting against a rare, high-impact event; not needing to use it is the most common and expected scenario, not a failure of the protection."
+                },
+                "es": {
+                  "prompt": "Alguien dice: 'pagué seguro durante 10 años y nunca lo necesité usar, así que fue dinero tirado'. Según lo que aprendiste sobre el objetivo del seguro, ¿qué es incompleto en ese razonamiento?",
+                  "options": [
+                    "Nada, si el seguro nunca se usó, realmente fue un desperdicio de dinero",
+                    "El valor del seguro está en la protección contra un evento raro pero de alto impacto — no necesitar usarlo en la mayoría de los años es justamente el resultado esperado, no un fracaso del producto",
+                    "El seguro debería siempre generar algún retorno financiero directo, como una inversión",
+                    "El seguro solo vale la pena si se usa todos los años"
+                  ],
+                  "explanation": "El seguro no es una inversión que debería generar un retorno directo — su valor está en proteger contra un evento raro y de alto impacto; no necesitar usarlo es el escenario más común y esperado, no una falla de la protección."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Seguro transfere um risco específico de baixa probabilidade e alto impacto para uma seguradora.",
+                    "Não usar o seguro na maioria dos anos é o cenário esperado, não um desperdício.",
+                    "O valor do seguro está na proteção contra o evento raro, não em gerar retorno direto todo ano."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Insurance transfers a specific low-probability, high-impact risk to an insurance company.",
+                    "Not using the insurance in most years is the expected scenario, not a waste.",
+                    "Insurance's value is in the protection against the rare event, not in generating a direct return every year."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El seguro transfiere un riesgo específico de baja probabilidad y alto impacto a una aseguradora.",
+                    "No usar el seguro en la mayoría de los años es el escenario esperado, no un desperdicio.",
+                    "El valor del seguro está en la protección contra el evento raro, no en generar un retorno directo cada año."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_tolerance_vs_capacity",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tolerância x Capacidade de Risco"
+            },
+            "en": {
+              "title": "Risk Tolerance vs. Risk Capacity"
+            },
+            "es": {
+              "title": "Tolerancia vs. Capacidad de Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Sentir-se confortável não é o mesmo que poder arcar com a perda",
+                  "body": "Tolerância ao risco é o quanto uma pessoa está psicologicamente confortável em ver o valor de seus investimentos oscilar, incluindo períodos de perda. Capacidade de risco é diferente: é o quanto essa pessoa pode, na prática, suportar financeiramente uma perda, considerando fatores como renda, prazo até precisar do dinheiro e outras reservas disponíveis. As duas medidas nem sempre coincidem — uma pessoa pode se sentir tranquila com oscilações grandes (alta tolerância), mas não ter, de fato, condições financeiras de sofrer uma perda significativa no momento (baixa capacidade), ou o contrário."
+                },
+                "en": {
+                  "title": "Feeling comfortable isn't the same as being able to afford the loss",
+                  "body": "Risk tolerance is how psychologically comfortable a person is seeing the value of their investments fluctuate, including periods of loss. Risk capacity is different: it's how much that person can, in practice, financially withstand a loss, considering factors like income, the time until the money is needed, and other available reserves. The two measures don't always match — a person might feel calm about large swings (high tolerance) but not actually have the financial conditions to suffer a significant loss right now (low capacity), or the reverse."
+                },
+                "es": {
+                  "title": "Sentirse cómodo no es lo mismo que poder afrontar la pérdida",
+                  "body": "La tolerancia al riesgo es cuán psicológicamente cómoda se siente una persona viendo oscilar el valor de sus inversiones, incluyendo períodos de pérdida. La capacidad de riesgo es diferente: es cuánto puede esa persona, en la práctica, soportar financieramente una pérdida, considerando factores como el ingreso, el plazo hasta necesitar el dinero y otras reservas disponibles. Las dos medidas no siempre coinciden — una persona puede sentirse tranquila con oscilaciones grandes (alta tolerancia), pero no tener, de hecho, condiciones financieras para sufrir una pérdida significativa en este momento (baja capacidad), o lo contrario."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um jovem profissional se sente confortável vendo sua carteira cair 30% em uma crise, sem perder o sono por isso — alta tolerância ao risco. Mas se ele precisar desse dinheiro em poucos meses para a entrada de um imóvel já negociado, sua capacidade real de suportar essa perda é baixa, independentemente de como ele se sente emocionalmente a respeito."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A young professional feels comfortable watching their portfolio drop 30% in a crisis, without losing sleep over it — high risk tolerance. But if they need that money in a few months for a down payment on a property already under contract, their real capacity to withstand that loss is low, regardless of how they feel emotionally about it."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un joven profesional se siente cómodo viendo su cartera caer un 30% en una crisis, sin perder el sueño por eso — alta tolerancia al riesgo. Pero si necesita ese dinero en pocos meses para el pago inicial de un inmueble ya negociado, su capacidad real para soportar esa pérdida es baja, sin importar cómo se sienta emocionalmente al respecto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a diferença entre tolerância ao risco e capacidade de risco?",
+                  "options": [
+                    "Não existe diferença, os dois termos significam exatamente a mesma coisa",
+                    "Tolerância é o conforto psicológico com oscilações; capacidade é a condição financeira real de suportar uma perda, considerando fatores como prazo e reservas",
+                    "Capacidade de risco é sempre maior do que a tolerância ao risco",
+                    "Tolerância ao risco só se aplica a investidores iniciantes"
+                  ],
+                  "explanation": "Tolerância ao risco é uma medida psicológica de conforto com oscilações; capacidade de risco é uma medida financeira e prática de o quanto a pessoa realmente pode suportar perder, considerando sua situação real."
+                },
+                "en": {
+                  "prompt": "What is the difference between risk tolerance and risk capacity?",
+                  "options": [
+                    "There's no difference, both terms mean exactly the same thing",
+                    "Tolerance is the psychological comfort with fluctuations; capacity is the real financial condition to withstand a loss, considering factors like time frame and reserves",
+                    "Risk capacity is always greater than risk tolerance",
+                    "Risk tolerance only applies to beginner investors"
+                  ],
+                  "explanation": "Risk tolerance is a psychological measure of comfort with fluctuations; risk capacity is a financial, practical measure of how much the person can actually afford to lose, considering their real situation."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia entre tolerancia al riesgo y capacidad de riesgo?",
+                  "options": [
+                    "No existe diferencia, ambos términos significan exactamente lo mismo",
+                    "La tolerancia es la comodidad psicológica con las oscilaciones; la capacidad es la condición financiera real de soportar una pérdida, considerando factores como el plazo y las reservas",
+                    "La capacidad de riesgo siempre es mayor que la tolerancia al riesgo",
+                    "La tolerancia al riesgo solo se aplica a inversores principiantes"
+                  ],
+                  "explanation": "La tolerancia al riesgo es una medida psicológica de comodidad con las oscilaciones; la capacidad de riesgo es una medida financiera y práctica de cuánto la persona realmente puede soportar perder, considerando su situación real."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição deste módulo, que um teste de estresse ajuda a comparar a perda estimada em um cenário adverso com a tolerância ao risco do investidor. Como a distinção entre tolerância e capacidade de risco torna essa comparação ainda mais completa?",
+                  "options": [
+                    "Não torna, tolerância e capacidade são sempre idênticas, então a distinção não agrega nada",
+                    "Ela mostra que não basta comparar a perda estimada só com o conforto emocional (tolerância) — também é preciso considerar se a pessoa realmente pode arcar com essa perda no momento (capacidade), já que as duas coisas podem divergir",
+                    "Ela mostra que testes de estresse só servem para medir capacidade de risco, nunca tolerância",
+                    "Capacidade de risco elimina a necessidade de qualquer teste de estresse"
+                  ],
+                  "explanation": "Um teste de estresse fica mais completo quando a perda estimada é comparada tanto com o conforto emocional da pessoa (tolerância) quanto com sua real condição financeira de suportar aquela perda no momento (capacidade) — as duas dimensões, juntas, dão um quadro mais completo do risco adequado."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson in this module, that a stress test helps compare the estimated loss in an adverse scenario with the investor's risk tolerance. How does the distinction between risk tolerance and risk capacity make that comparison even more complete?",
+                  "options": [
+                    "It doesn't, tolerance and capacity are always identical, so the distinction adds nothing",
+                    "It shows that it isn't enough to compare the estimated loss only with the person's emotional comfort (tolerance) — it's also necessary to consider whether the person can really afford that loss right now (capacity), since the two things can diverge",
+                    "It shows that stress tests only serve to measure risk capacity, never tolerance",
+                    "Risk capacity eliminates the need for any stress test"
+                  ],
+                  "explanation": "A stress test becomes more complete when the estimated loss is compared both with the person's emotional comfort (tolerance) and with their real financial condition to withstand that loss right now (capacity) — the two dimensions together give a more complete picture of the appropriate risk level."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección de este módulo, que una prueba de estrés ayuda a comparar la pérdida estimada en un escenario adverso con la tolerancia al riesgo del inversor. ¿Cómo hace la distinción entre tolerancia y capacidad de riesgo que esa comparación sea aún más completa?",
+                  "options": [
+                    "No lo hace, tolerancia y capacidad siempre son idénticas, así que la distinción no agrega nada",
+                    "Muestra que no basta con comparar la pérdida estimada solo con la comodidad emocional (tolerancia) — también es necesario considerar si la persona realmente puede afrontar esa pérdida en este momento (capacidad), ya que ambas cosas pueden divergir",
+                    "Muestra que las pruebas de estrés solo sirven para medir la capacidad de riesgo, nunca la tolerancia",
+                    "La capacidad de riesgo elimina la necesidad de cualquier prueba de estrés"
+                  ],
+                  "explanation": "Una prueba de estrés queda más completa cuando la pérdida estimada se compara tanto con la comodidad emocional de la persona (tolerancia) como con su condición financiera real para soportar esa pérdida en este momento (capacidad) — ambas dimensiones, juntas, dan un panorama más completo del riesgo adecuado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Tolerância ao risco é o conforto psicológico com oscilações no valor dos investimentos.",
+                    "Capacidade de risco é a condição financeira real de suportar uma perda, considerando prazo e reservas.",
+                    "As duas medidas podem divergir, e vale considerar ambas ao definir o nível de risco de uma carteira."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk tolerance is the psychological comfort with fluctuations in investment value.",
+                    "Risk capacity is the real financial condition to withstand a loss, considering time frame and reserves.",
+                    "The two measures can diverge, and it's worth considering both when defining a portfolio's risk level."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tolerancia al riesgo es la comodidad psicológica con las oscilaciones en el valor de las inversiones.",
+                    "La capacidad de riesgo es la condición financiera real para soportar una pérdida, considerando plazo y reservas.",
+                    "Ambas medidas pueden divergir, y vale la pena considerar las dos al definir el nivel de riesgo de una cartera."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "risk_quantification_advanced",
+      "order": 3,
+      "iconKey": "gpp_maybe_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "risk_management_practice"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Quantificando o Risco",
+          "description": "Volatilidade e beta, Value at Risk (VaR), risco de cauda, retorno ajustado ao risco e risco sistemático vs. diversificável."
+        },
+        "en": {
+          "title": "Quantifying Risk",
+          "description": "Volatility and beta, Value at Risk (VaR), tail risk, risk-adjusted return, and systematic vs. diversifiable risk."
+        },
+        "es": {
+          "title": "Cuantificando el Riesgo",
+          "description": "Volatilidad y beta, Valor en Riesgo (VaR), riesgo de cola, retorno ajustado al riesgo y riesgo sistemático vs. diversificable."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "risk_volatility_and_beta",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Volatilidade e Beta Como Medidas de Risco"
+            },
+            "en": {
+              "title": "Volatility and Beta as Risk Measures"
+            },
+            "es": {
+              "title": "Volatilidad y Beta Como Medidas de Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Colocando um número no risco",
+                  "body": "Volatilidade é uma medida estatística de quanto o preço de um ativo varia ao longo do tempo, geralmente calculada pelo desvio-padrão de seus retornos. Beta é uma medida relacionada, mas específica: ela compara a volatilidade de um ativo em relação a um índice de referência, como um índice amplo do mercado de ações. Um beta de 1 indica que o ativo tende a se mover em linha com o índice; um beta acima de 1 indica movimentos historicamente mais amplos do que o índice; um beta abaixo de 1 indica movimentos historicamente mais suaves."
+                },
+                "en": {
+                  "title": "Putting a number on risk",
+                  "body": "Volatility is a statistical measure of how much an asset's price varies over time, usually calculated as the standard deviation of its returns. Beta is a related but more specific measure: it compares an asset's volatility relative to a benchmark index, such as a broad stock market index. A beta of 1 indicates the asset tends to move in line with the index; a beta above 1 indicates historically wider swings than the index; a beta below 1 indicates historically milder swings."
+                },
+                "es": {
+                  "title": "Poniendo un número al riesgo",
+                  "body": "La volatilidad es una medida estadística de cuánto varía el precio de un activo a lo largo del tiempo, generalmente calculada como la desviación estándar de sus retornos. El beta es una medida relacionada, pero más específica: compara la volatilidad de un activo en relación con un índice de referencia, como un índice amplio del mercado de acciones. Un beta de 1 indica que el activo tiende a moverse en línea con el índice; un beta por encima de 1 indica movimientos históricamente más amplios que el índice; un beta por debajo de 1 indica movimientos históricamente más suaves."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma ação com beta histórico de 1,5 tende a subir ou cair, em média, 50% a mais do que o índice de referência em movimentos de mercado — se o índice cai 10%, essa ação tende a cair perto de 15%. Já uma ação com beta de 0,6 tende a ter movimentos mais suaves do que o índice, subindo ou caindo proporcionalmente menos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A stock with a historical beta of 1.5 tends to rise or fall, on average, 50% more than the benchmark index in market moves — if the index falls 10%, that stock tends to fall around 15%. A stock with a beta of 0.6, on the other hand, tends to have milder moves than the index, rising or falling proportionally less."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una acción con un beta histórico de 1,5 tiende a subir o caer, en promedio, un 50% más que el índice de referencia en movimientos de mercado — si el índice cae un 10%, esa acción tiende a caer cerca de un 15%. Una acción con un beta de 0,6, en cambio, tiende a tener movimientos más suaves que el índice, subiendo o cayendo proporcionalmente menos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que indica um beta histórico acima de 1 para uma ação?",
+                  "options": [
+                    "A ação tende a ter movimentos historicamente mais amplos do que o índice de referência",
+                    "A ação nunca varia de preço",
+                    "A ação é imune a quedas de mercado",
+                    "A ação tem exatamente o mesmo preço do índice de referência"
+                  ],
+                  "explanation": "Um beta acima de 1 indica que, historicamente, a ação tende a amplificar os movimentos do índice de referência, para cima ou para baixo."
+                },
+                "en": {
+                  "prompt": "What does a historical beta above 1 indicate for a stock?",
+                  "options": [
+                    "The stock tends to have historically wider moves than the benchmark index",
+                    "The stock never varies in price",
+                    "The stock is immune to market downturns",
+                    "The stock has exactly the same price as the benchmark index"
+                  ],
+                  "explanation": "A beta above 1 indicates that, historically, the stock tends to amplify the benchmark index's moves, up or down."
+                },
+                "es": {
+                  "prompt": "¿Qué indica un beta histórico por encima de 1 para una acción?",
+                  "options": [
+                    "La acción tiende a tener movimientos históricamente más amplios que el índice de referencia",
+                    "La acción nunca varía de precio",
+                    "La acción es inmune a caídas de mercado",
+                    "La acción tiene exactamente el mismo precio que el índice de referencia"
+                  ],
+                  "explanation": "Un beta por encima de 1 indica que, históricamente, la acción tiende a amplificar los movimientos del índice de referencia, hacia arriba o hacia abajo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que risco de mercado afeta ativos de formas diferentes. Como o conceito de beta ajuda a tornar essa ideia mais mensurável ao montar uma carteira?",
+                  "options": [
+                    "O beta oferece uma referência numérica histórica de o quanto um ativo específico tende a amplificar ou suavizar os movimentos do mercado, ajudando a comparar exposições ao risco de mercado entre diferentes ativos",
+                    "O beta elimina completamente o risco de mercado de qualquer ativo que o possua",
+                    "O beta só pode ser calculado para índices, nunca para ações individuais",
+                    "O beta é idêntico para todos os ativos de um mesmo setor, sem exceção"
+                  ],
+                  "explanation": "O beta traduz a exposição ao risco de mercado em um número comparável entre ativos, tornando mais concreta a diferença de sensibilidade ao mercado que já era discutida de forma qualitativa."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that market risk affects assets differently. How does the beta concept help make that idea more measurable when building a portfolio?",
+                  "options": [
+                    "Beta offers a historical numerical reference for how much a specific asset tends to amplify or soften market moves, helping compare market-risk exposure across different assets",
+                    "Beta completely eliminates the market risk of any asset that has it",
+                    "Beta can only be calculated for indexes, never for individual stocks",
+                    "Beta is identical for every asset in the same sector, without exception"
+                  ],
+                  "explanation": "Beta translates market-risk exposure into a comparable number across assets, making concrete the difference in market sensitivity that was previously discussed only qualitatively."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el riesgo de mercado afecta a los activos de formas diferentes. ¿Cómo ayuda el concepto de beta a hacer esa idea más medible al armar una cartera?",
+                  "options": [
+                    "El beta ofrece una referencia numérica histórica de cuánto tiende un activo específico a amplificar o suavizar los movimientos del mercado, ayudando a comparar la exposición al riesgo de mercado entre diferentes activos",
+                    "El beta elimina por completo el riesgo de mercado de cualquier activo que lo posea",
+                    "El beta solo puede calcularse para índices, nunca para acciones individuales",
+                    "El beta es idéntico para todos los activos de un mismo sector, sin excepción"
+                  ],
+                  "explanation": "El beta traduce la exposición al riesgo de mercado en un número comparable entre activos, haciendo más concreta la diferencia de sensibilidad al mercado que antes se discutía solo de forma cualitativa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Volatilidade mede quanto o preço de um ativo varia, geralmente pelo desvio-padrão de seus retornos.",
+                    "Beta compara a volatilidade histórica de um ativo em relação a um índice de referência.",
+                    "Beta acima de 1 indica movimentos historicamente mais amplos; abaixo de 1, movimentos mais suaves."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Volatility measures how much an asset's price varies, usually via the standard deviation of its returns.",
+                    "Beta compares an asset's historical volatility relative to a benchmark index.",
+                    "Beta above 1 indicates historically wider moves; below 1, milder moves."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La volatilidad mide cuánto varía el precio de un activo, generalmente mediante la desviación estándar de sus retornos.",
+                    "El beta compara la volatilidad histórica de un activo en relación con un índice de referencia.",
+                    "Un beta por encima de 1 indica movimientos históricamente más amplios; por debajo de 1, movimientos más suaves."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_value_at_risk",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Value at Risk (VaR)"
+            },
+            "en": {
+              "title": "Value at Risk (VaR)"
+            },
+            "es": {
+              "title": "Valor en Riesgo (VaR)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma estimativa de perda potencial",
+                  "body": "Value at Risk (VaR) é uma métrica que estima a perda potencial máxima de uma carteira em um determinado período de tempo, com um certo nível de confiança estatística, com base no comportamento histórico dos ativos. Por exemplo, um VaR diário de 5% com 95% de confiança sugere que, historicamente, a carteira não deveria perder mais do que 5% em um dia, em 95% dos casos — o que também significa que, nos 5% de casos restantes, a perda pode ser maior do que essa estimativa."
+                },
+                "en": {
+                  "title": "An estimate of potential loss",
+                  "body": "Value at Risk (VaR) is a metric that estimates a portfolio's maximum potential loss over a given time period, at a certain statistical confidence level, based on the assets' historical behavior. For example, a daily VaR of 5% at 95% confidence suggests that, historically, the portfolio shouldn't lose more than 5% in a day, in 95% of cases — which also means that, in the remaining 5% of cases, the loss can be larger than that estimate."
+                },
+                "es": {
+                  "title": "Una estimación de pérdida potencial",
+                  "body": "El Valor en Riesgo (VaR) es una métrica que estima la pérdida potencial máxima de una cartera en un determinado período de tiempo, con cierto nivel de confianza estadística, basada en el comportamiento histórico de los activos. Por ejemplo, un VaR diario del 5% con un 95% de confianza sugiere que, históricamente, la cartera no debería perder más del 5% en un día, en el 95% de los casos — lo que también significa que, en el 5% de casos restante, la pérdida puede ser mayor que esa estimación."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma carteira de R$100.000 tem um VaR diário de 5% com 95% de confiança, o que sugere uma perda esperada de até R$5.000 em um dia normal, na grande maioria dos casos. Em um dia de estresse extremo de mercado — justamente um dos 5% de casos fora dessa estimativa — a perda real pode ser bem maior do que os R$5.000 projetados."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A R$100,000 portfolio has a daily VaR of 5% at 95% confidence, suggesting an expected loss of up to R$5,000 on a normal day, in the vast majority of cases. On a day of extreme market stress — precisely one of the 5% of cases outside that estimate — the actual loss can be much larger than the projected R$5,000."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una cartera de R$100.000 tiene un VaR diario del 5% con un 95% de confianza, lo que sugiere una pérdida esperada de hasta R$5.000 en un día normal, en la gran mayoría de los casos. En un día de estrés extremo de mercado — justamente uno de los casos del 5% fuera de esa estimación — la pérdida real puede ser bastante mayor que los R$5.000 proyectados."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o VaR estima?",
+                  "options": [
+                    "O lucro garantido de uma carteira em qualquer cenário",
+                    "A perda potencial máxima de uma carteira em um período, com um certo nível de confiança estatística",
+                    "O valor exato que uma carteira vai perder, sem nenhuma margem de erro",
+                    "O número de ativos que compõem uma carteira"
+                  ],
+                  "explanation": "VaR é uma estimativa estatística de perda potencial, associada a um nível de confiança — não uma garantia exata do que vai acontecer."
+                },
+                "en": {
+                  "prompt": "What does VaR estimate?",
+                  "options": [
+                    "A portfolio's guaranteed profit in any scenario",
+                    "A portfolio's maximum potential loss over a period, at a certain statistical confidence level",
+                    "The exact amount a portfolio will lose, with no margin of error",
+                    "The number of assets that make up a portfolio"
+                  ],
+                  "explanation": "VaR is a statistical estimate of potential loss, tied to a confidence level — not an exact guarantee of what will happen."
+                },
+                "es": {
+                  "prompt": "¿Qué estima el VaR?",
+                  "options": [
+                    "La ganancia garantizada de una cartera en cualquier escenario",
+                    "La pérdida potencial máxima de una cartera en un período, con cierto nivel de confianza estadística",
+                    "El monto exacto que una cartera va a perder, sin ningún margen de error",
+                    "El número de activos que componen una cartera"
+                  ],
+                  "explanation": "El VaR es una estimación estadística de pérdida potencial, asociada a un nivel de confianza — no una garantía exacta de lo que va a suceder."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que testes de cenário (stress test) avaliam como uma carteira se comportaria em situações extremas e específicas. Como o VaR se diferencia dessa abordagem, mesmo os dois sendo ferramentas de gestão de risco?",
+                  "options": [
+                    "O VaR é uma estimativa estatística baseada no comportamento histórico geral, enquanto o stress test avalia cenários específicos e muitas vezes extremos, que podem estar fora do que o VaR captura bem",
+                    "VaR e stress test são exatamente a mesma ferramenta, apenas com nomes diferentes",
+                    "O VaR sempre captura perfeitamente qualquer cenário extremo, tornando o stress test desnecessário",
+                    "Stress test é uma versão simplificada do cálculo do VaR"
+                  ],
+                  "explanation": "VaR é uma estimativa estatística baseada em dados históricos, com limitações justamente nos cenários mais extremos e incomuns — é exatamente aí que o stress test complementa o VaR, avaliando cenários específicos que a estatística histórica pode não capturar bem."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that stress tests assess how a portfolio would behave in extreme, specific situations. How does VaR differ from that approach, even though both are risk management tools?",
+                  "options": [
+                    "VaR is a statistical estimate based on general historical behavior, while stress testing assesses specific, often extreme scenarios that may fall outside what VaR captures well",
+                    "VaR and stress testing are exactly the same tool, just with different names",
+                    "VaR always perfectly captures any extreme scenario, making stress testing unnecessary",
+                    "Stress testing is a simplified version of the VaR calculation"
+                  ],
+                  "explanation": "VaR is a statistical estimate based on historical data, with limitations precisely in the most extreme and unusual scenarios — that's exactly where stress testing complements VaR, assessing specific scenarios that historical statistics may not capture well."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que las pruebas de estrés (stress test) evalúan cómo se comportaría una cartera en situaciones extremas y específicas. ¿Cómo se diferencia el VaR de ese enfoque, aunque ambas sean herramientas de gestión de riesgo?",
+                  "options": [
+                    "El VaR es una estimación estadística basada en el comportamiento histórico general, mientras que el stress test evalúa escenarios específicos y a menudo extremos, que pueden estar fuera de lo que el VaR capta bien",
+                    "VaR y stress test son exactamente la misma herramienta, solo con nombres diferentes",
+                    "El VaR siempre capta perfectamente cualquier escenario extremo, haciendo innecesario el stress test",
+                    "El stress test es una versión simplificada del cálculo del VaR"
+                  ],
+                  "explanation": "El VaR es una estimación estadística basada en datos históricos, con limitaciones justamente en los escenarios más extremos e inusuales — es exactamente ahí donde el stress test complementa al VaR, evaluando escenarios específicos que la estadística histórica puede no captar bien."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "VaR estima a perda potencial máxima de uma carteira em um período, com um certo nível de confiança.",
+                    "Fora do nível de confiança considerado, a perda real pode ser maior do que a estimativa do VaR.",
+                    "VaR e stress test são ferramentas complementares: uma estatística e histórica, outra baseada em cenários específicos."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "VaR estimates a portfolio's maximum potential loss over a period, at a certain confidence level.",
+                    "Outside that confidence level, the actual loss can be larger than the VaR estimate.",
+                    "VaR and stress testing are complementary tools: one statistical and historical, the other based on specific scenarios."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El VaR estima la pérdida potencial máxima de una cartera en un período, con cierto nivel de confianza.",
+                    "Fuera de ese nivel de confianza, la pérdida real puede ser mayor que la estimación del VaR.",
+                    "VaR y stress test son herramientas complementarias: una estadística e histórica, la otra basada en escenarios específicos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_tail_risk_black_swan",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Cauda e Eventos Extremos"
+            },
+            "en": {
+              "title": "Tail Risk and Extreme Events"
+            },
+            "es": {
+              "title": "Riesgo de Cola y Eventos Extremos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Eventos raros que os modelos costumam subestimar",
+                  "body": "Risco de cauda ('tail risk') se refere à possibilidade de eventos extremos e raros, que ficam nas 'caudas' de uma distribuição estatística de retornos, mas que podem ter um impacto desproporcionalmente grande quando ocorrem. O termo 'cisne negro' é usado para descrever eventos extremamente raros, de grande impacto, e que muitas vezes só parecem óbvios ou previsíveis em retrospecto. Modelos baseados em dados históricos, como o VaR, tendem a subestimar a probabilidade e o impacto desses eventos, já que eles são, por definição, incomuns."
+                },
+                "en": {
+                  "title": "Rare events that models tend to underestimate",
+                  "body": "Tail risk refers to the possibility of extreme, rare events, which sit in the 'tails' of a statistical distribution of returns, but which can have a disproportionately large impact when they occur. The term 'black swan' is used to describe extremely rare, high-impact events that often only seem obvious or predictable in hindsight. Models based on historical data, like VaR, tend to underestimate the probability and impact of these events, since they are, by definition, uncommon."
+                },
+                "es": {
+                  "title": "Eventos raros que los modelos suelen subestimar",
+                  "body": "El riesgo de cola ('tail risk') se refiere a la posibilidad de eventos extremos y raros, que se ubican en las 'colas' de una distribución estadística de retornos, pero que pueden tener un impacto desproporcionadamente grande cuando ocurren. El término 'cisne negro' se usa para describir eventos extremadamente raros, de gran impacto, y que muchas veces solo parecen obvios o predecibles en retrospectiva. Los modelos basados en datos históricos, como el VaR, tienden a subestimar la probabilidad y el impacto de estos eventos, ya que son, por definición, poco comunes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma crise financeira global e repentina pode fazer diversos ativos, considerados pouco correlacionados em condições normais, caírem juntos de forma abrupta — um padrão raramente capturado em um modelo estatístico baseado apenas em dados de períodos mais tranquilos. Investidores que dependiam exclusivamente desses modelos podem se surpreender com perdas bem maiores do que o esperado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A sudden global financial crisis can cause several assets, considered weakly correlated under normal conditions, to fall together abruptly — a pattern rarely captured by a statistical model based only on data from calmer periods. Investors who relied exclusively on those models can be surprised by losses much larger than expected."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una crisis financiera global y repentina puede hacer que varios activos, considerados poco correlacionados en condiciones normales, caigan juntos de forma abrupta — un patrón rara vez captado por un modelo estadístico basado solo en datos de períodos más tranquilos. Los inversores que dependían exclusivamente de esos modelos pueden sorprenderse con pérdidas mucho mayores de lo esperado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que modelos baseados em dados históricos, como o VaR, tendem a subestimar eventos de risco de cauda?",
+                  "options": [
+                    "Porque esses eventos são raros e incomuns por definição, tornando difícil capturá-los adequadamente em dados históricos",
+                    "Porque eventos de risco de cauda nunca acontecem de fato",
+                    "Porque o VaR foi desenhado especificamente para prever esses eventos com precisão total",
+                    "Porque risco de cauda só afeta ativos de renda fixa"
+                  ],
+                  "explanation": "Por serem raros e extremos, eventos de risco de cauda ficam sub-representados em dados históricos típicos, o que tende a fazer com que modelos baseados nesses dados subestimem sua probabilidade e impacto."
+                },
+                "en": {
+                  "prompt": "Why do models based on historical data, like VaR, tend to underestimate tail risk events?",
+                  "options": [
+                    "Because those events are rare and uncommon by definition, making them hard to properly capture in historical data",
+                    "Because tail risk events never actually happen",
+                    "Because VaR was specifically designed to predict those events with total precision",
+                    "Because tail risk only affects fixed-income assets"
+                  ],
+                  "explanation": "Being rare and extreme, tail risk events are underrepresented in typical historical data, which tends to make models based on that data underestimate their probability and impact."
+                },
+                "es": {
+                  "prompt": "¿Por qué los modelos basados en datos históricos, como el VaR, tienden a subestimar los eventos de riesgo de cola?",
+                  "options": [
+                    "Porque esos eventos son raros y poco comunes por definición, lo que dificulta captarlos adecuadamente en datos históricos",
+                    "Porque los eventos de riesgo de cola nunca ocurren realmente",
+                    "Porque el VaR fue diseñado específicamente para predecir esos eventos con precisión total",
+                    "Porque el riesgo de cola solo afecta a los activos de renta fija"
+                  ],
+                  "explanation": "Al ser raros y extremos, los eventos de riesgo de cola están subrepresentados en los datos históricos típicos, lo que tiende a hacer que los modelos basados en esos datos subestimen su probabilidad e impacto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que a correlação entre ativos ajuda a explicar por que a diversificação funciona em condições normais de mercado. Como o risco de cauda desafia essa lógica especificamente em momentos de crise extrema?",
+                  "options": [
+                    "Em eventos extremos, correlações que pareciam baixas em condições normais podem convergir e subir de forma abrupta, fazendo com que ativos antes pouco correlacionados caiam juntos, reduzindo o benefício esperado da diversificação justamente quando mais se precisaria dele",
+                    "O risco de cauda não tem nenhuma relação com correlação entre ativos",
+                    "Correlações entre ativos são sempre perfeitamente estáveis, inclusive durante crises extremas",
+                    "A diversificação elimina completamente o risco de cauda em qualquer cenário"
+                  ],
+                  "explanation": "Um dos aspectos mais desafiadores do risco de cauda é que, em crises extremas, correlações historicamente baixas podem convergir, fazendo com que a diversificação proteja menos exatamente quando a proteção seria mais necessária."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that correlation between assets helps explain why diversification works under normal market conditions. How does tail risk challenge that logic specifically during extreme crisis moments?",
+                  "options": [
+                    "During extreme events, correlations that seemed low under normal conditions can converge and rise abruptly, causing previously weakly correlated assets to fall together, reducing diversification's expected benefit exactly when it would be needed most",
+                    "Tail risk has no relation at all to correlation between assets",
+                    "Correlations between assets are always perfectly stable, even during extreme crises",
+                    "Diversification completely eliminates tail risk in any scenario"
+                  ],
+                  "explanation": "One of the most challenging aspects of tail risk is that, during extreme crises, historically low correlations can converge, causing diversification to protect less exactly when protection would be most needed."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que la correlación entre activos ayuda a explicar por qué la diversificación funciona en condiciones normales de mercado. ¿Cómo desafía el riesgo de cola esa lógica específicamente en momentos de crisis extrema?",
+                  "options": [
+                    "En eventos extremos, correlaciones que parecían bajas en condiciones normales pueden converger y subir de forma abrupta, haciendo que activos antes poco correlacionados caigan juntos, reduciendo el beneficio esperado de la diversificación justo cuando más se necesitaría",
+                    "El riesgo de cola no tiene ninguna relación con la correlación entre activos",
+                    "Las correlaciones entre activos son siempre perfectamente estables, incluso durante crisis extremas",
+                    "La diversificación elimina por completo el riesgo de cola en cualquier escenario"
+                  ],
+                  "explanation": "Uno de los aspectos más desafiantes del riesgo de cola es que, en crisis extremas, correlaciones históricamente bajas pueden converger, haciendo que la diversificación proteja menos justo cuando la protección sería más necesaria."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de cauda se refere a eventos extremos e raros, com impacto desproporcional quando ocorrem.",
+                    "Modelos baseados em dados históricos, como o VaR, tendem a subestimar esses eventos.",
+                    "Em crises extremas, correlações historicamente baixas podem convergir, reduzindo o benefício da diversificação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Tail risk refers to extreme, rare events, with disproportionate impact when they occur.",
+                    "Models based on historical data, like VaR, tend to underestimate these events.",
+                    "During extreme crises, historically low correlations can converge, reducing diversification's benefit."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de cola se refiere a eventos extremos y raros, con impacto desproporcionado cuando ocurren.",
+                    "Los modelos basados en datos históricos, como el VaR, tienden a subestimar estos eventos.",
+                    "En crisis extremas, las correlaciones históricamente bajas pueden converger, reduciendo el beneficio de la diversificación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_risk_adjusted_return",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Retorno Ajustado ao Risco"
+            },
+            "en": {
+              "title": "Risk-Adjusted Return"
+            },
+            "es": {
+              "title": "Retorno Ajustado al Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Retorno alto não conta a história toda",
+                  "body": "Comparar investimentos apenas pelo retorno bruto pode ser enganoso, já que retornos mais altos costumam vir acompanhados de mais risco. Métricas de retorno ajustado ao risco, como o índice de Sharpe, buscam resolver isso relacionando o retorno obtido (acima de uma taxa livre de risco) com a volatilidade enfrentada para consegui-lo. Um índice de Sharpe mais alto sugere que o investimento entregou mais retorno por unidade de risco assumido, permitindo uma comparação mais justa entre opções com níveis de risco diferentes."
+                },
+                "en": {
+                  "title": "High return doesn't tell the whole story",
+                  "body": "Comparing investments by raw return alone can be misleading, since higher returns usually come with more risk. Risk-adjusted return metrics, like the Sharpe ratio, try to fix this by relating the return achieved (above a risk-free rate) to the volatility faced to achieve it. A higher Sharpe ratio suggests the investment delivered more return per unit of risk taken, allowing a fairer comparison between options with different risk levels."
+                },
+                "es": {
+                  "title": "Un retorno alto no cuenta toda la historia",
+                  "body": "Comparar inversiones solo por el retorno bruto puede ser engañoso, ya que los retornos más altos suelen venir acompañados de más riesgo. Las métricas de retorno ajustado al riesgo, como el índice de Sharpe, buscan resolver esto relacionando el retorno obtenido (por encima de una tasa libre de riesgo) con la volatilidad enfrentada para conseguirlo. Un índice de Sharpe más alto sugiere que la inversión entregó más retorno por unidad de riesgo asumido, permitiendo una comparación más justa entre opciones con niveles de riesgo diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois fundos tiveram o mesmo retorno de 15% ao ano, mas um deles teve uma volatilidade bem mais alta ao longo do caminho, com quedas e altas mais bruscas. O fundo mais volátil tem um índice de Sharpe mais baixo, mesmo com o mesmo retorno final, porque entregou esse resultado assumindo mais risco no processo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two funds had the same 15% annual return, but one of them had much higher volatility along the way, with sharper drops and rises. The more volatile fund has a lower Sharpe ratio, even with the same final return, because it delivered that result while taking on more risk in the process."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos fondos tuvieron el mismo retorno del 15% anual, pero uno de ellos tuvo una volatilidad bastante más alta en el camino, con caídas y subidas más bruscas. El fondo más volátil tiene un índice de Sharpe más bajo, aunque tenga el mismo retorno final, porque entregó ese resultado asumiendo más riesgo en el proceso."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que sugere um índice de Sharpe mais alto ao comparar dois investimentos?",
+                  "options": [
+                    "Que o investimento teve o maior retorno bruto entre os dois, independentemente do risco",
+                    "Que o investimento entregou mais retorno por unidade de risco assumido",
+                    "Que o investimento nunca teve nenhuma queda de preço",
+                    "Que o investimento é sempre mais seguro do que qualquer outro, em qualquer critério"
+                  ],
+                  "explanation": "O índice de Sharpe relaciona retorno e risco, então um valor mais alto indica que o investimento entregou mais retorno por unidade de volatilidade enfrentada, não necessariamente o maior retorno bruto."
+                },
+                "en": {
+                  "prompt": "What does a higher Sharpe ratio suggest when comparing two investments?",
+                  "options": [
+                    "That the investment had the highest raw return between the two, regardless of risk",
+                    "That the investment delivered more return per unit of risk taken",
+                    "That the investment never had any price drop",
+                    "That the investment is always safer than any other, by any criterion"
+                  ],
+                  "explanation": "The Sharpe ratio relates return and risk, so a higher value indicates the investment delivered more return per unit of volatility faced, not necessarily the highest raw return."
+                },
+                "es": {
+                  "prompt": "¿Qué sugiere un índice de Sharpe más alto al comparar dos inversiones?",
+                  "options": [
+                    "Que la inversión tuvo el mayor retorno bruto entre las dos, sin importar el riesgo",
+                    "Que la inversión entregó más retorno por unidad de riesgo asumido",
+                    "Que la inversión nunca tuvo ninguna caída de precio",
+                    "Que la inversión es siempre más segura que cualquier otra, en cualquier criterio"
+                  ],
+                  "explanation": "El índice de Sharpe relaciona retorno y riesgo, así que un valor más alto indica que la inversión entregó más retorno por unidad de volatilidad enfrentada, no necesariamente el mayor retorno bruto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que volatilidade e beta ajudam a medir o risco de um ativo de forma numérica. Como essas métricas se conectam ao índice de Sharpe discutido aqui?",
+                  "options": [
+                    "A volatilidade é justamente o componente de risco usado no cálculo do índice de Sharpe, que relaciona o retorno obtido a essa medida de risco",
+                    "Volatilidade e índice de Sharpe são conceitos completamente independentes, sem nenhuma relação entre si",
+                    "O índice de Sharpe substitui completamente a necessidade de medir volatilidade",
+                    "Beta e índice de Sharpe medem exatamente a mesma coisa, sem nenhuma diferença"
+                  ],
+                  "explanation": "O índice de Sharpe usa a volatilidade como o denominador que representa o risco assumido, conectando diretamente esse conceito ao retorno obtido para gerar uma métrica de retorno ajustado ao risco."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that volatility and beta help numerically measure an asset's risk. How do those metrics connect to the Sharpe ratio discussed here?",
+                  "options": [
+                    "Volatility is precisely the risk component used in calculating the Sharpe ratio, which relates the return achieved to that risk measure",
+                    "Volatility and the Sharpe ratio are completely independent concepts, with no relation to each other",
+                    "The Sharpe ratio completely replaces the need to measure volatility",
+                    "Beta and the Sharpe ratio measure exactly the same thing, with no difference"
+                  ],
+                  "explanation": "The Sharpe ratio uses volatility as the denominator representing the risk taken, directly connecting that concept to the return achieved to produce a risk-adjusted return metric."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la volatilidad y el beta ayudan a medir numéricamente el riesgo de un activo. ¿Cómo se conectan esas métricas con el índice de Sharpe discutido aquí?",
+                  "options": [
+                    "La volatilidad es precisamente el componente de riesgo usado en el cálculo del índice de Sharpe, que relaciona el retorno obtenido con esa medida de riesgo",
+                    "Volatilidad e índice de Sharpe son conceptos completamente independientes, sin ninguna relación entre sí",
+                    "El índice de Sharpe reemplaza por completo la necesidad de medir la volatilidad",
+                    "Beta e índice de Sharpe miden exactamente lo mismo, sin ninguna diferencia"
+                  ],
+                  "explanation": "El índice de Sharpe usa la volatilidad como el denominador que representa el riesgo asumido, conectando directamente ese concepto con el retorno obtenido para generar una métrica de retorno ajustado al riesgo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Retorno ajustado ao risco relaciona o retorno obtido com a volatilidade enfrentada para consegui-lo.",
+                    "O índice de Sharpe é uma métrica comum para essa comparação, usando a volatilidade como medida de risco.",
+                    "Um índice de Sharpe mais alto sugere mais retorno por unidade de risco assumido, não necessariamente o maior retorno bruto."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk-adjusted return relates the return achieved to the volatility faced to achieve it.",
+                    "The Sharpe ratio is a common metric for that comparison, using volatility as the risk measure.",
+                    "A higher Sharpe ratio suggests more return per unit of risk taken, not necessarily the highest raw return."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El retorno ajustado al riesgo relaciona el retorno obtenido con la volatilidad enfrentada para conseguirlo.",
+                    "El índice de Sharpe es una métrica común para esa comparación, usando la volatilidad como medida de riesgo.",
+                    "Un índice de Sharpe más alto sugiere más retorno por unidad de riesgo asumido, no necesariamente el mayor retorno bruto."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_diversifiable_vs_systematic",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco Diversificável vs. Sistemático"
+            },
+            "en": {
+              "title": "Diversifiable vs. Systematic Risk"
+            },
+            "es": {
+              "title": "Riesgo Diversificable vs. Sistemático"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo risco pode ser eliminado pela diversificação",
+                  "body": "Risco diversificável (ou não sistemático) é aquele específico de um ativo ou empresa individual, que pode ser reduzido combinando ativos pouco correlacionados em uma carteira — como o risco de um problema específico em uma única empresa. Risco sistemático (ou de mercado) é aquele que afeta o mercado como um todo, como uma recessão econômica ampla, e não pode ser eliminado apenas diversificando entre ativos daquele mesmo mercado, já que ele afeta praticamente todos eles simultaneamente, ainda que em graus diferentes."
+                },
+                "en": {
+                  "title": "Not every risk can be eliminated by diversification",
+                  "body": "Diversifiable (or unsystematic) risk is specific to an individual asset or company, and can be reduced by combining weakly correlated assets in a portfolio — such as the risk of a specific problem at a single company. Systematic (or market) risk is the kind that affects the market as a whole, like a broad economic recession, and can't be eliminated just by diversifying among assets in that same market, since it affects practically all of them simultaneously, even if to different degrees."
+                },
+                "es": {
+                  "title": "No todo riesgo puede eliminarse mediante la diversificación",
+                  "body": "El riesgo diversificable (o no sistemático) es específico de un activo o empresa individual, y puede reducirse combinando activos poco correlacionados en una cartera — como el riesgo de un problema específico en una sola empresa. El riesgo sistemático (o de mercado) es el que afecta al mercado en su conjunto, como una recesión económica amplia, y no puede eliminarse solo diversificando entre activos de ese mismo mercado, ya que afecta prácticamente a todos ellos simultáneamente, aunque en grados diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "O risco de uma empresa específica sofrer um escândalo contábil é diversificável: possuir ações de várias empresas diferentes reduz bastante o impacto de um problema isolado em uma delas. Já o risco de uma recessão generalizada afetar o mercado de ações como um todo é sistemático: mesmo uma carteira bem diversificada entre várias ações provavelmente sofreria com esse cenário, ainda que de formas distintas entre os ativos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "The risk of a specific company suffering an accounting scandal is diversifiable: holding shares of several different companies greatly reduces the impact of an isolated problem at one of them. The risk of a widespread recession affecting the stock market as a whole is systematic: even a portfolio well diversified across many stocks would likely suffer in that scenario, even if to different degrees across assets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "El riesgo de que una empresa específica sufra un escándalo contable es diversificable: tener acciones de varias empresas distintas reduce bastante el impacto de un problema aislado en una de ellas. El riesgo de que una recesión generalizada afecte al mercado de acciones en su conjunto es sistemático: incluso una cartera bien diversificada entre varias acciones probablemente sufriría en ese escenario, aunque de formas distintas entre los activos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o risco sistemático?",
+                  "options": [
+                    "É um risco específico de uma única empresa, facilmente eliminado com diversificação",
+                    "É um risco que afeta o mercado como um todo, e não pode ser eliminado apenas diversificando entre ativos daquele mercado",
+                    "É um risco que nunca afeta nenhum ativo financeiro",
+                    "É um risco exclusivo de criptoativos"
+                  ],
+                  "explanation": "Risco sistemático afeta o mercado de forma ampla, como uma recessão ou uma crise geral, e não desaparece apenas com a diversificação entre ativos daquele mesmo mercado."
+                },
+                "en": {
+                  "prompt": "What characterizes systematic risk?",
+                  "options": [
+                    "It's a risk specific to a single company, easily eliminated with diversification",
+                    "It's a risk that affects the market as a whole, and can't be eliminated just by diversifying among assets in that market",
+                    "It's a risk that never affects any financial asset",
+                    "It's a risk exclusive to cryptoassets"
+                  ],
+                  "explanation": "Systematic risk affects the market broadly, like a recession or a general crisis, and doesn't disappear just from diversifying among assets in that same market."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al riesgo sistemático?",
+                  "options": [
+                    "Es un riesgo específico de una única empresa, fácilmente eliminado con diversificación",
+                    "Es un riesgo que afecta al mercado en su conjunto, y no puede eliminarse solo diversificando entre activos de ese mercado",
+                    "Es un riesgo que nunca afecta a ningún activo financiero",
+                    "Es un riesgo exclusivo de los criptoactivos"
+                  ],
+                  "explanation": "El riesgo sistemático afecta al mercado de forma amplia, como una recesión o una crisis general, y no desaparece solo con la diversificación entre activos de ese mismo mercado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores desta escola, tanto o conceito de correlação quanto o de risco de concentração. Como a distinção entre risco diversificável e sistemático ajuda a entender os limites da diversificação como ferramenta de gestão de risco?",
+                  "options": [
+                    "Ela esclarece que a diversificação é eficaz para reduzir riscos específicos de ativos individuais (diversificáveis), mas tem um limite: ela não elimina o risco sistemático, que afeta o mercado como um todo",
+                    "Ela mostra que a diversificação elimina absolutamente qualquer tipo de risco, sem nenhuma exceção",
+                    "Ela prova que risco de concentração e risco sistemático são exatamente a mesma coisa",
+                    "Ela sugere que correlação nunca tem nenhuma relação com o tipo de risco que a diversificação consegue reduzir"
+                  ],
+                  "explanation": "Entender essa distinção esclarece um limite importante da diversificação: ela reduz efetivamente o risco específico de ativos individuais, mas não consegue eliminar o risco que afeta o mercado como um todo, por mais diversificada que a carteira esteja dentro desse mesmo mercado."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this school, both the concept of correlation and concentration risk. How does the distinction between diversifiable and systematic risk help clarify diversification's limits as a risk management tool?",
+                  "options": [
+                    "It clarifies that diversification is effective at reducing risks specific to individual assets (diversifiable), but has a limit: it doesn't eliminate systematic risk, which affects the market as a whole",
+                    "It shows that diversification eliminates absolutely any type of risk, with no exception",
+                    "It proves that concentration risk and systematic risk are exactly the same thing",
+                    "It suggests that correlation has no relation at all to the type of risk diversification can reduce"
+                  ],
+                  "explanation": "Understanding this distinction clarifies an important limit of diversification: it effectively reduces risk specific to individual assets, but can't eliminate the risk that affects the market as a whole, no matter how diversified the portfolio is within that same market."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de esta escuela, tanto el concepto de correlación como el de riesgo de concentración. ¿Cómo ayuda la distinción entre riesgo diversificable y sistemático a entender los límites de la diversificación como herramienta de gestión de riesgo?",
+                  "options": [
+                    "Aclara que la diversificación es eficaz para reducir riesgos específicos de activos individuales (diversificables), pero tiene un límite: no elimina el riesgo sistemático, que afecta al mercado en su conjunto",
+                    "Muestra que la diversificación elimina absolutamente cualquier tipo de riesgo, sin ninguna excepción",
+                    "Prueba que el riesgo de concentración y el riesgo sistemático son exactamente lo mismo",
+                    "Sugiere que la correlación no tiene ninguna relación con el tipo de riesgo que la diversificación puede reducir"
+                  ],
+                  "explanation": "Entender esta distinción aclara un límite importante de la diversificación: reduce efectivamente el riesgo específico de activos individuales, pero no puede eliminar el riesgo que afecta al mercado en su conjunto, sin importar cuán diversificada esté la cartera dentro de ese mismo mercado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Risco diversificável é específico de um ativo e pode ser reduzido com diversificação.",
+                    "Risco sistemático afeta o mercado como um todo e não desaparece apenas com diversificação.",
+                    "Você concluiu o módulo avançado de gestão de risco: volatilidade e beta, VaR, risco de cauda, retorno ajustado ao risco e risco sistemático vs. diversificável."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Diversifiable risk is specific to an asset and can be reduced through diversification.",
+                    "Systematic risk affects the market as a whole and doesn't disappear just from diversification.",
+                    "You've completed the advanced risk management module: volatility and beta, VaR, tail risk, risk-adjusted return, and systematic vs. diversifiable risk."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El riesgo diversificable es específico de un activo y puede reducirse mediante diversificación.",
+                    "El riesgo sistemático afecta al mercado en su conjunto y no desaparece solo con diversificación.",
+                    "Completaste el módulo avanzado de gestión de riesgo: volatilidad y beta, VaR, riesgo de cola, retorno ajustado al riesgo y riesgo sistemático vs. diversificable."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

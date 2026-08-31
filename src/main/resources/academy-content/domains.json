@@ -1,0 +1,156 @@
+{
+  "domains": [
+    {
+      "domainId": "financial_education",
+      "order": 1,
+      "iconKey": "savings_outlined",
+      "translations": {
+        "pt": {
+          "title": "Educação Financeira",
+          "description": "Aprenda a cuidar do seu dinheiro antes de começar a investir."
+        },
+        "en": {
+          "title": "Financial Education",
+          "description": "Learn to take care of your money before you start investing."
+        },
+        "es": {
+          "title": "Educación Financiera",
+          "description": "Aprende a cuidar tu dinero antes de empezar a invertir."
+        }
+      }
+    },
+    {
+      "domainId": "investing",
+      "order": 2,
+      "iconKey": "show_chart",
+      "translations": {
+        "pt": {
+          "title": "Investimentos",
+          "description": "Como funcionam os investimentos e os principais tipos de ativos."
+        },
+        "en": {
+          "title": "Investing",
+          "description": "How investing works and the main types of assets."
+        },
+        "es": {
+          "title": "Inversiones",
+          "description": "Cómo funcionan las inversiones y los principales tipos de activos."
+        }
+      }
+    },
+    {
+      "domainId": "analysis_valuation",
+      "order": 3,
+      "iconKey": "query_stats_outlined",
+      "translations": {
+        "pt": {
+          "title": "Análise e Valuation",
+          "description": "Aprenda a analisar ativos e empresas para decidir melhor."
+        },
+        "en": {
+          "title": "Analysis & Valuation",
+          "description": "Learn to analyze assets and companies to decide better."
+        },
+        "es": {
+          "title": "Análisis y Valuation",
+          "description": "Aprende a analizar activos y empresas para decidir mejor."
+        }
+      }
+    },
+    {
+      "domainId": "portfolio_wealth",
+      "order": 4,
+      "iconKey": "account_balance_outlined",
+      "translations": {
+        "pt": {
+          "title": "Carteira e Patrimônio",
+          "description": "Construa, acompanhe e proteja seu patrimônio no longo prazo."
+        },
+        "en": {
+          "title": "Portfolio & Wealth",
+          "description": "Build, track and protect your wealth over the long run."
+        },
+        "es": {
+          "title": "Cartera y Patrimonio",
+          "description": "Construye, sigue y protege tu patrimonio a largo plazo."
+        }
+      }
+    },
+    {
+      "domainId": "macro_markets",
+      "order": 5,
+      "iconKey": "public",
+      "translations": {
+        "pt": {
+          "title": "Macroeconomia e Mercados",
+          "description": "O contexto econômico que influencia os seus investimentos."
+        },
+        "en": {
+          "title": "Macroeconomics & Markets",
+          "description": "The economic backdrop that shapes your investments."
+        },
+        "es": {
+          "title": "Macroeconomía y Mercados",
+          "description": "El contexto económico que influye en tus inversiones."
+        }
+      }
+    },
+    {
+      "domainId": "taxation_regulation",
+      "order": 6,
+      "iconKey": "gavel_outlined",
+      "translations": {
+        "pt": {
+          "title": "Tributação e Regulação",
+          "description": "Como regras tributárias e regulatórias afetam seus investimentos."
+        },
+        "en": {
+          "title": "Taxation & Regulation",
+          "description": "How tax and regulatory rules affect your investments."
+        },
+        "es": {
+          "title": "Tributación y Regulación",
+          "description": "Cómo las reglas tributarias y regulatorias afectan tus inversiones."
+        }
+      }
+    },
+    {
+      "domainId": "advanced_markets",
+      "order": 7,
+      "iconKey": "speed_outlined",
+      "translations": {
+        "pt": {
+          "title": "Mercados Avançados",
+          "description": "Instrumentos e estratégias avançadas — para quando você estiver pronto."
+        },
+        "en": {
+          "title": "Advanced Markets",
+          "description": "Advanced instruments and strategies — for when you're ready."
+        },
+        "es": {
+          "title": "Mercados Avanzados",
+          "description": "Instrumentos y estrategias avanzadas — para cuando estés listo."
+        }
+      }
+    },
+    {
+      "domainId": "simulations_practice",
+      "order": 8,
+      "iconKey": "explore_outlined",
+      "translations": {
+        "pt": {
+          "title": "Simulações e Prática",
+          "description": "Cenários reais para aplicar o que você aprendeu."
+        },
+        "en": {
+          "title": "Simulations & Practice",
+          "description": "Real-world scenarios to apply what you've learned."
+        },
+        "es": {
+          "title": "Simulaciones y Práctica",
+          "description": "Escenarios reales para aplicar lo que has aprendido."
+        }
+      }
+    }
+  ]
+}

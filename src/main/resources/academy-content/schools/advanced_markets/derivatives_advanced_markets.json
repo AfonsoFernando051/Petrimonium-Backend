@@ -1,0 +1,2535 @@
+{
+  "schoolId": "derivatives_advanced_markets",
+  "domainId": "advanced_markets",
+  "order": 17,
+  "iconKey": "timeline_outlined",
+  "contentAvailable": true,
+  "prerequisites": [
+    "investment_fundamentals"
+  ],
+  "translations": {
+    "pt": {
+      "title": "Derivativos e Mercados Avançados",
+      "description": "Opções, futuros e swaps — proteção (hedge) e especulação, com os riscos envolvidos."
+    },
+    "en": {
+      "title": "Derivatives & Advanced Markets",
+      "description": "Options, futures and swaps — hedging and speculation, with the risks involved."
+    },
+    "es": {
+      "title": "Derivados y Mercados Avanzados",
+      "description": "Opciones, futuros y swaps — cobertura (hedge) y especulación, con los riesgos que implican."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "derivatives_basics",
+      "order": 1,
+      "iconKey": "timeline_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos de Derivativos",
+          "description": "O que são derivativos, contratos futuros, opções e a diferença entre proteção (hedge) e especulação."
+        },
+        "en": {
+          "title": "Derivatives Fundamentals",
+          "description": "What derivatives are, futures contracts, options and the difference between hedging and speculation."
+        },
+        "es": {
+          "title": "Fundamentos de Derivados",
+          "description": "Qué son los derivados, contratos futuros, opciones y la diferencia entre cobertura (hedge) y especulación."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "derivatives_what_are_they",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que são Derivativos?"
+            },
+            "en": {
+              "title": "What Are Derivatives?"
+            },
+            "es": {
+              "title": "¿Qué son los Derivados?"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um contrato cujo valor vem de outra coisa",
+                  "body": "Derivativo é um contrato financeiro cujo valor deriva do preço de outro ativo — chamado de ativo subjacente — como uma ação, uma moeda, uma commodity ou uma taxa de juros. Diferente de comprar diretamente o ativo, um derivativo é um acordo sobre esse ativo: uma promessa de compra, venda, ou troca em condições específicas, definidas no contrato."
+                },
+                "en": {
+                  "title": "A contract whose value comes from something else",
+                  "body": "A derivative is a financial contract whose value derives from the price of another asset — called the underlying asset — like a stock, a currency, a commodity, or an interest rate. Unlike buying the asset directly, a derivative is an agreement about that asset: a promise to buy, sell, or exchange under specific conditions, defined in the contract."
+                },
+                "es": {
+                  "title": "Un contrato cuyo valor viene de otra cosa",
+                  "body": "Un derivado es un contrato financiero cuyo valor deriva del precio de otro activo — llamado activo subyacente — como una acción, una moneda, una materia prima o una tasa de interés. A diferencia de comprar el activo directamente, un derivado es un acuerdo sobre ese activo: una promesa de compra, venta o intercambio en condiciones específicas, definidas en el contrato."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um contrato futuro de dólar não é o dólar em si, mas um acordo para comprar ou vender uma certa quantidade de dólares a um preço definido, em uma data futura. O valor desse contrato sobe ou desce conforme a expectativa sobre o preço futuro do dólar muda — mesmo sem que nenhuma nota de dólar troque de mãos até o vencimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A dollar futures contract isn't the dollar itself, but an agreement to buy or sell a certain amount of dollars at a defined price, on a future date. The value of this contract rises or falls as expectations about the dollar's future price change — even without any actual dollar bill changing hands until maturity."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un contrato futuro de dólar no es el dólar en sí, sino un acuerdo para comprar o vender una cierta cantidad de dólares a un precio definido, en una fecha futura. El valor de ese contrato sube o baja según cambia la expectativa sobre el precio futuro del dólar — incluso sin que ningún billete de dólar cambie de manos hasta el vencimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que define um derivativo?",
+                  "options": [
+                    "Ele é sempre a compra direta de uma ação",
+                    "Seu valor deriva do preço de outro ativo, chamado ativo subjacente",
+                    "Ele nunca tem relação com nenhum outro ativo",
+                    "Ele é um tipo específico de conta bancária"
+                  ],
+                  "explanation": "A característica central de um derivativo é que seu valor depende do comportamento de outro ativo — o ativo subjacente — e não é uma compra direta desse ativo."
+                },
+                "en": {
+                  "prompt": "What defines a derivative?",
+                  "options": [
+                    "It's always the direct purchase of a stock",
+                    "Its value derives from the price of another asset, called the underlying asset",
+                    "It never has any relation to another asset",
+                    "It's a specific type of bank account"
+                  ],
+                  "explanation": "The central feature of a derivative is that its value depends on the behavior of another asset — the underlying asset — and it isn't a direct purchase of that asset."
+                },
+                "es": {
+                  "prompt": "¿Qué define a un derivado?",
+                  "options": [
+                    "Siempre es la compra directa de una acción",
+                    "Su valor deriva del precio de otro activo, llamado activo subyacente",
+                    "Nunca tiene relación con ningún otro activo",
+                    "Es un tipo específico de cuenta bancaria"
+                  ],
+                  "explanation": "La característica central de un derivado es que su valor depende del comportamiento de otro activo — el activo subyacente — y no es una compra directa de ese activo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você ouve alguém dizer 'comprei um contrato futuro de café, então agora tenho sacos de café guardados em algum lugar'. O que está errado nessa afirmação?",
+                  "options": [
+                    "Nada, comprar um contrato futuro sempre significa receber o produto físico imediatamente",
+                    "Um contrato futuro é um acordo sobre o preço futuro do ativo, não a posse imediata do produto físico — a liquidação pode ocorrer de formas diferentes, sem necessariamente envolver entrega física",
+                    "Contratos futuros só existem para moedas, nunca para commodities",
+                    "Café nunca pode ser objeto de um contrato de derivativo"
+                  ],
+                  "explanation": "Um derivativo é um contrato sobre o preço futuro de um ativo — ele não implica automaticamente a posse física imediata do ativo subjacente."
+                },
+                "en": {
+                  "prompt": "You hear someone say 'I bought a coffee futures contract, so now I have sacks of coffee stored somewhere.' What's wrong with that statement?",
+                  "options": [
+                    "Nothing, buying a futures contract always means immediately receiving the physical product",
+                    "A futures contract is an agreement about the asset's future price, not immediate ownership of the physical product — settlement can happen in different ways, without necessarily involving physical delivery",
+                    "Futures contracts only exist for currencies, never for commodities",
+                    "Coffee can never be the subject of a derivative contract"
+                  ],
+                  "explanation": "A derivative is a contract about an asset's future price — it doesn't automatically imply immediate physical ownership of the underlying asset."
+                },
+                "es": {
+                  "prompt": "Escuchas a alguien decir 'compré un contrato futuro de café, así que ahora tengo sacos de café guardados en algún lugar'. ¿Qué está mal en esa afirmación?",
+                  "options": [
+                    "Nada, comprar un contrato futuro siempre significa recibir el producto físico de inmediato",
+                    "Un contrato futuro es un acuerdo sobre el precio futuro del activo, no la posesión inmediata del producto físico — la liquidación puede ocurrir de formas diferentes, sin necesariamente involucrar entrega física",
+                    "Los contratos futuros solo existen para monedas, nunca para materias primas",
+                    "El café nunca puede ser objeto de un contrato de derivado"
+                  ],
+                  "explanation": "Un derivado es un contrato sobre el precio futuro de un activo — no implica automáticamente la posesión física inmediata del activo subyacente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Derivativo é um contrato cujo valor deriva do preço de um ativo subjacente.",
+                    "Ele é um acordo sobre esse ativo, não necessariamente sua posse física imediata.",
+                    "O ativo subjacente pode ser uma ação, moeda, commodity ou taxa de juros, entre outros."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A derivative is a contract whose value derives from the price of an underlying asset.",
+                    "It's an agreement about that asset, not necessarily its immediate physical ownership.",
+                    "The underlying asset can be a stock, currency, commodity or interest rate, among others."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un derivado es un contrato cuyo valor deriva del precio de un activo subyacente.",
+                    "Es un acuerdo sobre ese activo, no necesariamente su posesión física inmediata.",
+                    "El activo subyacente puede ser una acción, moneda, materia prima o tasa de interés, entre otros."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_futures_contracts",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Contratos Futuros"
+            },
+            "en": {
+              "title": "Futures Contracts"
+            },
+            "es": {
+              "title": "Contratos Futuros"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Travando um preço para o futuro",
+                  "body": "Um contrato futuro é um acordo padronizado, negociado em bolsa, para comprar ou vender um ativo a um preço definido, em uma data futura específica. Diferente de um contrato particular entre duas pessoas, os contratos futuros são padronizados e passam pela bolsa, que atua como intermediária, reduzindo o risco de uma das partes não cumprir o combinado."
+                },
+                "en": {
+                  "title": "Locking in a price for the future",
+                  "body": "A futures contract is a standardized agreement, traded on an exchange, to buy or sell an asset at a defined price, on a specific future date. Unlike a private contract between two people, futures contracts are standardized and go through the exchange, which acts as an intermediary, reducing the risk that one of the parties won't honor the deal."
+                },
+                "es": {
+                  "title": "Fijando un precio para el futuro",
+                  "body": "Un contrato futuro es un acuerdo estandarizado, negociado en bolsa, para comprar o vender un activo a un precio definido, en una fecha futura específica. A diferencia de un contrato privado entre dos personas, los contratos futuros están estandarizados y pasan por la bolsa, que actúa como intermediaria, reduciendo el riesgo de que una de las partes no cumpla lo acordado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um produtor de soja vende um contrato futuro, travando hoje o preço pelo qual vai vender sua colheita daqui a 6 meses. Se o preço da soja cair nesse período, ele já garantiu um preço melhor. Se o preço subir, ele deixa de aproveitar essa alta — mas, em troca, ganhou previsibilidade sobre sua receita futura."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A soybean producer sells a futures contract, locking in today the price at which they'll sell their harvest 6 months from now. If soybean prices fall during that period, they've already secured a better price. If prices rise, they miss out on that upside — but, in exchange, they gained predictability over their future revenue."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un productor de soja vende un contrato futuro, fijando hoy el precio al que venderá su cosecha dentro de 6 meses. Si el precio de la soja cae en ese período, ya aseguró un precio mejor. Si el precio sube, deja de aprovechar esa subida — pero, a cambio, ganó previsibilidad sobre sus ingresos futuros."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um contrato futuro negociado em bolsa?",
+                  "options": [
+                    "É um contrato particular entre duas pessoas, sem intermediação de bolsa",
+                    "É um acordo padronizado, negociado em bolsa, para comprar ou vender um ativo a um preço definido em uma data futura",
+                    "É a compra imediata e definitiva de um ativo, sem prazo futuro envolvido",
+                    "Ele só pode ser usado para ações, nunca para outros ativos"
+                  ],
+                  "explanation": "Contratos futuros são padronizados e negociados em bolsa, que reduz o risco de uma das partes não cumprir o acordo — diferente de um contrato particular direto entre duas pessoas."
+                },
+                "en": {
+                  "prompt": "What characterizes a futures contract traded on an exchange?",
+                  "options": [
+                    "It's a private contract between two people, with no exchange intermediation",
+                    "It's a standardized agreement, traded on an exchange, to buy or sell an asset at a defined price on a future date",
+                    "It's the immediate, final purchase of an asset, with no future term involved",
+                    "It can only be used for stocks, never for other assets"
+                  ],
+                  "explanation": "Futures contracts are standardized and traded on an exchange, which reduces the risk that one party won't honor the deal — unlike a direct private contract between two people."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un contrato futuro negociado en bolsa?",
+                  "options": [
+                    "Es un contrato privado entre dos personas, sin intermediación de bolsa",
+                    "Es un acuerdo estandarizado, negociado en bolsa, para comprar o vender un activo a un precio definido en una fecha futura",
+                    "Es la compra inmediata y definitiva de un activo, sin ningún plazo futuro involucrado",
+                    "Solo puede usarse para acciones, nunca para otros activos"
+                  ],
+                  "explanation": "Los contratos futuros están estandarizados y se negocian en bolsa, lo que reduce el riesgo de que una de las partes no cumpla el acuerdo — a diferencia de un contrato privado directo entre dos personas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um produtor trava o preço futuro da sua colheita através de um contrato futuro. Depois disso, o preço do produto sobe bastante no mercado. O que acontece com o produtor, considerando o que ele já havia combinado?",
+                  "options": [
+                    "Ele automaticamente recebe o novo preço mais alto, sem nenhuma limitação",
+                    "Ele já travou o preço anteriormente, então deixa de aproveitar essa alta, em troca da previsibilidade que obteve antes",
+                    "O contrato futuro se torna automaticamente inválido quando o preço muda",
+                    "Ele é obrigado a devolver o contrato para a bolsa"
+                  ],
+                  "explanation": "Ao travar um preço com antecedência, o produtor abre mão de eventuais ganhos com altas futuras, em troca da previsibilidade e proteção contra quedas — essa é a essência do uso de contratos futuros para hedge."
+                },
+                "en": {
+                  "prompt": "A producer locks in their harvest's future price through a futures contract. After that, the product's price rises a lot in the market. What happens to the producer, given what they had already agreed to?",
+                  "options": [
+                    "They automatically receive the new higher price, with no limitation at all",
+                    "They already locked in the price beforehand, so they miss out on that upside, in exchange for the predictability they gained earlier",
+                    "The futures contract automatically becomes invalid when the price changes",
+                    "They're required to return the contract to the exchange"
+                  ],
+                  "explanation": "By locking in a price in advance, the producer gives up any potential gains from future price increases, in exchange for predictability and protection against declines — that's the essence of using futures contracts for hedging."
+                },
+                "es": {
+                  "prompt": "Un productor fija el precio futuro de su cosecha a través de un contrato futuro. Después de eso, el precio del producto sube bastante en el mercado. ¿Qué le pasa al productor, considerando lo que ya había acordado?",
+                  "options": [
+                    "Recibe automáticamente el nuevo precio más alto, sin ninguna limitación",
+                    "Ya fijó el precio de antemano, así que deja de aprovechar esa subida, a cambio de la previsibilidad que obtuvo antes",
+                    "El contrato futuro se vuelve automáticamente inválido cuando el precio cambia",
+                    "Está obligado a devolver el contrato a la bolsa"
+                  ],
+                  "explanation": "Al fijar un precio con anticipación, el productor renuncia a posibles ganancias con subidas futuras, a cambio de la previsibilidad y protección contra caídas — esa es la esencia del uso de contratos futuros para cobertura."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Contratos futuros são padronizados e negociados em bolsa.",
+                    "Eles permitem travar um preço hoje para uma transação que vai acontecer no futuro.",
+                    "Travar um preço significa abrir mão de ganhos com altas, em troca de previsibilidade."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Futures contracts are standardized and traded on an exchange.",
+                    "They allow locking in a price today for a transaction that will happen in the future.",
+                    "Locking in a price means giving up gains from price increases, in exchange for predictability."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los contratos futuros están estandarizados y se negocian en bolsa.",
+                    "Permiten fijar un precio hoy para una transacción que ocurrirá en el futuro.",
+                    "Fijar un precio significa renunciar a ganancias con subidas, a cambio de previsibilidad."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_options",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Opções"
+            },
+            "en": {
+              "title": "Options"
+            },
+            "es": {
+              "title": "Opciones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O direito, mas não a obrigação",
+                  "body": "Uma opção é um contrato que dá ao comprador o direito — mas não a obrigação — de comprar (opção de compra, ou call) ou vender (opção de venda, ou put) um ativo a um preço definido, até ou em uma data específica. Ao comprar uma opção, o investidor paga um valor chamado prêmio; se o direito não for exercido, o máximo que ele perde é esse prêmio pago."
+                },
+                "en": {
+                  "title": "The right, but not the obligation",
+                  "body": "An option is a contract that gives the buyer the right — but not the obligation — to buy (a call option) or sell (a put option) an asset at a defined price, by or on a specific date. When buying an option, the investor pays an amount called the premium; if the right isn't exercised, the most they lose is that premium paid."
+                },
+                "es": {
+                  "title": "El derecho, pero no la obligación",
+                  "body": "Una opción es un contrato que le da al comprador el derecho — pero no la obligación — de comprar (opción de compra, o call) o vender (opción de venta, o put) un activo a un precio definido, hasta o en una fecha específica. Al comprar una opción, el inversor paga un monto llamado prima; si el derecho no se ejerce, lo máximo que pierde es esa prima pagada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra uma opção de compra de uma ação, pagando um prêmio de R$2, com direito de comprá-la por R$50 até uma data futura. Se a ação subir para R$60, ele pode exercer o direito e comprar por R$50, lucrando com a diferença. Se a ação cair para R$40, ele simplesmente não exerce o direito, perdendo apenas o prêmio de R$2 pago inicialmente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys a call option on a stock, paying a premium of R$2, with the right to buy it for R$50 by a future date. If the stock rises to R$60, they can exercise the right and buy at R$50, profiting from the difference. If the stock falls to R$40, they simply don't exercise the right, losing only the R$2 premium paid upfront."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra una opción de compra de una acción, pagando una prima de R$2, con derecho a comprarla por R$50 hasta una fecha futura. Si la acción sube a R$60, puede ejercer el derecho y comprar por R$50, ganando con la diferencia. Si la acción cae a R$40, simplemente no ejerce el derecho, perdiendo solo la prima de R$2 pagada inicialmente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o comprador de uma opção adquire?",
+                  "options": [
+                    "A obrigação de comprar ou vender o ativo, sem alternativa",
+                    "O direito, mas não a obrigação, de comprar ou vender o ativo a um preço definido",
+                    "A posse imediata e definitiva do ativo subjacente",
+                    "Um empréstimo garantido pelo ativo subjacente"
+                  ],
+                  "explanation": "A característica central de uma opção é dar ao comprador o direito, não a obrigação, de exercer a compra ou venda do ativo nas condições combinadas."
+                },
+                "en": {
+                  "prompt": "What does an option buyer acquire?",
+                  "options": [
+                    "The obligation to buy or sell the asset, with no alternative",
+                    "The right, but not the obligation, to buy or sell the asset at a defined price",
+                    "Immediate and final ownership of the underlying asset",
+                    "A loan secured by the underlying asset"
+                  ],
+                  "explanation": "The central feature of an option is that it gives the buyer the right, not the obligation, to exercise the purchase or sale of the asset under the agreed conditions."
+                },
+                "es": {
+                  "prompt": "¿Qué adquiere el comprador de una opción?",
+                  "options": [
+                    "La obligación de comprar o vender el activo, sin alternativa",
+                    "El derecho, pero no la obligación, de comprar o vender el activo a un precio definido",
+                    "La posesión inmediata y definitiva del activo subyacente",
+                    "Un préstamo garantizado por el activo subyacente"
+                  ],
+                  "explanation": "La característica central de una opción es que le da al comprador el derecho, no la obligación, de ejercer la compra o venta del activo en las condiciones acordadas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você comprou uma opção de compra pagando um prêmio, mas o preço do ativo caiu bastante e ficou bem abaixo do preço combinado na opção. Qual é o pior cenário possível para você, comprador da opção?",
+                  "options": [
+                    "Você é obrigado a comprar o ativo mesmo assim, tendo prejuízo ilimitado",
+                    "Você precisa pagar um valor extra além do prêmio já pago",
+                    "Você simplesmente não exerce o direito, perdendo apenas o prêmio já pago",
+                    "A bolsa cancela automaticamente todas as suas outras operações"
+                  ],
+                  "explanation": "Para o comprador de uma opção, a perda máxima possível é o valor do prêmio pago — se o exercício não é vantajoso, ele simplesmente não exerce o direito."
+                },
+                "en": {
+                  "prompt": "You bought a call option, paying a premium, but the asset's price fell a lot and ended up well below the price agreed in the option. What's the worst possible scenario for you, the option buyer?",
+                  "options": [
+                    "You're required to buy the asset anyway, facing unlimited losses",
+                    "You need to pay an extra amount on top of the premium already paid",
+                    "You simply don't exercise the right, losing only the premium already paid",
+                    "The exchange automatically cancels all your other transactions"
+                  ],
+                  "explanation": "For an option buyer, the maximum possible loss is the premium paid — if exercising isn't advantageous, they simply don't exercise the right."
+                },
+                "es": {
+                  "prompt": "Compraste una opción de compra pagando una prima, pero el precio del activo cayó bastante y quedó bien por debajo del precio acordado en la opción. ¿Cuál es el peor escenario posible para ti, comprador de la opción?",
+                  "options": [
+                    "Estás obligado a comprar el activo de todas formas, teniendo pérdidas ilimitadas",
+                    "Necesitas pagar un monto extra además de la prima ya pagada",
+                    "Simplemente no ejerces el derecho, perdiendo solo la prima ya pagada",
+                    "La bolsa cancela automáticamente todas tus otras operaciones"
+                  ],
+                  "explanation": "Para el comprador de una opción, la pérdida máxima posible es el monto de la prima pagada — si ejercer no es ventajoso, simplemente no ejerce el derecho."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Uma opção dá ao comprador o direito, não a obrigação, de comprar ou vender um ativo.",
+                    "O comprador paga um prêmio por esse direito.",
+                    "A perda máxima do comprador de uma opção é o valor do prêmio pago."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "An option gives the buyer the right, not the obligation, to buy or sell an asset.",
+                    "The buyer pays a premium for that right.",
+                    "The option buyer's maximum loss is the premium paid."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Una opción le da al comprador el derecho, no la obligación, de comprar o vender un activo.",
+                    "El comprador paga una prima por ese derecho.",
+                    "La pérdida máxima del comprador de una opción es el monto de la prima pagada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_hedge_vs_speculation",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Proteção (Hedge) x Especulação"
+            },
+            "en": {
+              "title": "Hedging vs. Speculation"
+            },
+            "es": {
+              "title": "Cobertura (Hedge) vs. Especulación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O mesmo instrumento, dois objetivos diferentes",
+                  "body": "Hedge (proteção) é o uso de derivativos para reduzir um risco que já existe — por exemplo, uma empresa que compra insumos em dólar usando derivativos para se proteger de uma alta na moeda. Especulação é o uso desses mesmos instrumentos para tentar lucrar com a variação de preço, assumindo um risco novo que não existia antes. O mesmo contrato de derivativo pode servir para os dois propósitos — a diferença está na intenção e na posição de quem o utiliza."
+                },
+                "en": {
+                  "title": "The same instrument, two different goals",
+                  "body": "Hedging is the use of derivatives to reduce a risk that already exists — for example, a company that buys supplies in dollars using derivatives to protect itself against the currency rising. Speculation is the use of these same instruments to try to profit from price movements, taking on a new risk that didn't exist before. The same derivative contract can serve both purposes — the difference lies in the intent and the position of whoever uses it."
+                },
+                "es": {
+                  "title": "El mismo instrumento, dos objetivos diferentes",
+                  "body": "La cobertura (hedge) es el uso de derivados para reducir un riesgo que ya existe — por ejemplo, una empresa que compra insumos en dólares usando derivados para protegerse de una subida de la moneda. La especulación es el uso de esos mismos instrumentos para intentar ganar con la variación de precio, asumiendo un riesgo nuevo que no existía antes. El mismo contrato de derivado puede servir para ambos propósitos — la diferencia está en la intención y en la posición de quien lo utiliza."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma companhia aérea, que já tem um custo real com combustível, compra contratos futuros de petróleo para se proteger de uma alta nos preços — isso é hedge, porque reduz um risco que a empresa já tinha. Já um investidor sem nenhuma exposição prévia a petróleo, que compra o mesmo tipo de contrato apostando que o preço vai subir, está especulando — assumindo um risco novo em busca de lucro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An airline, which already has a real cost with fuel, buys oil futures contracts to protect itself against rising prices — that's hedging, because it reduces a risk the company already had. An investor with no prior exposure to oil, who buys the same type of contract betting the price will rise, is speculating — taking on a new risk in pursuit of profit."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una aerolínea, que ya tiene un costo real con combustible, compra contratos futuros de petróleo para protegerse de una subida de precios — eso es cobertura, porque reduce un riesgo que la empresa ya tenía. En cambio, un inversor sin ninguna exposición previa al petróleo, que compra el mismo tipo de contrato apostando a que el precio va a subir, está especulando — asumiendo un riesgo nuevo en busca de ganancias."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre hedge e especulação?",
+                  "options": [
+                    "Hedge usa derivativos, e especulação nunca usa",
+                    "Hedge busca reduzir um risco que já existe; especulação busca lucrar assumindo um risco novo",
+                    "Não existe diferença nenhuma entre os dois",
+                    "Especulação é sempre ilegal, hedge nunca é"
+                  ],
+                  "explanation": "A diferença está no objetivo: hedge reduz uma exposição de risco já existente, enquanto especulação assume uma exposição nova em busca de lucro."
+                },
+                "en": {
+                  "prompt": "What is the main difference between hedging and speculation?",
+                  "options": [
+                    "Hedging uses derivatives, and speculation never does",
+                    "Hedging seeks to reduce a risk that already exists; speculation seeks to profit by taking on a new risk",
+                    "There's no difference at all between the two",
+                    "Speculation is always illegal, hedging never is"
+                  ],
+                  "explanation": "The difference lies in the goal: hedging reduces an already-existing risk exposure, while speculation takes on a new exposure in pursuit of profit."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre cobertura y especulación?",
+                  "options": [
+                    "La cobertura usa derivados, y la especulación nunca los usa",
+                    "La cobertura busca reducir un riesgo que ya existe; la especulación busca ganar asumiendo un riesgo nuevo",
+                    "No existe ninguna diferencia entre ambas",
+                    "La especulación siempre es ilegal, la cobertura nunca lo es"
+                  ],
+                  "explanation": "La diferencia está en el objetivo: la cobertura reduce una exposición al riesgo ya existente, mientras que la especulación asume una exposición nueva en busca de ganancias."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa exportadora, que recebe em dólar, usa derivativos para travar a taxa de câmbio na qual vai converter esse dinheiro em reais. Um investidor sem nenhuma receita em dólar compra o mesmo tipo de contrato, apostando na alta da moeda. Como você classificaria cada operação?",
+                  "options": [
+                    "As duas são exemplos de especulação, já que envolvem derivativos",
+                    "A da empresa é hedge, porque reduz um risco cambial que ela já tinha; a do investidor é especulação, porque cria uma exposição nova ao câmbio",
+                    "As duas são hedge, já que usam o mesmo tipo de contrato",
+                    "É impossível classificar sem saber o valor exato de cada contrato"
+                  ],
+                  "explanation": "O mesmo tipo de contrato pode ser hedge ou especulação dependendo de quem o usa e por quê: a empresa já tinha exposição cambial e busca reduzi-la; o investidor está criando uma exposição nova, buscando lucro."
+                },
+                "en": {
+                  "prompt": "An exporting company, which receives payment in dollars, uses derivatives to lock in the exchange rate at which it will convert that money into reals. An investor with no dollar revenue at all buys the same type of contract, betting on the currency rising. How would you classify each transaction?",
+                  "options": [
+                    "Both are examples of speculation, since they involve derivatives",
+                    "The company's is hedging, because it reduces a currency risk it already had; the investor's is speculation, because it creates a new exposure to the exchange rate",
+                    "Both are hedging, since they use the same type of contract",
+                    "It's impossible to classify without knowing the exact value of each contract"
+                  ],
+                  "explanation": "The same type of contract can be hedging or speculation depending on who uses it and why: the company already had currency exposure and seeks to reduce it; the investor is creating a new exposure, seeking profit."
+                },
+                "es": {
+                  "prompt": "Una empresa exportadora, que recibe pagos en dólares, usa derivados para fijar el tipo de cambio al que convertirá ese dinero en reales. Un inversor sin ningún ingreso en dólares compra el mismo tipo de contrato, apostando a la subida de la moneda. ¿Cómo clasificarías cada operación?",
+                  "options": [
+                    "Ambas son ejemplos de especulación, ya que involucran derivados",
+                    "La de la empresa es cobertura, porque reduce un riesgo cambiario que ya tenía; la del inversor es especulación, porque crea una exposición nueva al tipo de cambio",
+                    "Ambas son cobertura, ya que usan el mismo tipo de contrato",
+                    "Es imposible clasificarlas sin saber el valor exacto de cada contrato"
+                  ],
+                  "explanation": "El mismo tipo de contrato puede ser cobertura o especulación dependiendo de quién lo usa y por qué: la empresa ya tenía exposición cambiaria y busca reducirla; el inversor está creando una exposición nueva, buscando ganancias."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Hedge usa derivativos para reduzir um risco que já existe.",
+                    "Especulação usa os mesmos instrumentos para buscar lucro, assumindo um risco novo.",
+                    "O mesmo contrato pode servir para os dois propósitos, dependendo de quem o utiliza."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Hedging uses derivatives to reduce a risk that already exists.",
+                    "Speculation uses the same instruments to seek profit, taking on a new risk.",
+                    "The same contract can serve both purposes, depending on who uses it."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "La cobertura usa derivados para reducir un riesgo que ya existe.",
+                    "La especulación usa los mismos instrumentos para buscar ganancias, asumiendo un riesgo nuevo.",
+                    "El mismo contrato puede servir para ambos propósitos, dependiendo de quién lo utilice."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_put_options",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Opções de Venda (Put)"
+            },
+            "en": {
+              "title": "Put Options"
+            },
+            "es": {
+              "title": "Opciones de Venta (Put)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O direito de vender a um preço definido",
+                  "body": "Uma opção de venda (put) é o espelho de uma opção de compra: ela dá ao comprador o direito — mas não a obrigação — de vender um ativo a um preço definido, até ou em uma data específica. Quem compra uma put geralmente espera que o preço do ativo caia: se isso acontecer, o comprador pode vender pelo preço combinado, mesmo que o preço de mercado esteja mais baixo, lucrando com a diferença. Assim como na opção de compra, o comprador paga um prêmio, e essa é a perda máxima possível caso o direito não seja exercido."
+                },
+                "en": {
+                  "title": "The right to sell at a defined price",
+                  "body": "A put option is the mirror image of a call option: it gives the buyer the right — but not the obligation — to sell an asset at a defined price, by or on a specific date. Whoever buys a put generally expects the asset's price to fall: if that happens, the buyer can sell at the agreed price, even though the market price is lower, profiting from the difference. Just like with a call option, the buyer pays a premium, and that's the maximum possible loss if the right isn't exercised."
+                },
+                "es": {
+                  "title": "El derecho de vender a un precio definido",
+                  "body": "Una opción de venta (put) es el espejo de una opción de compra: le da al comprador el derecho — pero no la obligación — de vender un activo a un precio definido, hasta o en una fecha específica. Quien compra una put generalmente espera que el precio del activo caiga: si eso ocurre, el comprador puede vender al precio acordado, aunque el precio de mercado esté más bajo, ganando con la diferencia. Igual que en la opción de compra, el comprador paga una prima, y esa es la pérdida máxima posible si el derecho no se ejerce."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra uma opção de venda de uma ação negociada a R$50, pagando um prêmio de R$2, com direito de vendê-la por R$45 até uma data futura. Se a ação cair para R$30, ele pode comprar a ação no mercado por R$30 e exercer a put, vendendo-a por R$45 — lucrando com a diferença, descontado o prêmio. Se a ação subir ou ficar acima de R$45, ele simplesmente não exerce o direito, perdendo apenas o prêmio de R$2 pago inicialmente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys a put option on a stock trading at R$50, paying a premium of R$2, with the right to sell it for R$45 by a future date. If the stock falls to R$30, they can buy the stock in the market at R$30 and exercise the put, selling it for R$45 — profiting from the difference, net of the premium. If the stock rises or stays above R$45, they simply don't exercise the right, losing only the R$2 premium paid upfront."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra una opción de venta de una acción negociada a R$50, pagando una prima de R$2, con derecho a venderla por R$45 hasta una fecha futura. Si la acción cae a R$30, puede comprar la acción en el mercado a R$30 y ejercer la put, vendiéndola por R$45 — ganando con la diferencia, descontada la prima. Si la acción sube o se mantiene por encima de R$45, simplemente no ejerce el derecho, perdiendo solo la prima de R$2 pagada inicialmente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o comprador de uma opção de venda (put) adquire?",
+                  "options": [
+                    "A obrigação de vender o ativo, sem alternativa",
+                    "O direito, mas não a obrigação, de vender o ativo a um preço definido, até ou em uma data específica",
+                    "A posse imediata e definitiva do ativo subjacente",
+                    "Um empréstimo garantido pelo ativo subjacente"
+                  ],
+                  "explanation": "A opção de venda dá ao comprador o direito, não a obrigação, de vender o ativo pelo preço combinado — o espelho do que acontece na opção de compra."
+                },
+                "en": {
+                  "prompt": "What does a put option buyer acquire?",
+                  "options": [
+                    "The obligation to sell the asset, with no alternative",
+                    "The right, but not the obligation, to sell the asset at a defined price, by or on a specific date",
+                    "Immediate and final ownership of the underlying asset",
+                    "A loan secured by the underlying asset"
+                  ],
+                  "explanation": "A put option gives the buyer the right, not the obligation, to sell the asset at the agreed price — the mirror image of what happens with a call option."
+                },
+                "es": {
+                  "prompt": "¿Qué adquiere el comprador de una opción de venta (put)?",
+                  "options": [
+                    "La obligación de vender el activo, sin alternativa",
+                    "El derecho, pero no la obligación, de vender el activo a un precio definido, hasta o en una fecha específica",
+                    "La posesión inmediata y definitiva del activo subyacente",
+                    "Un préstamo garantizado por el activo subyacente"
+                  ],
+                  "explanation": "La opción de venta le da al comprador el derecho, no la obligación, de vender el activo al precio acordado — el espejo de lo que ocurre en la opción de compra."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende hedge x especulação de outra lição deste módulo. Um investidor que não possui nenhuma ação de uma empresa compra uma opção de venda (put) sobre essa ação, apostando que o preço vai cair. Como você classificaria essa operação?",
+                  "options": [
+                    "É hedge, porque opções de venda sempre reduzem um risco existente",
+                    "É especulação, porque o investidor está criando uma exposição nova ao preço da ação, sem ter uma posição prévia que precise de proteção",
+                    "É impossível classificar sem saber o valor exato do prêmio pago",
+                    "Opções de venda nunca podem ser usadas para especular, apenas para proteção"
+                  ],
+                  "explanation": "Como o investidor não tinha nenhuma exposição prévia à ação, comprar a put para apostar na queda do preço cria um risco novo em busca de lucro — a definição de especulação, e não de hedge."
+                },
+                "en": {
+                  "prompt": "You already understand hedging vs. speculation from another lesson in this module. An investor who owns no shares of a company buys a put option on that stock, betting the price will fall. How would you classify this transaction?",
+                  "options": [
+                    "It's hedging, because put options always reduce an existing risk",
+                    "It's speculation, because the investor is creating a new exposure to the stock's price, with no prior position that needs protecting",
+                    "It's impossible to classify without knowing the exact premium paid",
+                    "Put options can never be used to speculate, only to protect a position"
+                  ],
+                  "explanation": "Since the investor had no prior exposure to the stock, buying the put to bet on the price falling creates a new risk in pursuit of profit — the definition of speculation, not hedging."
+                },
+                "es": {
+                  "prompt": "Ya entiendes cobertura vs. especulación de otra lección de este módulo. Un inversor que no posee ninguna acción de una empresa compra una opción de venta (put) sobre esa acción, apostando a que el precio caerá. ¿Cómo clasificarías esta operación?",
+                  "options": [
+                    "Es cobertura, porque las opciones de venta siempre reducen un riesgo existente",
+                    "Es especulación, porque el inversor está creando una exposición nueva al precio de la acción, sin tener una posición previa que necesite protección",
+                    "Es imposible clasificarla sin saber el monto exacto de la prima pagada",
+                    "Las opciones de venta nunca pueden usarse para especular, solo para protección"
+                  ],
+                  "explanation": "Como el inversor no tenía ninguna exposición previa a la acción, comprar la put para apostar a la caída del precio crea un riesgo nuevo en busca de ganancias — la definición de especulación, no de cobertura."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Uma opção de venda (put) dá ao comprador o direito, não a obrigação, de vender um ativo a um preço definido.",
+                    "O comprador geralmente espera que o preço caia, e paga um prêmio por esse direito.",
+                    "Comprar uma put sem possuir o ativo, apostando na queda do preço, é especulação, não hedge."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A put option gives the buyer the right, not the obligation, to sell an asset at a defined price.",
+                    "The buyer generally expects the price to fall, and pays a premium for that right.",
+                    "Buying a put without owning the asset, betting on a price drop, is speculation, not hedging."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Una opción de venta (put) le da al comprador el derecho, no la obligación, de vender un activo a un precio definido.",
+                    "El comprador generalmente espera que el precio caiga, y paga una prima por ese derecho.",
+                    "Comprar una put sin poseer el activo, apostando a la caída del precio, es especulación, no cobertura."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "advanced_derivatives_strategies",
+      "order": 2,
+      "iconKey": "timeline_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "derivatives_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Estratégias e Riscos Avançados",
+          "description": "Swaps, margem e chamada de margem, opção coberta e risco de contraparte."
+        },
+        "en": {
+          "title": "Advanced Strategies and Risks",
+          "description": "Swaps, margin and margin calls, covered calls and counterparty risk."
+        },
+        "es": {
+          "title": "Estrategias y Riesgos Avanzados",
+          "description": "Swaps, margen y llamada de margen, opción cubierta y riesgo de contraparte."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "derivatives_swaps",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Swaps"
+            },
+            "en": {
+              "title": "Swaps"
+            },
+            "es": {
+              "title": "Swaps"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Trocando fluxos de pagamento",
+                  "body": "Um swap é um contrato em que duas partes concordam em trocar fluxos de pagamento futuros entre si, com base em regras definidas no contrato. Um dos tipos mais comuns é o swap de taxa de juros, em que uma parte troca pagamentos baseados em uma taxa fixa por pagamentos baseados em uma taxa variável, ou vice-versa. Diferente de opções e futuros, um swap normalmente não é negociado em bolsa, mas acordado diretamente entre as partes envolvidas."
+                },
+                "en": {
+                  "title": "Exchanging payment streams",
+                  "body": "A swap is a contract in which two parties agree to exchange future payment streams with each other, based on rules defined in the contract. One of the most common types is an interest rate swap, in which one party exchanges payments based on a fixed rate for payments based on a variable rate, or vice versa. Unlike options and futures, a swap normally isn't traded on an exchange, but agreed directly between the parties involved."
+                },
+                "es": {
+                  "title": "Intercambiando flujos de pago",
+                  "body": "Un swap es un contrato en el que dos partes acuerdan intercambiar flujos de pago futuros entre sí, con base en reglas definidas en el contrato. Uno de los tipos más comunes es el swap de tasa de interés, en el que una parte intercambia pagos basados en una tasa fija por pagos basados en una tasa variable, o viceversa. A diferencia de las opciones y los futuros, un swap normalmente no se negocia en bolsa, sino que se acuerda directamente entre las partes involucradas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa tem uma dívida com taxa de juros variável e prefere ter previsibilidade nos pagamentos. Ela entra em um swap de juros, trocando seus pagamentos de taxa variável por pagamentos de taxa fixa com uma contraparte — na prática, transformando o perfil de risco da sua dívida sem precisar refinanciá-la."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company has debt with a variable interest rate and prefers to have predictability in its payments. It enters into an interest rate swap, exchanging its variable-rate payments for fixed-rate payments with a counterparty — in practice, transforming its debt's risk profile without needing to refinance it."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa tiene una deuda con tasa de interés variable y prefiere tener previsibilidad en los pagos. Entra en un swap de tasas, intercambiando sus pagos de tasa variable por pagos de tasa fija con una contraparte — en la práctica, transformando el perfil de riesgo de su deuda sin necesidad de refinanciarla."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um swap?",
+                  "options": [
+                    "Um tipo de ação negociada em bolsa",
+                    "Um contrato em que duas partes trocam fluxos de pagamento futuros entre si, com base em regras definidas",
+                    "Um imposto cobrado sobre operações de derivativos",
+                    "Uma taxa fixa cobrada por corretoras"
+                  ],
+                  "explanation": "Swap é um contrato de troca de fluxos de pagamento futuros entre duas partes, geralmente acordado diretamente, sem passar necessariamente por uma bolsa."
+                },
+                "en": {
+                  "prompt": "What is a swap?",
+                  "options": [
+                    "A type of stock traded on an exchange",
+                    "A contract in which two parties exchange future payment streams with each other, based on defined rules",
+                    "A tax charged on derivative transactions",
+                    "A fixed fee charged by brokers"
+                  ],
+                  "explanation": "A swap is a contract for exchanging future payment streams between two parties, usually agreed directly, without necessarily going through an exchange."
+                },
+                "es": {
+                  "prompt": "¿Qué es un swap?",
+                  "options": [
+                    "Un tipo de acción negociada en bolsa",
+                    "Un contrato en el que dos partes intercambian flujos de pago futuros entre sí, con base en reglas definidas",
+                    "Un impuesto cobrado sobre operaciones de derivados",
+                    "Una tasa fija cobrada por las correduras"
+                  ],
+                  "explanation": "El swap es un contrato de intercambio de flujos de pago futuros entre dos partes, generalmente acordado directamente, sin pasar necesariamente por una bolsa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa com dívida em taxa variável está preocupada com uma possível alta nos juros no futuro. Como um swap de juros poderia ajudar nessa situação, com base no que você aprendeu?",
+                  "options": [
+                    "Um swap não teria nenhuma utilidade nessa situação",
+                    "A empresa poderia trocar seus pagamentos de taxa variável por pagamentos de taxa fixa, ganhando previsibilidade e reduzindo a exposição a uma alta futura de juros",
+                    "Um swap eliminaria completamente a dívida da empresa",
+                    "Swaps só podem ser usados para trocar moedas, nunca taxas de juros"
+                  ],
+                  "explanation": "Trocar exposição de taxa variável por taxa fixa através de um swap é um uso típico desse instrumento para reduzir a incerteza sobre pagamentos futuros de juros."
+                },
+                "en": {
+                  "prompt": "A company with variable-rate debt is worried about a possible future rise in interest rates. How could an interest rate swap help in this situation, based on what you learned?",
+                  "options": [
+                    "A swap would have no use in this situation",
+                    "The company could exchange its variable-rate payments for fixed-rate payments, gaining predictability and reducing exposure to a future rate hike",
+                    "A swap would completely eliminate the company's debt",
+                    "Swaps can only be used to exchange currencies, never interest rates"
+                  ],
+                  "explanation": "Exchanging variable-rate exposure for fixed-rate exposure through a swap is a typical use of this instrument to reduce uncertainty about future interest payments."
+                },
+                "es": {
+                  "prompt": "Una empresa con deuda a tasa variable está preocupada por una posible subida futura de las tasas de interés. ¿Cómo podría ayudar un swap de tasas en esta situación, según lo que aprendiste?",
+                  "options": [
+                    "Un swap no tendría ninguna utilidad en esta situación",
+                    "La empresa podría intercambiar sus pagos de tasa variable por pagos de tasa fija, ganando previsibilidad y reduciendo la exposición a una futura subida de tasas",
+                    "Un swap eliminaría por completo la deuda de la empresa",
+                    "Los swaps solo pueden usarse para intercambiar monedas, nunca tasas de interés"
+                  ],
+                  "explanation": "Intercambiar exposición de tasa variable por tasa fija a través de un swap es un uso típico de este instrumento para reducir la incertidumbre sobre pagos futuros de intereses."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Swap é um contrato de troca de fluxos de pagamento futuros entre duas partes.",
+                    "Um tipo comum é o swap de juros, trocando taxa fixa por variável, ou vice-versa.",
+                    "Swaps normalmente são acordados diretamente entre as partes, não em bolsa."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A swap is a contract for exchanging future payment streams between two parties.",
+                    "A common type is the interest rate swap, exchanging fixed for variable rate, or vice versa.",
+                    "Swaps are usually agreed directly between the parties, not on an exchange."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El swap es un contrato de intercambio de flujos de pago futuros entre dos partes.",
+                    "Un tipo común es el swap de tasas, intercambiando tasa fija por variable, o viceversa.",
+                    "Los swaps normalmente se acuerdan directamente entre las partes, no en bolsa."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_margin_call",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Margem e Chamada de Margem"
+            },
+            "en": {
+              "title": "Margin and Margin Calls"
+            },
+            "es": {
+              "title": "Margen y Llamada de Margen"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O depósito de garantia que pode ser cobrado",
+                  "body": "Margem é o valor que um investidor precisa manter depositado como garantia para operar com derivativos alavancados, como contratos futuros. Se o mercado se move contra a posição do investidor, e o valor depositado como margem cai abaixo de um nível mínimo exigido, a corretora emite uma chamada de margem — uma exigência para que o investidor deposite mais dinheiro rapidamente, sob risco de ter a posição encerrada à força (liquidada) se não o fizer a tempo."
+                },
+                "en": {
+                  "title": "The collateral deposit that can be demanded",
+                  "body": "Margin is the amount an investor needs to keep deposited as collateral to trade leveraged derivatives, like futures contracts. If the market moves against the investor's position, and the amount deposited as margin falls below a required minimum level, the broker issues a margin call — a demand for the investor to deposit more money quickly, risking having the position forcibly closed (liquidated) if they don't do so in time."
+                },
+                "es": {
+                  "title": "El depósito de garantía que puede ser exigido",
+                  "body": "El margen es el monto que un inversor necesita mantener depositado como garantía para operar con derivados apalancados, como los contratos futuros. Si el mercado se mueve en contra de la posición del inversor, y el monto depositado como margen cae por debajo de un nivel mínimo exigido, la correduría emite una llamada de margen — una exigencia para que el inversor deposite más dinero rápidamente, bajo riesgo de que la posición se cierre por la fuerza (se liquide) si no lo hace a tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um trader opera um contrato futuro alavancado, depositando uma margem inicial de R$5.000. O mercado se move contra a posição, e as perdas acumuladas fazem o valor da margem cair para R$2.000, abaixo do mínimo exigido. A corretora emite uma chamada de margem, pedindo um depósito adicional em poucas horas; se o trader não conseguir depositar a tempo, a corretora pode liquidar a posição automaticamente para conter mais perdas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A trader operates a leveraged futures contract, depositing an initial margin of R$5,000. The market moves against the position, and the accumulated losses cause the margin amount to fall to R$2,000, below the required minimum. The broker issues a margin call, requesting an additional deposit within a few hours; if the trader can't deposit in time, the broker can automatically liquidate the position to contain further losses."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un trader opera un contrato futuro apalancado, depositando un margen inicial de R$5.000. El mercado se mueve en contra de la posición, y las pérdidas acumuladas hacen que el valor del margen caiga a R$2.000, por debajo del mínimo exigido. La correduría emite una llamada de margen, pidiendo un depósito adicional en pocas horas; si el trader no logra depositar a tiempo, la correduría puede liquidar la posición automáticamente para contener más pérdidas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é uma chamada de margem?",
+                  "options": [
+                    "Um bônus oferecido pela corretora para novos clientes",
+                    "Uma exigência da corretora para que o investidor deposite mais dinheiro, quando o valor da margem cai abaixo do mínimo exigido",
+                    "Uma taxa cobrada apenas uma vez, no início da operação",
+                    "Um tipo de ordem usada para comprar ações"
+                  ],
+                  "explanation": "Chamada de margem é o pedido da corretora para que o investidor reponha o valor da margem, quando perdas acumuladas fazem esse valor cair abaixo do nível mínimo exigido."
+                },
+                "en": {
+                  "prompt": "What is a margin call?",
+                  "options": [
+                    "A bonus offered by the broker to new clients",
+                    "A broker's demand for the investor to deposit more money, when the margin amount falls below the required minimum",
+                    "A fee charged only once, at the start of the trade",
+                    "A type of order used to buy stocks"
+                  ],
+                  "explanation": "A margin call is the broker's request for the investor to replenish the margin amount, when accumulated losses cause that amount to fall below the required minimum level."
+                },
+                "es": {
+                  "prompt": "¿Qué es una llamada de margen?",
+                  "options": [
+                    "Un bono ofrecido por la correduría a nuevos clientes",
+                    "Una exigencia de la correduría para que el inversor deposite más dinero, cuando el valor del margen cae por debajo del mínimo exigido",
+                    "Una tasa cobrada solo una vez, al inicio de la operación",
+                    "Un tipo de orden usada para comprar acciones"
+                  ],
+                  "explanation": "La llamada de margen es la solicitud de la correduría para que el inversor reponga el valor del margen, cuando pérdidas acumuladas hacen que ese valor caiga por debajo del nivel mínimo exigido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende alavancagem de outra lição — que ela amplifica ganhos e perdas na mesma proporção. Como isso se conecta com o risco de receber uma chamada de margem?",
+                  "options": [
+                    "Não se conecta, alavancagem e chamada de margem são conceitos completamente independentes",
+                    "Quanto maior a alavancagem, mais rápido perdas podem consumir o valor da margem depositada, aumentando a chance de uma chamada de margem em movimentos adversos do mercado",
+                    "Chamada de margem só acontece em operações sem nenhuma alavancagem",
+                    "Alavancagem elimina completamente a necessidade de manter uma margem"
+                  ],
+                  "explanation": "Alavancagem alta amplifica perdas rapidamente em relação ao capital depositado, o que aumenta a velocidade com que o valor da margem pode cair abaixo do mínimo exigido, disparando uma chamada de margem."
+                },
+                "en": {
+                  "prompt": "You already understand leverage from another lesson — that it amplifies gains and losses in the same proportion. How does this connect to the risk of receiving a margin call?",
+                  "options": [
+                    "It doesn't connect, leverage and margin calls are completely independent concepts",
+                    "The higher the leverage, the faster losses can consume the deposited margin amount, increasing the chance of a margin call during adverse market moves",
+                    "Margin calls only happen in trades with no leverage at all",
+                    "Leverage completely eliminates the need to maintain a margin"
+                  ],
+                  "explanation": "High leverage amplifies losses quickly relative to the deposited capital, which increases the speed at which the margin amount can fall below the required minimum, triggering a margin call."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el apalancamiento de otra lección — que amplifica ganancias y pérdidas en la misma proporción. ¿Cómo se conecta esto con el riesgo de recibir una llamada de margen?",
+                  "options": [
+                    "No se conecta, el apalancamiento y la llamada de margen son conceptos completamente independientes",
+                    "Cuanto mayor el apalancamiento, más rápido las pérdidas pueden consumir el valor del margen depositado, aumentando la posibilidad de una llamada de margen ante movimientos adversos del mercado",
+                    "La llamada de margen solo ocurre en operaciones sin ningún apalancamiento",
+                    "El apalancamiento elimina por completo la necesidad de mantener un margen"
+                  ],
+                  "explanation": "El alto apalancamiento amplifica las pérdidas rápidamente en relación al capital depositado, lo que aumenta la velocidad con la que el valor del margen puede caer por debajo del mínimo exigido, disparando una llamada de margen."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Margem é o valor depositado como garantia para operar derivativos alavancados.",
+                    "Chamada de margem exige um depósito adicional quando a margem cai abaixo do mínimo.",
+                    "Alavancagem alta aumenta a velocidade com que uma chamada de margem pode acontecer."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Margin is the amount deposited as collateral to trade leveraged derivatives.",
+                    "A margin call demands an additional deposit when margin falls below the minimum.",
+                    "High leverage increases how quickly a margin call can happen."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El margen es el monto depositado como garantía para operar derivados apalancados.",
+                    "La llamada de margen exige un depósito adicional cuando el margen cae por debajo del mínimo.",
+                    "El alto apalancamiento aumenta la velocidad con la que puede ocurrir una llamada de margen."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_covered_call",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Opção Coberta (Covered Call)"
+            },
+            "en": {
+              "title": "Covered Call"
+            },
+            "es": {
+              "title": "Opción Cubierta (Covered Call)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Vendendo opções sobre ações que você já tem",
+                  "body": "Uma estratégia de opção coberta (covered call) consiste em vender uma opção de compra sobre uma ação que o investidor já possui em carteira. Ao vender a opção, o investidor recebe o prêmio imediatamente, gerando renda extra. Em troca, ele se compromete a vender a ação pelo preço combinado, caso o comprador da opção decida exercer o direito — o que geralmente acontece se a ação subir bastante, limitando o ganho adicional do investidor além daquele preço."
+                },
+                "en": {
+                  "title": "Selling options on stocks you already own",
+                  "body": "A covered call strategy consists of selling a call option on a stock the investor already owns in their portfolio. By selling the option, the investor receives the premium immediately, generating extra income. In exchange, they commit to selling the stock at the agreed price, if the option buyer decides to exercise the right — which generally happens if the stock rises a lot, limiting the investor's additional gain beyond that price."
+                },
+                "es": {
+                  "title": "Vendiendo opciones sobre acciones que ya tienes",
+                  "body": "Una estrategia de opción cubierta (covered call) consiste en vender una opción de compra sobre una acción que el inversor ya posee en su cartera. Al vender la opción, el inversor recibe la prima de inmediato, generando ingresos extra. A cambio, se compromete a vender la acción al precio acordado, si el comprador de la opción decide ejercer el derecho — algo que generalmente ocurre si la acción sube bastante, limitando la ganancia adicional del inversor más allá de ese precio."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor tem ações negociadas a R$50 e vende uma opção de compra com preço de exercício de R$55, recebendo um prêmio de R$2. Se a ação ficar abaixo de R$55, ele mantém o prêmio integral como renda extra. Se a ação subir para R$60, ele é obrigado a vender por R$55 — abrindo mão do ganho entre R$55 e R$60, mas mantendo o prêmio recebido e o lucro até o preço de exercício."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor holds shares trading at R$50 and sells a call option with a strike price of R$55, receiving a premium of R$2. If the stock stays below R$55, they keep the entire premium as extra income. If the stock rises to R$60, they're obligated to sell at R$55 — giving up the gain between R$55 and R$60, but keeping the premium received and the profit up to the strike price."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor tiene acciones negociadas a R$50 y vende una opción de compra con precio de ejercicio de R$55, recibiendo una prima de R$2. Si la acción se mantiene por debajo de R$55, conserva la prima íntegra como ingreso extra. Si la acción sube a R$60, está obligado a vender a R$55 — renunciando a la ganancia entre R$55 y R$60, pero conservando la prima recibida y la ganancia hasta el precio de ejercicio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma estratégia de opção coberta (covered call)?",
+                  "options": [
+                    "Comprar uma opção de compra sem possuir nenhuma ação",
+                    "Vender uma opção de compra sobre uma ação que o investidor já possui, recebendo um prêmio em troca do compromisso de vender a ação a um preço combinado",
+                    "Vender ações a descoberto, sem nenhuma relação com opções",
+                    "Um tipo de imposto cobrado sobre operações com opções"
+                  ],
+                  "explanation": "Covered call é vender uma opção de compra sobre uma ação já possuída, recebendo um prêmio, mas assumindo o compromisso de vender a ação se a opção for exercida."
+                },
+                "en": {
+                  "prompt": "What characterizes a covered call strategy?",
+                  "options": [
+                    "Buying a call option without owning any shares",
+                    "Selling a call option on a stock the investor already owns, receiving a premium in exchange for the commitment to sell the stock at an agreed price",
+                    "Short selling shares, with no relation to options",
+                    "A type of tax charged on options transactions"
+                  ],
+                  "explanation": "A covered call is selling a call option on a stock already owned, receiving a premium, but taking on the commitment to sell the stock if the option is exercised."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una estrategia de opción cubierta (covered call)?",
+                  "options": [
+                    "Comprar una opción de compra sin poseer ninguna acción",
+                    "Vender una opción de compra sobre una acción que el inversor ya posee, recibiendo una prima a cambio del compromiso de vender la acción a un precio acordado",
+                    "Vender acciones al descubierto, sin ninguna relación con opciones",
+                    "Un tipo de impuesto cobrado sobre operaciones con opciones"
+                  ],
+                  "explanation": "El covered call es vender una opción de compra sobre una acción ya poseída, recibiendo una prima, pero asumiendo el compromiso de vender la acción si la opción se ejerce."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende opções de outra lição. Se a ação subir muito além do preço de exercício combinado em uma covered call, o que acontece com o potencial de ganho do investidor que vendeu a opção?",
+                  "options": [
+                    "Ele ganha ilimitadamente, acompanhando toda a alta da ação",
+                    "Seu ganho fica limitado ao preço de exercício mais o prêmio recebido, mesmo que a ação suba muito além disso",
+                    "Ele é obrigado a comprar mais ações ao preço de mercado",
+                    "Ele perde automaticamente todas as ações que possuía"
+                  ],
+                  "explanation": "Ao vender a opção de compra, o investidor abre mão de qualquer ganho acima do preço de exercício, em troca do prêmio recebido — essa é a principal limitação dessa estratégia."
+                },
+                "en": {
+                  "prompt": "You already understand options from another lesson. If the stock rises well beyond the agreed strike price in a covered call, what happens to the potential gain of the investor who sold the option?",
+                  "options": [
+                    "They gain unlimited upside, tracking the stock's entire rise",
+                    "Their gain is capped at the strike price plus the premium received, even if the stock rises well beyond that",
+                    "They're required to buy more shares at the market price",
+                    "They automatically lose all the shares they owned"
+                  ],
+                  "explanation": "By selling the call option, the investor gives up any gain above the strike price, in exchange for the premium received — that's the main limitation of this strategy."
+                },
+                "es": {
+                  "prompt": "Ya entiendes las opciones de otra lección. Si la acción sube mucho más allá del precio de ejercicio acordado en un covered call, ¿qué pasa con el potencial de ganancia del inversor que vendió la opción?",
+                  "options": [
+                    "Gana de forma ilimitada, siguiendo toda la subida de la acción",
+                    "Su ganancia queda limitada al precio de ejercicio más la prima recibida, aunque la acción suba mucho más allá de eso",
+                    "Está obligado a comprar más acciones al precio de mercado",
+                    "Pierde automáticamente todas las acciones que poseía"
+                  ],
+                  "explanation": "Al vender la opción de compra, el inversor renuncia a cualquier ganancia por encima del precio de ejercicio, a cambio de la prima recibida — esa es la principal limitación de esta estrategia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Covered call é vender uma opção de compra sobre uma ação já possuída.",
+                    "O investidor recebe um prêmio, gerando renda extra.",
+                    "Em troca, o ganho fica limitado ao preço de exercício, mesmo que a ação suba muito além dele."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A covered call is selling a call option on a stock already owned.",
+                    "The investor receives a premium, generating extra income.",
+                    "In exchange, the gain is capped at the strike price, even if the stock rises well beyond it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El covered call es vender una opción de compra sobre una acción ya poseída.",
+                    "El inversor recibe una prima, generando ingresos extra.",
+                    "A cambio, la ganancia queda limitada al precio de ejercicio, aunque la acción suba mucho más allá de él."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_counterparty_risk",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Contraparte"
+            },
+            "en": {
+              "title": "Counterparty Risk"
+            },
+            "es": {
+              "title": "Riesgo de Contraparte"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "E se a outra parte do contrato não cumprir?",
+                  "body": "Risco de contraparte é a possibilidade de a outra parte de um contrato — como um derivativo — não cumprir com suas obrigações. Em contratos negociados em bolsa, como muitos futuros e opções, esse risco é reduzido porque a bolsa atua como intermediária entre as partes, através de uma câmara de compensação, que garante o cumprimento do contrato mesmo que uma das partes originais não consiga honrá-lo. Em contratos particulares, negociados diretamente entre duas partes fora de bolsa, esse risco tende a ser mais relevante."
+                },
+                "en": {
+                  "title": "What if the other party to the contract doesn't deliver?",
+                  "body": "Counterparty risk is the possibility that the other party in a contract — like a derivative — won't fulfill their obligations. In exchange-traded contracts, like many futures and options, this risk is reduced because the exchange acts as an intermediary between the parties, through a clearinghouse, which guarantees the contract is honored even if one of the original parties can't fulfill it. In private contracts, negotiated directly between two parties outside an exchange, this risk tends to be more significant."
+                },
+                "es": {
+                  "title": "¿Y si la otra parte del contrato no cumple?",
+                  "body": "El riesgo de contraparte es la posibilidad de que la otra parte de un contrato — como un derivado — no cumpla con sus obligaciones. En contratos negociados en bolsa, como muchos futuros y opciones, este riesgo se reduce porque la bolsa actúa como intermediaria entre las partes, a través de una cámara de compensación, que garantiza el cumplimiento del contrato aunque una de las partes originales no pueda honrarlo. En contratos privados, negociados directamente entre dos partes fuera de bolsa, este riesgo tiende a ser más relevante."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas fecham um swap de juros diretamente entre si, sem intermediação de bolsa. Se uma delas enfrenta dificuldades financeiras graves e não consegue honrar os pagamentos combinados, a outra parte fica exposta a essa falha — diferente do que aconteceria em um contrato futuro padronizado, negociado em bolsa, onde a câmara de compensação assume esse risco entre as partes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies enter into an interest rate swap directly with each other, with no exchange intermediation. If one of them faces serious financial trouble and can't honor the agreed payments, the other party is exposed to that failure — unlike what would happen in a standardized futures contract, traded on an exchange, where the clearinghouse assumes that risk between the parties."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas cierran un swap de tasas directamente entre sí, sin intermediación de bolsa. Si una de ellas enfrenta dificultades financieras graves y no logra cumplir los pagos acordados, la otra parte queda expuesta a esa falla — a diferencia de lo que ocurriría en un contrato futuro estandarizado, negociado en bolsa, donde la cámara de compensación asume ese riesgo entre las partes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco de contraparte?",
+                  "options": [
+                    "O risco de o preço de um ativo subjacente variar",
+                    "A possibilidade de a outra parte de um contrato não cumprir com suas obrigações",
+                    "Um tipo de taxa cobrada por bolsas de valores",
+                    "O risco de a inflação afetar o valor de um contrato"
+                  ],
+                  "explanation": "Risco de contraparte é especificamente sobre a chance de a outra parte envolvida em um contrato não conseguir honrar o que foi combinado."
+                },
+                "en": {
+                  "prompt": "What is counterparty risk?",
+                  "options": [
+                    "The risk that the price of an underlying asset will vary",
+                    "The possibility that the other party in a contract won't fulfill their obligations",
+                    "A type of fee charged by stock exchanges",
+                    "The risk of inflation affecting a contract's value"
+                  ],
+                  "explanation": "Counterparty risk is specifically about the chance that the other party involved in a contract won't be able to honor what was agreed."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo de contraparte?",
+                  "options": [
+                    "El riesgo de que el precio de un activo subyacente varíe",
+                    "La posibilidad de que la otra parte de un contrato no cumpla con sus obligaciones",
+                    "Un tipo de tasa cobrada por las bolsas de valores",
+                    "El riesgo de que la inflación afecte el valor de un contrato"
+                  ],
+                  "explanation": "El riesgo de contraparte trata específicamente sobre la posibilidad de que la otra parte involucrada en un contrato no logre cumplir lo acordado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está comparando um contrato futuro padronizado, negociado em bolsa, com um contrato de derivativo particular, negociado diretamente com outra empresa, fora de bolsa. Como o risco de contraparte tende a diferir entre os dois?",
+                  "options": [
+                    "O risco de contraparte é sempre idêntico nos dois casos",
+                    "O contrato negociado em bolsa tende a ter risco de contraparte menor, já que a câmara de compensação da bolsa garante o cumprimento; o contrato particular expõe as partes diretamente uma à outra",
+                    "Contratos particulares nunca têm risco de contraparte",
+                    "Contratos negociados em bolsa sempre têm risco de contraparte maior"
+                  ],
+                  "explanation": "A câmara de compensação de uma bolsa reduz o risco de contraparte ao garantir o cumprimento do contrato entre as partes, algo que não existe da mesma forma em um contrato particular negociado diretamente."
+                },
+                "en": {
+                  "prompt": "You're comparing a standardized futures contract, traded on an exchange, with a private derivative contract, negotiated directly with another company, outside an exchange. How does counterparty risk tend to differ between the two?",
+                  "options": [
+                    "Counterparty risk is always identical in both cases",
+                    "The exchange-traded contract tends to have lower counterparty risk, since the exchange's clearinghouse guarantees fulfillment; the private contract exposes the parties directly to each other",
+                    "Private contracts never have counterparty risk",
+                    "Exchange-traded contracts always have higher counterparty risk"
+                  ],
+                  "explanation": "An exchange's clearinghouse reduces counterparty risk by guaranteeing the contract is fulfilled between the parties, something that doesn't exist in the same way in a private contract negotiated directly."
+                },
+                "es": {
+                  "prompt": "Estás comparando un contrato futuro estandarizado, negociado en bolsa, con un contrato de derivado privado, negociado directamente con otra empresa, fuera de bolsa. ¿Cómo tiende a diferir el riesgo de contraparte entre ambos?",
+                  "options": [
+                    "El riesgo de contraparte siempre es idéntico en ambos casos",
+                    "El contrato negociado en bolsa tiende a tener menor riesgo de contraparte, ya que la cámara de compensación de la bolsa garantiza el cumplimiento; el contrato privado expone a las partes directamente entre sí",
+                    "Los contratos privados nunca tienen riesgo de contraparte",
+                    "Los contratos negociados en bolsa siempre tienen mayor riesgo de contraparte"
+                  ],
+                  "explanation": "La cámara de compensación de una bolsa reduce el riesgo de contraparte al garantizar el cumplimiento del contrato entre las partes, algo que no existe de la misma forma en un contrato privado negociado directamente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Risco de contraparte é a chance de a outra parte de um contrato não cumprir suas obrigações.",
+                    "Contratos negociados em bolsa têm esse risco reduzido pela câmara de compensação.",
+                    "Você concluiu o módulo de estratégias e riscos avançados de derivativos."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Counterparty risk is the chance the other party in a contract won't fulfill their obligations.",
+                    "Exchange-traded contracts have this risk reduced by the clearinghouse.",
+                    "You've completed the advanced derivatives strategies and risks module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El riesgo de contraparte es la posibilidad de que la otra parte de un contrato no cumpla sus obligaciones.",
+                    "Los contratos negociados en bolsa tienen este riesgo reducido por la cámara de compensación.",
+                    "Completaste el módulo de estrategias y riesgos avanzados de derivados."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_naked_call_risk",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Opção Descoberta (Naked Call)"
+            },
+            "en": {
+              "title": "Naked Call"
+            },
+            "es": {
+              "title": "Opción Descubierta (Naked Call)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Vender uma opção sem ter o ativo por trás",
+                  "body": "Uma opção descoberta (naked call) acontece quando o investidor vende uma opção de compra sem possuir a ação correspondente em carteira — diferente da opção coberta (covered call), em que o vendedor já tem as ações e usa o prêmio como renda extra. Se o preço do ativo subir bastante e o comprador da opção exercer o direito, o vendedor descoberto precisa comprar a ação no mercado, pelo preço vigente, para poder entregá-la pelo preço de exercício combinado — uma perda que cresce junto com a alta do preço, sem um teto natural."
+                },
+                "en": {
+                  "title": "Selling an option without the asset behind it",
+                  "body": "A naked call happens when an investor sells a call option without owning the corresponding stock in their portfolio — unlike a covered call, where the seller already holds the shares and uses the premium as extra income. If the asset's price rises a lot and the option buyer exercises the right, the uncovered seller needs to buy the stock on the market, at the prevailing price, in order to deliver it at the agreed strike price — a loss that grows along with the price increase, with no natural ceiling."
+                },
+                "es": {
+                  "title": "Vender una opción sin tener el activo detrás",
+                  "body": "Una opción descubierta (naked call) ocurre cuando el inversor vende una opción de compra sin poseer la acción correspondiente en su cartera — a diferencia de la opción cubierta (covered call), en la que el vendedor ya tiene las acciones y usa la prima como ingreso extra. Si el precio del activo sube bastante y el comprador de la opción ejerce el derecho, el vendedor descubierto necesita comprar la acción en el mercado, al precio vigente, para poder entregarla al precio de ejercicio acordado — una pérdida que crece junto con el alza del precio, sin un techo natural."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor vende uma opção de compra descoberta com preço de exercício de R$50, recebendo um prêmio de R$2, sem possuir nenhuma ação da empresa. Se o preço sobe para R$90, ele precisa comprar a ação a R$90 no mercado para entregá-la por R$50, tendo um prejuízo de R$38 por ação, descontado o prêmio recebido — bem diferente de um vendedor de covered call, que já tinha as ações e apenas deixa de ganhar acima do preço de exercício."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor sells a naked call option with a R$50 strike price, receiving a R$2 premium, without owning any shares of the company. If the price rises to R$90, they need to buy the stock at R$90 in the market to deliver it at R$50, taking a loss of R$38 per share, net of the premium received — quite different from a covered call seller, who already held the shares and simply misses out on gains above the strike price."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor vende una opción de compra descubierta con precio de ejercicio de R$50, recibiendo una prima de R$2, sin poseer ninguna acción de la empresa. Si el precio sube a R$90, necesita comprar la acción a R$90 en el mercado para entregarla a R$50, teniendo una pérdida de R$38 por acción, descontada la prima recibida — bastante diferente de un vendedor de covered call, que ya tenía las acciones y solo deja de ganar por encima del precio de ejercicio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma opção descoberta (naked call)?",
+                  "options": [
+                    "Vender uma opção de compra sobre uma ação que o investidor já possui em carteira",
+                    "Vender uma opção de compra sem possuir a ação correspondente, expondo o vendedor a uma perda que cresce junto com a alta do preço, sem teto natural",
+                    "Comprar uma opção de compra sem nenhum risco associado",
+                    "Um tipo de imposto cobrado sobre operações com opções"
+                  ],
+                  "explanation": "A opção descoberta é vender uma call sem ter o ativo subjacente em carteira — se o preço subir muito, o vendedor precisa comprar a ação no mercado a um preço mais alto para entregá-la pelo preço de exercício, gerando uma perda sem teto natural."
+                },
+                "en": {
+                  "prompt": "What characterizes a naked call?",
+                  "options": [
+                    "Selling a call option on a stock the investor already owns in their portfolio",
+                    "Selling a call option without owning the corresponding stock, exposing the seller to a loss that grows along with the price increase, with no natural ceiling",
+                    "Buying a call option with no risk associated at all",
+                    "A type of tax charged on options transactions"
+                  ],
+                  "explanation": "A naked call is selling a call without holding the underlying asset — if the price rises a lot, the seller needs to buy the stock in the market at a higher price to deliver it at the strike price, generating a loss with no natural ceiling."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una opción descubierta (naked call)?",
+                  "options": [
+                    "Vender una opción de compra sobre una acción que el inversor ya posee en su cartera",
+                    "Vender una opción de compra sin poseer la acción correspondiente, exponiendo al vendedor a una pérdida que crece junto con el alza del precio, sin techo natural",
+                    "Comprar una opción de compra sin ningún riesgo asociado",
+                    "Un tipo de impuesto cobrado sobre operaciones con opciones"
+                  ],
+                  "explanation": "La opción descubierta es vender una call sin tener el activo subyacente en cartera — si el precio sube mucho, el vendedor necesita comprar la acción en el mercado a un precio más alto para entregarla al precio de ejercicio, generando una pérdida sin techo natural."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição deste módulo, que uma chamada de margem exige depósito adicional quando perdas acumuladas derrubam o valor da margem abaixo do mínimo exigido. Como isso se aplica especificamente a quem vende uma opção descoberta (naked call)?",
+                  "options": [
+                    "Não se aplica, vendedores de opções descobertas nunca precisam depositar margem",
+                    "Como a perda potencial de uma opção descoberta não tem teto natural, a corretora costuma exigir um depósito de margem substancial dessa posição, e uma alta forte no preço do ativo pode disparar uma chamada de margem rapidamente",
+                    "Chamadas de margem só existem para contratos futuros, nunca para opções",
+                    "Vender uma opção descoberta elimina completamente a necessidade de qualquer margem"
+                  ],
+                  "explanation": "Como a perda de uma opção descoberta pode crescer bastante em caso de alta do ativo, corretoras exigem margem para essa posição, e uma alta acentuada pode consumir rapidamente essa margem, disparando uma chamada — o mesmo mecanismo estudado antes, aplicado a um risco que aqui não tem teto natural."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson in this module, that a margin call demands an additional deposit when accumulated losses push the margin amount below the required minimum. How does this apply specifically to someone who sells a naked call?",
+                  "options": [
+                    "It doesn't apply, naked option sellers never need to deposit margin",
+                    "Since a naked call's potential loss has no natural ceiling, the broker usually requires a substantial margin deposit for that position, and a sharp rise in the asset's price can trigger a margin call quickly",
+                    "Margin calls only exist for futures contracts, never for options",
+                    "Selling a naked call completely eliminates the need for any margin"
+                  ],
+                  "explanation": "Since a naked call's loss can grow substantially if the asset rises, brokers require margin for that position, and a sharp rise can quickly consume that margin, triggering a call — the same mechanism studied earlier, applied to a risk that here has no natural ceiling."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección de este módulo, que una llamada de margen exige un depósito adicional cuando las pérdidas acumuladas hacen que el valor del margen caiga por debajo del mínimo exigido. ¿Cómo se aplica esto específicamente a quien vende una opción descubierta (naked call)?",
+                  "options": [
+                    "No se aplica, los vendedores de opciones descubiertas nunca necesitan depositar margen",
+                    "Como la pérdida potencial de una opción descubierta no tiene techo natural, la correduría suele exigir un depósito de margen sustancial para esa posición, y una subida fuerte en el precio del activo puede disparar una llamada de margen rápidamente",
+                    "Las llamadas de margen solo existen para contratos futuros, nunca para opciones",
+                    "Vender una opción descubierta elimina por completo la necesidad de cualquier margen"
+                  ],
+                  "explanation": "Como la pérdida de una opción descubierta puede crecer bastante si el activo sube, las correduras exigen margen para esa posición, y una subida pronunciada puede consumir rápidamente ese margen, disparando una llamada — el mismo mecanismo estudiado antes, aplicado a un riesgo que aquí no tiene techo natural."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Opção descoberta (naked call) é vender uma opção de compra sem possuir o ativo subjacente.",
+                    "Diferente do covered call, a perda potencial cresce junto com a alta do preço, sem teto natural.",
+                    "Corretoras costumam exigir margem substancial para essa posição, podendo disparar uma chamada de margem rapidamente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A naked call is selling a call option without owning the underlying asset.",
+                    "Unlike a covered call, the potential loss grows along with the price increase, with no natural ceiling.",
+                    "Brokers usually require substantial margin for this position, which can trigger a margin call quickly."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La opción descubierta (naked call) es vender una opción de compra sin poseer el activo subyacente.",
+                    "A diferencia del covered call, la pérdida potencial crece junto con el alza del precio, sin techo natural.",
+                    "Las correduras suelen exigir un margen sustancial para esta posición, que puede disparar una llamada de margen rápidamente."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "derivatives_expert_topics",
+      "order": 3,
+      "iconKey": "timeline_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "advanced_derivatives_strategies"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Derivativos: Tópicos Especializados",
+          "description": "Contratos a termo vs. futuros, opção de proteção (protective put), gregas das opções, volatilidade implícita e vencimento/exercício."
+        },
+        "en": {
+          "title": "Derivatives: Specialized Topics",
+          "description": "Forwards vs. futures, protective puts, option Greeks, implied volatility and expiration/exercise."
+        },
+        "es": {
+          "title": "Derivados: Temas Especializados",
+          "description": "Contratos a plazo vs. futuros, opción de protección (protective put), griegas de las opciones, volatilidad implícita y vencimiento/ejercicio."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "derivatives_forwards_vs_futures",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Contratos a Termo vs. Futuros"
+            },
+            "en": {
+              "title": "Forwards vs. Futures"
+            },
+            "es": {
+              "title": "Contratos a Plazo vs. Futuros"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois contratos parecidos, com diferenças importantes",
+                  "body": "Contratos a termo (forwards) e contratos futuros compartilham a mesma ideia básica: combinar hoje a compra ou venda de um ativo por um preço definido, para liquidação em uma data futura. A diferença está na estrutura: contratos a termo são negociados diretamente entre as partes, fora de bolsa, com termos personalizáveis, mas com maior risco de contraparte. Contratos futuros são padronizados e negociados em bolsa, com uma câmara de compensação garantindo o cumprimento do contrato e exigindo depósito de margem das partes envolvidas."
+                },
+                "en": {
+                  "title": "Two similar contracts, with important differences",
+                  "body": "Forward contracts and futures contracts share the same basic idea: agreeing today to buy or sell an asset at a set price, for settlement on a future date. The difference lies in the structure: forward contracts are negotiated directly between the parties, off-exchange, with customizable terms, but with greater counterparty risk. Futures contracts are standardized and traded on an exchange, with a clearinghouse guaranteeing the contract's fulfillment and requiring margin deposits from the parties involved."
+                },
+                "es": {
+                  "title": "Dos contratos parecidos, con diferencias importantes",
+                  "body": "Los contratos a plazo (forwards) y los contratos de futuros comparten la misma idea básica: acordar hoy la compra o venta de un activo a un precio definido, para liquidación en una fecha futura. La diferencia está en la estructura: los contratos a plazo se negocian directamente entre las partes, fuera de bolsa, con términos personalizables, pero con mayor riesgo de contraparte. Los contratos de futuros son estandarizados y se negocian en bolsa, con una cámara de compensación que garantiza el cumplimiento del contrato y exige el depósito de margen de las partes involucradas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um exportador negocia diretamente com um banco um contrato a termo personalizado para vender dólares daqui a 90 dias, a um preço específico combinado entre as partes. Já um investidor que quer se proteger de forma parecida, mas com mais liquidez e sem depender da solidez financeira de uma única contraparte, opta por um contrato futuro de dólar negociado em bolsa, que é padronizado e tem a garantia de uma câmara de compensação."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An exporter negotiates directly with a bank a customized forward contract to sell dollars in 90 days, at a specific price agreed between the parties. An investor who wants similar protection, but with more liquidity and without depending on a single counterparty's financial soundness, instead opts for an exchange-traded dollar futures contract, which is standardized and backed by a clearinghouse guarantee."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un exportador negocia directamente con un banco un contrato a plazo personalizado para vender dólares dentro de 90 días, a un precio específico acordado entre las partes. Un inversor que quiere protegerse de forma parecida, pero con más liquidez y sin depender de la solidez financiera de una única contraparte, opta en cambio por un contrato de futuros de dólar negociado en bolsa, que es estandarizado y cuenta con la garantía de una cámara de compensación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é uma diferença central entre um contrato a termo e um contrato futuro?",
+                  "options": [
+                    "Contratos a termo são sempre padronizados e negociados em bolsa, exatamente como futuros",
+                    "Contratos futuros são padronizados e negociados em bolsa, com uma câmara de compensação garantindo seu cumprimento; contratos a termo são negociados diretamente entre as partes, fora de bolsa",
+                    "Não existe nenhuma diferença estrutural entre os dois tipos de contrato",
+                    "Contratos a termo nunca envolvem nenhum tipo de risco de contraparte"
+                  ],
+                  "explanation": "A padronização, a negociação em bolsa e a garantia de uma câmara de compensação são características centrais dos contratos futuros, que os diferenciam dos contratos a termo negociados diretamente entre as partes."
+                },
+                "en": {
+                  "prompt": "What's a central difference between a forward contract and a futures contract?",
+                  "options": [
+                    "Forward contracts are always standardized and traded on an exchange, exactly like futures",
+                    "Futures contracts are standardized and exchange-traded, with a clearinghouse guaranteeing their fulfillment; forwards are negotiated directly between the parties, off-exchange",
+                    "There's no structural difference at all between the two contract types",
+                    "Forward contracts never involve any type of counterparty risk"
+                  ],
+                  "explanation": "Standardization, exchange trading and a clearinghouse guarantee are central features of futures contracts, which distinguish them from forwards negotiated directly between the parties."
+                },
+                "es": {
+                  "prompt": "¿Cuál es una diferencia central entre un contrato a plazo y un contrato de futuros?",
+                  "options": [
+                    "Los contratos a plazo siempre son estandarizados y se negocian en bolsa, exactamente igual que los futuros",
+                    "Los contratos de futuros son estandarizados y se negocian en bolsa, con una cámara de compensación que garantiza su cumplimiento; los contratos a plazo se negocian directamente entre las partes, fuera de bolsa",
+                    "No existe ninguna diferencia estructural entre los dos tipos de contrato",
+                    "Los contratos a plazo nunca implican ningún tipo de riesgo de contraparte"
+                  ],
+                  "explanation": "La estandarización, la negociación en bolsa y la garantía de una cámara de compensación son características centrales de los contratos de futuros, que los diferencian de los contratos a plazo negociados directamente entre las partes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que risco de contraparte é a possibilidade de a outra parte de um contrato não cumprir sua obrigação. Como a estrutura de um contrato a termo torna esse risco mais relevante do que em um contrato futuro?",
+                  "options": [
+                    "Como o contrato a termo é negociado diretamente entre as partes, sem uma câmara de compensação garantindo o cumprimento, o risco de a contraparte não honrar o combinado recai mais diretamente sobre quem negociou o contrato",
+                    "Contratos a termo eliminam completamente qualquer risco de contraparte, ao contrário dos futuros",
+                    "Risco de contraparte só existe em contratos futuros, nunca em contratos a termo",
+                    "Não existe nenhuma relação entre a estrutura do contrato e o risco de contraparte"
+                  ],
+                  "explanation": "A ausência de uma câmara de compensação garantindo o cumprimento é justamente o que torna o risco de contraparte mais relevante em um contrato a termo negociado diretamente entre as partes, em comparação com um contrato futuro padronizado em bolsa."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that counterparty risk is the possibility that the other party in a contract fails to fulfill their obligation. How does a forward contract's structure make that risk more relevant than in a futures contract?",
+                  "options": [
+                    "Since the forward is negotiated directly between the parties, without a clearinghouse guaranteeing fulfillment, the risk of the counterparty not honoring the agreement falls more directly on whoever negotiated the contract",
+                    "Forward contracts completely eliminate any counterparty risk, unlike futures",
+                    "Counterparty risk only exists in futures contracts, never in forwards",
+                    "There's no relation at all between the contract's structure and counterparty risk"
+                  ],
+                  "explanation": "The absence of a clearinghouse guaranteeing fulfillment is precisely what makes counterparty risk more relevant in a forward contract negotiated directly between the parties, compared to a standardized exchange-traded futures contract."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el riesgo de contraparte es la posibilidad de que la otra parte de un contrato no cumpla su obligación. ¿Cómo hace la estructura de un contrato a plazo que ese riesgo sea más relevante que en un contrato de futuros?",
+                  "options": [
+                    "Como el contrato a plazo se negocia directamente entre las partes, sin una cámara de compensación que garantice el cumplimiento, el riesgo de que la contraparte no honre lo acordado recae más directamente sobre quien negoció el contrato",
+                    "Los contratos a plazo eliminan por completo cualquier riesgo de contraparte, a diferencia de los futuros",
+                    "El riesgo de contraparte solo existe en contratos de futuros, nunca en contratos a plazo",
+                    "No existe ninguna relación entre la estructura del contrato y el riesgo de contraparte"
+                  ],
+                  "explanation": "La ausencia de una cámara de compensación que garantice el cumplimiento es precisamente lo que hace que el riesgo de contraparte sea más relevante en un contrato a plazo negociado directamente entre las partes, en comparación con un contrato de futuros estandarizado en bolsa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Contratos a termo e futuros compartilham a ideia de fixar hoje um preço para liquidação futura.",
+                    "Contratos futuros são padronizados, negociados em bolsa e garantidos por uma câmara de compensação.",
+                    "Contratos a termo, negociados diretamente entre as partes, carregam maior risco de contraparte."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Forwards and futures share the idea of locking in today a price for future settlement.",
+                    "Futures contracts are standardized, exchange-traded and backed by a clearinghouse guarantee.",
+                    "Forward contracts, negotiated directly between the parties, carry higher counterparty risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los contratos a plazo y de futuros comparten la idea de fijar hoy un precio para liquidación futura.",
+                    "Los contratos de futuros son estandarizados, se negocian en bolsa y están garantizados por una cámara de compensación.",
+                    "Los contratos a plazo, negociados directamente entre las partes, conllevan mayor riesgo de contraparte."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_protective_put",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Opção de Proteção (Protective Put)"
+            },
+            "en": {
+              "title": "Protective Put"
+            },
+            "es": {
+              "title": "Opción de Protección (Protective Put)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um seguro contra quedas de preço",
+                  "body": "Uma opção de proteção ('protective put') é uma estratégia em que o investidor, já possuindo um ativo, compra uma opção de venda (put) sobre esse mesmo ativo. Se o preço do ativo cair abaixo do preço de exercício da opção, o investidor pode exercer seu direito de vender pelo preço combinado, limitando sua perda potencial. Em troca dessa proteção, ele paga um prêmio pela opção, que reduz seu retorno caso o preço do ativo suba ou se mantenha estável."
+                },
+                "en": {
+                  "title": "Insurance against price drops",
+                  "body": "A protective put is a strategy where an investor, already holding an asset, buys a put option on that same asset. If the asset's price falls below the option's strike price, the investor can exercise their right to sell at the agreed price, limiting their potential loss. In exchange for that protection, they pay a premium for the option, which reduces their return if the asset's price rises or stays stable."
+                },
+                "es": {
+                  "title": "Un seguro contra caídas de precio",
+                  "body": "Una opción de protección ('protective put') es una estrategia en la que el inversor, ya poseyendo un activo, compra una opción de venta (put) sobre ese mismo activo. Si el precio del activo cae por debajo del precio de ejercicio de la opción, el inversor puede ejercer su derecho de vender al precio acordado, limitando su pérdida potencial. A cambio de esa protección, paga una prima por la opción, que reduce su retorno si el precio del activo sube o se mantiene estable."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor possui ações negociadas a R$50 e compra uma put com preço de exercício de R$45, pagando um prêmio por essa proteção. Se as ações caírem para R$30, ele pode exercer a opção e vender a R$45, limitando sua perda, em vez de sofrer a queda total até R$30. Se as ações subirem, ele só perde o valor pago pelo prêmio da opção, que não é exercida."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor holds shares trading at R$50 and buys a put with a R$45 strike price, paying a premium for that protection. If the shares fall to R$30, they can exercise the option and sell at R$45, limiting their loss, instead of suffering the full drop to R$30. If the shares rise, they only lose the amount paid for the option's premium, which goes unexercised."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor posee acciones que se negocian a R$50 y compra una put con precio de ejercicio de R$45, pagando una prima por esa protección. Si las acciones caen a R$30, puede ejercer la opción y vender a R$45, limitando su pérdida, en lugar de sufrir la caída total hasta R$30. Si las acciones suben, solo pierde el monto pagado por la prima de la opción, que no se ejerce."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza a estratégia de opção de proteção (protective put)?",
+                  "options": [
+                    "Comprar uma opção de venda sobre um ativo que já se possui, limitando a perda potencial em caso de queda",
+                    "Vender uma opção de compra sobre um ativo que já se possui, para gerar renda extra",
+                    "Comprar um ativo sem nenhuma proteção contra quedas de preço",
+                    "Vender todas as ações de uma carteira para evitar qualquer risco"
+                  ],
+                  "explanation": "O protective put envolve comprar uma opção de venda sobre um ativo que o investidor já possui, funcionando como um seguro contra quedas de preço abaixo do preço de exercício."
+                },
+                "en": {
+                  "prompt": "What characterizes the protective put strategy?",
+                  "options": [
+                    "Buying a put option on an asset one already holds, limiting potential loss in case of a drop",
+                    "Selling a call option on an asset one already holds, to generate extra income",
+                    "Buying an asset with no protection at all against price drops",
+                    "Selling all the shares in a portfolio to avoid any risk"
+                  ],
+                  "explanation": "The protective put involves buying a put option on an asset the investor already holds, acting as insurance against price drops below the strike price."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a la estrategia de opción de protección (protective put)?",
+                  "options": [
+                    "Comprar una opción de venta sobre un activo que ya se posee, limitando la pérdida potencial en caso de caída",
+                    "Vender una opción de compra sobre un activo que ya se posee, para generar ingresos extra",
+                    "Comprar un activo sin ninguna protección contra caídas de precio",
+                    "Vender todas las acciones de una cartera para evitar cualquier riesgo"
+                  ],
+                  "explanation": "El protective put implica comprar una opción de venta sobre un activo que el inversor ya posee, funcionando como un seguro contra caídas de precio por debajo del precio de ejercicio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que a opção coberta (covered call) envolve vender uma opção de compra sobre um ativo que já se possui, para gerar renda extra, mas limitando o ganho potencial em caso de alta. Como o protective put é uma estratégia estruturalmente oposta, em termos de qual direção de preço ela protege?",
+                  "options": [
+                    "O covered call gera renda mas limita o ganho em caso de alta, enquanto o protective put custa um prêmio mas limita a perda em caso de queda — estratégias com objetivos complementares, mas opostos em direção",
+                    "Covered call e protective put são exatamente a mesma estratégia, apenas com nomes diferentes",
+                    "Protective put também gera renda extra para quem já possui o ativo, exatamente como o covered call",
+                    "Nenhuma das duas estratégias tem qualquer relação com o preço de exercício de uma opção"
+                  ],
+                  "explanation": "Covered call (vender uma call) e protective put (comprar uma put) são estratégias com lógicas opostas: uma gera renda extra em troca de limitar o potencial de alta, a outra paga um prêmio em troca de limitar o potencial de queda."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that a covered call involves selling a call option on an asset one already holds, to generate extra income, but limiting the potential gain if the price rises. How is the protective put a structurally opposite strategy, in terms of which price direction it protects against?",
+                  "options": [
+                    "A covered call generates income but limits the gain if the price rises, while a protective put costs a premium but limits the loss if the price falls — strategies with complementary but opposite-direction objectives",
+                    "Covered call and protective put are exactly the same strategy, just with different names",
+                    "A protective put also generates extra income for someone who already holds the asset, exactly like a covered call",
+                    "Neither strategy has any relation at all to an option's strike price"
+                  ],
+                  "explanation": "Covered call (selling a call) and protective put (buying a put) are strategies with opposite logic: one generates extra income in exchange for limiting upside potential, the other pays a premium in exchange for limiting downside potential."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que la opción cubierta (covered call) implica vender una opción de compra sobre un activo que ya se posee, para generar ingresos extra, pero limitando la ganancia potencial en caso de subida. ¿Cómo es el protective put una estrategia estructuralmente opuesta, en cuanto a qué dirección de precio protege?",
+                  "options": [
+                    "El covered call genera ingresos pero limita la ganancia en caso de subida, mientras que el protective put cuesta una prima pero limita la pérdida en caso de caída — estrategias con objetivos complementarios, pero opuestos en dirección",
+                    "Covered call y protective put son exactamente la misma estrategia, solo con nombres diferentes",
+                    "El protective put también genera ingresos extra para quien ya posee el activo, exactamente igual que el covered call",
+                    "Ninguna de las dos estrategias tiene ninguna relación con el precio de ejercicio de una opción"
+                  ],
+                  "explanation": "Covered call (vender una call) y protective put (comprar una put) son estrategias con lógicas opuestas: una genera ingresos extra a cambio de limitar el potencial de subida, la otra paga una prima a cambio de limitar el potencial de caída."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Protective put é comprar uma opção de venda sobre um ativo que já se possui, limitando a perda potencial.",
+                    "Em troca dessa proteção, o investidor paga um prêmio, que reduz seu retorno se o preço subir ou ficar estável.",
+                    "Protective put e covered call são estratégias com lógicas opostas: proteção contra queda vs. renda extra com limite de alta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A protective put is buying a put option on an asset one already holds, limiting potential loss.",
+                    "In exchange for that protection, the investor pays a premium, which reduces their return if the price rises or stays stable.",
+                    "Protective put and covered call are strategies with opposite logic: downside protection vs. extra income with upside limited."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El protective put es comprar una opción de venta sobre un activo que ya se posee, limitando la pérdida potencial.",
+                    "A cambio de esa protección, el inversor paga una prima, que reduce su retorno si el precio sube o se mantiene estable.",
+                    "Protective put y covered call son estrategias con lógicas opuestas: protección contra la caída vs. ingreso extra con límite de subida."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_option_greeks_intro",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Introdução às Gregas das Opções"
+            },
+            "en": {
+              "title": "Introduction to Option Greeks"
+            },
+            "es": {
+              "title": "Introducción a las Griegas de las Opciones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Medindo a sensibilidade do preço de uma opção",
+                  "body": "As 'gregas' são um conjunto de medidas que descrevem como o preço de uma opção tende a reagir a mudanças em diferentes fatores. Delta mede a sensibilidade do preço da opção a variações no preço do ativo-objeto — uma opção com delta próximo de 1 tende a se mover quase na mesma proporção que o ativo. Theta mede a sensibilidade ao tempo, capturando como o valor de uma opção tende a diminuir à medida que se aproxima do vencimento, um efeito chamado de decaimento temporal."
+                },
+                "en": {
+                  "title": "Measuring an option's price sensitivity",
+                  "body": "The 'Greeks' are a set of measures that describe how an option's price tends to react to changes in different factors. Delta measures the option's price sensitivity to changes in the underlying asset's price — an option with a delta close to 1 tends to move nearly in the same proportion as the asset. Theta measures sensitivity to time, capturing how an option's value tends to decrease as it approaches expiration, an effect called time decay."
+                },
+                "es": {
+                  "title": "Midiendo la sensibilidad del precio de una opción",
+                  "body": "Las 'griegas' son un conjunto de medidas que describen cómo tiende a reaccionar el precio de una opción a cambios en diferentes factores. El delta mide la sensibilidad del precio de la opción a variaciones en el precio del activo subyacente — una opción con delta cercano a 1 tiende a moverse casi en la misma proporción que el activo. El theta mide la sensibilidad al tiempo, capturando cómo el valor de una opción tiende a disminuir a medida que se acerca al vencimiento, un efecto llamado decaimiento temporal."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma opção de compra com delta de 0,7 tende a subir cerca de R$0,70 para cada R$1,00 de alta no preço do ativo-objeto. Ao mesmo tempo, essa mesma opção perde valor gradualmente por causa do theta, mesmo que o preço do ativo permaneça exatamente estável, simplesmente porque o tempo até o vencimento está diminuindo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A call option with a delta of 0.7 tends to rise about $0.70 for every $1.00 increase in the underlying asset's price. At the same time, that same option gradually loses value because of theta, even if the asset's price stays exactly stable, simply because the time until expiration is decreasing."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una opción de compra con un delta de 0,7 tiende a subir cerca de R$0,70 por cada R$1,00 de alza en el precio del activo subyacente. Al mismo tiempo, esa misma opción pierde valor gradualmente por el theta, incluso si el precio del activo permanece exactamente estable, simplemente porque el tiempo hasta el vencimiento está disminuyendo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que theta mede em uma opção?",
+                  "options": [
+                    "A sensibilidade do preço da opção a variações no preço do ativo-objeto",
+                    "A sensibilidade do valor da opção à passagem do tempo até o vencimento",
+                    "O número total de contratos de opção negociados em um dia",
+                    "A taxa de juros livre de risco usada para descontar fluxos de caixa"
+                  ],
+                  "explanation": "Theta mede especificamente como o valor de uma opção tende a diminuir com a passagem do tempo, à medida que ela se aproxima do vencimento — o chamado decaimento temporal."
+                },
+                "en": {
+                  "prompt": "What does theta measure in an option?",
+                  "options": [
+                    "The option's price sensitivity to changes in the underlying asset's price",
+                    "The option's value sensitivity to the passage of time until expiration",
+                    "The total number of option contracts traded in a day",
+                    "The risk-free interest rate used to discount cash flows"
+                  ],
+                  "explanation": "Theta specifically measures how an option's value tends to decrease with the passage of time, as it approaches expiration — the so-called time decay."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el theta en una opción?",
+                  "options": [
+                    "La sensibilidad del precio de la opción a variaciones en el precio del activo subyacente",
+                    "La sensibilidad del valor de la opción al paso del tiempo hasta el vencimiento",
+                    "El número total de contratos de opción negociados en un día",
+                    "La tasa de interés libre de riesgo usada para descontar flujos de caja"
+                  ],
+                  "explanation": "El theta mide específicamente cómo tiende a disminuir el valor de una opción con el paso del tiempo, a medida que se acerca al vencimiento — el llamado decaimiento temporal."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que uma opção de proteção (protective put) envolve pagar um prêmio por uma opção de venda. Como o conceito de theta ajuda a explicar um custo adicional dessa estratégia, mesmo que o preço do ativo nunca caia abaixo do preço de exercício?",
+                  "options": [
+                    "Mesmo sem o ativo cair, o valor da opção comprada tende a diminuir gradualmente por causa do decaimento temporal (theta), representando um custo para quem mantém essa proteção por mais tempo do que o necessário",
+                    "Theta não tem nenhuma relação com o custo de manter uma opção de proteção ao longo do tempo",
+                    "O decaimento temporal só afeta opções de compra, nunca opções de venda como as usadas no protective put",
+                    "Theta garante que o valor de qualquer opção sempre aumenta com o passar do tempo"
+                  ],
+                  "explanation": "O decaimento temporal (theta) afeta o valor de qualquer opção, incluindo a put comprada em uma estratégia de proteção — isso representa um custo contínuo de manter essa proteção, independentemente de o preço do ativo cair ou não."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that a protective put involves paying a premium for a put option. How does the theta concept help explain an additional cost of that strategy, even if the asset's price never falls below the strike price?",
+                  "options": [
+                    "Even without the asset falling, the value of the purchased option tends to gradually decrease because of time decay (theta), representing a cost for whoever holds that protection longer than necessary",
+                    "Theta has no relation at all to the cost of holding a protective option over time",
+                    "Time decay only affects call options, never put options like the ones used in a protective put",
+                    "Theta guarantees that the value of any option always increases over time"
+                  ],
+                  "explanation": "Time decay (theta) affects the value of any option, including the put bought in a protective strategy — this represents an ongoing cost of holding that protection, regardless of whether the asset's price falls or not."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que una opción de protección (protective put) implica pagar una prima por una opción de venta. ¿Cómo ayuda el concepto de theta a explicar un costo adicional de esa estrategia, aunque el precio del activo nunca caiga por debajo del precio de ejercicio?",
+                  "options": [
+                    "Aunque el activo no caiga, el valor de la opción comprada tiende a disminuir gradualmente por el decaimiento temporal (theta), representando un costo para quien mantiene esa protección más tiempo del necesario",
+                    "El theta no tiene ninguna relación con el costo de mantener una opción de protección a lo largo del tiempo",
+                    "El decaimiento temporal solo afecta a las opciones de compra, nunca a las opciones de venta como las usadas en el protective put",
+                    "El theta garantiza que el valor de cualquier opción siempre aumenta con el paso del tiempo"
+                  ],
+                  "explanation": "El decaimiento temporal (theta) afecta el valor de cualquier opción, incluida la put comprada en una estrategia de protección — esto representa un costo continuo de mantener esa protección, sin importar si el precio del activo cae o no."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "As gregas medem a sensibilidade do preço de uma opção a diferentes fatores.",
+                    "Delta mede a sensibilidade ao preço do ativo-objeto; theta mede a sensibilidade à passagem do tempo.",
+                    "O decaimento temporal (theta) representa um custo contínuo de manter uma opção, mesmo sem o ativo se mover."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The Greeks measure an option's price sensitivity to different factors.",
+                    "Delta measures sensitivity to the underlying asset's price; theta measures sensitivity to the passage of time.",
+                    "Time decay (theta) represents an ongoing cost of holding an option, even without the asset moving."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las griegas miden la sensibilidad del precio de una opción a diferentes factores.",
+                    "El delta mide la sensibilidad al precio del activo subyacente; el theta mide la sensibilidad al paso del tiempo.",
+                    "El decaimiento temporal (theta) representa un costo continuo de mantener una opción, incluso sin que el activo se mueva."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_implied_volatility",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Volatilidade Implícita"
+            },
+            "en": {
+              "title": "Implied Volatility"
+            },
+            "es": {
+              "title": "Volatilidad Implícita"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que o mercado espera de volatilidade futura",
+                  "body": "Volatilidade implícita é uma estimativa da volatilidade futura esperada de um ativo, derivada a partir do preço de mercado de suas opções — em vez de olhar para o passado, como a volatilidade histórica, ela reflete a expectativa do mercado sobre o futuro. Quando a volatilidade implícita de uma opção sobe, o prêmio dessa opção tende a subir também, já que uma maior variação esperada no preço do ativo aumenta a chance de a opção terminar valendo mais na data de vencimento."
+                },
+                "en": {
+                  "title": "What the market expects for future volatility",
+                  "body": "Implied volatility is an estimate of an asset's expected future volatility, derived from the market price of its options — instead of looking at the past, like historical volatility, it reflects the market's expectation about the future. When an option's implied volatility rises, that option's premium tends to rise too, since a larger expected swing in the asset's price increases the chance the option ends up worth more at expiration."
+                },
+                "es": {
+                  "title": "Lo que el mercado espera de volatilidad futura",
+                  "body": "La volatilidad implícita es una estimación de la volatilidad futura esperada de un activo, derivada del precio de mercado de sus opciones — en lugar de mirar hacia el pasado, como la volatilidad histórica, refleja la expectativa del mercado sobre el futuro. Cuando la volatilidad implícita de una opción sube, la prima de esa opción tiende a subir también, ya que una mayor variación esperada en el precio del activo aumenta la probabilidad de que la opción termine valiendo más en la fecha de vencimiento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Antes de um evento com resultado incerto, como a divulgação de um resultado trimestral importante de uma empresa, a volatilidade implícita das opções dessa ação costuma subir, encarecendo os prêmios — o mercado está precificando uma chance maior de um movimento brusco no preço, para qualquer direção, mesmo sem saber qual será esse movimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Ahead of an event with an uncertain outcome, like a company's important quarterly earnings release, the implied volatility of that stock's options usually rises, making the premiums more expensive — the market is pricing in a greater chance of a sharp price move, in either direction, even without knowing what that move will be."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Antes de un evento con resultado incierto, como la publicación de un resultado trimestral importante de una empresa, la volatilidad implícita de las opciones de esa acción suele subir, encareciendo las primas — el mercado está incorporando una mayor probabilidad de un movimiento brusco en el precio, en cualquier dirección, aunque no sepa cuál será ese movimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a volatilidade implícita representa?",
+                  "options": [
+                    "Uma estimativa da volatilidade futura esperada de um ativo, derivada do preço de mercado de suas opções",
+                    "A volatilidade que o ativo efetivamente teve no passado",
+                    "O preço exato que o ativo terá no vencimento da opção",
+                    "Uma taxa de juros fixa usada em todos os contratos de opção"
+                  ],
+                  "explanation": "Diferente da volatilidade histórica, que olha para o passado, a volatilidade implícita reflete a expectativa do mercado sobre a volatilidade futura, derivada do preço das opções."
+                },
+                "en": {
+                  "prompt": "What does implied volatility represent?",
+                  "options": [
+                    "An estimate of an asset's expected future volatility, derived from the market price of its options",
+                    "The volatility the asset actually had in the past",
+                    "The exact price the asset will have at the option's expiration",
+                    "A fixed interest rate used in every option contract"
+                  ],
+                  "explanation": "Unlike historical volatility, which looks at the past, implied volatility reflects the market's expectation about future volatility, derived from option prices."
+                },
+                "es": {
+                  "prompt": "¿Qué representa la volatilidad implícita?",
+                  "options": [
+                    "Una estimación de la volatilidad futura esperada de un activo, derivada del precio de mercado de sus opciones",
+                    "La volatilidad que el activo efectivamente tuvo en el pasado",
+                    "El precio exacto que tendrá el activo al vencimiento de la opción",
+                    "Una tasa de interés fija usada en todos los contratos de opción"
+                  ],
+                  "explanation": "A diferencia de la volatilidad histórica, que mira hacia el pasado, la volatilidad implícita refleja la expectativa del mercado sobre la volatilidad futura, derivada del precio de las opciones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que uma opção de proteção (protective put) exige pagar um prêmio pela opção comprada. Como a volatilidade implícita ajuda a explicar por que esse prêmio pode ficar bem mais caro em períodos de incerteza generalizada no mercado?",
+                  "options": [
+                    "Em períodos de incerteza, a volatilidade implícita tende a subir, encarecendo o prêmio de qualquer opção — incluindo a put usada em uma estratégia de proteção, tornando essa proteção mais cara justamente quando mais procurada",
+                    "A volatilidade implícita nunca afeta o preço de opções de venda, apenas opções de compra",
+                    "O prêmio de uma opção de proteção é sempre fixo, independentemente da volatilidade implícita",
+                    "Volatilidade implícita e o custo de uma opção de proteção não têm nenhuma relação entre si"
+                  ],
+                  "explanation": "Como a volatilidade implícita sobe justamente em períodos de maior incerteza — quando a demanda por proteção também tende a aumentar —, o prêmio de opções de proteção como o protective put tende a ficar mais caro exatamente quando mais investidores buscam se proteger."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that a protective put requires paying a premium for the purchased option. How does implied volatility help explain why that premium can get much more expensive during periods of widespread market uncertainty?",
+                  "options": [
+                    "During periods of uncertainty, implied volatility tends to rise, making the premium of any option more expensive — including the put used in a protective strategy, making that protection pricier precisely when it's most sought after",
+                    "Implied volatility never affects the price of put options, only call options",
+                    "A protective option's premium is always fixed, regardless of implied volatility",
+                    "Implied volatility and the cost of a protective option have no relation to each other"
+                  ],
+                  "explanation": "Since implied volatility rises precisely during periods of greater uncertainty — when demand for protection also tends to increase — the premium of protective options like the protective put tends to get more expensive exactly when more investors seek protection."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que una opción de protección (protective put) exige pagar una prima por la opción comprada. ¿Cómo ayuda la volatilidad implícita a explicar por qué esa prima puede volverse bastante más cara en períodos de incertidumbre generalizada en el mercado?",
+                  "options": [
+                    "En períodos de incertidumbre, la volatilidad implícita tiende a subir, encareciendo la prima de cualquier opción — incluida la put usada en una estrategia de protección, haciendo esa protección más cara justo cuando más se busca",
+                    "La volatilidad implícita nunca afecta el precio de las opciones de venta, solo el de las opciones de compra",
+                    "La prima de una opción de protección siempre es fija, sin importar la volatilidad implícita",
+                    "La volatilidad implícita y el costo de una opción de protección no tienen ninguna relación entre sí"
+                  ],
+                  "explanation": "Como la volatilidad implícita sube justamente en períodos de mayor incertidumbre — cuando la demanda de protección también tiende a aumentar —, la prima de opciones de protección como el protective put tiende a encarecerse justo cuando más inversores buscan protegerse."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Volatilidade implícita é uma estimativa da volatilidade futura, derivada do preço de mercado das opções.",
+                    "Quando a volatilidade implícita sobe, o prêmio das opções tende a subir também.",
+                    "Isso torna estratégias de proteção mais caras justamente em períodos de maior incerteza, quando mais são procuradas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Implied volatility is an estimate of future volatility, derived from options' market price.",
+                    "When implied volatility rises, option premiums tend to rise too.",
+                    "This makes protective strategies more expensive precisely during periods of greater uncertainty, when they're most sought after."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La volatilidad implícita es una estimación de la volatilidad futura, derivada del precio de mercado de las opciones.",
+                    "Cuando la volatilidad implícita sube, las primas de las opciones tienden a subir también.",
+                    "Esto hace que las estrategias de protección sean más caras justo en períodos de mayor incertidumbre, cuando más se buscan."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "derivatives_expiration_and_exercise",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Vencimento e Exercício de Opções"
+            },
+            "en": {
+              "title": "Option Expiration and Exercise"
+            },
+            "es": {
+              "title": "Vencimiento y Ejercicio de Opciones"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que acontece quando o prazo da opção termina",
+                  "body": "Toda opção tem uma data de vencimento, após a qual ela deixa de existir. Opções de estilo americano podem ser exercidas a qualquer momento até o vencimento; opções de estilo europeu só podem ser exercidas na própria data de vencimento. Se, no vencimento, uma opção estiver 'dentro do dinheiro' (com exercício vantajoso em relação ao preço de mercado do ativo), ela tende a ser exercida ou ter esse valor refletido na liquidação; se estiver 'fora do dinheiro', ela simplesmente expira sem valor, e o prêmio pago por quem a comprou é integralmente perdido."
+                },
+                "en": {
+                  "title": "What happens when the option's term ends",
+                  "body": "Every option has an expiration date, after which it ceases to exist. American-style options can be exercised at any time up to expiration; European-style options can only be exercised on the expiration date itself. If, at expiration, an option is 'in the money' (with exercise favorable relative to the asset's market price), it tends to be exercised or have that value reflected in settlement; if it's 'out of the money,' it simply expires worthless, and the premium paid by the buyer is entirely lost."
+                },
+                "es": {
+                  "title": "Qué pasa cuando termina el plazo de la opción",
+                  "body": "Toda opción tiene una fecha de vencimiento, después de la cual deja de existir. Las opciones de estilo americano pueden ejercerse en cualquier momento hasta el vencimiento; las opciones de estilo europeo solo pueden ejercerse en la propia fecha de vencimiento. Si, al vencimiento, una opción está 'dentro del dinero' (con ejercicio favorable respecto al precio de mercado del activo), tiende a ejercerse o a que ese valor se refleje en la liquidación; si está 'fuera del dinero', simplemente vence sin valor, y la prima pagada por quien la compró se pierde por completo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor compra uma opção de compra (call) de estilo europeu com preço de exercício de R$40. Se, na data de vencimento, o ativo estiver sendo negociado a R$50, a opção está dentro do dinheiro e tende a ser exercida ou liquidada com esse ganho. Se o ativo estiver a R$35, a opção está fora do dinheiro e expira sem valor, e o investidor perde integralmente o prêmio que pagou por ela."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor buys a European-style call option with a R$40 strike price. If, on the expiration date, the asset is trading at R$50, the option is in the money and tends to be exercised or settled with that gain. If the asset is at R$35, the option is out of the money and expires worthless, and the investor entirely loses the premium they paid for it."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor compra una opción de compra (call) de estilo europeo con precio de ejercicio de R$40. Si, en la fecha de vencimiento, el activo se está negociando a R$50, la opción está dentro del dinero y tiende a ejercerse o liquidarse con esa ganancia. Si el activo está a R$35, la opción está fuera del dinero y vence sin valor, y el inversor pierde por completo la prima que pagó por ella."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com uma opção que está 'fora do dinheiro' na data de vencimento?",
+                  "options": [
+                    "Ela expira sem valor, e o prêmio pago pelo comprador é integralmente perdido",
+                    "Ela é sempre exercida automaticamente, independentemente do preço do ativo",
+                    "Ela se transforma automaticamente em uma opção de estilo americano",
+                    "Seu prêmio é reembolsado integralmente ao comprador"
+                  ],
+                  "explanation": "Uma opção fora do dinheiro no vencimento simplesmente deixa de ter valor, e o comprador perde integralmente o prêmio que pagou por ela."
+                },
+                "en": {
+                  "prompt": "What happens to an option that is 'out of the money' on the expiration date?",
+                  "options": [
+                    "It expires worthless, and the premium paid by the buyer is entirely lost",
+                    "It's always automatically exercised, regardless of the asset's price",
+                    "It automatically converts into an American-style option",
+                    "Its premium is fully refunded to the buyer"
+                  ],
+                  "explanation": "An out-of-the-money option at expiration simply loses all value, and the buyer entirely loses the premium they paid for it."
+                },
+                "es": {
+                  "prompt": "¿Qué pasa con una opción que está 'fuera del dinero' en la fecha de vencimiento?",
+                  "options": [
+                    "Vence sin valor, y la prima pagada por el comprador se pierde por completo",
+                    "Siempre se ejerce automáticamente, sin importar el precio del activo",
+                    "Se convierte automáticamente en una opción de estilo americano",
+                    "Su prima se reembolsa por completo al comprador"
+                  ],
+                  "explanation": "Una opción fuera del dinero al vencimiento simplemente deja de tener valor, y el comprador pierde por completo la prima que pagó por ella."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, tanto o decaimento temporal (theta) quanto a mecânica de exercício no vencimento. Como esses dois conceitos juntos explicam por que o valor de uma opção converge para zero (se fora do dinheiro) ou para seu valor intrínseco (se dentro do dinheiro) conforme o vencimento se aproxima?",
+                  "options": [
+                    "O decaimento temporal reduz gradualmente o valor 'de expectativa' embutido no prêmio da opção, até que, no vencimento, só reste o valor de exercício efetivo (se houver) — daí a convergência para zero ou para o valor intrínseco",
+                    "Theta e a mecânica de exercício no vencimento não têm nenhuma relação entre si",
+                    "O valor de uma opção permanece sempre constante até o momento exato do vencimento, sem nenhum decaimento gradual",
+                    "Apenas opções de estilo americano sofrem decaimento temporal; opções europeias não são afetadas por theta"
+                  ],
+                  "explanation": "O decaimento temporal (theta) reflete a perda gradual do valor de expectativa contido no prêmio de uma opção à medida que o tempo até o vencimento diminui — no vencimento, esse valor de expectativa desaparece por completo, restando apenas o valor de exercício efetivo, se houver."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, both time decay (theta) and the mechanics of exercise at expiration. How do these two concepts together explain why an option's value converges to zero (if out of the money) or to its intrinsic value (if in the money) as expiration approaches?",
+                  "options": [
+                    "Time decay gradually reduces the 'expectation' value embedded in the option's premium, until, at expiration, only the actual exercise value (if any) remains — hence the convergence to zero or to intrinsic value",
+                    "Theta and the mechanics of exercise at expiration have no relation to each other",
+                    "An option's value stays constant all the way until the exact moment of expiration, with no gradual decay",
+                    "Only American-style options suffer time decay; European options are unaffected by theta"
+                  ],
+                  "explanation": "Time decay (theta) reflects the gradual loss of the expectation value embedded in an option's premium as time to expiration decreases — at expiration, that expectation value disappears entirely, leaving only the actual exercise value, if any."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, tanto el decaimiento temporal (theta) como la mecánica de ejercicio al vencimiento. ¿Cómo explican estos dos conceptos juntos por qué el valor de una opción converge a cero (si está fuera del dinero) o a su valor intrínseco (si está dentro del dinero) a medida que se acerca el vencimiento?",
+                  "options": [
+                    "El decaimiento temporal reduce gradualmente el valor de 'expectativa' incorporado en la prima de la opción, hasta que, al vencimiento, solo queda el valor de ejercicio efectivo (si lo hay) — de ahí la convergencia a cero o al valor intrínseco",
+                    "El theta y la mecánica de ejercicio al vencimiento no tienen ninguna relación entre sí",
+                    "El valor de una opción permanece siempre constante hasta el momento exacto del vencimiento, sin ningún decaimiento gradual",
+                    "Solo las opciones de estilo americano sufren decaimiento temporal; las opciones europeas no se ven afectadas por el theta"
+                  ],
+                  "explanation": "El decaimiento temporal (theta) refleja la pérdida gradual del valor de expectativa contenido en la prima de una opción a medida que disminuye el tiempo hasta el vencimiento — al vencimiento, ese valor de expectativa desaparece por completo, quedando solo el valor de ejercicio efectivo, si lo hay."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Opções de estilo americano podem ser exercidas a qualquer momento; europeias, apenas no vencimento.",
+                    "No vencimento, uma opção dentro do dinheiro tende a ser exercida; fora do dinheiro, expira sem valor.",
+                    "Você concluiu o módulo avançado de derivativos: forwards vs. futuros, protective put, gregas, volatilidade implícita e vencimento/exercício."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "American-style options can be exercised at any time; European ones, only at expiration.",
+                    "At expiration, an in-the-money option tends to be exercised; out-of-the-money, it expires worthless.",
+                    "You've completed the advanced derivatives module: forwards vs. futures, protective put, Greeks, implied volatility and expiration/exercise."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Las opciones de estilo americano pueden ejercerse en cualquier momento; las europeas, solo al vencimiento.",
+                    "Al vencimiento, una opción dentro del dinero tiende a ejercerse; fuera del dinero, vence sin valor.",
+                    "Completaste el módulo avanzado de derivados: forwards vs. futuros, protective put, griegas, volatilidad implícita y vencimiento/ejercicio."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

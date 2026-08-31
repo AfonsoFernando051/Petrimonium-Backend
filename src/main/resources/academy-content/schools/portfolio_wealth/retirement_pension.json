@@ -1,0 +1,2533 @@
+{
+  "schoolId": "retirement_pension",
+  "domainId": "portfolio_wealth",
+  "order": 14,
+  "iconKey": "beach_access_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Aposentadoria e Previdência",
+      "description": "Previdência privada, PGBL, VGBL e planejamento para a aposentadoria."
+    },
+    "en": {
+      "title": "Retirement & Pension",
+      "description": "Private pension plans, taxation and planning for retirement."
+    },
+    "es": {
+      "title": "Jubilación y Previsión",
+      "description": "Previsión privada, tributación y planificación para la jubilación."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "retirement_basics",
+      "order": 1,
+      "iconKey": "beach_access_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundamentos da Aposentadoria",
+          "description": "Por que começar cedo, o papel do INSS, PGBL x VGBL, regimes de tributação e como escolher um plano."
+        },
+        "en": {
+          "title": "Retirement Fundamentals",
+          "description": "Why start early, the role of public pension, PGBL vs. VGBL, tax regimes, and how to choose a plan."
+        },
+        "es": {
+          "title": "Fundamentos de la Jubilación",
+          "description": "Por qué empezar temprano, el papel de la previsión pública, PGBL vs. VGBL, regímenes de tributación y cómo elegir un plan."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "retirement_why_start_early",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Por que Começar Cedo"
+            },
+            "en": {
+              "title": "Why Start Early"
+            },
+            "es": {
+              "title": "Por qué Empezar Temprano"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O tempo trabalha a seu favor",
+                  "body": "Planejar a aposentadoria é, na prática, aplicar o conceito de juros compostos com um horizonte muito longo — geralmente décadas. Quanto mais cedo você começa a guardar e investir para esse objetivo, mais tempo os aportes têm para crescer, e menor precisa ser o valor investido por mês para chegar a um patrimônio equivalente no final."
+                },
+                "en": {
+                  "title": "Time works in your favor",
+                  "body": "Planning for retirement is, in practice, applying the concept of compound interest over a very long horizon — usually decades. The earlier you start setting aside and investing for this goal, the more time your contributions have to grow, and the smaller the monthly amount needs to be to reach an equivalent nest egg at the end."
+                },
+                "es": {
+                  "title": "El tiempo trabaja a tu favor",
+                  "body": "Planificar la jubilación es, en la práctica, aplicar el concepto de interés compuesto con un horizonte muy largo — generalmente décadas. Cuanto antes empieces a ahorrar e invertir para este objetivo, más tiempo tendrán tus aportes para crecer, y menor necesita ser el monto invertido por mes para llegar a un patrimonio equivalente al final."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que começa a investir R$300 por mês aos 25 anos, a uma taxa de 8% ao ano, chega aos 65 anos com um patrimônio consideravelmente maior do que alguém que começa a investir R$600 por mês, o dobro, mas só aos 45 anos — mesmo colocando bem menos dinheiro total ao longo da vida. O tempo extra de crescimento composto compensa boa parte da diferença."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who starts investing R$300 a month at age 25, at a rate of 8% a year, reaches age 65 with considerably more wealth than someone who starts investing R$600 a month, double that, but only at age 45 — even though they put in much less total money over their lifetime. The extra time for compound growth makes up for a large part of the difference."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que empieza a invertir R$300 al mes a los 25 años, a una tasa del 8% anual, llega a los 65 años con un patrimonio considerablemente mayor que alguien que empieza a invertir R$600 al mes, el doble, pero recién a los 45 años — aunque haya puesto mucho menos dinero total a lo largo de su vida. El tiempo extra de crecimiento compuesto compensa gran parte de la diferencia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que começar a investir para a aposentadoria mais cedo tende a exigir um aporte mensal menor para chegar a um resultado equivalente?",
+                  "options": [
+                    "Porque investimentos de longo prazo têm taxas garantidas mais altas",
+                    "Porque o tempo extra permite que o efeito dos juros compostos atue por mais tempo sobre o valor investido",
+                    "Porque não existe diferença real entre começar cedo ou tarde",
+                    "Porque o governo aumenta o rendimento de quem começa mais jovem"
+                  ],
+                  "explanation": "Quanto mais tempo o dinheiro fica investido, mais o efeito de juros sobre juros se acumula — por isso, começar cedo permite aportes menores para o mesmo resultado final."
+                },
+                "en": {
+                  "prompt": "Why does starting to invest for retirement earlier tend to require a smaller monthly contribution to reach an equivalent result?",
+                  "options": [
+                    "Because long-term investments have guaranteed higher rates",
+                    "Because the extra time allows the effect of compound interest to act for longer on the amount invested",
+                    "Because there's no real difference between starting early or late",
+                    "Because the government increases the return for people who start younger"
+                  ],
+                  "explanation": "The longer money stays invested, the more the effect of interest on interest accumulates — that's why starting early allows for smaller contributions to reach the same final result."
+                },
+                "es": {
+                  "prompt": "¿Por qué empezar a invertir para la jubilación antes suele requerir un aporte mensual menor para llegar a un resultado equivalente?",
+                  "options": [
+                    "Porque las inversiones a largo plazo tienen tasas garantizadas más altas",
+                    "Porque el tiempo extra permite que el efecto del interés compuesto actúe durante más tiempo sobre el monto invertido",
+                    "Porque no existe una diferencia real entre empezar temprano o tarde",
+                    "Porque el gobierno aumenta el rendimiento de quien empieza más joven"
+                  ],
+                  "explanation": "Cuanto más tiempo el dinero permanece invertido, más se acumula el efecto de intereses sobre intereses — por eso, empezar temprano permite aportes menores para el mismo resultado final."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem 22 anos e pensa 'aposentadoria é assunto para depois dos 40'. Com base no que você aprendeu sobre juros compostos e tempo, o que vale a pena reconsiderar nesse pensamento?",
+                  "options": [
+                    "Nada, esperar até os 40 não faz nenhuma diferença",
+                    "Que adiar o início reduz justamente o recurso mais valioso desse tipo de planejamento: o tempo disponível para o dinheiro crescer",
+                    "Que só quem ganha muito bem deveria pensar em aposentadoria",
+                    "Que aposentadoria só depende do INSS, então não há necessidade de planejamento pessoal"
+                  ],
+                  "explanation": "Adiar o início do planejamento reduz o tempo disponível para o efeito dos juros compostos — mesmo aportes pequenos, começados cedo, tendem a ter um impacto desproporcional no resultado final."
+                },
+                "en": {
+                  "prompt": "You're 22 and think 'retirement is something to worry about after 40.' Based on what you learned about compound interest and time, what's worth reconsidering in that thought?",
+                  "options": [
+                    "Nothing, waiting until 40 makes no difference at all",
+                    "That delaying the start reduces exactly the most valuable resource in this kind of planning: the time available for the money to grow",
+                    "That only people who earn a lot should think about retirement",
+                    "That retirement only depends on public pension, so no personal planning is needed"
+                  ],
+                  "explanation": "Delaying the start of planning reduces the time available for the compound interest effect — even small contributions, started early, tend to have a disproportionate impact on the final result."
+                },
+                "es": {
+                  "prompt": "Tienes 22 años y piensas 'la jubilación es un tema para después de los 40'. Según lo que aprendiste sobre el interés compuesto y el tiempo, ¿qué vale la pena reconsiderar en ese pensamiento?",
+                  "options": [
+                    "Nada, esperar hasta los 40 no hace ninguna diferencia",
+                    "Que posponer el inicio reduce justamente el recurso más valioso de este tipo de planificación: el tiempo disponible para que el dinero crezca",
+                    "Que solo quien gana muy bien debería pensar en la jubilación",
+                    "Que la jubilación solo depende de la previsión pública, así que no hace falta una planificación personal"
+                  ],
+                  "explanation": "Posponer el inicio de la planificación reduce el tiempo disponible para el efecto del interés compuesto — incluso aportes pequeños, comenzados temprano, tienden a tener un impacto desproporcionado en el resultado final."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Planejar a aposentadoria é aplicar juros compostos em um horizonte de décadas.",
+                    "Começar cedo permite aportes mensais menores para o mesmo resultado final.",
+                    "Adiar o início reduz o recurso mais valioso desse tipo de planejamento: o tempo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Planning for retirement is applying compound interest over a decades-long horizon.",
+                    "Starting early allows for smaller monthly contributions to reach the same final result.",
+                    "Delaying the start reduces the most valuable resource in this kind of planning: time."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Planificar la jubilación es aplicar el interés compuesto en un horizonte de décadas.",
+                    "Empezar temprano permite aportes mensuales menores para el mismo resultado final.",
+                    "Posponer el inicio reduce el recurso más valioso de este tipo de planificación: el tiempo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_inss_baseline",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Previdência Pública como Base"
+            },
+            "en": {
+              "title": "Public Pension as a Baseline"
+            },
+            "es": {
+              "title": "Previsión Pública como Base"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um ponto de partida, não o plano todo",
+                  "body": "No Brasil, o INSS (Instituto Nacional do Seguro Social) é o sistema público de previdência, financiado por contribuições de trabalhadores e empresas ao longo da vida profissional. Ele funciona como uma base de renda na aposentadoria, mas, para muitas pessoas, o valor recebido é menor do que o necessário para manter o padrão de vida anterior — por isso, é comum complementar essa base com planejamento e investimentos próprios."
+                },
+                "en": {
+                  "title": "A starting point, not the whole plan",
+                  "body": "In Brazil, INSS (National Social Security Institute) is the public pension system, funded by contributions from workers and companies throughout their working life. It works as a baseline income in retirement, but for many people, the amount received is lower than what's needed to maintain their previous standard of living — which is why it's common to supplement this baseline with personal planning and investments."
+                },
+                "es": {
+                  "title": "Un punto de partida, no el plan completo",
+                  "body": "En Brasil, el INSS (Instituto Nacional del Seguro Social) es el sistema de previsión pública, financiado por contribuciones de trabajadores y empresas a lo largo de la vida laboral. Funciona como una base de ingresos en la jubilación, pero, para muchas personas, el monto recibido es menor de lo necesario para mantener el nivel de vida anterior — por eso es común complementar esa base con planificación e inversiones propias."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que ganhava R$8.000 por mês trabalhando pode se aposentar recebendo um valor bem menor pelo INSS, já que o sistema público tem um teto de benefício. Para manter um padrão de vida parecido, ela provavelmente vai precisar de uma fonte de renda complementar construída ao longo da vida profissional."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who earned R$8,000 a month while working might retire receiving a much smaller amount from INSS, since the public system has a benefit cap. To maintain a similar standard of living, they'll likely need a supplementary income source built up over their working life."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que ganaba R$8.000 al mes trabajando puede jubilarse recibiendo un monto bastante menor por el INSS, ya que el sistema público tiene un tope de beneficio. Para mantener un nivel de vida similar, probablemente necesitará una fuente de ingresos complementaria construida a lo largo de su vida laboral."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o papel do INSS no planejamento de aposentadoria?",
+                  "options": [
+                    "Garantir sozinho o mesmo padrão de vida que a pessoa tinha trabalhando",
+                    "Servir como uma base de renda pública, que para muitas pessoas precisa ser complementada",
+                    "Substituir completamente qualquer necessidade de investir",
+                    "Pagar sempre o valor integral do último salário recebido"
+                  ],
+                  "explanation": "O INSS funciona como uma base do sistema previdenciário, mas, devido ao teto de benefícios, costuma não ser suficiente sozinho para manter o padrão de vida anterior de quem ganhava acima da média."
+                },
+                "en": {
+                  "prompt": "What is INSS's role in retirement planning?",
+                  "options": [
+                    "Guaranteeing on its own the same standard of living the person had while working",
+                    "Serving as a baseline public income, which for many people needs to be supplemented",
+                    "Completely replacing any need to invest",
+                    "Always paying the full amount of the last salary received"
+                  ],
+                  "explanation": "INSS works as a baseline of the pension system, but due to the benefit cap, it usually isn't enough on its own to maintain the previous standard of living for people who earned above average."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el papel del INSS en la planificación de la jubilación?",
+                  "options": [
+                    "Garantizar por sí solo el mismo nivel de vida que la persona tenía trabajando",
+                    "Servir como una base de ingresos públicos, que para muchas personas necesita ser complementada",
+                    "Reemplazar por completo cualquier necesidad de invertir",
+                    "Pagar siempre el monto íntegro del último salario recibido"
+                  ],
+                  "explanation": "El INSS funciona como una base del sistema previsional, pero debido al tope de beneficios, normalmente no es suficiente por sí solo para mantener el nivel de vida anterior de quienes ganaban por encima del promedio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você ganha bem acima da média e sabe que o INSS tem um teto de benefício. Como essa informação deveria influenciar seu planejamento para a aposentadoria?",
+                  "options": [
+                    "Não deveria influenciar em nada, o INSS sempre cobre tudo",
+                    "Sugere que vale a pena considerar formas de complementar essa renda futura, já que o benefício público provavelmente ficará abaixo do que você ganha hoje",
+                    "Significa que não vale a pena nem se preocupar com aposentadoria",
+                    "Indica que o INSS vai aumentar automaticamente o teto para acompanhar seu salário"
+                  ],
+                  "explanation": "Saber que existe um teto de benefício ajuda a dimensionar a diferença entre a renda futura esperada do INSS e o padrão de vida atual — essa diferença é o que o planejamento complementar busca cobrir."
+                },
+                "en": {
+                  "prompt": "You earn well above average and know that INSS has a benefit cap. How should that information influence your retirement planning?",
+                  "options": [
+                    "It shouldn't influence anything, INSS always covers everything",
+                    "It suggests it's worth considering ways to supplement that future income, since the public benefit will likely fall below what you earn today",
+                    "It means there's no point even worrying about retirement",
+                    "It indicates INSS will automatically raise the cap to match your salary"
+                  ],
+                  "explanation": "Knowing there's a benefit cap helps you gauge the gap between the expected future income from INSS and your current standard of living — that gap is what supplementary planning aims to cover."
+                },
+                "es": {
+                  "prompt": "Ganas bien por encima del promedio y sabes que el INSS tiene un tope de beneficio. ¿Cómo debería influir esa información en tu planificación de la jubilación?",
+                  "options": [
+                    "No debería influir en nada, el INSS siempre cubre todo",
+                    "Sugiere que vale la pena considerar formas de complementar ese ingreso futuro, ya que el beneficio público probablemente quedará por debajo de lo que ganas hoy",
+                    "Significa que ni siquiera vale la pena preocuparse por la jubilación",
+                    "Indica que el INSS aumentará automáticamente el tope para igualar tu salario"
+                  ],
+                  "explanation": "Saber que existe un tope de beneficio ayuda a dimensionar la diferencia entre el ingreso futuro esperado del INSS y el nivel de vida actual — esa diferencia es lo que la planificación complementaria busca cubrir."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "INSS é o sistema público de previdência, financiado por contribuições ao longo da vida profissional.",
+                    "Ele funciona como uma base de renda, limitada por um teto de benefício.",
+                    "Para muitas pessoas, vale a pena planejar uma fonte de renda complementar."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "INSS is the public pension system, funded by contributions throughout working life.",
+                    "It works as a baseline income, limited by a benefit cap.",
+                    "For many people, it's worth planning a supplementary income source."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El INSS es el sistema de previsión pública, financiado por contribuciones a lo largo de la vida laboral.",
+                    "Funciona como una base de ingresos, limitada por un tope de beneficio.",
+                    "Para muchas personas, vale la pena planificar una fuente de ingresos complementaria."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_pgbl_vgbl",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "PGBL x VGBL"
+            },
+            "en": {
+              "title": "PGBL vs. VGBL"
+            },
+            "es": {
+              "title": "PGBL vs. VGBL"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A diferença está na declaração de imposto de renda",
+                  "body": "PGBL e VGBL são dois tipos de planos de previdência privada oferecidos no Brasil, e a principal diferença entre eles está no tratamento tributário. No PGBL, as contribuições podem ser deduzidas da base de cálculo do Imposto de Renda, até o limite de 12% da renda bruta anual, mas apenas para quem faz a declaração completa — em compensação, todo o valor resgatado no futuro é tributado. No VGBL, não há dedução na hora de contribuir, mas o imposto no resgate incide apenas sobre o rendimento, não sobre o valor total aplicado."
+                },
+                "en": {
+                  "title": "The difference is in the tax return",
+                  "body": "PGBL and VGBL are two types of private pension plans offered in Brazil, and the main difference between them is in their tax treatment. With PGBL, contributions can be deducted from the income tax base, up to a limit of 12% of gross annual income, but only for those who file the full (itemized) tax return — in exchange, the entire withdrawn amount is taxed in the future. With VGBL, there's no deduction when contributing, but tax on withdrawal applies only to the earnings, not to the total amount invested."
+                },
+                "es": {
+                  "title": "La diferencia está en la declaración de impuestos",
+                  "body": "El PGBL y el VGBL son dos tipos de planes de previsión privada ofrecidos en Brasil, y la principal diferencia entre ellos está en el tratamiento tributario. En el PGBL, las contribuciones pueden deducirse de la base de cálculo del Impuesto sobre la Renta, hasta el límite del 12% del ingreso bruto anual, pero solo para quienes hacen la declaración completa — a cambio, todo el monto rescatado en el futuro es gravado. En el VGBL, no hay deducción al momento de contribuir, pero el impuesto al rescate se aplica solo sobre el rendimiento, no sobre el monto total invertido."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que faz a declaração completa do Imposto de Renda e contribui para um PGBL pode reduzir o imposto a pagar naquele ano, dentro do limite de 12% da renda. Outra pessoa, que faz a declaração simplificada e não teria esse benefício de dedução, pode preferir um VGBL, já que no futuro só pagará imposto sobre o que o investimento rendeu, não sobre o total investido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who files the itemized income tax return and contributes to a PGBL can reduce the tax owed for that year, within the 12%-of-income limit. Someone else, who files the simplified return and wouldn't get that deduction benefit, might prefer a VGBL, since in the future they'll only pay tax on what the investment earned, not on the total amount invested."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que hace la declaración completa del Impuesto sobre la Renta y contribuye a un PGBL puede reducir el impuesto a pagar ese año, dentro del límite del 12% del ingreso. Otra persona, que hace la declaración simplificada y no tendría ese beneficio de deducción, puede preferir un VGBL, ya que en el futuro solo pagará impuesto sobre lo que la inversión rindió, no sobre el total invertido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre PGBL e VGBL?",
+                  "options": [
+                    "PGBL nunca paga imposto, e VGBL sempre paga",
+                    "PGBL permite deduzir contribuições do Imposto de Renda (para quem faz a declaração completa), mas tributa o resgate total; VGBL não permite dedução, mas tributa só o rendimento no resgate",
+                    "Não existe diferença real entre os dois",
+                    "VGBL só pode ser contratado por empresas, nunca por pessoas físicas"
+                  ],
+                  "explanation": "A diferença central está em quando e sobre o quê incide o imposto: PGBL tributa o valor total resgatado, mas permite deduzir contribuições; VGBL não permite dedução, mas tributa só o ganho."
+                },
+                "en": {
+                  "prompt": "What is the main difference between PGBL and VGBL?",
+                  "options": [
+                    "PGBL never pays tax, and VGBL always does",
+                    "PGBL allows deducting contributions from income tax (for those filing the itemized return), but taxes the full withdrawal; VGBL doesn't allow a deduction, but taxes only the earnings on withdrawal",
+                    "There's no real difference between the two",
+                    "VGBL can only be contracted by companies, never by individuals"
+                  ],
+                  "explanation": "The key difference is when and on what the tax applies: PGBL taxes the total amount withdrawn, but allows deducting contributions; VGBL doesn't allow a deduction, but taxes only the gain."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre PGBL y VGBL?",
+                  "options": [
+                    "El PGBL nunca paga impuesto, y el VGBL siempre paga",
+                    "El PGBL permite deducir contribuciones del Impuesto sobre la Renta (para quienes hacen la declaración completa), pero grava el rescate total; el VGBL no permite deducción, pero grava solo el rendimiento en el rescate",
+                    "No existe una diferencia real entre ambos",
+                    "El VGBL solo puede ser contratado por empresas, nunca por personas físicas"
+                  ],
+                  "explanation": "La diferencia central está en cuándo y sobre qué se aplica el impuesto: el PGBL grava el monto total rescatado, pero permite deducir contribuciones; el VGBL no permite deducción, pero grava solo la ganancia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já aprendeu que o PGBL só compensa a dedução fiscal para quem faz a declaração completa do Imposto de Renda. Se alguém faz apenas a declaração simplificada, o que isso sugere sobre a escolha entre PGBL e VGBL?",
+                  "options": [
+                    "Que essa pessoa deveria escolher PGBL de qualquer forma, o benefício se aplica sempre",
+                    "Que, sem o benefício da dedução, o VGBL tende a fazer mais sentido, já que evita a tributação sobre o valor total no resgate",
+                    "Que nenhum dos dois faz sentido para quem faz a declaração simplificada",
+                    "Que a escolha entre os dois não depende do tipo de declaração de imposto de renda"
+                  ],
+                  "explanation": "O principal atrativo do PGBL é a dedução fiscal, disponível só para quem faz a declaração completa — sem esse benefício, tributar apenas o rendimento no resgate, como faz o VGBL, tende a ser mais vantajoso."
+                },
+                "en": {
+                  "prompt": "You already learned that PGBL's tax deduction only pays off for people who file the itemized income tax return. If someone files only the simplified return, what does that suggest about choosing between PGBL and VGBL?",
+                  "options": [
+                    "That this person should choose PGBL anyway, the benefit always applies",
+                    "That, without the deduction benefit, VGBL tends to make more sense, since it avoids taxation on the full amount at withdrawal",
+                    "That neither option makes sense for someone filing the simplified return",
+                    "That the choice between the two doesn't depend on the type of tax return filed"
+                  ],
+                  "explanation": "PGBL's main appeal is the tax deduction, available only to those filing the itemized return — without that benefit, taxing only the earnings at withdrawal, as VGBL does, tends to be more advantageous."
+                },
+                "es": {
+                  "prompt": "Ya aprendiste que la deducción fiscal del PGBL solo vale la pena para quienes hacen la declaración completa del Impuesto sobre la Renta. Si alguien hace solo la declaración simplificada, ¿qué sugiere esto sobre la elección entre PGBL y VGBL?",
+                  "options": [
+                    "Que esa persona debería elegir PGBL de todas formas, el beneficio siempre se aplica",
+                    "Que, sin el beneficio de la deducción, el VGBL tiende a tener más sentido, ya que evita la tributación sobre el monto total en el rescate",
+                    "Que ninguno de los dos tiene sentido para quien hace la declaración simplificada",
+                    "Que la elección entre ambos no depende del tipo de declaración de impuestos"
+                  ],
+                  "explanation": "El principal atractivo del PGBL es la deducción fiscal, disponible solo para quienes hacen la declaración completa — sin ese beneficio, gravar solo el rendimiento en el rescate, como hace el VGBL, tiende a ser más ventajoso."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "PGBL permite deduzir contribuições do IR, mas tributa o valor total no resgate.",
+                    "VGBL não permite dedução, mas tributa apenas o rendimento no resgate.",
+                    "A dedução do PGBL só vale para quem faz a declaração completa do Imposto de Renda."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "PGBL allows deducting contributions from income tax, but taxes the full amount at withdrawal.",
+                    "VGBL doesn't allow a deduction, but taxes only the earnings at withdrawal.",
+                    "PGBL's deduction only pays off for those filing the itemized income tax return."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El PGBL permite deducir contribuciones del IR, pero grava el monto total en el rescate.",
+                    "El VGBL no permite deducción, pero grava solo el rendimiento en el rescate.",
+                    "La deducción del PGBL solo vale la pena para quienes hacen la declaración completa del Impuesto sobre la Renta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_tax_regimes",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Regime Regressivo x Progressivo"
+            },
+            "en": {
+              "title": "Regressive vs. Progressive Tax Regime"
+            },
+            "es": {
+              "title": "Régimen Regresivo vs. Progresivo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas de tributar o resgate",
+                  "body": "Ao contratar um plano de previdência privada, é preciso escolher entre dois regimes de tributação. No regime progressivo, a alíquota segue a tabela do Imposto de Renda normal, que pode chegar a 27,5%, dependendo do valor resgatado. No regime regressivo, a alíquota começa mais alta (35%) e diminui quanto mais tempo o dinheiro fica investido, podendo chegar a 10% após 10 anos ou mais — mas essa escolha costuma ser irreversível depois de feita."
+                },
+                "en": {
+                  "title": "Two ways to tax the withdrawal",
+                  "body": "When taking out a private pension plan, you need to choose between two tax regimes. Under the progressive regime, the rate follows the regular income tax table, which can reach 27.5%, depending on the amount withdrawn. Under the regressive regime, the rate starts higher (35%) and decreases the longer the money stays invested, potentially reaching 10% after 10 years or more — but this choice is usually irreversible once made."
+                },
+                "es": {
+                  "title": "Dos formas de gravar el rescate",
+                  "body": "Al contratar un plan de previsión privada, hay que elegir entre dos regímenes de tributación. En el régimen progresivo, la alícuota sigue la tabla del Impuesto sobre la Renta normal, que puede llegar al 27,5%, dependiendo del monto rescatado. En el régimen regresivo, la alícuota empieza más alta (35%) y disminuye cuanto más tiempo permanece el dinero invertido, pudiendo llegar al 10% después de 10 años o más — pero esta elección suele ser irreversible una vez hecha."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa planejando resgatar o dinheiro só daqui a 20 anos, para a aposentadoria, tende a se beneficiar do regime regressivo, já que a alíquota vai caindo até o mínimo de 10% ao longo do tempo. Já alguém que pretende resgatar em poucos anos pode preferir o regime progressivo, evitando começar com uma alíquota tão alta quanto os 35% iniciais do regressivo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone planning to withdraw the money only 20 years from now, for retirement, tends to benefit from the regressive regime, since the rate keeps dropping to a minimum of 10% over time. Someone who plans to withdraw within a few years might prefer the progressive regime, avoiding starting out with a rate as high as the regressive regime's initial 35%."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que planea rescatar el dinero recién dentro de 20 años, para la jubilación, tiende a beneficiarse del régimen regresivo, ya que la alícuota va bajando hasta el mínimo del 10% con el tiempo. Alguien que planea rescatar en pocos años puede preferir el régimen progresivo, evitando empezar con una alícuota tan alta como el 35% inicial del regresivo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com a alíquota no regime regressivo à medida que o tempo passa?",
+                  "options": [
+                    "Ela aumenta progressivamente até 35%",
+                    "Ela diminui quanto mais tempo o dinheiro fica investido, podendo chegar a 10%",
+                    "Ela permanece sempre fixa em 27,5%",
+                    "Ela é sempre igual à do regime progressivo"
+                  ],
+                  "explanation": "No regime regressivo, a alíquota começa alta e diminui com o tempo — recompensando quem deixa o dinheiro investido por mais tempo."
+                },
+                "en": {
+                  "prompt": "What happens to the tax rate under the regressive regime as time passes?",
+                  "options": [
+                    "It progressively increases up to 35%",
+                    "It decreases the longer the money stays invested, potentially reaching 10%",
+                    "It always stays fixed at 27.5%",
+                    "It's always the same as the progressive regime's"
+                  ],
+                  "explanation": "Under the regressive regime, the rate starts high and decreases over time — rewarding those who leave the money invested for longer."
+                },
+                "es": {
+                  "prompt": "¿Qué pasa con la alícuota en el régimen regresivo a medida que pasa el tiempo?",
+                  "options": [
+                    "Aumenta progresivamente hasta el 35%",
+                    "Disminuye cuanto más tiempo el dinero permanece invertido, pudiendo llegar al 10%",
+                    "Permanece siempre fija en el 27,5%",
+                    "Siempre es igual a la del régimen progresivo"
+                  ],
+                  "explanation": "En el régimen regresivo, la alícuota empieza alta y disminuye con el tiempo — recompensando a quien deja el dinero invertido por más tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está escolhendo o regime de tributação de um plano que pretende usar apenas daqui a 25 anos, na aposentadoria. Com base no que você aprendeu, qual fator pesa a favor do regime regressivo nesse caso?",
+                  "options": [
+                    "O regime regressivo é sempre melhor, independentemente do prazo",
+                    "Como o resgate está muito distante, há tempo suficiente para a alíquota regressiva cair até seu patamar mínimo, algo que não seria possível em prazos curtos",
+                    "O regime progressivo não pode ser usado em planos de previdência",
+                    "A escolha do regime não tem nenhum impacto no valor final"
+                  ],
+                  "explanation": "O regime regressivo favorece quem tem um prazo longo, já que a alíquota cai com o tempo — em prazos curtos, começar com a alíquota inicial alta de 35% pode não compensar."
+                },
+                "en": {
+                  "prompt": "You're choosing the tax regime for a plan you intend to use only 25 years from now, in retirement. Based on what you learned, what factor weighs in favor of the regressive regime in this case?",
+                  "options": [
+                    "The regressive regime is always better, regardless of the time frame",
+                    "Since the withdrawal is far in the future, there's enough time for the regressive rate to drop to its minimum level, something that wouldn't be possible over short time frames",
+                    "The progressive regime can't be used in pension plans",
+                    "The choice of regime has no impact on the final amount"
+                  ],
+                  "explanation": "The regressive regime favors those with a long time frame, since the rate drops over time — over short time frames, starting with the high initial 35% rate might not pay off."
+                },
+                "es": {
+                  "prompt": "Estás eligiendo el régimen de tributación de un plan que piensas usar recién dentro de 25 años, en la jubilación. Según lo que aprendiste, ¿qué factor pesa a favor del régimen regresivo en este caso?",
+                  "options": [
+                    "El régimen regresivo siempre es mejor, sin importar el plazo",
+                    "Como el rescate está muy lejano, hay tiempo suficiente para que la alícuota regresiva baje hasta su nivel mínimo, algo que no sería posible en plazos cortos",
+                    "El régimen progresivo no puede usarse en planes de previsión",
+                    "La elección del régimen no tiene ningún impacto en el monto final"
+                  ],
+                  "explanation": "El régimen regresivo favorece a quien tiene un plazo largo, ya que la alícuota baja con el tiempo — en plazos cortos, empezar con la alta alícuota inicial del 35% puede no compensar."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Regime progressivo segue a tabela normal do Imposto de Renda.",
+                    "Regime regressivo começa em 35% e cai até 10% conforme o tempo passa.",
+                    "A escolha entre os dois costuma ser irreversível e depende do prazo esperado até o resgate."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The progressive regime follows the regular income tax table.",
+                    "The regressive regime starts at 35% and drops to 10% as time passes.",
+                    "The choice between the two is usually irreversible and depends on the expected time until withdrawal."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El régimen progresivo sigue la tabla normal del Impuesto sobre la Renta.",
+                    "El régimen regresivo empieza en el 35% y baja hasta el 10% a medida que pasa el tiempo.",
+                    "La elección entre ambos suele ser irreversible y depende del plazo esperado hasta el rescate."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_choosing_plan",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fatores para Escolher um Plano"
+            },
+            "en": {
+              "title": "Factors for Choosing a Plan"
+            },
+            "es": {
+              "title": "Factores para Elegir un Plan"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Além do nome PGBL ou VGBL",
+                  "body": "Escolher um plano de previdência privada envolve mais do que decidir entre PGBL e VGBL ou entre os regimes de tributação. A taxa de administração (cobrada anualmente sobre o patrimônio) e, quando existe, a taxa de carregamento (cobrada sobre os aportes) afetam diretamente o retorno líquido ao longo de décadas. A composição da carteira do plano — em quais ativos ele efetivamente investe — também varia bastante entre instituições, mesmo dentro da mesma categoria de produto."
+                },
+                "en": {
+                  "title": "Beyond the PGBL or VGBL label",
+                  "body": "Choosing a private pension plan involves more than deciding between PGBL and VGBL or between tax regimes. The administration fee (charged annually on the balance) and, when it exists, the loading fee (charged on contributions) directly affect net returns over decades. The plan's portfolio composition — what assets it actually invests in — also varies a lot between institutions, even within the same product category."
+                },
+                "es": {
+                  "title": "Más allá del nombre PGBL o VGBL",
+                  "body": "Elegir un plan de previsión privada implica más que decidir entre PGBL y VGBL o entre los regímenes de tributación. La tasa de administración (cobrada anualmente sobre el patrimonio) y, cuando existe, la tasa de carga (cobrada sobre los aportes) afectan directamente el retorno neto a lo largo de décadas. La composición de la cartera del plan — en qué activos invierte efectivamente — también varía bastante entre instituciones, incluso dentro de la misma categoría de producto."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois planos VGBL, do mesmo tipo, têm taxas de administração de 1% e 3% ao ano, respectivamente. Ao longo de 30 anos, essa diferença de 2 pontos percentuais ao ano, composta ano após ano, pode representar uma diferença enorme no patrimônio final acumulado — mesmo que os dois planos invistam em ativos parecidos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two VGBL plans, of the same type, have administration fees of 1% and 3% a year, respectively. Over 30 years, that 2-percentage-point difference per year, compounded year after year, can represent an enormous difference in the final accumulated balance — even if both plans invest in similar assets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos planes VGBL, del mismo tipo, tienen tasas de administración del 1% y el 3% anual, respectivamente. A lo largo de 30 años, esa diferencia de 2 puntos porcentuales al año, compuesta año tras año, puede representar una diferencia enorme en el patrimonio final acumulado — aunque ambos planes inviertan en activos similares."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que a taxa de administração de um plano de previdência é um fator tão relevante ao longo de décadas?",
+                  "options": [
+                    "Porque ela é cobrada apenas uma vez, no início do plano",
+                    "Porque, cobrada todo ano sobre o patrimônio, pequenas diferenças se acumulam de forma significativa ao longo de um horizonte de décadas",
+                    "Porque taxas de administração não têm nenhum impacto no retorno final",
+                    "Porque ela é sempre igual em qualquer instituição"
+                  ],
+                  "explanation": "Como a taxa de administração incide repetidamente, ano após ano, sobre um patrimônio que cresce, mesmo diferenças pequenas na taxa se acumulam de forma significativa em prazos longos."
+                },
+                "en": {
+                  "prompt": "Why is a pension plan's administration fee such a relevant factor over decades?",
+                  "options": [
+                    "Because it's charged only once, at the start of the plan",
+                    "Because, charged every year on the balance, small differences accumulate significantly over a decades-long horizon",
+                    "Because administration fees have no impact on the final return",
+                    "Because it's always the same across any institution"
+                  ],
+                  "explanation": "Since the administration fee applies repeatedly, year after year, on a growing balance, even small differences in the fee accumulate significantly over long time frames."
+                },
+                "es": {
+                  "prompt": "¿Por qué la tasa de administración de un plan de previsión es un factor tan relevante a lo largo de décadas?",
+                  "options": [
+                    "Porque se cobra una sola vez, al inicio del plan",
+                    "Porque, cobrada cada año sobre el patrimonio, pequeñas diferencias se acumulan de forma significativa a lo largo de un horizonte de décadas",
+                    "Porque las tasas de administración no tienen ningún impacto en el retorno final",
+                    "Porque siempre es igual en cualquier institución"
+                  ],
+                  "explanation": "Como la tasa de administración se aplica repetidamente, año tras año, sobre un patrimonio que crece, incluso diferencias pequeñas en la tasa se acumulan de forma significativa en plazos largos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende PGBL x VGBL e os regimes de tributação. Um amigo diz que escolheu um plano só olhando se era PGBL ou VGBL, sem checar mais nada. O que ele pode estar deixando de investigar?",
+                  "options": [
+                    "Nada, PGBL ou VGBL é a única informação relevante",
+                    "A taxa de administração, eventual taxa de carregamento, e em quais ativos o plano efetivamente investe — fatores que também afetam bastante o resultado final",
+                    "O nome da instituição financeira, que é o único fator que realmente importa",
+                    "Se o plano tem uma cor bonita no aplicativo"
+                  ],
+                  "explanation": "A escolha entre PGBL e VGBL, e entre os regimes de tributação, é só parte da decisão — taxas e composição da carteira também têm um impacto relevante no resultado ao longo de décadas."
+                },
+                "en": {
+                  "prompt": "You already understand PGBL vs. VGBL and the tax regimes. A friend says they chose a plan just by looking at whether it was PGBL or VGBL, without checking anything else. What might they be failing to investigate?",
+                  "options": [
+                    "Nothing, PGBL or VGBL is the only relevant information",
+                    "The administration fee, any loading fee, and what assets the plan actually invests in — factors that also significantly affect the final result",
+                    "The financial institution's name, which is the only factor that really matters",
+                    "Whether the plan has a nice color in the app"
+                  ],
+                  "explanation": "The choice between PGBL and VGBL, and between tax regimes, is only part of the decision — fees and portfolio composition also have a significant impact on the result over decades."
+                },
+                "es": {
+                  "prompt": "Ya entiendes PGBL vs. VGBL y los regímenes de tributación. Un amigo dice que eligió un plan solo mirando si era PGBL o VGBL, sin revisar nada más. ¿Qué podría estar dejando de investigar?",
+                  "options": [
+                    "Nada, PGBL o VGBL es la única información relevante",
+                    "La tasa de administración, una eventual tasa de carga, y en qué activos invierte efectivamente el plan — factores que también afectan bastante el resultado final",
+                    "El nombre de la institución financiera, que es el único factor que realmente importa",
+                    "Si el plan tiene un color bonito en la aplicación"
+                  ],
+                  "explanation": "La elección entre PGBL y VGBL, y entre los regímenes de tributación, es solo parte de la decisión — las tasas y la composición de la cartera también tienen un impacto relevante en el resultado a lo largo de décadas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Taxas de administração e carregamento afetam bastante o retorno acumulado em décadas.",
+                    "A composição da carteira do plano varia entre instituições, mesmo dentro da mesma categoria.",
+                    "Você concluiu o módulo de fundamentos da aposentadoria."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Administration and loading fees significantly affect returns accumulated over decades.",
+                    "The plan's portfolio composition varies between institutions, even within the same category.",
+                    "You've completed the retirement fundamentals module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Las tasas de administración y carga afectan bastante el retorno acumulado en décadas.",
+                    "La composición de la cartera del plan varía entre instituciones, incluso dentro de la misma categoría.",
+                    "Completaste el módulo de fundamentos de la jubilación."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "retirement_planning_practice",
+      "order": 2,
+      "iconKey": "beach_access_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "retirement_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Planejamento de Aposentadoria na Prática",
+          "description": "A regra dos 4%, portabilidade, previdência aberta x fechada e planejamento sucessório."
+        },
+        "en": {
+          "title": "Retirement Planning in Practice",
+          "description": "The 4% rule, portability, open vs. closed pension and estate planning."
+        },
+        "es": {
+          "title": "Planificación de la Jubilación en la Práctica",
+          "description": "La regla del 4%, portabilidad, previsión abierta vs. cerrada y planificación sucesoria."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "retirement_4percent_rule",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "A Regra dos 4%"
+            },
+            "en": {
+              "title": "The 4% Rule"
+            },
+            "es": {
+              "title": "La Regla del 4%"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma estimativa de quanto retirar por ano sem esgotar o patrimônio",
+                  "body": "A regra dos 4% é uma estimativa amplamente discutida sobre quanto uma pessoa poderia retirar anualmente de uma carteira de investimentos na aposentadoria, sem esgotar o patrimônio ao longo de várias décadas, considerando uma carteira diversificada entre ações e renda fixa. Segundo essa regra, retirar cerca de 4% do patrimônio total no primeiro ano, e ajustar esse valor pela inflação nos anos seguintes, teria sustentado a maioria dos cenários históricos estudados — mas é uma estimativa, baseada em dados passados, não uma garantia para qualquer cenário futuro."
+                },
+                "en": {
+                  "title": "An estimate of how much to withdraw yearly without depleting your wealth",
+                  "body": "The 4% rule is a widely discussed estimate of how much a person could withdraw annually from an investment portfolio in retirement, without depleting the wealth over several decades, assuming a portfolio diversified between stocks and fixed income. According to this rule, withdrawing about 4% of the total wealth in the first year, and adjusting that amount for inflation in subsequent years, would have sustained most of the historical scenarios studied — but it's an estimate, based on past data, not a guarantee for any future scenario."
+                },
+                "es": {
+                  "title": "Una estimación de cuánto retirar al año sin agotar el patrimonio",
+                  "body": "La regla del 4% es una estimación ampliamente discutida sobre cuánto podría retirar anualmente una persona de una cartera de inversiones en la jubilación, sin agotar el patrimonio a lo largo de varias décadas, considerando una cartera diversificada entre acciones y renta fija. Según esta regla, retirar cerca del 4% del patrimonio total en el primer año, y ajustar ese monto por la inflación en los años siguientes, habría sostenido la mayoría de los escenarios históricos estudiados — pero es una estimación, basada en datos pasados, no una garantía para ningún escenario futuro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa se aposenta com R$2 milhões investidos. Pela regra dos 4%, ela retiraria cerca de R$80.000 no primeiro ano de aposentadoria, ajustando esse valor pela inflação nos anos seguintes. A regra sugere um ponto de partida razoável para o planejamento, mas fatores como a composição real da carteira, eventos de mercado específicos e a longevidade da pessoa podem exigir ajustes ao longo do tempo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone retires with R$2 million invested. Under the 4% rule, they would withdraw about R$80,000 in the first year of retirement, adjusting that amount for inflation in subsequent years. The rule suggests a reasonable starting point for planning, but factors like the portfolio's actual composition, specific market events, and the person's longevity might require adjustments over time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona se jubila con R$2 millones invertidos. Según la regla del 4%, retiraría cerca de R$80.000 en el primer año de jubilación, ajustando ese monto por la inflación en los años siguientes. La regla sugiere un punto de partida razonable para la planificación, pero factores como la composición real de la cartera, eventos de mercado específicos y la longevidad de la persona pueden exigir ajustes con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a regra dos 4% estima?",
+                  "options": [
+                    "A taxa de juros que o Banco Central deveria praticar",
+                    "Uma taxa aproximada de retirada anual de uma carteira de aposentadoria que, historicamente, tenderia a sustentar o patrimônio por décadas",
+                    "O valor máximo que se pode investir por mês",
+                    "A alíquota de imposto sobre planos de previdência"
+                  ],
+                  "explanation": "A regra dos 4% é uma estimativa sobre quanto retirar anualmente de uma carteira diversificada na aposentadoria, com base em cenários históricos estudados, sem esgotar o patrimônio ao longo de várias décadas."
+                },
+                "en": {
+                  "prompt": "What does the 4% rule estimate?",
+                  "options": [
+                    "The interest rate the Central Bank should practice",
+                    "An approximate annual withdrawal rate from a retirement portfolio that, historically, would tend to sustain the wealth for decades",
+                    "The maximum amount that can be invested per month",
+                    "The tax rate on pension plans"
+                  ],
+                  "explanation": "The 4% rule is an estimate of how much to withdraw annually from a diversified portfolio in retirement, based on historical scenarios studied, without depleting the wealth over several decades."
+                },
+                "es": {
+                  "prompt": "¿Qué estima la regla del 4%?",
+                  "options": [
+                    "La tasa de interés que debería practicar el Banco Central",
+                    "Una tasa aproximada de retiro anual de una cartera de jubilación que, históricamente, tendería a sostener el patrimonio por décadas",
+                    "El monto máximo que se puede invertir por mes",
+                    "La alícuota de impuesto sobre planes de previsión"
+                  ],
+                  "explanation": "La regla del 4% es una estimación sobre cuánto retirar anualmente de una cartera diversificada en la jubilación, con base en escenarios históricos estudiados, sin agotar el patrimonio a lo largo de varias décadas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que indicadores baseados em dados históricos, como CAGR, não garantem resultados futuros. Como esse mesmo cuidado se aplica à regra dos 4%?",
+                  "options": [
+                    "Não se aplica, a regra dos 4% é uma garantia matemática absoluta para qualquer cenário futuro",
+                    "Assim como outros indicadores baseados em dados passados, a regra dos 4% é uma estimativa útil como ponto de partida, mas não uma garantia — cenários futuros podem ser diferentes dos históricos estudados",
+                    "A regra dos 4% nunca deveria ser considerada em nenhum planejamento",
+                    "Ela só se aplica a pessoas que se aposentam antes dos 40 anos"
+                  ],
+                  "explanation": "Assim como o CAGR resume uma tendência histórica sem garantir o futuro, a regra dos 4% é uma estimativa baseada em cenários passados — útil como referência inicial, mas sujeita a ajustes conforme a realidade específica de cada pessoa e período."
+                },
+                "en": {
+                  "prompt": "You already understand that indicators based on historical data, like CAGR, don't guarantee future results. How does that same caution apply to the 4% rule?",
+                  "options": [
+                    "It doesn't apply, the 4% rule is an absolute mathematical guarantee for any future scenario",
+                    "Just like other indicators based on past data, the 4% rule is a useful estimate as a starting point, but not a guarantee — future scenarios can differ from the historical ones studied",
+                    "The 4% rule should never be considered in any planning",
+                    "It only applies to people who retire before age 40"
+                  ],
+                  "explanation": "Just as CAGR summarizes a historical trend without guaranteeing the future, the 4% rule is an estimate based on past scenarios — useful as an initial reference, but subject to adjustments based on each person's specific reality and time period."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que los indicadores basados en datos históricos, como el CAGR, no garantizan resultados futuros. ¿Cómo se aplica ese mismo cuidado a la regla del 4%?",
+                  "options": [
+                    "No se aplica, la regla del 4% es una garantía matemática absoluta para cualquier escenario futuro",
+                    "Al igual que otros indicadores basados en datos pasados, la regla del 4% es una estimación útil como punto de partida, pero no una garantía — los escenarios futuros pueden ser diferentes de los históricos estudiados",
+                    "La regla del 4% nunca debería considerarse en ninguna planificación",
+                    "Solo se aplica a personas que se jubilan antes de los 40 años"
+                  ],
+                  "explanation": "Tal como el CAGR resume una tendencia histórica sin garantizar el futuro, la regla del 4% es una estimación basada en escenarios pasados — útil como referencia inicial, pero sujeta a ajustes según la realidad específica de cada persona y período."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A regra dos 4% estima uma taxa de retirada anual sustentável na aposentadoria, com base em dados históricos.",
+                    "Ela sugere retirar cerca de 4% do patrimônio no primeiro ano, ajustando pela inflação depois.",
+                    "É uma estimativa útil como ponto de partida, não uma garantia para qualquer cenário futuro."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The 4% rule estimates a sustainable annual withdrawal rate in retirement, based on historical data.",
+                    "It suggests withdrawing about 4% of the wealth in the first year, adjusting for inflation afterward.",
+                    "It's a useful estimate as a starting point, not a guarantee for any future scenario."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La regla del 4% estima una tasa de retiro anual sostenible en la jubilación, con base en datos históricos.",
+                    "Sugiere retirar cerca del 4% del patrimonio en el primer año, ajustando por la inflación después.",
+                    "Es una estimación útil como punto de partida, no una garantía para ningún escenario futuro."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_portability",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Portabilidade de Previdência"
+            },
+            "en": {
+              "title": "Pension Portability"
+            },
+            "es": {
+              "title": "Portabilidad de Previsión"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Trocando de plano sem perder o que já foi construído",
+                  "body": "Portabilidade é o direito de transferir o saldo acumulado em um plano de previdência privada para outro plano — na mesma instituição ou em outra — sem a incidência de imposto de renda nesse momento da transferência, desde que a portabilidade siga as regras vigentes (como manter o mesmo tipo de plano, PGBL para PGBL ou VGBL para VGBL). Isso permite trocar de uma instituição com taxas mais altas ou desempenho insatisfatório para outra mais vantajosa, sem perder o tempo de contribuição já acumulado nem antecipar a tributação."
+                },
+                "en": {
+                  "title": "Switching plans without losing what was already built",
+                  "body": "Portability is the right to transfer the balance accumulated in a private pension plan to another plan — at the same institution or a different one — without income tax applying at the moment of transfer, as long as the portability follows current rules (like keeping the same plan type, PGBL to PGBL or VGBL to VGBL). This allows switching from an institution with higher fees or unsatisfactory performance to a more advantageous one, without losing the contribution time already accumulated or triggering taxation early."
+                },
+                "es": {
+                  "title": "Cambiando de plan sin perder lo ya construido",
+                  "body": "La portabilidad es el derecho de transferir el saldo acumulado en un plan de previsión privada a otro plan — en la misma institución o en otra — sin que se aplique el impuesto sobre la renta en ese momento de la transferencia, siempre que la portabilidad siga las reglas vigentes (como mantener el mismo tipo de plan, PGBL a PGBL o VGBL a VGBL). Esto permite cambiar de una institución con tasas más altas o desempeño insatisfactorio a otra más ventajosa, sin perder el tiempo de contribución ya acumulado ni anticipar la tributación."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa percebe, depois de alguns anos, que a taxa de administração do seu plano VGBL é bem mais alta do que a de outras opções no mercado, e que o desempenho da carteira do plano tem sido fraco. Em vez de resgatar o valor — o que geraria tributação imediata — ela solicita a portabilidade do saldo para um plano VGBL de outra instituição, mantendo o regime de tributação já escolhido e sem antecipar nenhum imposto."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone realizes, after a few years, that their VGBL plan's administration fee is much higher than other options on the market, and that the plan's portfolio performance has been weak. Instead of withdrawing the amount — which would trigger immediate taxation — they request portability of the balance to a VGBL plan at another institution, keeping the already chosen tax regime and without triggering any tax early."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona se da cuenta, después de algunos años, de que la tasa de administración de su plan VGBL es bastante más alta que la de otras opciones del mercado, y que el desempeño de la cartera del plan ha sido débil. En lugar de rescatar el monto — lo que generaría tributación inmediata — solicita la portabilidad del saldo a un plan VGBL de otra institución, manteniendo el régimen de tributación ya elegido y sin anticipar ningún impuesto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é portabilidade de previdência?",
+                  "options": [
+                    "O direito de resgatar o plano a qualquer momento sem nenhuma regra",
+                    "O direito de transferir o saldo acumulado para outro plano, sem incidência de imposto de renda nesse momento, seguindo as regras vigentes",
+                    "Um tipo de seguro contra a falência da instituição financeira",
+                    "A obrigação de contribuir para vários planos ao mesmo tempo"
+                  ],
+                  "explanation": "Portabilidade permite mudar de plano de previdência, mantendo o saldo acumulado e evitando a tributação imediata que ocorreria em um resgate, desde que sigam as regras vigentes de mesma categoria de plano."
+                },
+                "en": {
+                  "prompt": "What is pension portability?",
+                  "options": [
+                    "The right to withdraw the plan at any time with no rules at all",
+                    "The right to transfer the accumulated balance to another plan, with no income tax applying at that moment, following current rules",
+                    "A type of insurance against the financial institution's bankruptcy",
+                    "The obligation to contribute to several plans at the same time"
+                  ],
+                  "explanation": "Portability allows switching pension plans, keeping the accumulated balance and avoiding the immediate taxation that would occur upon withdrawal, as long as current rules for the same plan category are followed."
+                },
+                "es": {
+                  "prompt": "¿Qué es la portabilidad de previsión?",
+                  "options": [
+                    "El derecho de rescatar el plan en cualquier momento sin ninguna regla",
+                    "El derecho de transferir el saldo acumulado a otro plan, sin que se aplique el impuesto sobre la renta en ese momento, siguiendo las reglas vigentes",
+                    "Un tipo de seguro contra la quiebra de la institución financiera",
+                    "La obligación de contribuir a varios planes al mismo tiempo"
+                  ],
+                  "explanation": "La portabilidad permite cambiar de plan de previsión, manteniendo el saldo acumulado y evitando la tributación inmediata que ocurriría en un rescate, siempre que se sigan las reglas vigentes de la misma categoría de plan."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende taxa de administração de outra lição, e o quanto pequenas diferenças nessa taxa impactam o resultado ao longo de décadas. Como a portabilidade se conecta com essa preocupação?",
+                  "options": [
+                    "Não se conecta, taxa de administração e portabilidade são assuntos completamente separados",
+                    "A portabilidade permite corrigir uma escolha inicial de plano com taxa alta, migrando para uma opção mais barata sem perder o saldo acumulado nem antecipar imposto, o que ajuda a preservar o resultado no longo prazo",
+                    "Portabilidade sempre aumenta a taxa de administração do novo plano",
+                    "Uma vez escolhido, o plano de previdência nunca pode ser trocado por nenhum motivo"
+                  ],
+                  "explanation": "A portabilidade oferece uma forma de corrigir o impacto de uma taxa de administração alta ao longo do tempo, permitindo migrar para uma opção mais vantajosa sem os custos de um resgate antecipado."
+                },
+                "en": {
+                  "prompt": "You already understand administration fees from another lesson, and how much small differences in that fee impact the result over decades. How does portability connect with that concern?",
+                  "options": [
+                    "It doesn't connect, administration fees and portability are completely separate topics",
+                    "Portability allows correcting an initial plan choice with a high fee, migrating to a cheaper option without losing the accumulated balance or triggering tax early, which helps preserve the long-term result",
+                    "Portability always increases the new plan's administration fee",
+                    "Once chosen, a pension plan can never be switched for any reason"
+                  ],
+                  "explanation": "Portability offers a way to correct the impact of a high administration fee over time, allowing a migration to a more advantageous option without the costs of an early withdrawal."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la tasa de administración de otra lección, y cuánto impactan pequeñas diferencias en esa tasa el resultado a lo largo de décadas. ¿Cómo se conecta la portabilidad con esa preocupación?",
+                  "options": [
+                    "No se conecta, la tasa de administración y la portabilidad son temas completamente separados",
+                    "La portabilidad permite corregir una elección inicial de plan con tasa alta, migrando a una opción más barata sin perder el saldo acumulado ni anticipar impuesto, lo que ayuda a preservar el resultado a largo plazo",
+                    "La portabilidad siempre aumenta la tasa de administración del nuevo plan",
+                    "Una vez elegido, el plan de previsión nunca puede cambiarse por ningún motivo"
+                  ],
+                  "explanation": "La portabilidad ofrece una forma de corregir el impacto de una tasa de administración alta con el tiempo, permitiendo migrar a una opción más ventajosa sin los costos de un rescate anticipado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Portabilidade permite transferir o saldo de previdência para outro plano sem tributação imediata.",
+                    "Ela precisa seguir regras vigentes, como manter a mesma categoria de plano.",
+                    "É uma forma de corrigir escolhas iniciais, como um plano com taxa de administração alta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Portability allows transferring the pension balance to another plan without immediate taxation.",
+                    "It needs to follow current rules, like keeping the same plan category.",
+                    "It's a way to correct initial choices, like a plan with a high administration fee."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La portabilidad permite transferir el saldo de previsión a otro plan sin tributación inmediata.",
+                    "Debe seguir reglas vigentes, como mantener la misma categoría de plan.",
+                    "Es una forma de corregir elecciones iniciales, como un plan con tasa de administración alta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_open_vs_closed",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Previdência Aberta x Fechada"
+            },
+            "en": {
+              "title": "Open vs. Closed Pension Plans"
+            },
+            "es": {
+              "title": "Previsión Abierta vs. Cerrada"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quem pode contratar cada tipo de plano",
+                  "body": "Previdência aberta é o tipo de plano — como PGBL e VGBL — que qualquer pessoa pode contratar diretamente com um banco ou seguradora, sem depender de vínculo empregatício. Previdência fechada, por outro lado, é organizada por fundos de pensão vinculados a uma empresa ou categoria profissional específica, geralmente com a empresa contribuindo junto com o funcionário, e só está disponível para quem tem esse vínculo. Fundos de pensão fechados costumam ter taxas de administração mais baixas do que planos abertos equivalentes, em parte porque não têm despesas de distribuição comercial para o público em geral."
+                },
+                "en": {
+                  "title": "Who can contract each type of plan",
+                  "body": "Open pension is the type of plan — like PGBL and VGBL — that anyone can contract directly with a bank or insurance company, without depending on an employment relationship. Closed pension, on the other hand, is organized by pension funds tied to a specific company or professional category, usually with the company contributing alongside the employee, and is only available to those with that affiliation. Closed pension funds tend to have lower administration fees than equivalent open plans, partly because they don't have commercial distribution expenses for the general public."
+                },
+                "es": {
+                  "title": "Quién puede contratar cada tipo de plan",
+                  "body": "La previsión abierta es el tipo de plan — como el PGBL y el VGBL — que cualquier persona puede contratar directamente con un banco o aseguradora, sin depender de una relación laboral. La previsión cerrada, en cambio, está organizada por fondos de pensión vinculados a una empresa o categoría profesional específica, generalmente con la empresa contribuyendo junto con el empleado, y solo está disponible para quien tiene ese vínculo. Los fondos de pensión cerrados suelen tener tasas de administración más bajas que los planes abiertos equivalentes, en parte porque no tienen gastos de distribución comercial para el público en general."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um funcionário de uma grande empresa tem acesso a um fundo de pensão fechado oferecido como benefício, no qual a empresa contribui com um valor equivalente ao que o funcionário aporta. Um autônomo, sem vínculo empregatício com nenhuma empresa que ofereça esse benefício, só tem acesso à previdência aberta, contratada diretamente com um banco ou seguradora, sem a contrapartida de contribuição de um empregador."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An employee at a large company has access to a closed pension fund offered as a benefit, where the company contributes an amount matching what the employee puts in. A self-employed person, with no employment relationship with any company offering that benefit, only has access to open pension, contracted directly with a bank or insurance company, without an employer's matching contribution."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un empleado de una gran empresa tiene acceso a un fondo de pensión cerrado ofrecido como beneficio, en el que la empresa contribuye con un monto equivalente al que aporta el empleado. Un trabajador autónomo, sin relación laboral con ninguna empresa que ofrezca ese beneficio, solo tiene acceso a la previsión abierta, contratada directamente con un banco o aseguradora, sin la contrapartida de contribución de un empleador."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal diferença entre previdência aberta e fechada?",
+                  "options": [
+                    "Não existe diferença, os dois tipos são idênticos",
+                    "Previdência aberta pode ser contratada por qualquer pessoa; previdência fechada depende de vínculo com uma empresa ou categoria profissional específica",
+                    "Previdência fechada sempre tem taxas mais altas do que a aberta",
+                    "Previdência aberta só existe para funcionários de bancos"
+                  ],
+                  "explanation": "Previdência aberta está disponível para qualquer pessoa, contratada diretamente; previdência fechada depende de um vínculo específico, geralmente empregatício, com contribuição frequentemente compartilhada pela empresa."
+                },
+                "en": {
+                  "prompt": "What is the main difference between open and closed pension?",
+                  "options": [
+                    "There's no difference, both types are identical",
+                    "Open pension can be contracted by anyone; closed pension depends on affiliation with a specific company or professional category",
+                    "Closed pension always has higher fees than open pension",
+                    "Open pension only exists for bank employees"
+                  ],
+                  "explanation": "Open pension is available to anyone, contracted directly; closed pension depends on a specific affiliation, usually employment-based, with contribution frequently shared by the company."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre previsión abierta y cerrada?",
+                  "options": [
+                    "No existe diferencia, ambos tipos son idénticos",
+                    "La previsión abierta puede contratarla cualquier persona; la previsión cerrada depende de un vínculo con una empresa o categoría profesional específica",
+                    "La previsión cerrada siempre tiene tasas más altas que la abierta",
+                    "La previsión abierta solo existe para empleados de bancos"
+                  ],
+                  "explanation": "La previsión abierta está disponible para cualquier persona, contratada directamente; la previsión cerrada depende de un vínculo específico, generalmente laboral, con contribución frecuentemente compartida por la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você começou a trabalhar em uma empresa que oferece fundo de pensão fechado, com contrapartida de contribuição da empresa. O que vale a pena considerar sobre essa opção, comparada a contratar um plano aberto por conta própria?",
+                  "options": [
+                    "Nada, os dois tipos de plano são sempre equivalentes em custo e benefício",
+                    "A contrapartida da empresa representa um retorno adicional imediato sobre a contribuição, algo que planos abertos contratados individualmente não costumam oferecer",
+                    "Fundos de pensão fechados nunca fazem sentido para ninguém",
+                    "Previdência aberta sempre é mais vantajosa do que qualquer fundo fechado"
+                  ],
+                  "explanation": "Quando a empresa contribui junto com o funcionário em um fundo fechado, essa contrapartida representa um ganho imediato que planos abertos contratados individualmente, sem esse benefício, normalmente não oferecem."
+                },
+                "en": {
+                  "prompt": "You started working at a company that offers a closed pension fund, with matching company contributions. What's worth considering about this option, compared to contracting an open plan on your own?",
+                  "options": [
+                    "Nothing, both plan types are always equivalent in cost and benefit",
+                    "The company's matching contribution represents an immediate additional return on the contribution, something open plans contracted individually don't usually offer",
+                    "Closed pension funds never make sense for anyone",
+                    "Open pension is always more advantageous than any closed fund"
+                  ],
+                  "explanation": "When the company contributes alongside the employee in a closed fund, that match represents an immediate gain that individually contracted open plans, without that benefit, normally don't offer."
+                },
+                "es": {
+                  "prompt": "Empezaste a trabajar en una empresa que ofrece un fondo de pensión cerrado, con contrapartida de contribución de la empresa. ¿Qué vale la pena considerar sobre esta opción, comparada con contratar un plan abierto por tu cuenta?",
+                  "options": [
+                    "Nada, ambos tipos de plan siempre son equivalentes en costo y beneficio",
+                    "La contrapartida de la empresa representa un retorno adicional inmediato sobre la contribución, algo que los planes abiertos contratados individualmente no suelen ofrecer",
+                    "Los fondos de pensión cerrados nunca tienen sentido para nadie",
+                    "La previsión abierta siempre es más ventajosa que cualquier fondo cerrado"
+                  ],
+                  "explanation": "Cuando la empresa contribuye junto con el empleado en un fondo cerrado, esa contrapartida representa una ganancia inmediata que los planes abiertos contratados individualmente, sin ese beneficio, normalmente no ofrecen."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Previdência aberta pode ser contratada por qualquer pessoa; previdência fechada depende de vínculo específico.",
+                    "Fundos fechados costumam ter taxas menores e contrapartida de contribuição da empresa.",
+                    "A contrapartida da empresa representa um ganho imediato importante, quando disponível."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Open pension can be contracted by anyone; closed pension depends on a specific affiliation.",
+                    "Closed funds tend to have lower fees and a matching company contribution.",
+                    "The company's matching contribution represents an important immediate gain, when available."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La previsión abierta puede contratarla cualquier persona; la previsión cerrada depende de un vínculo específico.",
+                    "Los fondos cerrados suelen tener tasas menores y contrapartida de contribución de la empresa.",
+                    "La contrapartida de la empresa representa una ganancia inmediata importante, cuando está disponible."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_estate_planning",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Previdência e Planejamento Sucessório"
+            },
+            "en": {
+              "title": "Pension and Estate Planning"
+            },
+            "es": {
+              "title": "Previsión y Planificación Sucesoria"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um caminho diferente para transmitir patrimônio",
+                  "body": "Diferente da maioria dos bens, que passam por processo de inventário para serem transmitidos a herdeiros após o falecimento, o saldo de planos de previdência privada como PGBL e VGBL costuma ser pago diretamente aos beneficiários indicados pelo titular, sem precisar aguardar a conclusão do inventário — um processo que pode levar meses ou anos. Por isso, além de sua função como investimento para a aposentadoria, a previdência privada também é usada, com frequência, como parte de um planejamento sucessório, oferecendo acesso mais rápido a parte do patrimônio para os beneficiários."
+                },
+                "en": {
+                  "title": "A different path for passing on wealth",
+                  "body": "Unlike most assets, which go through probate to be passed on to heirs after death, the balance of private pension plans like PGBL and VGBL is usually paid directly to the beneficiaries designated by the account holder, without needing to wait for probate to conclude — a process that can take months or years. Because of this, besides its function as a retirement investment, private pension is also frequently used as part of estate planning, offering faster access to part of the wealth for beneficiaries."
+                },
+                "es": {
+                  "title": "Un camino diferente para transmitir patrimonio",
+                  "body": "A diferencia de la mayoría de los bienes, que pasan por un proceso de inventario para transmitirse a los herederos después del fallecimiento, el saldo de planes de previsión privada como el PGBL y el VGBL suele pagarse directamente a los beneficiarios indicados por el titular, sin necesidad de esperar la conclusión del inventario — un proceso que puede tardar meses o años. Por eso, además de su función como inversión para la jubilación, la previsión privada también se usa, con frecuencia, como parte de una planificación sucesoria, ofreciendo acceso más rápido a parte del patrimonio para los beneficiarios."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa falece deixando um imóvel e um plano VGBL, ambos com valores parecidos. O imóvel só pode ser transferido aos herdeiros depois de concluído o inventário, um processo que leva mais de um ano nesse caso específico. O saldo do VGBL, por outro lado, é pago aos beneficiários indicados em poucas semanas, oferecendo acesso mais rápido a recursos financeiros logo após o falecimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone dies leaving a property and a VGBL plan, both worth similar amounts. The property can only be transferred to the heirs after probate concludes, a process that takes more than a year in this specific case. The VGBL balance, on the other hand, is paid to the designated beneficiaries within a few weeks, offering faster access to financial resources right after death."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona fallece dejando un inmueble y un plan VGBL, ambos con montos parecidos. El inmueble solo puede transferirse a los herederos después de concluido el inventario, un proceso que tarda más de un año en este caso específico. El saldo del VGBL, en cambio, se paga a los beneficiarios indicados en pocas semanas, ofreciendo acceso más rápido a recursos financieros justo después del fallecimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que a previdência privada é frequentemente usada como parte de um planejamento sucessório?",
+                  "options": [
+                    "Porque ela nunca pode ser deixada para beneficiários",
+                    "Porque seu saldo costuma ser pago diretamente aos beneficiários indicados, sem precisar aguardar a conclusão do inventário",
+                    "Porque ela é obrigatoriamente incluída no inventário, como qualquer outro bem",
+                    "Porque previdência privada não pode ter beneficiários indicados"
+                  ],
+                  "explanation": "O pagamento direto aos beneficiários indicados, sem depender do processo de inventário, é a principal razão pela qual a previdência privada costuma ser considerada em planejamentos sucessórios."
+                },
+                "en": {
+                  "prompt": "Why is private pension often used as part of estate planning?",
+                  "options": [
+                    "Because it can never be left to beneficiaries",
+                    "Because its balance is usually paid directly to the designated beneficiaries, without needing to wait for probate to conclude",
+                    "Because it's mandatorily included in probate, like any other asset",
+                    "Because private pension can't have designated beneficiaries"
+                  ],
+                  "explanation": "Direct payment to designated beneficiaries, without depending on the probate process, is the main reason private pension is often considered in estate planning."
+                },
+                "es": {
+                  "prompt": "¿Por qué la previsión privada se usa frecuentemente como parte de una planificación sucesoria?",
+                  "options": [
+                    "Porque nunca puede dejarse a beneficiarios",
+                    "Porque su saldo suele pagarse directamente a los beneficiarios indicados, sin necesidad de esperar la conclusión del inventario",
+                    "Porque se incluye obligatoriamente en el inventario, como cualquier otro bien",
+                    "Porque la previsión privada no puede tener beneficiarios indicados"
+                  ],
+                  "explanation": "El pago directo a los beneficiarios indicados, sin depender del proceso de inventario, es la principal razón por la que la previsión privada suele considerarse en planificaciones sucesorias."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende que planos de previdência têm beneficiários indicados diretamente pelo titular. Por que isso pode ser relevante para uma família que quer garantir acesso rápido a recursos financeiros em caso de falecimento inesperado?",
+                  "options": [
+                    "Não é relevante, todo tipo de bem é transferido com a mesma velocidade após um falecimento",
+                    "Porque, diferente de bens que dependem do inventário, o saldo da previdência privada tende a chegar aos beneficiários rapidamente, oferecendo liquidez em um momento em que outros recursos podem estar temporariamente indisponíveis",
+                    "Planos de previdência nunca podem ser usados para esse fim",
+                    "Apenas herdeiros legais podem ser beneficiários de um plano de previdência"
+                  ],
+                  "explanation": "Em um momento em que o acesso a outros bens pode estar temporariamente travado pelo processo de inventário, o pagamento mais rápido do saldo de previdência aos beneficiários indicados pode ser uma fonte importante de liquidez para a família."
+                },
+                "en": {
+                  "prompt": "You already understand that pension plans have beneficiaries designated directly by the account holder. Why might this be relevant for a family that wants to ensure quick access to financial resources in case of an unexpected death?",
+                  "options": [
+                    "It's not relevant, every type of asset transfers at the same speed after a death",
+                    "Because, unlike assets that depend on probate, the private pension balance tends to reach beneficiaries quickly, offering liquidity at a moment when other resources might be temporarily unavailable",
+                    "Pension plans can never be used for this purpose",
+                    "Only legal heirs can be beneficiaries of a pension plan"
+                  ],
+                  "explanation": "At a moment when access to other assets might be temporarily locked by the probate process, the faster payment of the pension balance to designated beneficiaries can be an important source of liquidity for the family."
+                },
+                "es": {
+                  "prompt": "Ya entiendes que los planes de previsión tienen beneficiarios indicados directamente por el titular. ¿Por qué podría ser esto relevante para una familia que quiere garantizar acceso rápido a recursos financieros en caso de fallecimiento inesperado?",
+                  "options": [
+                    "No es relevante, todo tipo de bien se transfiere con la misma velocidad después de un fallecimiento",
+                    "Porque, a diferencia de los bienes que dependen del inventario, el saldo de la previsión privada tiende a llegar rápidamente a los beneficiarios, ofreciendo liquidez en un momento en que otros recursos pueden estar temporalmente indisponibles",
+                    "Los planes de previsión nunca pueden usarse para ese fin",
+                    "Solo los herederos legales pueden ser beneficiarios de un plan de previsión"
+                  ],
+                  "explanation": "En un momento en que el acceso a otros bienes puede estar temporalmente bloqueado por el proceso de inventario, el pago más rápido del saldo de previsión a los beneficiarios indicados puede ser una fuente importante de liquidez para la familia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O saldo de planos de previdência costuma ser pago diretamente aos beneficiários, sem depender do inventário.",
+                    "Isso torna a previdência privada uma ferramenta comum em planejamento sucessório.",
+                    "Para a família, isso pode representar uma fonte de liquidez rápida logo após o falecimento."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Pension plan balances are usually paid directly to beneficiaries, without depending on probate.",
+                    "This makes private pension a common tool in estate planning.",
+                    "For the family, this can represent a source of fast liquidity right after the death."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El saldo de los planes de previsión suele pagarse directamente a los beneficiarios, sin depender del inventario.",
+                    "Esto convierte a la previsión privada en una herramienta común en la planificación sucesoria.",
+                    "Para la familia, esto puede representar una fuente de liquidez rápida justo después del fallecimiento."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_target_number",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Quanto Você Precisa Acumular"
+            },
+            "en": {
+              "title": "How Much You Need to Save"
+            },
+            "es": {
+              "title": "Cuánto Necesitas Acumular"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Do sonho ao número",
+                  "body": "Depois de estimar uma taxa de retirada, uma pergunta natural é: quanto preciso ter acumulado para gerar a renda anual que desejo na aposentadoria? Uma forma comum de estimar esse número é dividir a renda anual desejada pela taxa de retirada considerada — por exemplo, usando a regra dos 4%, o patrimônio-alvo seria a renda anual desejada dividida por 0,04, ou multiplicada por 25. Esse cálculo é apenas uma estimativa inicial, não uma meta exata, e deve ser revisado ao longo do tempo conforme a realidade da pessoa muda."
+                },
+                "en": {
+                  "title": "From the dream to the number",
+                  "body": "After estimating a withdrawal rate, a natural question is: how much do I need to have accumulated to generate the annual income I want in retirement? A common way to estimate that number is dividing the desired annual income by the withdrawal rate being considered — for example, using the 4% rule, the target nest egg would be the desired annual income divided by 0.04, or multiplied by 25. This calculation is just an initial estimate, not an exact target, and should be reviewed over time as the person's reality changes."
+                },
+                "es": {
+                  "title": "Del sueño al número",
+                  "body": "Después de estimar una tasa de retiro, una pregunta natural es: ¿cuánto necesito haber acumulado para generar el ingreso anual que deseo en la jubilación? Una forma común de estimar ese número es dividir el ingreso anual deseado por la tasa de retiro considerada — por ejemplo, usando la regla del 4%, el patrimonio objetivo sería el ingreso anual deseado dividido entre 0,04, o multiplicado por 25. Este cálculo es solo una estimación inicial, no una meta exacta, y debe revisarse con el tiempo a medida que cambia la realidad de la persona."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa deseja uma renda de R$60.000 por ano na aposentadoria, além do que recebe do INSS. Usando a regra dos 4% de forma inversa (R$60.000 dividido por 0,04, ou multiplicado por 25), o patrimônio-alvo estimado seria de R$1.500.000. Esse valor serve como referência inicial para o planejamento, ajudando a dimensionar quanto poupar e por quanto tempo, mas pode precisar de ajustes conforme a composição real da carteira e o desempenho ao longo dos anos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone wants an annual income of R$60,000 in retirement, on top of what they receive from public pension. Using the 4% rule in reverse (R$60,000 divided by 0.04, or multiplied by 25), the estimated target nest egg would be R$1,500,000. This figure serves as an initial reference for planning, helping size how much to save and for how long, but might need adjustments based on the portfolio's actual composition and performance over the years."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona desea un ingreso de R$60.000 al año en la jubilación, además de lo que recibe del sistema público. Usando la regla del 4% de forma inversa (R$60.000 dividido entre 0,04, o multiplicado por 25), el patrimonio objetivo estimado sería de R$1.500.000. Este valor sirve como referencia inicial para la planificación, ayudando a dimensionar cuánto ahorrar y por cuánto tiempo, pero puede necesitar ajustes según la composición real de la cartera y el desempeño a lo largo de los años."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como estimar o patrimônio-alvo necessário para gerar uma renda anual desejada na aposentadoria, usando a regra dos 4%?",
+                  "options": [
+                    "Multiplicando a renda anual desejada por 4",
+                    "Dividindo a renda anual desejada por 0,04 (ou multiplicando por 25)",
+                    "Somando a renda anual desejada ao valor recebido do INSS",
+                    "O cálculo é sempre igual, independentemente da renda desejada"
+                  ],
+                  "explanation": "Usando a regra dos 4% de forma inversa, o patrimônio-alvo estimado é a renda anual desejada dividida por 0,04, o que equivale a multiplicá-la por 25."
+                },
+                "en": {
+                  "prompt": "How can you estimate the target nest egg needed to generate a desired annual income in retirement, using the 4% rule?",
+                  "options": [
+                    "By multiplying the desired annual income by 4",
+                    "By dividing the desired annual income by 0.04 (or multiplying it by 25)",
+                    "By adding the desired annual income to the amount received from public pension",
+                    "The calculation is always the same, regardless of the desired income"
+                  ],
+                  "explanation": "Using the 4% rule in reverse, the estimated target nest egg is the desired annual income divided by 0.04, which is the same as multiplying it by 25."
+                },
+                "es": {
+                  "prompt": "¿Cómo estimar el patrimonio objetivo necesario para generar un ingreso anual deseado en la jubilación, usando la regla del 4%?",
+                  "options": [
+                    "Multiplicando el ingreso anual deseado por 4",
+                    "Dividiendo el ingreso anual deseado entre 0,04 (o multiplicándolo por 25)",
+                    "Sumando el ingreso anual deseado al monto recibido del sistema público",
+                    "El cálculo siempre es igual, sin importar el ingreso deseado"
+                  ],
+                  "explanation": "Usando la regla del 4% de forma inversa, el patrimonio objetivo estimado es el ingreso anual deseado dividido entre 0,04, lo que equivale a multiplicarlo por 25."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de outra lição, que começar a investir mais cedo exige aportes mensais menores para chegar a um mesmo resultado final, graças aos juros compostos. Como isso se conecta com o cálculo do patrimônio-alvo que você acabou de aprender?",
+                  "options": [
+                    "Não se conecta, o patrimônio-alvo não tem relação nenhuma com o tempo disponível até a aposentadoria",
+                    "Depois de estimar o patrimônio-alvo, quanto mais cedo a pessoa começa a poupar para alcançá-lo, menor tende a ser o aporte mensal necessário, já que os juros compostos têm mais tempo para atuar",
+                    "O patrimônio-alvo estimado é sempre o mesmo, independentemente de quando a pessoa começa a poupar",
+                    "Juros compostos só afetam o cálculo do patrimônio-alvo, nunca o valor do aporte mensal necessário"
+                  ],
+                  "explanation": "O patrimônio-alvo estimado é o destino; começar cedo, como visto em outra lição, reduz o aporte mensal necessário para alcançá-lo, já que os juros compostos têm mais tempo para trabalhar a favor da pessoa."
+                },
+                "en": {
+                  "prompt": "You already understand, from another lesson, that starting to invest earlier requires smaller monthly contributions to reach the same final result, thanks to compound interest. How does that connect with the target nest egg calculation you just learned?",
+                  "options": [
+                    "It doesn't connect, the target nest egg has no relation at all to the time available until retirement",
+                    "After estimating the target nest egg, the earlier a person starts saving to reach it, the smaller the required monthly contribution tends to be, since compound interest has more time to act",
+                    "The estimated target nest egg is always the same, regardless of when the person starts saving",
+                    "Compound interest only affects the target nest egg calculation, never the required monthly contribution"
+                  ],
+                  "explanation": "The estimated target nest egg is the destination; starting early, as seen in another lesson, reduces the monthly contribution needed to reach it, since compound interest has more time to work in the person's favor."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de otra lección, que empezar a invertir antes exige aportes mensuales menores para llegar a un mismo resultado final, gracias al interés compuesto. ¿Cómo se conecta esto con el cálculo del patrimonio objetivo que acabas de aprender?",
+                  "options": [
+                    "No se conecta, el patrimonio objetivo no tiene ninguna relación con el tiempo disponible hasta la jubilación",
+                    "Después de estimar el patrimonio objetivo, cuanto antes la persona empiece a ahorrar para alcanzarlo, menor tiende a ser el aporte mensual necesario, ya que el interés compuesto tiene más tiempo para actuar",
+                    "El patrimonio objetivo estimado siempre es el mismo, sin importar cuándo la persona empieza a ahorrar",
+                    "El interés compuesto solo afecta el cálculo del patrimonio objetivo, nunca el monto del aporte mensual necesario"
+                  ],
+                  "explanation": "El patrimonio objetivo estimado es el destino; empezar temprano, como se vio en otra lección, reduce el aporte mensual necesario para alcanzarlo, ya que el interés compuesto tiene más tiempo para trabajar a favor de la persona."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "É possível estimar um patrimônio-alvo dividindo a renda anual desejada pela taxa de retirada considerada.",
+                    "Usando a regra dos 4%, isso equivale a multiplicar a renda anual desejada por 25.",
+                    "Esse número é uma referência inicial, que deve ser revisada ao longo do tempo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "It's possible to estimate a target nest egg by dividing the desired annual income by the withdrawal rate considered.",
+                    "Using the 4% rule, that's equivalent to multiplying the desired annual income by 25.",
+                    "This number is an initial reference, which should be reviewed over time."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Es posible estimar un patrimonio objetivo dividiendo el ingreso anual deseado entre la tasa de retiro considerada.",
+                    "Usando la regla del 4%, esto equivale a multiplicar el ingreso anual deseado por 25.",
+                    "Este número es una referencia inicial, que debe revisarse con el tiempo."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "retirement_advanced_planning",
+      "order": 3,
+      "iconKey": "beach_access_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "retirement_planning_practice"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Aposentadoria Avançada",
+          "description": "Fases de acumulação e usufruto, renda vitalícia vs. resgate, previdência corporativa, inflação e custos de saúde."
+        },
+        "en": {
+          "title": "Advanced Retirement Planning",
+          "description": "Accumulation and decumulation phases, lifetime income vs. withdrawal, employer-sponsored plans, inflation and healthcare costs."
+        },
+        "es": {
+          "title": "Jubilación Avanzada",
+          "description": "Fases de acumulación y retiro, renta vitalicia vs. retiro, previsión corporativa, inflación y costos de salud."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "retirement_accumulation_vs_decumulation_phase",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fase de Acumulação vs. Fase de Usufruto"
+            },
+            "en": {
+              "title": "Accumulation vs. Decumulation Phase"
+            },
+            "es": {
+              "title": "Fase de Acumulación vs. Fase de Retiro"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas fases com objetivos diferentes",
+                  "body": "O planejamento de aposentadoria costuma ser dividido em duas fases com objetivos distintos. Na fase de acumulação, o foco é fazer aportes regulares e deixar o patrimônio crescer ao longo de décadas, geralmente tolerando mais volatilidade em troca de maior potencial de retorno. Na fase de usufruto (ou decumulação), o foco muda para fazer retiradas periódicas do patrimônio acumulado sem esgotá-lo prematuramente, o que costuma pedir uma alocação mais conservadora e uma atenção maior a riscos de curto prazo."
+                },
+                "en": {
+                  "title": "Two phases with different goals",
+                  "body": "Retirement planning is usually split into two phases with distinct goals. During the accumulation phase, the focus is making regular contributions and letting wealth grow over decades, usually tolerating more volatility in exchange for greater return potential. During the decumulation (or spending) phase, the focus shifts to making periodic withdrawals from accumulated wealth without depleting it prematurely, which usually calls for a more conservative allocation and greater attention to short-term risks."
+                },
+                "es": {
+                  "title": "Dos fases con objetivos diferentes",
+                  "body": "La planificación de la jubilación suele dividirse en dos fases con objetivos distintos. En la fase de acumulación, el foco está en hacer aportes regulares y dejar que el patrimonio crezca a lo largo de décadas, generalmente tolerando más volatilidad a cambio de mayor potencial de retorno. En la fase de retiro (o desacumulación), el foco cambia hacia hacer retiros periódicos del patrimonio acumulado sin agotarlo prematuramente, lo que suele exigir una asignación más conservadora y una mayor atención a los riesgos de corto plazo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Aos 30 anos, uma pessoa mantém a maior parte de seu plano de previdência em ativos mais voláteis, já que tem décadas pela frente para se recuperar de eventuais quedas. Ao se aproximar dos 65 anos e começar a planejar as retiradas, ela gradualmente reduz essa exposição, priorizando a preservação do capital que sustentará seus gastos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "At age 30, a person keeps most of their pension plan in more volatile assets, since they have decades ahead to recover from any downturns. As they approach age 65 and start planning withdrawals, they gradually reduce that exposure, prioritizing preservation of the capital that will fund their spending."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "A los 30 años, una persona mantiene la mayor parte de su plan de previsión en activos más volátiles, ya que tiene décadas por delante para recuperarse de eventuales caídas. Al acercarse a los 65 años y comenzar a planear los retiros, reduce gradualmente esa exposición, priorizando la preservación del capital que sostendrá sus gastos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o foco principal da fase de usufruto (decumulação) no planejamento de aposentadoria?",
+                  "options": [
+                    "Fazer aportes regulares e maximizar o crescimento do patrimônio a qualquer custo",
+                    "Fazer retiradas periódicas do patrimônio acumulado sem esgotá-lo prematuramente",
+                    "Evitar completamente qualquer tipo de retirada do patrimônio",
+                    "Aumentar a exposição a ativos voláteis o máximo possível"
+                  ],
+                  "explanation": "Na fase de usufruto, o objetivo central passa a ser sustentar retiradas periódicas ao longo do tempo, sem esgotar o patrimônio antes da hora."
+                },
+                "en": {
+                  "prompt": "What is the main focus of the decumulation (spending) phase in retirement planning?",
+                  "options": [
+                    "Making regular contributions and maximizing wealth growth at any cost",
+                    "Making periodic withdrawals from accumulated wealth without depleting it prematurely",
+                    "Completely avoiding any kind of withdrawal from the wealth",
+                    "Increasing exposure to volatile assets as much as possible"
+                  ],
+                  "explanation": "During the decumulation phase, the central goal shifts to sustaining periodic withdrawals over time, without depleting the wealth ahead of schedule."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el foco principal de la fase de retiro (desacumulación) en la planificación de la jubilación?",
+                  "options": [
+                    "Hacer aportes regulares y maximizar el crecimiento del patrimonio a cualquier costo",
+                    "Hacer retiros periódicos del patrimonio acumulado sin agotarlo prematuramente",
+                    "Evitar por completo cualquier tipo de retiro del patrimonio",
+                    "Aumentar la exposición a activos volátiles lo máximo posible"
+                  ],
+                  "explanation": "En la fase de retiro, el objetivo central pasa a ser sostener retiros periódicos a lo largo del tiempo, sin agotar el patrimonio antes de tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra escola, que o risco de sequência de retornos é especialmente relevante para quem está começando a fazer retiradas periódicas de uma carteira. Por que esse risco é mais preocupante especificamente na fase de usufruto do que na fase de acumulação?",
+                  "options": [
+                    "Porque, na fase de usufruto, uma queda de mercado logo no início reduz a base sobre a qual as retiradas futuras incidem, enquanto na fase de acumulação ainda há tempo e novos aportes para se recuperar de uma queda",
+                    "Porque risco de sequência de retornos só existe durante a fase de acumulação, nunca na de usufruto",
+                    "Porque a fase de acumulação nunca envolve nenhum tipo de risco de mercado",
+                    "Não existe nenhuma diferença de relevância desse risco entre as duas fases"
+                  ],
+                  "explanation": "Na fase de acumulação, há tempo e novos aportes para absorver quedas; na fase de usufruto, o patrimônio já não recebe novos aportes e precisa sustentar retiradas, o que amplifica o impacto de uma queda logo no início dessa fase."
+                },
+                "en": {
+                  "prompt": "You already know, from another school, that sequence of returns risk is especially relevant for someone starting to make periodic withdrawals from a portfolio. Why is that risk more concerning specifically during the decumulation phase than during accumulation?",
+                  "options": [
+                    "Because, during decumulation, a market drop early on reduces the base against which future withdrawals apply, while during accumulation there's still time and new contributions to recover from a drop",
+                    "Because sequence of returns risk only exists during the accumulation phase, never during decumulation",
+                    "Because the accumulation phase never involves any kind of market risk",
+                    "There's no difference in this risk's relevance between the two phases"
+                  ],
+                  "explanation": "During accumulation, there's time and new contributions to absorb drops; during decumulation, the wealth no longer receives new contributions and needs to sustain withdrawals, which amplifies the impact of a drop early in that phase."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra escuela, que el riesgo de secuencia de retornos es especialmente relevante para quien está comenzando a hacer retiros periódicos de una cartera. ¿Por qué ese riesgo es más preocupante específicamente en la fase de retiro que en la fase de acumulación?",
+                  "options": [
+                    "Porque, en la fase de retiro, una caída de mercado temprana reduce la base sobre la cual inciden los retiros futuros, mientras que en la fase de acumulación todavía hay tiempo y nuevos aportes para recuperarse de una caída",
+                    "Porque el riesgo de secuencia de retornos solo existe durante la fase de acumulación, nunca en la de retiro",
+                    "Porque la fase de acumulación nunca implica ningún tipo de riesgo de mercado",
+                    "No existe ninguna diferencia de relevancia de ese riesgo entre las dos fases"
+                  ],
+                  "explanation": "En la fase de acumulación, hay tiempo y nuevos aportes para absorber caídas; en la fase de retiro, el patrimonio ya no recibe nuevos aportes y necesita sostener retiros, lo que amplifica el impacto de una caída temprana en esa fase."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A fase de acumulação foca em crescer o patrimônio através de aportes regulares ao longo de décadas.",
+                    "A fase de usufruto foca em sustentar retiradas periódicas sem esgotar o patrimônio prematuramente.",
+                    "Risco de sequência de retornos é mais preocupante na fase de usufruto, quando não há mais aportes para compensar quedas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The accumulation phase focuses on growing wealth through regular contributions over decades.",
+                    "The decumulation phase focuses on sustaining periodic withdrawals without depleting wealth prematurely.",
+                    "Sequence of returns risk is more concerning during decumulation, when there are no more contributions to offset drops."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La fase de acumulación se enfoca en hacer crecer el patrimonio mediante aportes regulares a lo largo de décadas.",
+                    "La fase de retiro se enfoca en sostener retiros periódicos sin agotar el patrimonio prematuramente.",
+                    "El riesgo de secuencia de retornos es más preocupante en la fase de retiro, cuando ya no hay aportes para compensar caídas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_lifetime_income_vs_lump_sum",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Renda Vitalícia vs. Resgate Total"
+            },
+            "en": {
+              "title": "Lifetime Income vs. Lump-Sum Withdrawal"
+            },
+            "es": {
+              "title": "Renta Vitalicia vs. Retiro Total"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas diferentes de usar o saldo acumulado",
+                  "body": "Ao final da fase de acumulação em um plano de previdência privada, o titular geralmente pode escolher entre diferentes formas de utilizar o saldo. Uma opção é resgatar o valor total (ou em parcelas programadas por um período definido), mantendo o controle direto sobre como o dinheiro será usado dali em diante. Outra opção é converter o saldo em uma renda vitalícia, um pagamento periódico garantido pelo resto da vida do titular — o que elimina o risco de o dinheiro acabar antes do titular, mas em troca de abrir mão do controle sobre o capital, que passa a pertencer à entidade que paga essa renda."
+                },
+                "en": {
+                  "title": "Two different ways to use the accumulated balance",
+                  "body": "At the end of the accumulation phase in a private pension plan, the account holder can usually choose between different ways to use the balance. One option is to withdraw the full amount (or in scheduled installments over a defined period), keeping direct control over how the money will be used from then on. Another option is to convert the balance into a lifetime income, a periodic payment guaranteed for the rest of the account holder's life — which eliminates the risk of the money running out before they do, but in exchange for giving up control over the capital, which then belongs to the entity paying that income."
+                },
+                "es": {
+                  "title": "Dos formas diferentes de usar el saldo acumulado",
+                  "body": "Al final de la fase de acumulación en un plan de previsión privada, el titular generalmente puede elegir entre diferentes formas de usar el saldo. Una opción es retirar el monto total (o en cuotas programadas durante un período definido), manteniendo el control directo sobre cómo se usará el dinero a partir de entonces. Otra opción es convertir el saldo en una renta vitalicia, un pago periódico garantizado por el resto de la vida del titular — lo que elimina el riesgo de que el dinero se acabe antes que el titular, pero a cambio de renunciar al control sobre el capital, que pasa a pertenecer a la entidad que paga esa renta."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa se aposenta com um saldo acumulado significativo. Se ela optar pela renda vitalícia, recebe um valor mensal fixo pelo resto da vida, mesmo que viva muito além da expectativa média — mas, se falecer logo depois, o capital restante geralmente não é herdado da mesma forma que seria em um resgate. Se ela optar pelo resgate total, mantém o controle sobre o capital e a flexibilidade de deixá-lo como herança, mas assume o risco de gerir esse dinheiro para que dure o tempo necessário."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person retires with a significant accumulated balance. If they choose lifetime income, they receive a fixed monthly amount for the rest of their life, even if they live well beyond average life expectancy — but if they pass away shortly after, the remaining capital generally isn't inherited the same way it would be with a lump-sum withdrawal. If they choose the full withdrawal, they keep control over the capital and the flexibility to leave it as an inheritance, but take on the risk of managing that money so it lasts as long as needed."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona se jubila con un saldo acumulado significativo. Si opta por la renta vitalicia, recibe un monto mensual fijo por el resto de su vida, aunque viva mucho más allá de la expectativa promedio — pero si fallece poco después, el capital restante generalmente no se hereda de la misma forma que en un retiro. Si opta por el retiro total, mantiene el control sobre el capital y la flexibilidad de dejarlo como herencia, pero asume el riesgo de administrar ese dinero para que dure el tiempo necesario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza a opção de renda vitalícia, em comparação com o resgate total do saldo?",
+                  "options": [
+                    "Ela permite que o titular mantenha controle total sobre o capital, exatamente como no resgate",
+                    "Ela garante um pagamento periódico pelo resto da vida do titular, em troca de abrir mão do controle direto sobre o capital",
+                    "Ela é sempre a opção com maior valor total recebido, para qualquer titular",
+                    "Ela elimina completamente qualquer decisão sobre a aposentadoria"
+                  ],
+                  "explanation": "A renda vitalícia troca o controle direto sobre o capital por um pagamento garantido pelo resto da vida, eliminando o risco de o dinheiro acabar antes do titular."
+                },
+                "en": {
+                  "prompt": "What characterizes the lifetime income option, compared to a full balance withdrawal?",
+                  "options": [
+                    "It lets the account holder keep full control over the capital, exactly like a withdrawal",
+                    "It guarantees a periodic payment for the rest of the account holder's life, in exchange for giving up direct control over the capital",
+                    "It's always the option with the highest total amount received, for any account holder",
+                    "It completely eliminates any decision about retirement"
+                  ],
+                  "explanation": "Lifetime income trades direct control over the capital for a payment guaranteed for the rest of the holder's life, eliminating the risk of the money running out before they do."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a la opción de renta vitalicia, en comparación con el retiro total del saldo?",
+                  "options": [
+                    "Permite que el titular mantenga el control total sobre el capital, exactamente igual que en el retiro",
+                    "Garantiza un pago periódico por el resto de la vida del titular, a cambio de renunciar al control directo sobre el capital",
+                    "Es siempre la opción con mayor monto total recibido, para cualquier titular",
+                    "Elimina por completo cualquier decisión sobre la jubilación"
+                  ],
+                  "explanation": "La renta vitalicia cambia el control directo sobre el capital por un pago garantizado por el resto de la vida, eliminando el riesgo de que el dinero se acabe antes que el titular."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que planos de previdência privada podem ser usados como parte de um planejamento sucessório, sendo pagos diretamente aos beneficiários indicados. Como essa característica se relaciona com a escolha entre renda vitalícia e resgate total?",
+                  "options": [
+                    "A flexibilidade de deixar o saldo como herança tende a estar mais associada à opção de resgate, já que, na renda vitalícia, o capital geralmente deixa de pertencer ao titular ao ser convertido no pagamento periódico",
+                    "A renda vitalícia sempre preserva o capital total para os herdeiros, exatamente como o resgate",
+                    "O planejamento sucessório só é possível se o titular escolher a renda vitalícia",
+                    "Não existe nenhuma relação entre a forma de utilização do saldo e o planejamento sucessório"
+                  ],
+                  "explanation": "Como a renda vitalícia troca o capital por um pagamento periódico garantido, a flexibilidade de deixar recursos como herança tende a ficar mais associada à opção de resgate, que preserva o controle do titular sobre o capital remanescente."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that private pension plans can be used as part of succession planning, being paid directly to named beneficiaries. How does that feature relate to the choice between lifetime income and a full withdrawal?",
+                  "options": [
+                    "The flexibility to leave the balance as an inheritance tends to be more associated with the withdrawal option, since, with lifetime income, the capital generally stops belonging to the holder once converted into the periodic payment",
+                    "Lifetime income always preserves the full capital for heirs, exactly like a withdrawal",
+                    "Succession planning is only possible if the holder chooses lifetime income",
+                    "There's no relation at all between how the balance is used and succession planning"
+                  ],
+                  "explanation": "Since lifetime income trades the capital for a guaranteed periodic payment, the flexibility to leave funds as an inheritance tends to be more associated with the withdrawal option, which preserves the holder's control over the remaining capital."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que los planes de previsión privada pueden usarse como parte de una planificación sucesoria, pagándose directamente a los beneficiarios indicados. ¿Cómo se relaciona esa característica con la elección entre renta vitalicia y retiro total?",
+                  "options": [
+                    "La flexibilidad de dejar el saldo como herencia tiende a estar más asociada a la opción de retiro, ya que, en la renta vitalicia, el capital generalmente deja de pertenecer al titular al convertirse en el pago periódico",
+                    "La renta vitalicia siempre preserva el capital total para los herederos, exactamente igual que el retiro",
+                    "La planificación sucesoria solo es posible si el titular elige la renta vitalicia",
+                    "No existe ninguna relación entre la forma de utilización del saldo y la planificación sucesoria"
+                  ],
+                  "explanation": "Como la renta vitalicia cambia el capital por un pago periódico garantizado, la flexibilidad de dejar recursos como herencia tiende a estar más asociada a la opción de retiro, que preserva el control del titular sobre el capital restante."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Renda vitalícia garante um pagamento periódico pelo resto da vida, em troca do controle sobre o capital.",
+                    "Resgate total (ou programado) preserva o controle e a flexibilidade sobre o capital remanescente.",
+                    "A flexibilidade sucessória tende a ficar mais associada à opção de resgate do que à renda vitalícia."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Lifetime income guarantees a periodic payment for the rest of one's life, in exchange for control over the capital.",
+                    "Full (or scheduled) withdrawal preserves control and flexibility over the remaining capital.",
+                    "Succession flexibility tends to be more associated with the withdrawal option than with lifetime income."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La renta vitalicia garantiza un pago periódico por el resto de la vida, a cambio del control sobre el capital.",
+                    "El retiro total (o programado) preserva el control y la flexibilidad sobre el capital restante.",
+                    "La flexibilidad sucesoria tiende a estar más asociada a la opción de retiro que a la renta vitalicia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_employer_sponsored_plans",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Previdência Corporativa e Contrapartida do Empregador"
+            },
+            "en": {
+              "title": "Employer-Sponsored Plans and Matching Contributions"
+            },
+            "es": {
+              "title": "Previsión Corporativa y Aporte del Empleador"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando o empregador também contribui",
+                  "body": "Alguns empregadores oferecem planos de previdência privada corporativos, nos quais, além da contribuição feita pelo próprio funcionário, a empresa também contribui com um valor adicional — a chamada contrapartida (ou 'matching'). Essa contrapartida representa, na prática, um valor extra que o funcionário deixaria na mesa se optasse por não participar do plano, já que costuma ser condicionada à contribuição do próprio funcionário até um determinado limite."
+                },
+                "en": {
+                  "title": "When the employer also contributes",
+                  "body": "Some employers offer corporate private pension plans, in which, besides the contribution made by the employee themselves, the company also contributes an additional amount — called the employer match. This match effectively represents extra money the employee would leave on the table if they chose not to participate in the plan, since it's usually conditioned on the employee's own contribution, up to a certain limit."
+                },
+                "es": {
+                  "title": "Cuando el empleador también contribuye",
+                  "body": "Algunos empleadores ofrecen planes de previsión privada corporativos, en los que, además del aporte hecho por el propio empleado, la empresa también aporta un monto adicional — la llamada contrapartida (o 'matching'). Esta contrapartida representa, en la práctica, un valor extra que el empleado dejaría sobre la mesa si optara por no participar del plan, ya que suele estar condicionada al aporte del propio empleado hasta un determinado límite."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa oferece contrapartida de 100% sobre as contribuições do funcionário, até o limite de 5% do salário. Se o funcionário contribui com 5% do salário, a empresa deposita mais 5%, dobrando o valor total que entra no plano todo mês. Se o funcionário decide não contribuir nada, ele também abre mão dessa contrapartida da empresa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company offers a 100% match on the employee's contributions, up to a limit of 5% of salary. If the employee contributes 5% of their salary, the company deposits another 5%, doubling the total amount going into the plan each month. If the employee decides not to contribute anything, they also give up that company match."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa ofrece una contrapartida del 100% sobre los aportes del empleado, hasta el límite del 5% del salario. Si el empleado aporta el 5% de su salario, la empresa deposita otro 5%, duplicando el monto total que entra al plan cada mes. Si el empleado decide no aportar nada, también renuncia a esa contrapartida de la empresa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é a contrapartida (matching) em um plano de previdência corporativo?",
+                  "options": [
+                    "Um valor adicional que a empresa contribui, geralmente condicionado à contribuição do próprio funcionário até um limite",
+                    "Um bônus em dinheiro pago independentemente de qualquer contribuição do funcionário",
+                    "Uma taxa cobrada do funcionário pela empresa para participar do plano",
+                    "Um tipo de imposto retido sobre o salário do funcionário"
+                  ],
+                  "explanation": "A contrapartida é uma contribuição extra da empresa, geralmente vinculada e limitada à contribuição feita pelo próprio funcionário."
+                },
+                "en": {
+                  "prompt": "What is the employer match in a corporate pension plan?",
+                  "options": [
+                    "An additional amount the company contributes, usually conditioned on the employee's own contribution up to a limit",
+                    "A cash bonus paid regardless of any contribution from the employee",
+                    "A fee the company charges the employee to participate in the plan",
+                    "A type of tax withheld from the employee's salary"
+                  ],
+                  "explanation": "The match is an extra contribution from the company, usually tied to and capped by the contribution made by the employee themselves."
+                },
+                "es": {
+                  "prompt": "¿Qué es la contrapartida (matching) en un plan de previsión corporativo?",
+                  "options": [
+                    "Un monto adicional que la empresa aporta, generalmente condicionado al aporte del propio empleado hasta un límite",
+                    "Un bono en efectivo pagado independientemente de cualquier aporte del empleado",
+                    "Una comisión cobrada al empleado por la empresa para participar del plan",
+                    "Un tipo de impuesto retenido sobre el salario del empleado"
+                  ],
+                  "explanation": "La contrapartida es un aporte extra de la empresa, generalmente vinculado y limitado al aporte hecho por el propio empleado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, que começar a contribuir cedo para a aposentadoria potencializa o efeito dos juros compostos ao longo de décadas. Como isso se conecta à decisão de participar ou não de um plano com contrapartida do empregador?",
+                  "options": [
+                    "Deixar de contribuir para um plano com contrapartida significa abrir mão tanto do valor extra da empresa quanto de décadas de juros compostos sobre esse valor adicional, um efeito que se soma ao de começar cedo com a própria contribuição",
+                    "A contrapartida do empregador elimina completamente a necessidade de considerar juros compostos",
+                    "Juros compostos só se aplicam à contribuição do funcionário, nunca à parte contribuída pelo empregador",
+                    "Não existe nenhuma relação entre contrapartida do empregador e o efeito de começar a contribuir cedo"
+                  ],
+                  "explanation": "Como a contrapartida é um valor extra que também fica sujeito ao crescimento composto ao longo do tempo, deixar de participar de um plano com matching combina dois custos de oportunidade: o valor da contrapartida em si e os juros compostos que ela deixaria de gerar ao longo de décadas."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, that starting retirement contributions early amplifies the effect of compound interest over decades. How does that connect to the decision of whether to participate in a plan with an employer match?",
+                  "options": [
+                    "Skipping a plan with a match means giving up both the company's extra money and decades of compound interest on that additional amount, an effect that stacks with starting one's own contribution early",
+                    "The employer match completely eliminates the need to consider compound interest",
+                    "Compound interest only applies to the employee's contribution, never to the portion contributed by the employer",
+                    "There's no relation at all between an employer match and the effect of starting contributions early"
+                  ],
+                  "explanation": "Since the match is extra money that also becomes subject to compound growth over time, skipping a plan with matching combines two opportunity costs: the match amount itself and the compound interest it would have generated over decades."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, que empezar a aportar temprano para la jubilación potencia el efecto del interés compuesto a lo largo de décadas. ¿Cómo se conecta esto con la decisión de participar o no en un plan con contrapartida del empleador?",
+                  "options": [
+                    "Dejar de aportar a un plan con contrapartida significa renunciar tanto al monto extra de la empresa como a décadas de interés compuesto sobre ese monto adicional, un efecto que se suma al de empezar temprano con el propio aporte",
+                    "La contrapartida del empleador elimina por completo la necesidad de considerar el interés compuesto",
+                    "El interés compuesto solo se aplica al aporte del empleado, nunca a la parte aportada por el empleador",
+                    "No existe ninguna relación entre la contrapartida del empleador y el efecto de empezar a aportar temprano"
+                  ],
+                  "explanation": "Como la contrapartida es un monto extra que también queda sujeto al crecimiento compuesto a lo largo del tiempo, dejar de participar en un plan con matching combina dos costos de oportunidad: el monto de la contrapartida en sí y el interés compuesto que habría generado a lo largo de décadas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Contrapartida (matching) é um valor extra que o empregador contribui, geralmente até um limite ligado à contribuição do funcionário.",
+                    "Deixar de participar de um plano com matching significa abrir mão desse valor extra.",
+                    "Esse valor extra também fica sujeito a décadas de juros compostos, ampliando o custo de oportunidade de não participar."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A match is extra money the employer contributes, usually up to a limit tied to the employee's contribution.",
+                    "Skipping a plan with a match means giving up that extra money.",
+                    "That extra money is also subject to decades of compound interest, amplifying the opportunity cost of not participating."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La contrapartida es un monto extra que aporta el empleador, generalmente hasta un límite ligado al aporte del empleado.",
+                    "Dejar de participar en un plan con contrapartida significa renunciar a ese monto extra.",
+                    "Ese monto extra también queda sujeto a décadas de interés compuesto, ampliando el costo de oportunidad de no participar."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_inflation_and_purchasing_power",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Inflação e Poder de Compra na Aposentadoria"
+            },
+            "en": {
+              "title": "Inflation and Purchasing Power in Retirement"
+            },
+            "es": {
+              "title": "Inflación y Poder Adquisitivo en la Jubilación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um objetivo de décadas precisa de uma meta que também cresce",
+                  "body": "Planejar a aposentadoria envolve um horizonte de tempo muito longo, o que torna a inflação um fator especialmente relevante: o valor que parece suficiente para sustentar um padrão de vida hoje provavelmente não será suficiente daqui a 20 ou 30 anos, em termos do poder de compra real desse dinheiro. Por isso, planejamentos de aposentadoria costumam trabalhar com retornos reais (acima da inflação) como referência, e não apenas com o valor nominal acumulado, para evitar subestimar quanto será realmente necessário."
+                },
+                "en": {
+                  "title": "A decades-long goal needs a target that also grows",
+                  "body": "Retirement planning involves a very long time horizon, which makes inflation an especially relevant factor: the amount that seems sufficient to sustain a standard of living today probably won't be enough 20 or 30 years from now, in terms of that money's real purchasing power. That's why retirement plans usually work with real returns (above inflation) as a reference, not just the accumulated nominal value, to avoid underestimating how much will actually be needed."
+                },
+                "es": {
+                  "title": "Un objetivo de décadas necesita una meta que también crezca",
+                  "body": "Planificar la jubilación implica un horizonte de tiempo muy largo, lo que hace de la inflación un factor especialmente relevante: el monto que hoy parece suficiente para sostener un nivel de vida probablemente no será suficiente dentro de 20 o 30 años, en términos del poder adquisitivo real de ese dinero. Por eso, las planificaciones de jubilación suelen trabajar con retornos reales (por encima de la inflación) como referencia, y no solo con el valor nominal acumulado, para evitar subestimar cuánto será realmente necesario."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa calcula que precisará de R$5.000 por mês para viver confortavelmente na aposentadoria, com base no custo de vida atual. Se ela planeja se aposentar daqui a 30 anos, precisa considerar que, mesmo com uma inflação moderada ao longo desse período, o valor nominal necessário para manter o mesmo poder de compra será bem maior do que R$5.000 — por isso planejar em termos reais ajuda a não subestimar essa meta."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person calculates they'll need R$5,000 a month to live comfortably in retirement, based on today's cost of living. If they plan to retire in 30 years, they need to consider that, even with moderate inflation over that period, the nominal amount needed to maintain the same purchasing power will be much higher than R$5,000 — which is why planning in real terms helps avoid underestimating that target."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona calcula que necesitará R$5.000 al mes para vivir cómodamente en la jubilación, según el costo de vida actual. Si planea jubilarse dentro de 30 años, necesita considerar que, incluso con una inflación moderada durante ese período, el monto nominal necesario para mantener el mismo poder adquisitivo será mucho mayor que R$5.000 — por eso planificar en términos reales ayuda a no subestimar esa meta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que planejamentos de aposentadoria costumam trabalhar com retornos reais, em vez de apenas o valor nominal acumulado?",
+                  "options": [
+                    "Porque o valor nominal é sempre mais preciso do que o valor real para qualquer planejamento financeiro",
+                    "Porque, ao longo de décadas, a inflação reduz o poder de compra do dinheiro, e ignorá-la pode subestimar o quanto será realmente necessário",
+                    "Porque a inflação deixa de existir em horizontes de tempo muito longos",
+                    "Porque retornos reais são sempre iguais aos retornos nominais, sem nenhuma diferença"
+                  ],
+                  "explanation": "Considerar o retorno real (acima da inflação) evita subestimar o valor necessário para manter o mesmo poder de compra ao longo de um horizonte de décadas, como costuma ser o caso da aposentadoria."
+                },
+                "en": {
+                  "prompt": "Why do retirement plans usually work with real returns, instead of just the accumulated nominal value?",
+                  "options": [
+                    "Because the nominal value is always more accurate than the real value for any financial plan",
+                    "Because, over decades, inflation reduces money's purchasing power, and ignoring it can underestimate how much will actually be needed",
+                    "Because inflation stops existing over very long time horizons",
+                    "Because real returns are always identical to nominal returns, with no difference at all"
+                  ],
+                  "explanation": "Considering the real return (above inflation) avoids underestimating the amount needed to maintain the same purchasing power over a decades-long horizon, as is usually the case with retirement."
+                },
+                "es": {
+                  "prompt": "¿Por qué las planificaciones de jubilación suelen trabajar con retornos reales, en lugar de solo el valor nominal acumulado?",
+                  "options": [
+                    "Porque el valor nominal siempre es más preciso que el valor real para cualquier planificación financiera",
+                    "Porque, a lo largo de décadas, la inflación reduce el poder adquisitivo del dinero, e ignorarla puede subestimar cuánto será realmente necesario",
+                    "Porque la inflación deja de existir en horizontes de tiempo muy largos",
+                    "Porque los retornos reales siempre son iguales a los retornos nominales, sin ninguna diferencia"
+                  ],
+                  "explanation": "Considerar el retorno real (por encima de la inflación) evita subestimar el monto necesario para mantener el mismo poder adquisitivo a lo largo de un horizonte de décadas, como suele ser el caso de la jubilación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição desta escola, a Regra dos 4% como referência para taxas de retirada sustentáveis na aposentadoria. Como a inflação se conecta a essa regra ao longo dos anos de retirada?",
+                  "options": [
+                    "A regra dos 4% costuma prever o reajuste do valor retirado pela inflação a cada ano, para que o poder de compra das retiradas se mantenha ao longo do tempo, não apenas o valor nominal retirado",
+                    "A inflação não tem nenhuma relação com a regra dos 4%, que é sempre um valor nominal fixo para sempre",
+                    "A regra dos 4% já embute automaticamente qualquer nível de inflação futura, tornando desnecessário considerá-la separadamente",
+                    "A regra dos 4% é uma alternativa à consideração da inflação, e as duas nunca são usadas juntas"
+                  ],
+                  "explanation": "A lógica por trás da regra dos 4% normalmente prevê reajustar o valor retirado pela inflação a cada ano, para que o poder de compra das retiradas se mantenha estável ao longo de décadas de aposentadoria."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson in this school, the 4% rule as a reference for sustainable withdrawal rates in retirement. How does inflation connect to that rule across the withdrawal years?",
+                  "options": [
+                    "The 4% rule usually calls for adjusting the withdrawn amount for inflation each year, so the withdrawals' purchasing power stays stable over time, not just the nominal amount withdrawn",
+                    "Inflation has no relation at all to the 4% rule, which is always a fixed nominal amount forever",
+                    "The 4% rule already automatically bakes in any level of future inflation, making it unnecessary to consider separately",
+                    "The 4% rule is an alternative to considering inflation, and the two are never used together"
+                  ],
+                  "explanation": "The logic behind the 4% rule usually calls for adjusting the withdrawn amount for inflation each year, so the withdrawals' purchasing power stays stable across decades of retirement."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección de esta escuela, la Regla del 4% como referencia para tasas de retiro sostenibles en la jubilación. ¿Cómo se conecta la inflación con esa regla a lo largo de los años de retiro?",
+                  "options": [
+                    "La regla del 4% suele prever el reajuste del monto retirado por la inflación cada año, para que el poder adquisitivo de los retiros se mantenga a lo largo del tiempo, no solo el monto nominal retirado",
+                    "La inflación no tiene ninguna relación con la regla del 4%, que siempre es un monto nominal fijo para siempre",
+                    "La regla del 4% ya incorpora automáticamente cualquier nivel de inflación futura, haciendo innecesario considerarla por separado",
+                    "La regla del 4% es una alternativa a considerar la inflación, y las dos nunca se usan juntas"
+                  ],
+                  "explanation": "La lógica detrás de la regla del 4% normalmente prevé reajustar el monto retirado por la inflación cada año, para que el poder adquisitivo de los retiros se mantenga estable a lo largo de décadas de jubilación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ao longo de décadas, a inflação reduz o poder de compra do dinheiro de forma significativa.",
+                    "Planejamentos de aposentadoria costumam usar retornos reais, para não subestimar o valor necessário.",
+                    "A regra dos 4% costuma prever o reajuste do valor retirado pela inflação, preservando o poder de compra das retiradas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Over decades, inflation significantly reduces money's purchasing power.",
+                    "Retirement plans usually use real returns, to avoid underestimating the amount needed.",
+                    "The 4% rule usually calls for adjusting the withdrawn amount for inflation, preserving the withdrawals' purchasing power."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "A lo largo de décadas, la inflación reduce significativamente el poder adquisitivo del dinero.",
+                    "Las planificaciones de jubilación suelen usar retornos reales, para no subestimar el monto necesario.",
+                    "La regla del 4% suele prever el reajuste del monto retirado por la inflación, preservando el poder adquisitivo de los retiros."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_healthcare_costs",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custos de Saúde na Aposentadoria"
+            },
+            "en": {
+              "title": "Healthcare Costs in Retirement"
+            },
+            "es": {
+              "title": "Costos de Salud en la Jubilación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma despesa que tende a crescer justamente quando a renda muda",
+                  "body": "Gastos com saúde tendem a aumentar com a idade, justamente no período em que a renda de uma pessoa passa a depender do patrimônio acumulado e de benefícios previdenciários, em vez de um salário ativo. Por isso, um planejamento de aposentadoria mais completo geralmente reserva uma parcela específica para cobrir esses custos crescentes, incluindo a manutenção de planos de saúde, em vez de tratá-los apenas como mais uma linha genérica dentro do orçamento mensal esperado."
+                },
+                "en": {
+                  "title": "An expense that tends to grow exactly as income changes",
+                  "body": "Healthcare spending tends to rise with age, precisely during the period when a person's income shifts to depend on accumulated wealth and pension benefits, instead of an active salary. That's why more thorough retirement planning usually sets aside a specific portion to cover these growing costs, including maintaining health insurance, instead of treating them as just another generic line within the expected monthly budget."
+                },
+                "es": {
+                  "title": "Un gasto que tiende a crecer justo cuando cambia el ingreso",
+                  "body": "Los gastos de salud tienden a aumentar con la edad, justo en el período en que el ingreso de una persona pasa a depender del patrimonio acumulado y de beneficios previsionales, en lugar de un salario activo. Por eso, una planificación de jubilación más completa generalmente reserva una porción específica para cubrir estos costos crecientes, incluyendo el mantenimiento de planes de salud, en lugar de tratarlos solo como una línea genérica más dentro del presupuesto mensual esperado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa planeja sua aposentadoria considerando apenas despesas correntes como moradia e lazer, sem reservar um valor específico para saúde. Aos 75 anos, os gastos médicos aumentam significativamente em relação ao que ela previa aos 60, pressionando um orçamento que não havia contemplado esse crescimento específico."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person plans their retirement considering only current expenses like housing and leisure, without setting aside a specific amount for healthcare. At age 75, medical expenses rise significantly compared to what they anticipated at 60, straining a budget that hadn't accounted for that specific growth."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona planifica su jubilación considerando solo gastos corrientes como vivienda y ocio, sin reservar un monto específico para salud. A los 75 años, los gastos médicos aumentan significativamente respecto a lo que preveía a los 60, presionando un presupuesto que no había contemplado ese crecimiento específico."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que gastos com saúde merecem atenção específica no planejamento de aposentadoria?",
+                  "options": [
+                    "Porque tendem a aumentar com a idade, justamente quando a renda passa a depender do patrimônio acumulado, em vez de um salário ativo",
+                    "Porque gastos com saúde sempre diminuem após os 60 anos",
+                    "Porque planos de saúde nunca têm nenhum custo na aposentadoria",
+                    "Porque esse tipo de gasto não tem nenhuma relação com a idade de uma pessoa"
+                  ],
+                  "explanation": "Gastos com saúde tendem a crescer com a idade, justamente no período em que a renda passa a depender do patrimônio acumulado — o que justifica um planejamento específico para essa despesa."
+                },
+                "en": {
+                  "prompt": "Why do healthcare expenses deserve specific attention in retirement planning?",
+                  "options": [
+                    "Because they tend to rise with age, precisely when income shifts to depend on accumulated wealth, instead of an active salary",
+                    "Because healthcare expenses always decrease after age 60",
+                    "Because health insurance never has any cost in retirement",
+                    "Because this type of expense has no relation at all to a person's age"
+                  ],
+                  "explanation": "Healthcare expenses tend to grow with age, precisely during the period when income shifts to depend on accumulated wealth — which justifies specific planning for that expense."
+                },
+                "es": {
+                  "prompt": "¿Por qué los gastos de salud merecen atención específica en la planificación de la jubilación?",
+                  "options": [
+                    "Porque tienden a aumentar con la edad, justo cuando el ingreso pasa a depender del patrimonio acumulado, en lugar de un salario activo",
+                    "Porque los gastos de salud siempre disminuyen después de los 60 años",
+                    "Porque los planes de salud nunca tienen ningún costo en la jubilación",
+                    "Porque este tipo de gasto no tiene ninguna relación con la edad de una persona"
+                  ],
+                  "explanation": "Los gastos de salud tienden a crecer con la edad, justo en el período en que el ingreso pasa a depender del patrimonio acumulado — lo que justifica una planificación específica para ese gasto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, tanto o impacto da inflação sobre o poder de compra ao longo de décadas quanto a diferença entre as fases de acumulação e usufruto. Como esses dois conceitos juntos reforçam a importância de planejar especificamente para custos de saúde crescentes?",
+                  "options": [
+                    "Gastos de saúde tendem a crescer mais do que a inflação geral e se concentram justamente na fase de usufruto, quando não há mais aportes para compensar um orçamento subestimado — uma combinação que pede um planejamento específico, e não apenas genérico",
+                    "Inflação e fases da aposentadoria não têm nenhuma relação com gastos de saúde",
+                    "Gastos de saúde só existem na fase de acumulação, nunca na fase de usufruto",
+                    "Como a inflação afeta todos os gastos igualmente, não há necessidade de tratar saúde de forma diferente de qualquer outra despesa"
+                  ],
+                  "explanation": "Combinando o efeito da inflação ao longo de décadas com o fato de que gastos de saúde tendem a se concentrar justamente na fase de usufruto — quando não há mais aportes para compensar um orçamento subestimado —, fica clara a importância de reservar um planejamento específico para esse tipo de despesa, em vez de tratá-la como uma linha genérica do orçamento."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, both inflation's impact on purchasing power over decades and the difference between the accumulation and decumulation phases. How do these two concepts together reinforce the importance of specifically planning for rising healthcare costs?",
+                  "options": [
+                    "Healthcare expenses tend to grow faster than general inflation and concentrate precisely in the decumulation phase, when there are no more contributions to offset an underestimated budget — a combination that calls for specific, not just generic, planning",
+                    "Inflation and retirement phases have no relation at all to healthcare expenses",
+                    "Healthcare expenses only exist during the accumulation phase, never during decumulation",
+                    "Since inflation affects all expenses equally, there's no need to treat healthcare differently from any other expense"
+                  ],
+                  "explanation": "Combining inflation's effect over decades with the fact that healthcare expenses tend to concentrate precisely in the decumulation phase — when there are no more contributions to offset an underestimated budget — makes clear the importance of setting aside specific planning for this type of expense, instead of treating it as a generic budget line."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, tanto el impacto de la inflación sobre el poder adquisitivo a lo largo de décadas como la diferencia entre las fases de acumulación y retiro. ¿Cómo refuerzan juntos estos dos conceptos la importancia de planificar específicamente para costos de salud crecientes?",
+                  "options": [
+                    "Los gastos de salud tienden a crecer más que la inflación general y se concentran justo en la fase de retiro, cuando ya no hay aportes para compensar un presupuesto subestimado — una combinación que exige una planificación específica, no solo genérica",
+                    "La inflación y las fases de la jubilación no tienen ninguna relación con los gastos de salud",
+                    "Los gastos de salud solo existen en la fase de acumulación, nunca en la fase de retiro",
+                    "Como la inflación afecta a todos los gastos por igual, no hay necesidad de tratar la salud de forma diferente a cualquier otro gasto"
+                  ],
+                  "explanation": "Combinando el efecto de la inflación a lo largo de décadas con el hecho de que los gastos de salud tienden a concentrarse justo en la fase de retiro — cuando ya no hay aportes para compensar un presupuesto subestimado —, queda clara la importancia de reservar una planificación específica para ese tipo de gasto, en lugar de tratarlo como una línea genérica del presupuesto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Gastos com saúde tendem a crescer justamente na fase em que a renda passa a depender do patrimônio acumulado.",
+                    "Um planejamento mais completo reserva uma parcela específica para esses custos crescentes.",
+                    "Você concluiu o módulo avançado de aposentadoria: fases de acumulação/usufruto, renda vitalícia vs. resgate, previdência corporativa, inflação e custos de saúde."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Healthcare expenses tend to rise precisely during the phase when income shifts to depend on accumulated wealth.",
+                    "More thorough planning sets aside a specific portion for these growing costs.",
+                    "You've completed the advanced retirement module: accumulation/decumulation phases, lifetime income vs. withdrawal, employer plans, inflation and healthcare costs."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los gastos de salud tienden a crecer justo en la fase en que el ingreso pasa a depender del patrimonio acumulado.",
+                    "Una planificación más completa reserva una porción específica para esos costos crecientes.",
+                    "Completaste el módulo avanzado de jubilación: fases de acumulación/retiro, renta vitalicia vs. retiro, previsión corporativa, inflación y costos de salud."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

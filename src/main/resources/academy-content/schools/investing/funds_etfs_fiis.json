@@ -1,0 +1,2729 @@
+{
+  "schoolId": "funds_etfs_fiis",
+  "domainId": "investing",
+  "order": 6,
+  "iconKey": "pie_chart_outline",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Fundos, ETFs e FIIs",
+      "description": "Fundos de investimento, ETFs e fundos imobiliários — como funcionam e como avaliá-los."
+    },
+    "en": {
+      "title": "Funds, ETFs & REITs",
+      "description": "Investment funds, ETFs and real-estate funds — how they work and how to evaluate them."
+    },
+    "es": {
+      "title": "Fondos, ETFs y Fondos Inmobiliarios",
+      "description": "Fondos de inversión, ETFs y fondos inmobiliarios — cómo funcionan y cómo evaluarlos."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "etfs",
+      "order": 1,
+      "iconKey": "pie_chart_outline",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "BEGINNER",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Fundos, ETFs e Fundos Imobiliários",
+          "description": "Como funcionam os fundos de investimento, os ETFs e os fundos imobiliários (FIIs) — taxas, diversificação, liquidez e tributação."
+        },
+        "en": {
+          "title": "Funds, ETFs & REITs",
+          "description": "How investment funds, ETFs and real-estate funds (FIIs) work — fees, diversification, liquidity and taxation."
+        },
+        "es": {
+          "title": "Fondos, ETFs y Fondos Inmobiliarios",
+          "description": "Cómo funcionan los fondos de inversión, los ETFs y los fondos inmobiliarios (FIIs) — comisiones, diversificación, liquidez y tributación."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "etfs_what_is_a_fund",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que é um Fundo de Investimento?"
+            },
+            "en": {
+              "title": "What Is an Investment Fund?"
+            },
+            "es": {
+              "title": "¿Qué es un Fondo de Inversión?"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dinheiro em conjunto",
+                  "body": "Um fundo de investimento reúne o dinheiro de vários investidores em um único bolo, administrado por um gestor profissional que decide onde aplicar esse dinheiro, seguindo a política do fundo. Em vez de cada investidor comprar ativos individualmente, todos compram cotas do fundo — pequenas frações que representam a parte de cada um no patrimônio total."
+                },
+                "en": {
+                  "title": "Money pooled together",
+                  "body": "An investment fund pools money from many investors into a single pot, managed by a professional manager who decides where to apply that money, following the fund's policy. Instead of each investor buying assets individually, everyone buys cotas (shares) of the fund — small fractions that represent each investor's part of the total pool."
+                },
+                "es": {
+                  "title": "Dinero en conjunto",
+                  "body": "Un fondo de inversión reúne el dinero de varios inversores en un único conjunto, administrado por un gestor profesional que decide dónde aplicar ese dinero, siguiendo la política del fondo. En lugar de que cada inversor compre activos individualmente, todos compran cotas del fondo — pequeñas fracciones que representan la parte de cada uno en el patrimonio total."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo tem patrimônio total de R$10 milhões, dividido em 1 milhão de cotas de R$10 cada. Um investidor que aplica R$1.000 passa a ter 100 cotas — sua parte proporcional no total do fundo. Se o patrimônio do fundo crescer, o valor de cada cota sobe; se encolher, o valor de cada cota cai."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fund has R$10 million in total assets, divided into 1 million cotas worth R$10 each. An investor who applies R$1,000 ends up with 100 cotas — their proportional share of the fund's total. If the fund's assets grow, each cota's value rises; if they shrink, each cota's value falls."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo tiene un patrimonio total de R$10 millones, dividido en 1 millón de cotas de R$10 cada una. Un inversor que aplica R$1.000 pasa a tener 100 cotas — su parte proporcional en el total del fondo. Si el patrimonio del fondo crece, el valor de cada cota sube; si se reduce, el valor de cada cota baja."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que representa uma cota de um fundo de investimento?",
+                  "options": [
+                    "Uma dívida que o fundo tem com o investidor",
+                    "A parte proporcional de cada investidor no patrimônio total do fundo",
+                    "Um lucro garantido para o investidor",
+                    "O salário do gestor do fundo"
+                  ],
+                  "explanation": "A cota é a unidade que divide o patrimônio do fundo entre todos os investidores, proporcionalmente ao valor que cada um aplicou."
+                },
+                "en": {
+                  "prompt": "What does a cota (share) of an investment fund represent?",
+                  "options": [
+                    "A debt the fund owes the investor",
+                    "Each investor's proportional part of the fund's total assets",
+                    "A guaranteed profit for the investor",
+                    "The fund manager's salary"
+                  ],
+                  "explanation": "The cota is the unit that divides the fund's assets among all investors, in proportion to how much each one applied."
+                },
+                "es": {
+                  "prompt": "¿Qué representa una cota de un fondo de inversión?",
+                  "options": [
+                    "Una deuda que el fondo tiene con el inversor",
+                    "La parte proporcional de cada inversor en el patrimonio total del fondo",
+                    "Una ganancia garantizada para el inversor",
+                    "El salario del gestor del fondo"
+                  ],
+                  "explanation": "La cota es la unidad que divide el patrimonio del fondo entre todos los inversores, en proporción al valor que cada uno aplicó."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Um fundo tem patrimônio total de R$5 milhões, dividido em 500 mil cotas de R$10 cada. Você aplica R$2.000. Quantas cotas você passa a ter, e o que isso representa?",
+                  "options": [
+                    "2.000 cotas, representando a totalidade do fundo",
+                    "2 cotas, porque cada cota vale R$1.000",
+                    "200 cotas, representando sua fração proporcional do patrimônio total do fundo",
+                    "Não é possível saber sem falar com o gestor"
+                  ],
+                  "explanation": "R$2.000 divididos pelo valor de R$10 por cota resultam em 200 cotas — sua parte proporcional dentro do patrimônio total de R$5 milhões do fundo."
+                },
+                "en": {
+                  "prompt": "A fund has R$5 million in total assets, divided into 500,000 cotas worth R$10 each. You apply R$2,000. How many cotas do you end up with, and what does that represent?",
+                  "options": [
+                    "2,000 cotas, representing the entire fund",
+                    "2 cotas, since each cota is worth R$1,000",
+                    "200 cotas, representing your proportional slice of the fund's total assets",
+                    "There's no way to know without asking the manager"
+                  ],
+                  "explanation": "R$2,000 divided by the R$10 cota value results in 200 cotas — your proportional share within the fund's R$5 million total."
+                },
+                "es": {
+                  "prompt": "Un fondo tiene un patrimonio total de R$5 millones, dividido en 500.000 cotas de R$10 cada una. Tú aplicas R$2.000. ¿Cuántas cotas pasas a tener, y qué representa eso?",
+                  "options": [
+                    "2.000 cotas, representando la totalidad del fondo",
+                    "2 cotas, porque cada cota vale R$1.000",
+                    "200 cotas, representando tu fracción proporcional del patrimonio total del fondo",
+                    "No es posible saberlo sin hablar con el gestor"
+                  ],
+                  "explanation": "R$2.000 divididos por el valor de R$10 por cota dan como resultado 200 cotas — tu parte proporcional dentro del patrimonio total de R$5 millones del fondo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Um fundo reúne o dinheiro de vários investidores, administrado por um gestor profissional.",
+                    "O patrimônio do fundo é dividido em cotas, proporcionais à contribuição de cada investidor.",
+                    "O valor da cota sobe ou desce conforme o desempenho dos ativos do fundo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A fund pools money from many investors, managed by a professional manager.",
+                    "The fund's assets are divided into cotas, proportional to each investor's contribution.",
+                    "The cota's value rises or falls according to the performance of the fund's assets."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un fondo reúne el dinero de varios inversores, administrado por un gestor profesional.",
+                    "El patrimonio del fondo se divide en cotas, proporcionales al aporte de cada inversor.",
+                    "El valor de la cota sube o baja según el desempeño de los activos del fondo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_fund_costs",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custos de Fundos: Taxa de Administração e de Performance"
+            },
+            "en": {
+              "title": "Fund Costs: Management and Performance Fees"
+            },
+            "es": {
+              "title": "Costos de Fondos: Tasa de Administración y de Performance"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas taxas, dois momentos diferentes",
+                  "body": "Fundos cobram taxas pelo trabalho de gestão. A taxa de administração é um percentual ao ano cobrado sobre o patrimônio investido, independentemente de o fundo ganhar ou perder dinheiro — ela é descontada aos poucos, dia após dia, do valor da cota. Alguns fundos também cobram taxa de performance: um percentual sobre o retorno que exceder um benchmark (índice de referência) definido, como o CDI ou o Ibovespa. Essa segunda taxa só é cobrada quando o fundo supera essa meta."
+                },
+                "en": {
+                  "title": "Two fees, two different moments",
+                  "body": "Funds charge fees for the work of managing money. The management fee is an annual percentage charged on the invested assets, regardless of whether the fund makes or loses money — it's deducted little by little, day after day, from the cota's value. Some funds also charge a performance fee: a percentage of the return that exceeds a defined benchmark, such as the CDI or the Ibovespa. This second fee is only charged when the fund beats that target."
+                },
+                "es": {
+                  "title": "Dos tasas, dos momentos diferentes",
+                  "body": "Los fondos cobran tasas por el trabajo de gestión. La tasa de administración es un porcentaje anual cobrado sobre el patrimonio invertido, independientemente de que el fondo gane o pierda dinero — se descuenta poco a poco, día tras día, del valor de la cota. Algunos fondos también cobran tasa de performance: un porcentaje sobre el retorno que supere un benchmark (índice de referencia) definido, como el CDI o el Ibovespa. Esta segunda tasa solo se cobra cuando el fondo supera esa meta."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo com taxa de administração de 2% ao ano sobre R$10.000 investidos cobra R$200 naquele ano, mesmo que o fundo tenha perdido dinheiro no período. Já um fundo com taxa de performance de 20% sobre o que exceder o CDI: se o CDI rendeu 10% no ano e o fundo rendeu 14%, a taxa de performance incide apenas sobre os 4 pontos percentuais que excederam o CDI."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fund with a 2% annual management fee on R$10,000 invested charges R$200 that year, even if the fund lost money in the period. Now a fund with a 20% performance fee on whatever exceeds the CDI: if the CDI returned 10% for the year and the fund returned 14%, the performance fee only applies to the 4 percentage points that exceeded the CDI."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo con una tasa de administración del 2% anual sobre R$10.000 invertidos cobra R$200 ese año, aunque el fondo haya perdido dinero en el período. Ahora un fondo con una tasa de performance del 20% sobre lo que supere el CDI: si el CDI rindió 10% en el año y el fondo rindió 14%, la tasa de performance se aplica solo sobre los 4 puntos porcentuales que superaron el CDI."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "A taxa de administração de um fundo é cobrada:",
+                  "options": [
+                    "Somente quando o fundo tem lucro",
+                    "Apenas uma vez, na entrada do investidor",
+                    "Somente se o investidor resgatar antes de um ano",
+                    "Todo ano, independentemente do desempenho do fundo"
+                  ],
+                  "explanation": "A taxa de administração remunera o trabalho de gestão e é cobrada continuamente, mesmo em anos de resultado negativo."
+                },
+                "en": {
+                  "prompt": "A fund's management fee is charged:",
+                  "options": [
+                    "Only when the fund makes a profit",
+                    "Only once, when the investor enters the fund",
+                    "Only if the investor redeems before one year",
+                    "Every year, regardless of the fund's performance"
+                  ],
+                  "explanation": "The management fee compensates the work of managing the fund and is charged continuously, even in years with a negative result."
+                },
+                "es": {
+                  "prompt": "La tasa de administración de un fondo se cobra:",
+                  "options": [
+                    "Solo cuando el fondo tiene ganancias",
+                    "Solo una vez, al entrar el inversor",
+                    "Solo si el inversor rescata antes de un año",
+                    "Todos los años, independientemente del desempeño del fondo"
+                  ],
+                  "explanation": "La tasa de administración remunera el trabajo de gestión y se cobra continuamente, incluso en años con resultado negativo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe que juros compostos fazem pequenas diferenças de taxa se acumularem bastante ao longo do tempo. Por que isso torna a taxa de administração um fator importante ao escolher um fundo para o longo prazo?",
+                  "options": [
+                    "Porque, assim como os juros compostos fazem o retorno crescer ano após ano, uma taxa cobrada todo ano também se acumula, reduzindo o retorno líquido de forma cada vez maior quanto mais tempo o dinheiro fica investido",
+                    "Porque taxas de administração aumentam automaticamente a cada ano",
+                    "Porque taxas de administração só existem em fundos de curto prazo",
+                    "Porque taxas não têm nenhum efeito sobre o retorno final"
+                  ],
+                  "explanation": "O mesmo mecanismo que faz o dinheiro crescer de forma acelerada com juros compostos também faz uma taxa anual corroer o retorno de forma acelerada — por isso pequenas diferenças de taxa importam tanto no longo prazo."
+                },
+                "en": {
+                  "prompt": "You already know compound interest makes small differences in rate accumulate heavily over time. Why does that make the management fee an important factor when choosing a fund for the long run?",
+                  "options": [
+                    "Because, just as compound interest makes returns grow year after year, a fee charged every year also compounds, reducing net returns by an increasingly larger amount the longer the money stays invested",
+                    "Because management fees automatically increase every year",
+                    "Because management fees only exist in short-term funds",
+                    "Because fees have no effect at all on the final return"
+                  ],
+                  "explanation": "The same mechanism that makes money grow at an accelerating pace through compound interest also makes an annual fee erode returns at an accelerating pace — that's why small fee differences matter so much in the long run."
+                },
+                "es": {
+                  "prompt": "Ya sabes que el interés compuesto hace que pequeñas diferencias de tasa se acumulen bastante con el tiempo. ¿Por qué eso convierte a la tasa de administración en un factor importante al elegir un fondo para el largo plazo?",
+                  "options": [
+                    "Porque, así como el interés compuesto hace que el retorno crezca año tras año, una tasa cobrada todos los años también se acumula, reduciendo el retorno neto de forma cada vez mayor cuanto más tiempo el dinero permanece invertido",
+                    "Porque las tasas de administración aumentan automáticamente cada año",
+                    "Porque las tasas de administración solo existen en fondos de corto plazo",
+                    "Porque las tasas no tienen ningún efecto sobre el retorno final"
+                  ],
+                  "explanation": "El mismo mecanismo que hace que el dinero crezca de forma acelerada con el interés compuesto también hace que una tasa anual erosione el retorno de forma acelerada — por eso pequeñas diferencias de tasa importan tanto en el largo plazo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Taxa de administração é cobrada todo ano, tenha o fundo lucro ou prejuízo.",
+                    "Taxa de performance só incide sobre o retorno que superar um benchmark definido.",
+                    "Taxas se acumulam ano após ano, do mesmo jeito que juros compostos — por isso pequenas diferenças de taxa importam no longo prazo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The management fee is charged every year, whether the fund profits or loses money.",
+                    "The performance fee only applies to returns that exceed a defined benchmark.",
+                    "Fees compound year after year, just like compound interest — that's why small fee differences matter in the long run."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa de administración se cobra todos los años, tenga el fondo ganancia o pérdida.",
+                    "La tasa de performance solo se aplica sobre el retorno que supere un benchmark definido.",
+                    "Las tasas se acumulan año tras año, igual que el interés compuesto — por eso pequeñas diferencias de tasa importan en el largo plazo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_what_is_an_etf",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que é um ETF?"
+            },
+            "en": {
+              "title": "What Is an ETF?"
+            },
+            "es": {
+              "title": "¿Qué es un ETF?"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um fundo que se compra como uma ação",
+                  "body": "ETF (Exchange Traded Fund) é um fundo de índice negociado na bolsa de valores, como se fosse uma ação. Em vez de um gestor escolher ativamente quais ativos comprar, um ETF replica passivamente a composição de um índice de referência, como o Ibovespa — ele compra os mesmos ativos, nas mesmas proporções que compõem esse índice. Isso é diferente da gestão ativa, em que um gestor tenta escolher ativos que superem o mercado. Não existe garantia de que a gestão ativa supere a passiva (ou vice-versa) de forma consistente — as duas abordagens têm custos, riscos e resultados diferentes ao longo do tempo."
+                },
+                "en": {
+                  "title": "A fund you buy like a stock",
+                  "body": "An ETF (Exchange Traded Fund) is an index fund traded on the stock exchange, just like a stock. Instead of a manager actively choosing which assets to buy, an ETF passively tracks the composition of a benchmark index, such as the Ibovespa — it holds the same assets, in the same proportions that make up that index. This differs from active management, where a manager tries to pick assets that beat the market. There's no guarantee that active management consistently beats passive management (or vice versa) — the two approaches carry different costs, risks and results over time."
+                },
+                "es": {
+                  "title": "Un fondo que se compra como una acción",
+                  "body": "Un ETF (Exchange Traded Fund) es un fondo de índice negociado en la bolsa de valores, como si fuera una acción. En lugar de que un gestor elija activamente qué activos comprar, un ETF replica pasivamente la composición de un índice de referencia, como el Ibovespa — compra los mismos activos, en las mismas proporciones que componen ese índice. Esto es diferente de la gestión activa, en la que un gestor intenta elegir activos que superen al mercado. No existe garantía de que la gestión activa supere a la pasiva (o viceversa) de forma consistente — ambos enfoques tienen costos, riesgos y resultados distintos con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um ETF que replica o Ibovespa sobe e desce, em geral, seguindo de perto o desempenho do próprio índice. Comprar uma cota desse ETF é comprar, indiretamente, uma pequena fatia de todas as empresas que compõem o Ibovespa ao mesmo tempo, com uma única ordem de compra na bolsa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An ETF that tracks the Ibovespa generally rises and falls closely following the index's own performance. Buying one cota of that ETF means indirectly buying a small slice of every company in the Ibovespa at once, with a single buy order on the exchange."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un ETF que replica el Ibovespa sube y baja, en general, siguiendo de cerca el desempeño del propio índice. Comprar una cota de ese ETF es comprar, indirectamente, una pequeña porción de todas las empresas que componen el Ibovespa al mismo tiempo, con una única orden de compra en la bolsa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que um ETF busca fazer, na maioria dos casos?",
+                  "options": [
+                    "Replicar passivamente o desempenho de um índice de referência",
+                    "Superar o mercado escolhendo ativamente os melhores ativos",
+                    "Garantir um retorno fixo ao investidor",
+                    "Investir exclusivamente em um único setor da economia"
+                  ],
+                  "explanation": "A grande maioria dos ETFs busca acompanhar de perto um índice de referência, comprando os mesmos ativos, nas mesmas proporções — sem escolha ativa de qual ativo vai superar o mercado."
+                },
+                "en": {
+                  "prompt": "What does an ETF typically try to do?",
+                  "options": [
+                    "Passively track the performance of a benchmark index",
+                    "Beat the market by actively picking the best assets",
+                    "Guarantee a fixed return to the investor",
+                    "Invest exclusively in a single sector of the economy"
+                  ],
+                  "explanation": "Most ETFs aim to closely follow a benchmark index, holding the same assets in the same proportions — without actively picking which asset will beat the market."
+                },
+                "es": {
+                  "prompt": "¿Qué busca hacer un ETF, en la mayoría de los casos?",
+                  "options": [
+                    "Replicar pasivamente el desempeño de un índice de referencia",
+                    "Superar al mercado eligiendo activamente los mejores activos",
+                    "Garantizar un retorno fijo al inversor",
+                    "Invertir exclusivamente en un solo sector de la economía"
+                  ],
+                  "explanation": "La gran mayoría de los ETFs buscan seguir de cerca un índice de referencia, comprando los mismos activos, en las mismas proporciones — sin elección activa de qué activo superará al mercado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor está escolhendo entre um fundo de gestão ativa, que tenta superar o Ibovespa escolhendo ativos, e um ETF que replica passivamente o Ibovespa. O que é correto afirmar sobre essa escolha?",
+                  "options": [
+                    "A gestão ativa sempre supera a gestão passiva no longo prazo",
+                    "Nenhuma das duas abordagens tem garantia de superar a outra de forma consistente — a escolha depende de outros fatores, como custo e estratégia",
+                    "A gestão passiva sempre supera a gestão ativa no longo prazo",
+                    "É impossível investir em um índice sem escolher ações individualmente"
+                  ],
+                  "explanation": "Nem gestão ativa nem passiva vencem a outra de forma garantida e consistente ao longo do tempo — cada abordagem tem seus próprios custos e riscos, e a escolha depende do contexto do investidor."
+                },
+                "en": {
+                  "prompt": "An investor is choosing between an actively managed fund that tries to beat the Ibovespa by picking assets, and an ETF that passively tracks the Ibovespa. What's correct to say about this choice?",
+                  "options": [
+                    "Active management always beats passive management in the long run",
+                    "Neither approach is guaranteed to consistently beat the other — the choice depends on other factors, like cost and strategy",
+                    "Passive management always beats active management in the long run",
+                    "It's impossible to invest in an index without picking individual stocks"
+                  ],
+                  "explanation": "Neither active nor passive management reliably and consistently beats the other over time — each approach has its own costs and risks, and the choice depends on the investor's context."
+                },
+                "es": {
+                  "prompt": "Un inversor está eligiendo entre un fondo de gestión activa, que intenta superar al Ibovespa eligiendo activos, y un ETF que replica pasivamente al Ibovespa. ¿Qué es correcto afirmar sobre esta elección?",
+                  "options": [
+                    "La gestión activa siempre supera a la gestión pasiva en el largo plazo",
+                    "Ninguno de los dos enfoques tiene garantía de superar al otro de forma consistente — la elección depende de otros factores, como el costo y la estrategia",
+                    "La gestión pasiva siempre supera a la gestión activa en el largo plazo",
+                    "Es imposible invertir en un índice sin elegir acciones individuales"
+                  ],
+                  "explanation": "Ni la gestión activa ni la pasiva vencen a la otra de forma garantizada y consistente con el tiempo — cada enfoque tiene sus propios costos y riesgos, y la elección depende del contexto del inversor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "ETF é um fundo de índice negociado na bolsa como uma ação.",
+                    "Ele replica passivamente um índice de referência, em vez de um gestor escolher ativamente os ativos.",
+                    "Nem gestão ativa nem passiva têm garantia de superar a outra de forma consistente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "An ETF is an index fund traded on the exchange like a stock.",
+                    "It passively tracks a benchmark index, instead of a manager actively picking assets.",
+                    "Neither active nor passive management is guaranteed to consistently beat the other."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un ETF es un fondo de índice negociado en la bolsa como una acción.",
+                    "Replica pasivamente un índice de referencia, en lugar de que un gestor elija activamente los activos.",
+                    "Ni la gestión activa ni la pasiva tienen garantía de superar a la otra de forma consistente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_diversification_in_one_trade",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Diversificação em uma Única Operação"
+            },
+            "en": {
+              "title": "Diversification in One Trade"
+            },
+            "es": {
+              "title": "Diversificación en una Sola Operación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dezenas de empresas, uma só compra",
+                  "body": "Você já sabe que diversificar significa distribuir investimentos entre diferentes ativos para reduzir o impacto de um problema isolado. Um ETF entrega essa diversificação em uma única operação: ao comprar uma cota, você passa a ter exposição a todas as empresas que compõem o índice replicado — de uma só vez, com uma única ordem de compra na bolsa."
+                },
+                "en": {
+                  "title": "Dozens of companies, one purchase",
+                  "body": "You already know that diversifying means spreading investments across different assets to reduce the impact of an isolated problem. An ETF delivers that diversification in a single trade: by buying one cota, you gain exposure to every company that makes up the tracked index — all at once, with a single buy order on the exchange."
+                },
+                "es": {
+                  "title": "Decenas de empresas, una sola compra",
+                  "body": "Ya sabes que diversificar significa distribuir inversiones entre diferentes activos para reducir el impacto de un problema aislado. Un ETF entrega esa diversificación en una única operación: al comprar una cota, pasas a tener exposición a todas las empresas que componen el índice replicado — de una sola vez, con una única orden de compra en la bolsa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Comprar individualmente ações de 80 empresas diferentes exigiria 80 operações separadas, além de capital suficiente para comprar ao menos um lote de cada uma. Comprar uma cota de um ETF que replica um índice com essas mesmas 80 empresas entrega, com uma única compra, exposição proporcional a todas elas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Buying individual stocks in 80 different companies would require 80 separate trades, plus enough capital to buy at least one lot of each. Buying one cota of an ETF that tracks an index made up of those same 80 companies delivers, with a single purchase, proportional exposure to all of them."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Comprar individualmente acciones de 80 empresas diferentes exigiría 80 operaciones separadas, además de capital suficiente para comprar al menos un lote de cada una. Comprar una cota de un ETF que replica un índice con esas mismas 80 empresas entrega, con una sola compra, exposición proporcional a todas ellas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual a principal vantagem de comprar um ETF em termos de diversificação?",
+                  "options": [
+                    "Ele garante que você nunca terá prejuízo",
+                    "Ele elimina completamente o risco de mercado",
+                    "Uma única compra dá exposição a dezenas ou centenas de ativos ao mesmo tempo",
+                    "Ele investe em uma única empresa por vez, escolhida pelo gestor"
+                  ],
+                  "explanation": "A vantagem central de um ETF é entregar exposição a muitos ativos de uma vez, sem exigir dezenas de compras separadas."
+                },
+                "en": {
+                  "prompt": "What's the main advantage of buying an ETF in terms of diversification?",
+                  "options": [
+                    "It guarantees you'll never take a loss",
+                    "It completely eliminates market risk",
+                    "A single purchase gives exposure to dozens or hundreds of assets at once",
+                    "It invests in a single company at a time, chosen by the manager"
+                  ],
+                  "explanation": "The core advantage of an ETF is delivering exposure to many assets at once, without requiring dozens of separate purchases."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal ventaja de comprar un ETF en términos de diversificación?",
+                  "options": [
+                    "Garantiza que nunca tendrás pérdidas",
+                    "Elimina por completo el riesgo de mercado",
+                    "Una sola compra da exposición a decenas o cientos de activos a la vez",
+                    "Invierte en una sola empresa a la vez, elegida por el gestor"
+                  ],
+                  "explanation": "La ventaja central de un ETF es entregar exposición a muchos activos a la vez, sin exigir decenas de compras separadas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor com pouco capital quer se expor a várias empresas diferentes, mas não tem dinheiro suficiente para comprar lotes de ações de cada uma individualmente. Como um ETF pode ajudar nesse caso?",
+                  "options": [
+                    "Não pode, ETFs só servem para investidores com muito capital",
+                    "O ETF elimina a necessidade de diversificação",
+                    "ETFs garantem retorno maior do que ações individuais",
+                    "Com uma única cota de ETF, ele pode obter exposição proporcional a todas as empresas do índice replicado, com um valor de entrada bem menor do que comprar cada ação separadamente"
+                  ],
+                  "explanation": "Como o ETF divide o índice inteiro em cotas de valor acessível, ele permite exposição a muitas empresas com um capital bem menor do que compraria um lote de cada ação separadamente."
+                },
+                "en": {
+                  "prompt": "An investor with little capital wants exposure to several different companies, but doesn't have enough money to buy a lot of each stock individually. How can an ETF help in this case?",
+                  "options": [
+                    "It can't, ETFs are only for investors with a lot of capital",
+                    "The ETF removes the need for diversification",
+                    "ETFs guarantee a higher return than individual stocks",
+                    "With a single ETF cota, they can get proportional exposure to every company in the tracked index, with a much smaller entry amount than buying each stock separately"
+                  ],
+                  "explanation": "Since the ETF divides the entire index into affordably priced cotas, it allows exposure to many companies with much less capital than buying a lot of each stock separately would require."
+                },
+                "es": {
+                  "prompt": "Un inversor con poco capital quiere exponerse a varias empresas diferentes, pero no tiene dinero suficiente para comprar lotes de acciones de cada una individualmente. ¿Cómo puede ayudar un ETF en este caso?",
+                  "options": [
+                    "No puede, los ETFs solo sirven para inversores con mucho capital",
+                    "El ETF elimina la necesidad de diversificación",
+                    "Los ETFs garantizan un retorno mayor que las acciones individuales",
+                    "Con una sola cota de ETF, puede obtener exposición proporcional a todas las empresas del índice replicado, con un monto de entrada mucho menor que comprar cada acción por separado"
+                  ],
+                  "explanation": "Como el ETF divide el índice entero en cotas de valor accesible, permite exposición a muchas empresas con un capital mucho menor del que se necesitaría para comprar un lote de cada acción por separado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Um ETF entrega diversificação em uma única operação de compra.",
+                    "Isso reduz a necessidade de comprar dezenas de ativos separadamente.",
+                    "Diversificação via ETF não elimina risco — ela reduz o impacto de um ativo específico ir mal."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "An ETF delivers diversification in a single purchase.",
+                    "This reduces the need to buy dozens of assets separately.",
+                    "Diversification through an ETF doesn't eliminate risk — it reduces the impact of any single asset going badly."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un ETF entrega diversificación en una única operación de compra.",
+                    "Esto reduce la necesidad de comprar decenas de activos por separado.",
+                    "La diversificación vía ETF no elimina el riesgo — reduce el impacto de que un activo específico vaya mal."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_what_is_a_fii",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O que é um FII (Fundo Imobiliário)?"
+            },
+            "en": {
+              "title": "What Is a FII (Real Estate Fund)?"
+            },
+            "es": {
+              "title": "¿Qué es un FII (Fondo Inmobiliario)?"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Imóveis, mas em cotas",
+                  "body": "FII (Fundo de Investimento Imobiliário) é um fundo que reúne o dinheiro de vários investidores para aplicar no mercado imobiliário. Existem, principalmente, dois tipos: fundos de tijolo, que investem diretamente em imóveis físicos e geram renda com aluguéis; e fundos de papel, que investem em títulos de crédito imobiliário, como CRIs (Certificados de Recebíveis Imobiliários). Assim como um ETF, as cotas de um FII são negociadas na bolsa de valores, como se fossem uma ação."
+                },
+                "en": {
+                  "title": "Real estate, but in cotas",
+                  "body": "A FII (Fundo de Investimento Imobiliário, or real estate fund) pools money from many investors to invest in the real estate market. There are mainly two types: fundos de tijolo (\"brick funds\"), which invest directly in physical properties and generate income from rent; and fundos de papel (\"paper funds\"), which invest in real-estate credit instruments, such as CRIs (real-estate-backed securities). Just like an ETF, a FII's cotas are traded on the stock exchange, as if they were a stock."
+                },
+                "es": {
+                  "title": "Inmuebles, pero en cotas",
+                  "body": "Un FII (Fundo de Investimento Imobiliário, fondo de inversión inmobiliaria) es un fondo que reúne el dinero de varios inversores para aplicar en el mercado inmobiliario. Existen principalmente dos tipos: fondos de ladrillo, que invierten directamente en inmuebles físicos y generan renta con alquileres; y fondos de papel, que invierten en títulos de crédito inmobiliario, como los CRI (Certificados de Recibibles Inmobiliarios). Al igual que un ETF, las cotas de un FII se negocian en la bolsa de valores, como si fueran una acción."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em vez de comprar um imóvel inteiro para alugar — algo que exige capital alto, além de burocracia e manutenção —, um investidor pode comprar cotas de um FII que já é dono de vários imóveis alugados, recebendo parte proporcional da renda desses aluguéis."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Instead of buying an entire property to rent out — which requires a lot of capital, plus paperwork and maintenance — an investor can buy cotas of a FII that already owns several rented properties, receiving a proportional share of that rental income."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En lugar de comprar un inmueble entero para alquilar — algo que exige mucho capital, además de trámites y mantenimiento —, un inversor puede comprar cotas de un FII que ya es dueño de varios inmuebles alquilados, recibiendo una parte proporcional de esa renta de alquileres."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que um fundo de papel (tipo de FII) investe principalmente?",
+                  "options": [
+                    "Diretamente em imóveis físicos",
+                    "Em ações de construtoras",
+                    "Em títulos de crédito imobiliário, como CRIs",
+                    "Em criptomoedas ligadas ao mercado imobiliário"
+                  ],
+                  "explanation": "Fundos de papel investem em créditos ligados ao setor imobiliário, como CRIs, em vez de possuir imóveis diretamente — isso é o que os diferencia dos fundos de tijolo."
+                },
+                "en": {
+                  "prompt": "What does a fundo de papel (a type of FII) mainly invest in?",
+                  "options": [
+                    "Directly in physical properties",
+                    "In stocks of construction companies",
+                    "In real-estate credit instruments, such as CRIs",
+                    "In cryptocurrencies linked to the real estate market"
+                  ],
+                  "explanation": "Fundos de papel invest in credit linked to the real estate sector, such as CRIs, instead of owning properties directly — that's what sets them apart from fundos de tijolo."
+                },
+                "es": {
+                  "prompt": "¿En qué invierte principalmente un fondo de papel (tipo de FII)?",
+                  "options": [
+                    "Directamente en inmuebles físicos",
+                    "En acciones de constructoras",
+                    "En títulos de crédito inmobiliario, como CRI",
+                    "En criptomonedas vinculadas al mercado inmobiliario"
+                  ],
+                  "explanation": "Los fondos de papel invierten en créditos vinculados al sector inmobiliario, como los CRI, en lugar de poseer inmuebles directamente — eso es lo que los diferencia de los fondos de ladrillo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor quer receber renda de aluguéis de imóveis, mas não tem capital para comprar um imóvel inteiro nem quer lidar com inquilinos e manutenção. O que um FII de tijolo oferece nesse caso?",
+                  "options": [
+                    "Nenhuma solução — é preciso comprar o imóvel diretamente",
+                    "Um empréstimo para comprar o imóvel",
+                    "Apenas a valorização do imóvel, sem direito à renda do aluguel",
+                    "Exposição proporcional a uma carteira de imóveis alugados, negociada como cotas na bolsa, sem a necessidade de administrar os imóveis diretamente"
+                  ],
+                  "explanation": "Um FII de tijolo já é dono e administra os imóveis; o investidor apenas compra cotas na bolsa e recebe parte proporcional da renda de aluguel, sem lidar com a administração direta."
+                },
+                "en": {
+                  "prompt": "An investor wants rental income from properties, but doesn't have the capital to buy an entire property, nor does he want to deal with tenants and maintenance. What does a fundo de tijolo (brick FII) offer in this case?",
+                  "options": [
+                    "No solution — buying the property directly is the only way",
+                    "A loan to buy the property",
+                    "Only the property's appreciation, with no right to rental income",
+                    "Proportional exposure to a portfolio of rented properties, traded as cotas on the exchange, without needing to manage the properties directly"
+                  ],
+                  "explanation": "A fundo de tijolo already owns and manages the properties; the investor simply buys cotas on the exchange and receives a proportional share of the rental income, without dealing with direct management."
+                },
+                "es": {
+                  "prompt": "Un inversor quiere recibir renta de alquileres de inmuebles, pero no tiene capital para comprar un inmueble entero ni quiere lidiar con inquilinos y mantenimiento. ¿Qué ofrece un FII de ladrillo en este caso?",
+                  "options": [
+                    "Ninguna solución — es necesario comprar el inmueble directamente",
+                    "Un préstamo para comprar el inmueble",
+                    "Solo la valorización del inmueble, sin derecho a la renta del alquiler",
+                    "Exposición proporcional a una cartera de inmuebles alquilados, negociada como cotas en la bolsa, sin necesidad de administrar los inmuebles directamente"
+                  ],
+                  "explanation": "Un FII de ladrillo ya es dueño y administra los inmuebles; el inversor solo compra cotas en la bolsa y recibe una parte proporcional de la renta de alquiler, sin lidiar con la administración directa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "FII é um fundo que reúne dinheiro para investir no mercado imobiliário.",
+                    "Fundos de tijolo investem em imóveis físicos; fundos de papel investem em crédito imobiliário, como CRIs.",
+                    "As cotas de um FII são negociadas na bolsa, como uma ação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A FII is a fund that pools money to invest in the real estate market.",
+                    "Fundos de tijolo invest in physical properties; fundos de papel invest in real-estate credit, such as CRIs.",
+                    "A FII's cotas are traded on the exchange, like a stock."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un FII es un fondo que reúne dinero para invertir en el mercado inmobiliario.",
+                    "Los fondos de ladrillo invierten en inmuebles físicos; los fondos de papel invierten en crédito inmobiliario, como CRI.",
+                    "Las cotas de un FII se negocian en la bolsa, como una acción."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_fii_income",
+          "order": 6,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Renda e Tributação de FIIs"
+            },
+            "en": {
+              "title": "FII Income and Taxation"
+            },
+            "es": {
+              "title": "Renta y Tributación de FIIs"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Isenção com três condições",
+                  "body": "FIIs costumam distribuir parte da renda gerada (aluguéis recebidos ou juros de créditos imobiliários) aos cotistas todo mês. Para pessoas físicas, essa distribuição mensal é isenta de Imposto de Renda quando três condições são atendidas ao mesmo tempo: as cotas do fundo são negociadas em bolsa (ou mercado de balcão organizado); o fundo tem pelo menos 100 cotistas; e o investidor possui menos de 10% do total de cotas do fundo. Essa isenção está prevista na Lei 11.033/2004. Ela vale para os rendimentos distribuídos mensalmente — já o ganho de capital, o lucro obtido ao vender uma cota por um preço maior do que o de compra, não é isento: é tributado em 20%, independentemente do valor da venda."
+                },
+                "en": {
+                  "title": "An exemption with three conditions",
+                  "body": "FIIs typically distribute part of the income they generate (rent collected or interest from real-estate credit) to cotistas (shareholders) every month. For individuals, this monthly distribution is exempt from income tax when three conditions hold at the same time: the fund's cotas are traded on the exchange (or an organized over-the-counter market); the fund has at least 100 cotistas; and the investor holds less than 10% of the fund's total cotas. This exemption comes from Brazilian Law 11.033/2004. It applies to the monthly distributed income — capital gains, the profit made from selling a cota for more than its purchase price, are not exempt: they're taxed at a flat 20%, regardless of the sale amount."
+                },
+                "es": {
+                  "title": "Una exención con tres condiciones",
+                  "body": "Los FII suelen distribuir parte de la renta generada (alquileres recibidos o intereses de créditos inmobiliarios) a los cotistas cada mes. Para personas físicas, esa distribución mensual está exenta de Impuesto a la Renta cuando se cumplen tres condiciones al mismo tiempo: las cotas del fondo se negocian en bolsa (o en un mercado de balcón organizado); el fondo tiene al menos 100 cotistas; y el inversor posee menos del 10% del total de cotas del fondo. Esta exención está prevista en la Ley 11.033/2004. Se aplica a los rendimientos distribuidos mensualmente — en cambio, la ganancia de capital, la ganancia obtenida al vender una cota por un precio mayor al de compra, no está exenta: se tributa al 20%, independientemente del valor de la venta."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor que recebe R$150 de rendimento mensal de um FII listado em bolsa, com mais de 100 cotistas, e possui menos de 10% do fundo, recebe esse valor integralmente, sem desconto de IR. Se, meses depois, ele vender suas cotas por um valor maior do que pagou, esse lucro (ganho de capital) será tributado em 20%."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor who receives R$150 in monthly income from a FII listed on the exchange, with more than 100 cotistas, and holds less than 10% of the fund, receives that amount in full, with no income-tax withholding. If, months later, he sells his cotas for more than he paid, that profit (capital gain) will be taxed at 20%."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor que recibe R$150 de renta mensual de un FII listado en bolsa, con más de 100 cotistas, y posee menos del 10% del fondo, recibe ese monto íntegramente, sin descuento de IR. Si, meses después, vende sus cotas por un valor mayor al que pagó, esa ganancia (ganancia de capital) será tributada al 20%."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Para que a distribuição mensal de renda de um FII seja isenta de IR para pessoa física, é necessário que:",
+                  "options": [
+                    "O investidor tenha aplicado no fundo há mais de um ano",
+                    "O fundo distribua toda a renda gerada, sem exceção",
+                    "O investidor resida fora do Brasil",
+                    "As cotas sejam negociadas em bolsa, o fundo tenha ao menos 100 cotistas, e o investidor possua menos de 10% do fundo — as três condições ao mesmo tempo"
+                  ],
+                  "explanation": "A isenção depende das três condições da Lei 11.033/2004 sendo atendidas simultaneamente: negociação em bolsa, mínimo de 100 cotistas, e participação individual abaixo de 10%."
+                },
+                "en": {
+                  "prompt": "For a FII's monthly income distribution to be exempt from income tax for an individual, it's necessary that:",
+                  "options": [
+                    "The investor has held the investment for more than one year",
+                    "The fund distributes all the income it generates, without exception",
+                    "The investor lives outside Brazil",
+                    "The cotas are traded on the exchange, the fund has at least 100 cotistas, and the investor holds less than 10% of the fund — all three conditions at once"
+                  ],
+                  "explanation": "The exemption depends on all three conditions from Law 11.033/2004 being met at the same time: exchange trading, a minimum of 100 cotistas, and individual ownership below 10%."
+                },
+                "es": {
+                  "prompt": "Para que la distribución mensual de renta de un FII esté exenta de IR para una persona física, es necesario que:",
+                  "options": [
+                    "El inversor haya aplicado en el fondo hace más de un año",
+                    "El fondo distribuya toda la renta generada, sin excepción",
+                    "El inversor resida fuera de Brasil",
+                    "Las cotas se negocien en bolsa, el fondo tenga al menos 100 cotistas, y el inversor posea menos del 10% del fondo — las tres condiciones a la vez"
+                  ],
+                  "explanation": "La exención depende de que se cumplan simultáneamente las tres condiciones de la Ley 11.033/2004: negociación en bolsa, mínimo de 100 cotistas, y participación individual por debajo del 10%."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor recebe rendimentos mensais isentos de um FII listado em bolsa. Alguns meses depois, ele vende suas cotas com lucro. O que acontece com a tributação nesse segundo momento?",
+                  "options": [
+                    "O lucro da venda também é isento, já que os rendimentos mensais eram isentos",
+                    "A venda das cotas nunca gera imposto",
+                    "A isenção dos rendimentos mensais também isenta a venda das cotas se o valor for pequeno",
+                    "O lucro da venda (ganho de capital) é tributado em 20%, mesmo que os rendimentos mensais tenham sido isentos"
+                  ],
+                  "explanation": "A isenção da Lei 11.033/2004 vale apenas para os rendimentos distribuídos mensalmente. O ganho de capital na venda das cotas é um evento tributário separado, sujeito a 20% de imposto."
+                },
+                "en": {
+                  "prompt": "An investor receives tax-exempt monthly income from a FII listed on the exchange. A few months later, he sells his cotas at a profit. What happens with taxation at this second moment?",
+                  "options": [
+                    "The profit from the sale is also exempt, since the monthly income was exempt",
+                    "Selling the cotas never generates a tax",
+                    "The exemption on monthly income also exempts the sale of the cotas if the amount is small",
+                    "The profit from the sale (capital gain) is taxed at 20%, even though the monthly income was exempt"
+                  ],
+                  "explanation": "The Law 11.033/2004 exemption applies only to the monthly distributed income. The capital gain from selling cotas is a separate taxable event, subject to a 20% tax."
+                },
+                "es": {
+                  "prompt": "Un inversor recibe rendimientos mensuales exentos de un FII listado en bolsa. Algunos meses después, vende sus cotas con ganancia. ¿Qué pasa con la tributación en este segundo momento?",
+                  "options": [
+                    "La ganancia de la venta también está exenta, ya que los rendimientos mensuales estaban exentos",
+                    "La venta de las cotas nunca genera impuesto",
+                    "La exención de los rendimientos mensuales también exime la venta de las cotas si el monto es pequeño",
+                    "La ganancia de la venta (ganancia de capital) se tributa al 20%, aunque los rendimientos mensuales hayan sido exentos"
+                  ],
+                  "explanation": "La exención de la Ley 11.033/2004 se aplica solo a los rendimientos distribuidos mensualmente. La ganancia de capital en la venta de las cotas es un evento tributario separado, sujeto a un impuesto del 20%."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Rendimentos mensais de FIIs podem ser isentos de IR para pessoa física, se três condições forem atendidas: negociação em bolsa, 100+ cotistas, e menos de 10% do fundo por investidor.",
+                    "A isenção dos rendimentos mensais não se estende ao ganho de capital.",
+                    "Vender cotas de FII com lucro é tributado em 20%, independentemente do valor."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Monthly FII income can be exempt from income tax for individuals, if three conditions are met: exchange trading, 100+ cotistas, and less than 10% of the fund per investor.",
+                    "The exemption on monthly income doesn't extend to capital gains.",
+                    "Selling FII cotas at a profit is taxed at 20%, regardless of the amount."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los rendimientos mensuales de FIIs pueden estar exentos de IR para personas físicas, si se cumplen tres condiciones: negociación en bolsa, 100+ cotistas, y menos del 10% del fondo por inversor.",
+                    "La exención de los rendimientos mensuales no se extiende a la ganancia de capital.",
+                    "Vender cotas de FII con ganancia se tributa al 20%, independientemente del monto."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_come_cotas",
+          "order": 7,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Come-Cotas: Como a Maioria dos Fundos é Tributada"
+            },
+            "en": {
+              "title": "Come-Cotas: How Most Funds Are Taxed"
+            },
+            "es": {
+              "title": "Come-Cotas: Cómo se Tributa la Mayoría de los Fondos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Um adiantamento semestral, com exceções",
+                  "body": "A maioria dos fundos tradicionais — como fundos de renda fixa e multimercado — está sujeita ao chamado come-cotas: um adiantamento semestral de Imposto de Renda, cobrado automaticamente nos últimos dias úteis de maio e novembro. Em vez de pagar um boleto, o investidor tem uma parte de suas cotas convertida em imposto — por isso o nome \"come-cotas\". A alíquota antecipada depende da classificação do fundo pelo prazo médio dos seus ativos: 15% para fundos de longo prazo, 20% para fundos de curto prazo. No resgate, se a alíquota final devida (conforme o tempo total de aplicação) for maior do que o que já foi antecipado, a diferença é cobrada nesse momento. Esse mecanismo NÃO se aplica a todos os fundos, porém. Fundos de ações têm regra própria: são tributados em uma alíquota fixa de 15% sobre o lucro, cobrada apenas no resgate — sem come-cotas. ETFs e FIIs também não seguem o come-cotas: como você viu nas lições anteriores, eles têm suas próprias regras de tributação, ligadas à negociação em bolsa."
+                },
+                "en": {
+                  "title": "A semi-annual advance, with exceptions",
+                  "body": "Most traditional funds — such as fixed-income and multimarket funds — are subject to what's called come-cotas: a semi-annual advance withholding of income tax, applied automatically on the last business days of May and November. Instead of paying a bill, the investor has part of their cotas converted into tax — hence the name \"come-cotas\" (\"eats cotas\"). The advance rate depends on how the fund is classified by the average maturity of its assets: 15% for long-term funds, 20% for short-term funds. At redemption, if the final rate owed (based on the total holding period) is higher than what was already withheld, the difference is charged at that point. This mechanism does NOT apply to every fund, though. Stock funds have their own rule: they're taxed at a flat 15% on profit, charged only at redemption — no come-cotas. ETFs and FIIs also don't follow come-cotas: as you saw in the previous lessons, they have their own taxation rules, tied to exchange trading."
+                },
+                "es": {
+                  "title": "Un adelanto semestral, con excepciones",
+                  "body": "La mayoría de los fondos tradicionales — como los fondos de renta fija y multimercado — están sujetos al llamado come-cotas: un adelanto semestral de Impuesto a la Renta, cobrado automáticamente en los últimos días hábiles de mayo y noviembre. En vez de pagar una factura, al inversor se le convierte una parte de sus cotas en impuesto — de ahí el nombre \"come-cotas\" (\"come cotas\"). La alícuota anticipada depende de la clasificación del fondo según el plazo promedio de sus activos: 15% para fondos de largo plazo, 20% para fondos de corto plazo. En el rescate, si la alícuota final debida (según el tiempo total de aplicación) es mayor que lo ya anticipado, la diferencia se cobra en ese momento. Sin embargo, este mecanismo NO se aplica a todos los fondos. Los fondos de acciones tienen regla propia: se tributan a una alícuota fija del 15% sobre la ganancia, cobrada solo en el rescate — sin come-cotas. Los ETFs y los FIIs tampoco siguen el come-cotas: como viste en las lecciones anteriores, tienen sus propias reglas de tributación, vinculadas a la negociación en bolsa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor com R$10.000 em um fundo de renda fixa de longo prazo vê, no último dia útil de maio, parte de suas cotas convertidas em imposto, à alíquota de 15% sobre o rendimento acumulado até ali — mesmo sem ter resgatado nada. Se ele tivesse o mesmo valor investido em um fundo de ações, não haveria come-cotas: o IR só seria cobrado quando ele resgatasse suas cotas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor with R$10,000 in a long-term fixed-income fund sees, on the last business day of May, part of their cotas converted into tax, at a 15% rate on the return accumulated up to that point — even without having redeemed anything. If they had the same amount invested in a stock fund, there would be no come-cotas: income tax would only be charged when they redeemed their cotas."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor con R$10.000 en un fondo de renta fija de largo plazo ve, en el último día hábil de mayo, parte de sus cotas convertidas en impuesto, a una alícuota del 15% sobre el rendimiento acumulado hasta ese momento — aunque no haya rescatado nada. Si tuviera el mismo monto invertido en un fondo de acciones, no habría come-cotas: el IR solo se cobraría cuando rescatara sus cotas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o come-cotas?",
+                  "options": [
+                    "Um adiantamento semestral de Imposto de Renda, cobrado em maio e novembro, que reduz a quantidade de cotas do investidor",
+                    "Uma taxa cobrada apenas na entrada do investidor no fundo",
+                    "Uma multa por resgate antecipado",
+                    "Um benefício fiscal exclusivo de fundos imobiliários"
+                  ],
+                  "explanation": "O come-cotas antecipa parte do Imposto de Renda duas vezes por ano, convertendo uma fração das cotas do investidor em imposto, sem exigir um resgate."
+                },
+                "en": {
+                  "prompt": "What is come-cotas?",
+                  "options": [
+                    "A semi-annual advance income-tax withholding, applied in May and November, that reduces the number of cotas the investor holds",
+                    "A fee charged only when the investor enters the fund",
+                    "A penalty for early redemption",
+                    "A tax benefit exclusive to real estate funds"
+                  ],
+                  "explanation": "Come-cotas advances part of the income tax twice a year, converting a fraction of the investor's cotas into tax, without requiring a redemption."
+                },
+                "es": {
+                  "prompt": "¿Qué es el come-cotas?",
+                  "options": [
+                    "Un adelanto semestral de Impuesto a la Renta, cobrado en mayo y noviembre, que reduce la cantidad de cotas del inversor",
+                    "Una tasa cobrada solo al entrar el inversor en el fondo",
+                    "Una multa por rescate anticipado",
+                    "Un beneficio fiscal exclusivo de fondos inmobiliarios"
+                  ],
+                  "explanation": "El come-cotas anticipa parte del Impuesto a la Renta dos veces al año, convirtiendo una fracción de las cotas del inversor en impuesto, sin exigir un rescate."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor tem dinheiro em três lugares: um fundo de renda fixa tradicional, um fundo de ações, e um ETF. Ele quer saber quais desses estão sujeitos ao come-cotas. Qual é a resposta correta?",
+                  "options": [
+                    "Todos os três estão sujeitos ao come-cotas",
+                    "Apenas o ETF está sujeito ao come-cotas",
+                    "Apenas o fundo de renda fixa tradicional está sujeito ao come-cotas — o fundo de ações é tributado só no resgate, com alíquota fixa de 15%, e o ETF segue regras próprias de negociação em bolsa",
+                    "Nenhum dos três está sujeito ao come-cotas"
+                  ],
+                  "explanation": "O come-cotas é típico de fundos tradicionais de renda fixa e multimercado. Fundos de ações e ETFs seguem regras próprias, diferentes do come-cotas."
+                },
+                "en": {
+                  "prompt": "An investor has money in three places: a traditional fixed-income fund, a stock fund, and an ETF. He wants to know which of these are subject to come-cotas. What's the correct answer?",
+                  "options": [
+                    "All three are subject to come-cotas",
+                    "Only the ETF is subject to come-cotas",
+                    "Only the traditional fixed-income fund is subject to come-cotas — the stock fund is taxed only at redemption, at a flat 15% rate, and the ETF follows its own exchange-trading rules",
+                    "None of the three are subject to come-cotas"
+                  ],
+                  "explanation": "Come-cotas is typical of traditional fixed-income and multimarket funds. Stock funds and ETFs follow their own rules, different from come-cotas."
+                },
+                "es": {
+                  "prompt": "Un inversor tiene dinero en tres lugares: un fondo de renta fija tradicional, un fondo de acciones, y un ETF. Quiere saber cuáles de ellos están sujetos al come-cotas. ¿Cuál es la respuesta correcta?",
+                  "options": [
+                    "Los tres están sujetos al come-cotas",
+                    "Solo el ETF está sujeto al come-cotas",
+                    "Solo el fondo de renta fija tradicional está sujeto al come-cotas — el fondo de acciones se tributa solo en el rescate, con alícuota fija del 15%, y el ETF sigue sus propias reglas de negociación en bolsa",
+                    "Ninguno de los tres está sujeto al come-cotas"
+                  ],
+                  "explanation": "El come-cotas es típico de fondos tradicionales de renta fija y multimercado. Los fondos de acciones y los ETFs siguen reglas propias, distintas del come-cotas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Come-cotas é um adiantamento semestral de IR (maio e novembro), típico de fundos de renda fixa e multimercado.",
+                    "Fundos de ações não têm come-cotas: pagam 15% fixo, só no resgate.",
+                    "ETFs e FIIs também não seguem o come-cotas — eles têm regras próprias, ligadas à negociação em bolsa."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Come-cotas is a semi-annual income-tax advance (May and November), typical of fixed-income and multimarket funds.",
+                    "Stock funds don't have come-cotas: they pay a flat 15%, only at redemption.",
+                    "ETFs and FIIs also don't follow come-cotas — they have their own rules, tied to exchange trading."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El come-cotas es un adelanto semestral de IR (mayo y noviembre), típico de fondos de renta fija y multimercado.",
+                    "Los fondos de acciones no tienen come-cotas: pagan 15% fijo, solo en el rescate.",
+                    "Los ETFs y los FIIs tampoco siguen el come-cotas — tienen reglas propias, vinculadas a la negociación en bolsa."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_liquidity_of_funds",
+          "order": 8,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Liquidez: Resgatar x Negociar"
+            },
+            "en": {
+              "title": "Liquidity: Redeeming vs. Trading"
+            },
+            "es": {
+              "title": "Liquidez: Rescatar vs. Negociar"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois mecanismos diferentes",
+                  "body": "Você já sabe que liquidez é a facilidade de transformar um investimento em dinheiro disponível. Em fundos tradicionais e em ETFs/FIIs, essa liquidez funciona de formas bem diferentes. Em um fundo tradicional, você solicita o resgate ao gestor, e o dinheiro cai na sua conta depois de um prazo de liquidação, que pode levar alguns dias úteis, dependendo do fundo. Já um ETF ou um FII é negociado na bolsa como uma ação: durante o horário de pregão, você pode comprar ou vender suas cotas a qualquer momento, com liquidação seguindo o prazo padrão do mercado."
+                },
+                "en": {
+                  "title": "Two different mechanisms",
+                  "body": "You already know that liquidity is how easily an investment can be turned into available cash. In traditional funds and in ETFs/FIIs, that liquidity works in quite different ways. In a traditional fund, you request redemption from the manager, and the money lands in your account after a settlement period, which can take a few business days, depending on the fund. An ETF or a FII, on the other hand, is traded on the exchange like a stock: during market hours, you can buy or sell your cotas at any moment, with settlement following the market's standard timeline."
+                },
+                "es": {
+                  "title": "Dos mecanismos diferentes",
+                  "body": "Ya sabes que la liquidez es la facilidad de convertir una inversión en dinero disponible. En los fondos tradicionales y en los ETFs/FIIs, esa liquidez funciona de formas bastante diferentes. En un fondo tradicional, solicitas el rescate al gestor, y el dinero llega a tu cuenta después de un plazo de liquidación, que puede tomar algunos días hábiles, según el fondo. En cambio, un ETF o un FII se negocia en la bolsa como una acción: durante el horario de pregón, puedes comprar o vender tus cotas en cualquier momento, con liquidación siguiendo el plazo estándar del mercado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se você pede o resgate de um fundo tradicional numa segunda-feira, o dinheiro pode só estar disponível na sua conta alguns dias úteis depois, conforme a regra de cada fundo. Já se você decide vender cotas de um ETF durante o pregão, a venda é executada quase imediatamente, ao preço de mercado do momento — como aconteceria com uma ação qualquer."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If you request redemption from a traditional fund on a Monday, the money might only be available in your account a few business days later, according to each fund's rules. But if you decide to sell ETF cotas during market hours, the sale is executed almost immediately, at the current market price — just as it would with any stock."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si pides el rescate de un fondo tradicional un lunes, el dinero puede estar disponible en tu cuenta solo algunos días hábiles después, según la regla de cada fondo. En cambio, si decides vender cotas de un ETF durante el pregón, la venta se ejecuta casi de inmediato, al precio de mercado del momento — como pasaría con cualquier acción."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Como funciona, em geral, a liquidez de um fundo tradicional?",
+                  "options": [
+                    "O resgate é instantâneo, como em uma ação",
+                    "Fundos tradicionais não permitem resgate",
+                    "O investidor solicita o resgate ao gestor, e o dinheiro só fica disponível após um prazo de liquidação",
+                    "O resgate só pode ser feito uma vez por ano"
+                  ],
+                  "explanation": "Fundos tradicionais dependem de um pedido de resgate ao gestor, seguido de um prazo de liquidação — diferente da negociação instantânea na bolsa."
+                },
+                "en": {
+                  "prompt": "How does liquidity generally work in a traditional fund?",
+                  "options": [
+                    "Redemption is instant, like with a stock",
+                    "Traditional funds don't allow redemption",
+                    "The investor requests redemption from the manager, and the money is only available after a settlement period",
+                    "Redemption can only be done once a year"
+                  ],
+                  "explanation": "Traditional funds depend on a redemption request to the manager, followed by a settlement period — different from instant trading on the exchange."
+                },
+                "es": {
+                  "prompt": "¿Cómo funciona, en general, la liquidez de un fondo tradicional?",
+                  "options": [
+                    "El rescate es instantáneo, como en una acción",
+                    "Los fondos tradicionales no permiten rescate",
+                    "El inversor solicita el rescate al gestor, y el dinero solo está disponible después de un plazo de liquidación",
+                    "El rescate solo puede hacerse una vez al año"
+                  ],
+                  "explanation": "Los fondos tradicionales dependen de una solicitud de rescate al gestor, seguida de un plazo de liquidación — diferente de la negociación instantánea en la bolsa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor precisa decidir entre um fundo tradicional e um ETF, considerando que ele pode precisar do dinheiro rapidamente em algum momento. Qual diferença de liquidez é relevante para essa decisão?",
+                  "options": [
+                    "Não há diferença nenhuma entre os dois",
+                    "Fundos tradicionais sempre têm liquidez mais rápida do que ETFs",
+                    "O ETF pode ser vendido durante o pregão, com liquidação no prazo padrão de mercado, enquanto o resgate do fundo tradicional depende do prazo de liquidação definido pelo gestor, que pode levar mais dias",
+                    "Nenhum dos dois tem liquidez, ambos exigem esperar meses"
+                  ],
+                  "explanation": "A venda de um ETF na bolsa é executada durante o pregão, enquanto o resgate de um fundo tradicional depende do gestor e de um prazo de liquidação próprio — uma diferença relevante para quem pode precisar do dinheiro rapidamente."
+                },
+                "en": {
+                  "prompt": "An investor needs to decide between a traditional fund and an ETF, considering that he might need the money quickly at some point. Which liquidity difference is relevant to this decision?",
+                  "options": [
+                    "There's no difference at all between the two",
+                    "Traditional funds always have faster liquidity than ETFs",
+                    "The ETF can be sold during market hours, with settlement on the market's standard timeline, while redeeming the traditional fund depends on the settlement period set by the manager, which can take more days",
+                    "Neither has any liquidity, both require waiting months"
+                  ],
+                  "explanation": "Selling an ETF on the exchange is executed during market hours, while redeeming a traditional fund depends on the manager and its own settlement period — a relevant difference for someone who might need the money quickly."
+                },
+                "es": {
+                  "prompt": "Un inversor necesita decidir entre un fondo tradicional y un ETF, considerando que podría necesitar el dinero rápidamente en algún momento. ¿Qué diferencia de liquidez es relevante para esta decisión?",
+                  "options": [
+                    "No hay ninguna diferencia entre ambos",
+                    "Los fondos tradicionales siempre tienen liquidez más rápida que los ETFs",
+                    "El ETF puede venderse durante el pregón, con liquidación en el plazo estándar de mercado, mientras que el rescate del fondo tradicional depende del plazo de liquidación definido por el gestor, que puede tardar más días",
+                    "Ninguno de los dos tiene liquidez, ambos exigen esperar meses"
+                  ],
+                  "explanation": "La venta de un ETF en la bolsa se ejecuta durante el pregón, mientras que el rescate de un fondo tradicional depende del gestor y de un plazo de liquidación propio — una diferencia relevante para quien podría necesitar el dinero rápidamente."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Resgatar um fundo tradicional passa pelo gestor e tem um prazo de liquidação.",
+                    "ETFs e FIIs são negociados na bolsa, como ações, com liquidação no prazo padrão do mercado.",
+                    "O mecanismo de liquidez é uma diferença prática importante entre esses tipos de investimento."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Redeeming a traditional fund goes through the manager and has a settlement period.",
+                    "ETFs and FIIs are traded on the exchange, like stocks, with settlement on the market's standard timeline.",
+                    "The liquidity mechanism is an important practical difference between these types of investment."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Rescatar un fondo tradicional pasa por el gestor y tiene un plazo de liquidación.",
+                    "Los ETFs y los FIIs se negocian en la bolsa, como acciones, con liquidación en el plazo estándar del mercado.",
+                    "El mecanismo de liquidez es una diferencia práctica importante entre estos tipos de inversión."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_choosing_between_options",
+          "order": 9,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Escolhendo Entre Fundo, ETF e Ativos Individuais"
+            },
+            "en": {
+              "title": "Choosing Between a Fund, an ETF, and Individual Assets"
+            },
+            "es": {
+              "title": "Eligiendo Entre Fondo, ETF y Activos Individuales"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quatro fatores para pesar",
+                  "body": "Até aqui, você viu como funcionam fundos tradicionais, ETFs e FIIs — e como eles se diferenciam em custo, diversificação, liquidez e tributação. Escolher entre eles (ou entre eles e comprar ativos individualmente) envolve pesar alguns fatores: quanto custa manter o investimento (taxas de administração e performance), quanta diversificação você ganha de uma vez, com que rapidez você consegue acessar o dinheiro, e quanto controle você tem sobre as decisões de compra e venda de cada ativo."
+                },
+                "en": {
+                  "title": "Four factors to weigh",
+                  "body": "So far, you've seen how traditional funds, ETFs and FIIs work — and how they differ in cost, diversification, liquidity and taxation. Choosing between them (or between them and buying individual assets) involves weighing a few factors: how much it costs to hold the investment (management and performance fees), how much diversification you gain at once, how quickly you can access the money, and how much control you have over the buy-and-sell decisions of each asset."
+                },
+                "es": {
+                  "title": "Cuatro factores a considerar",
+                  "body": "Hasta aquí, viste cómo funcionan los fondos tradicionales, los ETFs y los FIIs — y cómo se diferencian en costo, diversificación, liquidez y tributación. Elegir entre ellos (o entre ellos y comprar activos individuales) implica considerar algunos factores: cuánto cuesta mantener la inversión (tasas de administración y performance), cuánta diversificación ganas de una vez, con qué rapidez puedes acceder al dinero, y cuánto control tienes sobre las decisiones de compra y venta de cada activo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Comprar ações individuais dá controle total sobre quais empresas você tem, mas exige mais tempo de análise e mais capital para diversificar bem. Um ETF entrega diversificação instantânea e custo geralmente baixo, mas segue passivamente um índice, sem escolha individual de ativos. Um fundo de gestão ativa pode buscar retornos acima do mercado, mas cobra taxas mais altas e costuma ter liquidez mais lenta do que um ETF."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Buying individual stocks gives you full control over which companies you own, but requires more time analyzing and more capital to diversify well. An ETF delivers instant diversification and generally low cost, but passively follows an index, with no individual asset selection. An actively managed fund can aim for above-market returns, but charges higher fees and usually has slower liquidity than an ETF."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Comprar acciones individuales da control total sobre qué empresas tienes, pero exige más tiempo de análisis y más capital para diversificar bien. Un ETF entrega diversificación instantánea y un costo generalmente bajo, pero sigue pasivamente un índice, sin elección individual de activos. Un fondo de gestión activa puede buscar retornos por encima del mercado, pero cobra tasas más altas y suele tener liquidez más lenta que un ETF."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual fator NÃO costuma ser um critério relevante na escolha entre um fundo, um ETF e ativos individuais?",
+                  "options": [
+                    "Custo (taxas de administração e performance)",
+                    "A cor do aplicativo da corretora",
+                    "Diversificação obtida por operação",
+                    "Liquidez e prazo de resgate"
+                  ],
+                  "explanation": "Custo, diversificação e liquidez são critérios financeiros relevantes; a aparência visual do aplicativo da corretora não afeta o investimento em si."
+                },
+                "en": {
+                  "prompt": "Which factor is NOT usually a relevant criterion when choosing between a fund, an ETF, and individual assets?",
+                  "options": [
+                    "Cost (management and performance fees)",
+                    "The color of the brokerage app",
+                    "Diversification gained per trade",
+                    "Liquidity and redemption timeline"
+                  ],
+                  "explanation": "Cost, diversification and liquidity are relevant financial criteria; the visual appearance of the brokerage app has no bearing on the investment itself."
+                },
+                "es": {
+                  "prompt": "¿Qué factor NO suele ser un criterio relevante al elegir entre un fondo, un ETF y activos individuales?",
+                  "options": [
+                    "Costo (tasas de administración y performance)",
+                    "El color de la aplicación de la correduría",
+                    "Diversificación obtenida por operación",
+                    "Liquidez y plazo de rescate"
+                  ],
+                  "explanation": "El costo, la diversificación y la liquidez son criterios financieros relevantes; la apariencia visual de la aplicación de la correduría no afecta la inversión en sí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Um investidor tem pouco tempo para analisar ativos individualmente, quer diversificação ampla desde o início, e valoriza poder vender rapidamente durante o pregão se precisar. Qual opção tende a atender melhor a essas prioridades?",
+                  "options": [
+                    "Um ETF, que entrega diversificação em uma única compra e pode ser negociado na bolsa durante o pregão",
+                    "Comprar dezenas de ações individuais, uma por uma",
+                    "Um fundo tradicional com resgate em vários dias úteis",
+                    "Nenhuma opção atende a essas prioridades"
+                  ],
+                  "explanation": "O ETF combina diversificação em uma única operação com liquidez de negociação em bolsa — as duas prioridades citadas pelo investidor."
+                },
+                "en": {
+                  "prompt": "An investor has little time to analyze assets individually, wants broad diversification from the start, and values being able to sell quickly during market hours if needed. Which option tends to best fit those priorities?",
+                  "options": [
+                    "An ETF, which delivers diversification in a single purchase and can be traded on the exchange during market hours",
+                    "Buying dozens of individual stocks, one by one",
+                    "A traditional fund with redemption taking several business days",
+                    "No option fits these priorities"
+                  ],
+                  "explanation": "The ETF combines diversification in a single trade with exchange-trading liquidity — the two priorities the investor cares about."
+                },
+                "es": {
+                  "prompt": "Un inversor tiene poco tiempo para analizar activos individualmente, quiere una diversificación amplia desde el inicio, y valora poder vender rápidamente durante el pregón si lo necesita. ¿Qué opción tiende a atender mejor esas prioridades?",
+                  "options": [
+                    "Un ETF, que entrega diversificación en una sola compra y puede negociarse en la bolsa durante el pregón",
+                    "Comprar decenas de acciones individuales, una por una",
+                    "Un fondo tradicional con rescate en varios días hábiles",
+                    "Ninguna opción atiende esas prioridades"
+                  ],
+                  "explanation": "El ETF combina diversificación en una única operación con liquidez de negociación en bolsa — las dos prioridades mencionadas por el inversor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Custo, diversificação, liquidez e controle são os principais fatores para comparar fundos, ETFs, FIIs e ativos individuais.",
+                    "Não existe uma opção universalmente \"melhor\" — a escolha depende das prioridades de cada investidor.",
+                    "Entender esses trade-offs é o que permite escolher com intenção, em vez de por modismo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Cost, diversification, liquidity and control are the main factors for comparing funds, ETFs, FIIs and individual assets.",
+                    "There's no universally \"best\" option — the choice depends on each investor's priorities.",
+                    "Understanding these trade-offs is what allows you to choose with intention, instead of following trends."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Costo, diversificación, liquidez y control son los principales factores para comparar fondos, ETFs, FIIs y activos individuales.",
+                    "No existe una opción universalmente \"mejor\" — la elección depende de las prioridades de cada inversor.",
+                    "Entender estos trade-offs es lo que permite elegir con intención, en lugar de seguir modas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_evaluating_a_fund",
+          "order": 10,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Avaliando um Fundo"
+            },
+            "en": {
+              "title": "Evaluating a Fund"
+            },
+            "es": {
+              "title": "Evaluando un Fondo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Além do retorno passado",
+                  "body": "Avaliar um fundo antes de investir significa olhar além do retorno passado, que não garante resultados futuros. Vale checar: o tipo de fundo (renda fixa, ações, multimercado, ETF, FII), a taxa de administração, se existe taxa de performance e qual o benchmark usado, e como funciona a liquidez — resgate junto ao gestor ou negociação direta em bolsa."
+                },
+                "en": {
+                  "title": "Beyond past returns",
+                  "body": "Evaluating a fund before investing means looking beyond past returns, which don't guarantee future results. It's worth checking: the fund's type (fixed income, stocks, multimarket, ETF, FII), the management fee, whether there's a performance fee and what benchmark it uses, and how liquidity works — redemption through the manager or direct trading on the exchange."
+                },
+                "es": {
+                  "title": "Más allá del retorno pasado",
+                  "body": "Evaluar un fondo antes de invertir significa mirar más allá del retorno pasado, que no garantiza resultados futuros. Vale la pena revisar: el tipo de fondo (renta fija, acciones, multimercado, ETF, FII), la tasa de administración, si existe tasa de performance y cuál es el benchmark usado, y cómo funciona la liquidez — rescate junto al gestor o negociación directa en bolsa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Ficha de um fundo fictício, o \"Fundo Horizonte Multimercado\": taxa de administração de 1,5% ao ano; taxa de performance de 20% sobre o que exceder o CDI; tipo multimercado tradicional (sujeito a come-cotas); resgate com cotização em D+2 e pagamento em D+4. Isso significa que o investidor paga 1,5% ao ano independentemente do resultado, mais 20% sobre o que exceder o CDI apenas se o fundo bater essa meta, está sujeito ao come-cotas semestral, e leva alguns dias úteis para ter o dinheiro disponível após pedir o resgate."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Fact sheet of a fictional fund, the \"Horizonte Multimarket Fund\": 1.5% annual management fee; 20% performance fee on whatever exceeds the CDI; traditional multimarket type (subject to come-cotas); redemption quoted at D+2 and paid at D+4. This means the investor pays 1.5% a year regardless of the result, plus 20% on whatever exceeds the CDI only if the fund beats that target, is subject to the semi-annual come-cotas, and takes a few business days to have the money available after requesting redemption."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Ficha de un fondo ficticio, el \"Fondo Horizonte Multimercado\": tasa de administración del 1,5% anual; tasa de performance del 20% sobre lo que supere el CDI; tipo multimercado tradicional (sujeto a come-cotas); rescate con cotización en D+2 y pago en D+4. Esto significa que el inversor paga 1,5% al año independientemente del resultado, más 20% sobre lo que supere el CDI solo si el fondo alcanza esa meta, está sujeto al come-cotas semestral, y tarda algunos días hábiles en tener el dinero disponible después de pedir el rescate."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Na ficha do Fundo Horizonte Multimercado acima, quando a taxa de performance de 20% é cobrada?",
+                  "options": [
+                    "Apenas sobre o retorno que exceder o CDI",
+                    "Todo ano, independentemente do desempenho",
+                    "Apenas se o investidor resgatar em maio ou novembro",
+                    "Nunca, ela é apenas informativa"
+                  ],
+                  "explanation": "A taxa de performance só incide sobre a parte do retorno que superar o benchmark definido — nesse caso, o CDI — e não sobre o retorno total do fundo."
+                },
+                "en": {
+                  "prompt": "In the Horizonte Multimarket Fund fact sheet above, when is the 20% performance fee charged?",
+                  "options": [
+                    "Only on the return that exceeds the CDI",
+                    "Every year, regardless of performance",
+                    "Only if the investor redeems in May or November",
+                    "Never, it's purely informational"
+                  ],
+                  "explanation": "The performance fee only applies to the portion of the return that exceeds the defined benchmark — in this case, the CDI — not to the fund's total return."
+                },
+                "es": {
+                  "prompt": "En la ficha del Fondo Horizonte Multimercado de arriba, ¿cuándo se cobra la tasa de performance del 20%?",
+                  "options": [
+                    "Solo sobre el retorno que supere el CDI",
+                    "Todos los años, independientemente del desempeño",
+                    "Solo si el inversor rescata en mayo o noviembre",
+                    "Nunca, es solo informativa"
+                  ],
+                  "explanation": "La tasa de performance solo se aplica sobre la parte del retorno que supera el benchmark definido — en este caso, el CDI — y no sobre el retorno total del fondo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Considerando a ficha do Fundo Horizonte Multimercado, um investidor que pede resgate hoje pode esperar receber o dinheiro:",
+                  "options": [
+                    "No mesmo instante, como em um ETF",
+                    "Alguns dias úteis depois, conforme o prazo de cotização e pagamento informado (D+2 e D+4)",
+                    "Somente em maio ou novembro, por causa do come-cotas",
+                    "Nunca — fundos multimercado não permitem resgate"
+                  ],
+                  "explanation": "A ficha informa cotização em D+2 e pagamento em D+4 — ou seja, o dinheiro leva alguns dias úteis para ficar disponível, diferente da negociação instantânea de um ETF em bolsa."
+                },
+                "en": {
+                  "prompt": "Considering the Horizonte Multimarket Fund fact sheet, an investor who requests redemption today can expect to receive the money:",
+                  "options": [
+                    "Instantly, like with an ETF",
+                    "A few business days later, according to the stated quotation and payment timeline (D+2 and D+4)",
+                    "Only in May or November, because of come-cotas",
+                    "Never — multimarket funds don't allow redemption"
+                  ],
+                  "explanation": "The fact sheet states quotation at D+2 and payment at D+4 — meaning the money takes a few business days to become available, unlike the instant trading of an ETF on the exchange."
+                },
+                "es": {
+                  "prompt": "Considerando la ficha del Fondo Horizonte Multimercado, un inversor que pide el rescate hoy puede esperar recibir el dinero:",
+                  "options": [
+                    "En el mismo instante, como en un ETF",
+                    "Algunos días hábiles después, según el plazo de cotización y pago informado (D+2 y D+4)",
+                    "Solo en mayo o noviembre, por causa del come-cotas",
+                    "Nunca — los fondos multimercado no permiten rescate"
+                  ],
+                  "explanation": "La ficha informa cotización en D+2 y pago en D+4 — es decir, el dinero tarda algunos días hábiles en estar disponible, a diferencia de la negociación instantánea de un ETF en bolsa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Avaliar um fundo envolve olhar tipo, taxas, benchmark e liquidez, não apenas o retorno passado.",
+                    "A taxa de performance só é cobrada quando o fundo supera seu benchmark.",
+                    "O prazo de cotização e pagamento no resgate define quando o dinheiro fica disponível."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Evaluating a fund involves looking at type, fees, benchmark and liquidity, not just past returns.",
+                    "The performance fee is only charged when the fund beats its benchmark.",
+                    "The quotation and payment timeline at redemption determines when the money becomes available."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Evaluar un fondo implica mirar tipo, tasas, benchmark y liquidez, no solo el retorno pasado.",
+                    "La tasa de performance solo se cobra cuando el fondo supera su benchmark.",
+                    "El plazo de cotización y pago en el rescate define cuándo el dinero queda disponible."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_final_challenge",
+          "order": 11,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 4,
+          "translations": {
+            "pt": {
+              "title": "Desafio Final: Fundos, ETFs e FIIs"
+            },
+            "en": {
+              "title": "Final Challenge: Funds, ETFs and FIIs"
+            },
+            "es": {
+              "title": "Desafío Final: Fondos, ETFs y FIIs"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A história de Luana",
+                  "body": "Luana tem 34 anos e trabalha como engenheira. Ela acabou de receber R$50.000 de uma bonificação no trabalho e quer investir esse valor para construir uma renda extra para o futuro. Ela não tem muito tempo para acompanhar o mercado diariamente, mas também não quer deixar o dinheiro parado. Nas próximas semanas, Luana vai tomar uma sequência de decisões sobre onde aplicar esse dinheiro — cada uma delas toca em um mecanismo diferente que você já estudou neste módulo. Acompanhe a história e responda a cada pergunta considerando o que já aconteceu antes dela."
+                },
+                "en": {
+                  "title": "Luana's story",
+                  "body": "Luana is 34 and works as an engineer. She just received R$50,000 from a work bonus and wants to invest it to build extra income for the future. She doesn't have much time to follow the market daily, but she also doesn't want to leave the money idle. Over the next few weeks, Luana goes through a sequence of decisions about where to apply that money — each one touches a different mechanism you've studied in this module. Follow the story and answer each question considering what has already happened before it."
+                },
+                "es": {
+                  "title": "La historia de Luana",
+                  "body": "Luana tiene 34 años y trabaja como ingeniera. Acaba de recibir R$50.000 de una bonificación en el trabajo y quiere invertir ese monto para construir una renta extra para el futuro. No tiene mucho tiempo para seguir el mercado a diario, pero tampoco quiere dejar el dinero parado. En las próximas semanas, Luana tomará una secuencia de decisiones sobre dónde aplicar ese dinero — cada una toca un mecanismo distinto que ya estudiaste en este módulo. Sigue la historia y responde cada pregunta considerando lo que ya sucedió antes de ella."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 2,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Luana quer se expor a várias empresas diferentes sem gastar tempo analisando cada uma individualmente, e prefere evitar pagar taxa de performance. Ela encontra três opções: comprar ações de 5 empresas que leu a respeito online; um fundo de ações de gestão ativa, com taxa de administração de 2% ao ano mais taxa de performance de 20% sobre o que exceder o Ibovespa; ou um ETF que replica o Ibovespa, com taxa de administração de 0,3% ao ano e sem taxa de performance. Qual opção atende melhor às prioridades de Luana?",
+                  "options": [
+                    "As 5 ações individuais, porque não têm nenhuma taxa envolvida",
+                    "O ETF, porque entrega diversificação para dezenas de empresas em uma única compra, tem taxa de administração baixa, e não cobra taxa de performance",
+                    "O fundo de gestão ativa, porque taxa de performance sempre significa retorno melhor",
+                    "Nenhuma das opções oferece diversificação"
+                  ],
+                  "explanation": "O ETF combina exatamente o que Luana busca: diversificação instantânea (uma única compra dá exposição a todas as empresas do índice) e ausência de taxa de performance, além de um custo de administração bem menor do que o do fundo ativo."
+                },
+                "en": {
+                  "prompt": "Luana wants exposure to several different companies without spending time analyzing each one individually, and prefers to avoid paying a performance fee. She finds three options: buying stocks in 5 companies she read about online; an actively managed stock fund, with a 2% annual management fee plus a 20% performance fee on whatever exceeds the Ibovespa; or an ETF that tracks the Ibovespa, with a 0.3% annual management fee and no performance fee. Which option best fits Luana's priorities?",
+                  "options": [
+                    "The 5 individual stocks, because they have no fee involved at all",
+                    "The ETF, because it delivers diversification across dozens of companies in a single purchase, has a low management fee, and charges no performance fee",
+                    "The actively managed fund, because a performance fee always means a better return",
+                    "None of the options offer diversification"
+                  ],
+                  "explanation": "The ETF combines exactly what Luana is looking for: instant diversification (a single purchase gives exposure to every company in the index) and no performance fee, plus a much lower management cost than the actively managed fund."
+                },
+                "es": {
+                  "prompt": "Luana quiere exponerse a varias empresas diferentes sin gastar tiempo analizando cada una individualmente, y prefiere evitar pagar tasa de performance. Encuentra tres opciones: comprar acciones de 5 empresas sobre las que leyó en internet; un fondo de acciones de gestión activa, con tasa de administración del 2% anual más tasa de performance del 20% sobre lo que supere al Ibovespa; o un ETF que replica al Ibovespa, con tasa de administración del 0,3% anual y sin tasa de performance. ¿Qué opción se ajusta mejor a las prioridades de Luana?",
+                  "options": [
+                    "Las 5 acciones individuales, porque no tienen ninguna tasa involucrada",
+                    "El ETF, porque entrega diversificación en decenas de empresas en una sola compra, tiene una tasa de administración baja, y no cobra tasa de performance",
+                    "El fondo de gestión activa, porque la tasa de performance siempre significa un mejor retorno",
+                    "Ninguna de las opciones ofrece diversificación"
+                  ],
+                  "explanation": "El ETF combina exactamente lo que Luana busca: diversificación instantánea (una sola compra da exposición a todas las empresas del índice) y ausencia de tasa de performance, además de un costo de administración mucho menor que el del fondo activo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Com parte do dinheiro já aplicada no ETF, Luana agora quer uma fonte de renda mensal. Ela compara duas opções: um FII negociado em bolsa, com mais de 3.000 cotistas, no qual ela ficaria com bem menos de 10% do fundo; e um fundo de renda fixa tradicional, sujeito ao come-cotas. Sobre a tributação dos rendimentos periódicos dessas duas opções, qual afirmação está correta?",
+                  "options": [
+                    "As duas opções têm exatamente a mesma tributação, já que ambas pagam rendimentos periódicos",
+                    "O fundo de renda fixa é sempre isento de IR para pessoa física",
+                    "O FII também está sujeito ao come-cotas, assim como o fundo de renda fixa",
+                    "Os rendimentos mensais do FII seriam isentos de IR para Luana, já que ele é negociado em bolsa, tem mais de 100 cotistas, e ela ficaria com menos de 10% do fundo; já o fundo de renda fixa está sujeito ao come-cotas, com IR retido automaticamente em maio e novembro"
+                  ],
+                  "explanation": "O FII de Luana atende às três condições da Lei 11.033/2004 (negociação em bolsa, 100+ cotistas, participação individual abaixo de 10%), o que torna os rendimentos mensais isentos de IR. Já o fundo de renda fixa tradicional segue a regra do come-cotas, com IR antecipado semestralmente — um mecanismo que não se aplica a FIIs."
+                },
+                "en": {
+                  "prompt": "With part of the money already applied in the ETF, Luana now wants a source of monthly income. She compares two options: a FII traded on the exchange, with more than 3,000 cotistas, in which she would hold well under 10% of the fund; and a traditional fixed-income fund, subject to come-cotas. Regarding the taxation of periodic income from these two options, which statement is correct?",
+                  "options": [
+                    "Both options have exactly the same taxation, since both pay periodic income",
+                    "The fixed-income fund is always exempt from income tax for individuals",
+                    "The FII is also subject to come-cotas, just like the fixed-income fund",
+                    "The FII's monthly income would be exempt from income tax for Luana, since it's traded on the exchange, has more than 100 cotistas, and she would hold less than 10% of the fund; the fixed-income fund, on the other hand, is subject to come-cotas, with income tax automatically withheld in May and November"
+                  ],
+                  "explanation": "Luana's FII meets the three conditions from Law 11.033/2004 (exchange trading, 100+ cotistas, individual ownership below 10%), which makes the monthly income exempt from income tax. The traditional fixed-income fund, meanwhile, follows the come-cotas rule, with income tax withheld in advance twice a year — a mechanism that doesn't apply to FIIs."
+                },
+                "es": {
+                  "prompt": "Con parte del dinero ya aplicada en el ETF, Luana ahora quiere una fuente de renta mensual. Compara dos opciones: un FII negociado en bolsa, con más de 3.000 cotistas, en el que ella se quedaría con bastante menos del 10% del fondo; y un fondo de renta fija tradicional, sujeto al come-cotas. Sobre la tributación de los rendimientos periódicos de estas dos opciones, ¿qué afirmación es correcta?",
+                  "options": [
+                    "Ambas opciones tienen exactamente la misma tributación, ya que las dos pagan rendimientos periódicos",
+                    "El fondo de renta fija siempre está exento de IR para personas físicas",
+                    "El FII también está sujeto al come-cotas, igual que el fondo de renta fija",
+                    "Los rendimientos mensuales del FII estarían exentos de IR para Luana, ya que se negocia en bolsa, tiene más de 100 cotistas, y ella se quedaría con menos del 10% del fondo; en cambio, el fondo de renta fija está sujeto al come-cotas, con IR retenido automáticamente en mayo y noviembre"
+                  ],
+                  "explanation": "El FII de Luana cumple las tres condiciones de la Ley 11.033/2004 (negociación en bolsa, 100+ cotistas, participación individual por debajo del 10%), lo que hace que los rendimientos mensuales estén exentos de IR. El fondo de renta fija tradicional, en cambio, sigue la regla del come-cotas, con IR anticipado semestralmente — un mecanismo que no se aplica a los FIIs."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Luana sabe que pode precisar de parte desse dinheiro em até 3 meses, para uma emergência possível. Ela está decidindo se coloca esse valor específico no FII (negociado em bolsa) ou no fundo de renda fixa tradicional (com prazo de liquidação de alguns dias úteis após o pedido de resgate). Considerando a liquidez de cada opção, qual leitura é mais precisa?",
+                  "options": [
+                    "Não há diferença de liquidez entre as duas opções",
+                    "O FII, por ser negociado em bolsa, pode ser vendido a qualquer momento durante o pregão, com liquidação no prazo padrão do mercado — o que dá a Luana mais flexibilidade para esse valor específico, embora o preço de venda dependa da cotação do momento",
+                    "O fundo de renda fixa tradicional é sempre mais líquido do que um FII",
+                    "Nenhuma das opções permite resgate em menos de um ano"
+                  ],
+                  "explanation": "O mecanismo de negociação em bolsa do FII permite vender a cota a qualquer momento do pregão, com liquidação no prazo padrão de mercado — mais rápido do que o prazo de liquidação de um resgate junto ao gestor de um fundo tradicional. Isso não elimina o risco de o preço de venda variar conforme a cotação do dia."
+                },
+                "en": {
+                  "prompt": "Luana knows she might need part of that money within 3 months, for a possible emergency. She's deciding whether to put that specific amount in the FII (traded on the exchange) or in the traditional fixed-income fund (with a settlement period of a few business days after requesting redemption). Considering the liquidity of each option, which reading is most accurate?",
+                  "options": [
+                    "There's no liquidity difference between the two options",
+                    "The FII, being traded on the exchange, can be sold at any moment during market hours, with settlement on the market's standard timeline — giving Luana more flexibility for that specific amount, though the sale price depends on the moment's quote",
+                    "The traditional fixed-income fund is always more liquid than a FII",
+                    "Neither option allows redemption in less than a year"
+                  ],
+                  "explanation": "The FII's exchange-trading mechanism allows selling the cota at any moment during market hours, with settlement on the market's standard timeline — faster than the settlement period of a redemption through a traditional fund's manager. This doesn't eliminate the risk that the sale price will vary with the day's quote."
+                },
+                "es": {
+                  "prompt": "Luana sabe que podría necesitar parte de ese dinero dentro de 3 meses, para una posible emergencia. Está decidiendo si coloca ese monto específico en el FII (negociado en bolsa) o en el fondo de renta fija tradicional (con plazo de liquidación de algunos días hábiles tras el pedido de rescate). Considerando la liquidez de cada opción, ¿qué lectura es más precisa?",
+                  "options": [
+                    "No hay diferencia de liquidez entre las dos opciones",
+                    "El FII, al negociarse en bolsa, puede venderse en cualquier momento durante el pregón, con liquidación en el plazo estándar del mercado — lo que le da a Luana más flexibilidad para ese monto específico, aunque el precio de venta dependa de la cotización del momento",
+                    "El fondo de renta fija tradicional siempre es más líquido que un FII",
+                    "Ninguna de las opciones permite rescate en menos de un año"
+                  ],
+                  "explanation": "El mecanismo de negociación en bolsa del FII permite vender la cota en cualquier momento del pregón, con liquidación en el plazo estándar de mercado — más rápido que el plazo de liquidación de un rescate junto al gestor de un fondo tradicional. Esto no elimina el riesgo de que el precio de venta varíe según la cotización del día."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 5,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por fim, Luana encontra dois ETFs que replicam o mesmo índice, com composição praticamente idêntica. Um cobra 0,2% de taxa de administração ao ano; o outro, 1,0% ao ano. Nenhum dos dois cobra taxa de performance. Como ambos replicam o mesmo índice, o retorno bruto tende a ser parecido. Por que a diferença de taxa de administração importa nessa escolha?",
+                  "options": [
+                    "Porque, assim como visto no módulo, taxas cobradas todo ano se acumulam ao longo do tempo, do mesmo jeito que juros compostos — uma diferença de 0,8 ponto percentual ao ano reduz o retorno líquido de forma cada vez maior quanto mais tempo o dinheiro fica investido",
+                    "Não importa, taxas de administração não afetam o retorno final do investidor",
+                    "Porque o ETF mais caro sempre replica o índice com mais precisão",
+                    "Porque taxa de administração só importa para fundos de ações de gestão ativa"
+                  ],
+                  "explanation": "Como os dois ETFs têm retorno bruto parecido, a taxa de administração é o principal fator que os diferencia — e, assim como juros compostos fazem o retorno crescer de forma acelerada, uma taxa cobrada todo ano corrói o retorno líquido de forma acelerada, tornando a diferença de 0,8 ponto percentual cada vez mais relevante com o tempo."
+                },
+                "en": {
+                  "prompt": "Finally, Luana finds two ETFs that track the same index, with practically identical composition. One charges a 0.2% annual management fee; the other, 1.0% a year. Neither charges a performance fee. Since both track the same index, the gross return tends to be similar. Why does the management fee difference matter in this choice?",
+                  "options": [
+                    "Because, as seen in the module, fees charged every year compound over time, just like compound interest — a 0.8 percentage point annual difference reduces the net return by an increasingly larger amount the longer the money stays invested",
+                    "It doesn't matter, management fees don't affect the investor's final return",
+                    "Because the pricier ETF always tracks the index more precisely",
+                    "Because the management fee only matters for actively managed stock funds"
+                  ],
+                  "explanation": "Since the two ETFs have similar gross returns, the management fee is the main factor that sets them apart — and, just as compound interest makes returns grow at an accelerating pace, a fee charged every year erodes net returns at an accelerating pace, making the 0.8 percentage point difference increasingly relevant over time."
+                },
+                "es": {
+                  "prompt": "Por último, Luana encuentra dos ETFs que replican el mismo índice, con composición prácticamente idéntica. Uno cobra una tasa de administración del 0,2% anual; el otro, 1,0% anual. Ninguno cobra tasa de performance. Como ambos replican el mismo índice, el retorno bruto tiende a ser parecido. ¿Por qué importa la diferencia de tasa de administración en esta elección?",
+                  "options": [
+                    "Porque, como se vio en el módulo, las tasas cobradas todos los años se acumulan con el tiempo, igual que el interés compuesto — una diferencia de 0,8 punto porcentual al año reduce el retorno neto de forma cada vez mayor cuanto más tiempo el dinero permanece invertido",
+                    "No importa, las tasas de administración no afectan el retorno final del inversor",
+                    "Porque el ETF más caro siempre replica el índice con más precisión",
+                    "Porque la tasa de administración solo importa para fondos de acciones de gestión activa"
+                  ],
+                  "explanation": "Como los dos ETFs tienen un retorno bruto parecido, la tasa de administración es el principal factor que los diferencia — y, así como el interés compuesto hace que el retorno crezca de forma acelerada, una tasa cobrada todos los años erosiona el retorno neto de forma acelerada, haciendo que la diferencia de 0,8 punto porcentual sea cada vez más relevante con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 6,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Diversificação, custo, tributação e liquidez são critérios que se combinam em decisões reais de investimento.",
+                    "FIIs e fundos tradicionais têm regras de tributação bem diferentes — conhecer essas regras evita surpresas.",
+                    "Pequenas diferenças de taxa de administração se acumulam como juros compostos ao longo do tempo.",
+                    "Não existe uma resposta universal: a escolha certa depende dos objetivos, do prazo e da necessidade de liquidez de cada investidor."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Diversification, cost, taxation and liquidity are criteria that combine in real investment decisions.",
+                    "FIIs and traditional funds have quite different taxation rules — knowing these rules avoids surprises.",
+                    "Small management fee differences compound like interest over time.",
+                    "There's no universal answer: the right choice depends on each investor's goals, time horizon and need for liquidity."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Diversificación, costo, tributación y liquidez son criterios que se combinan en decisiones reales de inversión.",
+                    "Los FIIs y los fondos tradicionales tienen reglas de tributación bien diferentes — conocer estas reglas evita sorpresas.",
+                    "Pequeñas diferencias de tasa de administración se acumulan como interés compuesto con el tiempo.",
+                    "No existe una respuesta universal: la elección correcta depende de los objetivos, el plazo y la necesidad de liquidez de cada inversor."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "etfs_advanced",
+      "order": 2,
+      "iconKey": "pie_chart_outline",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "etfs"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Fundos, ETFs e FIIs Avançado",
+          "description": "Tracking error, gestão ativa vs. passiva, tipos de FII, ágio/deságio e rebalanceamento de índices."
+        },
+        "en": {
+          "title": "Advanced Funds, ETFs and FIIs",
+          "description": "Tracking error, active vs. passive management, FII types, premium/discount and index rebalancing."
+        },
+        "es": {
+          "title": "Fondos, ETFs y FIIs Avanzado",
+          "description": "Tracking error, gestión activa vs. pasiva, tipos de FII, prima/descuento y rebalanceo de índices."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "etfs_tracking_error",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tracking Error: Quão Bem um ETF Segue o Índice"
+            },
+            "en": {
+              "title": "Tracking Error: How Closely an ETF Follows Its Index"
+            },
+            "es": {
+              "title": "Tracking Error: Qué Tan Bien un ETF Sigue al Índice"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Replicar um índice não é perfeito",
+                  "body": "Um ETF busca replicar o desempenho de um índice de referência, mas raramente consegue fazer isso de forma perfeita. Tracking error é a medida da diferença entre o retorno do ETF e o retorno do índice que ele tenta seguir. Fatores como custos de administração, a forma como o ETF compra os ativos do índice e o momento exato das negociações contribuem para esse descolamento, mesmo que pequeno."
+                },
+                "en": {
+                  "title": "Replicating an index isn't perfect",
+                  "body": "An ETF seeks to replicate the performance of a benchmark index, but rarely does so perfectly. Tracking error is the measure of the difference between the ETF's return and the return of the index it tries to follow. Factors like management costs, how the ETF buys the index's assets and the exact timing of trades all contribute to that gap, even if small."
+                },
+                "es": {
+                  "title": "Replicar un índice no es perfecto",
+                  "body": "Un ETF busca replicar el desempeño de un índice de referencia, pero rara vez lo logra de forma perfecta. El tracking error es la medida de la diferencia entre el retorno del ETF y el retorno del índice que intenta seguir. Factores como los costos de administración, la forma en que el ETF compra los activos del índice y el momento exacto de las operaciones contribuyen a ese desvío, aunque sea pequeño."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um índice de referência sobe 10% em um ano, mas o ETF que o segue sobe apenas 9,7% no mesmo período, em parte por causa da taxa de administração cobrada e de pequenas diferenças na forma como replica a carteira do índice — essa diferença de 0,3 ponto percentual é o tracking error do período."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A benchmark index rises 10% in a year, but the ETF that tracks it rises only 9.7% over the same period, partly because of the management fee charged and small differences in how it replicates the index's portfolio — that 0.3 percentage point gap is the period's tracking error."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un índice de referencia sube un 10% en un año, pero el ETF que lo sigue sube solo un 9,7% en el mismo período, en parte por la comisión de administración cobrada y pequeñas diferencias en la forma en que replica la cartera del índice — esa diferencia de 0,3 puntos porcentuales es el tracking error del período."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que mede o tracking error de um ETF?",
+                  "options": [
+                    "O quanto o preço do ETF varia dia a dia",
+                    "A diferença entre o retorno do ETF e o retorno do índice que ele tenta replicar",
+                    "O número de ativos que compõem o índice",
+                    "A quantidade de investidores que possuem cotas do ETF"
+                  ],
+                  "explanation": "Tracking error mede especificamente o descolamento entre o retorno do ETF e o do índice de referência que ele busca seguir."
+                },
+                "en": {
+                  "prompt": "What does an ETF's tracking error measure?",
+                  "options": [
+                    "How much the ETF's price moves day to day",
+                    "The difference between the ETF's return and the return of the index it tries to replicate",
+                    "The number of assets that make up the index",
+                    "The number of investors who hold the ETF's shares"
+                  ],
+                  "explanation": "Tracking error specifically measures the gap between the ETF's return and that of the benchmark index it seeks to follow."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el tracking error de un ETF?",
+                  "options": [
+                    "Cuánto varía el precio del ETF día a día",
+                    "La diferencia entre el retorno del ETF y el retorno del índice que intenta replicar",
+                    "El número de activos que componen el índice",
+                    "La cantidad de inversores que poseen cuotas del ETF"
+                  ],
+                  "explanation": "El tracking error mide específicamente el desvío entre el retorno del ETF y el del índice de referencia que busca seguir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que fundos cobram taxa de administração, que reduz o retorno líquido para o cotista. Como isso ajuda a explicar por que um ETF quase sempre tem algum tracking error, mesmo replicando o índice com precisão?",
+                  "options": [
+                    "Porque a taxa de administração é descontada do retorno do ETF, mas não do índice teórico que ele tenta seguir, criando uma diferença inevitável entre os dois",
+                    "Porque índices de referência também cobram taxa de administração igual à dos ETFs",
+                    "Porque tracking error só existe em ETFs que não cobram nenhuma taxa",
+                    "Porque a taxa de administração elimina completamente qualquer possibilidade de tracking error"
+                  ],
+                  "explanation": "O índice de referência é um número teórico, sem custos; o ETF real precisa arcar com taxas e custos de negociação, o que naturalmente gera uma diferença — parte do tracking error vem exatamente dessa taxa."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that funds charge a management fee, which reduces the net return for the shareholder. How does that help explain why an ETF almost always has some tracking error, even when replicating the index precisely?",
+                  "options": [
+                    "Because the management fee is deducted from the ETF's return, but not from the theoretical index it tries to follow, creating an inevitable gap between the two",
+                    "Because benchmark indexes also charge a management fee equal to the ETFs'",
+                    "Because tracking error only exists in ETFs that charge no fee at all",
+                    "Because the management fee completely eliminates any possibility of tracking error"
+                  ],
+                  "explanation": "The benchmark index is a theoretical number, with no costs; the real ETF has to bear fees and trading costs, which naturally creates a gap — part of tracking error comes exactly from that fee."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que los fondos cobran una comisión de administración, que reduce el retorno neto para el cuotista. ¿Cómo ayuda esto a explicar por qué un ETF casi siempre tiene algo de tracking error, aun replicando el índice con precisión?",
+                  "options": [
+                    "Porque la comisión de administración se descuenta del retorno del ETF, pero no del índice teórico que intenta seguir, creando una diferencia inevitable entre ambos",
+                    "Porque los índices de referencia también cobran una comisión de administración igual a la de los ETF",
+                    "Porque el tracking error solo existe en ETF que no cobran ninguna comisión",
+                    "Porque la comisión de administración elimina por completo cualquier posibilidad de tracking error"
+                  ],
+                  "explanation": "El índice de referencia es un número teórico, sin costos; el ETF real debe asumir comisiones y costos de negociación, lo que naturalmente genera una diferencia — parte del tracking error proviene exactamente de esa comisión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Tracking error mede a diferença entre o retorno de um ETF e o do índice que ele tenta seguir.",
+                    "Custos, como a taxa de administração, contribuem para esse descolamento.",
+                    "Um índice de referência é um número teórico sem custos; o ETF real precisa arcar com eles."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Tracking error measures the gap between an ETF's return and that of the index it tries to follow.",
+                    "Costs, like the management fee, contribute to that gap.",
+                    "A benchmark index is a theoretical, cost-free number; the real ETF has to bear those costs."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El tracking error mide la diferencia entre el retorno de un ETF y el del índice que intenta seguir.",
+                    "Los costos, como la comisión de administración, contribuyen a ese desvío.",
+                    "Un índice de referencia es un número teórico sin costos; el ETF real debe asumirlos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_active_vs_passive",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Gestão Ativa vs. Passiva"
+            },
+            "en": {
+              "title": "Active vs. Passive Management"
+            },
+            "es": {
+              "title": "Gestión Activa vs. Pasiva"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Tentar bater o mercado ou apenas acompanhá-lo",
+                  "body": "Fundos de gestão passiva, como a maioria dos ETFs, buscam apenas replicar o desempenho de um índice de referência, com intervenção mínima do gestor. Fundos de gestão ativa, por outro lado, têm um gestor que toma decisões buscando superar um benchmark, escolhendo ativos específicos com base em sua própria análise. Essa diferença de abordagem costuma se refletir diretamente nos custos: fundos ativos geralmente cobram taxas de administração mais altas, e às vezes também taxa de performance, para remunerar o trabalho de análise e decisão do gestor."
+                },
+                "en": {
+                  "title": "Trying to beat the market or just tracking it",
+                  "body": "Passively managed funds, like most ETFs, seek only to replicate the performance of a benchmark index, with minimal manager intervention. Actively managed funds, on the other hand, have a manager making decisions aiming to outperform a benchmark, picking specific assets based on their own analysis. This difference in approach usually shows up directly in costs: active funds generally charge higher management fees, and sometimes a performance fee too, to compensate the manager's analysis and decision-making work."
+                },
+                "es": {
+                  "title": "Intentar superar al mercado o simplemente seguirlo",
+                  "body": "Los fondos de gestión pasiva, como la mayoría de los ETF, buscan solo replicar el desempeño de un índice de referencia, con intervención mínima del gestor. Los fondos de gestión activa, en cambio, tienen un gestor que toma decisiones buscando superar un benchmark, eligiendo activos específicos según su propio análisis. Esta diferencia de enfoque suele reflejarse directamente en los costos: los fondos activos generalmente cobran comisiones de administración más altas, y a veces también una comisión de rendimiento, para remunerar el trabajo de análisis y decisión del gestor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo ativo de ações cobra 2% ao ano de taxa de administração, buscando escolher as melhores ações e superar o índice de referência. Um ETF passivo que segue o mesmo índice cobra apenas 0,2% ao ano. Para que o fundo ativo compense o investidor pelo custo mais alto, ele precisa superar o índice em pelo menos essa diferença, de forma consistente ao longo do tempo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An active equity fund charges a 2% annual management fee, aiming to pick the best stocks and beat the benchmark index. A passive ETF tracking the same index charges only 0.2% a year. For the active fund to make up for that higher cost, it needs to beat the index by at least that difference, consistently over time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo activo de acciones cobra un 2% anual de comisión de administración, buscando elegir las mejores acciones y superar el índice de referencia. Un ETF pasivo que sigue el mismo índice cobra solo un 0,2% anual. Para que el fondo activo compense al inversor por el costo más alto, necesita superar al índice en al menos esa diferencia, de forma consistente a lo largo del tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um fundo de gestão ativa?",
+                  "options": [
+                    "Um gestor toma decisões buscando superar um benchmark, em vez de apenas replicá-lo",
+                    "Ele sempre cobra exatamente a mesma taxa que um ETF passivo",
+                    "Ele nunca pode ter um desempenho diferente do índice de referência",
+                    "Ele é obrigado por lei a replicar exatamente um índice"
+                  ],
+                  "explanation": "A gestão ativa envolve decisões de um gestor buscando superar um benchmark, o que geralmente vem acompanhado de custos mais altos do que a gestão passiva."
+                },
+                "en": {
+                  "prompt": "What characterizes an actively managed fund?",
+                  "options": [
+                    "A manager makes decisions aiming to beat a benchmark, instead of just replicating it",
+                    "It always charges exactly the same fee as a passive ETF",
+                    "It can never perform differently from the benchmark index",
+                    "It's legally required to exactly replicate an index"
+                  ],
+                  "explanation": "Active management involves a manager's decisions aiming to beat a benchmark, which usually comes with higher costs than passive management."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un fondo de gestión activa?",
+                  "options": [
+                    "Un gestor toma decisiones buscando superar un benchmark, en lugar de solo replicarlo",
+                    "Siempre cobra exactamente la misma comisión que un ETF pasivo",
+                    "Nunca puede tener un desempeño diferente al del índice de referencia",
+                    "Está obligado por ley a replicar exactamente un índice"
+                  ],
+                  "explanation": "La gestión activa implica decisiones de un gestor buscando superar un benchmark, lo que generalmente viene acompañado de costos más altos que la gestión pasiva."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que ETFs costumam ter tracking error pequeno em relação ao índice que seguem, já que buscam apenas replicá-lo. Como a lógica de um fundo ativo é fundamentalmente diferente disso?",
+                  "options": [
+                    "Um fundo ativo busca deliberadamente se afastar do índice, escolhendo ativos diferentes na tentativa de superá-lo, em vez de minimizar essa diferença",
+                    "Um fundo ativo também busca ter o menor tracking error possível, exatamente como um ETF",
+                    "Fundos ativos nunca compram nenhum ativo que esteja no índice de referência",
+                    "Não existe nenhuma diferença de objetivo entre um fundo ativo e um ETF passivo"
+                  ],
+                  "explanation": "Enquanto um ETF passivo tenta minimizar a diferença em relação ao índice (tracking error), um fundo ativo busca deliberadamente se diferenciar do índice, na expectativa de superá-lo — o oposto do objetivo de um ETF."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that ETFs usually have small tracking error relative to the index they follow, since they aim only to replicate it. How is an active fund's logic fundamentally different from that?",
+                  "options": [
+                    "An active fund deliberately seeks to diverge from the index, picking different assets in an attempt to beat it, instead of minimizing that difference",
+                    "An active fund also aims to have the smallest tracking error possible, just like an ETF",
+                    "Active funds never buy any asset that's in the benchmark index",
+                    "There's no difference in objective at all between an active fund and a passive ETF"
+                  ],
+                  "explanation": "While a passive ETF tries to minimize the gap relative to the index (tracking error), an active fund deliberately seeks to differ from the index, hoping to beat it — the opposite of an ETF's goal."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que los ETF suelen tener un tracking error pequeño en relación con el índice que siguen, ya que buscan solo replicarlo. ¿Cómo es fundamentalmente diferente la lógica de un fondo activo?",
+                  "options": [
+                    "Un fondo activo busca deliberadamente alejarse del índice, eligiendo activos diferentes en el intento de superarlo, en lugar de minimizar esa diferencia",
+                    "Un fondo activo también busca tener el menor tracking error posible, igual que un ETF",
+                    "Los fondos activos nunca compran ningún activo que esté en el índice de referencia",
+                    "No existe ninguna diferencia de objetivo entre un fondo activo y un ETF pasivo"
+                  ],
+                  "explanation": "Mientras que un ETF pasivo intenta minimizar la diferencia respecto al índice (tracking error), un fondo activo busca deliberadamente diferenciarse del índice, con la expectativa de superarlo — lo opuesto al objetivo de un ETF."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Gestão passiva busca replicar um índice; gestão ativa busca superá-lo através de decisões do gestor.",
+                    "Fundos ativos costumam cobrar taxas mais altas para remunerar esse trabalho de análise.",
+                    "O objetivo de um fundo ativo é o oposto do de um ETF passivo: divergir do índice em vez de replicá-lo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Passive management aims to replicate an index; active management aims to beat it through manager decisions.",
+                    "Active funds usually charge higher fees to compensate that analysis work.",
+                    "An active fund's goal is the opposite of a passive ETF's: diverging from the index rather than replicating it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La gestión pasiva busca replicar un índice; la gestión activa busca superarlo mediante decisiones del gestor.",
+                    "Los fondos activos suelen cobrar comisiones más altas para remunerar ese trabajo de análisis.",
+                    "El objetivo de un fondo activo es opuesto al de un ETF pasivo: divergir del índice en lugar de replicarlo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_fii_types_tijolo_papel",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tipos de FII: Tijolo, Papel e Fundos de Fundos"
+            },
+            "en": {
+              "title": "FII Types: Bricks, Paper and Funds of Funds"
+            },
+            "es": {
+              "title": "Tipos de FII: Ladrillo, Papel y Fondos de Fondos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo FII investe da mesma forma",
+                  "body": "FIIs 'de tijolo' investem diretamente em imóveis físicos, como galpões logísticos, shoppings ou lajes corporativas, obtendo receita principalmente de aluguéis. FIIs 'de papel' investem majoritariamente em títulos de crédito imobiliário, como CRIs, funcionando de forma mais parecida com um fundo de renda fixa lastreado no setor imobiliário. Já os fundos de fundos (FOFs) investem em cotas de outros FIIs, buscando diversificação entre diferentes estratégias e gestores em uma única cota."
+                },
+                "en": {
+                  "title": "Not every FII invests the same way",
+                  "body": "'Brick' FIIs invest directly in physical properties, like logistics warehouses, malls or corporate office floors, earning revenue mainly from rent. 'Paper' FIIs invest mostly in real-estate credit securities, like CRIs, working more like a fixed-income fund backed by the real estate sector. Funds of funds (FOFs), meanwhile, invest in shares of other FIIs, seeking diversification across different strategies and managers in a single share."
+                },
+                "es": {
+                  "title": "No todo FII invierte de la misma forma",
+                  "body": "Los FII 'de ladrillo' invierten directamente en propiedades físicas, como galpones logísticos, centros comerciales o pisos corporativos, obteniendo ingresos principalmente de alquileres. Los FII 'de papel' invierten mayoritariamente en títulos de crédito inmobiliario, como CRI, funcionando de forma más parecida a un fondo de renta fija respaldado por el sector inmobiliario. Los fondos de fondos (FOF), por su parte, invierten en cuotas de otros FII, buscando diversificación entre diferentes estrategias y gestores en una única cuota."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um FII de tijolo que possui um shopping center pode ter sua receita afetada diretamente por uma queda no movimento de lojas físicas, enquanto um FII de papel, mais exposto a taxas de juros e ao risco de crédito dos devedores dos CRIs que possui, reage de forma diferente às mesmas condições de mercado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A brick FII that owns a shopping mall can have its revenue directly affected by a drop in foot traffic to physical stores, while a paper FII, more exposed to interest rates and to the credit risk of the debtors behind the CRIs it holds, reacts differently to the same market conditions."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un FII de ladrillo que posee un centro comercial puede ver su ingreso afectado directamente por una caída en el tránsito de tiendas físicas, mientras que un FII de papel, más expuesto a las tasas de interés y al riesgo de crédito de los deudores de los CRI que posee, reacciona de forma diferente ante las mismas condiciones de mercado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um FII 'de papel'?",
+                  "options": [
+                    "Ele investe diretamente em imóveis físicos, como galpões e shoppings",
+                    "Ele investe majoritariamente em títulos de crédito imobiliário, como CRIs",
+                    "Ele investe apenas em cotas de outros FIIs",
+                    "Ele nunca distribui rendimentos aos cotistas"
+                  ],
+                  "explanation": "FIIs de papel investem principalmente em títulos de crédito imobiliário, funcionando de forma mais próxima de um fundo de renda fixa do setor imobiliário."
+                },
+                "en": {
+                  "prompt": "What characterizes a 'paper' FII?",
+                  "options": [
+                    "It invests directly in physical properties, like warehouses and malls",
+                    "It invests mostly in real-estate credit securities, like CRIs",
+                    "It only invests in shares of other FIIs",
+                    "It never distributes income to shareholders"
+                  ],
+                  "explanation": "Paper FIIs invest mainly in real-estate credit securities, working more like a fixed-income fund from the real estate sector."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un FII 'de papel'?",
+                  "options": [
+                    "Invierte directamente en propiedades físicas, como galpones y centros comerciales",
+                    "Invierte mayoritariamente en títulos de crédito inmobiliario, como CRI",
+                    "Solo invierte en cuotas de otros FII",
+                    "Nunca distribuye rendimientos a los cuotistas"
+                  ],
+                  "explanation": "Los FII de papel invierten principalmente en títulos de crédito inmobiliario, funcionando de forma más cercana a un fondo de renta fija del sector inmobiliario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que um FII gera renda para os cotistas principalmente através de aluguéis e outros rendimentos do setor imobiliário. Diante disso, por que a fonte dessa renda pode ser bem diferente entre um FII de tijolo e um FII de papel?",
+                  "options": [
+                    "Porque um FII de tijolo depende de aluguéis de imóveis físicos, enquanto um FII de papel depende de juros pagos por títulos de crédito imobiliário — duas fontes de risco e de renda distintas dentro do mesmo tipo de fundo",
+                    "Porque apenas FIIs de tijolo geram renda para os cotistas, enquanto FIIs de papel nunca distribuem rendimentos",
+                    "Porque um FII de papel também é dono direto de imóveis físicos, exatamente como um FII de tijolo",
+                    "Não existe nenhuma diferença de fonte de renda entre os dois tipos de FII"
+                  ],
+                  "explanation": "Apesar de os dois serem FIIs, a origem da renda distribuída é bem diferente: aluguéis de imóveis físicos em um caso, juros de títulos de crédito imobiliário no outro — o que também implica riscos distintos."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that an FII generates income for shareholders mainly through rent and other real-estate-sector earnings. Given that, why can the source of that income be quite different between a brick FII and a paper FII?",
+                  "options": [
+                    "Because a brick FII depends on rent from physical properties, while a paper FII depends on interest paid by real-estate credit securities — two distinct sources of risk and income within the same type of fund",
+                    "Because only brick FIIs generate income for shareholders, while paper FIIs never distribute earnings",
+                    "Because a paper FII is also a direct owner of physical properties, exactly like a brick FII",
+                    "There's no difference in income source at all between the two FII types"
+                  ],
+                  "explanation": "Even though both are FIIs, the origin of distributed income is quite different: rent from physical properties in one case, interest from real-estate credit securities in the other — which also implies distinct risks."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que un FII genera ingresos para los cuotistas principalmente a través de alquileres y otros rendimientos del sector inmobiliario. Ante esto, ¿por qué la fuente de ese ingreso puede ser bastante diferente entre un FII de ladrillo y un FII de papel?",
+                  "options": [
+                    "Porque un FII de ladrillo depende de alquileres de propiedades físicas, mientras que un FII de papel depende de intereses pagados por títulos de crédito inmobiliario — dos fuentes distintas de riesgo e ingreso dentro del mismo tipo de fondo",
+                    "Porque solo los FII de ladrillo generan ingresos para los cuotistas, mientras que los FII de papel nunca distribuyen rendimientos",
+                    "Porque un FII de papel también es dueño directo de propiedades físicas, exactamente igual que un FII de ladrillo",
+                    "No existe ninguna diferencia de fuente de ingreso entre los dos tipos de FII"
+                  ],
+                  "explanation": "Aunque ambos son FII, el origen del ingreso distribuido es bastante diferente: alquileres de propiedades físicas en un caso, intereses de títulos de crédito inmobiliario en el otro — lo que también implica riesgos distintos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "FIIs de tijolo investem em imóveis físicos; FIIs de papel investem em títulos de crédito imobiliário.",
+                    "Fundos de fundos (FOFs) investem em cotas de outros FIIs, buscando diversificação.",
+                    "A fonte de renda e os riscos variam bastante entre esses diferentes tipos de FII."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Brick FIIs invest in physical properties; paper FIIs invest in real-estate credit securities.",
+                    "Funds of funds (FOFs) invest in shares of other FIIs, seeking diversification.",
+                    "The income source and risks vary quite a bit across these different FII types."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los FII de ladrillo invierten en propiedades físicas; los FII de papel invierten en títulos de crédito inmobiliario.",
+                    "Los fondos de fondos (FOF) invierten en cuotas de otros FII, buscando diversificación.",
+                    "La fuente de ingreso y los riesgos varían bastante entre estos diferentes tipos de FII."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_premium_discount_to_nav",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ágio e Deságio em Relação ao Valor Patrimonial"
+            },
+            "en": {
+              "title": "Premium and Discount to Net Asset Value"
+            },
+            "es": {
+              "title": "Prima y Descuento sobre el Valor Patrimonial"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O preço de mercado pode não ser igual ao valor dos ativos por trás",
+                  "body": "ETFs e FIIs são negociados em bolsa, o que significa que seu preço de mercado é definido pela oferta e demanda entre investidores, e não apenas pelo valor dos ativos que a carteira do fundo efetivamente possui — chamado de valor patrimonial por cota. Quando o preço de mercado fica acima do valor patrimonial, diz-se que o fundo negocia com ágio; quando fica abaixo, diz-se que negocia com deságio."
+                },
+                "en": {
+                  "title": "The market price may not match the value of the assets behind it",
+                  "body": "ETFs and FIIs trade on an exchange, meaning their market price is set by supply and demand among investors, not just by the value of the assets the fund's portfolio actually holds — called net asset value per share. When the market price sits above net asset value, the fund is said to trade at a premium; when it sits below, it's said to trade at a discount."
+                },
+                "es": {
+                  "title": "El precio de mercado puede no ser igual al valor de los activos detrás",
+                  "body": "Los ETF y FII se negocian en bolsa, lo que significa que su precio de mercado lo determinan la oferta y la demanda entre inversores, y no solo el valor de los activos que la cartera del fondo realmente posee — llamado valor patrimonial por cuota. Cuando el precio de mercado queda por encima del valor patrimonial, se dice que el fondo negocia con prima; cuando queda por debajo, se dice que negocia con descuento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um FII tem um valor patrimonial de R$ 100 por cota, mas, por causa de forte demanda de investidores, é negociado em bolsa a R$ 108 — um ágio de 8%. Se a demanda esfriar e o preço cair para R$ 92, o fundo passaria a negociar com deságio, mesmo que o valor dos imóveis na carteira não tenha mudado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An FII has a net asset value of R$100 per share, but, due to strong investor demand, it trades on the exchange at R$108 — an 8% premium. If demand cools and the price drops to R$92, the fund would start trading at a discount, even if the value of the properties in its portfolio hasn't changed."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un FII tiene un valor patrimonial de R$ 100 por cuota, pero, debido a la fuerte demanda de inversores, se negocia en bolsa a R$ 108 — una prima del 8%. Si la demanda se enfría y el precio cae a R$ 92, el fondo pasaría a negociar con descuento, aunque el valor de las propiedades en la cartera no haya cambiado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que significa um fundo negociar 'com ágio' em relação ao seu valor patrimonial?",
+                  "options": [
+                    "Seu preço de mercado está acima do valor dos ativos que a carteira efetivamente possui",
+                    "Seu preço de mercado é sempre idêntico ao valor patrimonial",
+                    "O fundo está proibido de ser negociado em bolsa",
+                    "O fundo não distribui nenhum rendimento aos cotistas"
+                  ],
+                  "explanation": "Ágio significa que o preço de mercado do fundo está acima do valor patrimonial por cota, refletindo maior demanda dos investidores do que o valor contábil dos ativos sugeriria."
+                },
+                "en": {
+                  "prompt": "What does it mean for a fund to trade 'at a premium' to its net asset value?",
+                  "options": [
+                    "Its market price sits above the value of the assets the portfolio actually holds",
+                    "Its market price is always identical to net asset value",
+                    "The fund is prohibited from being traded on an exchange",
+                    "The fund distributes no income at all to shareholders"
+                  ],
+                  "explanation": "A premium means the fund's market price is above net asset value per share, reflecting higher investor demand than the assets' book value would suggest."
+                },
+                "es": {
+                  "prompt": "¿Qué significa que un fondo negocie 'con prima' respecto a su valor patrimonial?",
+                  "options": [
+                    "Su precio de mercado está por encima del valor de los activos que la cartera realmente posee",
+                    "Su precio de mercado es siempre idéntico al valor patrimonial",
+                    "El fondo tiene prohibido negociarse en bolsa",
+                    "El fondo no distribuye ningún rendimiento a los cuotistas"
+                  ],
+                  "explanation": "La prima significa que el precio de mercado del fondo está por encima del valor patrimonial por cuota, reflejando una demanda de los inversores mayor de lo que sugeriría el valor contable de los activos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que ETFs e FIIs são negociados em bolsa, diferentemente de fundos que só permitem resgate direto pelo valor patrimonial. Como essa característica de negociação em bolsa ajuda a explicar por que ágio e deságio podem existir nesses fundos, mas não em um fundo que só permite resgate?",
+                  "options": [
+                    "Porque fundos com resgate direto sempre negociam com ágio permanente",
+                    "Porque, ao serem negociados em bolsa, o preço é definido pela oferta e demanda entre investidores, que pode se afastar do valor patrimonial — algo que não ocorre quando o único jeito de sair é resgatar diretamente pelo valor patrimonial",
+                    "Porque ágio e deságio só existem em fundos que nunca distribuem rendimentos",
+                    "Não existe nenhuma relação entre a forma de negociação de um fundo e a existência de ágio ou deságio"
+                  ],
+                  "explanation": "A negociação em bolsa introduz a oferta e demanda dos investidores como um fator adicional de preço, que pode divergir do valor patrimonial — isso simplesmente não acontece em um fundo cuja única saída é o resgate direto pelo valor patrimonial."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that ETFs and FIIs trade on an exchange, unlike funds that only allow direct redemption at net asset value. How does that exchange-traded feature help explain why premiums and discounts can exist in these funds, but not in a redemption-only fund?",
+                  "options": [
+                    "Because redemption-only funds always trade at a permanent premium",
+                    "Because, being exchange-traded, the price is set by supply and demand among investors, which can drift from net asset value — something that doesn't happen when the only way out is direct redemption at net asset value",
+                    "Because premiums and discounts only exist in funds that never distribute income",
+                    "There's no relation at all between a fund's trading structure and the existence of a premium or discount"
+                  ],
+                  "explanation": "Exchange trading introduces investor supply and demand as an extra pricing factor, which can diverge from net asset value — that simply doesn't happen in a fund whose only exit is direct redemption at net asset value."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que los ETF y FII se negocian en bolsa, a diferencia de fondos que solo permiten rescate directo por el valor patrimonial. ¿Cómo ayuda esa característica de negociación en bolsa a explicar por qué pueden existir primas y descuentos en esos fondos, pero no en un fondo que solo permite rescate?",
+                  "options": [
+                    "Porque los fondos con rescate directo siempre negocian con una prima permanente",
+                    "Porque, al negociarse en bolsa, el precio lo determina la oferta y demanda entre inversores, que puede alejarse del valor patrimonial — algo que no ocurre cuando la única salida es rescatar directamente por el valor patrimonial",
+                    "Porque la prima y el descuento solo existen en fondos que nunca distribuyen rendimientos",
+                    "No existe ninguna relación entre la forma de negociación de un fondo y la existencia de prima o descuento"
+                  ],
+                  "explanation": "La negociación en bolsa introduce la oferta y demanda de los inversores como un factor adicional de precio, que puede divergir del valor patrimonial — eso simplemente no ocurre en un fondo cuya única salida es el rescate directo por el valor patrimonial."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ágio é quando o preço de mercado de um fundo fica acima do seu valor patrimonial por cota; deságio é o oposto.",
+                    "Esse fenômeno surge porque o preço de mercado reflete a oferta e demanda dos investidores em bolsa.",
+                    "Fundos que só permitem resgate direto pelo valor patrimonial não têm esse tipo de ágio ou deságio."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A premium is when a fund's market price sits above its net asset value per share; a discount is the opposite.",
+                    "This phenomenon arises because the market price reflects investor supply and demand on the exchange.",
+                    "Funds that only allow direct redemption at net asset value don't have this kind of premium or discount."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La prima es cuando el precio de mercado de un fondo queda por encima de su valor patrimonial por cuota; el descuento es lo opuesto.",
+                    "Este fenómeno surge porque el precio de mercado refleja la oferta y demanda de los inversores en bolsa.",
+                    "Los fondos que solo permiten rescate directo por el valor patrimonial no tienen este tipo de prima o descuento."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_index_reconstitution",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Rebalanceamento de Índices"
+            },
+            "en": {
+              "title": "Index Rebalancing"
+            },
+            "es": {
+              "title": "Rebalanceo de Índices"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Índices também mudam de composição",
+                  "body": "Índices de referência, como os que muitos ETFs seguem, não são fixos para sempre: eles passam por revisões periódicas, chamadas de rebalanceamento ou reconstituição, nas quais ativos podem ser adicionados ou removidos com base em critérios definidos pela metodologia do índice, como valor de mercado ou liquidez. Quando isso acontece, os ETFs que replicam esse índice também precisam ajustar suas carteiras para continuar refletindo a nova composição."
+                },
+                "en": {
+                  "title": "Indexes change composition too",
+                  "body": "Benchmark indexes, like the ones many ETFs track, aren't fixed forever: they go through periodic reviews, called rebalancing or reconstitution, in which assets can be added or removed based on criteria defined by the index's methodology, such as market value or liquidity. When that happens, the ETFs that replicate that index also need to adjust their portfolios to keep reflecting the new composition."
+                },
+                "es": {
+                  "title": "Los índices también cambian de composición",
+                  "body": "Los índices de referencia, como los que siguen muchos ETF, no son fijos para siempre: pasan por revisiones periódicas, llamadas rebalanceo o reconstitución, en las que se pueden agregar o quitar activos según criterios definidos por la metodología del índice, como el valor de mercado o la liquidez. Cuando eso ocurre, los ETF que replican ese índice también necesitan ajustar sus carteras para seguir reflejando la nueva composición."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa que cresceu bastante passa a atender os critérios de valor de mercado e liquidez de um determinado índice, sendo incluída nele na próxima revisão. Os ETFs que seguem esse índice precisam comprar ações dessa empresa para refletir a mudança, enquanto outra empresa, que caiu de tamanho, pode ser removida do índice — e os ETFs venderiam a posição correspondente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company that grew significantly starts meeting a given index's market-value and liquidity criteria, getting added to it at the next review. The ETFs tracking that index need to buy shares of that company to reflect the change, while another company, which shrank, might get removed from the index — and the ETFs would sell the corresponding position."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa que creció bastante pasa a cumplir los criterios de valor de mercado y liquidez de un determinado índice, siendo incluida en él en la próxima revisión. Los ETF que siguen ese índice necesitan comprar acciones de esa empresa para reflejar el cambio, mientras que otra empresa, que se redujo, podría ser removida del índice — y los ETF venderían la posición correspondiente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com um ETF quando o índice que ele segue passa por um rebalanceamento?",
+                  "options": [
+                    "O ETF precisa ajustar sua carteira para continuar refletindo a nova composição do índice",
+                    "O ETF deixa de existir automaticamente",
+                    "O ETF passa a seguir um índice completamente diferente",
+                    "Nada muda, já que rebalanceamentos não afetam ETFs"
+                  ],
+                  "explanation": "Como o ETF busca replicar o índice, ele precisa ajustar sua carteira sempre que o índice muda de composição, comprando e vendendo ativos conforme necessário."
+                },
+                "en": {
+                  "prompt": "What happens to an ETF when the index it follows goes through a rebalancing?",
+                  "options": [
+                    "The ETF needs to adjust its portfolio to keep reflecting the index's new composition",
+                    "The ETF automatically stops existing",
+                    "The ETF starts following a completely different index",
+                    "Nothing changes, since rebalancings don't affect ETFs"
+                  ],
+                  "explanation": "Since the ETF seeks to replicate the index, it needs to adjust its portfolio whenever the index changes composition, buying and selling assets as needed."
+                },
+                "es": {
+                  "prompt": "¿Qué le pasa a un ETF cuando el índice que sigue pasa por un rebalanceo?",
+                  "options": [
+                    "El ETF necesita ajustar su cartera para seguir reflejando la nueva composición del índice",
+                    "El ETF deja de existir automáticamente",
+                    "El ETF pasa a seguir un índice completamente diferente",
+                    "Nada cambia, ya que los rebalanceos no afectan a los ETF"
+                  ],
+                  "explanation": "Como el ETF busca replicar el índice, necesita ajustar su cartera cada vez que el índice cambia de composición, comprando y vendiendo activos según sea necesario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores, tanto o conceito de tracking error quanto a diferença entre gestão ativa e passiva. Como um rebalanceamento de índice pode gerar um pequeno aumento temporário no tracking error de um ETF passivo, mesmo ele não tomando nenhuma decisão discricionária?",
+                  "options": [
+                    "Porque ajustar a carteira para refletir as mudanças do índice envolve custos de negociação e pode não ser instantâneo, criando um descolamento temporário em relação ao índice já atualizado — mesmo sem nenhuma escolha ativa do gestor",
+                    "Porque rebalanceamentos transformam automaticamente um ETF passivo em um fundo de gestão ativa",
+                    "Porque tracking error só existe em fundos de gestão ativa, nunca em ETFs passivos",
+                    "Porque um rebalanceamento elimina completamente qualquer possibilidade de tracking error no futuro"
+                  ],
+                  "explanation": "Mesmo um ETF puramente passivo enfrenta custos de negociação e um período de ajuste ao rebalancear sua carteira — isso pode gerar um tracking error temporário, sem que isso represente nenhuma decisão discricionária do gestor, ao contrário da gestão ativa."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons, both the concept of tracking error and the difference between active and passive management. How can an index rebalancing cause a small, temporary increase in a passive ETF's tracking error, even though it's making no discretionary decision?",
+                  "options": [
+                    "Because adjusting the portfolio to reflect the index's changes involves trading costs and may not be instantaneous, creating a temporary gap relative to the already-updated index — even without any active choice by the manager",
+                    "Because rebalancings automatically turn a passive ETF into an actively managed fund",
+                    "Because tracking error only exists in actively managed funds, never in passive ETFs",
+                    "Because a rebalancing completely eliminates any possibility of future tracking error"
+                  ],
+                  "explanation": "Even a purely passive ETF faces trading costs and an adjustment period when rebalancing its portfolio — this can create temporary tracking error, without representing any discretionary decision by the manager, unlike active management."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores, tanto el concepto de tracking error como la diferencia entre gestión activa y pasiva. ¿Cómo puede un rebalanceo de índice generar un pequeño aumento temporal en el tracking error de un ETF pasivo, aunque no tome ninguna decisión discrecional?",
+                  "options": [
+                    "Porque ajustar la cartera para reflejar los cambios del índice implica costos de negociación y puede no ser instantáneo, creando un desvío temporal respecto al índice ya actualizado — incluso sin ninguna elección activa del gestor",
+                    "Porque los rebalanceos convierten automáticamente a un ETF pasivo en un fondo de gestión activa",
+                    "Porque el tracking error solo existe en fondos de gestión activa, nunca en ETF pasivos",
+                    "Porque un rebalanceo elimina por completo cualquier posibilidad de tracking error futuro"
+                  ],
+                  "explanation": "Incluso un ETF puramente pasivo enfrenta costos de negociación y un período de ajuste al rebalancear su cartera — esto puede generar un tracking error temporal, sin que represente ninguna decisión discrecional del gestor, a diferencia de la gestión activa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "Índices de referência passam por revisões periódicas, adicionando ou removendo ativos.",
+                    "ETFs precisam ajustar suas carteiras para continuar refletindo essas mudanças.",
+                    "Você concluiu o módulo avançado de fundos: tracking error, gestão ativa vs. passiva, tipos de FII, ágio/deságio e rebalanceamento de índices."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "Benchmark indexes go through periodic reviews, adding or removing assets.",
+                    "ETFs need to adjust their portfolios to keep reflecting those changes.",
+                    "You've completed the advanced funds module: tracking error, active vs. passive management, FII types, premium/discount and index rebalancing."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "Los índices de referencia pasan por revisiones periódicas, agregando o quitando activos.",
+                    "Los ETF necesitan ajustar sus carteras para seguir reflejando esos cambios.",
+                    "Completaste el módulo avanzado de fondos: tracking error, gestión activa vs. pasiva, tipos de FII, prima/descuento y rebalanceo de índices."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

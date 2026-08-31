@@ -1,0 +1,2533 @@
+{
+  "schoolId": "financial_fundamentals",
+  "domainId": "financial_education",
+  "order": 2,
+  "iconKey": "calculate_outlined",
+  "contentAvailable": true,
+  "prerequisites": [],
+  "translations": {
+    "pt": {
+      "title": "Fundamentos Financeiros",
+      "description": "A matemática por trás das decisões financeiras: porcentagens, juros, valor do dinheiro no tempo e economia básica."
+    },
+    "en": {
+      "title": "Financial Fundamentals",
+      "description": "The math behind financial decisions: percentages, interest, the time value of money and basic economics."
+    },
+    "es": {
+      "title": "Fundamentos Financieros",
+      "description": "La matemática detrás de las decisiones financieras: porcentajes, interés, el valor del dinero en el tiempo y economía básica."
+    }
+  },
+  "modules": [
+    {
+      "moduleId": "financial_math_basics",
+      "order": 1,
+      "iconKey": "calculate_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "FOUNDATION",
+      "prerequisites": [],
+      "translations": {
+        "pt": {
+          "title": "Matemática Financeira Básica",
+          "description": "Porcentagens, taxas nominal e real, valor do dinheiro no tempo e como interpretar indicadores econômicos básicos."
+        },
+        "en": {
+          "title": "Basic Financial Math",
+          "description": "Percentages, nominal and real rates, the time value of money, and how to read basic economic indicators."
+        },
+        "es": {
+          "title": "Matemática Financiera Básica",
+          "description": "Porcentajes, tasas nominal y real, el valor del dinero en el tiempo y cómo interpretar indicadores económicos básicos."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "financial_math_percentages_basics",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Porcentagens nas Finanças"
+            },
+            "en": {
+              "title": "Percentages in Finance"
+            },
+            "es": {
+              "title": "Porcentajes en las Finanzas"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Percentual x pontos percentuais",
+                  "body": "Porcentagem é uma forma de expressar uma proporção em relação a 100. Em finanças, é comum confundir 'aumentar X pontos percentuais' com 'aumentar X por cento' — são coisas diferentes. Se uma taxa sai de 10% para 12%, ela subiu 2 pontos percentuais, mas subiu 20% em termos relativos (2 é 20% de 10)."
+                },
+                "en": {
+                  "title": "Percent vs. percentage points",
+                  "body": "A percentage is a way to express a proportion relative to 100. In finance, it's common to confuse 'rising X percentage points' with 'rising X percent' — these are different things. If a rate goes from 10% to 12%, it rose 2 percentage points, but it rose 20% in relative terms (2 is 20% of 10)."
+                },
+                "es": {
+                  "title": "Porcentaje vs. puntos porcentuales",
+                  "body": "Un porcentaje es una forma de expresar una proporción en relación a 100. En finanzas, es común confundir 'subir X puntos porcentuales' con 'subir X por ciento' — son cosas diferentes. Si una tasa pasa del 10% al 12%, subió 2 puntos porcentuales, pero subió un 20% en términos relativos (2 es el 20% de 10)."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma notícia diz que a taxa básica de juros subiu de 10% para 11%. Isso é um aumento de 1 ponto percentual. Mas, para quem tinha uma dívida ou investimento atrelado a essa taxa, o custo ou retorno relativo subiu 10% (1 dividido por 10)."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A news headline says the base interest rate rose from 10% to 11%. That's an increase of 1 percentage point. But for someone with a debt or investment tied to that rate, the relative cost or return rose by 10% (1 divided by 10)."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una noticia dice que la tasa básica de interés subió del 10% al 11%. Eso es un aumento de 1 punto porcentual. Pero para quien tenía una deuda o inversión atada a esa tasa, el costo o retorno relativo subió un 10% (1 dividido entre 10)."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma taxa sobe de 5% para 8%. Quantos pontos percentuais ela subiu?",
+                  "options": [
+                    "3 pontos percentuais",
+                    "60 pontos percentuais",
+                    "8 pontos percentuais",
+                    "5 pontos percentuais"
+                  ],
+                  "explanation": "A diferença simples entre 8% e 5% é 3 pontos percentuais — pontos percentuais são a diferença direta entre dois percentuais, não uma proporção."
+                },
+                "en": {
+                  "prompt": "A rate rises from 5% to 8%. How many percentage points did it rise?",
+                  "options": [
+                    "3 percentage points",
+                    "60 percentage points",
+                    "8 percentage points",
+                    "5 percentage points"
+                  ],
+                  "explanation": "The plain difference between 8% and 5% is 3 percentage points — percentage points are the direct difference between two percentages, not a proportion."
+                },
+                "es": {
+                  "prompt": "Una tasa sube del 5% al 8%. ¿Cuántos puntos porcentuales subió?",
+                  "options": [
+                    "3 puntos porcentuales",
+                    "60 puntos porcentuales",
+                    "8 puntos porcentuales",
+                    "5 puntos porcentuales"
+                  ],
+                  "explanation": "La diferencia simple entre 8% y 5% es 3 puntos porcentuales — los puntos porcentuales son la diferencia directa entre dos porcentajes, no una proporción."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você lê duas manchetes no mesmo dia: uma diz que a taxa de juros 'subiu 2 pontos percentuais', a outra diz que ela 'subiu 20%'. Ambas descrevem a mesma mudança de 10% para 12%. O que isso te ensina sobre interpretar notícias financeiras?",
+                  "options": [
+                    "As duas manchetes estão erradas, só uma pode ser verdadeira",
+                    "A forma como a mudança é expressada (pontos percentuais x variação relativa) pode fazer a mesma informação parecer maior ou menor",
+                    "Pontos percentuais e porcentagem são sempre a mesma coisa",
+                    "Isso só acontece quando a notícia está mentindo"
+                  ],
+                  "explanation": "As duas descrições podem estar corretas ao mesmo tempo, mas comunicam magnitudes diferentes — vale sempre prestar atenção em qual unidade está sendo usada antes de tirar conclusões."
+                },
+                "en": {
+                  "prompt": "You read two headlines on the same day: one says the interest rate 'rose 2 percentage points,' the other says it 'rose 20%.' Both describe the same change from 10% to 12%. What does this teach you about reading financial news?",
+                  "options": [
+                    "Both headlines are wrong, only one can be true",
+                    "How the change is expressed (percentage points vs. relative change) can make the same information look bigger or smaller",
+                    "Percentage points and percent are always the same thing",
+                    "This only happens when the news is lying"
+                  ],
+                  "explanation": "Both descriptions can be correct at the same time, but they communicate different magnitudes — it's always worth paying attention to which unit is being used before drawing conclusions."
+                },
+                "es": {
+                  "prompt": "Lees dos titulares el mismo día: uno dice que la tasa de interés 'subió 2 puntos porcentuales', el otro dice que 'subió un 20%'. Ambos describen el mismo cambio del 10% al 12%. ¿Qué te enseña esto sobre leer noticias financieras?",
+                  "options": [
+                    "Ambos titulares están equivocados, solo uno puede ser verdadero",
+                    "La forma en que se expresa el cambio (puntos porcentuales vs. variación relativa) puede hacer que la misma información parezca mayor o menor",
+                    "Los puntos porcentuales y el porcentaje son siempre lo mismo",
+                    "Esto solo pasa cuando la noticia está mintiendo"
+                  ],
+                  "explanation": "Ambas descripciones pueden ser correctas al mismo tiempo, pero comunican magnitudes diferentes — siempre vale la pena prestar atención a qué unidad se está usando antes de sacar conclusiones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Pontos percentuais são a diferença direta entre dois percentuais.",
+                    "Variação percentual (relativa) mede o quanto isso representa em proporção ao valor original.",
+                    "A mesma mudança pode soar maior ou menor dependendo de qual unidade é usada para descrevê-la."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Percentage points are the direct difference between two percentages.",
+                    "Percentage (relative) change measures how much that represents as a proportion of the original value.",
+                    "The same change can sound bigger or smaller depending on which unit is used to describe it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los puntos porcentuales son la diferencia directa entre dos porcentajes.",
+                    "La variación porcentual (relativa) mide cuánto representa eso en proporción al valor original.",
+                    "El mismo cambio puede sonar mayor o menor según qué unidad se use para describirlo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_nominal_vs_real_rate",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Taxa Nominal x Taxa Real"
+            },
+            "en": {
+              "title": "Nominal Rate vs. Real Rate"
+            },
+            "es": {
+              "title": "Tasa Nominal vs. Tasa Real"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que a taxa anunciada não mostra sozinha",
+                  "body": "A taxa nominal é o número anunciado por um investimento ou empréstimo — por exemplo, '10% ao ano'. A taxa real é o que sobra depois de descontar a inflação do período: ela mostra o ganho (ou perda) real do seu poder de compra. Comparar apenas taxas nominais entre investimentos ou países diferentes pode enganar, porque cada um pode ter uma inflação distinta por trás."
+                },
+                "en": {
+                  "title": "What the advertised rate doesn't show on its own",
+                  "body": "The nominal rate is the number advertised for an investment or a loan — for example, '10% a year.' The real rate is what's left after subtracting inflation for the period: it shows the actual gain (or loss) in your purchasing power. Comparing only nominal rates between different investments or countries can be misleading, because each may have a different inflation rate behind it."
+                },
+                "es": {
+                  "title": "Lo que la tasa anunciada no muestra por sí sola",
+                  "body": "La tasa nominal es el número anunciado para una inversión o un préstamo — por ejemplo, '10% anual'. La tasa real es lo que queda después de descontar la inflación del período: muestra la ganancia (o pérdida) real de tu poder de compra. Comparar solo tasas nominales entre inversiones o países diferentes puede engañar, porque cada uno puede tener una inflación distinta detrás."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investimento rende 10% ao ano (taxa nominal) em um país com inflação de 4% no período. Aproximadamente, a taxa real fica perto de 6% — o ganho de poder de compra é bem menor do que os 10% anunciados sugerem à primeira vista."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investment earns 10% a year (nominal rate) in a country with 4% inflation for the period. Roughly, the real rate comes out close to 6% — the gain in purchasing power is much smaller than the advertised 10% suggests at first glance."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una inversión rinde el 10% anual (tasa nominal) en un país con una inflación del 4% en el período. Aproximadamente, la tasa real queda cerca del 6% — la ganancia de poder de compra es bastante menor de lo que sugieren a primera vista los 10% anunciados."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a taxa real mostra que a taxa nominal, sozinha, não mostra?",
+                  "options": [
+                    "O valor total investido",
+                    "O ganho ou perda real de poder de compra, já descontada a inflação",
+                    "A taxa de câmbio do período",
+                    "O imposto de renda cobrado sobre o investimento"
+                  ],
+                  "explanation": "A taxa nominal é só o número anunciado; a taxa real desconta a inflação e revela o quanto seu poder de compra realmente mudou."
+                },
+                "en": {
+                  "prompt": "What does the real rate show that the nominal rate alone doesn't?",
+                  "options": [
+                    "The total amount invested",
+                    "The actual gain or loss in purchasing power, after subtracting inflation",
+                    "The exchange rate for the period",
+                    "The income tax charged on the investment"
+                  ],
+                  "explanation": "The nominal rate is just the advertised number; the real rate subtracts inflation and reveals how much your purchasing power actually changed."
+                },
+                "es": {
+                  "prompt": "¿Qué muestra la tasa real que la tasa nominal, por sí sola, no muestra?",
+                  "options": [
+                    "El monto total invertido",
+                    "La ganancia o pérdida real de poder de compra, ya descontada la inflación",
+                    "El tipo de cambio del período",
+                    "El impuesto sobre la renta cobrado sobre la inversión"
+                  ],
+                  "explanation": "La tasa nominal es solo el número anunciado; la tasa real descuenta la inflación y revela cuánto cambió realmente tu poder de compra."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está comparando dois investimentos: um rende 10% ao ano em um país com inflação de 8%, o outro rende 7% ao ano em um país com inflação de 2%. Olhando só a taxa nominal, o primeiro parece melhor. O que a taxa real sugere?",
+                  "options": [
+                    "O primeiro continua claramente melhor, já que 10% é maior que 7%",
+                    "O segundo pode oferecer um ganho real de poder de compra maior, mesmo com taxa nominal menor",
+                    "Taxas nominais e reais são sempre iguais, então não faz diferença",
+                    "É impossível comparar investimentos de países diferentes"
+                  ],
+                  "explanation": "Aproximadamente, o primeiro teria uma taxa real perto de 2%, e o segundo perto de 5% — olhar só a taxa nominal, sem considerar a inflação de cada cenário, pode levar a uma comparação enganosa."
+                },
+                "en": {
+                  "prompt": "You're comparing two investments: one earns 10% a year in a country with 8% inflation, the other earns 7% a year in a country with 2% inflation. Looking only at the nominal rate, the first seems better. What does the real rate suggest?",
+                  "options": [
+                    "The first is still clearly better, since 10% is greater than 7%",
+                    "The second may offer a larger real gain in purchasing power, even with a lower nominal rate",
+                    "Nominal and real rates are always the same, so it makes no difference",
+                    "It's impossible to compare investments from different countries"
+                  ],
+                  "explanation": "Roughly, the first would have a real rate close to 2%, and the second close to 5% — looking only at the nominal rate, without considering the inflation behind each scenario, can lead to a misleading comparison."
+                },
+                "es": {
+                  "prompt": "Estás comparando dos inversiones: una rinde el 10% anual en un país con 8% de inflación, la otra rinde el 7% anual en un país con 2% de inflación. Mirando solo la tasa nominal, la primera parece mejor. ¿Qué sugiere la tasa real?",
+                  "options": [
+                    "La primera sigue siendo claramente mejor, ya que 10% es mayor que 7%",
+                    "La segunda puede ofrecer una ganancia real de poder de compra mayor, incluso con una tasa nominal menor",
+                    "Las tasas nominal y real siempre son iguales, así que no hace diferencia",
+                    "Es imposible comparar inversiones de países diferentes"
+                  ],
+                  "explanation": "Aproximadamente, la primera tendría una tasa real cercana al 2%, y la segunda cercana al 5% — mirar solo la tasa nominal, sin considerar la inflación de cada escenario, puede llevar a una comparación engañosa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Taxa nominal é o número anunciado; taxa real desconta a inflação do período.",
+                    "Comparar apenas taxas nominais entre cenários com inflações diferentes pode enganar.",
+                    "A taxa real é o que de fato mostra o ganho ou perda de poder de compra."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The nominal rate is the advertised number; the real rate subtracts inflation for the period.",
+                    "Comparing only nominal rates across scenarios with different inflation rates can be misleading.",
+                    "The real rate is what actually shows the gain or loss in purchasing power."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa nominal es el número anunciado; la tasa real descuenta la inflación del período.",
+                    "Comparar solo tasas nominales entre escenarios con inflaciones diferentes puede engañar.",
+                    "La tasa real es la que realmente muestra la ganancia o pérdida de poder de compra."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_time_value_of_money",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Valor do Dinheiro no Tempo"
+            },
+            "en": {
+              "title": "The Time Value of Money"
+            },
+            "es": {
+              "title": "El Valor del Dinero en el Tiempo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Hoje vale mais do que amanhã",
+                  "body": "Um real hoje vale mais do que um real prometido daqui a um ano — mesmo sem considerar a inflação. Isso porque o dinheiro disponível agora pode ser investido e gerar retorno nesse período, algo que o dinheiro futuro ainda não pode fazer. Esse princípio é chamado de valor do dinheiro no tempo, e é a base para comparar quantias que acontecem em momentos diferentes."
+                },
+                "en": {
+                  "title": "Today is worth more than tomorrow",
+                  "body": "A dollar today is worth more than a dollar promised a year from now — even setting inflation aside. That's because money available now can be invested and generate a return during that time, something future money can't yet do. This principle is called the time value of money, and it's the basis for comparing amounts that occur at different points in time."
+                },
+                "es": {
+                  "title": "Hoy vale más que mañana",
+                  "body": "Un real hoy vale más que un real prometido dentro de un año — incluso sin considerar la inflación. Esto se debe a que el dinero disponible ahora puede invertirse y generar un retorno durante ese período, algo que el dinero futuro todavía no puede hacer. Este principio se llama el valor del dinero en el tiempo, y es la base para comparar montos que ocurren en momentos diferentes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém te oferece duas opções: receber R$1.000 hoje, ou receber R$1.000 daqui a um ano. Se você aceitar receber hoje e investir a uma taxa de 8% ao ano, terá R$1.080 no fim do ano — mais do que os R$1.000 que receberia esperando. Por isso, mesmo sem inflação nenhuma, receber antes tende a valer mais."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone offers you two options: receive R$1,000 today, or receive R$1,000 a year from now. If you accept receiving it today and invest it at a rate of 8% a year, you'll have R$1,080 by the end of the year — more than the R$1,000 you'd receive by waiting. So, even with zero inflation, receiving money sooner tends to be worth more."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien te ofrece dos opciones: recibir R$1.000 hoy, o recibir R$1.000 dentro de un año. Si aceptas recibirlo hoy y lo inviertes a una tasa del 8% anual, tendrás R$1.080 al final del año — más que los R$1.000 que recibirías esperando. Por eso, incluso sin ninguna inflación, recibir antes tiende a valer más."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que R$1.000 hoje tende a valer mais do que R$1.000 daqui a um ano, mesmo sem inflação?",
+                  "options": [
+                    "Porque o dinheiro futuro é sempre falso",
+                    "Porque o dinheiro disponível agora pode ser investido e gerar retorno nesse período",
+                    "Porque não existe diferença nenhuma entre os dois",
+                    "Porque leis proíbem receber dinheiro no futuro"
+                  ],
+                  "explanation": "O dinheiro disponível hoje tem a oportunidade de ser investido e crescer durante o tempo em que o dinheiro futuro ainda não existe na sua conta."
+                },
+                "en": {
+                  "prompt": "Why does R$1,000 today tend to be worth more than R$1,000 a year from now, even without inflation?",
+                  "options": [
+                    "Because future money is always fake",
+                    "Because the money available now can be invested and generate a return during that time",
+                    "Because there's no difference between the two at all",
+                    "Because laws prohibit receiving money in the future"
+                  ],
+                  "explanation": "Money available today has the opportunity to be invested and grow during the time in which the future money doesn't yet exist in your account."
+                },
+                "es": {
+                  "prompt": "¿Por qué R$1.000 hoy tiende a valer más que R$1.000 dentro de un año, incluso sin inflación?",
+                  "options": [
+                    "Porque el dinero futuro siempre es falso",
+                    "Porque el dinero disponible ahora puede invertirse y generar un retorno durante ese período",
+                    "Porque no existe ninguna diferencia entre los dos",
+                    "Porque las leyes prohíben recibir dinero en el futuro"
+                  ],
+                  "explanation": "El dinero disponible hoy tiene la oportunidad de invertirse y crecer durante el tiempo en que el dinero futuro todavía no existe en tu cuenta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa te oferece duas formas de receber um prêmio: R$5.000 à vista, ou R$5.500 em 2 anos. Como o valor do dinheiro no tempo ajuda a avaliar essa escolha?",
+                  "options": [
+                    "Ele mostra que R$5.500 é sempre a melhor opção, só pelo valor nominal ser maior",
+                    "Ele ajuda a comparar as duas opções considerando o quanto os R$5.000 poderiam render se investidos por 2 anos, antes de decidir qual é realmente maior",
+                    "O valor do dinheiro no tempo não se aplica a prêmios, só a investimentos formais",
+                    "A resposta certa é sempre esperar pelo valor maior, independentemente do prazo"
+                  ],
+                  "explanation": "Para comparar de forma justa, vale calcular quanto os R$5.000 recebidos hoje poderiam se transformar em 2 anos, a uma taxa razoável, e comparar esse valor com os R$5.500 prometidos no futuro."
+                },
+                "en": {
+                  "prompt": "A company offers you two ways to receive a prize: R$5,000 upfront, or R$5,500 in 2 years. How does the time value of money help evaluate this choice?",
+                  "options": [
+                    "It shows that R$5,500 is always the better option, just because the nominal value is higher",
+                    "It helps compare the two options by considering how much the R$5,000 could grow if invested for 2 years, before deciding which is actually larger",
+                    "The time value of money doesn't apply to prizes, only to formal investments",
+                    "The right answer is always to wait for the larger amount, regardless of the time frame"
+                  ],
+                  "explanation": "To compare fairly, it's worth calculating how much the R$5,000 received today could grow into over 2 years, at a reasonable rate, and comparing that value to the R$5,500 promised in the future."
+                },
+                "es": {
+                  "prompt": "Una empresa te ofrece dos formas de recibir un premio: R$5.000 al contado, o R$5.500 en 2 años. ¿Cómo ayuda el valor del dinero en el tiempo a evaluar esta elección?",
+                  "options": [
+                    "Muestra que R$5.500 es siempre la mejor opción, solo porque el valor nominal es mayor",
+                    "Ayuda a comparar ambas opciones considerando cuánto podrían rendir los R$5.000 si se invirtieran durante 2 años, antes de decidir cuál es realmente mayor",
+                    "El valor del dinero en el tiempo no se aplica a premios, solo a inversiones formales",
+                    "La respuesta correcta es siempre esperar por el monto mayor, sin importar el plazo"
+                  ],
+                  "explanation": "Para comparar de forma justa, vale calcular en cuánto podrían convertirse los R$5.000 recibidos hoy después de 2 años, a una tasa razonable, y comparar ese valor con los R$5.500 prometidos en el futuro."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Dinheiro disponível hoje vale mais do que a mesma quantia no futuro, mesmo sem inflação.",
+                    "Isso acontece porque o dinheiro de hoje pode ser investido e gerar retorno.",
+                    "Comparar valores em momentos diferentes exige levar esse princípio em conta, não só olhar os números nominais."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Money available today is worth more than the same amount in the future, even without inflation.",
+                    "This happens because today's money can be invested and generate a return.",
+                    "Comparing amounts at different points in time requires taking this principle into account, not just looking at the nominal numbers."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El dinero disponible hoy vale más que la misma cantidad en el futuro, incluso sin inflación.",
+                    "Esto ocurre porque el dinero de hoy puede invertirse y generar un retorno.",
+                    "Comparar montos en momentos diferentes exige tener en cuenta este principio, no solo mirar los números nominales."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_simple_vs_compound_interest",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Juros Simples x Juros Compostos"
+            },
+            "en": {
+              "title": "Simple Interest vs. Compound Interest"
+            },
+            "es": {
+              "title": "Interés Simple vs. Interés Compuesto"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas de calcular juros",
+                  "body": "Juros simples são calculados sempre sobre o valor original (principal), sem incorporar os juros já ganhos — o crescimento é linear ao longo do tempo. Juros compostos, como você já viu em outra lição, são calculados sobre o principal mais os juros acumulados — o crescimento é acelerado ao longo do tempo. Em investimentos de longo prazo, mesmo uma taxa parecida gera resultados bem diferentes dependendo de qual dos dois métodos está sendo usado."
+                },
+                "en": {
+                  "title": "Two ways to calculate interest",
+                  "body": "Simple interest is always calculated on the original amount (the principal), without incorporating interest already earned — growth is linear over time. Compound interest, as you saw in another lesson, is calculated on the principal plus accumulated interest — growth accelerates over time. In long-term investments, even a similar rate produces quite different results depending on which of the two methods is being used."
+                },
+                "es": {
+                  "title": "Dos formas de calcular intereses",
+                  "body": "El interés simple se calcula siempre sobre el monto original (el principal), sin incorporar los intereses ya ganados — el crecimiento es lineal a lo largo del tiempo. El interés compuesto, como ya viste en otra lección, se calcula sobre el principal más los intereses acumulados — el crecimiento se acelera con el tiempo. En inversiones a largo plazo, incluso una tasa parecida genera resultados bastante diferentes según cuál de los dos métodos se esté usando."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "R$1.000 a 10% ao ano por 3 anos: em juros simples, você ganha R$100 por ano, sempre sobre os R$1.000 originais, terminando com R$1.300. Em juros compostos, o segundo e terceiro ano rendem sobre um valor já maior, terminando com cerca de R$1.331 — uma diferença pequena em poucos anos, mas que cresce bastante em prazos mais longos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "R$1,000 at 10% a year for 3 years: with simple interest, you earn R$100 per year, always on the original R$1,000, ending with R$1,300. With compound interest, the second and third years earn on an already larger amount, ending with about R$1,331 — a small difference over a few years, but one that grows considerably over longer time frames."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "R$1.000 al 10% anual durante 3 años: con interés simple, ganas R$100 por año, siempre sobre los R$1.000 originales, terminando con R$1.300. Con interés compuesto, el segundo y tercer año rinden sobre un monto ya mayor, terminando con cerca de R$1.331 — una diferencia pequeña en pocos años, pero que crece bastante en plazos más largos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual a principal diferença entre juros simples e juros compostos?",
+                  "options": [
+                    "Juros simples sempre rendem mais no longo prazo",
+                    "Juros compostos incidem sobre o principal mais os juros já acumulados; juros simples incidem sempre só sobre o principal",
+                    "Não existe diferença prática entre os dois",
+                    "Juros compostos só existem em investimentos de curtíssimo prazo"
+                  ],
+                  "explanation": "A diferença central está sobre o que a taxa incide: no juro composto, ela incide também sobre juros já ganhos; no simples, sempre sobre o valor original."
+                },
+                "en": {
+                  "prompt": "What's the main difference between simple and compound interest?",
+                  "options": [
+                    "Simple interest always earns more in the long run",
+                    "Compound interest is applied to the principal plus interest already accumulated; simple interest is always applied only to the principal",
+                    "There's no practical difference between the two",
+                    "Compound interest only exists in very short-term investments"
+                  ],
+                  "explanation": "The key difference is what the rate applies to: with compound interest, it also applies to interest already earned; with simple interest, it's always applied to the original amount."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal diferencia entre el interés simple y el interés compuesto?",
+                  "options": [
+                    "El interés simple siempre rinde más a largo plazo",
+                    "El interés compuesto se aplica sobre el principal más los intereses ya acumulados; el interés simple siempre se aplica solo sobre el principal",
+                    "No existe diferencia práctica entre ambos",
+                    "El interés compuesto solo existe en inversiones de plazo muy corto"
+                  ],
+                  "explanation": "La diferencia clave está en sobre qué se aplica la tasa: en el interés compuesto, se aplica también sobre intereses ya ganados; en el simple, siempre sobre el monto original."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está comparando dois contratos com a mesma taxa anunciada, mas um usa juros simples e o outro juros compostos, ambos por 10 anos. O que provavelmente acontece com o resultado final?",
+                  "options": [
+                    "Os dois terminam com exatamente o mesmo valor, já que a taxa anunciada é igual",
+                    "O contrato de juros compostos tende a gerar um valor final maior, porque os juros passam a render sobre juros ao longo dos anos",
+                    "O contrato de juros simples sempre gera um valor final maior em prazos longos",
+                    "É impossível saber sem outras informações"
+                  ],
+                  "explanation": "Com a mesma taxa nominal, juros compostos tendem a superar juros simples ao longo do tempo, já que o efeito de juros sobre juros se acumula — essa diferença fica mais visível quanto maior o prazo."
+                },
+                "en": {
+                  "prompt": "You're comparing two contracts with the same advertised rate, but one uses simple interest and the other compound interest, both for 10 years. What most likely happens to the final result?",
+                  "options": [
+                    "Both end with exactly the same value, since the advertised rate is equal",
+                    "The compound interest contract tends to produce a larger final value, because interest starts earning on interest over the years",
+                    "The simple interest contract always produces a larger final value over long periods",
+                    "It's impossible to know without more information"
+                  ],
+                  "explanation": "With the same nominal rate, compound interest tends to outpace simple interest over time, since the effect of interest on interest accumulates — this difference becomes more visible the longer the time frame."
+                },
+                "es": {
+                  "prompt": "Estás comparando dos contratos con la misma tasa anunciada, pero uno usa interés simple y el otro interés compuesto, ambos durante 10 años. ¿Qué probablemente pasa con el resultado final?",
+                  "options": [
+                    "Ambos terminan con exactamente el mismo valor, ya que la tasa anunciada es igual",
+                    "El contrato de interés compuesto tiende a generar un valor final mayor, porque los intereses empiezan a rendir sobre intereses a lo largo de los años",
+                    "El contrato de interés simple siempre genera un valor final mayor en plazos largos",
+                    "Es imposible saberlo sin más información"
+                  ],
+                  "explanation": "Con la misma tasa nominal, el interés compuesto tiende a superar al interés simple con el tiempo, ya que el efecto de intereses sobre intereses se acumula — esta diferencia se vuelve más visible cuanto mayor es el plazo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Juros simples incidem sempre sobre o valor original.",
+                    "Juros compostos incidem sobre o valor original mais os juros já acumulados.",
+                    "Com a mesma taxa nominal, juros compostos tendem a gerar um resultado maior quanto mais longo o prazo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Simple interest always applies to the original amount.",
+                    "Compound interest applies to the original amount plus interest already accumulated.",
+                    "With the same nominal rate, compound interest tends to produce a larger result the longer the time frame."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El interés simple siempre se aplica sobre el monto original.",
+                    "El interés compuesto se aplica sobre el monto original más los intereses ya acumulados.",
+                    "Con la misma tasa nominal, el interés compuesto tiende a generar un resultado mayor cuanto más largo sea el plazo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_basic_economic_indicators",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Indicadores Econômicos Básicos"
+            },
+            "en": {
+              "title": "Basic Economic Indicators"
+            },
+            "es": {
+              "title": "Indicadores Económicos Básicos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Termômetros da economia",
+                  "body": "Alguns indicadores ajudam a entender a saúde geral da economia. O PIB (Produto Interno Bruto) mede o total de bens e serviços produzidos em um período. A taxa de inflação mede a variação geral dos preços. A taxa de desemprego mede a proporção de pessoas sem trabalho que estão buscando emprego. Investidores acompanham esses números porque eles influenciam decisões de juros, consumo e investimento em toda a economia."
+                },
+                "en": {
+                  "title": "The economy's thermometers",
+                  "body": "Some indicators help gauge the overall health of the economy. GDP (Gross Domestic Product) measures the total goods and services produced in a period. The inflation rate measures the general change in prices. The unemployment rate measures the proportion of people without a job who are looking for one. Investors follow these numbers because they influence interest rate, consumption and investment decisions across the whole economy."
+                },
+                "es": {
+                  "title": "Los termómetros de la economía",
+                  "body": "Algunos indicadores ayudan a entender la salud general de la economía. El PIB (Producto Interno Bruto) mide el total de bienes y servicios producidos en un período. La tasa de inflación mide la variación general de los precios. La tasa de desempleo mide la proporción de personas sin trabajo que están buscando empleo. Los inversores siguen estos números porque influyen en las decisiones de tasas de interés, consumo e inversión en toda la economía."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quando o PIB de um país cresce, isso costuma indicar que empresas estão vendendo e produzindo mais. Quando a inflação sobe muito, o banco central de muitos países tende a subir os juros para tentar controlá-la — o que, por sua vez, pode afetar o retorno de diferentes investimentos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When a country's GDP grows, that usually indicates companies are selling and producing more. When inflation rises a lot, the central bank in many countries tends to raise interest rates to try to control it — which, in turn, can affect the returns of different investments."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Cuando el PIB de un país crece, eso suele indicar que las empresas están vendiendo y produciendo más. Cuando la inflación sube mucho, el banco central de muchos países tiende a subir las tasas de interés para intentar controlarla — lo que, a su vez, puede afectar el retorno de diferentes inversiones."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o PIB mede?",
+                  "options": [
+                    "Apenas o lucro das empresas listadas na bolsa",
+                    "O total de bens e serviços produzidos em uma economia em um período",
+                    "A quantidade de dinheiro em circulação",
+                    "Somente os gastos do governo"
+                  ],
+                  "explanation": "PIB mede o total de bens e serviços produzidos em um período — é um dos principais indicadores usados para avaliar o tamanho e o crescimento de uma economia."
+                },
+                "en": {
+                  "prompt": "What does GDP measure?",
+                  "options": [
+                    "Only the profit of publicly listed companies",
+                    "The total goods and services produced in an economy over a period",
+                    "The amount of money in circulation",
+                    "Only government spending"
+                  ],
+                  "explanation": "GDP measures the total goods and services produced over a period — it's one of the main indicators used to assess the size and growth of an economy."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el PIB?",
+                  "options": [
+                    "Solo la ganancia de las empresas que cotizan en bolsa",
+                    "El total de bienes y servicios producidos en una economía en un período",
+                    "La cantidad de dinero en circulación",
+                    "Solo el gasto del gobierno"
+                  ],
+                  "explanation": "El PIB mide el total de bienes y servicios producidos en un período — es uno de los principales indicadores usados para evaluar el tamaño y el crecimiento de una economía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que a inflação está subindo consistentemente há meses. Por que isso pode ser relevante para decisões de investimento, mesmo antes de qualquer mudança oficial nos juros?",
+                  "options": [
+                    "Não é relevante, inflação não afeta investimentos",
+                    "Porque uma inflação persistente costuma pressionar bancos centrais a considerar subir os juros, o que pode afetar o retorno relativo de diferentes tipos de investimento",
+                    "Porque inflação alta sempre significa que a bolsa vai subir",
+                    "Porque a inflação só importa para quem vive no exterior"
+                  ],
+                  "explanation": "Movimentos persistentes na inflação costumam anteceder decisões de política monetária — entender essa relação ajuda a interpretar por que certos investimentos reagem antes de qualquer anúncio oficial."
+                },
+                "en": {
+                  "prompt": "You notice inflation has been rising steadily for months. Why might this matter for investment decisions, even before any official change in interest rates?",
+                  "options": [
+                    "It doesn't matter, inflation doesn't affect investments",
+                    "Because persistent inflation usually pressures central banks to consider raising rates, which can affect the relative return of different types of investment",
+                    "Because high inflation always means the stock market will rise",
+                    "Because inflation only matters for people living abroad"
+                  ],
+                  "explanation": "Persistent movements in inflation usually precede monetary policy decisions — understanding this relationship helps explain why certain investments react before any official announcement."
+                },
+                "es": {
+                  "prompt": "Notas que la inflación ha estado subiendo de forma constante durante meses. ¿Por qué esto podría ser relevante para decisiones de inversión, incluso antes de cualquier cambio oficial en las tasas de interés?",
+                  "options": [
+                    "No es relevante, la inflación no afecta las inversiones",
+                    "Porque una inflación persistente suele presionar a los bancos centrales a considerar subir las tasas, lo que puede afectar el retorno relativo de diferentes tipos de inversión",
+                    "Porque la inflación alta siempre significa que la bolsa va a subir",
+                    "Porque la inflación solo importa para quienes viven en el extranjero"
+                  ],
+                  "explanation": "Los movimientos persistentes en la inflación suelen preceder a las decisiones de política monetaria — entender esta relación ayuda a interpretar por qué ciertas inversiones reaccionan antes de cualquier anuncio oficial."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "PIB, inflação e desemprego são indicadores básicos da saúde de uma economia.",
+                    "Esses indicadores influenciam decisões de juros que afetam investimentos em geral.",
+                    "Você concluiu o módulo de matemática financeira básica."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "GDP, inflation and unemployment are basic indicators of an economy's health.",
+                    "These indicators influence interest rate decisions that affect investments in general.",
+                    "You've completed the basic financial math module."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El PIB, la inflación y el desempleo son indicadores básicos de la salud de una economía.",
+                    "Estos indicadores influyen en las decisiones de tasas de interés que afectan a las inversiones en general.",
+                    "Completaste el módulo de matemática financiera básica."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "applied_financial_math",
+      "order": 2,
+      "iconKey": "calculate_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "FOUNDATION",
+      "prerequisites": [
+        "financial_math_basics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Matemática Financeira Aplicada",
+          "description": "Valor presente e futuro, sistemas de amortização, taxa proporcional x equivalente e custo de oportunidade."
+        },
+        "en": {
+          "title": "Applied Financial Math",
+          "description": "Present and future value, amortization systems, proportional vs. equivalent rate and opportunity cost."
+        },
+        "es": {
+          "title": "Matemática Financiera Aplicada",
+          "description": "Valor presente y futuro, sistemas de amortización, tasa proporcional vs. equivalente y costo de oportunidad."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "financial_math_present_future_value",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Valor Presente e Valor Futuro"
+            },
+            "en": {
+              "title": "Present Value and Future Value"
+            },
+            "es": {
+              "title": "Valor Presente y Valor Futuro"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "As duas pontas de uma mesma linha do tempo",
+                  "body": "Valor futuro é quanto uma quantia de hoje vai valer depois de crescer a uma taxa de juros por um período de tempo. Valor presente é o caminho inverso: quanto uma quantia futura vale hoje, descontada a uma taxa ao longo do mesmo período. Esses dois conceitos são a base de praticamente todos os cálculos financeiros que envolvem tempo — de quanto investir hoje para atingir uma meta, até quanto vale hoje um pagamento prometido para o futuro."
+                },
+                "en": {
+                  "title": "The two ends of the same timeline",
+                  "body": "Future value is how much an amount of money today will be worth after growing at an interest rate over a period of time. Present value is the reverse path: how much a future amount is worth today, discounted at a rate over that same period. These two concepts are the basis of practically every financial calculation that involves time — from how much to invest today to reach a goal, to how much a payment promised for the future is worth today."
+                },
+                "es": {
+                  "title": "Los dos extremos de una misma línea de tiempo",
+                  "body": "El valor futuro es cuánto valdrá una cantidad de hoy después de crecer a una tasa de interés durante un período de tiempo. El valor presente es el camino inverso: cuánto vale hoy una cantidad futura, descontada a una tasa a lo largo del mismo período. Estos dos conceptos son la base de prácticamente todos los cálculos financieros que involucran tiempo — desde cuánto invertir hoy para alcanzar una meta, hasta cuánto vale hoy un pago prometido para el futuro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Se você quer saber quanto R$1.000 de hoje valerão daqui a 5 anos, a uma taxa de 8% ao ano, você está calculando o valor futuro. Se, ao contrário, alguém te promete R$1.500 daqui a 5 anos e você quer saber quanto isso vale em dinheiro de hoje, a uma mesma taxa de desconto, você está calculando o valor presente dessa promessa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "If you want to know how much today's R$1,000 will be worth 5 years from now, at a rate of 8% a year, you're calculating future value. If, instead, someone promises you R$1,500 in 5 years and you want to know how much that's worth in today's money, at the same discount rate, you're calculating the present value of that promise."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Si quieres saber cuánto valdrán R$1.000 de hoy dentro de 5 años, a una tasa del 8% anual, estás calculando el valor futuro. Si, en cambio, alguien te promete R$1.500 dentro de 5 años y quieres saber cuánto vale eso en dinero de hoy, a la misma tasa de descuento, estás calculando el valor presente de esa promesa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a diferença entre valor futuro e valor presente?",
+                  "options": [
+                    "Não existe diferença, são o mesmo cálculo",
+                    "Valor futuro projeta uma quantia de hoje para o futuro; valor presente traz uma quantia futura para hoje",
+                    "Valor presente só se aplica a dívidas, nunca a investimentos",
+                    "Valor futuro é sempre menor do que o valor original"
+                  ],
+                  "explanation": "Valor futuro e valor presente são cálculos inversos: um projeta dinheiro de hoje para frente no tempo, o outro traz dinheiro do futuro para o presente."
+                },
+                "en": {
+                  "prompt": "What is the difference between future value and present value?",
+                  "options": [
+                    "There's no difference, they're the same calculation",
+                    "Future value projects an amount from today into the future; present value brings a future amount back to today",
+                    "Present value only applies to debts, never to investments",
+                    "Future value is always smaller than the original amount"
+                  ],
+                  "explanation": "Future value and present value are inverse calculations: one projects today's money forward in time, the other brings future money back to the present."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia entre valor futuro y valor presente?",
+                  "options": [
+                    "No existe diferencia, es el mismo cálculo",
+                    "El valor futuro proyecta un monto de hoy hacia el futuro; el valor presente trae un monto futuro a hoy",
+                    "El valor presente solo se aplica a deudas, nunca a inversiones",
+                    "El valor futuro siempre es menor que el monto original"
+                  ],
+                  "explanation": "El valor futuro y el valor presente son cálculos inversos: uno proyecta el dinero de hoy hacia adelante en el tiempo, el otro trae dinero del futuro al presente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende valor do dinheiro no tempo de outra lição. Alguém te oferece R$2.000 daqui a 3 anos como pagamento por um serviço. Como o conceito de valor presente ajuda a avaliar se essa proposta é justa?",
+                  "options": [
+                    "Não ajuda, o valor nominal futuro é sempre o que importa, sem nenhum ajuste",
+                    "Ele permite calcular quanto esses R$2.000 futuros valem em dinheiro de hoje, a uma taxa de desconto razoável, para comparar com o valor que você receberia se fosse pago à vista",
+                    "Valor presente só pode ser calculado por bancos",
+                    "A proposta é sempre justa, independentemente do prazo"
+                  ],
+                  "explanation": "Trazer o valor futuro prometido para valor presente permite comparar essa proposta com uma alternativa em dinheiro à vista, de forma mais justa, considerando o tempo de espera envolvido."
+                },
+                "en": {
+                  "prompt": "You already understand the time value of money from another lesson. Someone offers you R$2,000 in 3 years as payment for a service. How does the present value concept help assess whether this offer is fair?",
+                  "options": [
+                    "It doesn't help, the future nominal value is always what matters, with no adjustment",
+                    "It allows calculating how much that future R$2,000 is worth in today's money, at a reasonable discount rate, to compare with the value you'd receive if paid upfront",
+                    "Present value can only be calculated by banks",
+                    "The offer is always fair, regardless of the time frame"
+                  ],
+                  "explanation": "Bringing the promised future value to present value allows comparing this offer with an upfront cash alternative, more fairly, considering the waiting time involved."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el valor del dinero en el tiempo de otra lección. Alguien te ofrece R$2.000 dentro de 3 años como pago por un servicio. ¿Cómo ayuda el concepto de valor presente a evaluar si esa propuesta es justa?",
+                  "options": [
+                    "No ayuda, el valor nominal futuro siempre es lo que importa, sin ningún ajuste",
+                    "Permite calcular cuánto valen esos R$2.000 futuros en dinero de hoy, a una tasa de descuento razonable, para comparar con el valor que recibirías si te pagaran al contado",
+                    "El valor presente solo puede calcularlo un banco",
+                    "La propuesta siempre es justa, sin importar el plazo"
+                  ],
+                  "explanation": "Traer el valor futuro prometido a valor presente permite comparar esa propuesta con una alternativa en dinero al contado, de forma más justa, considerando el tiempo de espera involucrado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Valor futuro projeta uma quantia de hoje para frente no tempo.",
+                    "Valor presente traz uma quantia futura para seu equivalente em dinheiro de hoje.",
+                    "Esses dois cálculos são a base de praticamente toda decisão financeira que envolve tempo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Future value projects an amount from today forward in time.",
+                    "Present value brings a future amount to its equivalent in today's money.",
+                    "These two calculations are the basis of practically every financial decision that involves time."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El valor futuro proyecta un monto de hoy hacia adelante en el tiempo.",
+                    "El valor presente trae un monto futuro a su equivalente en dinero de hoy.",
+                    "Estos dos cálculos son la base de prácticamente toda decisión financiera que involucra tiempo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_amortization_systems",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sistemas de Amortização (Price x SAC)"
+            },
+            "en": {
+              "title": "Amortization Systems (Price vs. SAC)"
+            },
+            "es": {
+              "title": "Sistemas de Amortización (Price vs. SAC)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas de pagar um financiamento",
+                  "body": "Amortização é o processo de pagar uma dívida aos poucos, através de parcelas que cobrem parte do valor emprestado (principal) mais os juros do período. No sistema Price, as parcelas têm valor fixo do início ao fim, mas a composição entre juros e amortização do principal varia — no começo, a parcela é composta principalmente por juros; no fim, principalmente por amortização. No sistema SAC (Sistema de Amortização Constante), a amortização do principal é fixa em todas as parcelas, o que faz o valor total da parcela começar mais alto e diminuir ao longo do tempo, já que os juros incidem sobre um saldo devedor decrescente."
+                },
+                "en": {
+                  "title": "Two ways to pay off a loan",
+                  "body": "Amortization is the process of paying off a debt gradually, through installments that cover part of the borrowed amount (principal) plus the period's interest. Under the Price system, installments have a fixed value from start to finish, but the split between interest and principal amortization varies — early on, the installment is mostly interest; toward the end, mostly principal amortization. Under the SAC system (Constant Amortization System), the principal amortization is fixed across all installments, which makes the total installment value start higher and decrease over time, since interest applies to a shrinking outstanding balance."
+                },
+                "es": {
+                  "title": "Dos formas de pagar un financiamiento",
+                  "body": "La amortización es el proceso de pagar una deuda poco a poco, a través de cuotas que cubren parte del monto prestado (principal) más los intereses del período. En el sistema Price, las cuotas tienen un valor fijo de principio a fin, pero la composición entre intereses y amortización del principal varía — al principio, la cuota se compone principalmente de intereses; al final, principalmente de amortización. En el sistema SAC (Sistema de Amortización Constante), la amortización del principal es fija en todas las cuotas, lo que hace que el valor total de la cuota empiece más alto y disminuya con el tiempo, ya que los intereses se aplican sobre un saldo deudor decreciente."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um financiamento imobiliário pelo sistema SAC tem uma primeira parcela de R$3.000, que vai diminuindo mês a mês até a última parcela, bem menor. O mesmo financiamento pelo sistema Price teria uma parcela fixa, digamos R$2.500, do primeiro ao último mês — mas o total pago em juros ao longo de todo o financiamento costuma ser maior no Price, já que o saldo devedor demora mais para cair de forma significativa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A mortgage under the SAC system has a first installment of R$3,000, which decreases month by month until the last installment, much smaller. The same mortgage under the Price system would have a fixed installment, say R$2,500, from the first to the last month — but the total paid in interest over the whole loan tends to be higher under Price, since the outstanding balance takes longer to drop significantly."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un financiamiento inmobiliario por el sistema SAC tiene una primera cuota de R$3.000, que va disminuyendo mes a mes hasta la última cuota, bastante menor. El mismo financiamiento por el sistema Price tendría una cuota fija, digamos R$2.500, desde el primero hasta el último mes — pero el total pagado en intereses a lo largo de todo el financiamiento suele ser mayor en el Price, ya que el saldo deudor tarda más en bajar de forma significativa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o sistema SAC de amortização?",
+                  "options": [
+                    "Parcelas fixas do início ao fim do financiamento",
+                    "Amortização do principal fixa em todas as parcelas, fazendo o valor total da parcela diminuir ao longo do tempo",
+                    "A ausência total de juros no financiamento",
+                    "Um sistema usado apenas para financiar veículos"
+                  ],
+                  "explanation": "No SAC, a parte de amortização do principal é sempre a mesma, e como os juros incidem sobre um saldo devedor decrescente, o valor total da parcela cai ao longo do tempo."
+                },
+                "en": {
+                  "prompt": "What characterizes the SAC amortization system?",
+                  "options": [
+                    "Fixed installments from the start to the end of the loan",
+                    "Fixed principal amortization across all installments, making the total installment value decrease over time",
+                    "The total absence of interest in the loan",
+                    "A system used only for financing vehicles"
+                  ],
+                  "explanation": "In SAC, the principal amortization portion is always the same, and since interest applies to a shrinking outstanding balance, the total installment value drops over time."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al sistema SAC de amortización?",
+                  "options": [
+                    "Cuotas fijas desde el inicio hasta el final del financiamiento",
+                    "Amortización del principal fija en todas las cuotas, haciendo que el valor total de la cuota disminuya con el tiempo",
+                    "La ausencia total de intereses en el financiamiento",
+                    "Un sistema usado solo para financiar vehículos"
+                  ],
+                  "explanation": "En el SAC, la parte de amortización del principal siempre es la misma, y como los intereses se aplican sobre un saldo deudor decreciente, el valor total de la cuota cae con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está escolhendo entre um financiamento pelo sistema Price, com parcelas fixas mais confortáveis no orçamento mensal, e um pelo sistema SAC, com parcelas iniciais mais altas, mas decrescentes. O que vale a pena considerar nessa escolha?",
+                  "options": [
+                    "Apenas o valor da primeira parcela, ignorando todo o resto do financiamento",
+                    "O equilíbrio entre a previsibilidade e o valor inicial mais confortável do Price, e o fato de o SAC costumar gerar um total de juros pagos menor ao longo de todo o financiamento",
+                    "Os dois sistemas são sempre idênticos em termos de custo total",
+                    "SAC nunca deve ser considerado, independentemente da situação financeira"
+                  ],
+                  "explanation": "A escolha entre Price e SAC envolve um trade-off entre parcelas iniciais mais confortáveis (Price) e um custo total de juros geralmente menor ao longo do financiamento (SAC) — a decisão depende do orçamento e da prioridade de cada pessoa."
+                },
+                "en": {
+                  "prompt": "You're choosing between a loan under the Price system, with fixed installments more comfortable in the monthly budget, and one under the SAC system, with higher initial installments that decrease over time. What's worth considering in this choice?",
+                  "options": [
+                    "Only the first installment's value, ignoring everything else about the loan",
+                    "The trade-off between the predictability and more comfortable initial value of Price, and the fact that SAC tends to generate a lower total interest paid over the whole loan",
+                    "Both systems always have identical total cost",
+                    "SAC should never be considered, regardless of the financial situation"
+                  ],
+                  "explanation": "The choice between Price and SAC involves a trade-off between more comfortable initial installments (Price) and a generally lower total interest cost over the loan (SAC) — the decision depends on each person's budget and priorities."
+                },
+                "es": {
+                  "prompt": "Estás eligiendo entre un financiamiento por el sistema Price, con cuotas fijas más cómodas en el presupuesto mensual, y uno por el sistema SAC, con cuotas iniciales más altas, pero decrecientes. ¿Qué vale la pena considerar en esta elección?",
+                  "options": [
+                    "Solo el valor de la primera cuota, ignorando todo el resto del financiamiento",
+                    "El equilibrio entre la previsibilidad y el valor inicial más cómodo del Price, y el hecho de que el SAC suele generar un total de intereses pagados menor a lo largo de todo el financiamiento",
+                    "Ambos sistemas siempre tienen un costo total idéntico",
+                    "El SAC nunca debe considerarse, sin importar la situación financiera"
+                  ],
+                  "explanation": "La elección entre Price y SAC implica un equilibrio entre cuotas iniciales más cómodas (Price) y un costo total de intereses generalmente menor a lo largo del financiamiento (SAC) — la decisión depende del presupuesto y la prioridad de cada persona."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Price tem parcelas fixas; SAC tem amortização de principal fixa, com parcelas decrescentes.",
+                    "SAC costuma gerar um total de juros pagos menor ao longo do financiamento.",
+                    "A escolha entre os dois envolve um trade-off entre conforto inicial no orçamento e custo total."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Price has fixed installments; SAC has fixed principal amortization, with decreasing installments.",
+                    "SAC tends to generate a lower total interest paid over the loan.",
+                    "The choice between the two involves a trade-off between initial budget comfort and total cost."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Price tiene cuotas fijas; SAC tiene amortización de principal fija, con cuotas decrecientes.",
+                    "El SAC suele generar un total de intereses pagados menor a lo largo del financiamiento.",
+                    "La elección entre ambos implica un equilibrio entre comodidad inicial en el presupuesto y costo total."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_nominal_vs_effective_rate",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Taxa Proporcional x Taxa Equivalente"
+            },
+            "en": {
+              "title": "Proportional Rate vs. Equivalent Rate"
+            },
+            "es": {
+              "title": "Tasa Proporcional vs. Tasa Equivalente"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas formas de converter uma taxa entre períodos diferentes",
+                  "body": "Ao converter uma taxa de juros de um período para outro — de anual para mensal, por exemplo — existem duas abordagens possíveis. A taxa proporcional simplesmente divide (ou multiplica) a taxa pelo número de períodos, sem considerar o efeito de juros compostos — usada em juros simples. A taxa equivalente, usada em juros compostos, calcula a taxa que, aplicada repetidamente ao longo dos períodos menores, chega exatamente ao mesmo resultado final da taxa maior — por isso, a taxa equivalente mensal de uma taxa anual é sempre um pouco menor do que a taxa simplesmente dividida por 12."
+                },
+                "en": {
+                  "title": "Two ways to convert a rate between different periods",
+                  "body": "When converting an interest rate from one period to another — from annual to monthly, for example — there are two possible approaches. The proportional rate simply divides (or multiplies) the rate by the number of periods, without considering the compound interest effect — used in simple interest. The equivalent rate, used in compound interest, calculates the rate that, applied repeatedly over the smaller periods, arrives at exactly the same final result as the larger rate — that's why the monthly equivalent rate of an annual rate is always a bit lower than the rate simply divided by 12."
+                },
+                "es": {
+                  "title": "Dos formas de convertir una tasa entre períodos diferentes",
+                  "body": "Al convertir una tasa de interés de un período a otro — de anual a mensual, por ejemplo — existen dos enfoques posibles. La tasa proporcional simplemente divide (o multiplica) la tasa por el número de períodos, sin considerar el efecto del interés compuesto — usada en interés simple. La tasa equivalente, usada en interés compuesto, calcula la tasa que, aplicada repetidamente a lo largo de los períodos menores, llega exactamente al mismo resultado final que la tasa mayor — por eso, la tasa equivalente mensual de una tasa anual es siempre un poco menor que la tasa simplemente dividida entre 12."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma taxa de 12% ao ano, se convertida de forma proporcional (simples), daria 1% ao mês (12% dividido por 12). Mas, em juros compostos, a taxa mensal equivalente a 12% ao ano é de aproximadamente 0,95% ao mês — um pouco menor, porque, aplicada mês a mês com o efeito de juros sobre juros, ela já chega aos mesmos 12% ao final do ano, sem precisar dos 1% cheios."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A rate of 12% a year, if converted proportionally (simple), would give 1% a month (12% divided by 12). But, in compound interest, the monthly rate equivalent to 12% a year is approximately 0.95% a month — a bit lower, because, applied month by month with the effect of interest on interest, it already reaches the same 12% by the end of the year, without needing the full 1%."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una tasa del 12% anual, si se convierte de forma proporcional (simple), daría el 1% mensual (12% dividido entre 12). Pero, en interés compuesto, la tasa mensual equivalente al 12% anual es de aproximadamente el 0,95% mensual — un poco menor, porque, aplicada mes a mes con el efecto de intereses sobre intereses, ya llega al mismo 12% al final del año, sin necesitar el 1% completo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual a diferença entre taxa proporcional e taxa equivalente?",
+                  "options": [
+                    "Não existe diferença, as duas dão sempre o mesmo resultado",
+                    "Taxa proporcional divide a taxa de forma simples, sem considerar juros compostos; taxa equivalente considera o efeito de juros compostos entre os períodos",
+                    "Taxa equivalente só existe em produtos de renda variável",
+                    "Taxa proporcional é sempre usada em investimentos de longo prazo"
+                  ],
+                  "explanation": "Taxa proporcional é uma divisão simples da taxa, sem considerar o efeito de juros sobre juros; taxa equivalente calcula a taxa que, composta ao longo dos períodos, chega ao mesmo resultado da taxa maior."
+                },
+                "en": {
+                  "prompt": "What's the difference between proportional rate and equivalent rate?",
+                  "options": [
+                    "There's no difference, both always give the same result",
+                    "Proportional rate divides the rate simply, without considering compound interest; equivalent rate considers the compound interest effect between periods",
+                    "Equivalent rate only exists for variable income products",
+                    "Proportional rate is always used for long-term investments"
+                  ],
+                  "explanation": "Proportional rate is a simple division of the rate, without considering the effect of interest on interest; equivalent rate calculates the rate that, compounded over the periods, reaches the same result as the larger rate."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la diferencia entre tasa proporcional y tasa equivalente?",
+                  "options": [
+                    "No existe diferencia, ambas siempre dan el mismo resultado",
+                    "La tasa proporcional divide la tasa de forma simple, sin considerar el interés compuesto; la tasa equivalente considera el efecto del interés compuesto entre los períodos",
+                    "La tasa equivalente solo existe en productos de renta variable",
+                    "La tasa proporcional siempre se usa en inversiones a largo plazo"
+                  ],
+                  "explanation": "La tasa proporcional es una división simple de la tasa, sin considerar el efecto de intereses sobre intereses; la tasa equivalente calcula la tasa que, compuesta a lo largo de los períodos, llega al mismo resultado que la tasa mayor."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende juros compostos de outra lição. Por que, em um investimento com juros compostos, a taxa mensal equivalente a 12% ao ano é menor do que simplesmente dividir 12% por 12?",
+                  "options": [
+                    "Porque investimentos com juros compostos sempre rendem menos do que o anunciado",
+                    "Porque, com juros compostos, os rendimentos mensais também passam a render juros nos meses seguintes, então uma taxa mensal um pouco menor já é suficiente para chegar aos mesmos 12% ao final do ano",
+                    "Porque essa diferença é sempre um erro de cálculo da instituição financeira",
+                    "Porque taxa equivalente só se aplica a taxas negativas"
+                  ],
+                  "explanation": "Como os juros de cada mês passam a render juros nos meses seguintes, uma taxa mensal ligeiramente menor do que a divisão simples já é suficiente para, composta ao longo do ano, chegar ao mesmo resultado da taxa anual."
+                },
+                "en": {
+                  "prompt": "You already understand compound interest from another lesson. Why, in a compound interest investment, is the monthly rate equivalent to 12% a year lower than simply dividing 12% by 12?",
+                  "options": [
+                    "Because compound interest investments always earn less than advertised",
+                    "Because, with compound interest, each month's earnings also start earning interest in the following months, so a slightly lower monthly rate is already enough to reach the same 12% by the end of the year",
+                    "Because this difference is always a calculation error by the financial institution",
+                    "Because equivalent rate only applies to negative rates"
+                  ],
+                  "explanation": "Since each month's interest starts earning interest in the following months, a monthly rate slightly lower than the simple division is already enough, compounded over the year, to reach the same result as the annual rate."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el interés compuesto de otra lección. ¿Por qué, en una inversión con interés compuesto, la tasa mensual equivalente al 12% anual es menor que simplemente dividir el 12% entre 12?",
+                  "options": [
+                    "Porque las inversiones con interés compuesto siempre rinden menos de lo anunciado",
+                    "Porque, con interés compuesto, los rendimientos mensuales también empiezan a rendir intereses en los meses siguientes, así que una tasa mensual un poco menor ya es suficiente para llegar al mismo 12% al final del año",
+                    "Porque esa diferencia siempre es un error de cálculo de la institución financiera",
+                    "Porque la tasa equivalente solo se aplica a tasas negativas"
+                  ],
+                  "explanation": "Como los intereses de cada mes empiezan a rendir intereses en los meses siguientes, una tasa mensual ligeramente menor que la división simple ya es suficiente para, compuesta a lo largo del año, llegar al mismo resultado que la tasa anual."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Taxa proporcional divide a taxa de forma simples, sem considerar juros compostos.",
+                    "Taxa equivalente considera o efeito de juros sobre juros entre os períodos.",
+                    "A taxa mensal equivalente a uma taxa anual é sempre menor do que a divisão simples por 12."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Proportional rate divides the rate simply, without considering compound interest.",
+                    "Equivalent rate considers the effect of interest on interest between periods.",
+                    "The monthly rate equivalent to an annual rate is always lower than the simple division by 12."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa proporcional divide la tasa de forma simple, sin considerar el interés compuesto.",
+                    "La tasa equivalente considera el efecto de intereses sobre intereses entre los períodos.",
+                    "La tasa mensual equivalente a una tasa anual siempre es menor que la división simple entre 12."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_opportunity_cost",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custo de Oportunidade"
+            },
+            "en": {
+              "title": "Opportunity Cost"
+            },
+            "es": {
+              "title": "Costo de Oportunidad"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O valor da melhor alternativa que você deixou de escolher",
+                  "body": "Custo de oportunidade é o valor da melhor alternativa que você deixa de aproveitar ao escolher uma opção em vez de outra. Toda escolha financeira envolve, implicitamente, abrir mão de outras possibilidades — e o custo de oportunidade é uma forma de tornar essa troca explícita, ajudando a comparar não apenas se uma opção é boa isoladamente, mas se ela é a melhor entre as alternativas disponíveis no momento da decisão."
+                },
+                "en": {
+                  "title": "The value of the best alternative you didn't choose",
+                  "body": "Opportunity cost is the value of the best alternative you give up by choosing one option over another. Every financial choice implicitly involves giving up other possibilities — and opportunity cost is a way to make that trade-off explicit, helping compare not just whether an option is good in isolation, but whether it's the best among the alternatives available at the time of the decision."
+                },
+                "es": {
+                  "title": "El valor de la mejor alternativa que no elegiste",
+                  "body": "El costo de oportunidad es el valor de la mejor alternativa que dejas de aprovechar al elegir una opción en lugar de otra. Toda elección financiera implica, implícitamente, renunciar a otras posibilidades — y el costo de oportunidad es una forma de hacer explícito ese intercambio, ayudando a comparar no solo si una opción es buena de forma aislada, sino si es la mejor entre las alternativas disponibles en el momento de la decisión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa tem R$10.000 e escolhe deixá-los parados na conta corrente, sem render nada, para eventualmente usar em uma oportunidade futura. Se, no mesmo período, ela poderia ter obtido 8% ao ano investindo esse dinheiro em um título de baixo risco, o custo de oportunidade de deixar o dinheiro parado é justamente esse retorno não obtido, mesmo que nenhum prejuízo direto tenha acontecido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone has R$10,000 and chooses to leave it sitting in their checking account, earning nothing, to eventually use for a future opportunity. If, in the same period, they could have earned 8% a year by investing that money in a low-risk bond, the opportunity cost of leaving the money idle is exactly that foregone return, even though no direct loss occurred."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona tiene R$10.000 y elige dejarlos parados en la cuenta corriente, sin rendir nada, para eventualmente usarlos en una oportunidad futura. Si, en el mismo período, podría haber obtenido el 8% anual invirtiendo ese dinero en un título de bajo riesgo, el costo de oportunidad de dejar el dinero parado es justamente ese retorno no obtenido, aunque no haya ocurrido ninguna pérdida directa."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é custo de oportunidade?",
+                  "options": [
+                    "Uma taxa cobrada por corretoras ao trocar de investimento",
+                    "O valor da melhor alternativa que você deixa de aproveitar ao escolher uma opção em vez de outra",
+                    "Um imposto sobre ganhos de capital",
+                    "O custo fixo de manter uma conta bancária"
+                  ],
+                  "explanation": "Custo de oportunidade é o valor do que você abre mão ao escolher uma alternativa específica, em vez da melhor opção disponível entre as demais."
+                },
+                "en": {
+                  "prompt": "What is opportunity cost?",
+                  "options": [
+                    "A fee charged by brokers when switching investments",
+                    "The value of the best alternative you give up by choosing one option over another",
+                    "A tax on capital gains",
+                    "The fixed cost of maintaining a bank account"
+                  ],
+                  "explanation": "Opportunity cost is the value of what you give up by choosing a specific alternative, instead of the best option available among the others."
+                },
+                "es": {
+                  "prompt": "¿Qué es el costo de oportunidad?",
+                  "options": [
+                    "Una tasa cobrada por las correduras al cambiar de inversión",
+                    "El valor de la mejor alternativa que dejas de aprovechar al elegir una opción en lugar de otra",
+                    "Un impuesto sobre ganancias de capital",
+                    "El costo fijo de mantener una cuenta bancaria"
+                  ],
+                  "explanation": "El costo de oportunidad es el valor de lo que renuncias al elegir una alternativa específica, en lugar de la mejor opción disponible entre las demás."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende risco e retorno de outra lição. Uma pessoa mantém uma grande quantia parada na poupança, com retorno baixo, alegando que 'não perdeu dinheiro nenhum'. Como o conceito de custo de oportunidade ajuda a avaliar essa afirmação?",
+                  "options": [
+                    "Confirma que ela realmente não perdeu nada, já que o saldo nominal não diminuiu",
+                    "Mostra que, mesmo sem uma perda nominal direta, ela pode estar deixando de ganhar um retorno maior disponível em outras alternativas com risco parecido — esse retorno não obtido é o custo de oportunidade da escolha",
+                    "Custo de oportunidade só se aplica a perdas nominais diretas",
+                    "Poupança sempre tem o menor custo de oportunidade entre todas as opções"
+                  ],
+                  "explanation": "Mesmo sem uma perda nominal direta, deixar dinheiro em uma alternativa de retorno mais baixo, quando existiam opções de retorno maior com risco parecido, representa um custo de oportunidade — um ganho potencial que deixou de ser aproveitado."
+                },
+                "en": {
+                  "prompt": "You already understand risk and return from another lesson. Someone keeps a large amount idle in a savings account, with low return, claiming they 'didn't lose any money.' How does the opportunity cost concept help evaluate that claim?",
+                  "options": [
+                    "It confirms they really lost nothing, since the nominal balance didn't decrease",
+                    "It shows that, even without a direct nominal loss, they might be missing out on a higher return available in other alternatives with similar risk — that foregone return is the opportunity cost of the choice",
+                    "Opportunity cost only applies to direct nominal losses",
+                    "Savings accounts always have the lowest opportunity cost among all options"
+                  ],
+                  "explanation": "Even without a direct nominal loss, leaving money in a lower-return alternative, when higher-return options with similar risk existed, represents an opportunity cost — a potential gain that went unrealized."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el riesgo y el retorno de otra lección. Una persona mantiene una gran cantidad parada en una cuenta de ahorros, con bajo retorno, alegando que 'no perdió nada de dinero'. ¿Cómo ayuda el concepto de costo de oportunidad a evaluar esa afirmación?",
+                  "options": [
+                    "Confirma que realmente no perdió nada, ya que el saldo nominal no disminuyó",
+                    "Muestra que, incluso sin una pérdida nominal directa, puede estar dejando de ganar un retorno mayor disponible en otras alternativas con riesgo parecido — ese retorno no obtenido es el costo de oportunidad de la elección",
+                    "El costo de oportunidad solo se aplica a pérdidas nominales directas",
+                    "La cuenta de ahorros siempre tiene el menor costo de oportunidad entre todas las opciones"
+                  ],
+                  "explanation": "Incluso sin una pérdida nominal directa, dejar el dinero en una alternativa de retorno más bajo, cuando existían opciones de retorno mayor con riesgo parecido, representa un costo de oportunidad — una ganancia potencial que dejó de aprovecharse."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Custo de oportunidade é o valor da melhor alternativa que você deixa de aproveitar.",
+                    "Ele pode existir mesmo sem uma perda nominal direta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Opportunity cost is the value of the best alternative you give up.",
+                    "It can exist even without a direct nominal loss."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El costo de oportunidad es el valor de la mejor alternativa que dejas de aprovechar.",
+                    "Puede existir incluso sin una pérdida nominal directa."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_perpetuities",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Perpetuidades",
+              "learningObjective": "Calcular o valor presente de uma perpetuidade dividindo o pagamento periódico pela taxa de desconto, e explicar por que esse cálculo funciona mesmo com uma série infinita de pagamentos."
+            },
+            "en": {
+              "title": "Perpetuities",
+              "learningObjective": "Calculate the present value of a perpetuity by dividing the periodic payment by the discount rate, and explain why this calculation works even with an infinite series of payments."
+            },
+            "es": {
+              "title": "Perpetuidades",
+              "learningObjective": "Calcular el valor presente de una perpetuidad dividiendo el pago periódico entre la tasa de descuento, y explicar por qué este cálculo funciona incluso con una serie infinita de pagos."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma série de pagamentos que nunca termina",
+                  "body": "Uma perpetuidade é uma série de pagamentos iguais e regulares que continua indefinidamente, sem data para terminar. Apesar de somar infinitos pagamentos futuros, o valor presente de uma perpetuidade é finito: basta dividir o valor de cada pagamento periódico pela taxa de desconto usada. Isso acontece porque, como você já viu com valor presente, pagamentos muito distantes no futuro valem cada vez menos hoje, até o ponto de contribuírem quase nada para o total."
+                },
+                "en": {
+                  "title": "A series of payments that never ends",
+                  "body": "A perpetuity is a series of equal, regular payments that continues indefinitely, with no end date. Despite adding up infinite future payments, a perpetuity's present value is finite: simply divide the value of each periodic payment by the discount rate used. This happens because, as you already saw with present value, payments very far in the future are worth less and less today, to the point of contributing almost nothing to the total."
+                },
+                "es": {
+                  "title": "Una serie de pagos que nunca termina",
+                  "body": "Una perpetuidad es una serie de pagos iguales y regulares que continúa indefinidamente, sin fecha de finalización. A pesar de sumar infinitos pagos futuros, el valor presente de una perpetuidad es finito: basta dividir el valor de cada pago periódico entre la tasa de descuento usada. Esto ocurre porque, como ya viste con el valor presente, los pagos muy lejanos en el futuro valen cada vez menos hoy, hasta el punto de contribuir casi nada al total."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um título promete pagar R$100 por ano, para sempre, e a taxa de desconto usada é de 5% ao ano. O valor presente dessa perpetuidade é R$100 dividido por 0,05, ou seja, R$2.000 — mesmo que a soma nominal de todos os pagamentos futuros, sem desconto, fosse infinita."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A bond promises to pay R$100 per year, forever, and the discount rate used is 5% a year. The present value of that perpetuity is R$100 divided by 0.05, which is R$2,000 — even though the nominal sum of all future payments, undiscounted, would be infinite."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un bono promete pagar R$100 por año, para siempre, y la tasa de descuento usada es del 5% anual. El valor presente de esa perpetuidad es R$100 dividido entre 0,05, es decir, R$2.000 — aunque la suma nominal de todos los pagos futuros, sin descontar, sería infinita."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como se calcula o valor presente de uma perpetuidade?",
+                  "options": [
+                    "Somando manualmente todos os pagamentos futuros, um por um",
+                    "Dividindo o valor do pagamento periódico pela taxa de desconto usada",
+                    "Multiplicando o pagamento periódico pelo número total de anos",
+                    "Uma perpetuidade não tem valor presente, por ser uma série infinita"
+                  ],
+                  "explanation": "O valor presente de uma perpetuidade é o pagamento periódico dividido pela taxa de desconto — um atalho que evita somar uma série infinita de pagamentos um a um."
+                },
+                "en": {
+                  "prompt": "How is the present value of a perpetuity calculated?",
+                  "options": [
+                    "By manually adding up all future payments, one by one",
+                    "By dividing the periodic payment's value by the discount rate used",
+                    "By multiplying the periodic payment by the total number of years",
+                    "A perpetuity has no present value, since it's an infinite series"
+                  ],
+                  "explanation": "The present value of a perpetuity is the periodic payment divided by the discount rate — a shortcut that avoids adding up an infinite series of payments one by one."
+                },
+                "es": {
+                  "prompt": "¿Cómo se calcula el valor presente de una perpetuidad?",
+                  "options": [
+                    "Sumando manualmente todos los pagos futuros, uno por uno",
+                    "Dividiendo el valor del pago periódico entre la tasa de descuento usada",
+                    "Multiplicando el pago periódico por el número total de años",
+                    "Una perpetuidad no tiene valor presente, por ser una serie infinita"
+                  ],
+                  "explanation": "El valor presente de una perpetuidad es el pago periódico dividido entre la tasa de descuento — un atajo que evita sumar una serie infinita de pagos uno por uno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende valor presente de outra lição deste módulo. Por que uma perpetuidade, com infinitos pagamentos futuros, ainda assim tem um valor presente finito?",
+                  "options": [
+                    "Porque pagamentos futuros nunca são considerados no cálculo de valor presente",
+                    "Porque, assim como qualquer valor futuro distante, os pagamentos mais distantes no tempo contribuem cada vez menos para o valor presente, até o ponto de o total convergir para um número finito",
+                    "Porque perpetuidades, na prática, nunca pagam mais do que 10 anos",
+                    "Porque o valor presente de uma perpetuidade é sempre igual à soma nominal dos pagamentos"
+                  ],
+                  "explanation": "O mesmo princípio de valor presente que você já estudou explica por que pagamentos cada vez mais distantes contribuem cada vez menos, o que faz a soma infinita convergir para um valor finito."
+                },
+                "en": {
+                  "prompt": "You already understand present value from another lesson in this module. Why does a perpetuity, with infinite future payments, still have a finite present value?",
+                  "options": [
+                    "Because future payments are never considered in a present value calculation",
+                    "Because, just like any distant future value, payments further in time contribute less and less to the present value, to the point where the total converges to a finite number",
+                    "Because perpetuities, in practice, never pay for more than 10 years",
+                    "Because a perpetuity's present value is always equal to the nominal sum of the payments"
+                  ],
+                  "explanation": "The same present value principle you already studied explains why increasingly distant payments contribute less and less, which makes the infinite sum converge to a finite value."
+                },
+                "es": {
+                  "prompt": "Ya entiendes el valor presente de otra lección de este módulo. ¿Por qué una perpetuidad, con infinitos pagos futuros, aun así tiene un valor presente finito?",
+                  "options": [
+                    "Porque los pagos futuros nunca se consideran en el cálculo del valor presente",
+                    "Porque, al igual que cualquier valor futuro lejano, los pagos más distantes en el tiempo contribuyen cada vez menos al valor presente, hasta el punto de que el total converge a un número finito",
+                    "Porque las perpetuidades, en la práctica, nunca pagan durante más de 10 años",
+                    "Porque el valor presente de una perpetuidad siempre es igual a la suma nominal de los pagos"
+                  ],
+                  "explanation": "El mismo principio de valor presente que ya estudiaste explica por qué los pagos cada vez más distantes contribuyen cada vez menos, lo que hace que la suma infinita converja a un valor finito."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Uma perpetuidade é uma série de pagamentos iguais que continua indefinidamente.",
+                    "Seu valor presente é finito: basta dividir o pagamento periódico pela taxa de desconto.",
+                    "Isso acontece porque pagamentos distantes no futuro contribuem cada vez menos para o valor presente total."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A perpetuity is a series of equal payments that continues indefinitely.",
+                    "Its present value is finite: simply divide the periodic payment by the discount rate.",
+                    "This happens because payments further in the future contribute less and less to the total present value."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Una perpetuidad es una serie de pagos iguales que continúa indefinidamente.",
+                    "Su valor presente es finito: basta dividir el pago periódico entre la tasa de descuento.",
+                    "Esto ocurre porque los pagos más lejanos en el futuro contribuyen cada vez menos al valor presente total."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "expert_financial_math",
+      "order": 3,
+      "iconKey": "calculate_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "applied_financial_math"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Matemática Financeira: Nível Especialista",
+          "description": "Regra dos 72, anuidades, deflacionamento de valores, taxa interna de retorno (TIR) e ponto de equilíbrio."
+        },
+        "en": {
+          "title": "Financial Math: Expert Level",
+          "description": "The rule of 72, annuities, deflating values, internal rate of return (IRR) and the break-even point."
+        },
+        "es": {
+          "title": "Matemática Financiera: Nivel Experto",
+          "description": "Regla del 72, anualidades, deflactación de valores, tasa interna de retorno (TIR) y punto de equilibrio."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "financial_math_rule_of_72",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "A Regra dos 72"
+            },
+            "en": {
+              "title": "The Rule of 72"
+            },
+            "es": {
+              "title": "La Regla del 72"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma forma rápida de estimar tempo de duplicação",
+                  "body": "A regra dos 72 é um atalho matemático para estimar, aproximadamente, quantos anos são necessários para dobrar um valor investido a juros compostos, sem precisar fazer o cálculo exponencial completo. Basta dividir 72 pela taxa de juros anual (em termos percentuais, sem o símbolo de porcentagem): o resultado é uma estimativa aproximada do número de anos necessários para a duplicação, útil para comparações rápidas de cabeça."
+                },
+                "en": {
+                  "title": "A quick way to estimate doubling time",
+                  "body": "The rule of 72 is a mathematical shortcut for roughly estimating how many years it takes to double an amount invested at compound interest, without needing to do the full exponential calculation. Simply divide 72 by the annual interest rate (in percentage terms, without the percent sign): the result is an approximate estimate of the number of years needed to double, useful for quick mental comparisons."
+                },
+                "es": {
+                  "title": "Una forma rápida de estimar el tiempo de duplicación",
+                  "body": "La regla del 72 es un atajo matemático para estimar, de forma aproximada, cuántos años se necesitan para duplicar un monto invertido a interés compuesto, sin tener que hacer el cálculo exponencial completo. Basta dividir 72 entre la tasa de interés anual (en términos porcentuales, sin el símbolo de porcentaje): el resultado es una estimación aproximada del número de años necesarios para la duplicación, útil para comparaciones rápidas mentales."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "A uma taxa de 8% ao ano, a regra dos 72 sugere que um investimento levaria aproximadamente 9 anos para dobrar (72 dividido por 8). A uma taxa de 12% ao ano, essa estimativa cai para 6 anos (72 dividido por 12) — uma forma rápida de perceber como pequenas diferenças na taxa de retorno têm um impacto considerável no tempo necessário para dobrar um valor."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "At an 8% annual rate, the rule of 72 suggests an investment would take roughly 9 years to double (72 divided by 8). At a 12% annual rate, that estimate drops to 6 years (72 divided by 12) — a quick way to see how small differences in the rate of return have a considerable impact on the time needed to double an amount."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "A una tasa del 8% anual, la regla del 72 sugiere que una inversión tardaría aproximadamente 9 años en duplicarse (72 dividido entre 8). A una tasa del 12% anual, esa estimación baja a 6 años (72 dividido entre 12) — una forma rápida de notar cómo pequeñas diferencias en la tasa de retorno tienen un impacto considerable en el tiempo necesario para duplicar un monto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como a regra dos 72 estima o tempo aproximado para dobrar um investimento?",
+                  "options": [
+                    "Multiplicando a taxa de juros anual por 72",
+                    "Dividindo 72 pela taxa de juros anual, em termos percentuais",
+                    "Somando 72 ao valor investido inicialmente",
+                    "A regra dos 72 não tem relação com tempo de duplicação"
+                  ],
+                  "explanation": "A regra dos 72 divide 72 pela taxa de juros anual (em percentual) para estimar aproximadamente quantos anos são necessários para dobrar o valor investido."
+                },
+                "en": {
+                  "prompt": "How does the rule of 72 estimate the approximate time to double an investment?",
+                  "options": [
+                    "By multiplying the annual interest rate by 72",
+                    "By dividing 72 by the annual interest rate, in percentage terms",
+                    "By adding 72 to the initially invested amount",
+                    "The rule of 72 has no relation to doubling time"
+                  ],
+                  "explanation": "The rule of 72 divides 72 by the annual interest rate (as a percentage) to roughly estimate how many years are needed to double the invested amount."
+                },
+                "es": {
+                  "prompt": "¿Cómo estima la regla del 72 el tiempo aproximado para duplicar una inversión?",
+                  "options": [
+                    "Multiplicando la tasa de interés anual por 72",
+                    "Dividiendo 72 entre la tasa de interés anual, en términos porcentuales",
+                    "Sumando 72 al monto invertido inicialmente",
+                    "La regla del 72 no tiene relación con el tiempo de duplicación"
+                  ],
+                  "explanation": "La regla del 72 divide 72 entre la tasa de interés anual (en porcentaje) para estimar aproximadamente cuántos años se necesitan para duplicar el monto invertido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que juros compostos fazem o valor investido crescer de forma exponencial, não linear. Como a regra dos 72 ajuda a tornar esse crescimento exponencial mais intuitivo, sem exigir uma calculadora?",
+                  "options": [
+                    "Ela oferece um atalho rápido para estimar mentalmente o tempo de duplicação a partir de uma taxa de juros, tornando tangível o efeito acumulado dos juros compostos sem exigir o cálculo exponencial completo",
+                    "A regra dos 72 substitui completamente a necessidade de entender juros compostos",
+                    "A regra dos 72 só funciona para taxas de juros simples, nunca para juros compostos",
+                    "Juros compostos e a regra dos 72 são conceitos completamente não relacionados"
+                  ],
+                  "explanation": "A regra dos 72 é justamente um atalho mental para o efeito dos juros compostos, permitindo estimar rapidamente o tempo de duplicação sem precisar recorrer à fórmula exponencial completa."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that compound interest makes an invested amount grow exponentially, not linearly. How does the rule of 72 help make that exponential growth more intuitive, without needing a calculator?",
+                  "options": [
+                    "It offers a quick shortcut to mentally estimate doubling time from an interest rate, making the cumulative effect of compound interest tangible without needing the full exponential calculation",
+                    "The rule of 72 completely replaces the need to understand compound interest",
+                    "The rule of 72 only works for simple interest rates, never for compound interest",
+                    "Compound interest and the rule of 72 are completely unrelated concepts"
+                  ],
+                  "explanation": "The rule of 72 is precisely a mental shortcut for the effect of compound interest, allowing a quick estimate of doubling time without needing to resort to the full exponential formula."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el interés compuesto hace que el monto invertido crezca de forma exponencial, no lineal. ¿Cómo ayuda la regla del 72 a hacer ese crecimiento exponencial más intuitivo, sin necesitar una calculadora?",
+                  "options": [
+                    "Ofrece un atajo rápido para estimar mentalmente el tiempo de duplicación a partir de una tasa de interés, haciendo tangible el efecto acumulado del interés compuesto sin necesitar el cálculo exponencial completo",
+                    "La regla del 72 reemplaza por completo la necesidad de entender el interés compuesto",
+                    "La regla del 72 solo funciona para tasas de interés simple, nunca para interés compuesto",
+                    "El interés compuesto y la regla del 72 son conceptos completamente no relacionados"
+                  ],
+                  "explanation": "La regla del 72 es precisamente un atajo mental para el efecto del interés compuesto, permitiendo estimar rápidamente el tiempo de duplicación sin necesidad de recurrir a la fórmula exponencial completa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A regra dos 72 estima o tempo aproximado para dobrar um investimento, dividindo 72 pela taxa de juros anual.",
+                    "Pequenas diferenças na taxa de retorno têm um impacto considerável no tempo estimado de duplicação.",
+                    "Essa regra é um atalho mental para o efeito exponencial dos juros compostos."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The rule of 72 estimates the approximate time to double an investment, dividing 72 by the annual interest rate.",
+                    "Small differences in the rate of return have a considerable impact on the estimated doubling time.",
+                    "This rule is a mental shortcut for the exponential effect of compound interest."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La regla del 72 estima el tiempo aproximado para duplicar una inversión, dividiendo 72 entre la tasa de interés anual.",
+                    "Pequeñas diferencias en la tasa de retorno tienen un impacto considerable en el tiempo estimado de duplicación.",
+                    "Esta regla es un atajo mental para el efecto exponencial del interés compuesto."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_annuities",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Anuidades: Séries de Pagamentos Iguais"
+            },
+            "en": {
+              "title": "Annuities: Series of Equal Payments"
+            },
+            "es": {
+              "title": "Anualidades: Series de Pagos Iguales"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando o dinheiro entra ou sai em parcelas iguais e regulares",
+                  "body": "Uma anuidade é uma série de pagamentos ou recebimentos de valor igual, feitos em intervalos regulares de tempo — como parcelas mensais de um financiamento ou aportes mensais para um objetivo financeiro. Calcular o valor presente ou futuro de uma anuidade permite responder perguntas práticas, como quanto um conjunto de aportes mensais vai valer no futuro, ou quanto uma série de parcelas futuras vale em dinheiro de hoje."
+                },
+                "en": {
+                  "title": "When money comes in or goes out in equal, regular installments",
+                  "body": "An annuity is a series of payments or receipts of equal value, made at regular time intervals — like monthly loan installments or monthly contributions toward a financial goal. Calculating an annuity's present or future value allows answering practical questions, like how much a set of monthly contributions will be worth in the future, or how much a series of future installments is worth in today's money."
+                },
+                "es": {
+                  "title": "Cuando el dinero entra o sale en cuotas iguales y regulares",
+                  "body": "Una anualidad es una serie de pagos o cobros de valor igual, hechos en intervalos regulares de tiempo — como cuotas mensuales de un financiamiento o aportes mensuales para un objetivo financiero. Calcular el valor presente o futuro de una anualidad permite responder preguntas prácticas, como cuánto valdrá en el futuro un conjunto de aportes mensuales, o cuánto vale hoy en dinero una serie de cuotas futuras."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa que aporta R$500 todo mês em um investimento por 10 anos está criando uma anuidade. Usando a matemática de anuidades, é possível calcular o valor futuro acumulado de todos esses aportes mensais, considerando a taxa de juros ao longo do período — um cálculo diferente de simplesmente somar os valores aportados, já que cada aporte rende juros por um período diferente."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person who contributes $500 every month to an investment for 10 years is creating an annuity. Using annuity math, it's possible to calculate the accumulated future value of all those monthly contributions, considering the interest rate over the period — a different calculation from simply adding up the contributed amounts, since each contribution earns interest for a different length of time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona que aporta R$500 todos los meses a una inversión durante 10 años está creando una anualidad. Usando la matemática de anualidades, es posible calcular el valor futuro acumulado de todos esos aportes mensuales, considerando la tasa de interés a lo largo del período — un cálculo diferente de simplemente sumar los montos aportados, ya que cada aporte rinde intereses por un período distinto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma anuidade?",
+                  "options": [
+                    "Uma série de pagamentos ou recebimentos de valor igual, feitos em intervalos regulares de tempo",
+                    "Um único pagamento feito uma única vez, sem nenhuma repetição",
+                    "Um tipo de imposto cobrado sobre investimentos de longo prazo",
+                    "Uma taxa de juros fixa aplicada apenas no primeiro mês de um investimento"
+                  ],
+                  "explanation": "Anuidade é justamente essa série de valores iguais, pagos ou recebidos em intervalos regulares, como parcelas mensais de um financiamento ou aportes periódicos."
+                },
+                "en": {
+                  "prompt": "What characterizes an annuity?",
+                  "options": [
+                    "A series of payments or receipts of equal value, made at regular time intervals",
+                    "A single payment made once, with no repetition at all",
+                    "A type of tax charged on long-term investments",
+                    "A fixed interest rate applied only in an investment's first month"
+                  ],
+                  "explanation": "An annuity is precisely this series of equal amounts, paid or received at regular intervals, like monthly loan installments or periodic contributions."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una anualidad?",
+                  "options": [
+                    "Una serie de pagos o cobros de valor igual, hechos en intervalos regulares de tiempo",
+                    "Un único pago hecho una sola vez, sin ninguna repetición",
+                    "Un tipo de impuesto cobrado sobre inversiones de largo plazo",
+                    "Una tasa de interés fija aplicada solo en el primer mes de una inversión"
+                  ],
+                  "explanation": "La anualidad es justamente esa serie de montos iguales, pagados o recibidos en intervalos regulares, como cuotas mensuales de un financiamiento o aportes periódicos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que o valor futuro de um único aporte depende de por quanto tempo ele rende juros. Por que o cálculo do valor futuro de uma anuidade (vários aportes mensais) é mais complexo do que simplesmente aplicar essa mesma lógica a um único valor?",
+                  "options": [
+                    "Porque cada aporte individual da anuidade rende juros por um período diferente — o primeiro aporte rende juros por mais tempo do que o último —, exigindo somar o valor futuro de cada parcela separadamente",
+                    "Porque anuidades nunca envolvem juros de nenhum tipo",
+                    "Porque todos os aportes de uma anuidade rendem exatamente os mesmos juros, tornando o cálculo idêntico ao de um único valor",
+                    "O cálculo de uma anuidade é sempre mais simples do que o de um único valor futuro"
+                  ],
+                  "explanation": "Como cada aporte de uma anuidade é feito em um momento diferente, cada um rende juros por um período diferente até a data final — o valor futuro da anuidade soma o valor futuro de cada parcela individual, considerando esse tempo de rendimento distinto para cada uma."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that a single contribution's future value depends on how long it earns interest. Why is calculating an annuity's future value (several monthly contributions) more complex than simply applying that same logic to a single amount?",
+                  "options": [
+                    "Because each individual contribution in the annuity earns interest for a different length of time — the first contribution earns interest longer than the last — requiring adding up the future value of each installment separately",
+                    "Because annuities never involve any type of interest",
+                    "Because every contribution in an annuity earns exactly the same interest, making the calculation identical to a single amount",
+                    "Calculating an annuity is always simpler than calculating a single future value"
+                  ],
+                  "explanation": "Since each contribution in an annuity is made at a different point in time, each one earns interest for a different period until the final date — the annuity's future value adds up the future value of each individual installment, accounting for that distinct earning period for each one."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el valor futuro de un único aporte depende de cuánto tiempo genera intereses. ¿Por qué el cálculo del valor futuro de una anualidad (varios aportes mensuales) es más complejo que simplemente aplicar esa misma lógica a un único monto?",
+                  "options": [
+                    "Porque cada aporte individual de la anualidad genera intereses durante un período diferente — el primer aporte genera intereses por más tiempo que el último —, exigiendo sumar el valor futuro de cada cuota por separado",
+                    "Porque las anualidades nunca implican intereses de ningún tipo",
+                    "Porque todos los aportes de una anualidad generan exactamente los mismos intereses, haciendo el cálculo idéntico al de un único monto",
+                    "El cálculo de una anualidad siempre es más simple que el de un único valor futuro"
+                  ],
+                  "explanation": "Como cada aporte de una anualidad se hace en un momento diferente, cada uno genera intereses durante un período distinto hasta la fecha final — el valor futuro de la anualidad suma el valor futuro de cada cuota individual, considerando ese período de rendimiento distinto para cada una."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Uma anuidade é uma série de pagamentos ou recebimentos iguais, feitos em intervalos regulares.",
+                    "O valor futuro de uma anuidade soma o valor futuro de cada parcela individual.",
+                    "Cada aporte de uma anuidade rende juros por um período diferente até a data final."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "An annuity is a series of equal payments or receipts, made at regular intervals.",
+                    "An annuity's future value adds up the future value of each individual installment.",
+                    "Each contribution in an annuity earns interest for a different period until the final date."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Una anualidad es una serie de pagos o cobros iguales, hechos en intervalos regulares.",
+                    "El valor futuro de una anualidad suma el valor futuro de cada cuota individual.",
+                    "Cada aporte de una anualidad genera intereses durante un período diferente hasta la fecha final."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_deflating_values",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Deflacionando Valores ao Longo do Tempo"
+            },
+            "en": {
+              "title": "Deflating Values Over Time"
+            },
+            "es": {
+              "title": "Deflactando Valores a lo Largo del Tiempo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Comparando preços de anos diferentes de forma justa",
+                  "body": "Deflacionar um valor significa ajustá-lo pela inflação acumulada entre duas datas, convertendo-o para o poder de compra de um período de referência — geralmente o presente. Isso permite comparar preços ou salários de anos diferentes de forma justa, em vez de comparar apenas os números nominais, que não refletem a perda de poder de compra da moeda ao longo do tempo."
+                },
+                "en": {
+                  "title": "Comparing prices from different years fairly",
+                  "body": "Deflating a value means adjusting it for accumulated inflation between two dates, converting it to the purchasing power of a reference period — usually the present. This allows comparing prices or wages from different years fairly, instead of comparing just the nominal numbers, which don't reflect the currency's loss of purchasing power over time."
+                },
+                "es": {
+                  "title": "Comparando precios de diferentes años de forma justa",
+                  "body": "Deflactar un valor significa ajustarlo por la inflación acumulada entre dos fechas, convirtiéndolo al poder adquisitivo de un período de referencia — generalmente el presente. Esto permite comparar precios o salarios de diferentes años de forma justa, en lugar de comparar solo los números nominales, que no reflejan la pérdida de poder adquisitivo de la moneda con el tiempo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um salário de R$3.000 há 10 anos, quando deflacionado para o poder de compra de hoje, pode equivaler a R$5.000 ou mais em valores atuais, dependendo da inflação acumulada nesse período — comparar diretamente os R$3.000 de então com um salário nominal de R$4.000 hoje, sem esse ajuste, levaria à conclusão equivocada de que houve um ganho real de poder de compra, quando na verdade pode ter havido uma perda."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A salary of $3,000 ten years ago, when deflated to today's purchasing power, might be equivalent to $5,000 or more in current terms, depending on the inflation accumulated over that period — comparing the $3,000 from back then directly to a nominal salary of $4,000 today, without that adjustment, would lead to the mistaken conclusion that there was a real gain in purchasing power, when in fact there may have been a loss."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un salario de R$3.000 hace 10 años, al deflactarlo al poder adquisitivo actual, puede equivaler a R$5.000 o más en valores de hoy, dependiendo de la inflación acumulada en ese período — comparar directamente los R$3.000 de entonces con un salario nominal de R$4.000 hoy, sin ese ajuste, llevaría a la conclusión equivocada de que hubo una ganancia real de poder adquisitivo, cuando en realidad puede haber habido una pérdida."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que significa deflacionar um valor?",
+                  "options": [
+                    "Aumentar o valor nominal de um preço artificialmente, sem nenhum critério",
+                    "Ajustar um valor pela inflação acumulada entre duas datas, convertendo-o para o poder de compra de um período de referência",
+                    "Eliminar completamente qualquer efeito da inflação sobre a economia",
+                    "Uma técnica usada exclusivamente para calcular impostos sobre investimentos"
+                  ],
+                  "explanation": "Deflacionar significa ajustar um valor pela inflação acumulada, para que ele reflita o poder de compra de um período de referência, permitindo comparações mais justas entre diferentes datas."
+                },
+                "en": {
+                  "prompt": "What does deflating a value mean?",
+                  "options": [
+                    "Artificially increasing a price's nominal value, with no criteria",
+                    "Adjusting a value for accumulated inflation between two dates, converting it to the purchasing power of a reference period",
+                    "Completely eliminating any effect of inflation on the economy",
+                    "A technique used exclusively to calculate taxes on investments"
+                  ],
+                  "explanation": "Deflating means adjusting a value for accumulated inflation, so it reflects the purchasing power of a reference period, allowing fairer comparisons between different dates."
+                },
+                "es": {
+                  "prompt": "¿Qué significa deflactar un valor?",
+                  "options": [
+                    "Aumentar artificialmente el valor nominal de un precio, sin ningún criterio",
+                    "Ajustar un valor por la inflación acumulada entre dos fechas, convirtiéndolo al poder adquisitivo de un período de referencia",
+                    "Eliminar por completo cualquier efecto de la inflación sobre la economía",
+                    "Una técnica usada exclusivamente para calcular impuestos sobre inversiones"
+                  ],
+                  "explanation": "Deflactar significa ajustar un valor por la inflación acumulada, para que refleje el poder adquisitivo de un período de referencia, permitiendo comparaciones más justas entre diferentes fechas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, a diferença entre taxa nominal e taxa real de retorno, em que a taxa real desconta o efeito da inflação. Como o processo de deflacionar um valor se relaciona diretamente com esse mesmo princípio?",
+                  "options": [
+                    "Deflacionar um valor e calcular uma taxa real são processos completamente diferentes, sem nenhuma relação entre si",
+                    "Ambos aplicam a mesma lógica de descontar o efeito da inflação: um sobre um valor específico ao longo do tempo, o outro sobre uma taxa de retorno — os dois buscam revelar o poder de compra real por trás de um número nominal",
+                    "Deflacionar um valor sempre aumenta seu valor nominal, ao contrário do cálculo de taxa real",
+                    "Apenas taxas de juros podem ser deflacionadas; preços e salários nunca podem"
+                  ],
+                  "explanation": "Tanto deflacionar um valor quanto calcular uma taxa de retorno real aplicam a mesma lógica subjacente: remover o efeito da inflação para revelar o poder de compra real por trás de um número nominal, seja esse número um preço, um salário ou uma taxa de retorno."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, the difference between nominal and real rate of return, where the real rate discounts inflation's effect. How does the process of deflating a value directly relate to that same principle?",
+                  "options": [
+                    "Deflating a value and calculating a real rate are completely different processes, with no relation to each other",
+                    "Both apply the same logic of discounting inflation's effect: one on a specific value over time, the other on a rate of return — both aim to reveal the real purchasing power behind a nominal number",
+                    "Deflating a value always increases its nominal value, unlike calculating a real rate",
+                    "Only interest rates can be deflated; prices and wages never can"
+                  ],
+                  "explanation": "Both deflating a value and calculating a real rate of return apply the same underlying logic: removing inflation's effect to reveal the real purchasing power behind a nominal number, whether that number is a price, a wage, or a rate of return."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, la diferencia entre tasa nominal y tasa real de retorno, donde la tasa real descuenta el efecto de la inflación. ¿Cómo se relaciona directamente el proceso de deflactar un valor con ese mismo principio?",
+                  "options": [
+                    "Deflactar un valor y calcular una tasa real son procesos completamente diferentes, sin ninguna relación entre sí",
+                    "Ambos aplican la misma lógica de descontar el efecto de la inflación: uno sobre un valor específico a lo largo del tiempo, el otro sobre una tasa de retorno — ambos buscan revelar el poder adquisitivo real detrás de un número nominal",
+                    "Deflactar un valor siempre aumenta su valor nominal, a diferencia del cálculo de tasa real",
+                    "Solo las tasas de interés pueden deflactarse; los precios y salarios nunca pueden"
+                  ],
+                  "explanation": "Tanto deflactar un valor como calcular una tasa de retorno real aplican la misma lógica subyacente: eliminar el efecto de la inflación para revelar el poder adquisitivo real detrás de un número nominal, ya sea ese número un precio, un salario o una tasa de retorno."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Deflacionar um valor ajusta-o pela inflação acumulada, convertendo-o para o poder de compra de uma data de referência.",
+                    "Isso permite comparar preços ou salários de diferentes anos de forma justa.",
+                    "Deflacionar valores e calcular taxas reais de retorno aplicam a mesma lógica de descontar a inflação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Deflating a value adjusts it for accumulated inflation, converting it to the purchasing power of a reference date.",
+                    "This allows fairly comparing prices or wages from different years.",
+                    "Deflating values and calculating real rates of return apply the same logic of discounting inflation."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Deflactar un valor lo ajusta por la inflación acumulada, convirtiéndolo al poder adquisitivo de una fecha de referencia.",
+                    "Esto permite comparar precios o salarios de diferentes años de forma justa.",
+                    "Deflactar valores y calcular tasas reales de retorno aplican la misma lógica de descontar la inflación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_irr",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Taxa Interna de Retorno (TIR)"
+            },
+            "en": {
+              "title": "Internal Rate of Return (IRR)"
+            },
+            "es": {
+              "title": "Tasa Interna de Retorno (TIR)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A taxa que zera o resultado de um fluxo de caixa",
+                  "body": "A taxa interna de retorno (TIR) é a taxa de desconto que faz o valor presente de uma série de fluxos de caixa futuros ser exatamente igual ao investimento inicial — em outras palavras, é a taxa de retorno implícita de um investimento com múltiplos fluxos de caixa ao longo do tempo. Comparar a TIR de um investimento com uma taxa de referência (como o custo de oportunidade do capital) ajuda a decidir se aquele investimento específico vale a pena financeiramente."
+                },
+                "en": {
+                  "title": "The rate that zeroes out a cash flow's result",
+                  "body": "The internal rate of return (IRR) is the discount rate that makes the present value of a series of future cash flows exactly equal to the initial investment — in other words, it's the implicit rate of return of an investment with multiple cash flows over time. Comparing an investment's IRR to a reference rate (like the opportunity cost of capital) helps decide whether that specific investment is financially worthwhile."
+                },
+                "es": {
+                  "title": "La tasa que anula el resultado de un flujo de caja",
+                  "body": "La tasa interna de retorno (TIR) es la tasa de descuento que hace que el valor presente de una serie de flujos de caja futuros sea exactamente igual a la inversión inicial — en otras palabras, es la tasa de retorno implícita de una inversión con múltiples flujos de caja a lo largo del tiempo. Comparar la TIR de una inversión con una tasa de referencia (como el costo de oportunidad del capital) ayuda a decidir si esa inversión específica vale la pena financieramente."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um projeto exige um investimento inicial de R$10.000 e promete gerar fluxos de caixa de R$3.000 por ano, durante 5 anos. A TIR desse projeto é a taxa de desconto que faz o valor presente desses cinco fluxos de R$3.000 somar exatamente R$10.000. Se essa TIR calculada for maior do que o custo de oportunidade do capital do investidor, o projeto tende a ser considerado financeiramente atrativo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A project requires an initial investment of $10,000 and promises to generate cash flows of $3,000 per year, for 5 years. That project's IRR is the discount rate that makes the present value of those five $3,000 flows add up to exactly $10,000. If that calculated IRR is higher than the investor's opportunity cost of capital, the project tends to be considered financially attractive."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un proyecto exige una inversión inicial de R$10.000 y promete generar flujos de caja de R$3.000 al año, durante 5 años. La TIR de ese proyecto es la tasa de descuento que hace que el valor presente de esos cinco flujos de R$3.000 sume exactamente R$10.000. Si esa TIR calculada es mayor que el costo de oportunidad del capital del inversor, el proyecto tiende a considerarse financieramente atractivo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a taxa interna de retorno (TIR) representa?",
+                  "options": [
+                    "A taxa de desconto que faz o valor presente dos fluxos de caixa futuros de um investimento ser igual ao investimento inicial",
+                    "O lucro total, em valores absolutos, gerado por um investimento ao longo de sua vida útil",
+                    "Uma taxa de juros fixa definida pelo governo para qualquer tipo de investimento",
+                    "O valor nominal total de todos os fluxos de caixa futuros, sem nenhum desconto"
+                  ],
+                  "explanation": "A TIR é definida como a taxa de desconto que iguala o valor presente dos fluxos de caixa futuros ao investimento inicial, funcionando como a taxa de retorno implícita desse investimento."
+                },
+                "en": {
+                  "prompt": "What does the internal rate of return (IRR) represent?",
+                  "options": [
+                    "The discount rate that makes the present value of an investment's future cash flows equal to the initial investment",
+                    "The total profit, in absolute terms, generated by an investment over its useful life",
+                    "A fixed interest rate set by the government for any type of investment",
+                    "The total nominal value of all future cash flows, with no discounting at all"
+                  ],
+                  "explanation": "IRR is defined as the discount rate that equates the present value of future cash flows to the initial investment, functioning as that investment's implicit rate of return."
+                },
+                "es": {
+                  "prompt": "¿Qué representa la tasa interna de retorno (TIR)?",
+                  "options": [
+                    "La tasa de descuento que hace que el valor presente de los flujos de caja futuros de una inversión sea igual a la inversión inicial",
+                    "La ganancia total, en valores absolutos, generada por una inversión a lo largo de su vida útil",
+                    "Una tasa de interés fija definida por el gobierno para cualquier tipo de inversión",
+                    "El valor nominal total de todos los flujos de caja futuros, sin ningún descuento"
+                  ],
+                  "explanation": "La TIR se define como la tasa de descuento que iguala el valor presente de los flujos de caja futuros con la inversión inicial, funcionando como la tasa de retorno implícita de esa inversión."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já sabe, de outra lição, que o custo de oportunidade representa o retorno que se abre mão ao escolher uma alternativa em vez de outra. Como comparar a TIR de um projeto com o custo de oportunidade do capital ajuda a decidir sobre esse projeto?",
+                  "options": [
+                    "Se a TIR do projeto for maior do que o custo de oportunidade do capital, o projeto tende a compensar financeiramente, já que supera o que se conseguiria com a melhor alternativa disponível; se for menor, o projeto tende a não compensar",
+                    "O custo de oportunidade nunca deveria ser comparado com a TIR de um projeto específico",
+                    "TIR e custo de oportunidade medem exatamente a mesma coisa, tornando a comparação desnecessária",
+                    "Uma TIR mais baixa sempre indica um projeto mais atrativo do que uma TIR mais alta"
+                  ],
+                  "explanation": "Comparar a TIR de um projeto com o custo de oportunidade do capital é justamente aplicar a lógica de custo de oportunidade a essa decisão: só vale a pena investir no projeto se seu retorno implícito superar o que se conseguiria na melhor alternativa disponível."
+                },
+                "en": {
+                  "prompt": "You already know, from another lesson, that opportunity cost represents the return given up by choosing one alternative over another. How does comparing a project's IRR to the opportunity cost of capital help decide about that project?",
+                  "options": [
+                    "If the project's IRR is higher than the opportunity cost of capital, the project tends to be financially worthwhile, since it exceeds what could be achieved with the best available alternative; if lower, the project tends not to be worthwhile",
+                    "Opportunity cost should never be compared to a specific project's IRR",
+                    "IRR and opportunity cost measure exactly the same thing, making the comparison unnecessary",
+                    "A lower IRR always indicates a more attractive project than a higher IRR"
+                  ],
+                  "explanation": "Comparing a project's IRR to the opportunity cost of capital is precisely applying opportunity cost logic to that decision: it's only worth investing in the project if its implicit return exceeds what could be achieved with the best available alternative."
+                },
+                "es": {
+                  "prompt": "Ya sabes, de otra lección, que el costo de oportunidad representa el retorno al que se renuncia al elegir una alternativa en lugar de otra. ¿Cómo ayuda comparar la TIR de un proyecto con el costo de oportunidad del capital a decidir sobre ese proyecto?",
+                  "options": [
+                    "Si la TIR del proyecto es mayor que el costo de oportunidad del capital, el proyecto tiende a valer la pena financieramente, ya que supera lo que se conseguiría con la mejor alternativa disponible; si es menor, el proyecto tiende a no valer la pena",
+                    "El costo de oportunidad nunca debería compararse con la TIR de un proyecto específico",
+                    "TIR y costo de oportunidad miden exactamente lo mismo, haciendo innecesaria la comparación",
+                    "Una TIR más baja siempre indica un proyecto más atractivo que una TIR más alta"
+                  ],
+                  "explanation": "Comparar la TIR de un proyecto con el costo de oportunidad del capital es precisamente aplicar la lógica de costo de oportunidad a esa decisión: solo vale la pena invertir en el proyecto si su retorno implícito supera lo que se conseguiría con la mejor alternativa disponible."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A TIR é a taxa de desconto que iguala o valor presente dos fluxos futuros ao investimento inicial.",
+                    "Ela funciona como a taxa de retorno implícita de um investimento com múltiplos fluxos de caixa.",
+                    "Comparar a TIR ao custo de oportunidade do capital ajuda a decidir se um projeto compensa financeiramente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "IRR is the discount rate that equates the present value of future flows to the initial investment.",
+                    "It functions as the implicit rate of return of an investment with multiple cash flows.",
+                    "Comparing IRR to the opportunity cost of capital helps decide whether a project is financially worthwhile."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La TIR es la tasa de descuento que iguala el valor presente de los flujos futuros con la inversión inicial.",
+                    "Funciona como la tasa de retorno implícita de una inversión con múltiples flujos de caja.",
+                    "Comparar la TIR con el costo de oportunidad del capital ayuda a decidir si un proyecto vale la pena financieramente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_break_even",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ponto de Equilíbrio (Break-Even)"
+            },
+            "en": {
+              "title": "Break-Even Point"
+            },
+            "es": {
+              "title": "Punto de Equilibrio (Break-Even)"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O nível em que não se ganha nem se perde",
+                  "body": "O ponto de equilíbrio é o nível de vendas, receita ou tempo necessário para que os ganhos de uma atividade se igualem exatamente aos custos envolvidos, sem lucro nem prejuízo. É um cálculo amplamente aplicável: desde decidir quantas unidades de um produto uma pequena empresa precisa vender para cobrir seus custos fixos, até calcular quantos meses um investimento inicial em economia de energia levaria para se pagar com a redução da conta mensal."
+                },
+                "en": {
+                  "title": "The level where you neither gain nor lose",
+                  "body": "The break-even point is the level of sales, revenue, or time needed for an activity's earnings to exactly equal the costs involved, with neither profit nor loss. It's a widely applicable calculation: from deciding how many units of a product a small business needs to sell to cover its fixed costs, to calculating how many months an initial investment in energy savings would take to pay for itself through the reduction in the monthly bill."
+                },
+                "es": {
+                  "title": "El nivel en el que no se gana ni se pierde",
+                  "body": "El punto de equilibrio es el nivel de ventas, ingresos o tiempo necesario para que las ganancias de una actividad se igualen exactamente a los costos involucrados, sin ganancia ni pérdida. Es un cálculo ampliamente aplicable: desde decidir cuántas unidades de un producto necesita vender una pequeña empresa para cubrir sus costos fijos, hasta calcular cuántos meses tardaría en pagarse una inversión inicial en ahorro de energía a través de la reducción de la cuenta mensual."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa investe R$3.000 na instalação de painéis solares, que reduzem sua conta de energia em R$150 por mês. Dividindo o investimento inicial pela economia mensal, chega-se a um ponto de equilíbrio de 20 meses — o tempo necessário para que a economia acumulada se iguale ao investimento inicial, a partir do qual a economia mensal passa a representar um ganho líquido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A person invests $3,000 in installing solar panels, which reduce their energy bill by $150 a month. Dividing the initial investment by the monthly savings gives a break-even point of 20 months — the time needed for the accumulated savings to equal the initial investment, after which the monthly savings start representing a net gain."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona invierte R$3.000 en la instalación de paneles solares, que reducen su cuenta de energía en R$150 al mes. Dividiendo la inversión inicial entre el ahorro mensual, se llega a un punto de equilibrio de 20 meses — el tiempo necesario para que el ahorro acumulado iguale la inversión inicial, a partir del cual el ahorro mensual pasa a representar una ganancia neta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o ponto de equilíbrio (break-even) representa?",
+                  "options": [
+                    "O lucro máximo possível de uma atividade, em qualquer circunstância",
+                    "O nível de vendas, receita ou tempo necessário para que ganhos e custos se igualem exatamente, sem lucro nem prejuízo",
+                    "Um imposto cobrado sobre atividades comerciais de pequeno porte",
+                    "A taxa de juros usada para descontar fluxos de caixa futuros"
+                  ],
+                  "explanation": "O ponto de equilíbrio é justamente o nível em que ganhos e custos se igualam exatamente, marcando a transição entre prejuízo e lucro líquido."
+                },
+                "en": {
+                  "prompt": "What does the break-even point represent?",
+                  "options": [
+                    "The maximum possible profit of an activity, under any circumstance",
+                    "The level of sales, revenue, or time needed for earnings and costs to exactly equal each other, with neither profit nor loss",
+                    "A tax charged on small-scale commercial activities",
+                    "The interest rate used to discount future cash flows"
+                  ],
+                  "explanation": "The break-even point is precisely the level where earnings and costs exactly equal each other, marking the transition between a loss and net profit."
+                },
+                "es": {
+                  "prompt": "¿Qué representa el punto de equilibrio (break-even)?",
+                  "options": [
+                    "La ganancia máxima posible de una actividad, bajo cualquier circunstancia",
+                    "El nivel de ventas, ingresos o tiempo necesario para que las ganancias y los costos se igualen exactamente, sin ganancia ni pérdida",
+                    "Un impuesto cobrado sobre actividades comerciales de pequeña escala",
+                    "La tasa de interés usada para descontar flujos de caja futuros"
+                  ],
+                  "explanation": "El punto de equilibrio es justamente el nivel en el que las ganancias y los costos se igualan exactamente, marcando la transición entre pérdida y ganancia neta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende, de lições anteriores deste módulo, tanto a TIR quanto a regra dos 72 como ferramentas para avaliar o retorno de um investimento ao longo do tempo. Como o ponto de equilíbrio complementa essas ferramentas ao avaliar um investimento como os painéis solares do exemplo?",
+                  "options": [
+                    "Enquanto a TIR e a regra dos 72 focam na taxa de retorno de um investimento, o ponto de equilíbrio responde a uma pergunta complementar e mais direta: quanto tempo até o investimento inicial se pagar, sem necessariamente calcular uma taxa de retorno explícita",
+                    "Ponto de equilíbrio, TIR e regra dos 72 são exatamente a mesma ferramenta, apenas com nomes diferentes",
+                    "O ponto de equilíbrio elimina completamente a necessidade de qualquer outra ferramenta de avaliação financeira",
+                    "TIR e regra dos 72 nunca podem ser aplicadas ao mesmo tipo de investimento que o ponto de equilíbrio"
+                  ],
+                  "explanation": "Cada ferramenta responde a uma pergunta ligeiramente diferente: TIR calcula uma taxa de retorno implícita, a regra dos 72 estima tempo de duplicação a partir de uma taxa, e o ponto de equilíbrio calcula diretamente o tempo até o investimento se pagar — três ângulos complementares para avaliar a mesma decisão financeira."
+                },
+                "en": {
+                  "prompt": "You already understand, from previous lessons in this module, both IRR and the rule of 72 as tools for assessing an investment's return over time. How does the break-even point complement these tools when evaluating an investment like the solar panels in the example?",
+                  "options": [
+                    "While IRR and the rule of 72 focus on an investment's rate of return, the break-even point answers a complementary, more direct question: how long until the initial investment pays for itself, without necessarily calculating an explicit rate of return",
+                    "Break-even, IRR, and the rule of 72 are exactly the same tool, just with different names",
+                    "The break-even point completely eliminates the need for any other financial assessment tool",
+                    "IRR and the rule of 72 can never be applied to the same type of investment as the break-even point"
+                  ],
+                  "explanation": "Each tool answers a slightly different question: IRR calculates an implicit rate of return, the rule of 72 estimates doubling time from a rate, and the break-even point directly calculates the time until the investment pays for itself — three complementary angles for assessing the same financial decision."
+                },
+                "es": {
+                  "prompt": "Ya entiendes, de lecciones anteriores de este módulo, tanto la TIR como la regla del 72 como herramientas para evaluar el retorno de una inversión a lo largo del tiempo. ¿Cómo complementa el punto de equilibrio a esas herramientas al evaluar una inversión como los paneles solares del ejemplo?",
+                  "options": [
+                    "Mientras que la TIR y la regla del 72 se enfocan en la tasa de retorno de una inversión, el punto de equilibrio responde a una pregunta complementaria y más directa: cuánto tiempo hasta que la inversión inicial se pague, sin necesariamente calcular una tasa de retorno explícita",
+                    "Punto de equilibrio, TIR y regla del 72 son exactamente la misma herramienta, solo con nombres diferentes",
+                    "El punto de equilibrio elimina por completo la necesidad de cualquier otra herramienta de evaluación financiera",
+                    "La TIR y la regla del 72 nunca pueden aplicarse al mismo tipo de inversión que el punto de equilibrio"
+                  ],
+                  "explanation": "Cada herramienta responde a una pregunta ligeramente diferente: la TIR calcula una tasa de retorno implícita, la regla del 72 estima el tiempo de duplicación a partir de una tasa, y el punto de equilibrio calcula directamente el tiempo hasta que la inversión se pague — tres ángulos complementarios para evaluar la misma decisión financiera."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "Módulo concluído!",
+                  "takeaways": [
+                    "O ponto de equilíbrio é o nível em que ganhos e custos se igualam exatamente, sem lucro nem prejuízo.",
+                    "Ele complementa outras ferramentas, como TIR e a regra dos 72, respondendo a uma pergunta mais direta sobre tempo de retorno.",
+                    "Você concluiu o módulo de matemática financeira aplicada avançada: regra dos 72, anuidades, deflacionamento, TIR e ponto de equilíbrio."
+                  ]
+                },
+                "en": {
+                  "title": "Module complete!",
+                  "takeaways": [
+                    "The break-even point is the level where earnings and costs exactly equal each other, with neither profit nor loss.",
+                    "It complements other tools, like IRR and the rule of 72, answering a more direct question about payback time.",
+                    "You've completed the advanced applied financial math module: rule of 72, annuities, deflating values, IRR and break-even point."
+                  ]
+                },
+                "es": {
+                  "title": "¡Módulo completado!",
+                  "takeaways": [
+                    "El punto de equilibrio es el nivel en el que las ganancias y los costos se igualan exactamente, sin ganancia ni pérdida.",
+                    "Complementa otras herramientas, como la TIR y la regla del 72, respondiendo a una pregunta más directa sobre el tiempo de recuperación.",
+                    "Completaste el módulo de matemática financiera aplicada avanzada: regla del 72, anualidades, deflactación, TIR y punto de equilibrio."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
