@@ -13,11 +13,21 @@ import java.util.Optional;
  */
 public interface MentorConversationRepositoryPort {
 
-    MentorConversation create(String userEmail, String title);
+    /**
+     * @param appContext the {@code AppContextEnum.claimValue()} the conversation belongs to
+     *                    ({@code null} only for a session with no resolvable app_context, which
+     *                    {@code SecurityConfig} already rejects for {@code /api/mentor/**} —
+     *                    kept nullable here purely to match {@link MentorConversation#appContext()}).
+     */
+    MentorConversation create(String userEmail, String title, String appContext);
 
-    List<MentorConversation> findAllByUser(String userEmail);
+    /** Only conversations created under {@code appContext} — never another context's threads. */
+    List<MentorConversation> findAllByUser(String userEmail, String appContext);
 
-    Optional<MentorConversation> findByIdAndUser(Long id, String userEmail);
+    /** {@code Optional.empty()} if the conversation belongs to a different app_context, exactly
+     *  as if it didn't exist for this user — a Wallet session can't even probe for an Academy
+     *  conversation's existence by id. */
+    Optional<MentorConversation> findByIdAndUser(Long id, String userEmail, String appContext);
 
     void updateTitle(Long id, String title);
 

@@ -101,12 +101,30 @@ public class SecurityConfig {
                 .requestMatchers("/actuator/health", "/actuator/health/**").permitAll()
                 // BFF enforcement (docs/BACKEND_MODULE_PLAN.md §5, ECOSYSTEM.md): real_portfolio
                 // is real money and must never answer an Academy-context session; education
-                // content is Academy-only. Everything else (gamification, pet, mentor, auth) is
-                // shared — any authenticated session, regardless of app_context, may reach it.
+                // content is Academy-only. The canonical Pet/XP summary (/api/pets, /api/v1/
+                // gamification) is intentionally shared — Stage 6 (Pet/XP/Mentor context
+                // separation) confirmed the pet is meant to be a single cross-app companion, and
+                // its XP is already restricted by an allow-list (XpEventType: only
+                // LESSON_COMPLETED/MODULE_COMPLETED/SIMULATOR_COMPLETED feed it — see
+                // AchievementCatalog's DECISION-014/DECISION-027 comments) to never include
+                // wealth/profit signals, so a Wallet session seeing Academy-earned XP there is by
+                // design, not a leak.
                 .requestMatchers("/api/investments/**").hasAuthority(AppContextEnum.WALLET.authority())
                 .requestMatchers("/api/v1/academy/**", "/api/v1/learning/**", "/api/v1/lab/**",
-                        "/api/v1/simulated-portfolios/**")
+                        "/api/v1/simulated-portfolios/**", "/api/v1/missions/**")
                     .hasAuthority(AppContextEnum.ACADEMY.authority())
+                // Achievement badges are evaluated against the real portfolio (AchievementCatalog
+                // is wealth-threshold-based, e.g. portfolio_10k) — Wallet-only, same reasoning as
+                // /api/investments/**, so an Academy session (which has no real portfolio to
+                // speak of) never triggers that evaluation.
+                .requestMatchers("/api/v1/achievements/**").hasAuthority(AppContextEnum.WALLET.authority())
+                // Mentor is shared but context-*sensitive*: GetMentorReplyUseCaseImpl builds a
+                // different system prompt (real portfolio vs simulated + Academy progress)
+                // depending on which app the session belongs to, so a session with no resolvable
+                // app_context can't safely be served — require one of the two rather than
+                // falling through to bare `authenticated()`.
+                .requestMatchers("/api/mentor/**")
+                    .hasAnyAuthority(AppContextEnum.WALLET.authority(), AppContextEnum.ACADEMY.authority())
                 .anyRequest().authenticated()
             )
             .addFilterBefore(

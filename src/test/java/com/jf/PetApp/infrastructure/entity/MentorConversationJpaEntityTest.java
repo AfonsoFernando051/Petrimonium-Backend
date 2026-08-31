@@ -20,11 +20,13 @@ class MentorConversationJpaEntityTest {
         entity.setTitle("Investing questions");
         entity.setCreatedAt(createdAt);
         entity.setUpdatedAt(updatedAt);
+        entity.setAppContext("wallet");
 
         assertThat(entity.getId()).isEqualTo(1L);
         assertThat(entity.getUser()).isSameAs(user);
         assertThat(entity.getTitle()).isEqualTo("Investing questions");
         assertThat(entity.getCreatedAt()).isEqualTo(createdAt);
         assertThat(entity.getUpdatedAt()).isEqualTo(updatedAt);
+        assertThat(entity.getAppContext()).isEqualTo("wallet");
     }
 }

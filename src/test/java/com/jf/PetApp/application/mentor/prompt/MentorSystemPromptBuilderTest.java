@@ -4,6 +4,8 @@ import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.learning.dto.LearningProgressResult;
 import com.jf.PetApp.application.mentor.dto.MentorClientContextDTO;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPositionDTO;
 import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
@@ -11,6 +13,7 @@ import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import java.util.Set;
 
@@ -26,118 +29,80 @@ class MentorSystemPromptBuilderTest {
         return pet;
     }
 
+    // --- shared behavior (pet name, language resolution) — exercised via buildForWallet,
+    // equally applicable to buildForAcademy since both share the same private renderer. ---
+
     @Test
-    void build_WithNoPet_UsesGenericPetNamePlaceholder() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", null, null, null);
+    void buildForWallet_WithNoPet_UsesGenericPetNamePlaceholder() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "pt");
 
         assertTrue(prompt.contains("You are your pet,"));
     }
 
     @Test
-    void build_WithNamedPet_UsesThePetsRealNameAndSpecie() {
+    void buildForWallet_WithNamedPet_UsesThePetsRealNameAndSpecie() {
         Pet pet = petWith("Rusty", PetSpecieEnum.FOX);
 
-        String prompt = MentorSystemPromptBuilder.build(pet, null, null, null, "pt", null, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForWallet(pet, null, null, null, "pt");
 
         assertTrue(prompt.contains("You are Rusty,"));
         assertTrue(prompt.contains("- Pet: Rusty (FOX)."));
     }
 
     @Test
-    void build_WithPetWithBlankName_FallsBackToGenericPlaceholder() {
+    void buildForWallet_WithPetWithBlankName_FallsBackToGenericPlaceholder() {
         Pet pet = petWith("   ", PetSpecieEnum.DOG);
 
-        String prompt = MentorSystemPromptBuilder.build(pet, null, null, null, "pt", null, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForWallet(pet, null, null, null, "pt");
 
         assertTrue(prompt.contains("You are your pet,"));
     }
 
     @Test
-    void build_WithClientLanguage_PrefersClientLanguageOverFallback() {
+    void buildForWallet_WithClientLanguage_PrefersClientLanguageOverFallback() {
         MentorClientContextDTO context = new MentorClientContextDTO(null, null, null, "en");
 
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, context, "pt", null, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, context, "pt");
 
         assertTrue(prompt.contains("Respond naturally and conversationally in en."));
     }
 
     @Test
-    void build_WithoutClientLanguage_FallsBackToUsersPreferredLanguage() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "es", null, null, null);
+    void buildForWallet_WithoutClientLanguage_FallsBackToUsersPreferredLanguage() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "es");
 
         assertTrue(prompt.contains("Respond naturally and conversationally in es."));
     }
 
     @Test
-    void build_WithoutClientLanguageOrFallback_DefaultsToPortuguese() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, null, null, null, null);
+    void buildForWallet_WithoutClientLanguageOrFallback_DefaultsToPortuguese() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, null);
 
         assertTrue(prompt.contains("Respond naturally and conversationally in pt."));
     }
 
     @Test
-    void build_WithBlankFallbackLanguage_DefaultsToPortuguese() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "  ", null, null, null);
+    void buildForWallet_WithBlankFallbackLanguage_DefaultsToPortuguese() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "  ");
 
         assertTrue(prompt.contains("Respond naturally and conversationally in pt."));
     }
 
     @Test
-    void build_WithNoPortfolio_StatesUserHasNoInvestmentsYet() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", null, null, null);
+    void buildForWallet_NeverRecommendsSpecificSecuritiesOrPredictsPrices() {
+        // Guards the safety rules block itself stays intact — the prompt's core promise.
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "pt");
 
-        assertTrue(prompt.contains("the user hasn't registered any investments yet"));
+        assertTrue(prompt.contains("Never recommend buying or selling a specific security."));
+        assertTrue(prompt.contains("Never predict prices or promise returns."));
     }
 
     @Test
-    void build_WithZeroTotalAssets_TreatedAsNoPortfolio() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
-                BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0);
-
-        String prompt = MentorSystemPromptBuilder.build(null, summary, null, null, "pt", null, null, null);
-
-        assertTrue(prompt.contains("the user hasn't registered any investments yet"));
-    }
-
-    @Test
-    void build_WithPortfolio_IncludesRealNumbersInContextBlock() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
-                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
-
-        String prompt = MentorSystemPromptBuilder.build(null, summary, null, null, "pt", null, null, null);
-
-        assertTrue(prompt.contains("Portfolio: 3 asset(s), invested capital 1000.00, current value 1200.00, total gain 200.00 (20.00%)."));
-    }
-
-    @Test
-    void build_WithAllocation_ListsEachSliceWithItsPercentage() {
-        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
-                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
-        List<AllocationSliceDTO> allocation = List.of(
-                new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(800.0), BigDecimal.valueOf(66.7)),
-                new AllocationSliceDTO(InvestmentType.FIXED_INCOME, BigDecimal.valueOf(400.0), BigDecimal.valueOf(33.3))
-        );
-
-        String prompt = MentorSystemPromptBuilder.build(null, summary, allocation, null, "pt", null, null, null);
-
-        assertTrue(prompt.contains("Allocation by asset type:"));
-        assertTrue(prompt.contains("STOCKS: 66.7% of the portfolio"));
-        assertTrue(prompt.contains("FIXED_INCOME: 33.3% of the portfolio"));
-    }
-
-    @Test
-    void build_WithEmptyAllocationList_OmitsAllocationSection() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, List.of(), null, "pt", null, null, null);
-
-        assertFalse(prompt.contains("Allocation by asset type:"));
-    }
-
-    @Test
-    void build_WithClientContextFields_IncludesGoalHorizonAndScreen() {
+    void buildForWallet_WithClientContextFields_IncludesGoalHorizonAndScreen() {
         MentorClientContextDTO context = new MentorClientContextDTO(
                 "Retire early", "10+ years", "portfolio_screen", "en");
 
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, context, "pt", null, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, context, "pt");
 
         assertTrue(prompt.contains("User's stated investment goal: Retire early"));
         assertTrue(prompt.contains("User's stated investment horizon: 10+ years"));
@@ -145,58 +110,147 @@ class MentorSystemPromptBuilderTest {
     }
 
     @Test
-    void build_WithBlankClientContextFields_OmitsThoseLines() {
+    void buildForWallet_WithBlankClientContextFields_OmitsThoseLines() {
         MentorClientContextDTO context = new MentorClientContextDTO("  ", null, "", "en");
 
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, context, "pt", null, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, context, "pt");
 
         assertFalse(prompt.contains("User's stated investment goal"));
         assertFalse(prompt.contains("User's stated investment horizon"));
         assertFalse(prompt.contains("Currently viewing"));
     }
 
-    @Test
-    void build_NeverRecommendsSpecificSecuritiesOrPredictsPrices() {
-        // Guards the safety rules block itself stays intact — the prompt's core promise.
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", null, null, null);
+    // --- Wallet: real portfolio only, never Academy content ---
 
-        assertTrue(prompt.contains("Never recommend buying or selling a specific security."));
-        assertTrue(prompt.contains("Never predict prices or promise returns."));
+    @Test
+    void buildForWallet_WithNoPortfolio_StatesUserHasNoInvestmentsYet() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "pt");
+
+        assertTrue(prompt.contains("the user hasn't registered any investments yet"));
     }
 
     @Test
-    void build_WithNoLearningProgress_OmitsAcademySection() {
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", null, null, null);
+    void buildForWallet_WithZeroTotalAssets_TreatedAsNoPortfolio() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0);
+
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, summary, null, null, "pt");
+
+        assertTrue(prompt.contains("the user hasn't registered any investments yet"));
+    }
+
+    @Test
+    void buildForWallet_WithPortfolio_IncludesRealNumbersInContextBlock() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
+
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, summary, null, null, "pt");
+
+        assertTrue(prompt.contains("Portfolio: 3 asset(s), invested capital 1000.00, current value 1200.00, total gain 200.00 (20.00%)."));
+    }
+
+    @Test
+    void buildForWallet_WithAllocation_ListsEachSliceWithItsPercentage() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
+        List<AllocationSliceDTO> allocation = List.of(
+                new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(800.0), BigDecimal.valueOf(66.7)),
+                new AllocationSliceDTO(InvestmentType.FIXED_INCOME, BigDecimal.valueOf(400.0), BigDecimal.valueOf(33.3))
+        );
+
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, summary, allocation, null, "pt");
+
+        assertTrue(prompt.contains("Allocation by asset type:"));
+        assertTrue(prompt.contains("STOCKS: 66.7% of the portfolio"));
+        assertTrue(prompt.contains("FIXED_INCOME: 33.3% of the portfolio"));
+    }
+
+    @Test
+    void buildForWallet_WithEmptyAllocationList_OmitsAllocationSection() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, List.of(), null, "pt");
+
+        assertFalse(prompt.contains("Allocation by asset type:"));
+    }
+
+    @Test
+    void buildForWallet_NeverMentionsAcademyLessonsOrSimulatedMoney() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
+
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, summary, null, null, "pt");
+
+        assertFalse(prompt.contains("Academy"));
+        assertFalse(prompt.contains("lesson"));
+        assertFalse(prompt.contains("Simulated"));
+        assertFalse(prompt.contains("simulated"));
+    }
+
+    // --- Academy: simulated portfolio + learning progress only, never real portfolio ---
+
+    @Test
+    void buildForAcademy_WithNullSimulatedPortfolio_StatesNoPositionsYet() {
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", null, null, null);
+
+        assertTrue(prompt.contains("Simulated practice portfolio (virtual money, NOT real"));
+        assertTrue(prompt.contains("no positions yet"));
+    }
+
+    @Test
+    void buildForAcademy_WithPositions_ListsEachTickerAndAlwaysFramesItAsSimulated() {
+        SimulatedPortfolioSummaryDTO simulated = new SimulatedPortfolioSummaryDTO(
+                BigDecimal.valueOf(9500), BigDecimal.valueOf(10000), "BRL", Instant.now(),
+                List.of(new SimulatedPositionDTO("PETR4", BigDecimal.valueOf(10), BigDecimal.valueOf(30), BigDecimal.valueOf(300), BigDecimal.valueOf(100))));
+
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, simulated, null, "pt", null, null, null);
+
+        assertTrue(prompt.contains("Simulated practice portfolio (virtual money, NOT real"));
+        assertTrue(prompt.contains("Simulated holdings by ticker:"));
+        assertTrue(prompt.contains("PETR4:"));
+    }
+
+    @Test
+    void buildForAcademy_WithNoLearningProgress_OmitsAcademySection() {
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", null, null, null);
 
         assertFalse(prompt.contains("Academy progress"));
     }
 
     @Test
-    void build_WithLearningProgress_IncludesLevelXpAndCompletionCounts() {
+    void buildForAcademy_WithLearningProgress_IncludesLevelXpAndCompletionCounts() {
         LearningProgressResult progress = new LearningProgressResult(
                 Set.of("lesson-1", "lesson-2"), Set.of("module-1"), Set.of("lesson-1"), 120, 3, 20, 50);
 
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", progress, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", progress, null, null);
 
         assertTrue(prompt.contains("Academy progress: level 3 (20/50 XP into this level), 2 lesson(s) completed, 1 module(s) completed."));
     }
 
     @Test
-    void build_WithLearningProgressAndNextLesson_NamesTheLessonAndModule() {
+    void buildForAcademy_WithLearningProgressAndNextLesson_NamesTheLessonAndModule() {
         LearningProgressResult progress = new LearningProgressResult(Set.of(), Set.of(), Set.of(), 0, 1, 0, 50);
 
-        String prompt = MentorSystemPromptBuilder.build(
-                null, null, null, null, "pt", progress, "What is diversification?", "Investing Basics");
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(
+                null, null, null, "pt", progress, "What is diversification?", "Investing Basics");
 
         assertTrue(prompt.contains("Next lesson to continue: \"What is diversification?\" (module: Investing Basics)"));
     }
 
     @Test
-    void build_WithLearningProgressAndNoNextLesson_StatesEverythingIsComplete() {
+    void buildForAcademy_WithLearningProgressAndNoNextLesson_StatesEverythingIsComplete() {
         LearningProgressResult progress = new LearningProgressResult(Set.of(), Set.of(), Set.of(), 0, 1, 0, 50);
 
-        String prompt = MentorSystemPromptBuilder.build(null, null, null, null, "pt", progress, null, null);
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", progress, null, null);
 
         assertTrue(prompt.contains("The user has completed every Academy lesson currently available."));
+    }
+
+    @Test
+    void buildForAcademy_NeverMentionsRealPortfolioNumbers() {
+        LearningProgressResult progress = new LearningProgressResult(Set.of(), Set.of(), Set.of(), 0, 1, 0, 50);
+
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", progress, null, null);
+
+        assertFalse(prompt.contains("invested capital"));
+        assertFalse(prompt.contains("Allocation by asset type"));
     }
 }

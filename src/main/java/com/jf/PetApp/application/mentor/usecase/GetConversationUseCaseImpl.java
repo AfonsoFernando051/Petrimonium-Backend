@@ -6,6 +6,7 @@ import com.jf.PetApp.application.mentor.dto.MentorMessageDTO;
 import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
 import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.core.domain.MentorConversation;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,8 +22,9 @@ public class GetConversationUseCaseImpl implements GetConversationUseCase {
     }
 
     @Override
-    public ConversationDetailDTO execute(String email, Long conversationId) {
-        MentorConversation conversation = conversationRepositoryPort.findByIdAndUser(conversationId, email)
+    public ConversationDetailDTO execute(String email, Long conversationId, AppContextEnum appContext) {
+        MentorConversation conversation = conversationRepositoryPort
+                .findByIdAndUser(conversationId, email, appContext == null ? null : appContext.claimValue())
                 .orElseThrow(() -> new ResourceNotFoundException("Conversation not found"));
 
         var messages = messageRepositoryPort.findAllByConversation(conversationId).stream()

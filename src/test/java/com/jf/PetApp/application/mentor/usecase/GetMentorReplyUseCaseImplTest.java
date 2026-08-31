@@ -19,10 +19,13 @@ import com.jf.PetApp.application.mentor.port.MentorChatPort;
 import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
 import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.application.pet.usecase.GetMyPetUseCase;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
+import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedPortfolioUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.MentorMessage;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
@@ -58,6 +61,8 @@ class GetMentorReplyUseCaseImplTest {
     @Mock
     private GetAcademyCatalogUseCase getAcademyCatalogUseCase;
     @Mock
+    private GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase;
+    @Mock
     private MentorChatPort mentorChatPort;
     @Mock
     private MentorConversationRepositoryPort conversationRepositoryPort;
@@ -74,13 +79,15 @@ class GetMentorReplyUseCaseImplTest {
             new LearningProgressResult(Set.of(), Set.of(), Set.of(), 0, 1, 0, 50);
     private static final AcademyCatalogResult EMPTY_ACADEMY_CATALOG =
             new AcademyCatalogResult(List.of(), List.of(), List.of(), List.of());
+    private static final SimulatedPortfolioSummaryDTO EMPTY_SIMULATED_PORTFOLIO =
+            new SimulatedPortfolioSummaryDTO(java.math.BigDecimal.valueOf(10000), java.math.BigDecimal.valueOf(10000), "BRL", Instant.now(), List.of());
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         useCase = new GetMentorReplyUseCaseImpl(
                 userRepository, getPortfolioSummaryUseCase, getPortfolioAllocationUseCase, getMyPetUseCase,
-                getLearningProgressUseCase, getAcademyCatalogUseCase,
+                getLearningProgressUseCase, getAcademyCatalogUseCase, getSimulatedPortfolioUseCase,
                 mentorChatPort, conversationRepositoryPort, messageRepositoryPort);
 
         User user = new User();
@@ -92,10 +99,13 @@ class GetMentorReplyUseCaseImplTest {
         when(getMyPetUseCase.execute(EMAIL)).thenReturn(Optional.empty());
         when(getLearningProgressUseCase.execute(EMAIL)).thenReturn(EMPTY_LEARNING_PROGRESS);
         when(getAcademyCatalogUseCase.execute(anyString())).thenReturn(EMPTY_ACADEMY_CATALOG);
+        when(getSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(EMPTY_SIMULATED_PORTFOLIO);
 
         MentorConversation existingConversation =
-                new MentorConversation(CONVERSATION_ID, EMAIL, "Existing chat", Instant.now(), Instant.now());
-        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL)))
+                new MentorConversation(CONVERSATION_ID, EMAIL, "Existing chat", Instant.now(), Instant.now(), "wallet");
+        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL), anyString()))
+                .thenReturn(Optional.of(existingConversation));
+        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL), eq((String) null)))
                 .thenReturn(Optional.of(existingConversation));
         when(messageRepositoryPort.findRecentByConversation(anyLong(), anyInt())).thenReturn(List.of());
     }
@@ -109,35 +119,37 @@ class GetMentorReplyUseCaseImplTest {
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class,
-                () -> useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID)));
+                () -> useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET));
     }
 
     @Test
     void execute_WhenConversationIdDoesNotBelongToUser_Throws() {
-        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL)))
+        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL), anyString()))
+                .thenReturn(Optional.empty());
+        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL), eq((String) null)))
                 .thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class,
-                () -> useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID)));
+                () -> useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET));
     }
 
     @Test
     void execute_WithNoConversationId_CreatesANewConversation() {
-        MentorConversation created = new MentorConversation(99L, EMAIL, null, Instant.now(), Instant.now());
-        when(conversationRepositoryPort.create(eq(EMAIL), any())).thenReturn(created);
+        MentorConversation created = new MentorConversation(99L, EMAIL, null, Instant.now(), Instant.now(), "wallet");
+        when(conversationRepositoryPort.create(eq(EMAIL), any(), anyString())).thenReturn(created);
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("Dividends are periodic payments...");
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(null));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(null), AppContextEnum.WALLET);
 
         assertEquals(99L, response.conversationId());
-        verify(conversationRepositoryPort).create(eq(EMAIL), any());
+        verify(conversationRepositoryPort).create(eq(EMAIL), any(), eq("wallet"));
     }
 
     @Test
     void execute_OnSuccess_ReturnsTheMentorReplyVerbatimAndPersistsBothTurns() {
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("Dividends are periodic payments...");
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertEquals("Dividends are periodic payments...", response.reply());
         verify(messageRepositoryPort).append(CONVERSATION_ID, "user", "What are dividends?");
@@ -148,7 +160,7 @@ class GetMentorReplyUseCaseImplTest {
     void execute_WhenMentorChatThrows_ReturnsTheCannedFallbackInsteadOfPropagating() {
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenThrow(new RuntimeException("Provider request failed"));
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertNotNull(response.reply());
         assertTrue(response.reply().toLowerCase().contains("trouble") || !response.reply().isBlank());
@@ -164,7 +176,7 @@ class GetMentorReplyUseCaseImplTest {
         when(messageRepositoryPort.findRecentByConversation(CONVERSATION_ID, 20)).thenReturn(recent);
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
 
-        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         @SuppressWarnings("unchecked")
         ArgumentCaptor<List<MentorTurnDTO>> historyCaptor = ArgumentCaptor.forClass(List.class);
@@ -176,12 +188,12 @@ class GetMentorReplyUseCaseImplTest {
 
     @Test
     void execute_OnFirstMessage_AutoTitlesTheConversationFromIt() {
-        MentorConversation untitled = new MentorConversation(CONVERSATION_ID, EMAIL, null, Instant.now(), Instant.now());
-        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL)))
+        MentorConversation untitled = new MentorConversation(CONVERSATION_ID, EMAIL, null, Instant.now(), Instant.now(), "wallet");
+        when(conversationRepositoryPort.findByIdAndUser(eq(CONVERSATION_ID), eq(EMAIL), anyString()))
                 .thenReturn(Optional.of(untitled));
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertEquals("What are dividends?", response.title());
         verify(conversationRepositoryPort).updateTitle(CONVERSATION_ID, "What are dividends?");
@@ -192,7 +204,7 @@ class GetMentorReplyUseCaseImplTest {
     void execute_OnSubsequentMessage_TouchesRatherThanRetitling() {
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
 
-        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         verify(conversationRepositoryPort).touch(CONVERSATION_ID);
         verify(conversationRepositoryPort, never()).updateTitle(any(), any());
@@ -203,7 +215,7 @@ class GetMentorReplyUseCaseImplTest {
         when(mentorChatPort.generateReply(anyString(), any(), anyString()))
                 .thenReturn("You should buy PETR4 right now, it's a guaranteed win.");
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertFalse(response.reply().contains("PETR4"));
         ArgumentCaptor<String> persistedReply = ArgumentCaptor.forClass(String.class);
@@ -216,13 +228,13 @@ class GetMentorReplyUseCaseImplTest {
         when(mentorChatPort.generateReply(anyString(), any(), anyString()))
                 .thenReturn("Diversification means spreading your money across different kinds of assets.");
 
-        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertEquals("Diversification means spreading your money across different kinds of assets.", response.reply());
     }
 
     @Test
-    void execute_PassesAcademyLevelAndNextLessonIntoTheSystemPrompt() {
+    void execute_ForAcademyContext_PassesAcademyLevelAndNextLessonIntoTheSystemPrompt() {
         LearningProgressResult progress = new LearningProgressResult(Set.of(), Set.of(), Set.of(), 30, 2, 5, 50);
         AcademyDomainView domain = new AcademyDomainView("dom-1", "Investing", null, null, 1, List.of("school-1"));
         AcademySchoolView school = new AcademySchoolView("school-1", "dom-1", "Equities", null, null, 1, List.of(), true);
@@ -238,7 +250,7 @@ class GetMentorReplyUseCaseImplTest {
         when(getAcademyCatalogUseCase.execute(anyString())).thenReturn(catalog);
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
 
-        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID));
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.ACADEMY);
 
         ArgumentCaptor<String> systemPromptCaptor = ArgumentCaptor.forClass(String.class);
         verify(mentorChatPort).generateReply(systemPromptCaptor.capture(), any(), anyString());
@@ -246,5 +258,80 @@ class GetMentorReplyUseCaseImplTest {
 
         assertTrue(systemPrompt.contains("Academy progress: level 2 (5/50 XP into this level)"));
         assertTrue(systemPrompt.contains("Next lesson to continue: \"What is a stock?\" (module: Stocks 101)"));
+    }
+
+    // --- Stage 6 anti-leak tests: the whole point of splitting the prompt-building path ---
+
+    @Test
+    void execute_ForWalletContext_NeverCallsAnyAcademyOrSimulatedPortfolioUseCase() {
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
+
+        verifyNoInteractions(getLearningProgressUseCase, getAcademyCatalogUseCase, getSimulatedPortfolioUseCase);
+        verify(getPortfolioSummaryUseCase).execute(EMAIL);
+    }
+
+    @Test
+    void execute_ForAcademyContext_NeverCallsAnyRealPortfolioUseCase() {
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.ACADEMY);
+
+        verifyNoInteractions(getPortfolioSummaryUseCase, getPortfolioAllocationUseCase);
+        verify(getSimulatedPortfolioUseCase).execute(EMAIL);
+    }
+
+    @Test
+    void execute_WithNullAppContext_TakesTheWalletSafePathRatherThanAcademy() {
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), null);
+
+        verifyNoInteractions(getLearningProgressUseCase, getAcademyCatalogUseCase, getSimulatedPortfolioUseCase);
+        verify(getPortfolioSummaryUseCase).execute(EMAIL);
+        verify(conversationRepositoryPort).findByIdAndUser(CONVERSATION_ID, EMAIL, null);
+    }
+
+    @Test
+    void execute_ForWalletContext_SystemPromptNeverMentionsAcademyOrSimulatedPortfolio() {
+        LearningProgressResult progress = new LearningProgressResult(Set.of("l1"), Set.of(), Set.of(), 30, 2, 5, 50);
+        when(getLearningProgressUseCase.execute(EMAIL)).thenReturn(progress);
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
+
+        ArgumentCaptor<String> systemPromptCaptor = ArgumentCaptor.forClass(String.class);
+        verify(mentorChatPort).generateReply(systemPromptCaptor.capture(), any(), anyString());
+        assertFalse(systemPromptCaptor.getValue().contains("Academy progress"));
+        assertFalse(systemPromptCaptor.getValue().contains("Simulated practice portfolio"));
+    }
+
+    @Test
+    void execute_ForAcademyContext_SystemPromptNeverMentionsRealPortfolioNumbers() {
+        PortfolioSummaryDTO realSummary = new PortfolioSummaryDTO(
+                java.math.BigDecimal.valueOf(50000), java.math.BigDecimal.valueOf(60000),
+                java.math.BigDecimal.valueOf(10000), java.math.BigDecimal.valueOf(20), 5);
+        when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(realSummary);
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.ACADEMY);
+
+        ArgumentCaptor<String> systemPromptCaptor = ArgumentCaptor.forClass(String.class);
+        verify(mentorChatPort).generateReply(systemPromptCaptor.capture(), any(), anyString());
+        String systemPrompt = systemPromptCaptor.getValue();
+        assertFalse(systemPrompt.contains("invested capital"));
+        assertTrue(systemPrompt.contains("Simulated practice portfolio"));
+    }
+
+    @Test
+    void execute_ForAcademyContext_CreatesConversationScopedToAcademy() {
+        when(conversationRepositoryPort.create(eq(EMAIL), any(), eq("academy")))
+                .thenReturn(new MentorConversation(100L, EMAIL, null, Instant.now(), Instant.now(), "academy"));
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(null), AppContextEnum.ACADEMY);
+
+        verify(conversationRepositoryPort).create(eq(EMAIL), any(), eq("academy"));
     }
 }

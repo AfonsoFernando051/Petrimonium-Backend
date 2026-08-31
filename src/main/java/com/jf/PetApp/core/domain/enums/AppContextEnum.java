@@ -24,6 +24,20 @@ public enum AppContextEnum {
     }
 
     /**
+     * Reverse-lookup of {@link #authority()} — resolves the {@code AppContextEnum} a granted
+     * authority string represents, if any. Used to read back the context that
+     * {@code JwtAuthenticationFilter} stamped onto the current {@code Authentication}.
+     */
+    public static Optional<AppContextEnum> fromAuthority(String authority) {
+        for (AppContextEnum context : values()) {
+            if (context.authority().equals(authority)) {
+                return Optional.of(context);
+            }
+        }
+        return Optional.empty();
+    }
+
+    /**
      * Parses a claim out of a JWT this backend itself signed. An unrecognized value is treated
      * as absent rather than rejected — the token is still valid, it just carries no context, the
      * same as an older token minted before this claim existed.

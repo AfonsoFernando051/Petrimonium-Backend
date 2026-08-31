@@ -172,3 +172,22 @@ in the current data model? Both are resolved now — see the update above and
 Everything except the audit. No module boundary plan, no BFF routing plan,
 no gamification API allow-list, no Pet signal-ingestion API design, no JWT
 claims contract draft.
+
+## Update, 2026-08-31 (Stage 6: Pet/XP/Mentor context separation)
+
+Stage 6 of the split plan is done — full detail in
+`docs/BACKEND_MODULE_PLAN.md` §14. Summary: audited every Pet/XP/Mentor path
+for a Wallet↔Academy leak. XP was already allow-listed to learning/practice
+events only (no code change needed) and the canonical single-Pet-per-user
+design was confirmed intentional (the pet is meant to be one cross-app
+companion). Found and fixed a live leak: `/api/mentor/chat` built one system
+prompt that unconditionally mixed real portfolio data with Academy lesson
+progress regardless of which app the session belonged to, and had no
+app_context gate at all. `MentorSystemPromptBuilder` is now split into
+context-specific `buildForWallet`/`buildForAcademy` entry points with no
+parameter through which the other context's data could reach them; Mentor
+conversations are now app_context-scoped end to end (new `app_context`
+column, migration V27); `/api/mentor/**` now requires a resolvable
+app_context. Also closed the same class of gap on `/api/v1/missions/**`
+(now Academy-only) and `/api/v1/achievements/**` (now Wallet-only), found
+while auditing the same boundary. Full suite: 918/918.

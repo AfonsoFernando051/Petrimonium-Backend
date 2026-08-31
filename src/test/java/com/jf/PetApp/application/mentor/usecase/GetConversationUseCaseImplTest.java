@@ -6,6 +6,7 @@ import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
 import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.MentorMessage;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -40,13 +41,13 @@ class GetConversationUseCaseImplTest {
 
     @Test
     void execute_WhenOwnedByUser_ReturnsMessagesInOrder() {
-        MentorConversation conversation = new MentorConversation(CONVERSATION_ID, EMAIL, "Dividends 101", Instant.now(), Instant.now());
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL)).thenReturn(Optional.of(conversation));
+        MentorConversation conversation = new MentorConversation(CONVERSATION_ID, EMAIL, "Dividends 101", Instant.now(), Instant.now(), "wallet");
+        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "wallet")).thenReturn(Optional.of(conversation));
         when(messageRepositoryPort.findAllByConversation(CONVERSATION_ID)).thenReturn(List.of(
                 new MentorMessage(1L, CONVERSATION_ID, "user", "What are dividends?", Instant.now()),
                 new MentorMessage(2L, CONVERSATION_ID, "mentor", "Dividends are periodic payments...", Instant.now())));
 
-        ConversationDetailDTO result = useCase.execute(EMAIL, CONVERSATION_ID);
+        ConversationDetailDTO result = useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.WALLET);
 
         assertEquals("Dividends 101", result.title());
         assertEquals(2, result.messages().size());
@@ -55,8 +56,15 @@ class GetConversationUseCaseImplTest {
 
     @Test
     void execute_WhenNotOwnedByUser_ThrowsNotFound() {
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL)).thenReturn(Optional.empty());
+        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "wallet")).thenReturn(Optional.empty());
 
-        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID));
+        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.WALLET));
+    }
+
+    @Test
+    void execute_WhenConversationBelongsToADifferentAppContext_ThrowsNotFound() {
+        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "academy")).thenReturn(Optional.empty());
+
+        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.ACADEMY));
     }
 }

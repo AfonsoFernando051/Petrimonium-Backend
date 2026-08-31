@@ -31,6 +31,9 @@ public class MentorConversationJpaEntity {
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
 
+    @Column(name = "app_context")
+    private String appContext;
+
     public Long getId() {
         return id;
     }
@@ -69,5 +72,13 @@ public class MentorConversationJpaEntity {
 
     public void setUpdatedAt(Instant updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getAppContext() {
+        return appContext;
+    }
+
+    public void setAppContext(String appContext) {
+        this.appContext = appContext;
     }
 }

@@ -21,10 +21,13 @@ import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.application.mentor.prompt.MentorSystemPromptBuilder;
 import com.jf.PetApp.application.mentor.safety.MentorSafetyGuard;
 import com.jf.PetApp.application.pet.usecase.GetMyPetUseCase;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
+import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedPortfolioUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -32,6 +35,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Stage 6 (Pet/XP/Mentor context separation): {@code appContext} decides which of two disjoint
+ * data paths this call takes — {@link AppContextEnum#ACADEMY} pulls the simulated portfolio and
+ * learning progress, everything else (including {@code null}, an unresolvable/legacy session)
+ * takes the Wallet path and pulls the real portfolio. Whitelisting ACADEMY explicitly rather than
+ * blacklisting WALLET means an ambiguous context can never accidentally surface Academy content.
+ */
 @Service
 public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
 
@@ -47,6 +57,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
     private final GetMyPetUseCase getMyPetUseCase;
     private final GetLearningProgressUseCase getLearningProgressUseCase;
     private final GetAcademyCatalogUseCase getAcademyCatalogUseCase;
+    private final GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase;
     private final MentorChatPort mentorChatPort;
     private final MentorConversationRepositoryPort conversationRepositoryPort;
     private final MentorMessageRepositoryPort messageRepositoryPort;
@@ -57,6 +68,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
                                       GetMyPetUseCase getMyPetUseCase,
                                       GetLearningProgressUseCase getLearningProgressUseCase,
                                       GetAcademyCatalogUseCase getAcademyCatalogUseCase,
+                                      GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase,
                                       MentorChatPort mentorChatPort,
                                       MentorConversationRepositoryPort conversationRepositoryPort,
                                       MentorMessageRepositoryPort messageRepositoryPort) {
@@ -66,42 +78,29 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         this.getMyPetUseCase = getMyPetUseCase;
         this.getLearningProgressUseCase = getLearningProgressUseCase;
         this.getAcademyCatalogUseCase = getAcademyCatalogUseCase;
+        this.getSimulatedPortfolioUseCase = getSimulatedPortfolioUseCase;
         this.mentorChatPort = mentorChatPort;
         this.conversationRepositoryPort = conversationRepositoryPort;
         this.messageRepositoryPort = messageRepositoryPort;
     }
 
     @Override
-    public MentorChatResponse execute(String email, MentorChatRequest request) {
+    public MentorChatResponse execute(String email, MentorChatRequest request, AppContextEnum appContext) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
+        String appContextClaim = appContext == null ? null : appContext.claimValue();
         MentorConversation conversation = request.conversationId() != null
-                ? conversationRepositoryPort.findByIdAndUser(request.conversationId(), email)
+                ? conversationRepositoryPort.findByIdAndUser(request.conversationId(), email, appContextClaim)
                         .orElseThrow(() -> new ResourceNotFoundException("Conversation not found"))
-                : conversationRepositoryPort.create(email, null);
+                : conversationRepositoryPort.create(email, null, appContextClaim);
 
         String language = MentorSystemPromptBuilder.resolveLanguage(request.context(), user.getPreferredLanguage());
 
-        PortfolioSummaryDTO summary = getPortfolioSummaryUseCase.execute(email);
-        List<AllocationSliceDTO> allocation = getPortfolioAllocationUseCase.execute(email);
         Pet pet = getMyPetUseCase.execute(email).orElse(null);
-
-        LearningProgressResult learningProgress = getLearningProgressUseCase.execute(email);
-        AcademyCatalogResult academyCatalog = getAcademyCatalogUseCase.execute(language);
-        Optional<AcademyLessonView> nextLesson =
-                AcademyNextLessonResolver.resolve(academyCatalog, learningProgress.completedLessonIds());
-        String nextLessonTitle = nextLesson.map(AcademyLessonView::title).orElse(null);
-        String nextModuleTitle = nextLesson
-                .flatMap(lesson -> academyCatalog.modules().stream()
-                        .filter(module -> module.id().equals(lesson.moduleId()))
-                        .findFirst())
-                .map(AcademyModuleView::title)
-                .orElse(null);
-
-        String systemPrompt = MentorSystemPromptBuilder.build(
-                pet, summary, allocation, request.context(), user.getPreferredLanguage(),
-                learningProgress, nextLessonTitle, nextModuleTitle);
+        String systemPrompt = appContext == AppContextEnum.ACADEMY
+                ? buildAcademyPrompt(email, pet, request, user, language)
+                : buildWalletPrompt(email, pet, request, user);
 
         List<MentorTurnDTO> history = messageRepositoryPort
                 .findRecentByConversation(conversation.id(), MAX_HISTORY_TURNS * 2).stream()
@@ -138,6 +137,33 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         }
 
         return new MentorChatResponse(reply, conversation.id(), title);
+    }
+
+    private String buildWalletPrompt(String email, Pet pet, MentorChatRequest request, User user) {
+        PortfolioSummaryDTO summary = getPortfolioSummaryUseCase.execute(email);
+        List<AllocationSliceDTO> allocation = getPortfolioAllocationUseCase.execute(email);
+        return MentorSystemPromptBuilder.buildForWallet(
+                pet, summary, allocation, request.context(), user.getPreferredLanguage());
+    }
+
+    private String buildAcademyPrompt(String email, Pet pet, MentorChatRequest request, User user, String language) {
+        SimulatedPortfolioSummaryDTO simulatedPortfolio = getSimulatedPortfolioUseCase.execute(email);
+
+        LearningProgressResult learningProgress = getLearningProgressUseCase.execute(email);
+        AcademyCatalogResult academyCatalog = getAcademyCatalogUseCase.execute(language);
+        Optional<AcademyLessonView> nextLesson =
+                AcademyNextLessonResolver.resolve(academyCatalog, learningProgress.completedLessonIds());
+        String nextLessonTitle = nextLesson.map(AcademyLessonView::title).orElse(null);
+        String nextModuleTitle = nextLesson
+                .flatMap(lesson -> academyCatalog.modules().stream()
+                        .filter(module -> module.id().equals(lesson.moduleId()))
+                        .findFirst())
+                .map(AcademyModuleView::title)
+                .orElse(null);
+
+        return MentorSystemPromptBuilder.buildForAcademy(
+                pet, simulatedPortfolio, request.context(), user.getPreferredLanguage(),
+                learningProgress, nextLessonTitle, nextModuleTitle);
     }
 
     private String buildTitle(String firstMessage) {

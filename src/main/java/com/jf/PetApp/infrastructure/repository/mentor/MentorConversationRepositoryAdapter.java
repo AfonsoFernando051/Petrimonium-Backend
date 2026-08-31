@@ -33,7 +33,7 @@ public class MentorConversationRepositoryAdapter implements MentorConversationRe
 
     @Override
     @Transactional
-    public MentorConversation create(String userEmail, String title) {
+    public MentorConversation create(String userEmail, String title, String appContext) {
         UserJpaEntity user = userJpaRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
@@ -43,20 +43,21 @@ public class MentorConversationRepositoryAdapter implements MentorConversationRe
         entity.setTitle(title);
         entity.setCreatedAt(now);
         entity.setUpdatedAt(now);
+        entity.setAppContext(appContext);
 
         return toDomain(conversationJpaRepository.save(entity), userEmail);
     }
 
     @Override
-    public List<MentorConversation> findAllByUser(String userEmail) {
-        return conversationJpaRepository.findByUser_EmailOrderByUpdatedAtDesc(userEmail).stream()
+    public List<MentorConversation> findAllByUser(String userEmail, String appContext) {
+        return conversationJpaRepository.findByUser_EmailAndAppContextOrderByUpdatedAtDesc(userEmail, appContext).stream()
                 .map(entity -> toDomain(entity, userEmail))
                 .toList();
     }
 
     @Override
-    public Optional<MentorConversation> findByIdAndUser(Long id, String userEmail) {
-        return conversationJpaRepository.findByIdAndUser_Email(id, userEmail)
+    public Optional<MentorConversation> findByIdAndUser(Long id, String userEmail, String appContext) {
+        return conversationJpaRepository.findByIdAndUser_EmailAndAppContext(id, userEmail, appContext)
                 .map(entity -> toDomain(entity, userEmail));
     }
 
@@ -91,7 +92,8 @@ public class MentorConversationRepositoryAdapter implements MentorConversationRe
                 userEmail,
                 entity.getTitle(),
                 entity.getCreatedAt(),
-                entity.getUpdatedAt()
+                entity.getUpdatedAt(),
+                entity.getAppContext()
         );
     }
 }

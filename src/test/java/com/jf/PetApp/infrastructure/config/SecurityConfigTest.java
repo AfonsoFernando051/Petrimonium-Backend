@@ -169,13 +169,100 @@ class SecurityConfigTest {
 
     @Test
     void sharedEndpoint_WithValidTokenButNoAppContext_IsStillReachable() {
-        // Not every endpoint is app_context-scoped — gamification/pet/mentor/auth stay reachable
-        // by any authenticated session regardless of which app (or no app) issued it.
+        // Not every endpoint is app_context-scoped — the canonical Pet/gamification summary
+        // (/api/pets, /api/v1/gamification) stays reachable by any authenticated session
+        // regardless of which app (or no app) issued it: Stage 6 confirmed the pet is meant to be
+        // a single cross-app companion, and its XP is already allow-listed to learning/practice
+        // events only, so this isn't a leak (see SecurityConfig's comment on this block).
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(validTokenFor("investor-shared@test.com", RoleEnum.USER));
 
         ResponseEntity<String> response = restTemplate.exchange(
                 "/api/pets/status", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    // --- Stage 6 (Pet/XP/Mentor context separation): Mentor is shared but context-sensitive, so
+    // (unlike Pet/gamification above) it now requires a resolvable app_context — an ambiguous
+    // session can't safely be served since GetMentorReplyUseCaseImpl needs to know whether to
+    // pull the real or the simulated portfolio. Missions/achievements are one-sided like
+    // real_portfolio/simulated_portfolio: missions are Academy-only learning content, achievements
+    // are Wallet-only wealth-threshold badges. ---
+
+    @Test
+    void mentorEndpoint_WithValidTokenButNoAppContext_IsForbidden() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("mentor-no-context@test.com", RoleEnum.USER));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/mentor/suggestions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void mentorEndpoint_WithWalletAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("mentor-wallet@test.com", RoleEnum.USER, AppContextEnum.WALLET));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/mentor/suggestions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    void mentorEndpoint_WithAcademyAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("mentor-academy@test.com", RoleEnum.USER, AppContextEnum.ACADEMY));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/mentor/suggestions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    void missionsEndpoint_WithWalletAppContext_IsForbidden() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("missions-wallet@test.com", RoleEnum.USER, AppContextEnum.WALLET));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/missions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void missionsEndpoint_WithAcademyAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("missions-academy@test.com", RoleEnum.USER, AppContextEnum.ACADEMY));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/missions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
+    @Test
+    void achievementsEndpoint_WithAcademyAppContext_IsForbidden() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("achievements-academy@test.com", RoleEnum.USER, AppContextEnum.ACADEMY));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/achievements", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+    }
+
+    @Test
+    void achievementsEndpoint_WithWalletAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("achievements-wallet@test.com", RoleEnum.USER, AppContextEnum.WALLET));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/v1/achievements", HttpMethod.GET, new HttpEntity<>(headers), String.class);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }

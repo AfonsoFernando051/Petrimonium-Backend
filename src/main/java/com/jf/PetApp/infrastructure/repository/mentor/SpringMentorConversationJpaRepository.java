@@ -13,9 +13,14 @@ import java.util.Optional;
 @Repository
 public interface SpringMentorConversationJpaRepository extends JpaRepository<MentorConversationJpaEntity, Long> {
 
-    List<MentorConversationJpaEntity> findByUser_EmailOrderByUpdatedAtDesc(String email);
+    List<MentorConversationJpaEntity> findByUser_EmailAndAppContextOrderByUpdatedAtDesc(String email, String appContext);
 
-    Optional<MentorConversationJpaEntity> findByIdAndUser_Email(Long id, String email);
+    Optional<MentorConversationJpaEntity> findByIdAndUser_EmailAndAppContext(Long id, String email, String appContext);
+
+    /** Context-agnostic — every conversation a user has, regardless of app_context. Used by
+     *  {@code DemoAccountResetAdapter} to wipe all of a demo account's Mentor history at once,
+     *  not by any app-facing use case (those always filter by app_context). */
+    List<MentorConversationJpaEntity> findByUser_Email(String email);
 
     // Relies on jf_mentor_messages' `on delete cascade` FK to jf_mentor_conversations
     // (see V11__mentor_conversations.sql) to clean up child messages.

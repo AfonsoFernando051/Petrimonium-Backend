@@ -12,6 +12,7 @@ import com.jf.PetApp.application.mentor.usecase.GetMentorReplyUseCase;
 import com.jf.PetApp.application.mentor.usecase.ListConversationsUseCase;
 import com.jf.PetApp.application.mentor.usecase.MentorPromptSuggestionsService;
 import com.jf.PetApp.application.mentor.usecase.RenameConversationUseCase;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.security.SecurityUtils;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
@@ -64,34 +65,39 @@ public class MentorController {
     @PostMapping("/chat")
     public ResponseEntity<MentorChatResponse> chat(@Valid @RequestBody MentorChatRequest request) {
         String email = SecurityUtils.getCurrentUserEmail();
-        MentorChatResponse response = getMentorReplyUseCase.execute(email, request);
+        AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
+        MentorChatResponse response = getMentorReplyUseCase.execute(email, request, appContext);
         return ResponseEntity.ok(response);
     }
 
     @GetMapping("/conversations")
     public ResponseEntity<List<ConversationSummaryDTO>> listConversations() {
         String email = SecurityUtils.getCurrentUserEmail();
-        return ResponseEntity.ok(listConversationsUseCase.execute(email));
+        AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
+        return ResponseEntity.ok(listConversationsUseCase.execute(email, appContext));
     }
 
     @GetMapping("/conversations/{id}")
     public ResponseEntity<ConversationDetailDTO> getConversation(@PathVariable Long id) {
         String email = SecurityUtils.getCurrentUserEmail();
-        return ResponseEntity.ok(getConversationUseCase.execute(email, id));
+        AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
+        return ResponseEntity.ok(getConversationUseCase.execute(email, id, appContext));
     }
 
     @PatchMapping("/conversations/{id}")
     public ResponseEntity<Void> renameConversation(@PathVariable Long id,
                                                      @Valid @RequestBody RenameConversationRequest request) {
         String email = SecurityUtils.getCurrentUserEmail();
-        renameConversationUseCase.execute(email, id, request.title());
+        AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
+        renameConversationUseCase.execute(email, id, request.title(), appContext);
         return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/conversations/{id}")
     public ResponseEntity<Void> deleteConversation(@PathVariable Long id) {
         String email = SecurityUtils.getCurrentUserEmail();
-        deleteConversationUseCase.execute(email, id);
+        AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
+        deleteConversationUseCase.execute(email, id, appContext);
         return ResponseEntity.noContent().build();
     }
 }

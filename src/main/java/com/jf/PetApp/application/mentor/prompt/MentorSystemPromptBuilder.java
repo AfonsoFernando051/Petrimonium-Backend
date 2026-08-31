@@ -4,6 +4,8 @@ import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.learning.dto.LearningProgressResult;
 import com.jf.PetApp.application.mentor.dto.MentorClientContextDTO;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
+import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPositionDTO;
 import com.jf.PetApp.core.domain.Pet;
 
 import java.util.List;
@@ -12,7 +14,15 @@ import java.util.Locale;
 /**
  * Builds the mentor's system prompt from server-known context (portfolio, pet) plus
  * client-supplied signals that only exist on-device (pet goal, horizon, screen, language).
- * Pure function, no framework dependency, so it can be unit tested directly.
+ * Pure functions, no framework dependency, so they can be unit tested directly.
+ *
+ * <p>Split into {@link #buildForWallet} and {@link #buildForAcademy} (Stage 6, Pet/XP/Mentor
+ * context separation) rather than one method taking both real- and simulated-portfolio
+ * parameters: before the split, a single {@code build(...)} always assembled both blocks
+ * regardless of which app the session belonged to, so a Wallet session's system prompt could
+ * include Academy lesson/level content and an Academy session's could include real portfolio
+ * numbers. Each entry point below can only ever see the DTOs relevant to its own context — there
+ * is no parameter through which the other context's data could reach it.
  */
 public final class MentorSystemPromptBuilder {
 
@@ -57,43 +67,66 @@ public final class MentorSystemPromptBuilder {
     private MentorSystemPromptBuilder() {
     }
 
-    public static String build(
+    /** Wallet (real money): real portfolio + pet only. Never sees Academy/learning data. */
+    public static String buildForWallet(
             Pet pet,
             PortfolioSummaryDTO portfolioSummary,
             List<AllocationSliceDTO> allocation,
+            MentorClientContextDTO clientContext,
+            String fallbackLanguage
+    ) {
+        String petName = resolvePetName(pet);
+        String language = resolveLanguage(clientContext, fallbackLanguage);
+
+        StringBuilder context = new StringBuilder();
+        appendRealPortfolioBlock(context, portfolioSummary, allocation);
+        appendPetBlock(context, pet, petName);
+        appendClientContextBlock(context, clientContext);
+
+        return render(petName, language, context.toString());
+    }
+
+    /**
+     * Academy (simulated): simulated portfolio + pet + learning progress only. Never sees real
+     * portfolio data. The simulated portfolio is always framed as practice/virtual money so the
+     * mentor's own language reinforces the app's on-screen disclaimer rather than contradicting it.
+     */
+    public static String buildForAcademy(
+            Pet pet,
+            SimulatedPortfolioSummaryDTO simulatedPortfolio,
             MentorClientContextDTO clientContext,
             String fallbackLanguage,
             LearningProgressResult learningProgress,
             String nextLessonTitle,
             String nextModuleTitle
     ) {
-        String petName = (pet != null && pet.getName() != null && !pet.getName().isBlank())
-                ? pet.getName()
-                : "your pet";
-
+        String petName = resolvePetName(pet);
         String language = resolveLanguage(clientContext, fallbackLanguage);
 
-        String contextBlock = buildContextBlock(pet, petName, portfolioSummary, allocation, clientContext,
-                learningProgress, nextLessonTitle, nextModuleTitle);
+        StringBuilder context = new StringBuilder();
+        appendSimulatedPortfolioBlock(context, simulatedPortfolio);
+        appendPetBlock(context, pet, petName);
+        appendLearningProgressBlock(context, learningProgress, nextLessonTitle, nextModuleTitle);
+        appendClientContextBlock(context, clientContext);
 
+        return render(petName, language, context.toString());
+    }
+
+    private static String render(String petName, String language, String contextBlock) {
         return SYSTEM_PROMPT_TEMPLATE
                 .replace("{petName}", petName)
                 .replace("{language}", language)
                 .replace("{context_block}", contextBlock);
     }
 
-    private static String buildContextBlock(
-            Pet pet,
-            String petName,
-            PortfolioSummaryDTO portfolioSummary,
-            List<AllocationSliceDTO> allocation,
-            MentorClientContextDTO clientContext,
-            LearningProgressResult learningProgress,
-            String nextLessonTitle,
-            String nextModuleTitle
-    ) {
-        StringBuilder context = new StringBuilder();
+    private static String resolvePetName(Pet pet) {
+        return (pet != null && pet.getName() != null && !pet.getName().isBlank())
+                ? pet.getName()
+                : "your pet";
+    }
 
+    private static void appendRealPortfolioBlock(
+            StringBuilder context, PortfolioSummaryDTO portfolioSummary, List<AllocationSliceDTO> allocation) {
         if (portfolioSummary != null && portfolioSummary.totalAssets() != null && portfolioSummary.totalAssets() > 0) {
             context.append(String.format(Locale.US,
                     "- Portfolio: %d asset(s), invested capital %.2f, current value %.2f, total gain %.2f (%.2f%%).%n",
@@ -110,40 +143,67 @@ public final class MentorSystemPromptBuilder {
                         slice.type(), slice.portfolioPercent()));
             }
         }
+    }
 
+    private static void appendSimulatedPortfolioBlock(StringBuilder context, SimulatedPortfolioSummaryDTO simulatedPortfolio) {
+        if (simulatedPortfolio == null || simulatedPortfolio.positions() == null || simulatedPortfolio.positions().isEmpty()) {
+            context.append(String.format(Locale.US,
+                    "- Simulated practice portfolio (virtual money, NOT real — always make this clear): no positions yet, virtual balance %.2f %s.%n",
+                    simulatedPortfolio == null ? 0.0 : simulatedPortfolio.virtualBalance().doubleValue(),
+                    simulatedPortfolio == null ? "" : simulatedPortfolio.currency()));
+            return;
+        }
+
+        context.append(String.format(Locale.US,
+                "- Simulated practice portfolio (virtual money, NOT real — always make this clear): %d position(s), virtual balance %.2f %s.%n",
+                simulatedPortfolio.positions().size(), simulatedPortfolio.virtualBalance().doubleValue(), simulatedPortfolio.currency()));
+        context.append("- Simulated holdings by ticker:\n");
+        for (SimulatedPositionDTO position : simulatedPortfolio.positions()) {
+            context.append(String.format(Locale.US, "  - %s: %.6f shares @ avg %.2f (%.1f%% of the simulated portfolio)%n",
+                    position.ticker(), position.quantity().doubleValue(), position.averagePrice().doubleValue(),
+                    position.allocationPercent().doubleValue()));
+        }
+    }
+
+    private static void appendPetBlock(StringBuilder context, Pet pet, String petName) {
         if (pet != null) {
             context.append(String.format("- Pet: %s (%s).%n", petName, pet.getSpecie()));
         }
+    }
 
-        if (learningProgress != null) {
-            context.append(String.format(Locale.US,
-                    "- Academy progress: level %d (%d/%d XP into this level), %d lesson(s) completed, %d module(s) completed.%n",
-                    learningProgress.level(), learningProgress.xpIntoLevel(), learningProgress.xpForNextLevel(),
-                    learningProgress.completedLessonIds().size(), learningProgress.completedModuleIds().size()));
-            if (isPresent(nextLessonTitle)) {
-                context.append("- Next lesson to continue: \"").append(nextLessonTitle).append('"');
-                if (isPresent(nextModuleTitle)) {
-                    context.append(" (module: ").append(nextModuleTitle).append(')');
-                }
-                context.append('\n');
-            } else {
-                context.append("- The user has completed every Academy lesson currently available.\n");
-            }
+    private static void appendLearningProgressBlock(
+            StringBuilder context, LearningProgressResult learningProgress, String nextLessonTitle, String nextModuleTitle) {
+        if (learningProgress == null) {
+            return;
         }
-
-        if (clientContext != null) {
-            if (isPresent(clientContext.petGoal())) {
-                context.append("- User's stated investment goal: ").append(clientContext.petGoal()).append('\n');
+        context.append(String.format(Locale.US,
+                "- Academy progress: level %d (%d/%d XP into this level), %d lesson(s) completed, %d module(s) completed.%n",
+                learningProgress.level(), learningProgress.xpIntoLevel(), learningProgress.xpForNextLevel(),
+                learningProgress.completedLessonIds().size(), learningProgress.completedModuleIds().size()));
+        if (isPresent(nextLessonTitle)) {
+            context.append("- Next lesson to continue: \"").append(nextLessonTitle).append('"');
+            if (isPresent(nextModuleTitle)) {
+                context.append(" (module: ").append(nextModuleTitle).append(')');
             }
-            if (isPresent(clientContext.investmentHorizon())) {
-                context.append("- User's stated investment horizon: ").append(clientContext.investmentHorizon()).append('\n');
-            }
-            if (isPresent(clientContext.currentScreen())) {
-                context.append("- Currently viewing: ").append(clientContext.currentScreen()).append('\n');
-            }
+            context.append('\n');
+        } else {
+            context.append("- The user has completed every Academy lesson currently available.\n");
         }
+    }
 
-        return context.toString();
+    private static void appendClientContextBlock(StringBuilder context, MentorClientContextDTO clientContext) {
+        if (clientContext == null) {
+            return;
+        }
+        if (isPresent(clientContext.petGoal())) {
+            context.append("- User's stated investment goal: ").append(clientContext.petGoal()).append('\n');
+        }
+        if (isPresent(clientContext.investmentHorizon())) {
+            context.append("- User's stated investment horizon: ").append(clientContext.investmentHorizon()).append('\n');
+        }
+        if (isPresent(clientContext.currentScreen())) {
+            context.append("- Currently viewing: ").append(clientContext.currentScreen()).append('\n');
+        }
     }
 
     private static boolean isPresent(String value) {

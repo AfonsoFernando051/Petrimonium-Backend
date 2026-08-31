@@ -59,7 +59,7 @@ class MentorControllerTest {
     @Test
     @WithMockUser(username = "investor@test.com")
     void chat_WithValidMessage_ReturnsMentorReply() throws Exception {
-        when(getMentorReplyUseCase.execute(eq("investor@test.com"), any()))
+        when(getMentorReplyUseCase.execute(eq("investor@test.com"), any(), any()))
                 .thenReturn(new MentorChatResponse("Looks like a solid diversified portfolio!", 1L, "How is my portfolio doing?"));
 
         mockMvc.perform(post("/api/mentor/chat")
@@ -122,7 +122,7 @@ class MentorControllerTest {
     @Test
     @WithMockUser(username = "investor@test.com")
     void listConversations_ReturnsTheUsersConversations() throws Exception {
-        when(listConversationsUseCase.execute("investor@test.com")).thenReturn(List.of(
+        when(listConversationsUseCase.execute(eq("investor@test.com"), any())).thenReturn(List.of(
                 new ConversationSummaryDTO(1L, "Dividends 101", Instant.now(), "Dividends are periodic payments...")));
 
         mockMvc.perform(get("/api/mentor/conversations"))
@@ -134,7 +134,7 @@ class MentorControllerTest {
     @Test
     @WithMockUser(username = "investor@test.com")
     void getConversation_ReturnsItsMessages() throws Exception {
-        when(getConversationUseCase.execute("investor@test.com", 1L))
+        when(getConversationUseCase.execute(eq("investor@test.com"), eq(1L), any()))
                 .thenReturn(new ConversationDetailDTO(1L, "Dividends 101", List.of()));
 
         mockMvc.perform(get("/api/mentor/conversations/1"))

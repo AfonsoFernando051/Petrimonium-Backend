@@ -45,18 +45,19 @@ class MentorConversationRepositoryAdapterTest {
 
     @Test
     void create_ForUnknownUser_ThrowsResourceNotFoundException() {
-        assertThrows(ResourceNotFoundException.class, () -> adapter.create("unknown@test.com", "Title"));
+        assertThrows(ResourceNotFoundException.class, () -> adapter.create("unknown@test.com", "Title", "wallet"));
     }
 
     @Test
-    void create_PersistsConversationWithCreatedAndUpdatedTimestampsSet() {
-        MentorConversation created = adapter.create(userEmail, "My Title");
+    void create_PersistsConversationWithCreatedAndUpdatedTimestampsAndAppContextSet() {
+        MentorConversation created = adapter.create(userEmail, "My Title", "wallet");
 
         assertThat(created.id()).isNotNull();
         assertThat(created.userEmail()).isEqualTo(userEmail);
         assertThat(created.title()).isEqualTo("My Title");
         assertThat(created.createdAt()).isNotNull();
         assertThat(created.updatedAt()).isNotNull();
+        assertThat(created.appContext()).isEqualTo("wallet");
     }
 
     @Test
@@ -67,15 +68,27 @@ class MentorConversationRepositoryAdapterTest {
         otherUser.setPassword("hash");
         userJpaRepository.save(UserJpaEntity.fromDomain(otherUser));
 
-        MentorConversation first = adapter.create(userEmail, "First");
+        MentorConversation first = adapter.create(userEmail, "First", "wallet");
         Thread.sleep(5);
-        MentorConversation second = adapter.create(userEmail, "Second");
-        adapter.create("other@test.com", "Other user's conversation");
+        MentorConversation second = adapter.create(userEmail, "Second", "wallet");
+        adapter.create("other@test.com", "Other user's conversation", "wallet");
 
-        List<MentorConversation> found = adapter.findAllByUser(userEmail);
+        List<MentorConversation> found = adapter.findAllByUser(userEmail, "wallet");
 
         assertThat(found).extracting(MentorConversation::id).containsExactly(second.id(), first.id());
         assertThat(found).allMatch(c -> c.userEmail().equals(userEmail));
+    }
+
+    @Test
+    void findAllByUser_NeverReturnsAnotherAppContextsConversations() {
+        adapter.create(userEmail, "Wallet chat", "wallet");
+        adapter.create(userEmail, "Academy chat", "academy");
+
+        List<MentorConversation> walletOnly = adapter.findAllByUser(userEmail, "wallet");
+        List<MentorConversation> academyOnly = adapter.findAllByUser(userEmail, "academy");
+
+        assertThat(walletOnly).extracting(MentorConversation::title).containsExactly("Wallet chat");
+        assertThat(academyOnly).extracting(MentorConversation::title).containsExactly("Academy chat");
     }
 
     @Test
@@ -86,19 +99,27 @@ class MentorConversationRepositoryAdapterTest {
         otherUser.setPassword("hash");
         userJpaRepository.save(UserJpaEntity.fromDomain(otherUser));
 
-        MentorConversation created = adapter.create(userEmail, "Mine");
+        MentorConversation created = adapter.create(userEmail, "Mine", "wallet");
 
-        assertThat(adapter.findByIdAndUser(created.id(), "other@test.com")).isEmpty();
-        assertThat(adapter.findByIdAndUser(created.id(), userEmail)).isPresent();
+        assertThat(adapter.findByIdAndUser(created.id(), "other@test.com", "wallet")).isEmpty();
+        assertThat(adapter.findByIdAndUser(created.id(), userEmail, "wallet")).isPresent();
+    }
+
+    @Test
+    void findByIdAndUser_WhenConversationBelongsToADifferentAppContext_ReturnsEmpty() {
+        MentorConversation walletConversation = adapter.create(userEmail, "Wallet chat", "wallet");
+
+        assertThat(adapter.findByIdAndUser(walletConversation.id(), userEmail, "academy")).isEmpty();
+        assertThat(adapter.findByIdAndUser(walletConversation.id(), userEmail, "wallet")).isPresent();
     }
 
     @Test
     void updateTitle_ChangesTitleAndBumpsUpdatedAt() {
-        MentorConversation created = adapter.create(userEmail, "Old Title");
+        MentorConversation created = adapter.create(userEmail, "Old Title", "wallet");
 
         adapter.updateTitle(created.id(), "New Title");
 
-        Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail);
+        Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail, "wallet");
         assertThat(found).isPresent();
         assertThat(found.get().title()).isEqualTo("New Title");
     }
@@ -110,12 +131,12 @@ class MentorConversationRepositoryAdapterTest {
 
     @Test
     void touch_UpdatesUpdatedAtTimestamp() throws InterruptedException {
-        MentorConversation created = adapter.create(userEmail, "Title");
+        MentorConversation created = adapter.create(userEmail, "Title", "wallet");
         Thread.sleep(5);
 
         adapter.touch(created.id());
 
-        Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail);
+        Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail, "wallet");
         assertThat(found).isPresent();
         assertThat(found.get().updatedAt()).isAfter(created.updatedAt());
     }
@@ -127,10 +148,10 @@ class MentorConversationRepositoryAdapterTest {
 
     @Test
     void delete_RemovesConversation() {
-        MentorConversation created = adapter.create(userEmail, "Title");
+        MentorConversation created = adapter.create(userEmail, "Title", "wallet");
 
         adapter.delete(created.id());
 
-        assertThat(adapter.findByIdAndUser(created.id(), userEmail)).isEmpty();
+        assertThat(adapter.findByIdAndUser(created.id(), userEmail, "wallet")).isEmpty();
     }
 }

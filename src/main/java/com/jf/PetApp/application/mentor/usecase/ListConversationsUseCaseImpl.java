@@ -5,6 +5,7 @@ import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
 import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.MentorMessage;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,8 +23,9 @@ public class ListConversationsUseCaseImpl implements ListConversationsUseCase {
     }
 
     @Override
-    public List<ConversationSummaryDTO> execute(String email) {
-        List<MentorConversation> conversations = conversationRepositoryPort.findAllByUser(email);
+    public List<ConversationSummaryDTO> execute(String email, AppContextEnum appContext) {
+        List<MentorConversation> conversations = conversationRepositoryPort.findAllByUser(
+                email, appContext == null ? null : appContext.claimValue());
 
         return conversations.stream()
                 .map(conversation -> new ConversationSummaryDTO(

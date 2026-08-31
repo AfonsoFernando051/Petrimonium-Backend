@@ -537,3 +537,107 @@ legitimate integration exists yet:
 unit test suite that pins `isEnabled()` false under every partial-config
 combination (flag-only, token-only, neither) so a future config typo can't
 silently start reporting "enabled" with nothing real behind it.
+
+## 14. Pet/XP/Mentor context separation (2026-08-31, split plan Stage 6)
+
+Audit-first, per the plan's methodology: before touching code, audited every
+existing Pet/XP/Mentor path for a Wallet↔Academy content leak. Findings and
+fixes below.
+
+### Finding 1 (already compliant, no change needed): XP allow-list
+
+`XpEventType` (`core/domain/gamification/XpEventType.java`) already only
+recognizes `LESSON_COMPLETED`, `MODULE_COMPLETED`, `SIMULATOR_COMPLETED` —
+`XpLedgerService.grantXp` is the single place XP is ever written, and
+nothing outside those three call sites (`CompleteLessonUseCaseImpl`,
+`CompleteSimulatorUseCaseImpl`) invokes it. `AchievementCatalog` — the only
+other place that could plausibly grant XP from wealth/profit — has every
+wealth-tied definition (`positive_return`, `portfolio_10k`, `portfolio_50k`,
+`dividend_hunter`, `first_dividend`) hardcoded to `0` XP, each with an
+explicit `DECISION-014`/`DECISION-027` comment. This was already correct
+before Stage 6; verified, not changed.
+
+### Finding 2 (already compliant by design, documented as intentional): canonical Pet
+
+`Pet` (`core/domain/Pet.java`) is one record per user — no per-app-context
+split. Confirmed this is the *intended* shape, not a gap: the pet is meant
+to be a single cross-app companion (consistent with both apps' still-`
+coming soon`-disabled `WalletBridgeCta`/`AcademyBridgeCta` cross-promotion),
+and per Finding 1 its XP is already wealth-safe, so a Wallet session seeing
+XP the user earned in Academy is by design, not a leak. `/api/pets/**` and
+`/api/v1/gamification/**` stay unauthenticated-by-context (any authenticated
+session may reach them) — see the updated comment in `SecurityConfig`.
+
+### Finding 3 (live leak, fixed): Mentor mixed real and Academy content in one prompt
+
+`GetMentorReplyUseCaseImpl` unconditionally called **both**
+`GetPortfolioSummaryUseCase`/`GetPortfolioAllocationUseCase` (real money)
+**and** `GetLearningProgressUseCase`/`GetAcademyCatalogUseCase` (Academy
+lessons) on every `/api/mentor/chat` call, regardless of which app the
+session belonged to — `MentorSystemPromptBuilder.build(...)` then wove both
+into a single system prompt. A Wallet (real-money) user's Mentor
+conversation could reference "Academy progress: level N..." and lesson
+titles; an Academy user's conversation could reference real portfolio
+numbers. `/api/mentor/**` also had no `app_context` gate at all in
+`SecurityConfig`, so a token with no resolvable context (or the wrong one)
+was served anyway. This directly violated the split brief's "Wallet must
+never contain... Academy's internal Mentor implementation."
+
+Fixed:
+
+- **`MentorSystemPromptBuilder`** split into `buildForWallet(...)` (real
+  portfolio + pet only — no parameter through which Academy data could
+  reach it) and `buildForAcademy(...)` (simulated portfolio + pet +
+  learning progress only — no real-portfolio parameter). The simulated
+  portfolio block is always framed as "virtual money, NOT real" so the
+  model's own language reinforces the app's on-screen disclaimer.
+- **`GetMentorReplyUseCaseImpl`** takes a new `AppContextEnum appContext`
+  parameter and branches: `ACADEMY` → simulated portfolio (new
+  `GetSimulatedPortfolioUseCase` dependency) + learning progress;
+  everything else, **including `null`** → the Wallet path. Whitelisting
+  `ACADEMY` explicitly (rather than blacklisting `WALLET`) means an
+  ambiguous/legacy session defaults to never seeing Academy content.
+- **`SecurityConfig`**: `/api/mentor/**` now requires
+  `hasAnyAuthority(APP_CONTEXT_WALLET, APP_CONTEXT_ACADEMY)` — a session
+  with no resolvable context can no longer reach Mentor at all, since the
+  use case has no safe default context to serve it under.
+- **`SecurityUtils.getCurrentAppContext()`** (new) — reverse-looks-up the
+  `APP_CONTEXT_*` granted authority `JwtAuthenticationFilter` already
+  stamps onto the `Authentication`, via a new `AppContextEnum.fromAuthority(...)`.
+- **Mentor conversations are now app_context-scoped**: `jf_mentor_conversations`
+  gained a nullable `app_context` column (migration V27, same
+  nullable/unqualified pattern as V21's refresh-token claim). `MentorConversation`,
+  its JPA entity, and every read/write path (`create`, `findAllByUser`,
+  `findByIdAndUser`) now filter on it — a Wallet session can't list, read,
+  rename, or delete an Academy conversation (or vice versa) even by
+  guessing its id; it 404s exactly as if it didn't exist. A conversation
+  created before this migration (`app_context IS NULL`) is not retroactively
+  assigned to either side — it simply becomes unreachable through these
+  endpoints, since its content may already mix both (the pre-fix bug this
+  migration exists to close).
+
+### Finding 4 (related leak, fixed while auditing the same context boundary): Missions/Achievements had no context gate either
+
+`/api/v1/missions/**` (Academy-only learning-quest content) and
+`/api/v1/achievements/**` (Wallet-only wealth-threshold badges, evaluated
+against the real portfolio) had no `SecurityConfig` gate — reachable by any
+authenticated session regardless of context, same class of gap as Mentor's,
+just not yet exploited by either Flutter app's current UI (Academy's own
+real-money `PortfolioScreen`/`AchievementsSection` code path is already
+known-unreachable dead code per Stage 3/5's audits). Fixed by adding
+`/api/v1/missions/**` to the existing `ACADEMY`-only matcher group and a new
+`/api/v1/achievements/**` → `WALLET`-only matcher, mirroring
+`/api/investments/**`'s reasoning.
+
+**Verified**: full `mvn test`, 918/918 green, including new anti-leak tests
+(`GetMentorReplyUseCaseImplTest`: wallet context never touches any
+Academy/simulated-portfolio use case and vice versa, null context takes the
+Wallet-safe path, system prompts never cross-contaminate; a new
+`MentorConversationRepositoryAdapterTest` case for cross-context id lookups;
+new `SecurityConfigTest` end-to-end cases for the Mentor/Missions/Achievements
+gates).
+
+**Not done in this stage** (tracked as debt, revisit only if it becomes a
+real product need): no UI/API to let a user see *which* app context a
+Mentor conversation belongs to, since each app's own conversation list is
+already implicitly scoped by the JWT it authenticates with.

@@ -143,7 +143,7 @@ class DemoAccountResetAdapterTest {
         assertThat(achievementUnlockRepository.findByUserId(admin2Id)).isEmpty();
         assertThat(activityLogRepository.findActivityDatesByUserIdOrderByActivityDateDesc(admin2Id)).isEmpty();
         assertThat(missionCompletionRepository.sumXpAwardedByUserId(admin2Id)).isZero();
-        assertThat(mentorConversationRepository.findByUser_EmailOrderByUpdatedAtDesc("admin2@petinvest.local")).isEmpty();
+        assertThat(mentorConversationRepository.findByUser_Email("admin2@petinvest.local")).isEmpty();
 
         User reset = userJpaRepository.findByUsername("admin2").orElseThrow().toDomain();
         assertThat(reset.hasAnsweredOnboarding()).isFalse();
@@ -160,7 +160,7 @@ class DemoAccountResetAdapterTest {
         assertThat(achievementUnlockRepository.findByUserId(otherUserId)).isNotEmpty();
         assertThat(activityLogRepository.findActivityDatesByUserIdOrderByActivityDateDesc(otherUserId)).isNotEmpty();
         assertThat(missionCompletionRepository.sumXpAwardedByUserId(otherUserId)).isEqualTo(5);
-        assertThat(mentorConversationRepository.findByUser_EmailOrderByUpdatedAtDesc("investor@test.com")).isNotEmpty();
+        assertThat(mentorConversationRepository.findByUser_Email("investor@test.com")).isNotEmpty();
     }
 
     @Test
