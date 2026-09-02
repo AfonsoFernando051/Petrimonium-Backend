@@ -98,9 +98,19 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         String language = MentorSystemPromptBuilder.resolveLanguage(request.context(), user.getPreferredLanguage());
 
         Pet pet = getMyPetUseCase.execute(email).orElse(null);
-        String systemPrompt = appContext == AppContextEnum.ACADEMY
-                ? buildAcademyPrompt(email, pet, request, user, language)
-                : buildWalletPrompt(email, pet, request, user);
+        boolean isAcademy = appContext == AppContextEnum.ACADEMY;
+        String systemPrompt;
+        List<String> sources;
+        if (isAcademy) {
+            systemPrompt = buildAcademyPrompt(email, pet, request, user, language);
+            sources = List.of();
+        } else {
+            PortfolioSummaryDTO summary = getPortfolioSummaryUseCase.execute(email);
+            List<AllocationSliceDTO> allocation = getPortfolioAllocationUseCase.execute(email);
+            systemPrompt = MentorSystemPromptBuilder.buildForWallet(
+                    pet, summary, allocation, request.context(), user.getPreferredLanguage());
+            sources = MentorSystemPromptBuilder.walletSourcesFor(pet, summary, allocation, request.context());
+        }
 
         List<MentorTurnDTO> history = messageRepositoryPort
                 .findRecentByConversation(conversation.id(), MAX_HISTORY_TURNS * 2).stream()
@@ -136,14 +146,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
             conversationRepositoryPort.touch(conversation.id());
         }
 
-        return new MentorChatResponse(reply, conversation.id(), title);
-    }
-
-    private String buildWalletPrompt(String email, Pet pet, MentorChatRequest request, User user) {
-        PortfolioSummaryDTO summary = getPortfolioSummaryUseCase.execute(email);
-        List<AllocationSliceDTO> allocation = getPortfolioAllocationUseCase.execute(email);
-        return MentorSystemPromptBuilder.buildForWallet(
-                pet, summary, allocation, request.context(), user.getPreferredLanguage());
+        return new MentorChatResponse(reply, conversation.id(), title, sources);
     }
 
     private String buildAcademyPrompt(String email, Pet pet, MentorChatRequest request, User user, String language) {

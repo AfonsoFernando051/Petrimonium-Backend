@@ -8,6 +8,7 @@ import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummar
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPositionDTO;
 import com.jf.PetApp.core.domain.Pet;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -60,8 +61,45 @@ public final class MentorSystemPromptBuilder {
 
             CONTEXT YOU'VE BEEN GIVEN THIS TURN
             {context_block}
-
+            {response_format_instruction}
             Respond naturally and conversationally in {language}. Keep replies focused — do not mechanically march through a template, but where it fits naturally: answer the question, relate it to the user's own portfolio/goals, and end on an encouraging note.
+            """;
+
+    // Academy only: asks the model to separate the objective explanation from its own
+    // personalized read, using fixed English markers regardless of {language} so the client can
+    // parse them without a per-language marker table. Markers are optional by design — a short
+    // conversational reply (greeting, acknowledgment) has no real "interpretation" layer to
+    // separate out, and forcing one would mean fabricating a distinction that isn't there; the
+    // client falls back to rendering the whole reply as plain text when neither marker appears.
+    private static final String STRUCTURED_RESPONSE_INSTRUCTION = """
+
+            RESPONSE FORMAT
+            When explaining a concept from the user's Academy curriculum, structure your answer in two parts using these exact markers verbatim (in English, regardless of what language you reply in), each alone on its own line:
+            [[CONTENT]]
+            The objective, factual explanation — true regardless of who's asking, no personalization.
+            [[INTERPRETATION]]
+            Your own personalized read: why this matters for this user right now, tied to their real lesson/progress/goal — clearly framed as your interpretation, not a fact.
+            For short replies that aren't explaining a concept (greetings, acknowledgments, clarifying questions), skip the markers entirely and answer normally in one block.
+            """;
+
+    // Wallet only: the design system's "camadas dado/cálculo/interpretação" guardrail, applied
+    // to every reply that touches the user's real portfolio — not just a citation footer, but the
+    // reply itself broken into up to three labeled parts. Same fixed-English-marker convention as
+    // Academy's own instruction above, and just as optional: a plain conversational reply skips
+    // all three markers rather than fabricating a data/calculation split that isn't there. Markers
+    // may appear in any subset (a reply can be data-only, data+calculation, or add the Mentor's
+    // own read on top) — the client parses whichever are present.
+    private static final String WALLET_STRUCTURED_RESPONSE_INSTRUCTION = """
+
+            RESPONSE FORMAT
+            When your answer touches the user's real portfolio data or a computation derived from it, structure your answer using these exact markers verbatim (in English, regardless of what language you reply in), each alone on its own line, in this order — include only the ones that actually apply:
+            [[DATA]]
+            The raw fact from the user's real portfolio context above — true regardless of interpretation, no computation applied.
+            [[CALCULATION]]
+            A deterministic computation derived from that data (a change over a period, a percentage, a total) — never a prediction or a made-up figure.
+            [[INTERPRETATION]]
+            Your own personalized read: what this means for the user right now, clearly framed as your interpretation, never presented as fact.
+            For replies that don't touch real portfolio data (greetings, acknowledgments, general questions), skip the markers entirely and answer normally in one block.
             """;
 
     private MentorSystemPromptBuilder() {
@@ -83,7 +121,41 @@ public final class MentorSystemPromptBuilder {
         appendPetBlock(context, pet, petName);
         appendClientContextBlock(context, clientContext);
 
-        return render(petName, language, context.toString());
+        return render(petName, language, context.toString(), WALLET_STRUCTURED_RESPONSE_INSTRUCTION);
+    }
+
+    /**
+     * Wallet only — which real data sources actually fed {@link #buildForWallet}'s system prompt
+     * for this call, using the exact same conditionals as the block-appending methods above. Powers
+     * the client's per-reply "Why am I seeing this?" citation list (Wallet design system guardrail:
+     * every Mentor interpretation must cite its real sources). Stable English keys — the client maps
+     * each to a translated label, the same convention as this class's own fixed-English markers.
+     */
+    public static List<String> walletSourcesFor(
+            Pet pet, PortfolioSummaryDTO portfolioSummary, List<AllocationSliceDTO> allocation,
+            MentorClientContextDTO clientContext) {
+        List<String> sources = new ArrayList<>();
+        if (portfolioSummary != null && portfolioSummary.totalAssets() != null && portfolioSummary.totalAssets() > 0) {
+            sources.add("portfolio_summary");
+        }
+        if (allocation != null && !allocation.isEmpty()) {
+            sources.add("portfolio_allocation");
+        }
+        if (pet != null) {
+            sources.add("pet");
+        }
+        if (clientContext != null) {
+            if (isPresent(clientContext.petGoal())) {
+                sources.add("client_goal");
+            }
+            if (isPresent(clientContext.investmentHorizon())) {
+                sources.add("client_horizon");
+            }
+            if (isPresent(clientContext.currentScreen())) {
+                sources.add("client_screen");
+            }
+        }
+        return sources;
     }
 
     /**
@@ -109,14 +181,15 @@ public final class MentorSystemPromptBuilder {
         appendLearningProgressBlock(context, learningProgress, nextLessonTitle, nextModuleTitle);
         appendClientContextBlock(context, clientContext);
 
-        return render(petName, language, context.toString());
+        return render(petName, language, context.toString(), STRUCTURED_RESPONSE_INSTRUCTION);
     }
 
-    private static String render(String petName, String language, String contextBlock) {
+    private static String render(String petName, String language, String contextBlock, String responseFormatInstruction) {
         return SYSTEM_PROMPT_TEMPLATE
                 .replace("{petName}", petName)
                 .replace("{language}", language)
-                .replace("{context_block}", contextBlock);
+                .replace("{context_block}", contextBlock)
+                .replace("{response_format_instruction}", responseFormatInstruction);
     }
 
     private static String resolvePetName(Pet pet) {

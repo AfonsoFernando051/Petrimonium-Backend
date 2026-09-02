@@ -17,6 +17,7 @@ import java.time.Instant;
 import java.util.List;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -185,6 +186,16 @@ class MentorSystemPromptBuilderTest {
         assertFalse(prompt.contains("simulated"));
     }
 
+    @Test
+    void buildForWallet_IncludesTheWalletStructuredResponseMarkersAndNotAcademys() {
+        String prompt = MentorSystemPromptBuilder.buildForWallet(null, null, null, null, "pt");
+
+        assertTrue(prompt.contains("[[DATA]]"));
+        assertTrue(prompt.contains("[[CALCULATION]]"));
+        assertTrue(prompt.contains("[[INTERPRETATION]]"));
+        assertFalse(prompt.contains("[[CONTENT]]"));
+    }
+
     // --- Academy: simulated portfolio + learning progress only, never real portfolio ---
 
     @Test
@@ -252,5 +263,124 @@ class MentorSystemPromptBuilderTest {
 
         assertFalse(prompt.contains("invested capital"));
         assertFalse(prompt.contains("Allocation by asset type"));
+    }
+
+    @Test
+    void buildForAcademy_IncludesItsOwnMarkersAndNotWalletsThreeWaySplit() {
+        String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", null, null, null);
+
+        assertTrue(prompt.contains("[[CONTENT]]"));
+        assertTrue(prompt.contains("[[INTERPRETATION]]"));
+        assertFalse(prompt.contains("[[DATA]]"));
+        assertFalse(prompt.contains("[[CALCULATION]]"));
+    }
+
+    // --- walletSourcesFor: Wallet-only "why am I seeing this?" citation list ---
+
+    @Test
+    void walletSourcesFor_WithNothingReal_ReturnsEmptyList() {
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, null, null);
+
+        assertTrue(sources.isEmpty());
+    }
+
+    @Test
+    void walletSourcesFor_WithZeroTotalAssets_DoesNotIncludePortfolioSummary() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, BigDecimal.ZERO, 0);
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, summary, null, null);
+
+        assertFalse(sources.contains("portfolio_summary"));
+    }
+
+    @Test
+    void walletSourcesFor_WithRealPortfolio_IncludesPortfolioSummary() {
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, summary, null, null);
+
+        assertTrue(sources.contains("portfolio_summary"));
+    }
+
+    @Test
+    void walletSourcesFor_WithNonEmptyAllocation_IncludesPortfolioAllocation() {
+        List<AllocationSliceDTO> allocation = List.of(
+                new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(800.0), BigDecimal.valueOf(66.7)));
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, allocation, null);
+
+        assertTrue(sources.contains("portfolio_allocation"));
+    }
+
+    @Test
+    void walletSourcesFor_WithEmptyAllocation_DoesNotIncludePortfolioAllocation() {
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, List.of(), null);
+
+        assertFalse(sources.contains("portfolio_allocation"));
+    }
+
+    @Test
+    void walletSourcesFor_WithPet_IncludesPet() {
+        Pet pet = petWith("Rusty", PetSpecieEnum.FOX);
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(pet, null, null, null);
+
+        assertTrue(sources.contains("pet"));
+    }
+
+    @Test
+    void walletSourcesFor_WithClientGoal_IncludesClientGoal() {
+        MentorClientContextDTO context = new MentorClientContextDTO("Retire early", null, null, "en");
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, null, context);
+
+        assertTrue(sources.contains("client_goal"));
+    }
+
+    @Test
+    void walletSourcesFor_WithClientHorizon_IncludesClientHorizon() {
+        MentorClientContextDTO context = new MentorClientContextDTO(null, "10+ years", null, "en");
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, null, context);
+
+        assertTrue(sources.contains("client_horizon"));
+    }
+
+    @Test
+    void walletSourcesFor_WithClientScreen_IncludesClientScreen() {
+        MentorClientContextDTO context = new MentorClientContextDTO(null, null, "portfolio_screen", "en");
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, null, context);
+
+        assertTrue(sources.contains("client_screen"));
+    }
+
+    @Test
+    void walletSourcesFor_WithBlankClientContextFields_OmitsThoseKeys() {
+        MentorClientContextDTO context = new MentorClientContextDTO("  ", null, "", "en");
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(null, null, null, context);
+
+        assertFalse(sources.contains("client_goal"));
+        assertFalse(sources.contains("client_horizon"));
+        assertFalse(sources.contains("client_screen"));
+    }
+
+    @Test
+    void walletSourcesFor_WithSeveralRealSourcesAtOnce_IncludesAllOfThem() {
+        Pet pet = petWith("Rusty", PetSpecieEnum.FOX);
+        PortfolioSummaryDTO summary = new PortfolioSummaryDTO(
+                BigDecimal.valueOf(1000.0), BigDecimal.valueOf(1200.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(20.0), 3);
+        List<AllocationSliceDTO> allocation = List.of(
+                new AllocationSliceDTO(InvestmentType.STOCKS, BigDecimal.valueOf(800.0), BigDecimal.valueOf(66.7)));
+        MentorClientContextDTO context = new MentorClientContextDTO("Retire early", "10+ years", null, "en");
+
+        List<String> sources = MentorSystemPromptBuilder.walletSourcesFor(pet, summary, allocation, context);
+
+        assertEquals(
+                List.of("portfolio_summary", "portfolio_allocation", "pet", "client_goal", "client_horizon"),
+                sources);
     }
 }

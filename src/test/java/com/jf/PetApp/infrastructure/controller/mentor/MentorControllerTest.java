@@ -60,7 +60,8 @@ class MentorControllerTest {
     @WithMockUser(username = "investor@test.com")
     void chat_WithValidMessage_ReturnsMentorReply() throws Exception {
         when(getMentorReplyUseCase.execute(eq("investor@test.com"), any(), any()))
-                .thenReturn(new MentorChatResponse("Looks like a solid diversified portfolio!", 1L, "How is my portfolio doing?"));
+                .thenReturn(new MentorChatResponse(
+                        "Looks like a solid diversified portfolio!", 1L, "How is my portfolio doing?", List.of("portfolio_summary")));
 
         mockMvc.perform(post("/api/mentor/chat")
                         .contentType(MediaType.APPLICATION_JSON)
