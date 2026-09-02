@@ -57,6 +57,19 @@ E toda fatia tem, obrigatoriamente, as mesmas sete seções:
 A seção 7 é a que transforma leitura em domínio. Leia a fatia, feche o
 documento, responda os drills de cabeça, e só depois confira.
 
+## O que fazer com o que você encontra
+
+Escrever uma fatia sempre revela coisas: bugs, débito, decisões que ninguém
+tomou. O Atlas **descreve** — ele não é o lugar de rastrear a correção.
+
+Todo achado vai para o banco **Demandas — Petrimonium** no Notion, que já tem a
+taxonomia certa (`Tipo`, `Origem`, `Prioridade`, `Produto`, `Evidencia no
+codigo`). A fatia registra o fato e o porquê; a demanda registra o que fazer.
+Cada uma aponta para a outra.
+
+Um bug reproduzido em runtime, e não só por leitura de código, também merece
+entrada na página **Correção de Bugs — Petrimonium**, que exige reprodução.
+
 ## Índice de fatias
 
 Legenda: ✅ escrita · ⬜ pendente
@@ -66,7 +79,7 @@ Legenda: ✅ escrita · ⬜ pendente
 | # | Fatia | Status |
 |---|---|---|
 | 01 | [Autenticação e `app_context`](fatias/01-auth-e-app-context.md) | ✅ |
-| 02 | Onboarding e `InvestorProfile` | ⬜ |
+| 02 | [Onboarding e `InvestorProfile`](fatias/02-onboarding-investorprofile.md) | ✅ |
 | 03 | [Pet / companheiro (`/api/pets`)](fatias/03-pet-companheiro.md) | ✅ |
 | 04 | [Gamificação: XP, nível e streak](fatias/04-gamificacao-xp-streak.md) | ✅ |
 | 05 | [Mentor: chat, prompt por contexto e conversas](fatias/05-mentor.md) | ✅ |
