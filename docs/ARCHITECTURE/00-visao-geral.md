@@ -1,0 +1,229 @@
+# 00 — Visão geral do sistema
+
+> Estado verificado em 2026-09-02, lendo o código. Números conferidos:
+> Wallet 253 arquivos Dart · Academy 316 arquivos Dart · Backend 577 arquivos Java,
+> 14 controllers, 78 use cases, 27 migrations.
+
+## 1. O que é o Petrimonium
+
+Um ecossistema de **três repositórios** e **dois produtos**:
+
+- **Petrimonium Wallet** — app Flutter de carteira de investimentos **reais**.
+- **Petrimonium Academy** — app Flutter de educação financeira com carteira **simulada**.
+- **Petrimonium Backend** — Spring Boot, servindo os dois.
+
+Os dois apps são clientes do **mesmo backend, no mesmo banco**. Não há dois
+backends nem duas bases. A separação entre "dinheiro real" e "dinheiro
+fictício" é feita **em tempo de execução**, por uma única peça: a claim
+`app_context` no JWT (fatia 01).
+
+Isso é a decisão estrutural mais importante do sistema inteiro. Se você só
+entender uma coisa deste Atlas, entenda essa.
+
+## 2. Diagrama de contexto
+
+```mermaid
+graph TB
+    subgraph Clientes
+        W["Petrimonium Wallet<br/>Flutter · app_context = wallet"]
+        A["Petrimonium Academy<br/>Flutter · app_context = academy"]
+    end
+
+    B["Petrimonium Backend<br/>Spring Boot · arquitetura hexagonal"]
+
+    subgraph Externos
+        BR["brapi.dev<br/>cotações e fundamentos"]
+        AN["Anthropic / Gemini<br/>respostas do Mentor"]
+        LT["LibreTranslate<br/>tradução"]
+        GO["Google Sign-In<br/>verificação de ID token"]
+    end
+
+    DB[("PostgreSQL<br/>7 schemas")]
+
+    W -->|HTTPS + Bearer JWT| B
+    A -->|HTTPS + Bearer JWT| B
+    B --> DB
+    B --> BR
+    B --> AN
+    B --> LT
+    B --> GO
+```
+
+Os apps **nunca** falam com serviços externos diretamente (exceto o SDK nativo
+do Google Sign-In, que devolve um ID token para o backend validar). Todo o
+resto passa pelo backend, que age como BFF.
+
+## 3. As três camadas do backend
+
+O backend é hexagonal. A regra de dependência aponta sempre para dentro:
+
+```mermaid
+graph LR
+    I["infrastructure/<br/>controllers, JPA, clients HTTP,<br/>config, security"]
+    AP["application/<br/>use cases, ports, DTOs, services"]
+    C["core/<br/>domínio puro: entidades,<br/>enums, regras"]
+
+    I -->|depende de| AP
+    AP -->|depende de| C
+    C -.->|não depende de ninguém| C
+```
+
+| Pacote | Contém | Regra |
+|---|---|---|
+| `core/` | `User`, `RefreshToken`, `AppContextEnum`, `SecurityUtils` | Java puro. Sem Spring, sem JPA, sem HTTP. |
+| `application/` | 78 use cases + **ports** (interfaces) | Define o que precisa do mundo externo, nunca *como*. |
+| `infrastructure/` | Controllers, adapters JPA, clients HTTP, `SecurityConfig` | Implementa os ports. É a única camada que conhece framework. |
+| `presentation/` | DTOs de request/response HTTP | Fronteira do contrato público. |
+
+**Por que isso importa na prática:** um use case como `LoginUseCaseImpl` não
+sabe que existe JWT, nem Postgres. Ele conhece `TokenProvider` e
+`UserRepository` — interfaces. Trocar JWT por outra coisa é trocar uma
+implementação em `infrastructure/`, sem tocar em regra de negócio. Quando você
+revisar um PR, **um `import org.springframework` dentro de `core/` ou
+`application/` é um erro**, independentemente do que o código faz.
+
+## 4. Os dois apps Flutter
+
+Ambos seguem a mesma arquitetura: `lib/features/<módulo>/` com
+`presentation/` (telas e widgets), `data/` (datasources, repositories, models)
+e às vezes `domain/`. Dependências são resolvidas por um `DI` estático em
+`lib/core/di/dependency_injection.dart` — não é `get_it`, é uma classe com
+campos estáticos, alguns não-`final` para que testes possam substituí-los.
+
+| Módulo | Wallet | Academy | Observação |
+|---|---|---|---|
+| `auth` | 19 arq. | 16 arq. | Quase idêntico; difere no `appContext` |
+| `academy` | 9 arq. | 73 arq. | No Wallet sobrou só a ponte educacional em asset-details |
+| `simulated_wallet` | — | 13 arq. | Só Academy |
+| `portfolio` | 52 arq. | 31 arq. | No Academy só resta a camada de dados |
+| `investment` | 15 arq. | 4 arq. | Real: Wallet |
+| `pet` | 36 arq. | 41 arq. | Companheiro compartilhado |
+| `mentor` | 14 arq. | 14 arq. | Mesma UI, prompt diferente no backend |
+| `onboarding` | 14 arq. | 24 arq. | Fluxos deliberadamente distintos |
+| `asset_details` | 25 arq. | 25 arq. | Idêntico |
+| `home` / `dashboard` / `game` / `profile` / `settings` | — | — | Shells e telas de apoio |
+
+**Atenção — a maior fonte de confusão do projeto:** os dois apps nasceram como
+clones do mesmo código (`Invest-Game-V2`). Arquivos com o mesmo caminho nos dois
+repositórios **podem ter divergido**. Nunca presuma que
+`Wallet/lib/features/mentor/...` e `Academy/lib/features/mentor/...` são iguais —
+compare antes de editar.
+
+## 5. Inventário de endpoints e quem pode chamá-los
+
+Regras retiradas de `infrastructure/config/SecurityConfig.java`. Esta tabela é
+o contrato de isolamento entre os dois produtos.
+
+| Rota | Exigência | Controller |
+|---|---|---|
+| `/auth/**` | **Pública** | `AuthController` |
+| `/actuator/health**` | **Pública** | — |
+| `/api/investments/**` | `APP_CONTEXT_WALLET` | `InvestmentController` |
+| `/api/v1/achievements/**` | `APP_CONTEXT_WALLET` | `AchievementController` |
+| `/api/v1/academy/**` | `APP_CONTEXT_ACADEMY` | `AcademyCatalogController` |
+| `/api/v1/learning/**` | `APP_CONTEXT_ACADEMY` | `LearningController` |
+| `/api/v1/lab/**` | `APP_CONTEXT_ACADEMY` | `LabController` |
+| `/api/v1/simulated-portfolios/**` | `APP_CONTEXT_ACADEMY` | `SimulatedPortfolioController` |
+| `/api/v1/missions/**` | `APP_CONTEXT_ACADEMY` | `MissionController` |
+| `/api/mentor/**` | `WALLET` **ou** `ACADEMY` (precisa de um) | `MentorController` |
+| `/api/pets/**` | Só autenticado — **compartilhado** | `PetController` |
+| `/api/v1/gamification/**` | Só autenticado — **compartilhado** | `GamificationController` |
+| `/api/onboarding/**` | Só autenticado — **compartilhado** | `OnboardingController` |
+| `/api/settings/**` | Só autenticado — **compartilhado** | `SettingsController` |
+| `/api/users/**` | Só autenticado — **compartilhado** | `UserController` |
+
+Três categorias, e cada uma existe por um motivo:
+
+- **Exclusivo do Wallet** — envolve dinheiro real. Uma sessão Academy nunca
+  pode alcançar. Conquistas entram aqui porque `AchievementCatalog` avalia
+  patrimônio (`portfolio_10k` etc.).
+- **Exclusivo do Academy** — conteúdo pedagógico e dinheiro fictício.
+- **Compartilhado por decisão explícita** — o Pet é **um só companheiro** para
+  a mesma pessoa nos dois apps, por design. O XP dele já é restrito por
+  allow-list (`XpEventType`: apenas `LESSON_COMPLETED`, `MODULE_COMPLETED`,
+  `SIMULATOR_COMPLETED`), então nunca carrega sinal de riqueza. Um usuário
+  Wallet ver XP ganho no Academy é intencional, **não é vazamento**.
+
+O Mentor é o caso especial: é compartilhado mas **sensível ao contexto** — o
+prompt do sistema muda conforme o app. Por isso ele exige *um* contexto
+resolvível em vez de aceitar qualquer sessão autenticada.
+
+## 6. O banco: 7 schemas, e a pegadinha do ambiente
+
+```mermaid
+graph TB
+    subgraph PostgreSQL
+        ID["identity<br/>jf_users, jf_refresh_tokens,<br/>jf_password_reset_tokens"]
+        ED["education<br/>catálogo Academy, lesson_progress"]
+        RP["real_portfolio<br/>jf_investments, jf_finances,<br/>real_portfolio_sync_log"]
+        SP["simulated_portfolio<br/>simulated_portfolios,<br/>_positions, _orders"]
+        GA["gamification<br/>xp_events, achievement_unlocks,<br/>activity_log, mission_completions"]
+        PE["pet<br/>jf_pets"]
+        AI["ai<br/>jf_mentor_conversations,<br/>jf_mentor_messages"]
+    end
+    ED --> ID
+    RP --> ID
+    SP --> ID
+    GA --> ID
+    PE --> ID
+    AI --> ID
+```
+
+Todas as FKs apontam para `identity.jf_users` e **cruzam schema** — isso é
+permitido e continua válido, já que `ALTER TABLE ... SET SCHEMA` no Postgres é
+operação só de catálogo (nenhuma linha é reescrita).
+
+**A pegadinha que você precisa saber de cor:** existem **três** conjuntos de
+migrations, e o ambiente decide quais rodam.
+
+| Diretório | `dev` | `prod` | Conteúdo |
+|---|:---:|:---:|---|
+| `db/migration` | ✅ | ✅ | Estrutura real, portátil H2 + Postgres |
+| `db/migration-dev` | ✅ | ❌ | Seeds (`V2`, `V3`, `V5`, `V17`) — usuários e carteiras de teste |
+| `db/migration-postgres` | ❌ | ✅ | Separação em schemas (`V20`, `V23`, `V26`) |
+
+Consequência direta: **os 7 schemas não existem em desenvolvimento.** Local
+você roda H2 com tudo em um schema só. Um bug de resolução de schema é,
+por construção, invisível na sua máquina. Toda tabela é referenciada sem
+prefixo nas entidades JPA; em produção a resolução depende do `search_path`
+do usuário do banco, e `spring.flyway.schemas` define o schema padrão do
+Flyway.
+
+Além disso, `spring.jpa.hibernate.ddl-auto=validate` em todo lugar: **o
+Flyway é dono do schema, o Hibernate nunca cria nem altera nada**. Ele só
+confere se o mapeamento bate. Um `@Column` novo sem migration correspondente
+derruba a aplicação no boot — o que é exatamente o comportamento desejado.
+
+## 7. Configuração que muda o comportamento
+
+| Onde | Chave | Efeito |
+|---|---|---|
+| Flutter (build) | `--dart-define=API_BASE_URL` | Sem isso, um build de release **falha na hora** (`assertConfiguredForRelease`) em vez de apontar para `localhost` |
+| Flutter (build) | `--dart-define=GOOGLE_SERVER_CLIENT_ID` | Sem isso, login com Google não funciona |
+| Flutter (código) | `ApiConstants.appContext` | `'wallet'` ou `'academy'` — **fixo por app**, não é flag de build |
+| Backend | `jwt.secret`, `jwt.expiration` | Assinatura e validade do access token |
+| Backend | `app.cors.allowed-origins` | Em branco = nenhum acesso cross-origin (não é wildcard silencioso) |
+| Backend | `spring.h2.console.enabled` | Também controla se `X-Frame-Options` é desligado |
+| Backend | `app.security.trusted-proxies` | Usado pelo rate limiting para achar o IP real |
+
+## 8. Roteiro de leitura sugerido
+
+Se você vai estudar o sistema do zero, nesta ordem:
+
+1. Esta visão geral (uma vez, inteira).
+2. Fatia **01 — Autenticação e `app_context`**. É a fundação; todas as outras
+   assumem que você entendeu.
+3. Fatia **08 — Flyway e schemas**, porque decide o que você vê localmente.
+4. Depois escolha por interesse: uma fatia do Wallet e uma do Academy em
+   paralelo ensina mais que quatro do mesmo lado, porque o contraste mostra
+   onde está a fronteira.
+
+## 9. O que este Atlas ainda não cobre
+
+Honestidade sobre o próprio documento:
+
+- 24 das 25 fatias ainda não foram escritas.
+- Não há descrição de deploy/infra de produção além do que está nos
+  `.properties` — não foi auditado aqui.
+- A resolução de `search_path` em produção está descrita como mecanismo, mas
+  **não foi verificada contra o banco real** (ver drill 4 da fatia 01).
