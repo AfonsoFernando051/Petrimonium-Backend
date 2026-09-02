@@ -69,7 +69,7 @@ Legenda: ✅ escrita · ⬜ pendente
 | 02 | Onboarding e `InvestorProfile` | ⬜ |
 | 03 | Pet / companheiro (`/api/pets`) | ⬜ |
 | 04 | Gamificação: XP, streak e o resumo compartilhado | ⬜ |
-| 05 | Mentor: chat, prompt por contexto e conversas | ⬜ |
+| 05 | [Mentor: chat, prompt por contexto e conversas](fatias/05-mentor.md) | ✅ |
 | 06 | Configurações e idioma (tradução) | ⬜ |
 | 07 | Infra transversal: rate limit, request-id, erros | ⬜ |
 | 08 | Flyway: os três conjuntos de migrations e os schemas | ⬜ |
