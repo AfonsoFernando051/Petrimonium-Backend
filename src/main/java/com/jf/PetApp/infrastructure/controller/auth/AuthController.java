@@ -144,6 +144,7 @@ public class AuthController {
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(new RegisterResponse(
                 result.userId(),
+                result.username(),
                 result.email()
             ));
     }

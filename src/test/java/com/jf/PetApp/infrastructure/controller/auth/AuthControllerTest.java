@@ -149,7 +149,7 @@ class AuthControllerTest {
     @Test
     void register_WithValidData_Returns201WithUserIdAndEmail() throws Exception {
         when(registerUserUseCase.execute(new RegisterCommand("investor", "investor@test.com", "Str0ngPass1")))
-                .thenReturn(new RegisterResult(42L, "investor@test.com"));
+                .thenReturn(new RegisterResult(42L, "investor", "investor@test.com"));
 
         mockMvc.perform(post("/auth/register")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -157,6 +157,7 @@ class AuthControllerTest {
                                 {"username":"investor","email":"investor@test.com","password":"Str0ngPass1"}"""))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.userId").value(42))
+                .andExpect(jsonPath("$.username").value("investor"))
                 .andExpect(jsonPath("$.email").value("investor@test.com"));
     }
 

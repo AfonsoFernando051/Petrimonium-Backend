@@ -8,9 +8,10 @@ class RegisterResultTest {
 
     @Test
     void accessorsReturnConstructedValues() {
-        RegisterResult result = new RegisterResult(1L, "investor@test.com");
+        RegisterResult result = new RegisterResult(1L, "investor", "investor@test.com");
 
         assertEquals(1L, result.userId());
+        assertEquals("investor", result.username());
         assertEquals("investor@test.com", result.email());
     }
 }

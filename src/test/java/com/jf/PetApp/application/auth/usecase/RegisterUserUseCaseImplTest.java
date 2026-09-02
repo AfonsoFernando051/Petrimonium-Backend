@@ -50,6 +50,7 @@ class RegisterUserUseCaseImplTest {
         RegisterResult result = registerUserUseCase.execute(new RegisterCommand("newinvestor", email, "Str0ngPass"));
 
         assertEquals(42L, result.userId());
+        assertEquals("newinvestor", result.username());
         assertEquals(email, result.email());
 
         ArgumentCaptor<User> captor = ArgumentCaptor.forClass(User.class);

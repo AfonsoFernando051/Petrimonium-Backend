@@ -51,6 +51,7 @@ public class RegisterUserUseCaseImpl implements RegisterUserUseCase {
 
         return new RegisterResult(
             saved.getId(),
+            saved.getUsername(),
             saved.getEmail()
         );
     }
