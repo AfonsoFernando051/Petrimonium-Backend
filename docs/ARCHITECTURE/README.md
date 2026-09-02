@@ -67,8 +67,8 @@ Legenda: ✅ escrita · ⬜ pendente
 |---|---|---|
 | 01 | [Autenticação e `app_context`](fatias/01-auth-e-app-context.md) | ✅ |
 | 02 | Onboarding e `InvestorProfile` | ⬜ |
-| 03 | Pet / companheiro (`/api/pets`) | ⬜ |
-| 04 | Gamificação: XP, streak e o resumo compartilhado | ⬜ |
+| 03 | [Pet / companheiro (`/api/pets`)](fatias/03-pet-companheiro.md) | ✅ |
+| 04 | [Gamificação: XP, nível e streak](fatias/04-gamificacao-xp-streak.md) | ✅ |
 | 05 | [Mentor: chat, prompt por contexto e conversas](fatias/05-mentor.md) | ✅ |
 | 06 | Configurações e idioma (tradução) | ⬜ |
 | 07 | Infra transversal: rate limit, request-id, erros | ⬜ |

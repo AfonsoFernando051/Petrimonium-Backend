@@ -139,10 +139,16 @@ Três categorias, e cada uma existe por um motivo:
   patrimônio (`portfolio_10k` etc.).
 - **Exclusivo do Academy** — conteúdo pedagógico e dinheiro fictício.
 - **Compartilhado por decisão explícita** — o Pet é **um só companheiro** para
-  a mesma pessoa nos dois apps, por design. O XP dele já é restrito por
-  allow-list (`XpEventType`: apenas `LESSON_COMPLETED`, `MODULE_COMPLETED`,
-  `SIMULATOR_COMPLETED`), então nunca carrega sinal de riqueza. Um usuário
-  Wallet ver XP ganho no Academy é intencional, **não é vazamento**.
+  a mesma pessoa nos dois apps, por design. O XP que alimenta o nível dele só
+  pode ser ganho em rotas Academy-only, então um usuário Wallet ver XP ganho no
+  Academy é intencional, **não é vazamento**.
+
+  > **Correção ao comentário do `SecurityConfig`:** aquele comentário justifica
+  > a segurança pelo allow-list de `XpEventType`. A conclusão está certa, o
+  > raciocínio está incompleto — `XpEventType` governa só `xp_events`, que é
+  > **uma das três** fontes somadas por `TotalXpCalculator`. As outras duas
+  > (conquistas e missões) não passam pelo enum. Ver [fatia 04](fatias/04-gamificacao-xp-streak.md)
+  > §4.1–4.3 para onde a garantia é estrutural e onde ela é só um literal `0`.
 
 O Mentor é o caso especial: é compartilhado mas **sensível ao contexto** — o
 prompt do sistema muda conforme o app. Por isso ele exige *um* contexto
