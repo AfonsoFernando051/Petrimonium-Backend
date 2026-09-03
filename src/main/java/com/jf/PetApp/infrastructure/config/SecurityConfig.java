@@ -118,6 +118,13 @@ public class SecurityConfig {
                 // /api/investments/**, so an Academy session (which has no real portfolio to
                 // speak of) never triggers that evaluation.
                 .requestMatchers("/api/v1/achievements/**").hasAuthority(AppContextEnum.WALLET.authority())
+                // Health is the user's real cash flow — accounts, salary, bills, card invoices.
+                // Strictly its own context: an Academy session (simulated money) must never read
+                // it, and neither must a Wallet one, which answers a different question
+                // (patrimony) and has no reason to see day-to-day spending. HealthService
+                // additionally derives the owner from the JWT subject on every call, so this
+                // rule is the outer gate, not the only one.
+                .requestMatchers("/api/v1/health/**").hasAuthority(AppContextEnum.HEALTH.authority())
                 // Mentor is shared but context-*sensitive*: GetMentorReplyUseCaseImpl builds a
                 // different system prompt (real portfolio vs simulated + Academy progress)
                 // depending on which app the session belongs to, so a session with no resolvable

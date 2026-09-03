@@ -450,10 +450,12 @@ public class JdbcHealthStore implements HealthStore {
         return findInvoiceByCardAndCycle(userId, cardId, cycleMonth).orElseThrow();
     }
 
+    // Chronological, oldest cycle first: the invoice the user still has to pay must come before
+    // the ones that only exist because a purchase was split into future installments.
     @Override
     public List<Invoice> listInvoices(long userId, long cardId) {
         return jdbc.query("select * from " + t("health_card_invoices")
-                + " where user_id=? and card_id=? order by cycle_month desc", this::mapInvoice, userId, cardId);
+                + " where user_id=? and card_id=? order by cycle_month,id", this::mapInvoice, userId, cardId);
     }
 
     @Override
