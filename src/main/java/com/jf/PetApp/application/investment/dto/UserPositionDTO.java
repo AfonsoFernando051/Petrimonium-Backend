@@ -1,7 +1,5 @@
 package com.jf.PetApp.application.investment.dto;
 
-import java.math.BigDecimal;
-
 /**
  * The authenticated user's aggregated position in a specific asset —
  * computed from their real {@code jf_investments} lots and the current
@@ -9,12 +7,12 @@ import java.math.BigDecimal;
  * estimated or fabricated.
  */
 public record UserPositionDTO(
-    BigDecimal quantity,
-    BigDecimal averagePrice,
-    BigDecimal investedValue,
-    BigDecimal currentValue,
-    BigDecimal unrealizedGain,
-    BigDecimal unrealizedGainPercent,
-    BigDecimal portfolioWeight
+    double quantity,
+    double averagePrice,
+    double investedValue,
+    double currentValue,
+    double unrealizedGain,
+    double unrealizedGainPercent,
+    double portfolioWeight
 ) {
 }

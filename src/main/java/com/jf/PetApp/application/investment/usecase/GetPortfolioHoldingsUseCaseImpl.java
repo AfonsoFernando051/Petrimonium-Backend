@@ -1,7 +1,5 @@
 package com.jf.PetApp.application.investment.usecase;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,21 +30,19 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
         this.externalInvestmentApiPort = externalInvestmentApiPort;
     }
 
-    private static final int MONEY_SCALE = 2;
-
     @Override
     public List<InvestmentLotDTO> execute(String email) {
         List<Investment> lots = investmentRepositoryPort.findByUserEmail(email);
 
-        Map<String, BigDecimal> priceCache = new HashMap<>();
+        Map<String, Double> priceCache = new HashMap<>();
         for (Investment lot : lots) {
             priceCache.computeIfAbsent(lot.name(), ticker -> fetchCurrentPrice(ticker, lot.type(), lot.purchasePrice()));
         }
 
         return lots.stream().map(lot -> {
-            BigDecimal currentPrice = priceCache.get(lot.name());
-            BigDecimal investedValue = lot.quantity().multiply(lot.purchasePrice()).setScale(MONEY_SCALE, RoundingMode.HALF_UP);
-            BigDecimal currentValue = lot.quantity().multiply(currentPrice).setScale(MONEY_SCALE, RoundingMode.HALF_UP);
+            Double currentPrice = priceCache.get(lot.name());
+            Double investedValue = lot.quantity() * lot.purchasePrice();
+            Double currentValue = lot.quantity() * currentPrice;
             return new InvestmentLotDTO(
                     lot.id(),
                     lot.name(),
@@ -61,7 +57,7 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
         }).collect(Collectors.toList());
     }
 
-    private BigDecimal fetchCurrentPrice(String ticker, InvestmentType type, BigDecimal fallbackPrice) {
+    private Double fetchCurrentPrice(String ticker, InvestmentType type, Double fallbackPrice) {
         // Tesouro Direto / fixed-income bonds aren't equities and have no ticker on
         // Brapi's quote feed — querying it always 404s. No accrual-based pricing
         // model exists yet, so fall back to the purchase price directly.
@@ -72,7 +68,6 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
             return externalInvestmentApiPort.getQuote(ticker)
                     .map(AssetQuoteResponse::regularMarketPrice)
                     .filter(price -> price != null)
-                    .map(price -> BigDecimal.valueOf(price).setScale(MONEY_SCALE, RoundingMode.HALF_UP))
                     .orElse(fallbackPrice);
         } catch (Exception e) {
             log.warn("Failed to fetch quote for ticker {}, falling back to purchase price: {}", ticker, e.getMessage());

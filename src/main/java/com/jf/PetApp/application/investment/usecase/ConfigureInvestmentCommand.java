@@ -2,7 +2,6 @@ package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -12,8 +11,8 @@ import java.time.LocalDate;
  */
 public record ConfigureInvestmentCommand(
         String name,
-        BigDecimal quantity,
-        BigDecimal purchasePrice,
+        Double quantity,
+        Double purchasePrice,
         LocalDate purchaseDate,
         InvestmentType type
 ) {
