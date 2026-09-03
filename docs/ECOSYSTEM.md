@@ -6,6 +6,13 @@ below, asked one direct question, and the session ended without the user
 responding. Nothing here has been confirmed or implemented — treat this as
 a proposal awaiting your decision.
 
+## Notion
+
+Project workspace: [Petrimonium](https://app.notion.com/p/3d08bfdad90780c3a935c0054a11770d)
+— product docs, the Atlas Técnico (what the system *is*, today, read by
+architecture slice) and the Demandas/Correção de Bugs boards findings from
+work here should be tracked against.
+
 ## The three repos
 
 | Repo | Job | Money |
