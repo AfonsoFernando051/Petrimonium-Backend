@@ -348,17 +348,25 @@ fazer a mudança.**
 <details>
 <summary><b>Drill 4 —</b> Você adiciona uma coluna nova em <code>jf_users</code>, escreve a migration em <code>db/migration</code>, tudo passa localmente. Que risco continua de pé?</summary>
 
-Que ela funcione em H2/dev e falhe em produção — porque em produção a tabela
-vive em `identity`, e localmente não existe schema nenhum. `db/migration-postgres`
-não roda em dev.
+Que ela funcione em H2/dev e falhe em produção — mas o mecanismo é mais
+estreito do que parece, e vale saber exatamente qual é.
 
-O caso mais perigoso não é a coluna: é qualquer SQL que **referencie tabela por
-nome não qualificado** e dependa do `search_path`. Localmente sempre resolve;
-em produção depende da configuração do usuário do banco.
+**O que *não* é o risco:** a entidade `UserJpaEntity` declara
+`@Table(name = "jf_users", schema = "identity")`, como as outras 33. Em
+produção o Hibernate qualifica tudo, e em dev o `DevSchemalessNamingStrategy`
+apaga a qualificação para o H2 funcionar. Não há consulta nativa no projeto.
+O acesso a dados em runtime não depende de `search_path`.
 
-**Este ponto não está verificado contra o banco real** — está anotado como
-pendência em `00-visao-geral.md` §9. É um bom primeiro exercício de dono do
-produto: conectar no Postgres de produção e rodar `SHOW search_path;`.
+**O que é o risco:** o SQL da própria migration usa nomes **não
+qualificados** (`alter table jf_users add column ...`). Ele roda na conexão do
+Flyway, cuja resolução vem de `spring.flyway.schemas` — que em prod lista os
+sete schemas e em dev não existe. Duas consequências:
+
+- A ordem dos schemas nessa lista decide o desempate se duas tabelas
+  homônimas existirem em schemas diferentes.
+- Uma migration que crie uma tabela nova sem qualificar cai no **primeiro**
+  schema da lista (`identity`), que quase nunca é onde ela deveria ficar.
+
 </details>
 
 <details>

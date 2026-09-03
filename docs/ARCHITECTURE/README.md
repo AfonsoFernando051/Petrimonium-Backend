@@ -84,8 +84,8 @@ Legenda: ✅ escrita · ⬜ pendente
 | 04 | [Gamificação: XP, nível e streak](fatias/04-gamificacao-xp-streak.md) | ✅ |
 | 05 | [Mentor: chat, prompt por contexto e conversas](fatias/05-mentor.md) | ✅ |
 | 06 | Configurações e idioma (tradução) | ⬜ |
-| 07 | Infra transversal: rate limit, request-id, erros | ⬜ |
-| 08 | Flyway: os três conjuntos de migrations e os schemas | ⬜ |
+| 07 | [Infra transversal: filtros, rate limit, erros e config](fatias/07-infra-transversal.md) | ✅ |
+| 08 | [Flyway: migrations, schemas e os dois ambientes](fatias/08-flyway-schemas.md) | ✅ |
 
 ### Domínio Wallet (dinheiro real)
 

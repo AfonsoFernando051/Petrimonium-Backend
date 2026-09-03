@@ -189,11 +189,22 @@ migrations, e o ambiente decide quais rodam.
 | `db/migration-postgres` | ❌ | ✅ | Separação em schemas (`V20`, `V23`, `V26`) |
 
 Consequência direta: **os 7 schemas não existem em desenvolvimento.** Local
-você roda H2 com tudo em um schema só. Um bug de resolução de schema é,
-por construção, invisível na sua máquina. Toda tabela é referenciada sem
-prefixo nas entidades JPA; em produção a resolução depende do `search_path`
-do usuário do banco, e `spring.flyway.schemas` define o schema padrão do
-Flyway.
+você roda H2 com tudo em um schema só — e não por descuido: o H2 não consegue
+mover uma tabela entre schemas via `ALTER TABLE` (verificado empiricamente,
+"Schema name must match"), então a V20 tem de ser exclusiva de Postgres.
+
+**Como o Hibernate concilia os dois mundos:** todas as **34** entidades
+declaram o schema explicitamente — `@Table(name = "jf_users", schema = "identity")`
+— e o perfil `dev` registra `DevSchemalessNamingStrategy`, que devolve `null`
+em `toPhysicalSchemaName` e assim ignora essa declaração. Em produção a
+qualificação vale; em dev ela é apagada, e `ddl-auto=validate` concorda com o
+que as migrations realmente criaram em cada ambiente.
+
+Por isso o acesso a dados em runtime **não depende de `search_path`**: tudo é
+qualificado, e não existe nenhuma consulta nativa no projeto (verificado:
+nenhum `nativeQuery = true`). O `search_path` só governa o SQL não qualificado
+das próprias migrations, executadas na conexão do Flyway, onde
+`spring.flyway.schemas` lista os sete schemas.
 
 Além disso, `spring.jpa.hibernate.ddl-auto=validate` em todo lugar: **o
 Flyway é dono do schema, o Hibernate nunca cria nem altera nada**. Ele só
@@ -231,5 +242,5 @@ Honestidade sobre o próprio documento:
 - 24 das 25 fatias ainda não foram escritas.
 - Não há descrição de deploy/infra de produção além do que está nos
   `.properties` — não foi auditado aqui.
-- A resolução de `search_path` em produção está descrita como mecanismo, mas
-  **não foi verificada contra o banco real** (ver drill 4 da fatia 01).
+- O deploy de produção (topologia, proxy reverso, `app.security.trusted-proxies`)
+  não foi auditado — só o que está nos `.properties`.
