@@ -28,22 +28,22 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
  */
 class FlywayMigrationTest {
 
-    // @Test
-    // void allMigrationsApplyCleanlyToAFreshDatabase() {
-    //     String url = "jdbc:h2:mem:flyway-migration-test-" + System.nanoTime();
-    //     try (SingleConnectionDataSource dataSource = new SingleConnectionDataSource(url, "sa", "", true)) {
-    //         Flyway flyway = Flyway.configure().dataSource(dataSource).locations("classpath:db/migration").load();
+    @Test
+    void allMigrationsApplyCleanlyToAFreshDatabase() {
+        String url = "jdbc:h2:mem:flyway-migration-test-" + System.nanoTime();
+        try (SingleConnectionDataSource dataSource = new SingleConnectionDataSource(url, "sa", "", true)) {
+            Flyway flyway = Flyway.configure().dataSource(dataSource).locations("classpath:db/migration").load();
 
-    //         assertDoesNotThrow(flyway::migrate, "every migration file, including Java ones, must apply without error");
+            assertDoesNotThrow(flyway::migrate, "every migration file, including Java ones, must apply without error");
 
-    //         try (Statement statement = dataSource.getConnection().createStatement()) {
-    //             assertAcceptsSpecie(statement, "OWL");
-    //             assertRejectsSpecie(statement, "DRAGON");
-    //         }
-    //     } catch (SQLException e) {
-    //         throw new RuntimeException(e);
-    //     }
-    // }
+            try (Statement statement = dataSource.getConnection().createStatement()) {
+                assertAcceptsSpecie(statement, "OWL");
+                assertRejectsSpecie(statement, "DRAGON");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     private void assertAcceptsSpecie(Statement statement, String specie) throws SQLException {
         statement.execute(
@@ -55,7 +55,7 @@ class FlywayMigrationTest {
                         statement.execute(
                                 "insert into jf_pets (name, health, specie, user_id) values "
                                         + "('Coruja', 100, '" + specie + "', " + userId + ")"),
-                "the post-V14 constraint must accept '" + specie + "'");
+                "the V28 constraint must accept '" + specie + "'");
     }
 
     private void assertRejectsSpecie(Statement statement, String specie) throws SQLException {
