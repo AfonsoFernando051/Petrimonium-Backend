@@ -20,7 +20,7 @@ public class ConfigurePetUseCaseImpl implements ConfigurePetUseCase {
 
     @Override
     @Transactional
-    public void execute(String userEmail, PetSpecieEnum specie) {
+    public void execute(String userEmail, PetSpecieEnum specie, String name) {
         User user = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
@@ -29,11 +29,16 @@ public class ConfigurePetUseCaseImpl implements ConfigurePetUseCase {
             pet = new Pet();
             pet.setUser(user);
             pet.setHealth(DEFAULT_PET_HEALTH);
-            pet.setName(specie.name() + " Companion");
+            pet.setName(resolveName(name, specie));
             user.setPet(pet);
         }
         pet.setSpecie(specie);
-        
+
         userRepository.save(user);
+    }
+
+    private String resolveName(String name, PetSpecieEnum specie) {
+        String trimmed = name == null ? null : name.trim();
+        return trimmed == null || trimmed.isEmpty() ? specie.name() + " Companion" : trimmed;
     }
 }
