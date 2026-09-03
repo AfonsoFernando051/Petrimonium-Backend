@@ -1,6 +1,7 @@
 package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
+import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
 import com.jf.PetApp.application.investment.port.InvestmentRepositoryPort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
@@ -46,7 +47,7 @@ public class ConfigureInvestmentsUseCaseImplTest {
         ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", BigDecimal.valueOf(100.0), BigDecimal.valueOf(35.5), java.time.LocalDate.now(), InvestmentType.STOCKS);
         ConfigureInvestmentCommand asset2 = new ConfigureInvestmentCommand("BTC", BigDecimal.valueOf(0.5), BigDecimal.valueOf(300000.0), java.time.LocalDate.now(), InvestmentType.CRYPTO);
 
-        configureInvestmentsUseCase.execute(email, List.of(asset1, asset2));
+        configureInvestmentsUseCase.execute(email, List.of(asset1, asset2), false);
 
         verify(investmentRepositoryPort, times(1)).deleteByUserEmail(email);
 
@@ -67,9 +68,89 @@ public class ConfigureInvestmentsUseCaseImplTest {
         ConfigureInvestmentCommand asset1 = new ConfigureInvestmentCommand("PETR4", BigDecimal.valueOf(100.0), BigDecimal.valueOf(35.5), java.time.LocalDate.now(), InvestmentType.STOCKS);
 
         assertThrows(ResourceNotFoundException.class, () ->
-            configureInvestmentsUseCase.execute(email, List.of(asset1)));
+            configureInvestmentsUseCase.execute(email, List.of(asset1), false));
 
         verify(investmentRepositoryPort, never()).saveAll(any(), any());
         verify(investmentRepositoryPort, never()).deleteByUserEmail(any());
+    }
+
+    private ConfigureInvestmentCommand cmd(String ticker) {
+        return new ConfigureInvestmentCommand(ticker, BigDecimal.ONE, BigDecimal.TEN,
+                java.time.LocalDate.now(), InvestmentType.STOCKS);
+    }
+
+    private com.jf.PetApp.core.domain.Investment lot(String ticker) {
+        return new com.jf.PetApp.core.domain.Investment(1, "investor@test.com", ticker,
+                BigDecimal.ONE, BigDecimal.TEN, java.time.LocalDate.now(), InvestmentType.STOCKS);
+    }
+
+    // The guard exists because this use case REPLACES the portfolio: a caller
+    // that submits a partial list (an app that failed to load the current
+    // holdings first, say) would otherwise delete real investments silently.
+
+    @Test
+    void execute_WhenSubmissionShrinksPortfolioWithoutConfirmation_ShouldRejectAndNotTouchStorage() {
+        String email = "investor@test.com";
+        when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
+        when(investmentRepositoryPort.findByUserEmail(email))
+                .thenReturn(List.of(lot("PETR4"), lot("VALE3"), lot("ITUB4")));
+
+        DestructivePortfolioReplaceException thrown = assertThrows(
+                DestructivePortfolioReplaceException.class,
+                () -> configureInvestmentsUseCase.execute(email, List.of(cmd("PETR4")), false));
+
+        assertEquals(3, thrown.currentLotCount());
+        assertEquals(1, thrown.submittedLotCount());
+        verify(investmentRepositoryPort, never()).deleteByUserEmail(any());
+        verify(investmentRepositoryPort, never()).saveAll(any(), any());
+    }
+
+    @Test
+    void execute_WhenSubmissionShrinksPortfolioWithConfirmation_ShouldReplace() {
+        String email = "investor@test.com";
+        when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
+        when(investmentRepositoryPort.findByUserEmail(email))
+                .thenReturn(List.of(lot("PETR4"), lot("VALE3"), lot("ITUB4")));
+
+        configureInvestmentsUseCase.execute(email, List.of(cmd("PETR4")), true);
+
+        verify(investmentRepositoryPort, times(1)).deleteByUserEmail(email);
+        verify(investmentRepositoryPort, times(1)).saveAll(eq(email), any());
+    }
+
+    @Test
+    void execute_WhenSubmissionGrowsPortfolio_ShouldNotRequireConfirmation() {
+        // Adding is the common path and is never destructive, so an older client
+        // that cannot send confirmReplace keeps working for it.
+        String email = "investor@test.com";
+        when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
+        when(investmentRepositoryPort.findByUserEmail(email)).thenReturn(List.of(lot("PETR4")));
+
+        configureInvestmentsUseCase.execute(email, List.of(cmd("PETR4"), cmd("VALE3")), false);
+
+        verify(investmentRepositoryPort, times(1)).saveAll(eq(email), any());
+    }
+
+    @Test
+    void execute_WhenSubmissionKeepsSameLotCount_ShouldNotRequireConfirmation() {
+        // Editing a lot in place submits the same count — not a reduction.
+        String email = "investor@test.com";
+        when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
+        when(investmentRepositoryPort.findByUserEmail(email)).thenReturn(List.of(lot("PETR4")));
+
+        configureInvestmentsUseCase.execute(email, List.of(cmd("PETR4")), false);
+
+        verify(investmentRepositoryPort, times(1)).saveAll(eq(email), any());
+    }
+
+    @Test
+    void execute_WhenUserHasNoLotsYet_ShouldNotRequireConfirmation() {
+        String email = "investor@test.com";
+        when(userRepository.findByEmail(email)).thenReturn(Optional.of(new User()));
+        when(investmentRepositoryPort.findByUserEmail(email)).thenReturn(List.of());
+
+        configureInvestmentsUseCase.execute(email, List.of(cmd("PETR4")), false);
+
+        verify(investmentRepositoryPort, times(1)).saveAll(eq(email), any());
     }
 }

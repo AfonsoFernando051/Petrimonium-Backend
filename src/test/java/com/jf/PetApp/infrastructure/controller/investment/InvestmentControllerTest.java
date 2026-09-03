@@ -1,6 +1,7 @@
 package com.jf.PetApp.infrastructure.controller.investment;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -22,6 +23,7 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
+import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentsUseCase;
@@ -106,7 +108,7 @@ class InvestmentControllerTest {
         // Regression test for Phase A.6: InvestmentController must let IllegalArgumentException
         // propagate to GlobalExceptionHandler rather than discarding the real message.
         org.mockito.Mockito.doThrow(new IllegalArgumentException("User not found for email: investor@test.com"))
-                .when(configureInvestmentsUseCase).execute(eq("investor@test.com"), any());
+                .when(configureInvestmentsUseCase).execute(eq("investor@test.com"), any(), anyBoolean());
 
         mockMvc.perform(post("/api/investments/configure")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -114,6 +116,48 @@ class InvestmentControllerTest {
                                 [{"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}]"""))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.detail").value("User not found for email: investor@test.com"));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void configureInvestments_ByDefault_DoesNotConfirmReplacement() throws Exception {
+        // The flag defaults to false precisely so app versions already installed
+        // — which cannot send it — stay protected by the guard.
+        mockMvc.perform(post("/api/investments/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                [{"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}]"""))
+                .andExpect(status().isOk());
+
+        org.mockito.Mockito.verify(configureInvestmentsUseCase)
+                .execute(eq("investor@test.com"), any(), eq(false));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void configureInvestments_WhenConfirmReplaceIsTrue_PassesItThrough() throws Exception {
+        mockMvc.perform(post("/api/investments/configure?confirmReplace=true")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                [{"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}]"""))
+                .andExpect(status().isOk());
+
+        org.mockito.Mockito.verify(configureInvestmentsUseCase)
+                .execute(eq("investor@test.com"), any(), eq(true));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void configureInvestments_WhenReplacementIsUnconfirmed_ReturnsConflictWithStableCode() throws Exception {
+        org.mockito.Mockito.doThrow(new DestructivePortfolioReplaceException(12, 1))
+                .when(configureInvestmentsUseCase).execute(eq("investor@test.com"), any(), anyBoolean());
+
+        mockMvc.perform(post("/api/investments/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                [{"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}]"""))
+                .andExpect(status().isConflict())
+                .andExpect(jsonPath("$.code").value("PORTFOLIO_REPLACE_NOT_CONFIRMED"));
     }
 
     @Test

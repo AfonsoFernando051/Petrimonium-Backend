@@ -74,13 +74,22 @@ public class InvestmentController {
         this.validator = validator;
     }
 
+    /**
+     * Replaces the caller's whole portfolio. {@code confirmReplace} is a query
+     * parameter rather than a body field on purpose: the body is a bare JSON
+     * array, so adding a field would mean changing its shape and breaking every
+     * client at once. Defaulting to {@code false} is what makes the guard
+     * protect app versions already installed on devices, which cannot send it.
+     */
     @PostMapping("/configure")
-    public ResponseEntity<Void> configureInvestments(@RequestBody List<AssetRegistrationDto> request) {
+    public ResponseEntity<Void> configureInvestments(
+            @RequestBody List<AssetRegistrationDto> request,
+            @RequestParam(name = "confirmReplace", defaultValue = "false") boolean confirmReplace) {
         String email = SecurityUtils.getCurrentUserEmail();
         validateAssets(request);
         // IllegalArgumentException propagates to GlobalExceptionHandler, which already maps it
         // to 400 with the use case's real message — no need to catch and discard it here.
-        configureInvestmentsUseCase.execute(email, toCommands(request));
+        configureInvestmentsUseCase.execute(email, toCommands(request), confirmReplace);
         return ResponseEntity.ok().build();
     }
 

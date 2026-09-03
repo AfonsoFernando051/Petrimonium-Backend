@@ -3,8 +3,13 @@
 > Verificado em 2026-09-02 lendo o código. Toda linha aqui é rastreável a um arquivo.
 
 Esta é a primeira fatia que lida com **dinheiro real do usuário**. Ela também
-contém o achado mais grave do Atlas até aqui — leia a regra 4.2 antes de mexer
-em qualquer coisa aqui.
+contém o achado mais grave do Atlas até aqui — leia as regras 4.1 e 4.2 antes de
+mexer em qualquer coisa aqui.
+
+> **Atualizada em 2026-09-02:** o bug de perda de carteira descrito na regra 4.2
+> foi corrigido, em duas camadas. O texto abaixo descreve o estado atual e
+> mantém o histórico do problema, porque entender por que ele existiu é o que
+> impede recriá-lo.
 
 ---
 
@@ -82,8 +87,27 @@ Não existe endpoint de "adicionar um ativo" nem de "remover um ativo". A única
 operação de escrita é **"esta lista passa a ser a sua carteira"**.
 
 O cliente é obrigado a mandar sempre o conjunto completo. Isso é uma decisão
-defensável para um fluxo de onboarding — mas transfere ao cliente toda a
-responsabilidade de não perder nada.
+defensável para um fluxo de onboarding — mas transferia ao cliente toda a
+responsabilidade de não perder nada, e ele não a cumpria (regra 4.2).
+
+**Desde 2026-09-02 há uma guarda no servidor.** Se o usuário já tem lotes e a
+submissão traria *menos* lotes do que ele tem hoje, a requisição é recusada com
+`409 PORTFOLIO_REPLACE_NOT_CONFIRMED` — a menos que traga
+`?confirmReplace=true`.
+
+| Situação | Sem `confirmReplace` |
+|---|---|
+| Usuário sem lotes | Passa |
+| Submissão **maior** que a carteira atual | Passa |
+| Submissão do **mesmo tamanho** (edição no lugar) | Passa |
+| Submissão **menor** | **409** |
+
+<!-- O parâmetro é de query, não de corpo, porque o corpo é um array JSON puro:
+     acrescentar um campo mudaria a forma dele e quebraria todo cliente de uma
+     vez. E o default `false` é o que faz a guarda proteger versões do app já
+     instaladas, que não sabem enviá-lo. Só a redução é guardada — adicionar é
+     o caminho comum e nunca é destrutivo, então um cliente antigo continua
+     funcionando para ele. -->
 
 ### 4.2 A tela não protege essa responsabilidade
 
@@ -117,13 +141,23 @@ Logo, a sequência de falha é:
    existente não impede.
 5. `POST /configure` chega com um elemento. O backend apaga tudo e grava um.
 
-O comentário diz que uma falha "apenas deixa isto como um formulário de
+O comentário dizia que uma falha "apenas deixa isto como um formulário de
 onboarding normal, começando vazio". Para quem veio do onboarding, verdade.
-**Para quem já tem carteira, isso não é um formulário vazio — é uma armadilha
-armada.**
+**Para quem já tinha carteira, isso não era um formulário vazio — era uma
+armadilha armada.**
 
-Não há confirmação, não há diff, não há aviso. E como o backend é transacional,
-o dado se foi.
+A premissa errada era tratar a falha como recuperável: um `_assets` vazio depois
+de uma carga que falhou é indistinguível de "este usuário não tem ativos".
+
+**Corrigido em 2026-09-02**, em duas camadas:
+
+| Camada | O que faz | Protege |
+|---|---|---|
+| App (`_HoldingsSeedState`) | Só o estado `loaded` permite confirmar; falha mostra aviso bloqueante com "Tentar novamente" | Quem atualizar o app |
+| Backend (regra 4.1) | Recusa reduções não confirmadas com 409 | **Todos**, inclusive versões já instaladas |
+
+A segunda camada existe porque a primeira só protege clientes atualizados.
+Pular a etapa continua liberado — só o caminho destrutivo é bloqueado.
 
 ### 4.3 Lotes são preservados individualmente; a consolidação é derivada
 
@@ -217,7 +251,8 @@ schema, mas é outra coisa (saldo), não movimentada por esta fatia.
 
 | Situação | O que acontece | Onde |
 |---|---|---|
-| **`fetchHoldings` falha ao abrir a tela** | **Carteira do usuário é apagada ao confirmar** | regra 4.2 |
+| `fetchHoldings` falha ao abrir a tela | Aviso bloqueante; confirmar desabilitado até nova tentativa | regra 4.2 |
+| Cliente antigo submete lista parcial | **409** `PORTFOLIO_REPLACE_NOT_CONFIRMED` | regra 4.1 |
 | Lista vazia enviada | 400, `"At least one investment is required"` | `InvestmentController` |
 | Quantidade ou preço ≤ 0 | 400 com a mensagem da constraint | `AssetRegistrationDto` |
 | Tipo inválido | 400 na desserialização | `InvestmentType` |
@@ -243,12 +278,15 @@ quando isso acontece.
 O backend então faz `deleteByUserEmail` + `saveAll` numa transação. Os 12
 ativos foram apagados.
 
-**Três correções possíveis, da mais barata à mais robusta:**
-1. Não engolir a falha: bloquear a confirmação e mostrar erro se a semeadura
-   falhou para um usuário que já tinha carteira.
-2. Mandar o backend rejeitar um `/configure` que reduza drasticamente a
-   carteira sem confirmação explícita.
-3. Trocar a semântica de substituição por operações de adicionar/remover.
+**Hoje ele não fica** — as correções 1 e 2 abaixo foram aplicadas em
+2026-09-02. A pergunta continua valendo como exercício porque o desenho que a
+tornava possível (substituição total) segue de pé.
+
+1. ✅ Não engolir a falha: a tela bloqueia a confirmação e oferece nova
+   tentativa.
+2. ✅ Guarda no backend: reduções não confirmadas tomam 409.
+3. ⬜ Trocar a semântica de substituição por adicionar/remover — eliminaria a
+   classe inteira de problema, e não foi feito.
 </details>
 
 <details>
@@ -312,8 +350,10 @@ lotes não são recuperáveis a partir do preço médio.
 
 ## 8. Se você fosse mudar algo aqui
 
-- **Fechar a perda de carteira** → é a mudança mais urgente do Atlas inteiro.
-  Ver drill 1.
+- ✅ **Fechar a perda de carteira** → feito em 2026-09-02, nas duas camadas.
+  Ver regras 4.1 e 4.2.
+- **Trocar a semântica para adicionar/remover** → a única correção que elimina
+  a classe de problema em vez de guardá-la. Não feita.
 - **Sinalizar cotação indisponível** → precisa atravessar backend e app: hoje o
   `null` é convertido em "preço = média de compra" cedo demais para o app saber
   que houve falha.

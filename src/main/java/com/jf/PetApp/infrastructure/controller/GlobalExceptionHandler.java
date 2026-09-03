@@ -19,6 +19,7 @@ import jakarta.validation.ConstraintViolationException;
 import com.jf.PetApp.application.auth.exception.AuthenticationException;
 import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidException;
 import com.jf.PetApp.application.auth.exception.UserAlreadyExistsException;
+import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 
 /**
@@ -70,6 +71,16 @@ public class GlobalExceptionHandler {
     public ProblemDetail handleIllegalArgumentException(IllegalArgumentException e) {
         log.warn("Rejected request: {}", e.getMessage());
         return problem(HttpStatus.BAD_REQUEST, "INVALID_REQUEST", e.getMessage());
+    }
+
+    @ExceptionHandler(DestructivePortfolioReplaceException.class)
+    public ProblemDetail handleDestructivePortfolioReplace(DestructivePortfolioReplaceException e) {
+        // Logged at warn, not error: this is the guard doing its job against a
+        // caller that didn't acknowledge the replacement — most likely an app
+        // version predating the confirmReplace flag, not a server fault.
+        log.warn("Rejected unconfirmed portfolio replacement: {} existing lot(s) -> {} submitted",
+                e.currentLotCount(), e.submittedLotCount());
+        return problem(HttpStatus.CONFLICT, "PORTFOLIO_REPLACE_NOT_CONFIRMED", e.getMessage());
     }
 
     @ExceptionHandler(UserAlreadyExistsException.class)
