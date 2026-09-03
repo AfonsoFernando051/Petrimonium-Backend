@@ -93,7 +93,7 @@ Legenda: ✅ escrita · ⬜ pendente
 |---|---|---|
 | 09 | [Carteira real: cadastro, posições e cálculo](fatias/09-carteira-real.md) | ✅ |
 | 10 | [Cotações e busca de ativos (brapi.dev)](fatias/10-cotacoes-brapi.md) | ✅ |
-| 11 | Resumo, alocação e histórico da carteira | ⬜ |
+| 11 | [Resumo, alocação e histórico da carteira](fatias/11-resumo-alocacao-historico.md) | ✅ |
 | 12 | Proventos e detalhes do ativo | ⬜ |
 | 13 | Conquistas (`/api/v1/achievements`) | ⬜ |
 | 14 | Sync B3 — arquitetura preparatória, adapter desligado | ⬜ |
