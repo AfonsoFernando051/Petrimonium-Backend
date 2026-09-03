@@ -95,7 +95,7 @@ Legenda: ✅ escrita · ⬜ pendente
 | 10 | [Cotações e busca de ativos (brapi.dev)](fatias/10-cotacoes-brapi.md) | ✅ |
 | 11 | [Resumo, alocação e histórico da carteira](fatias/11-resumo-alocacao-historico.md) | ✅ |
 | 12 | [Proventos e detalhes do ativo](fatias/12-proventos-detalhes-ativo.md) | ✅ |
-| 13 | Conquistas (`/api/v1/achievements`) | ⬜ |
+| 13 | [Conquistas](fatias/13-conquistas.md) | ✅ |
 | 14 | Sync B3 — arquitetura preparatória, adapter desligado | ⬜ |
 | 15 | Shell de navegação do app Wallet | ⬜ |
 | 16 | Onboarding do Wallet | ⬜ |
