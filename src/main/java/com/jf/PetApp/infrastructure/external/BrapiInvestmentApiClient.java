@@ -8,6 +8,8 @@ import com.jf.PetApp.core.domain.enums.DividendType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.HttpClientErrorException;
@@ -35,8 +37,33 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
     @Value("${api.brapi.baseUrl:https://brapi.dev}")
     private String baseUrl;
 
-    public BrapiInvestmentApiClient(RestTemplate restTemplate) {
+    private final Environment environment;
+
+    public BrapiInvestmentApiClient(RestTemplate restTemplate, Environment environment) {
         this.restTemplate = restTemplate;
+        this.environment = environment;
+    }
+
+    /**
+     * Whether a missing {@code api.brapi.token} may be answered with placeholder
+     * quote data.
+     *
+     * <p>Outside prod this keeps the app usable without a provider account, which
+     * is what {@code .env.example} means by "leave blank to fall back to mock
+     * quote data locally". In prod it must never happen: a placeholder price is
+     * indistinguishable, downstream, from a real one — it flows into portfolio
+     * valuation, gain/loss, allocation and achievement thresholds, and the user
+     * is shown fabricated money as fact. {@link #getEnrichedQuote} already
+     * refuses to fabricate for exactly this reason; these two quote paths now
+     * behave the same way.</p>
+     *
+     * <p>Returning empty rather than failing the request keeps the degradation
+     * honest: callers already handle "no quote available" (see
+     * {@code UserPositionCalculator}), and no fabricated number reaches the
+     * user either way.</p>
+     */
+    private boolean mayServePlaceholderQuotes() {
+        return !environment.acceptsProfiles(Profiles.of("prod"));
     }
 
     private static String encode(String value) {
@@ -61,8 +88,12 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
     @Override
     public Optional<AssetQuoteResponse> getQuote(String ticker) {
         if (token == null || token.isBlank()) {
+            if (!mayServePlaceholderQuotes()) {
+                log.error("api.brapi.token is not configured in prod; refusing to serve placeholder"
+                        + " quote data for {}. Real portfolio values cannot be computed.", ticker);
+                return Optional.empty();
+            }
             log.warn("api.brapi.token is not configured; returning mock data for {}", ticker);
-            // Provide a mock response if no token is configured yet.
             return Optional.of(new AssetQuoteResponse(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
         }
 
@@ -120,6 +151,11 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
         }
 
         if (token == null || token.isBlank()) {
+            if (!mayServePlaceholderQuotes()) {
+                log.error("api.brapi.token is not configured in prod; refusing to serve placeholder"
+                        + " historical quote for {} at {}", ticker, date);
+                return Optional.empty();
+            }
             log.warn("api.brapi.token is not configured; returning mock data for {} at {}", ticker, date);
             return Optional.of(new AssetQuoteResponse(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
         }

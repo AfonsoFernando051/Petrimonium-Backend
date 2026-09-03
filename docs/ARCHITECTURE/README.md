@@ -92,7 +92,7 @@ Legenda: ✅ escrita · ⬜ pendente
 | # | Fatia | Status |
 |---|---|---|
 | 09 | [Carteira real: cadastro, posições e cálculo](fatias/09-carteira-real.md) | ✅ |
-| 10 | Cotações e busca de ativos (brapi.dev) | ⬜ |
+| 10 | [Cotações e busca de ativos (brapi.dev)](fatias/10-cotacoes-brapi.md) | ✅ |
 | 11 | Resumo, alocação e histórico da carteira | ⬜ |
 | 12 | Proventos e detalhes do ativo | ⬜ |
 | 13 | Conquistas (`/api/v1/achievements`) | ⬜ |

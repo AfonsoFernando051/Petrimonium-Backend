@@ -5,6 +5,8 @@ import com.jf.PetApp.application.investment.dto.DividendDTO;
 import com.jf.PetApp.core.domain.enums.DividendType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.core.env.Environment;
+import org.springframework.mock.env.MockEnvironment;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -24,7 +26,17 @@ import static org.mockito.Mockito.when;
 class BrapiInvestmentApiClientTest {
 
     private final RestTemplate restTemplate = mock(RestTemplate.class);
-    private final BrapiInvestmentApiClient client = new BrapiInvestmentApiClient(restTemplate);
+
+    /// Placeholder quotes are allowed outside prod, so the default environment
+    /// here is a non-prod one — matching how the client behaves locally.
+    private static Environment environmentWithProfiles(String... profiles) {
+        MockEnvironment env = new MockEnvironment();
+        env.setActiveProfiles(profiles);
+        return env;
+    }
+
+    private final BrapiInvestmentApiClient client =
+            new BrapiInvestmentApiClient(restTemplate, environmentWithProfiles("dev"));
 
     @BeforeEach
     void configureToken() {
@@ -387,5 +399,30 @@ class BrapiInvestmentApiClientTest {
                 .thenThrow(new RuntimeException("boom"));
 
         assertTrue(client.getEnrichedQuote("petr4").isEmpty());
+    }
+
+    // A placeholder price is indistinguishable, downstream, from a real one: it
+    // flows into portfolio valuation, gain/loss, allocation and achievement
+    // thresholds. Fabricating one in prod shows the user invented money as fact,
+    // so these two paths must refuse rather than fall back.
+
+    @Test
+    void getQuote_WithNoTokenInProd_ReturnsEmptyInsteadOfFabricatingAPrice() {
+        BrapiInvestmentApiClient prodClient =
+                new BrapiInvestmentApiClient(restTemplate, environmentWithProfiles("prod"));
+        ReflectionTestUtils.setField(prodClient, "token", "");
+        ReflectionTestUtils.setField(prodClient, "baseUrl", "https://brapi.dev");
+
+        assertTrue(prodClient.getQuote("petr4").isEmpty());
+    }
+
+    @Test
+    void getQuoteAtDate_WithNoTokenInProd_ReturnsEmptyInsteadOfFabricatingAPrice() {
+        BrapiInvestmentApiClient prodClient =
+                new BrapiInvestmentApiClient(restTemplate, environmentWithProfiles("prod"));
+        ReflectionTestUtils.setField(prodClient, "token", "");
+        ReflectionTestUtils.setField(prodClient, "baseUrl", "https://brapi.dev");
+
+        assertTrue(prodClient.getQuoteAtDate("petr4", LocalDate.now().minusDays(30)).isEmpty());
     }
 }
