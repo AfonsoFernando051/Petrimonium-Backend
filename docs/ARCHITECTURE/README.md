@@ -97,7 +97,7 @@ Legenda: ✅ escrita · ⬜ pendente
 | 12 | [Proventos e detalhes do ativo](fatias/12-proventos-detalhes-ativo.md) | ✅ |
 | 13 | [Conquistas](fatias/13-conquistas.md) | ✅ |
 | 14 | [Sync B3 — arquitetura preparatória, adapter desligado](fatias/14-sync-b3.md) | ✅ |
-| 15 | Shell de navegação do app Wallet | ⬜ |
+| 15 | [Shell de navegação do app Wallet](fatias/15-shell-navegacao-wallet.md) | ✅ |
 | 16 | Onboarding do Wallet | ⬜ |
 
 ### Domínio Academy (dinheiro fictício)
