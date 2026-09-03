@@ -58,7 +58,9 @@ public class GetDividendRadarUseCaseImpl implements GetDividendRadarUseCase {
         for (Map.Entry<String, List<Investment>> holding : lotsByTicker.entrySet()) {
             String ticker = holding.getKey();
             List<Investment> tickerLots = holding.getValue();
-            double currentQuantity = tickerLots.stream().mapToDouble(Investment::quantity).sum();
+            // Dividend Radar is deliberately outside the BigDecimal ledger chain
+            // (docs/BACKEND_MODULE_PLAN.md §12): converted at the read, not carried.
+            double currentQuantity = tickerLots.stream().mapToDouble(lot -> lot.quantity().doubleValue()).sum();
             if (currentQuantity <= 0) continue;
 
             List<DividendDTO> dividends = fetchDividends(ticker);
@@ -102,7 +104,7 @@ public class GetDividendRadarUseCaseImpl implements GetDividendRadarUseCase {
         if (dataCom == null) return currentQuantity;
         return tickerLots.stream()
                 .filter(lot -> lot.purchaseDate() != null && !lot.purchaseDate().isAfter(dataCom))
-                .mapToDouble(Investment::quantity)
+                .mapToDouble(lot -> lot.quantity().doubleValue())
                 .sum();
     }
 

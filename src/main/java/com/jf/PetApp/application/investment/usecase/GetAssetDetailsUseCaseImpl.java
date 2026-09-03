@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -107,7 +108,10 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
 
     private UserPositionDTO computeUserPosition(String email, String ticker, Double currentPrice) {
         List<Investment> lots = investmentRepo.findByUserEmail(email);
-        return positionCalculator.compute(lots, ticker, currentPrice);
+        // The provider's quote feed stays Double; this is the boundary where it
+        // enters the BigDecimal position chain (docs/BACKEND_MODULE_PLAN.md §12).
+        BigDecimal price = currentPrice == null ? null : BigDecimal.valueOf(currentPrice);
+        return positionCalculator.compute(lots, ticker, price);
     }
 
     private List<DividendRadarEntryDTO> fetchRecentDividends(String email, String ticker) {
@@ -117,9 +121,11 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
 
             // Get user's quantity for this ticker
             List<Investment> lots = investmentRepo.findByUserEmail(email);
+            // Dividend Radar is deliberately outside the BigDecimal ledger chain
+            // (docs/BACKEND_MODULE_PLAN.md §12): converted at the read, not carried.
             double userQuantity = lots.stream()
                     .filter(lot -> lot.name().equalsIgnoreCase(ticker))
-                    .mapToDouble(Investment::quantity)
+                    .mapToDouble(lot -> lot.quantity().doubleValue())
                     .sum();
 
             LocalDate today = LocalDate.now();

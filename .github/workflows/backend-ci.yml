@@ -1,22 +1,16 @@
 name: Backend CI
 
+# This repository *is* the backend project — its root holds pom.xml and mvnw —
+# so every path here is repo-root-relative. There is no "Petrimonium-Backend/"
+# subdirectory to filter on or cd into.
 on:
   push:
     branches: [main]
-    paths:
-    - "Petrimonium-Backend/**"
-    - ".github/workflows/backend-ci.yml"
   pull_request:
-    paths:
-    - "Petrimonium-Backend/**"
-    - ".github/workflows/backend-ci.yml"
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Petrimonium-Backend
     steps:
       - uses: actions/checkout@v4
 
@@ -31,9 +25,6 @@ jobs:
 
   mutation-test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: Petrimonium-Backend
     steps:
       - uses: actions/checkout@v4
 
@@ -59,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pitest-report
-          path: Petrimonium-Backend/target/pit-reports
+          path: target/pit-reports
 
   dependency-check:
     runs-on: ubuntu-latest
@@ -72,9 +63,6 @@ jobs:
     # https://nvd.nist.gov/developers/request-an-api-key and add it as the
     # NVD_API_KEY repo secret to avoid the rate limit (and this timeout) entirely.
     timeout-minutes: 20
-    defaults:
-      run:
-        working-directory: Petrimonium-Backend
     steps:
       - uses: actions/checkout@v4
 
@@ -90,7 +78,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.m2/repository/org/owasp/dependency-check-data
-          key: owasp-nvd-${{ runner.os }}-${{ hashFiles('Petrimonium-Backend/pom.xml') }}
+          key: owasp-nvd-${{ runner.os }}-${{ hashFiles('pom.xml') }}
           restore-keys: |
             owasp-nvd-${{ runner.os }}-
 
@@ -109,4 +97,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
-          path: Petrimonium-Backend/target/dependency-check-report.html
+          path: target/dependency-check-report.html
