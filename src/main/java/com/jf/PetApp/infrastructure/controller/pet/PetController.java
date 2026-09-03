@@ -31,7 +31,7 @@ public class PetController {
         String email = SecurityUtils.getCurrentUserEmail();
         try {
             PetSpecieEnum specie = PetSpecieEnum.valueOf(request.specie().toUpperCase());
-            configurePetUseCase.execute(email, specie);
+            configurePetUseCase.execute(email, specie, request.name());
             return ResponseEntity.ok().build();
         } catch (IllegalArgumentException e) {
             throw new ResponseStatusException(org.springframework.http.HttpStatus.BAD_REQUEST, "Invalid specie");
@@ -56,7 +56,7 @@ public class PetController {
         return ResponseEntity.ok(new PetDetailResponseDTO(pet.getSpecie().name(), pet.getName(), pet.getHealth()));
     }
 
-    public record ConfigurePetRequestDTO(String specie) {}
+    public record ConfigurePetRequestDTO(String specie, String name) {}
     public record PetStatusResponseDTO(boolean hasPet) {}
     public record PetDetailResponseDTO(String specie, String name, int health) {}
 }

@@ -62,7 +62,19 @@ class PetControllerTest {
                                 {"specie":"dog"}"""))
                 .andExpect(status().isOk());
 
-        verify(configurePetUseCase).execute("investor@test.com", PetSpecieEnum.DOG);
+        verify(configurePetUseCase).execute("investor@test.com", PetSpecieEnum.DOG, null);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void configurePet_WithNameProvided_PassesItToTheUseCase() throws Exception {
+        mockMvc.perform(post("/api/pets/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"specie":"dog","name":"Rex"}"""))
+                .andExpect(status().isOk());
+
+        verify(configurePetUseCase).execute("investor@test.com", PetSpecieEnum.DOG, "Rex");
     }
 
     @Test

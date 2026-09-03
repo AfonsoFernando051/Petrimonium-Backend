@@ -15,6 +15,8 @@ import java.util.Optional;
 @Repository
 public class RealPortfolioSyncLogRepositoryAdapter implements RealPortfolioSyncLogRepositoryPort {
 
+    private static final int MESSAGE_MAX_LENGTH = 500;
+
     private final RealPortfolioSyncLogRepository repository;
 
     public RealPortfolioSyncLogRepositoryAdapter(RealPortfolioSyncLogRepository repository) {
@@ -44,9 +46,21 @@ public class RealPortfolioSyncLogRepositoryAdapter implements RealPortfolioSyncL
         entity.setStatus(status);
         entity.setStartedAt(startedAt);
         entity.setFinishedAt(Instant.now());
-        entity.setMessage(message);
+        entity.setMessage(truncate(message));
 
         return toDomain(repository.save(entity));
+    }
+
+    /**
+     * The {@code message} column is varchar(500) (V25); a raw provider exception message
+     * can exceed that and would otherwise fail this insert — the one write every sync
+     * attempt (including FAILED ones) must never lose.
+     */
+    private String truncate(String message) {
+        if (message == null || message.length() <= MESSAGE_MAX_LENGTH) {
+            return message;
+        }
+        return message.substring(0, MESSAGE_MAX_LENGTH);
     }
 
     private RealPortfolioSyncLog toDomain(RealPortfolioSyncLogJpaEntity entity) {

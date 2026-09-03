@@ -56,6 +56,25 @@ class RealPortfolioSyncLogRepositoryAdapterTest {
     }
 
     @Test
+    void save_WhenMessageExceedsColumnLength_TruncatesInsteadOfFailing() {
+        String oversized = "x".repeat(600);
+
+        RealPortfolioSyncLog saved = adapter.save(
+                EMAIL, "B3", "key-oversized", RealPortfolioSyncStatus.FAILED, Instant.now(), oversized);
+
+        assertThat(saved.message()).hasSize(500);
+        assertThat(saved.message()).isEqualTo("x".repeat(500));
+    }
+
+    @Test
+    void save_WhenMessageIsNull_DoesNotFail() {
+        RealPortfolioSyncLog saved = adapter.save(
+                EMAIL, "B3", "key-null-message", RealPortfolioSyncStatus.COMPLETED, Instant.now(), null);
+
+        assertThat(saved.message()).isNull();
+    }
+
+    @Test
     void save_IsolatedPerIdempotencyKey() {
         adapter.save(EMAIL, "B3", "key-1", RealPortfolioSyncStatus.DISABLED, Instant.now(), "first");
         adapter.save(EMAIL, "B3", "key-2", RealPortfolioSyncStatus.DISABLED, Instant.now(), "second");
