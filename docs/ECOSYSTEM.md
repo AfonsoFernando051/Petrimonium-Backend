@@ -1,5 +1,12 @@
 # Ecosystem role — Petrimonium Backend
 
+> **This file is history, not contract.** It records how this backend got
+> where it is, update by update. For what the ecosystem *is* today — the three
+> products, what crosses the boundary between them and what never does — read
+> [`INTEGRATION.md`](INTEGRATION.md), which is the canonical integration
+> contract all three app repos point at. Where this file and that one
+> disagree, that one wins.
+
 Status as of 2026-08-31: **audited only — no code changed yet.** A prior
 Claude Code session ran this repo's onboarding prompt, produced the audit
 below, asked one direct question, and the session ended without the user
@@ -13,19 +20,20 @@ Project workspace: [Petrimonium](https://app.notion.com/p/3d08bfdad90780c3a935c0
 architecture slice) and the Demandas/Correção de Bugs boards findings from
 work here should be tracked against.
 
-## The three repos
+## The four repos
 
 | Repo | Job | Money |
 |---|---|---|
-| **`petrimonium-backend`** (this repo) | Shared Spring Boot / PostgreSQL backend for both Flutter apps | N/A (data layer) |
+| **`petrimonium-backend`** (this repo) | Shared Spring Boot / PostgreSQL backend for all three Flutter apps | N/A (data layer) |
+| [`petrimonium-health`](../../Petrimonium-Health) | Cash-flow health: accounts, income, expenses, cards, monthly projection | Real (cash flow) |
+| [`petrimonium-wallet`](../../Petrimonium-Wallet) | Real investment management, trust-forward, behavior-based gamification only | Real (patrimony) |
 | [`petrimonium-academy`](../../Petrimonium-Academy) | Financial education, simulated money, full gamification | Simulated only |
-| [`petrimonium-wallet`](../../Petrimonium-Wallet) | Real investment management, trust-forward, behavior-based gamification only | Real |
 
-Both apps are meant to share one identity/account graph and one Pet entity
-through this backend, but must never leak real-money data into Academy-scoped
-requests or simulated data into Wallet-scoped requests. This repo is the
-intended enforcement point for that boundary — client-side app separation
-alone isn't sufficient.
+All three apps share one identity/account graph and one Pet entity through
+this backend, but no product's real data may ever reach another product's
+context. This repo is the enforcement point for that boundary — client-side
+app separation alone isn't sufficient. See [`INTEGRATION.md`](INTEGRATION.md)
+§4 for the full access matrix.
 
 ## Where this actually came from
 
@@ -198,3 +206,45 @@ column, migration V27); `/api/mentor/**` now requires a resolvable
 app_context. Also closed the same class of gap on `/api/v1/missions/**`
 (now Academy-only) and `/api/v1/achievements/**` (now Wallet-only), found
 while auditing the same boundary. Full suite: 918/918.
+
+## Update, 2026-09-04 (ecosystem integration contract)
+
+Docs-only pass, branch `docs/ecosystem-integration`. Petrimonium Health had
+shipped a backend context (`AppContextEnum.HEALTH`, `/api/v1/health/**`,
+migrations `V29`/`V30`, a ninth-table `health` schema) and a full Flutter app,
+but **no ecosystem document mentioned it** — every ECOSYSTEM.md and the whole
+Atlas still described "three repos, two products". This pass made the
+integration explicit and gave it one owner:
+
+- **New [`INTEGRATION.md`](INTEGRATION.md)** — the canonical integration
+  contract for the whole ecosystem, hosted here because the backend is the
+  only place that can actually enforce it. Covers why there are three products
+  and one backend, the `app_context` mechanism, the full route access matrix
+  (four categories), the four things that are genuinely shared (identity, Pet,
+  XP ledger, Mentor) and the rules each carries, the deep-link scheme and its
+  three rules, the 8-schema map, and the known gaps. All three app repos now
+  point at it instead of restating contracts locally.
+- **Atlas updated** (`ARCHITECTURE/00-visao-geral.md`, `ARCHITECTURE/README.md`)
+  — three products throughout, Health in the context diagram, the module table,
+  the endpoint matrix and the schema map; four Health slices (26–29) added to
+  the index as pending.
+
+Three findings surfaced while verifying against the code, none fixed here
+(this branch is documentation only) — all recorded in `INTEGRATION.md` §8 and
+on the Notion **Demandas** board:
+
+1. **Health's Mentor tab is dead against this backend** — it calls
+   `/api/mentor/suggestions` and `/api/mentor/chat`, which `SecurityConfig`
+   gates to `WALLET`/`ACADEMY`, so every Health session gets 403. The fix is
+   *not* to open the gate: `MentorSystemPromptBuilder` has no `buildForHealth`
+   and `GetMentorReplyUseCaseImpl` falls back to the Wallet-safe path, so
+   opening it first would serve real portfolio data into a cash-flow
+   conversation — the exact leak Stage 6 closed for Wallet/Academy.
+2. **`ddl-auto=validate` does not protect the Health tables.** `health` is the
+   only context that isn't JPA — `JdbcHealthStore` is 532 lines of
+   `JdbcTemplate` with a runtime schema prefix (`"health."` under `prod`,
+   empty otherwise). A column present in the store's SQL but missing from a
+   migration fails on the first call that touches it, not at boot.
+3. **Language has two sources of truth** — `/api/settings/language` (account)
+   and the Health profile's own `localeTag`. Nothing reconciles them and no
+   precedence is defined.
