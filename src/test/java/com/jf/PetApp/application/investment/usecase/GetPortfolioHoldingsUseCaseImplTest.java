@@ -6,6 +6,7 @@ import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.port.InvestmentRepositoryPort;
 import com.jf.PetApp.core.domain.Investment;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -134,5 +135,79 @@ class GetPortfolioHoldingsUseCaseImplTest {
         assertEquals("VALE3", result.name());
         assertEquals(InvestmentType.STOCKS, result.type());
         assertEquals(purchaseDate, result.purchaseDate());
+    }
+
+    @Test
+    void execute_WithLiveQuote_MarksPriceAsLive() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4"))
+                .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 35.0, "BRL")));
+
+        InvestmentLotDTO result = useCase.execute(EMAIL).get(0);
+
+        assertEquals(PriceStatus.LIVE, result.priceStatus());
+        assertMoney(35.0, result.currentPrice());
+        assertMoney(350.0, result.currentValue());
+    }
+
+    /**
+     * The regression this whole flag exists for: with no quote the price falls back to the
+     * purchase price, so currentValue == investedValue and the position renders as a flat 0%.
+     * Without priceStatus that is indistinguishable from a real quote that hasn't moved.
+     */
+    @Test
+    void execute_WhenQuoteMissing_FallsBackToPurchasePriceAndMarksItStale() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4")).thenReturn(Optional.empty());
+
+        InvestmentLotDTO result = useCase.execute(EMAIL).get(0);
+
+        assertEquals(PriceStatus.STALE_PURCHASE_PRICE, result.priceStatus());
+        assertMoney(30.0, result.currentPrice());
+        assertEquals(0, result.investedValue().compareTo(result.currentValue()));
+    }
+
+    @Test
+    void execute_WhenQuoteProviderThrows_MarksPriceAsStale() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4")).thenThrow(new RuntimeException("provider down"));
+
+        InvestmentLotDTO result = useCase.execute(EMAIL).get(0);
+
+        assertEquals(PriceStatus.STALE_PURCHASE_PRICE, result.priceStatus());
+        assertMoney(30.0, result.currentPrice());
+    }
+
+    /** Fixed income has no quote feed at all, so it is NOT_QUOTED rather than stale: retrying
+     * will never produce a price, and the client should not offer a "try again". */
+    @Test
+    void execute_ForFixedIncome_MarksPriceNotQuotedAndSkipsTheProvider() {
+        Investment bond = new Investment(1, EMAIL, "TESOURO", BigDecimal.valueOf(2), BigDecimal.valueOf(100.0),
+                LocalDate.now(), InvestmentType.FIXED_INCOME);
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(bond));
+
+        InvestmentLotDTO result = useCase.execute(EMAIL).get(0);
+
+        assertEquals(PriceStatus.NOT_QUOTED, result.priceStatus());
+        assertMoney(100.0, result.currentPrice());
+        verifyNoInteractions(externalInvestmentApiPort);
+    }
+
+    /**
+     * The dev-only placeholder quote (no api.brapi.token) must not be laundered into a real
+     * valuation: it takes the same path as a provider outage, so the price falls back to the
+     * purchase price and is reported as stale rather than LIVE at a fabricated R$ 50.
+     */
+    @Test
+    void execute_WithSimulatedQuote_IgnoresItAndMarksThePriceStale() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4"))
+                .thenReturn(Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
+
+        InvestmentLotDTO result = useCase.execute(EMAIL).get(0);
+
+        assertEquals(PriceStatus.STALE_PURCHASE_PRICE, result.priceStatus());
+        assertMoney(30.0, result.currentPrice());
+        assertMoney(300.0, result.currentValue());
     }
 }
