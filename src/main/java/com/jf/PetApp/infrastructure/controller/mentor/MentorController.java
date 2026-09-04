@@ -12,6 +12,7 @@ import com.jf.PetApp.application.mentor.usecase.GetMentorReplyUseCase;
 import com.jf.PetApp.application.mentor.usecase.ListConversationsUseCase;
 import com.jf.PetApp.application.mentor.usecase.MentorPromptSuggestionsService;
 import com.jf.PetApp.application.mentor.usecase.RenameConversationUseCase;
+import com.jf.PetApp.infrastructure.config.MentorKillSwitch;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.security.SecurityUtils;
 import jakarta.validation.Valid;
@@ -38,25 +39,29 @@ public class MentorController {
     private final RenameConversationUseCase renameConversationUseCase;
     private final DeleteConversationUseCase deleteConversationUseCase;
     private final MentorPromptSuggestionsService mentorPromptSuggestionsService;
+    private final MentorKillSwitch mentorKillSwitch;
 
     public MentorController(GetMentorReplyUseCase getMentorReplyUseCase,
                              ListConversationsUseCase listConversationsUseCase,
                              GetConversationUseCase getConversationUseCase,
                              RenameConversationUseCase renameConversationUseCase,
                              DeleteConversationUseCase deleteConversationUseCase,
-                             MentorPromptSuggestionsService mentorPromptSuggestionsService) {
+                             MentorPromptSuggestionsService mentorPromptSuggestionsService,
+                             MentorKillSwitch mentorKillSwitch) {
         this.getMentorReplyUseCase = getMentorReplyUseCase;
         this.listConversationsUseCase = listConversationsUseCase;
         this.getConversationUseCase = getConversationUseCase;
         this.renameConversationUseCase = renameConversationUseCase;
         this.deleteConversationUseCase = deleteConversationUseCase;
         this.mentorPromptSuggestionsService = mentorPromptSuggestionsService;
+        this.mentorKillSwitch = mentorKillSwitch;
     }
 
     @GetMapping("/suggestions")
     public ResponseEntity<MentorSuggestionsResponse> suggestions(
             @RequestParam(defaultValue = "pt") String language,
             @RequestParam(defaultValue = "5") int limit) {
+        mentorKillSwitch.assertEnabled();
         int boundedLimit = Math.max(1, Math.min(limit, 8));
         return ResponseEntity.ok(new MentorSuggestionsResponse(
                 mentorPromptSuggestionsService.getRandomSuggestions(language, boundedLimit)));
@@ -64,6 +69,7 @@ public class MentorController {
 
     @PostMapping("/chat")
     public ResponseEntity<MentorChatResponse> chat(@Valid @RequestBody MentorChatRequest request) {
+        mentorKillSwitch.assertEnabled();
         String email = SecurityUtils.getCurrentUserEmail();
         AppContextEnum appContext = SecurityUtils.getCurrentAppContext().orElse(null);
         MentorChatResponse response = getMentorReplyUseCase.execute(email, request, appContext);

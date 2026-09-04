@@ -2,6 +2,8 @@ package com.jf.PetApp.infrastructure.controller.mentor;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -16,6 +18,8 @@ import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
+import com.jf.PetApp.application.mentor.exception.MentorDisabledException;
+import com.jf.PetApp.infrastructure.config.MentorKillSwitch;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -52,6 +56,8 @@ class MentorControllerTest {
     private DeleteConversationUseCase deleteConversationUseCase;
     @MockitoBean
     private MentorPromptSuggestionsService mentorPromptSuggestionsService;
+    @MockitoBean
+    private MentorKillSwitch mentorKillSwitch;
 
     @MockitoBean
     private JwtAuthenticationFilter jwtAuthenticationFilter; // mock the exact filter that security config uses
@@ -170,5 +176,51 @@ class MentorControllerTest {
     void deleteConversation_Returns204() throws Exception {
         mockMvc.perform(delete("/api/mentor/conversations/1"))
                 .andExpect(status().isNoContent());
+    }
+
+    // ---------------------------------------------------------- kill switch (DEM-44)
+
+    /**
+     * The switch is meant to stop the AI, not the product. These two paths reach the LLM provider,
+     * so they refuse with a code the client can tell apart from a provider outage.
+     */
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void chat_WhenMentorIsDisabled_Returns503WithAnExplicitCode() throws Exception {
+        doThrow(new MentorDisabledException()).when(mentorKillSwitch).assertEnabled();
+
+        mockMvc.perform(post("/api/mentor/chat")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"message":"Como esta minha carteira?"}"""))
+                .andExpect(status().isServiceUnavailable())
+                .andExpect(jsonPath("$.code").value("MENTOR_DISABLED"));
+
+        verifyNoInteractions(getMentorReplyUseCase);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void suggestions_WhenMentorIsDisabled_Returns503() throws Exception {
+        doThrow(new MentorDisabledException()).when(mentorKillSwitch).assertEnabled();
+
+        mockMvc.perform(get("/api/mentor/suggestions"))
+                .andExpect(status().isServiceUnavailable())
+                .andExpect(jsonPath("$.code").value("MENTOR_DISABLED"));
+
+        verifyNoInteractions(mentorPromptSuggestionsService);
+    }
+
+    /**
+     * The half that makes this a kill switch rather than a feature removal: the user's stored
+     * conversations are their own data. Turning off the AI must not take their history with it.
+     */
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void conversationHistory_StaysReachableWhileTheMentorIsDisabled() throws Exception {
+        doThrow(new MentorDisabledException()).when(mentorKillSwitch).assertEnabled();
+
+        mockMvc.perform(get("/api/mentor/conversations")).andExpect(status().isOk());
+        mockMvc.perform(delete("/api/mentor/conversations/1")).andExpect(status().isNoContent());
     }
 }

@@ -20,6 +20,7 @@ import com.jf.PetApp.application.auth.exception.AuthenticationException;
 import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidException;
 import com.jf.PetApp.application.auth.exception.UserAlreadyExistsException;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
+import com.jf.PetApp.application.mentor.exception.MentorDisabledException;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
 
@@ -72,6 +73,18 @@ public class GlobalExceptionHandler {
     public ProblemDetail handleIllegalArgumentException(IllegalArgumentException e) {
         log.warn("Rejected request: {}", e.getMessage());
         return problem(HttpStatus.BAD_REQUEST, "INVALID_REQUEST", e.getMessage());
+    }
+
+    /**
+     * 503 with a Retry-After-less body on purpose: the Mentor is off because an operator turned it
+     * off, so this is not a transient blip the client should quietly retry into. Distinguishing it
+     * from a provider outage is the point — the app can say "temporariamente indisponível" instead
+     * of showing a generic failure.
+     */
+    @ExceptionHandler(MentorDisabledException.class)
+    public ProblemDetail handleMentorDisabled(MentorDisabledException e) {
+        log.warn("Mentor request refused: app.mentor.enabled=false");
+        return problem(HttpStatus.SERVICE_UNAVAILABLE, "MENTOR_DISABLED", e.getMessage());
     }
 
     @ExceptionHandler(DestructivePortfolioReplaceException.class)
