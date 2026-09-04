@@ -89,6 +89,9 @@ class DemoAccountResetAdapterTest {
         investment.setPurchasePrice(BigDecimal.valueOf(30.0));
         investment.setPurchaseDate(LocalDate.now());
         investment.setType(InvestmentType.STOCKS);
+        Instant now = Instant.now();
+        investment.setCreatedAt(now);
+        investment.setUpdatedAt(now);
         investmentRepository.save(investment);
 
         LessonProgressJpaEntity lesson = new LessonProgressJpaEntity();

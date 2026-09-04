@@ -1,5 +1,6 @@
 package com.jf.PetApp.infrastructure.repository.investment;
 
+import java.time.Instant;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -74,6 +75,15 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         entity.setPurchasePrice(investment.purchasePrice());
         entity.setPurchaseDate(investment.purchaseDate());
         entity.setType(investment.type());
+        // saveAll's only caller (ConfigureInvestmentsUseCaseImpl) always deletes every existing
+        // row first and inserts fresh ones — there is no in-place update path yet (see DEM-30),
+        // so created_at and updated_at are legitimately identical for every row today. Both are
+        // still recorded, matching every other audited entity in this codebase
+        // (SimulatedPortfolioJpaEntity, XpEventJpaEntity, MentorConversationJpaEntity), so an
+        // update path added later doesn't also need a backfill migration.
+        Instant now = Instant.now();
+        entity.setCreatedAt(now);
+        entity.setUpdatedAt(now);
         return entity;
     }
 }

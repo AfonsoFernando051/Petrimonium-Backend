@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Entity
 @Table(name = "jf_investments", schema = "real_portfolio")
@@ -40,6 +41,12 @@ public class InvestmentJpaEntity {
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     private UserJpaEntity user;
+
+    @Column(name = "created_at", nullable = false)
+    private Instant createdAt;
+
+    @Column(name = "updated_at", nullable = false)
+    private Instant updatedAt;
 
     public Integer getId() {
         return id;
@@ -95,5 +102,21 @@ public class InvestmentJpaEntity {
 
     public void setUser(UserJpaEntity user) {
         this.user = user;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Instant getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Instant updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
