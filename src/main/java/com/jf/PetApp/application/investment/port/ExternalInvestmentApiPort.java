@@ -7,15 +7,34 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.List;
 
+/**
+ * Market data from an external provider.
+ *
+ * <p><strong>Implementations must never fabricate a price.</strong> The same rule
+ * {@code RealPortfolioSyncPort} already states for positions applies here, and matters more: a
+ * quote flows straight into portfolio valuation, gain/loss and achievement thresholds, so an
+ * invented number is shown to the user as their own money. When the provider has nothing to say —
+ * unknown ticker, outage, missing credentials — return empty and let the caller decide how to
+ * degrade. Empty is a usable answer; a plausible wrong number is not.
+ *
+ * <p>Where an environment must still serve a placeholder (local development without provider
+ * credentials), it has to be marked as simulated so callers can refuse it, never returned as an
+ * ordinary quote.
+ */
 public interface ExternalInvestmentApiPort {
+
+    /** Empty when no quote is available — never a stand-in price. See the type-level rule. */
     Optional<AssetQuoteResponse> getQuote(String ticker);
+
+    /** Empty list when the provider matches nothing — never an invented ticker. */
     List<AssetQuoteResponse> searchQuotes(String query);
 
     /**
      * The ticker's closing price on the most recent trading day on or before
      * {@code date} — e.g. a Saturday resolves to Friday's close. Empty when
      * the provider has no data that far back (ticker didn't exist yet) or
-     * {@code date} is in the future.
+     * {@code date} is in the future. Never a substituted price from another day — see the
+     * type-level rule.
      */
     Optional<AssetQuoteResponse> getQuoteAtDate(String ticker, LocalDate date);
 

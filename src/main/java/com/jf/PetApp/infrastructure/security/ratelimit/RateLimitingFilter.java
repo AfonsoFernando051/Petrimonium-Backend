@@ -39,7 +39,13 @@ public class RateLimitingFilter extends OncePerRequestFilter {
             new Rule(
                     path -> path.equals("/auth/login")
                             || path.equals("/auth/register")
-                            || path.equals("/auth/forgot-password"),
+                            || path.equals("/auth/forgot-password")
+                            // Consumes a reset token: unlimited attempts make the token
+                            // brute-forceable, and it is the one credential-changing endpoint that
+                            // needs no existing session. forgot-password was already limited, so
+                            // limiting the request side but not the redemption side left the
+                            // cheaper half of the attack open.
+                            || path.equals("/auth/reset-password"),
                     5, Duration.ofSeconds(60)),
             new Rule(
                     path -> path.equals("/api/v1/learning/progress")

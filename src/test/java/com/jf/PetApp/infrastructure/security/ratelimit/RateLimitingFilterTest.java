@@ -160,4 +160,23 @@ class RateLimitingFilterTest {
 
         verify(response).setStatus(429);
     }
+
+    /**
+     * DEM-80: /auth/reset-password redeems a token, so unlimited attempts make that token
+     * brute-forceable. forgot-password (which *issues* the token) was already limited, so leaving
+     * the redemption side open guarded the cheaper half of the attack only.
+     */
+    @Test
+    void doFilterInternal_ResetPassword_IsRateLimitedLikeTheOtherCredentialEndpoints() throws Exception {
+        when(request.getRequestURI()).thenReturn("/auth/reset-password");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.9");
+
+        for (int i = 0; i < 5; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(5)).doFilter(request, response);
+    }
 }
