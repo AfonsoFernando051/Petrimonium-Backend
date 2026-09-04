@@ -142,6 +142,14 @@ public class HealthService {
         store.archiveAccount(userId, accountId);
     }
 
+    /**
+     * Transactional despite reading: {@link #materializeRecurrences} writes the month's planned
+     * entries before they can be listed. Without a transaction each insert auto-commits on its
+     * own, so a failure part-way through the loop leaves recurrences half-materialized, and two
+     * concurrent calls both see the idempotency key as absent and race into
+     * {@code uq_health_transactions_user_key} — a 500 on a read endpoint.
+     */
+    @Transactional
     public List<Transaction> listTransactions(String email, TransactionFilter filter) {
         long userId = userId(email);
         requireProfile(userId);

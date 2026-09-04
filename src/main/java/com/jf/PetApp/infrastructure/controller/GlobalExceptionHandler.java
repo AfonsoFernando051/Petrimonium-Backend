@@ -20,6 +20,7 @@ import com.jf.PetApp.application.auth.exception.AuthenticationException;
 import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidException;
 import com.jf.PetApp.application.auth.exception.UserAlreadyExistsException;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
+import com.jf.PetApp.application.mentor.exception.MentorDisabledException;
 import com.jf.PetApp.application.mentor.exception.UnsupportedMentorContextException;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
@@ -79,11 +80,28 @@ public class GlobalExceptionHandler {
      * 501, not 500: the request and the session are both valid — the Mentor simply has nothing to
      * say in this app context yet. Distinguishing it from a server fault keeps the "Health Mentor
      * is not built" state legible in logs and to the client, instead of looking like a crash.
+     *
+     * <p>Sibling of {@link #handleMentorDisabled} below, and deliberately a different status: this
+     * one means "the Mentor cannot speak for this context", that one means "an operator switched
+     * the Mentor off". Same feature, different reasons, and a client that conflates them would
+     * offer a retry in the first case or a "not built yet" message in the second.
      */
     @ExceptionHandler(UnsupportedMentorContextException.class)
     public ProblemDetail handleUnsupportedMentorContext(UnsupportedMentorContextException e) {
         log.warn("Mentor request refused: {}", e.getMessage());
         return problem(HttpStatus.NOT_IMPLEMENTED, "MENTOR_CONTEXT_UNSUPPORTED", e.getMessage());
+    }
+
+    /**
+     * 503 with a Retry-After-less body on purpose: the Mentor is off because an operator turned it
+     * off, so this is not a transient blip the client should quietly retry into. Distinguishing it
+     * from a provider outage is the point — the app can say "temporariamente indisponível" instead
+     * of showing a generic failure.
+     */
+    @ExceptionHandler(MentorDisabledException.class)
+    public ProblemDetail handleMentorDisabled(MentorDisabledException e) {
+        log.warn("Mentor request refused: app.mentor.enabled=false");
+        return problem(HttpStatus.SERVICE_UNAVAILABLE, "MENTOR_DISABLED", e.getMessage());
     }
 
     @ExceptionHandler(DestructivePortfolioReplaceException.class)
