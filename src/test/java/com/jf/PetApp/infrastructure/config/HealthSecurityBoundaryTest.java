@@ -135,11 +135,22 @@ class HealthSecurityBoundaryTest {
         assertEquals(HttpStatus.FORBIDDEN, statusOf("/api/v1/achievements", session));
     }
 
+    /**
+     * Reversed by DEM-106, deliberately. This used to assert FORBIDDEN because the Mentor could
+     * only build a real- or simulated-portfolio prompt, so serving a Health session meant serving
+     * it the wrong context. Now that {@code MentorSystemPromptBuilder.buildForHealth} exists, the
+     * Mentor is reachable from Health.
+     *
+     * <p>The boundary did not go away, it moved: it is no longer "Health can't have a Mentor" but
+     * "the Mentor a Health session gets is built from cash flow only". That invariant is enforced
+     * in {@code GetMentorReplyUseCaseImpl} and pinned by
+     * {@code GetMentorReplyUseCaseImplTest#execute_ForHealthContext_NeverCallsAnyRealOrSimulatedPortfolioUseCase},
+     * which fails if a Health turn so much as touches a portfolio use case. Every other Health
+     * boundary in this class is unchanged.
+     */
     @Test
-    void healthSession_CannotReachTheMentor() {
-        // Mentor builds its prompt from either the real or the simulated portfolio; it has no
-        // Health-aware prompt yet, so a Health session is refused rather than served the wrong one.
-        assertEquals(HttpStatus.FORBIDDEN,
+    void healthSession_ReachesTheMentor_WhichAnswersItFromCashFlowOnly() {
+        assertEquals(HttpStatus.OK,
                 statusOf("/api/mentor/suggestions", session("health-wants-mentor@test.com",
                         AppContextEnum.HEALTH)));
     }

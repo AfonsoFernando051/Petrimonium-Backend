@@ -25,6 +25,15 @@ import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.MentorMessage;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.application.mentor.exception.UnsupportedMentorContextException;
+import com.jf.PetApp.application.mentor.port.HealthSummaryPort;
+import com.jf.PetApp.core.domain.health.HealthModels.MonthlySummary;
+import com.jf.PetApp.core.domain.health.HealthModels.Upcoming;
+import com.jf.PetApp.core.domain.health.HealthModels.CategoryAmount;
+import com.jf.PetApp.core.domain.health.HealthModels.CurrencyCode;
+import java.time.YearMonth;
+import java.time.LocalDate;
+import java.math.BigDecimal;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -63,6 +72,9 @@ class GetMentorReplyUseCaseImplTest {
     @Mock
     private GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase;
     @Mock
+    private HealthSummaryPort healthSummaryPort;
+
+    @Mock
     private MentorChatPort mentorChatPort;
     @Mock
     private MentorConversationRepositoryPort conversationRepositoryPort;
@@ -88,7 +100,7 @@ class GetMentorReplyUseCaseImplTest {
         useCase = new GetMentorReplyUseCaseImpl(
                 userRepository, getPortfolioSummaryUseCase, getPortfolioAllocationUseCase, getMyPetUseCase,
                 getLearningProgressUseCase, getAcademyCatalogUseCase, getSimulatedPortfolioUseCase,
-                mentorChatPort, conversationRepositoryPort, messageRepositoryPort);
+                healthSummaryPort, mentorChatPort, conversationRepositoryPort, messageRepositoryPort);
 
         User user = new User();
         user.setEmail(EMAIL);
@@ -333,5 +345,68 @@ class GetMentorReplyUseCaseImplTest {
         useCase.execute(EMAIL, requestWithConversation(null), AppContextEnum.ACADEMY);
 
         verify(conversationRepositoryPort).create(eq(EMAIL), any(), eq("academy"));
+    }
+
+    private static MonthlySummary healthSummary() {
+        return new MonthlySummary(
+                YearMonth.of(2026, 3), CurrencyCode.BRL,
+                new BigDecimal("2500.00"), new BigDecimal("5000.00"), new BigDecimal("3100.00"),
+                new BigDecimal("0.00"), new BigDecimal("800.00"), new BigDecimal("1200.00"),
+                new BigDecimal("1900.00"), new BigDecimal("500.00"),
+                List.of(new CategoryAmount("Moradia", new BigDecimal("1800.00"))),
+                List.of(new Upcoming("CARD_INVOICE", 7L, "Fatura do cartao", LocalDate.of(2026, 3, 10),
+                        new BigDecimal("1200.00"))));
+    }
+
+    /**
+     * The invariant DEM-106 turns on: a Health session is answered from the user's own cash flow
+     * and must never reach a real-portfolio use case. Before the context branching was made
+     * explicit, anything that wasn't ACADEMY fell into the WALLET branch, so opening the mentor
+     * gate for Health would have leaked patrimônio into a Health conversation.
+     */
+    @Test
+    void execute_ForHealthContext_NeverCallsAnyRealOrSimulatedPortfolioUseCase() {
+        when(healthSummaryPort.currentMonthFor(EMAIL)).thenReturn(Optional.of(healthSummary()));
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.HEALTH);
+
+        verifyNoInteractions(getPortfolioSummaryUseCase, getPortfolioAllocationUseCase,
+                getSimulatedPortfolioUseCase, getLearningProgressUseCase, getAcademyCatalogUseCase);
+        verify(healthSummaryPort).currentMonthFor(EMAIL);
+    }
+
+    @Test
+    void execute_ForHealthContext_SystemPromptCarriesTheCashFlowAndNamesWhatIsDue() {
+        when(healthSummaryPort.currentMonthFor(EMAIL)).thenReturn(Optional.of(healthSummary()));
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.HEALTH);
+
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(mentorChatPort).generateReply(captor.capture(), any(), anyString());
+        String prompt = captor.getValue();
+
+        assertTrue(prompt.contains("financial-health companion"));
+        assertTrue(prompt.contains("2500.00"), "current balance");
+        assertTrue(prompt.contains("Moradia"), "expense category");
+        assertTrue(prompt.contains("Fatura do cartao"), "named upcoming invoice");
+        assertTrue(prompt.contains("2026-03-10"), "its due date");
+        // The scope rule the persona depends on.
+        assertFalse(prompt.contains("invested capital"));
+        assertFalse(prompt.contains("Simulated practice portfolio"));
+    }
+
+    @Test
+    void execute_ForHealthContext_WithoutAProfile_StillAnswersInsteadOfFailing() {
+        when(healthSummaryPort.currentMonthFor(EMAIL)).thenReturn(Optional.empty());
+        when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenReturn("ok");
+
+        useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.HEALTH);
+
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(mentorChatPort).generateReply(captor.capture(), any(), anyString());
+        assertTrue(captor.getValue().contains("hasn't completed Health onboarding"));
+        verifyNoInteractions(getPortfolioSummaryUseCase, getPortfolioAllocationUseCase);
     }
 }

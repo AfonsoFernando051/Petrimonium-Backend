@@ -20,6 +20,7 @@ import com.jf.PetApp.application.auth.exception.AuthenticationException;
 import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidException;
 import com.jf.PetApp.application.auth.exception.UserAlreadyExistsException;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
+import com.jf.PetApp.application.mentor.exception.UnsupportedMentorContextException;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
 
@@ -72,6 +73,17 @@ public class GlobalExceptionHandler {
     public ProblemDetail handleIllegalArgumentException(IllegalArgumentException e) {
         log.warn("Rejected request: {}", e.getMessage());
         return problem(HttpStatus.BAD_REQUEST, "INVALID_REQUEST", e.getMessage());
+    }
+
+    /**
+     * 501, not 500: the request and the session are both valid — the Mentor simply has nothing to
+     * say in this app context yet. Distinguishing it from a server fault keeps the "Health Mentor
+     * is not built" state legible in logs and to the client, instead of looking like a crash.
+     */
+    @ExceptionHandler(UnsupportedMentorContextException.class)
+    public ProblemDetail handleUnsupportedMentorContext(UnsupportedMentorContextException e) {
+        log.warn("Mentor request refused: {}", e.getMessage());
+        return problem(HttpStatus.NOT_IMPLEMENTED, "MENTOR_CONTEXT_UNSUPPORTED", e.getMessage());
     }
 
     @ExceptionHandler(DestructivePortfolioReplaceException.class)

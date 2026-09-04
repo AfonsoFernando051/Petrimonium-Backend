@@ -223,6 +223,22 @@ class SecurityConfigTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
     }
 
+    /**
+     * DEM-106: the Health app's Mentor tab used to 403 here. The gate was opened only once
+     * {@code MentorSystemPromptBuilder.buildForHealth} existed — before that, passing this gate
+     * would have answered a Health session with the user's real portfolio.
+     */
+    @Test
+    void mentorEndpoint_WithHealthAppContext_IsAuthenticatedAndReachesTheController() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("mentor-health@test.com", RoleEnum.USER, AppContextEnum.HEALTH));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/mentor/suggestions", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+    }
+
     @Test
     void missionsEndpoint_WithWalletAppContext_IsForbidden() {
         HttpHeaders headers = new HttpHeaders();

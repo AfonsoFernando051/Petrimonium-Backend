@@ -94,7 +94,7 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
                 return Optional.empty();
             }
             log.warn("api.brapi.token is not configured; returning mock data for {}", ticker);
-            return Optional.of(new AssetQuoteResponse(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
+            return Optional.of(AssetQuoteResponse.simulated(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
         }
 
         try {
@@ -157,7 +157,7 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
                 return Optional.empty();
             }
             log.warn("api.brapi.token is not configured; returning mock data for {} at {}", ticker, date);
-            return Optional.of(new AssetQuoteResponse(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
+            return Optional.of(AssetQuoteResponse.simulated(ticker.toUpperCase(), "Simulated " + ticker.toUpperCase(), 50.0, "BRL"));
         }
 
         try {
