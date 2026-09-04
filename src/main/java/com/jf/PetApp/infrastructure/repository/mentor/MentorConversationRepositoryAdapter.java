@@ -63,9 +63,8 @@ public class MentorConversationRepositoryAdapter implements MentorConversationRe
 
     @Override
     @Transactional
-    public void updateTitle(Long id, String title) {
-        MentorConversationJpaEntity entity = conversationJpaRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conversation not found"));
+    public void updateTitle(Long id, String userEmail, String appContext, String title) {
+        MentorConversationJpaEntity entity = ownedOrThrow(id, userEmail, appContext);
         entity.setTitle(title);
         entity.setUpdatedAt(Instant.now());
         conversationJpaRepository.save(entity);
@@ -73,17 +72,26 @@ public class MentorConversationRepositoryAdapter implements MentorConversationRe
 
     @Override
     @Transactional
-    public void touch(Long id) {
-        MentorConversationJpaEntity entity = conversationJpaRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conversation not found"));
+    public void touch(Long id, String userEmail, String appContext) {
+        MentorConversationJpaEntity entity = ownedOrThrow(id, userEmail, appContext);
         entity.setUpdatedAt(Instant.now());
         conversationJpaRepository.save(entity);
     }
 
     @Override
     @Transactional
-    public void delete(Long id) {
-        conversationJpaRepository.deleteById(id);
+    public void delete(Long id, String userEmail, String appContext) {
+        conversationJpaRepository.delete(ownedOrThrow(id, userEmail, appContext));
+    }
+
+    /**
+     * Resolves a conversation only when it belongs to this user AND this app_context. Anything
+     * else is reported as missing rather than forbidden, so an id cannot be used to probe for the
+     * existence of another user's — or another app's — conversation.
+     */
+    private MentorConversationJpaEntity ownedOrThrow(Long id, String userEmail, String appContext) {
+        return conversationJpaRepository.findByIdAndUser_EmailAndAppContext(id, userEmail, appContext)
+                .orElseThrow(() -> new ResourceNotFoundException("Conversation not found"));
     }
 
     private MentorConversation toDomain(MentorConversationJpaEntity entity, String userEmail) {

@@ -208,8 +208,8 @@ class GetMentorReplyUseCaseImplTest {
         MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertEquals("What are dividends?", response.title());
-        verify(conversationRepositoryPort).updateTitle(CONVERSATION_ID, "What are dividends?");
-        verify(conversationRepositoryPort, never()).touch(any());
+        verify(conversationRepositoryPort).updateTitle(CONVERSATION_ID, EMAIL, "wallet", "What are dividends?");
+        verify(conversationRepositoryPort, never()).touch(any(), any(), any());
     }
 
     @Test
@@ -218,8 +218,8 @@ class GetMentorReplyUseCaseImplTest {
 
         useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
-        verify(conversationRepositoryPort).touch(CONVERSATION_ID);
-        verify(conversationRepositoryPort, never()).updateTitle(any(), any());
+        verify(conversationRepositoryPort).touch(CONVERSATION_ID, EMAIL, "wallet");
+        verify(conversationRepositoryPort, never()).updateTitle(any(), any(), any(), any());
     }
 
     @Test

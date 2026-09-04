@@ -117,7 +117,7 @@ class MentorConversationRepositoryAdapterTest {
     void updateTitle_ChangesTitleAndBumpsUpdatedAt() {
         MentorConversation created = adapter.create(userEmail, "Old Title", "wallet");
 
-        adapter.updateTitle(created.id(), "New Title");
+        adapter.updateTitle(created.id(), userEmail, "wallet", "New Title");
 
         Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail, "wallet");
         assertThat(found).isPresent();
@@ -126,7 +126,8 @@ class MentorConversationRepositoryAdapterTest {
 
     @Test
     void updateTitle_ForUnknownId_ThrowsResourceNotFoundException() {
-        assertThrows(ResourceNotFoundException.class, () -> adapter.updateTitle(999L, "Title"));
+        assertThrows(ResourceNotFoundException.class,
+                () -> adapter.updateTitle(999L, userEmail, "wallet", "Title"));
     }
 
     @Test
@@ -134,7 +135,7 @@ class MentorConversationRepositoryAdapterTest {
         MentorConversation created = adapter.create(userEmail, "Title", "wallet");
         Thread.sleep(5);
 
-        adapter.touch(created.id());
+        adapter.touch(created.id(), userEmail, "wallet");
 
         Optional<MentorConversation> found = adapter.findByIdAndUser(created.id(), userEmail, "wallet");
         assertThat(found).isPresent();
@@ -143,15 +144,55 @@ class MentorConversationRepositoryAdapterTest {
 
     @Test
     void touch_ForUnknownId_ThrowsResourceNotFoundException() {
-        assertThrows(ResourceNotFoundException.class, () -> adapter.touch(999L));
+        assertThrows(ResourceNotFoundException.class, () -> adapter.touch(999L, userEmail, "wallet"));
     }
 
     @Test
     void delete_RemovesConversation() {
         MentorConversation created = adapter.create(userEmail, "Title", "wallet");
 
-        adapter.delete(created.id());
+        adapter.delete(created.id(), userEmail, "wallet");
 
         assertThat(adapter.findByIdAndUser(created.id(), userEmail, "wallet")).isEmpty();
+    }
+
+    // ------------------------------------------------- DEM-71: writes are owner-scoped
+
+    /**
+     * The reason the mutations stopped taking a bare id. Ownership used to be the caller's job;
+     * now a write addressed to someone else's conversation finds nothing, and reports it as
+     * missing rather than forbidden so an id can't be used to probe for another user's data.
+     */
+    @Test
+    void updateTitle_ForAnotherUsersConversation_ThrowsAndChangesNothing() {
+        MentorConversation mine = adapter.create(userEmail, "Old Title", "wallet");
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> adapter.updateTitle(mine.id(), "someone-else@test.com", "wallet", "Hacked"));
+
+        assertThat(adapter.findByIdAndUser(mine.id(), userEmail, "wallet").orElseThrow().title())
+                .isEqualTo("Old Title");
+    }
+
+    @Test
+    void delete_ForAnotherUsersConversation_ThrowsAndKeepsTheConversation() {
+        MentorConversation mine = adapter.create(userEmail, "Title", "wallet");
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> adapter.delete(mine.id(), "someone-else@test.com", "wallet"));
+
+        assertThat(adapter.findByIdAndUser(mine.id(), userEmail, "wallet")).isPresent();
+    }
+
+    /** The app_context half of the same scope — a Wallet id is not writable from an Academy session. */
+    @Test
+    void updateTitle_FromAnotherAppContext_ThrowsAndChangesNothing() {
+        MentorConversation walletConversation = adapter.create(userEmail, "Old Title", "wallet");
+
+        assertThrows(ResourceNotFoundException.class,
+                () -> adapter.updateTitle(walletConversation.id(), userEmail, "academy", "Crossed over"));
+
+        assertThat(adapter.findByIdAndUser(walletConversation.id(), userEmail, "wallet").orElseThrow().title())
+                .isEqualTo("Old Title");
     }
 }
