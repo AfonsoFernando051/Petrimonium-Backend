@@ -25,9 +25,13 @@ do PR que muda o código dela.
 
 ## Como está organizado
 
-- [`00-visao-geral.md`](00-visao-geral.md) — o mapa: os 3 repositórios, o que é
+- [`00-visao-geral.md`](00-visao-geral.md) — o mapa: os 4 repositórios, o que é
   compartilhado, o que é isolado, inventário completo de endpoints, schemas e
   módulos. **Leia isto primeiro, uma vez.**
+- [`../INTEGRATION.md`](../INTEGRATION.md) — o **contrato de integração** entre
+  os três produtos: por que são três, o que atravessa a fronteira (identidade,
+  Pet, XP, Mentor), o que nunca atravessa, e as lacunas conhecidas. A visão
+  geral descreve a máquina; este descreve o acordo. **Leia em seguida.**
 - [`fatias/`](fatias/) — uma funcionalidade por arquivo, sempre ponta a ponta.
 
 ## O formato de uma fatia (e por que ele é assim)
@@ -74,7 +78,7 @@ entrada na página **Correção de Bugs — Petrimonium**, que exige reproduçã
 
 Legenda: ✅ escrita · ⬜ pendente
 
-### Núcleo compartilhado (Wallet + Academy)
+### Núcleo compartilhado (Wallet + Academy + Health)
 
 | # | Fatia | Status |
 |---|---|---|
@@ -111,6 +115,15 @@ Legenda: ✅ escrita · ⬜ pendente
 | 21 | Carteira simulada: portfólio, ordens e reset | ⬜ |
 | 22 | Shell de navegação do app Academy | ⬜ |
 | 23 | Onboarding do Academy (10 telas) | ⬜ |
+
+### Domínio Health (fluxo de caixa real)
+
+| # | Fatia | Status |
+|---|---|---|
+| 26 | [Perfil Health: país, moeda e idioma (e a trava da moeda)](fatias/26-health-perfil-moeda.md) | ✅ |
+| 27 | Contas, lançamentos e transferências | ⬜ |
+| 28 | Recorrências, cartões, compras e faturas | ⬜ |
+| 29 | Resumo e projeção mensal | ⬜ |
 
 ### Transversal aos apps
 
