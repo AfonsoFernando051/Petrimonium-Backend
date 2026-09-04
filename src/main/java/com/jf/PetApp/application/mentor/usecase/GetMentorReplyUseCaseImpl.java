@@ -19,6 +19,9 @@ import com.jf.PetApp.application.mentor.port.MentorChatPort;
 import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
 import com.jf.PetApp.application.mentor.port.MentorMessageRepositoryPort;
 import com.jf.PetApp.application.mentor.prompt.MentorSystemPromptBuilder;
+import com.jf.PetApp.application.mentor.exception.UnsupportedMentorContextException;
+import com.jf.PetApp.application.mentor.port.HealthSummaryPort;
+import com.jf.PetApp.core.domain.health.HealthModels.MonthlySummary;
 import com.jf.PetApp.application.mentor.safety.MentorSafetyGuard;
 import com.jf.PetApp.application.pet.usecase.GetMyPetUseCase;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
@@ -58,6 +61,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
     private final GetLearningProgressUseCase getLearningProgressUseCase;
     private final GetAcademyCatalogUseCase getAcademyCatalogUseCase;
     private final GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase;
+    private final HealthSummaryPort healthSummaryPort;
     private final MentorChatPort mentorChatPort;
     private final MentorConversationRepositoryPort conversationRepositoryPort;
     private final MentorMessageRepositoryPort messageRepositoryPort;
@@ -69,7 +73,8 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
                                       GetLearningProgressUseCase getLearningProgressUseCase,
                                       GetAcademyCatalogUseCase getAcademyCatalogUseCase,
                                       GetSimulatedPortfolioUseCase getSimulatedPortfolioUseCase,
-                                      MentorChatPort mentorChatPort,
+                                      HealthSummaryPort healthSummaryPort,
+            MentorChatPort mentorChatPort,
                                       MentorConversationRepositoryPort conversationRepositoryPort,
                                       MentorMessageRepositoryPort messageRepositoryPort) {
         this.userRepository = userRepository;
@@ -79,6 +84,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         this.getLearningProgressUseCase = getLearningProgressUseCase;
         this.getAcademyCatalogUseCase = getAcademyCatalogUseCase;
         this.getSimulatedPortfolioUseCase = getSimulatedPortfolioUseCase;
+        this.healthSummaryPort = healthSummaryPort;
         this.mentorChatPort = mentorChatPort;
         this.conversationRepositoryPort = conversationRepositoryPort;
         this.messageRepositoryPort = messageRepositoryPort;
@@ -98,18 +104,39 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         String language = MentorSystemPromptBuilder.resolveLanguage(request.context(), user.getPreferredLanguage());
 
         Pet pet = getMyPetUseCase.execute(email).orElse(null);
-        boolean isAcademy = appContext == AppContextEnum.ACADEMY;
         String systemPrompt;
         List<String> sources;
-        if (isAcademy) {
+        // Switched exhaustively on the context rather than "Academy or else": the `else` branch
+        // loads the user's REAL portfolio, so any context that isn't Academy — present or future —
+        // silently inherited a real-money prompt. HEALTH is gated out in SecurityConfig today, but
+        // a gate is not where this invariant belongs: if the gate is ever opened before a Health
+        // prompt exists, this must fail loudly instead of leaking patrimônio into a Health session.
+        // Branch on the context explicitly instead of "Academy or else": the else branch loads the
+        // user's REAL portfolio, so any context that wasn't Academy — present or future — silently
+        // inherited a real-money prompt (DEM-106). `null` still maps to Wallet on purpose: a token
+        // minted before the app_context claim existed carries no context, and Wallet is the safe
+        // default for it (never hand an unknown session Academy's simulated content).
+        boolean walletShaped = appContext == null || appContext == AppContextEnum.WALLET;
+        if (appContext == AppContextEnum.ACADEMY) {
             systemPrompt = buildAcademyPrompt(email, pet, request, user, language);
             sources = List.of();
-        } else {
+        } else if (walletShaped) {
             PortfolioSummaryDTO summary = getPortfolioSummaryUseCase.execute(email);
             List<AllocationSliceDTO> allocation = getPortfolioAllocationUseCase.execute(email);
             systemPrompt = MentorSystemPromptBuilder.buildForWallet(
                     pet, summary, allocation, request.context(), user.getPreferredLanguage());
             sources = MentorSystemPromptBuilder.walletSourcesFor(pet, summary, allocation, request.context());
+        } else if (appContext == AppContextEnum.HEALTH) {
+            // Health sees the user's own cash flow and nothing else — no portfolio use case is
+            // reachable from this branch, which is the invariant DEM-106 turns on.
+            MonthlySummary healthSummary = healthSummaryPort.currentMonthFor(email).orElse(null);
+            systemPrompt = MentorSystemPromptBuilder.buildForHealth(
+                    pet, healthSummary, request.context(), user.getPreferredLanguage());
+            sources = MentorSystemPromptBuilder.healthSourcesFor(pet, healthSummary, request.context());
+        } else {
+            // Any context the Mentor has no prompt for is refused rather than silently inheriting
+            // the Wallet branch, which would answer using the user's real portfolio.
+            throw new UnsupportedMentorContextException(appContext);
         }
 
         List<MentorTurnDTO> history = messageRepositoryPort

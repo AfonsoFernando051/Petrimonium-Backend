@@ -7,6 +7,9 @@ import com.jf.PetApp.application.mentor.dto.MentorClientContextDTO;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPositionDTO;
 import com.jf.PetApp.core.domain.Pet;
+import com.jf.PetApp.core.domain.health.HealthModels.CategoryAmount;
+import com.jf.PetApp.core.domain.health.HealthModels.MonthlySummary;
+import com.jf.PetApp.core.domain.health.HealthModels.Upcoming;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,6 +104,141 @@ public final class MentorSystemPromptBuilder {
             Your own personalized read: what this means for the user right now, clearly framed as your interpretation, never presented as fact.
             For replies that don't touch real portfolio data (greetings, acknowledgments, general questions), skip the markers entirely and answer normally in one block.
             """;
+
+    /**
+     * Health speaks for day-to-day cash flow, not investing, so it gets its own persona rather than
+     * the investment template above. Reusing that one would have the mentor coaching someone about
+     * buy &amp; hold and diversification while they are asking whether they can pay a bill this
+     * month — and would carry investment safety rules that say nothing about the real risks here
+     * (nudging someone into credit, or moralizing about how they spend).
+     */
+    private static final String HEALTH_SYSTEM_PROMPT_TEMPLATE = """
+            You are {petName}, the user's personal financial-health companion inside Petrimonium Health — not a generic AI assistant.
+
+            WHO YOU ARE
+            - A calm, practical, non-judgmental companion for everyday money: what came in, what went out, what is still due.
+            - You help the user see their own cash flow clearly and feel in control of it.
+            - Never moralizing. People's spending reflects their lives, not their discipline.
+
+            YOUR MISSION
+            Help the user understand their month: where the money went, what is still coming, and whether the plan holds. Reinforce visibility, planning ahead, and small sustainable habits — never guilt.
+
+            SAFETY RULES (never break these)
+            - Never suggest taking on debt, a loan, an overdraft, or paying one card with another.
+            - Never recommend a specific financial product, bank, or credit card.
+            - Never tell the user to stop spending on a specific category as if it were a moral failing; describe the numbers and let them decide.
+            - Never predict future income or promise that a plan will work out.
+            - You are looking at what the user themselves recorded. If something looks off, say the record may be incomplete rather than asserting a fact about their life.
+            - This is organization and education, not financial advice.
+
+            SCOPE — IMPORTANT
+            You can see this user's cash flow only. You do NOT have access to their investment portfolio, their patrimônio, or their Academy learning progress, and you must never claim to. If asked about investments, say plainly that this space is about day-to-day money and that the Wallet side of Petrimonium is where their portfolio lives.
+
+            ADAPTIVE TONE
+            Read the user's situation from the numbers. A tight month deserves steadiness and concrete next steps, not cheerfulness. A comfortable month can be acknowledged without inflating it.
+
+            PERSONALIZE, DON'T GENERALIZE
+            Tie every point to the actual figures below instead of speaking abstractly. Prefer "your card invoice of X falls due on the 10th, before your planned income lands" over "watch out for due dates."
+
+            CONTEXT YOU'VE BEEN GIVEN THIS TURN
+            {context_block}
+            {response_format_instruction}
+            Respond naturally and conversationally in {language}. Keep replies focused and short — answer the question, ground it in the user's own numbers, and end on a steady, practical note.
+            """;
+
+    /**
+     * Health (real cash flow): the month's aggregates plus the user's named upcoming bills and card
+     * invoices, and the pet. Never sees the real portfolio, the simulated one, or Academy progress —
+     * there is no parameter here through which any of them could arrive.
+     */
+    public static String buildForHealth(
+            Pet pet,
+            MonthlySummary summary,
+            MentorClientContextDTO clientContext,
+            String fallbackLanguage
+    ) {
+        String petName = resolvePetName(pet);
+        String language = resolveLanguage(clientContext, fallbackLanguage);
+
+        StringBuilder context = new StringBuilder();
+        appendHealthBlock(context, summary);
+        appendPetBlock(context, pet, petName);
+        appendClientContextBlock(context, clientContext);
+
+        return HEALTH_SYSTEM_PROMPT_TEMPLATE
+                .replace("{petName}", petName)
+                .replace("{language}", language)
+                .replace("{context_block}", context.toString())
+                .replace("{response_format_instruction}", WALLET_STRUCTURED_RESPONSE_INSTRUCTION);
+    }
+
+    /**
+     * Health only — which real sources fed {@link #buildForHealth}, using the same conditionals as
+     * {@link #appendHealthBlock}. Same stable-English-key convention as {@link #walletSourcesFor}.
+     */
+    public static List<String> healthSourcesFor(
+            Pet pet, MonthlySummary summary, MentorClientContextDTO clientContext) {
+        List<String> sources = new ArrayList<>();
+        if (summary != null) {
+            sources.add("health_monthly_summary");
+            if (summary.expensesByCategory() != null && !summary.expensesByCategory().isEmpty()) {
+                sources.add("health_expenses_by_category");
+            }
+            if (summary.upcoming() != null && !summary.upcoming().isEmpty()) {
+                sources.add("health_upcoming");
+            }
+        }
+        if (pet != null) {
+            sources.add("pet");
+        }
+        if (clientContext != null && isPresent(clientContext.currentScreen())) {
+            sources.add("client_screen");
+        }
+        return sources;
+    }
+
+    /**
+     * The user's own recorded cash flow for the month. Amounts are rendered plainly with the
+     * profile's currency code rather than a locale-formatted string — the model reads figures, and
+     * a formatted "R$ 1.234,56" invites it to echo a format the app itself controls.
+     */
+    private static void appendHealthBlock(StringBuilder context, MonthlySummary summary) {
+        if (summary == null) {
+            context.append("- Cash flow: the user hasn't completed Health onboarding yet, so there are no accounts or records to read.\n");
+            return;
+        }
+
+        String currency = summary.currency() == null ? "" : summary.currency().name();
+        context.append(String.format(Locale.US,
+                "- Month %s (all amounts in %s): current balance %.2f; realized income %.2f; realized expenses %.2f; "
+                        + "planned income %.2f; planned expenses %.2f; open card invoices %.2f; "
+                        + "month result %.2f; projected end-of-month balance %.2f.%n",
+                summary.month(), currency, nz(summary.currentBalance()), nz(summary.realizedIncome()),
+                nz(summary.realizedExpenses()), nz(summary.plannedIncome()), nz(summary.plannedExpenses()),
+                nz(summary.openCardInvoices()), nz(summary.monthResult()), nz(summary.projectedEndBalance())));
+
+        if (summary.expensesByCategory() != null && !summary.expensesByCategory().isEmpty()) {
+            context.append("- Realized expenses by category:\n");
+            for (CategoryAmount category : summary.expensesByCategory()) {
+                context.append(String.format(Locale.US, "  - %s: %.2f%n",
+                        category.category(), nz(category.amount())));
+            }
+        }
+
+        if (summary.upcoming() != null && !summary.upcoming().isEmpty()) {
+            context.append("- Still due this month (the user's own records — a bill or invoice, by name and date):\n");
+            for (Upcoming item : summary.upcoming()) {
+                context.append(String.format(Locale.US, "  - %s on %s: %.2f%n",
+                        item.description() == null || item.description().isBlank() ? item.kind() : item.description(),
+                        item.date(), nz(item.amount())));
+            }
+        }
+    }
+
+    /** Treats a missing amount as zero so a partially-populated month still renders a usable line. */
+    private static double nz(java.math.BigDecimal value) {
+        return value == null ? 0.0 : value.doubleValue();
+    }
 
     private MentorSystemPromptBuilder() {
     }

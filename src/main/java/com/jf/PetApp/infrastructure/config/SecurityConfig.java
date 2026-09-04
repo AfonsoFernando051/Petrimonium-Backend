@@ -126,12 +126,19 @@ public class SecurityConfig {
                 // rule is the outer gate, not the only one.
                 .requestMatchers("/api/v1/health/**").hasAuthority(AppContextEnum.HEALTH.authority())
                 // Mentor is shared but context-*sensitive*: GetMentorReplyUseCaseImpl builds a
-                // different system prompt (real portfolio vs simulated + Academy progress)
-                // depending on which app the session belongs to, so a session with no resolvable
-                // app_context can't safely be served — require one of the two rather than
-                // falling through to bare `authenticated()`.
+                // different system prompt (real portfolio vs simulated + Academy progress vs
+                // Health cash flow) depending on which app the session belongs to, so a session
+                // with no resolvable app_context can't safely be served — require one of the three
+                // rather than falling through to bare `authenticated()`.
+                //
+                // HEALTH was added here only once MentorSystemPromptBuilder.buildForHealth existed
+                // (DEM-106): opening this gate while the use case still treated "not Academy" as
+                // "Wallet" would have answered Health sessions with the user's real portfolio. The
+                // use case now refuses any context it has no prompt for, so this gate is the outer
+                // check rather than the only thing standing between the contexts.
                 .requestMatchers("/api/mentor/**")
-                    .hasAnyAuthority(AppContextEnum.WALLET.authority(), AppContextEnum.ACADEMY.authority())
+                    .hasAnyAuthority(AppContextEnum.WALLET.authority(), AppContextEnum.ACADEMY.authority(),
+                            AppContextEnum.HEALTH.authority())
                 .anyRequest().authenticated()
             )
             .addFilterBefore(
