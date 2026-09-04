@@ -11,7 +11,10 @@ import org.mockito.MockitoAnnotations;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.time.Duration;
+import java.time.Instant;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -178,5 +181,44 @@ class RateLimitingFilterTest {
 
         verify(response).setStatus(429);
         verify(filterChain, times(5)).doFilter(request, response);
+    }
+
+    /**
+     * DEM-78: requestLog never dropped a key once created, so a client that made one request
+     * and never came back left a permanent entry — unbounded growth over the app's lifetime.
+     */
+    @Test
+    void cleanupStaleKeys_RemovesKeysWhoseTimestampsHaveAllExpired() {
+        filter.trackForTesting("10.0.0.20:/auth/login", Instant.now().minus(Duration.ofHours(1)));
+        assertThat(filter.trackedKeyCount()).isEqualTo(1);
+
+        filter.cleanupStaleKeys();
+
+        assertThat(filter.trackedKeyCount()).isZero();
+    }
+
+    @Test
+    void cleanupStaleKeys_KeepsKeysWithAtLeastOneTimestampStillInsideTheWindow() {
+        filter.trackForTesting("10.0.0.21:/auth/login", Instant.now().minus(Duration.ofHours(1)));
+        filter.trackForTesting("10.0.0.21:/auth/login", Instant.now());
+
+        filter.cleanupStaleKeys();
+
+        assertThat(filter.trackedKeyCount()).isEqualTo(1);
+    }
+
+    @Test
+    void cleanupStaleKeys_LeavesUnrelatedActiveKeysAlone() throws Exception {
+        when(request.getRequestURI()).thenReturn("/auth/login");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.22");
+        filter.doFilterInternal(request, response, filterChain);
+        assertThat(filter.trackedKeyCount()).isEqualTo(1);
+
+        filter.trackForTesting("10.0.0.23:/auth/login", Instant.now().minus(Duration.ofHours(1)));
+        assertThat(filter.trackedKeyCount()).isEqualTo(2);
+
+        filter.cleanupStaleKeys();
+
+        assertThat(filter.trackedKeyCount()).isEqualTo(1);
     }
 }

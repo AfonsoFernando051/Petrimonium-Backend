@@ -5,9 +5,11 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -57,6 +59,21 @@ public class RateLimitingFilter extends OncePerRequestFilter {
 
     private final ConcurrentHashMap<String, Deque<Instant>> requestLog = new ConcurrentHashMap<>();
 
+    // A key never gets pruned again once its client stops sending requests — the per-request
+    // prune in isRateLimited only ever touches keys that are actively being hit, so an
+    // abandoned key's now-stale, possibly-already-empty Deque sits in requestLog forever,
+    // growing unbounded over the app's lifetime. No @Scheduled infra exists anywhere else in
+    // this codebase yet, so rather than introduce @EnableScheduling for this alone, cleanup
+    // rides along on the request path itself: whichever request happens to land after
+    // CLEANUP_INTERVAL has elapsed since the last sweep does one, gated by a CAS so concurrent
+    // requests can't all sweep at once.
+    private static final Duration CLEANUP_INTERVAL = Duration.ofMinutes(5);
+    private static final Duration MAX_RULE_WINDOW = RULES.stream()
+            .map(Rule::window)
+            .max(Comparator.naturalOrder())
+            .orElse(Duration.ZERO);
+    private final AtomicLong lastCleanupNanos = new AtomicLong(System.nanoTime());
+
     // Comma-separated CIDR ranges (e.g. "10.0.0.0/8") of reverse proxies/load balancers this
     // app trusts to have set X-Forwarded-For honestly. Empty by default (the app isn't yet
     // deployed behind a known topology) — see application.properties' app.security.trusted-proxies
@@ -81,6 +98,8 @@ public class RateLimitingFilter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain
     ) throws jakarta.servlet.ServletException, IOException {
+
+        maybeCleanupStaleKeys();
 
         String path = request.getRequestURI();
         Rule rule = RULES.stream().filter(r -> r.pathMatches().test(path)).findFirst().orElse(null);
@@ -144,5 +163,58 @@ public class RateLimitingFilter extends OncePerRequestFilter {
             return forwardedFor.split(",")[0].trim();
         }
         return remoteAddr;
+    }
+
+    /**
+     * Sweeps {@link #requestLog} for keys whose window has fully elapsed, at most once per
+     * {@link #CLEANUP_INTERVAL}. The CAS on {@link #lastCleanupNanos} means at most one of any
+     * concurrently-arriving requests performs the sweep; every other request just proceeds.
+     */
+    private void maybeCleanupStaleKeys() {
+        long nowNanos = System.nanoTime();
+        long last = lastCleanupNanos.get();
+        if (nowNanos - last < CLEANUP_INTERVAL.toNanos()) {
+            return;
+        }
+        if (!lastCleanupNanos.compareAndSet(last, nowNanos)) {
+            return;
+        }
+        cleanupStaleKeys();
+    }
+
+    // Package-private and ungated by CLEANUP_INTERVAL/the CAS above: lets tests trigger a sweep
+    // deterministically instead of waiting out real wall-clock minutes or mocking System.nanoTime.
+    void cleanupStaleKeys() {
+        Instant staleBefore = Instant.now().minus(MAX_RULE_WINDOW);
+        requestLog.forEach((key, timestamps) -> {
+            synchronized (timestamps) {
+                while (true) {
+                    Instant oldest = timestamps.peekFirst();
+                    if (oldest == null || !oldest.isBefore(staleBefore)) {
+                        break;
+                    }
+                    timestamps.pollFirst();
+                }
+                if (timestamps.isEmpty()) {
+                    // remove(key, value) rather than a plain remove(key): only drop this exact
+                    // now-empty Deque instance, so a request that raced in via computeIfAbsent
+                    // and added a fresh timestamp to it between our emptiness check and this
+                    // call is never silently discarded.
+                    requestLog.remove(key, timestamps);
+                }
+            }
+        });
+    }
+
+    // Package-private: lets tests assert the map actually shrinks after a sweep.
+    int trackedKeyCount() {
+        return requestLog.size();
+    }
+
+    // Package-private: lets tests seed an arbitrarily-old timestamp directly, since production
+    // timestamps only ever come from Instant.now() inside isRateLimited and there's no injected
+    // Clock to fast-forward in a test.
+    void trackForTesting(String key, Instant timestamp) {
+        requestLog.computeIfAbsent(key, k -> new ArrayDeque<>()).addLast(timestamp);
     }
 }
