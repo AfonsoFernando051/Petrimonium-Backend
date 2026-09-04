@@ -6,11 +6,13 @@ import java.util.Optional;
  * Which Flutter app a session belongs to (docs/ECOSYSTEM.md, CROSS_REPO_CONTRACTS.md §1). Not an
  * authorization role — {@link RoleEnum} still governs ADMIN/USER — this is what lets the BFF tell
  * a Wallet session apart from an Academy one so real_portfolio never answers an Academy request
- * and vice versa.
+ * and vice versa. HEALTH is the third such app: its cash-flow data is real user money and must
+ * never be reachable from an Academy session (whose portfolio is simulated) or a Wallet one.
  */
 public enum AppContextEnum {
     ACADEMY,
-    WALLET;
+    WALLET,
+    HEALTH;
 
     /** Lowercase JWT claim value, per the {@code app_context} shape already published to the
      * Academy/Wallet repos in CROSS_REPO_CONTRACTS.md. */
@@ -66,7 +68,7 @@ public enum AppContextEnum {
         try {
             return valueOf(value.trim().toUpperCase());
         } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("appContext must be 'academy' or 'wallet'");
+            throw new IllegalArgumentException("appContext must be 'academy', 'wallet' or 'health'");
         }
     }
 }

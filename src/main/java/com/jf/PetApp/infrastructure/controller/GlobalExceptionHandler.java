@@ -21,6 +21,7 @@ import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidExcepti
 import com.jf.PetApp.application.auth.exception.UserAlreadyExistsException;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
+import com.jf.PetApp.application.health.exception.HealthConflictException;
 
 /**
  * Single point where every uncaught exception becomes an HTTP response, so every controller
@@ -86,6 +87,12 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UserAlreadyExistsException.class)
     public ProblemDetail handleUserAlreadyExists(UserAlreadyExistsException e) {
         return problem(HttpStatus.CONFLICT, "USER_ALREADY_EXISTS", e.getMessage());
+    }
+
+    @ExceptionHandler(HealthConflictException.class)
+    public ProblemDetail handleHealthConflict(HealthConflictException e) {
+        log.warn("Health request conflict ({}): {}", e.code(), e.getMessage());
+        return problem(HttpStatus.CONFLICT, e.code(), e.getMessage());
     }
 
     @ExceptionHandler(AuthenticationException.class)
