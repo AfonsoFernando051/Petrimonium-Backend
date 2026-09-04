@@ -141,9 +141,9 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
         String title = conversation.title();
         if (title == null || title.isBlank()) {
             title = buildTitle(request.message());
-            conversationRepositoryPort.updateTitle(conversation.id(), title);
+            conversationRepositoryPort.updateTitle(conversation.id(), email, appContextClaim, title);
         } else {
-            conversationRepositoryPort.touch(conversation.id());
+            conversationRepositoryPort.touch(conversation.id(), email, appContextClaim);
         }
 
         return new MentorChatResponse(reply, conversation.id(), title, sources);

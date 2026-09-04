@@ -29,10 +29,22 @@ public interface MentorConversationRepositoryPort {
      *  conversation's existence by id. */
     Optional<MentorConversation> findByIdAndUser(Long id, String userEmail, String appContext);
 
-    void updateTitle(Long id, String title);
+    // Every mutation below takes the owner and the app_context, not just an id.
+    //
+    // They used to take an id alone, which made "find the conversation, check it's yours, then
+    // mutate it by id" the caller's job — correct in every caller, but a shape where forgetting
+    // the check is a plain method call away and reads like working code in review. Scoping the
+    // write itself means a wrong owner or a wrong app_context simply finds nothing to write to,
+    // and the check cannot be skipped because there is no unscoped method to call.
+    //
+    // Each throws ResourceNotFoundException when no conversation matches all three — the same
+    // "as if it didn't exist" response as findByIdAndUser, so an id from another user or another
+    // app is indistinguishable from an id that was never issued.
+
+    void updateTitle(Long id, String userEmail, String appContext, String title);
 
     /** Bumps {@code updatedAt} to now, without touching the title. */
-    void touch(Long id);
+    void touch(Long id, String userEmail, String appContext);
 
-    void delete(Long id);
+    void delete(Long id, String userEmail, String appContext);
 }

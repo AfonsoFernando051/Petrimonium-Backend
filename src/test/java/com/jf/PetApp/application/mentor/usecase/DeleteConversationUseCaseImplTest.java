@@ -2,7 +2,6 @@ package com.jf.PetApp.application.mentor.usecase;
 
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.mentor.port.MentorConversationRepositoryPort;
-import com.jf.PetApp.core.domain.MentorConversation;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,13 +9,13 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.time.Instant;
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.never;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 class DeleteConversationUseCaseImplTest {
 
@@ -35,40 +34,35 @@ class DeleteConversationUseCaseImplTest {
     }
 
     @Test
-    void execute_WhenOwnedByUser_Deletes() {
-        MentorConversation conversation = new MentorConversation(CONVERSATION_ID, EMAIL, "Title", Instant.now(), Instant.now(), "wallet");
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "wallet")).thenReturn(Optional.of(conversation));
-
+    void execute_PassesTheOwnerAndContextIntoTheDeleteItself() {
         useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.WALLET);
 
-        verify(conversationRepositoryPort).delete(CONVERSATION_ID);
+        // The ownership check is no longer a separate step the use case performs — it is part of
+        // the delete's address, so it cannot be skipped (DEM-71).
+        verify(conversationRepositoryPort).delete(CONVERSATION_ID, EMAIL, "wallet");
+        verify(conversationRepositoryPort, never()).findByIdAndUser(anyLong(), anyString(), anyString());
     }
 
     @Test
-    void execute_WhenNotOwnedByUser_ThrowsAndDoesNotDelete() {
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "wallet")).thenReturn(Optional.empty());
+    void execute_WhenTheScopedDeleteFindsNothing_PropagatesNotFound() {
+        doThrow(new ResourceNotFoundException("Conversation not found"))
+                .when(conversationRepositoryPort).delete(CONVERSATION_ID, EMAIL, "wallet");
 
-        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.WALLET));
-
-        verify(conversationRepositoryPort, never()).delete(CONVERSATION_ID);
+        assertThrows(ResourceNotFoundException.class,
+                () -> useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.WALLET));
     }
 
     @Test
-    void execute_WhenConversationBelongsToADifferentAppContext_ThrowsAndDoesNotDelete() {
-        // The conversation exists for this user under WALLET, but the current session is ACADEMY
-        // — the repository is queried with "academy" and correctly finds nothing, since a
-        // context-scoped conversation is invisible to every other context.
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, "academy")).thenReturn(Optional.empty());
+    void execute_CarriesTheAppContextThrough_SoAWalletIdIsNotDeletableFromAcademy() {
+        useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.ACADEMY);
 
-        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID, AppContextEnum.ACADEMY));
-
-        verify(conversationRepositoryPort, never()).delete(CONVERSATION_ID);
+        verify(conversationRepositoryPort).delete(CONVERSATION_ID, EMAIL, "academy");
     }
 
     @Test
-    void execute_WithNullAppContext_QueriesWithNullClaim() {
-        when(conversationRepositoryPort.findByIdAndUser(CONVERSATION_ID, EMAIL, null)).thenReturn(Optional.empty());
+    void execute_WithNullAppContext_PassesNullRatherThanGuessing() {
+        useCase.execute(EMAIL, CONVERSATION_ID, null);
 
-        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, CONVERSATION_ID, null));
+        verify(conversationRepositoryPort).delete(CONVERSATION_ID, EMAIL, null);
     }
 }
