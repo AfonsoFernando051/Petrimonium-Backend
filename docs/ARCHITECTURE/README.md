@@ -120,7 +120,7 @@ Legenda: ✅ escrita · ⬜ pendente
 
 | # | Fatia | Status |
 |---|---|---|
-| 26 | Perfil Health: país, moeda e idioma (e a trava da moeda) | ⬜ |
+| 26 | [Perfil Health: país, moeda e idioma (e a trava da moeda)](fatias/26-health-perfil-moeda.md) | ✅ |
 | 27 | Contas, lançamentos e transferências | ⬜ |
 | 28 | Recorrências, cartões, compras e faturas | ⬜ |
 | 29 | Resumo e projeção mensal | ⬜ |

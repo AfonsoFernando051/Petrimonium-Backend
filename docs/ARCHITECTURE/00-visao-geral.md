@@ -291,10 +291,10 @@ Se você vai estudar o sistema do zero, nesta ordem:
 
 Honestidade sobre o próprio documento:
 
-- 15 das 29 fatias ainda não foram escritas — entre elas **todas as quatro do
-  Health** (26–29). Até que existam, `Petrimonium-Health/docs/API.md` é a
-  referência do contrato HTTP daquele produto, mas ela descreve o contrato, não
-  o caminho do dado ponta a ponta.
+- 14 das 29 fatias ainda não foram escritas — entre elas três das quatro do
+  Health (27–29; a **26**, sobre perfil/moeda, está escrita). Até que existam,
+  `Petrimonium-Health/docs/API.md` é a referência do contrato HTTP daquele
+  produto, mas ela descreve o contrato, não o caminho do dado ponta a ponta.
 - Não há descrição de deploy/infra de produção além do que está nos
   `.properties` — não foi auditado aqui.
 - O deploy de produção (topologia, proxy reverso, `app.security.trusted-proxies`)
