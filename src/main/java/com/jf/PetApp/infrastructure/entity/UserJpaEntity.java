@@ -44,6 +44,9 @@ public class UserJpaEntity {
     @Column(name = "preferred_language")
     private String preferredLanguage;
 
+    @Column(name = "country_code")
+    private String countryCode;
+
     @Enumerated(EnumType.STRING)
     private RoleEnum role;
 
@@ -72,6 +75,7 @@ public class UserJpaEntity {
         entity.hasAnsweredOnboarding = user.hasAnsweredOnboarding();
         entity.investorProfile = user.getInvestorProfile();
         entity.preferredLanguage = user.getPreferredLanguage();
+        entity.countryCode = user.getCountryCode();
         entity.provider = user.getProvider();
         entity.providerId = user.getProviderId();
 
@@ -94,6 +98,7 @@ public class UserJpaEntity {
         user.setHasAnsweredOnboarding(hasAnsweredOnboarding);
         user.setInvestorProfile(investorProfile);
         user.setPreferredLanguage(preferredLanguage);
+        user.setCountryCode(countryCode);
         user.setProvider(provider);
         user.setProviderId(providerId);
 
