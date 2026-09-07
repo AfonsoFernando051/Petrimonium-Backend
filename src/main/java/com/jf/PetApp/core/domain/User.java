@@ -62,6 +62,12 @@ public class User {
 	String preferredLanguage = "pt";
 
 	/**
+	 * ISO 3166-1 alpha-2 do país da conta ("BR", "PT"). Nulo enquanto o
+	 * utilizador não escolher — não se assume país a partir do dispositivo.
+	 */
+	String countryCode;
+
+	/**
 	 * How this user authenticates. LOCAL users have a password; GOOGLE users
 	 * authenticate via a verified Google ID token and have none.
 	 */
@@ -158,6 +164,14 @@ public class User {
 
 	public void setPreferredLanguage(String preferredLanguage) {
 		this.preferredLanguage = preferredLanguage;
+	}
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
 	}
 
 	public AuthProviderEnum getProvider() {

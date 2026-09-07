@@ -9,13 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jf.PetApp.application.user.port.DemoAccountResetPort;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
-import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
-import com.jf.PetApp.infrastructure.repository.gamification.AchievementUnlockJpaRepository;
-import com.jf.PetApp.infrastructure.repository.gamification.ActivityLogJpaRepository;
-import com.jf.PetApp.infrastructure.repository.gamification.MissionCompletionJpaRepository;
-import com.jf.PetApp.infrastructure.repository.gamification.XpEventJpaRepository;
-import com.jf.PetApp.infrastructure.repository.learning.LessonProgressJpaRepository;
-import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJpaRepository;
 
 /**
  * Usernames listed here are wiped back to a brand-new-signup state on every
@@ -33,31 +26,11 @@ public class DemoAccountResetAdapter implements DemoAccountResetPort {
     private static final Set<String> DEMO_USERNAMES = Set.of("admin2");
 
     private final SpringUserJpaRepository userJpaRepository;
-    private final InvestmentRepository investmentRepository;
-    private final LessonProgressJpaRepository lessonProgressRepository;
-    private final XpEventJpaRepository xpEventRepository;
-    private final AchievementUnlockJpaRepository achievementUnlockRepository;
-    private final ActivityLogJpaRepository activityLogRepository;
-    private final MissionCompletionJpaRepository missionCompletionRepository;
-    private final SpringMentorConversationJpaRepository mentorConversationRepository;
+    private final UserDataEraser userDataEraser;
 
-    public DemoAccountResetAdapter(
-            SpringUserJpaRepository userJpaRepository,
-            InvestmentRepository investmentRepository,
-            LessonProgressJpaRepository lessonProgressRepository,
-            XpEventJpaRepository xpEventRepository,
-            AchievementUnlockJpaRepository achievementUnlockRepository,
-            ActivityLogJpaRepository activityLogRepository,
-            MissionCompletionJpaRepository missionCompletionRepository,
-            SpringMentorConversationJpaRepository mentorConversationRepository) {
+    public DemoAccountResetAdapter(SpringUserJpaRepository userJpaRepository, UserDataEraser userDataEraser) {
         this.userJpaRepository = userJpaRepository;
-        this.investmentRepository = investmentRepository;
-        this.lessonProgressRepository = lessonProgressRepository;
-        this.xpEventRepository = xpEventRepository;
-        this.achievementUnlockRepository = achievementUnlockRepository;
-        this.activityLogRepository = activityLogRepository;
-        this.missionCompletionRepository = missionCompletionRepository;
-        this.mentorConversationRepository = mentorConversationRepository;
+        this.userDataEraser = userDataEraser;
     }
 
     @Override
@@ -76,13 +49,9 @@ public class DemoAccountResetAdapter implements DemoAccountResetPort {
         User domainUser = user.toDomain();
         Long userId = domainUser.getId();
 
-        investmentRepository.deleteByUserEmail(domainUser.getEmail());
-        lessonProgressRepository.deleteByUserId(userId);
-        xpEventRepository.deleteByUserId(userId);
-        achievementUnlockRepository.deleteByUserId(userId);
-        activityLogRepository.deleteByUserId(userId);
-        missionCompletionRepository.deleteByUserId(userId);
-        mentorConversationRepository.deleteByUserId(userId);
+        // Uma chamada em vez de sete: antes isto cobria só metade das
+        // tabelas e a conta de demonstração ia acumulando o resto.
+        userDataEraser.eraseAll(userId, domainUser.getEmail());
 
         user.resetToFreshSignupState();
         userJpaRepository.save(user);

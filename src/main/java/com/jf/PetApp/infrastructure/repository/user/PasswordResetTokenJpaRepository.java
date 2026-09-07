@@ -20,4 +20,7 @@ public interface PasswordResetTokenJpaRepository extends JpaRepository<PasswordR
     @Modifying(clearAutomatically = true)
     @Query("update PasswordResetTokenJpaEntity t set t.usedAt = :now where t.userId = :userId and t.usedAt is null")
     void invalidateOutstandingForUser(@Param("userId") Long userId, @Param("now") Instant now);
+
+    /** Remoção definitiva, ao contrário de {@link #invalidateOutstandingForUser}. */
+    void deleteByUserId(Long userId);
 }

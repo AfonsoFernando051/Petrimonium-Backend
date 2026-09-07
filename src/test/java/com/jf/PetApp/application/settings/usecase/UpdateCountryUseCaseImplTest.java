@@ -11,17 +11,18 @@ import org.mockito.MockitoAnnotations;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-class UpdateLanguageUseCaseImplTest {
+class UpdateCountryUseCaseImplTest {
 
     @Mock
     private UserRepository userRepository;
 
     @InjectMocks
-    private UpdateLanguageUseCaseImpl updateLanguageUseCase;
+    private UpdateCountryUseCaseImpl updateCountryUseCase;
 
     @BeforeEach
     void setUp() {
@@ -29,55 +30,45 @@ class UpdateLanguageUseCaseImplTest {
     }
 
     @Test
-    void execute_WithSupportedLanguage_ShouldUpdateAndPersist() {
+    void execute_WithSupportedCountry_ShouldUpdateAndPersist() {
         String email = "user@test.com";
         User user = new User();
         user.setEmail(email);
-        user.setPreferredLanguage("pt");
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
 
-        String result = updateLanguageUseCase.execute(email, "en");
+        String result = updateCountryUseCase.execute(email, "PT");
 
-        assertEquals("en", result);
-        assertEquals("en", user.getPreferredLanguage());
+        assertEquals("PT", result);
+        assertEquals("PT", user.getCountryCode());
         verify(userRepository, times(1)).save(user);
     }
 
     @Test
-    void execute_WithEuropeanPortuguese_ShouldPersistIt() {
-        // Regressão: pt_PT passou a existir nos apps mas o use case validava
-        // contra a lista de alvos de tradução, que não o conhece. O PUT dava
-        // 400 e o app engole a falha — a preferência sumia sem erro visível.
-        String email = "user@test.com";
-        User user = new User();
-        user.setEmail(email);
-        user.setPreferredLanguage("pt");
-
-        when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
-
-        assertEquals("pt_PT", updateLanguageUseCase.execute(email, "pt_PT"));
-        assertEquals("pt_PT", user.getPreferredLanguage());
-        verify(userRepository, times(1)).save(user);
-    }
-
-    @Test
-    void execute_WithHyphenatedTag_ShouldStoreCanonicalForm() {
-        // Wallet e Academy mandam pt_PT; o Health mandaria pt-PT. Guarda-se
-        // uma só forma para os três não divergirem na base.
+    void execute_WithLowercaseCountry_ShouldStoreUppercase() {
         String email = "user@test.com";
         User user = new User();
         user.setEmail(email);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
 
-        assertEquals("pt_PT", updateLanguageUseCase.execute(email, "pt-pt"));
+        assertEquals("BR", updateCountryUseCase.execute(email, "br"));
     }
 
     @Test
-    void execute_WithUnsupportedLanguage_ShouldThrowWithoutTouchingRepository() {
+    void execute_WithUnsupportedCountry_ShouldThrowWithoutTouchingRepository() {
+        // O ecossistema opera só em BR e PT nesta fase; aceitar qualquer
+        // ISO deixaria entrar país sem moeda nem conteúdo suportados.
         assertThrows(IllegalArgumentException.class, () ->
-            updateLanguageUseCase.execute("user@test.com", "fr"));
+            updateCountryUseCase.execute("user@test.com", "US"));
+
+        verifyNoInteractions(userRepository);
+    }
+
+    @Test
+    void execute_WithNullCountry_ShouldThrowWithoutTouchingRepository() {
+        assertThrows(IllegalArgumentException.class, () ->
+            updateCountryUseCase.execute("user@test.com", null));
 
         verifyNoInteractions(userRepository);
     }
@@ -87,8 +78,14 @@ class UpdateLanguageUseCaseImplTest {
         when(userRepository.findByEmail("missing@test.com")).thenReturn(Optional.empty());
 
         assertThrows(org.springframework.web.server.ResponseStatusException.class, () ->
-            updateLanguageUseCase.execute("missing@test.com", "en"));
+            updateCountryUseCase.execute("missing@test.com", "BR"));
 
         verify(userRepository, never()).save(any());
+    }
+
+    @Test
+    void newUser_HasNoCountryUntilChosen() {
+        // Nulo é "ainda não escolheu". Não se infere país do dispositivo.
+        assertNull(new User().getCountryCode());
     }
 }

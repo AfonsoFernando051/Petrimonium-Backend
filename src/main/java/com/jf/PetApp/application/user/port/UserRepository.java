@@ -14,4 +14,7 @@ public interface UserRepository {
     Optional<User> findByProviderId(String providerId);
 
     User save(User user);
+
+    /** Remoção definitiva. Só a exclusão de conta usa isto. */
+    void delete(User user);
 }

@@ -18,6 +18,8 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.jf.PetApp.application.settings.usecase.DeleteAccountUseCase;
+import com.jf.PetApp.application.settings.usecase.UpdateCountryUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateLanguageUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
@@ -35,6 +37,12 @@ class SettingsControllerTest {
 
     @MockitoBean
     private UpdateLanguageUseCase updateLanguageUseCase;
+
+    @MockitoBean
+    private UpdateCountryUseCase updateCountryUseCase;
+
+    @MockitoBean
+    private DeleteAccountUseCase deleteAccountUseCase;
 
     @MockitoBean
     private JwtAuthenticationFilter jwtAuthenticationFilter; // mock the exact filter that security config uses

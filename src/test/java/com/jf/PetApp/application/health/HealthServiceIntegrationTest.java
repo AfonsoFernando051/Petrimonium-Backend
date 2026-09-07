@@ -57,6 +57,7 @@ class HealthServiceIntegrationTest {
     /** Emails map to the {@code jf_users} rows this test inserted; nothing else is looked up. */
     private final UserRepository userRepository = new UserRepository() {
         @Override public Optional<User> findById(int id) { return Optional.empty(); }
+        @Override public void delete(User user) { users.remove(user.getEmail()); }
         @Override public Optional<User> findByEmail(String email) {
             return Optional.ofNullable(users.get(email));
         }

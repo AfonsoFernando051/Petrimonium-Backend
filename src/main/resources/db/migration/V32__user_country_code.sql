@@ -1,0 +1,12 @@
+-- País da conta, não do app. Até aqui só o contexto health guardava país
+-- (na sua própria schema, via JdbcHealthStore), e Wallet e Academy não tinham
+-- nenhum: cada app inferia mercado e moeda do seu próprio enum de um valor só.
+--
+-- Fica ao lado de preferred_language em jf_users porque é a mesma natureza —
+-- propriedade da pessoa, partilhada pelos três apps, coerente com "sua conta
+-- Petrimonium é única para Academy, Wallet e Health".
+--
+-- Sem backfill e sem NOT NULL: nulo significa "ainda não escolheu", que é a
+-- verdade para toda conta existente. Forçar 'BR' inventaria um dado que
+-- ninguém informou.
+alter table jf_users add column country_code varchar(2);

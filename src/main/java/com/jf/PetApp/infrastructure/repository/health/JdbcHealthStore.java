@@ -39,6 +39,30 @@ public class JdbcHealthStore implements HealthStore {
         return prefix + name;
     }
 
+    /**
+     * Ordem obrigatória: cada tabela sai antes daquela que referencia. As FKs
+     * do schema health são compostas — (id, user_id, currency) — e encadeiam
+     * transactions e installments até cards/accounts, e estes até profiles.
+     * Inverter dois destes passos dá violação de chave estrangeira em runtime,
+     * não em compilação, por isso a ordem está fixada aqui e coberta por
+     * {@code UserDataErasureCoverageTest}.
+     */
+    @Override
+    public void deleteAllForUser(long userId) {
+        for (String table : List.of(
+                "health_transactions",
+                "health_card_installments",
+                "health_transfers",
+                "health_card_purchases",
+                "health_card_invoices",
+                "health_recurrences",
+                "health_cards",
+                "health_accounts",
+                "health_profiles")) {
+            jdbc.update("delete from " + t(table) + " where user_id = ?", userId);
+        }
+    }
+
     private static Instant instant(ResultSet rs, String column) throws SQLException {
         Timestamp value = rs.getTimestamp(column);
         return value == null ? null : value.toInstant();

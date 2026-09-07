@@ -8,29 +8,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
-public class UpdateLanguageUseCaseImpl implements UpdateLanguageUseCase {
+public class UpdateCountryUseCaseImpl implements UpdateCountryUseCase {
 
     private final UserRepository userRepository;
 
-    public UpdateLanguageUseCaseImpl(UserRepository userRepository) {
+    public UpdateCountryUseCaseImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
     @Override
-    public String execute(String email, String language) {
-        // AccountPreferences.INTERFACE_LANGUAGES, e não a lista de alvos de
-        // tradução: são perguntas diferentes. Ver AccountPreferences.
-        String normalized = AccountPreferences.normalizeLanguage(language);
-        if (!AccountPreferences.isSupportedInterfaceLanguage(normalized)) {
-            throw new IllegalArgumentException("Unsupported language");
+    public String execute(String email, String countryCode) {
+        String normalized = AccountPreferences.normalizeCountry(countryCode);
+        if (!AccountPreferences.isSupportedCountry(normalized)) {
+            throw new IllegalArgumentException("Unsupported country");
         }
 
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
 
-        user.setPreferredLanguage(normalized);
+        user.setCountryCode(normalized);
         userRepository.save(user);
 
-        return user.getPreferredLanguage();
+        return user.getCountryCode();
     }
 }

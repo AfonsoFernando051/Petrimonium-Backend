@@ -22,4 +22,7 @@ public interface RefreshTokenJpaRepository extends JpaRepository<RefreshTokenJpa
     @Query("update RefreshTokenJpaEntity t set t.revokedAt = :now, t.replacedByTokenHash = null "
             + "where t.userId = :userId and t.revokedAt is null")
     void revokeAllForUser(@Param("userId") Long userId, @Param("now") Instant now);
+
+    /** Remoção definitiva, ao contrário de {@link #revokeAllForUser} — só para apagar a conta. */
+    void deleteByUserId(Long userId);
 }
