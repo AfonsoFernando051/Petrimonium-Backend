@@ -10,4 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SimulatedPortfolioRepository extends JpaRepository<SimulatedPortfolioJpaEntity, Long> {
     Optional<SimulatedPortfolioJpaEntity> findByUser_Email(String email);
+
+    Optional<SimulatedPortfolioJpaEntity> findByUser_Id(Long userId);
 }

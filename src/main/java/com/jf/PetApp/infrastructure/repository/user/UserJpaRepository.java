@@ -47,4 +47,12 @@ public class UserJpaRepository implements UserRepository {
         jpa.save(entity);
         return entity.toDomain();
     }
+
+    @Override
+    public void delete(User user) {
+        // O domínio guarda o id como Long, o repositório Spring está tipado
+        // com Integer (inconsistência que já existia — ver findById(int)).
+        // toIntExact falha alto se algum dia transbordar, em vez de truncar.
+        jpa.deleteById(Math.toIntExact(user.getId()));
+    }
 }

@@ -1,5 +1,6 @@
 package com.jf.PetApp.infrastructure.controller.settings;
 
+import com.jf.PetApp.application.settings.usecase.DeleteAccountUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateCountryUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateLanguageUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
@@ -17,13 +18,16 @@ public class SettingsController {
     private final UserRepository userRepository;
     private final UpdateLanguageUseCase updateLanguageUseCase;
     private final UpdateCountryUseCase updateCountryUseCase;
+    private final DeleteAccountUseCase deleteAccountUseCase;
 
     public SettingsController(UserRepository userRepository,
                               UpdateLanguageUseCase updateLanguageUseCase,
-                              UpdateCountryUseCase updateCountryUseCase) {
+                              UpdateCountryUseCase updateCountryUseCase,
+                              DeleteAccountUseCase deleteAccountUseCase) {
         this.userRepository = userRepository;
         this.updateLanguageUseCase = updateLanguageUseCase;
         this.updateCountryUseCase = updateCountryUseCase;
+        this.deleteAccountUseCase = deleteAccountUseCase;
     }
 
     @GetMapping("/language")
@@ -53,6 +57,17 @@ public class SettingsController {
         String email = SecurityUtils.getCurrentUserEmail();
         String updatedCountry = updateCountryUseCase.execute(email, request.countryCode());
         return ResponseEntity.ok(new CountryResponseDTO(updatedCountry));
+    }
+
+    /**
+     * Irreversível: apaga a conta e todos os dados dela em todos os contextos.
+     * Não há período de carência. Os tokens saem junto, por isso o pedido
+     * seguinte deste cliente responde 401 — é o esperado.
+     */
+    @DeleteMapping("/account")
+    public ResponseEntity<Void> deleteAccount() {
+        deleteAccountUseCase.execute(SecurityUtils.getCurrentUserEmail());
+        return ResponseEntity.noContent().build();
     }
 
     public record LanguageResponseDTO(String language) {}

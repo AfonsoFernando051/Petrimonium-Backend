@@ -12,6 +12,9 @@ import com.jf.PetApp.infrastructure.entity.MentorConversationJpaEntity;
 import com.jf.PetApp.infrastructure.entity.MissionCompletionJpaEntity;
 import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
 import com.jf.PetApp.infrastructure.entity.XpEventJpaEntity;
+import com.jf.PetApp.infrastructure.repository.SimulatedOrderRepository;
+import com.jf.PetApp.infrastructure.repository.SimulatedPortfolioRepository;
+import com.jf.PetApp.infrastructure.repository.SimulatedPositionRepository;
 import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
 import com.jf.PetApp.infrastructure.repository.gamification.AchievementUnlockJpaRepository;
 import com.jf.PetApp.infrastructure.repository.gamification.ActivityLogJpaRepository;
@@ -51,6 +54,17 @@ class DemoAccountResetAdapterTest {
     @Autowired
     private SpringMentorConversationJpaRepository mentorConversationRepository;
 
+    @Autowired
+    private RefreshTokenJpaRepository refreshTokenRepository;
+    @Autowired
+    private PasswordResetTokenJpaRepository passwordResetTokenRepository;
+    @Autowired
+    private SimulatedPortfolioRepository simulatedPortfolioRepository;
+    @Autowired
+    private SimulatedOrderRepository simulatedOrderRepository;
+    @Autowired
+    private SimulatedPositionRepository simulatedPositionRepository;
+
     private DemoAccountResetAdapter adapter;
 
     private Long admin2Id;
@@ -58,10 +72,17 @@ class DemoAccountResetAdapterTest {
 
     @BeforeEach
     void setUp() {
-        adapter = new DemoAccountResetAdapter(
-                userJpaRepository, investmentRepository, lessonProgressRepository,
-                xpEventRepository, achievementUnlockRepository, activityLogRepository,
-                missionCompletionRepository, mentorConversationRepository);
+        // HealthStore simulado: @DataJpaTest é uma fatia JPA e o schema health
+        // não é JPA, por isso as tabelas dele nem existem aqui. O que este
+        // teste verifica é o lado JPA da limpeza; a parte do Health tem
+        // cobertura própria em UserDataErasureCoverageTest.
+        UserDataEraser eraser = new UserDataEraser(
+                investmentRepository, lessonProgressRepository, xpEventRepository,
+                achievementUnlockRepository, activityLogRepository, missionCompletionRepository,
+                mentorConversationRepository, refreshTokenRepository, passwordResetTokenRepository,
+                simulatedPortfolioRepository, simulatedOrderRepository, simulatedPositionRepository,
+                org.mockito.Mockito.mock(com.jf.PetApp.application.health.port.HealthStore.class));
+        adapter = new DemoAccountResetAdapter(userJpaRepository, eraser);
 
         admin2Id = createUser("admin2", "admin2@petinvest.local");
         otherUserId = createUser("investor", "investor@test.com");
