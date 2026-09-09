@@ -10,6 +10,8 @@ public interface PetRepositoryPort {
 
     Optional<Pet> findByUserIdAndAppContext(Long userId, AppContextEnum appContext);
 
+    Optional<Pet> findById(Integer petId);
+
     List<Pet> findAllByUserId(Long userId);
 
     /** Creates or updates {@code pet} and points {@code appContext} at it, replacing whatever pet answered for that app before. */
