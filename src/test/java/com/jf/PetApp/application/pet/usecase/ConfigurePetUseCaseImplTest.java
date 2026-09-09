@@ -1,13 +1,14 @@
 package com.jf.PetApp.application.pet.usecase;
 
+import com.jf.PetApp.application.pet.port.PetRepositoryPort;
+import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
-import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
-import com.jf.PetApp.infrastructure.repository.PetRepository;
-import com.jf.PetApp.application.user.port.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -24,6 +25,9 @@ public class ConfigurePetUseCaseImplTest {
     @Mock
     private UserRepository userRepository;
 
+    @Mock
+    private PetRepositoryPort petRepository;
+
     @InjectMocks
     private ConfigurePetUseCaseImpl configurePetUseCase;
 
@@ -39,10 +43,11 @@ public class ConfigurePetUseCaseImplTest {
         user.setEmail(email);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.WALLET))).thenReturn(Optional.empty());
 
-        configurePetUseCase.execute(email, PetSpecieEnum.DOG, "Rex");
+        configurePetUseCase.execute(email, AppContextEnum.WALLET, PetSpecieEnum.DOG, "Rex");
 
-        verify(userRepository, times(1)).save(any());
+        verify(petRepository, times(1)).saveAndLink(any(), eq(AppContextEnum.WALLET));
     }
 
     @Test
@@ -52,8 +57,9 @@ public class ConfigurePetUseCaseImplTest {
         when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
 
         assertThrows(
-                IllegalArgumentException.class, () -> configurePetUseCase.execute(email, PetSpecieEnum.DOG, "Rex"));
-        verify(userRepository, never()).save(any());
+                IllegalArgumentException.class,
+                () -> configurePetUseCase.execute(email, AppContextEnum.WALLET, PetSpecieEnum.DOG, "Rex"));
+        verify(petRepository, never()).saveAndLink(any(), any());
     }
 
     @Test
@@ -63,10 +69,13 @@ public class ConfigurePetUseCaseImplTest {
         user.setEmail(email);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.HEALTH))).thenReturn(Optional.empty());
 
-        configurePetUseCase.execute(email, PetSpecieEnum.FOX, "Rusty");
+        configurePetUseCase.execute(email, AppContextEnum.HEALTH, PetSpecieEnum.FOX, "Rusty");
 
-        assertEquals("Rusty", user.getPet().getName());
+        ArgumentCaptor<Pet> captor = ArgumentCaptor.forClass(Pet.class);
+        verify(petRepository).saveAndLink(captor.capture(), eq(AppContextEnum.HEALTH));
+        assertEquals("Rusty", captor.getValue().getName());
     }
 
     @Test
@@ -76,10 +85,13 @@ public class ConfigurePetUseCaseImplTest {
         user.setEmail(email);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.HEALTH))).thenReturn(Optional.empty());
 
-        configurePetUseCase.execute(email, PetSpecieEnum.FOX, "  Rusty  ");
+        configurePetUseCase.execute(email, AppContextEnum.HEALTH, PetSpecieEnum.FOX, "  Rusty  ");
 
-        assertEquals("Rusty", user.getPet().getName());
+        ArgumentCaptor<Pet> captor = ArgumentCaptor.forClass(Pet.class);
+        verify(petRepository).saveAndLink(captor.capture(), eq(AppContextEnum.HEALTH));
+        assertEquals("Rusty", captor.getValue().getName());
     }
 
     @Test
@@ -89,18 +101,24 @@ public class ConfigurePetUseCaseImplTest {
         user.setEmail(email);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.HEALTH))).thenReturn(Optional.empty());
 
-        configurePetUseCase.execute(email, PetSpecieEnum.FOX, null);
+        configurePetUseCase.execute(email, AppContextEnum.HEALTH, PetSpecieEnum.FOX, null);
 
-        assertEquals("FOX Companion", user.getPet().getName());
+        ArgumentCaptor<Pet> captor = ArgumentCaptor.forClass(Pet.class);
+        verify(petRepository).saveAndLink(captor.capture(), eq(AppContextEnum.HEALTH));
+        assertEquals("FOX Companion", captor.getValue().getName());
 
         User user2 = new User();
         user2.setEmail("test2@test.com");
         when(userRepository.findByEmail("test2@test.com")).thenReturn(Optional.of(user2));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.WALLET))).thenReturn(Optional.empty());
 
-        configurePetUseCase.execute("test2@test.com", PetSpecieEnum.DOG, "   ");
+        configurePetUseCase.execute("test2@test.com", AppContextEnum.WALLET, PetSpecieEnum.DOG, "   ");
 
-        assertEquals("DOG Companion", user2.getPet().getName());
+        ArgumentCaptor<Pet> captor2 = ArgumentCaptor.forClass(Pet.class);
+        verify(petRepository).saveAndLink(captor2.capture(), eq(AppContextEnum.WALLET));
+        assertEquals("DOG Companion", captor2.getValue().getName());
     }
 
     @Test
@@ -112,13 +130,16 @@ public class ConfigurePetUseCaseImplTest {
         existingPet.setUser(user);
         existingPet.setName("Original Name");
         existingPet.setSpecie(PetSpecieEnum.DOG);
-        user.setPet(existingPet);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
+        when(petRepository.findByUserIdAndAppContext(any(), eq(AppContextEnum.WALLET)))
+                .thenReturn(Optional.of(existingPet));
 
-        configurePetUseCase.execute(email, PetSpecieEnum.CAT, "New Name Attempt");
+        configurePetUseCase.execute(email, AppContextEnum.WALLET, PetSpecieEnum.CAT, "New Name Attempt");
 
-        assertEquals("Original Name", user.getPet().getName());
-        assertEquals(PetSpecieEnum.CAT, user.getPet().getSpecie());
+        ArgumentCaptor<Pet> captor = ArgumentCaptor.forClass(Pet.class);
+        verify(petRepository).saveAndLink(captor.capture(), eq(AppContextEnum.WALLET));
+        assertEquals("Original Name", captor.getValue().getName());
+        assertEquals(PetSpecieEnum.CAT, captor.getValue().getSpecie());
     }
 }

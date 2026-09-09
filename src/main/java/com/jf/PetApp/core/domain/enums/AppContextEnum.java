@@ -26,6 +26,20 @@ public enum AppContextEnum {
     }
 
     /**
+     * The one species a session in this context may configure its Pet as, while Rive rigging
+     * cost keeps free species choice off the table (see {@code petrimonium-pet-rive-pipeline}
+     * memory). Wallet/Academy/Health each get their own mascot, matching the login-screen art and
+     * the onboarding screens' pre-selected default.
+     */
+    public PetSpecieEnum defaultPetSpecie() {
+        return switch (this) {
+            case WALLET -> PetSpecieEnum.DOG;
+            case ACADEMY -> PetSpecieEnum.WOLF;
+            case HEALTH -> PetSpecieEnum.FOX;
+        };
+    }
+
+    /**
      * Reverse-lookup of {@link #authority()} — resolves the {@code AppContextEnum} a granted
      * authority string represents, if any. Used to read back the context that
      * {@code JwtAuthenticationFilter} stamped onto the current {@code Authentication}.
