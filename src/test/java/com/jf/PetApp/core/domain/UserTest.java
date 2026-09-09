@@ -43,14 +43,12 @@ class UserTest {
     @Test
     void settersAndGetters_RoundTripEveryField() {
         User user = new User();
-        Pet pet = new Pet();
         Finance finance = new Finance();
 
         user.setId(5L);
         user.setUsername("name");
         user.setEmail("email@test.com");
         user.setPassword("pw");
-        user.setPet(pet);
         user.setFinance(finance);
         user.setRole(RoleEnum.ADMIN);
         user.setActive(false);
@@ -62,7 +60,6 @@ class UserTest {
         assertEquals("name", user.getUsername());
         assertEquals("email@test.com", user.getEmail());
         assertEquals("pw", user.getPassword());
-        assertEquals(pet, user.getPet());
         assertEquals(finance, user.getFinance());
         assertEquals(RoleEnum.ADMIN, user.getRole());
         assertFalse(user.isActive());

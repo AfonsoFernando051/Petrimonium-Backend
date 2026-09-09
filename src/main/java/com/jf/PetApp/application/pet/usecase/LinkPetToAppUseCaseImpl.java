@@ -5,25 +5,24 @@ import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
-public class GetPetStatusUseCaseImpl implements GetPetStatusUseCase {
+public class LinkPetToAppUseCaseImpl implements LinkPetToAppUseCase {
 
     private final UserRepository userRepository;
     private final PetRepositoryPort petRepository;
 
-    public GetPetStatusUseCaseImpl(UserRepository userRepository, PetRepositoryPort petRepository) {
+    public LinkPetToAppUseCaseImpl(UserRepository userRepository, PetRepositoryPort petRepository) {
         this.userRepository = userRepository;
         this.petRepository = petRepository;
     }
 
     @Override
-    public boolean execute(String userEmail, AppContextEnum appContext) {
-        if (appContext == null) {
-            return false;
-        }
+    @Transactional
+    public void execute(String userEmail, Integer petId, AppContextEnum appContext) {
         User user = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
-        return petRepository.findByUserIdAndAppContext(user.getId(), appContext).isPresent();
+        petRepository.link(petId, user.getId(), appContext);
     }
 }

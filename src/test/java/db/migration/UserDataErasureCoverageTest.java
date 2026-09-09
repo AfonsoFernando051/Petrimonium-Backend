@@ -27,14 +27,14 @@ class UserDataErasureCoverageTest {
     /** Apagadas explicitamente pelo {@code UserDataEraser}. */
     private static final Set<String> ERASED_EXPLICITLY = Set.of(
         "achievement_unlocks", "activity_log", "lesson_progress", "mission_completions",
-        "xp_events", "jf_investments", "jf_mentor_conversations", "jf_refresh_tokens",
+        "xp_events", "jf_investments", "jf_pets", "jf_pet_app_links", "jf_mentor_conversations", "jf_refresh_tokens",
         "jf_password_reset_tokens", "simulated_portfolios",
         "health_profiles", "health_accounts", "health_recurrences", "health_cards",
         "health_card_invoices", "health_card_purchases", "health_card_installments",
         "health_transfers", "health_transactions");
 
     /** Saem por cascata do {@code UserJpaEntity} (@OneToOne orphanRemoval). */
-    private static final Set<String> ERASED_BY_JPA_CASCADE = Set.of("jf_finances", "jf_pets");
+    private static final Set<String> ERASED_BY_JPA_CASCADE = Set.of("jf_finances");
 
     /** A própria linha da conta, apagada no fim pelo use case. */
     private static final Set<String> THE_ACCOUNT_ITSELF = Set.of("jf_users");

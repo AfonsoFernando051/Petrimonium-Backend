@@ -103,7 +103,10 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
 
         String language = MentorSystemPromptBuilder.resolveLanguage(request.context(), user.getPreferredLanguage());
 
-        Pet pet = getMyPetUseCase.execute(email).orElse(null);
+        // Same "no context -> Wallet" default as `walletShaped` below: an unscoped session gets
+        // the Wallet pet rather than no pet at all.
+        AppContextEnum petContext = appContext == null ? AppContextEnum.WALLET : appContext;
+        Pet pet = getMyPetUseCase.execute(email, petContext).orElse(null);
         String systemPrompt;
         List<String> sources;
         // Switched exhaustively on the context rather than "Academy or else": the `else` branch

@@ -1,8 +1,11 @@
 package com.jf.PetApp.infrastructure.repository.user;
 
+import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.assessment.InvestorProfile;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
+import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 import com.jf.PetApp.core.domain.gamification.XpEventType;
 import com.jf.PetApp.infrastructure.entity.AchievementUnlockJpaEntity;
 import com.jf.PetApp.infrastructure.entity.ActivityLogJpaEntity;
@@ -10,8 +13,11 @@ import com.jf.PetApp.infrastructure.entity.InvestmentJpaEntity;
 import com.jf.PetApp.infrastructure.entity.LessonProgressJpaEntity;
 import com.jf.PetApp.infrastructure.entity.MentorConversationJpaEntity;
 import com.jf.PetApp.infrastructure.entity.MissionCompletionJpaEntity;
+import com.jf.PetApp.infrastructure.entity.PetAppLinkJpaEntity;
+import com.jf.PetApp.infrastructure.entity.PetJpaEntity;
 import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
 import com.jf.PetApp.infrastructure.entity.XpEventJpaEntity;
+import com.jf.PetApp.infrastructure.repository.PetRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedOrderRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedPortfolioRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedPositionRepository;
@@ -22,6 +28,7 @@ import com.jf.PetApp.infrastructure.repository.gamification.MissionCompletionJpa
 import com.jf.PetApp.infrastructure.repository.gamification.XpEventJpaRepository;
 import com.jf.PetApp.infrastructure.repository.learning.LessonProgressJpaRepository;
 import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJpaRepository;
+import com.jf.PetApp.infrastructure.repository.pet.PetAppLinkRepository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,6 +48,10 @@ class DemoAccountResetAdapterTest {
     private SpringUserJpaRepository userJpaRepository;
     @Autowired
     private InvestmentRepository investmentRepository;
+    @Autowired
+    private PetRepository petRepository;
+    @Autowired
+    private PetAppLinkRepository petAppLinkRepository;
     @Autowired
     private LessonProgressJpaRepository lessonProgressRepository;
     @Autowired
@@ -77,7 +88,7 @@ class DemoAccountResetAdapterTest {
         // teste verifica é o lado JPA da limpeza; a parte do Health tem
         // cobertura própria em UserDataErasureCoverageTest.
         UserDataEraser eraser = new UserDataEraser(
-                investmentRepository, lessonProgressRepository, xpEventRepository,
+                investmentRepository, petRepository, petAppLinkRepository, lessonProgressRepository, xpEventRepository,
                 achievementUnlockRepository, activityLogRepository, missionCompletionRepository,
                 mentorConversationRepository, refreshTokenRepository, passwordResetTokenRepository,
                 simulatedPortfolioRepository, simulatedOrderRepository, simulatedPositionRepository,
@@ -155,6 +166,21 @@ class DemoAccountResetAdapterTest {
         conversation.setCreatedAt(Instant.now());
         conversation.setUpdatedAt(Instant.now());
         mentorConversationRepository.save(conversation);
+
+        Pet pet = new Pet();
+        pet.setName("Rex");
+        pet.setHealth(100);
+        pet.setSpecie(PetSpecieEnum.DOG);
+        PetJpaEntity petEntity = PetJpaEntity.fromDomain(pet);
+        UserJpaEntity owner = userJpaRepository.findByEmail(email).orElseThrow();
+        petEntity.setUser(owner);
+        PetJpaEntity savedPet = petRepository.save(petEntity);
+
+        PetAppLinkJpaEntity link = new PetAppLinkJpaEntity();
+        link.setUser(owner);
+        link.setPet(savedPet);
+        link.setAppContext(AppContextEnum.WALLET);
+        petAppLinkRepository.save(link);
     }
 
     @Test
@@ -168,6 +194,7 @@ class DemoAccountResetAdapterTest {
         assertThat(activityLogRepository.findActivityDatesByUserIdOrderByActivityDateDesc(admin2Id)).isEmpty();
         assertThat(missionCompletionRepository.sumXpAwardedByUserId(admin2Id)).isZero();
         assertThat(mentorConversationRepository.findByUser_Email("admin2@petinvest.local")).isEmpty();
+        assertThat(petAppLinkRepository.findByUser_IdAndAppContext(admin2Id, AppContextEnum.WALLET)).isEmpty();
 
         User reset = userJpaRepository.findByUsername("admin2").orElseThrow().toDomain();
         assertThat(reset.hasAnsweredOnboarding()).isFalse();
@@ -185,6 +212,7 @@ class DemoAccountResetAdapterTest {
         assertThat(activityLogRepository.findActivityDatesByUserIdOrderByActivityDateDesc(otherUserId)).isNotEmpty();
         assertThat(missionCompletionRepository.sumXpAwardedByUserId(otherUserId)).isEqualTo(5);
         assertThat(mentorConversationRepository.findByUser_Email("investor@test.com")).isNotEmpty();
+        assertThat(petAppLinkRepository.findByUser_IdAndAppContext(otherUserId, AppContextEnum.WALLET)).isNotEmpty();
     }
 
     @Test

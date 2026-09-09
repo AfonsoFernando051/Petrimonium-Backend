@@ -29,11 +29,6 @@ public class User {
 	/**
 	 * The user's pet
 	 */
-	Pet pet;
-
-	/**
-	 * The user's pet
-	 */
 	Finance finance;
 
 	/**
@@ -108,14 +103,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Pet getPet() {
-		return pet;
-	}
-
-	public void setPet(Pet pet) {
-		this.pet = pet;
 	}
 
 	public Finance getFinance() {

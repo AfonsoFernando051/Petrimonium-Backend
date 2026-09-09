@@ -1,9 +1,7 @@
 package com.jf.PetApp.infrastructure.entity;
 
-import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.assessment.InvestorProfile;
-import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 
 import org.junit.jupiter.api.Test;
@@ -44,44 +42,13 @@ class UserJpaEntityTest {
     }
 
     @Test
-    void fromDomain_WhenUserHasNoPet_LeavesEntityPetNull() {
+    void resetToFreshSignupState_ClearsOnboardingState() {
         UserJpaEntity entity = UserJpaEntity.fromDomain(aUser());
-
-        assertThat(entity.toDomain().getPet()).isNull();
-    }
-
-    @Test
-    void toDomain_WhenPetPresent_MapsPetBackWithThisUserAttached() {
-        User user = aUser();
-        Pet pet = new Pet();
-        pet.setName("Rex");
-        pet.setHealth(100);
-        pet.setSpecie(PetSpecieEnum.DOG);
-        user.setPet(pet);
-        UserJpaEntity entity = UserJpaEntity.fromDomain(user);
-
-        User result = entity.toDomain();
-
-        assertThat(result.getPet()).isNotNull();
-        assertThat(result.getPet().getName()).isEqualTo("Rex");
-        assertThat(result.getPet().getUser()).isSameAs(result);
-    }
-
-    @Test
-    void resetToFreshSignupState_ClearsOnboardingAndDropsPet() {
-        User user = aUser();
-        Pet pet = new Pet();
-        pet.setName("Rex");
-        pet.setHealth(100);
-        pet.setSpecie(PetSpecieEnum.DOG);
-        user.setPet(pet);
-        UserJpaEntity entity = UserJpaEntity.fromDomain(user);
 
         entity.resetToFreshSignupState();
         User result = entity.toDomain();
 
         assertThat(result.hasAnsweredOnboarding()).isFalse();
         assertThat(result.getInvestorProfile()).isNull();
-        assertThat(result.getPet()).isNull();
     }
 }

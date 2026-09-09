@@ -108,7 +108,7 @@ class GetMentorReplyUseCaseImplTest {
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(user));
         when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(EMPTY_SUMMARY);
         when(getPortfolioAllocationUseCase.execute(EMAIL)).thenReturn(List.of());
-        when(getMyPetUseCase.execute(EMAIL)).thenReturn(Optional.empty());
+        when(getMyPetUseCase.execute(eq(EMAIL), any(AppContextEnum.class))).thenReturn(Optional.empty());
         when(getLearningProgressUseCase.execute(EMAIL)).thenReturn(EMPTY_LEARNING_PROGRESS);
         when(getAcademyCatalogUseCase.execute(anyString())).thenReturn(EMPTY_ACADEMY_CATALOG);
         when(getSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(EMPTY_SIMULATED_PORTFOLIO);

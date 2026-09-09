@@ -3,7 +3,7 @@ package com.jf.PetApp.core.domain;
 import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 
 public class Pet {
-	
+
 	/**
 	 * Id for pet
 	 */
@@ -18,12 +18,12 @@ public class Pet {
 	 * Specie for pet
 	 */
 	PetSpecieEnum specie;
-	
+
 	/**
 	 * Pet health
 	 */
 	int health;
-	
+
 	/**
 	 * The user's pet
 	 */
@@ -59,5 +59,5 @@ public class Pet {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 }

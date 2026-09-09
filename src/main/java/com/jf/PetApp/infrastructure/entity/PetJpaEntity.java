@@ -11,9 +11,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+/**
+ * A pet a user owns. Which app(s) it currently answers for is not a column
+ * here — see {@link PetAppLinkJpaEntity} — a user can own several pets and
+ * relink which one answers for a given app later (V34__pet_app_links.sql), so
+ * {@code user} is many-to-one rather than a per-app unique relationship.
+ */
 @Entity
 @Table(name = "jf_pets", schema = "pet")
 public class PetJpaEntity {
@@ -25,14 +31,21 @@ public class PetJpaEntity {
     private String name;
 
     private int health;
-  
 
     @Enumerated(EnumType.STRING)
     private PetSpecieEnum specie;
-    
-    @OneToOne(optional = false)
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private UserJpaEntity user;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public UserJpaEntity getUser() {
+        return user;
+    }
 
     public void setUser(UserJpaEntity user) {
         this.user = user;

@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.jf.PetApp.application.health.port.HealthStore;
 import com.jf.PetApp.infrastructure.entity.SimulatedPortfolioJpaEntity;
 import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
+import com.jf.PetApp.infrastructure.repository.PetRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedOrderRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedPortfolioRepository;
 import com.jf.PetApp.infrastructure.repository.SimulatedPositionRepository;
@@ -14,6 +15,7 @@ import com.jf.PetApp.infrastructure.repository.gamification.ActivityLogJpaReposi
 import com.jf.PetApp.infrastructure.repository.gamification.MissionCompletionJpaRepository;
 import com.jf.PetApp.infrastructure.repository.gamification.XpEventJpaRepository;
 import com.jf.PetApp.infrastructure.repository.learning.LessonProgressJpaRepository;
+import com.jf.PetApp.infrastructure.repository.pet.PetAppLinkRepository;
 import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJpaRepository;
 
 /**
@@ -26,11 +28,15 @@ import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJp
  * tabelas e ia acumulando finanças, pet, portfólios simulados, tokens e todo
  * o Health entre sessões, ao contrário do que prometia.
  *
- * <p><b>Duas tabelas não aparecem aqui de propósito:</b> {@code jf_finances} e
- * {@code jf_pets} são {@code @OneToOne(cascade = ALL, orphanRemoval = true)}
- * no {@link com.jf.PetApp.infrastructure.entity.UserJpaEntity}, por isso saem
- * com o utilizador — e o reset do demo trata delas via
- * {@code resetToFreshSignupState}. {@code jf_mentor_messages} sai pela
+ * <p><b>Uma tabela não aparece aqui de propósito:</b> {@code jf_finances} é
+ * {@code @OneToOne(cascade = ALL, orphanRemoval = true)} no
+ * {@link com.jf.PetApp.infrastructure.entity.UserJpaEntity}, por isso sai com
+ * o utilizador — e o reset do demo trata-a via {@code resetToFreshSignupState}.
+ * {@code jf_pets} e {@code jf_pet_app_links} já não são assim: desde que um
+ * pet passou a poder responder por mais de uma app e a mudar de app ao longo
+ * do tempo, deixaram de ser associação {@code @OneToOne} e passam a ser
+ * apagados aqui, explicitamente — os links primeiro, por causa da FK para
+ * {@code jf_pets}. {@code jf_mentor_messages} sai pela
  * {@code on delete cascade} da FK para as conversas.
  *
  * <p>A cobertura está travada por {@code UserDataErasureCoverageTest}: se
@@ -41,6 +47,8 @@ import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJp
 public class UserDataEraser {
 
     private final InvestmentRepository investmentRepository;
+    private final PetRepository petRepository;
+    private final PetAppLinkRepository petAppLinkRepository;
     private final LessonProgressJpaRepository lessonProgressRepository;
     private final XpEventJpaRepository xpEventRepository;
     private final AchievementUnlockJpaRepository achievementUnlockRepository;
@@ -56,6 +64,8 @@ public class UserDataEraser {
 
     public UserDataEraser(
             InvestmentRepository investmentRepository,
+            PetRepository petRepository,
+            PetAppLinkRepository petAppLinkRepository,
             LessonProgressJpaRepository lessonProgressRepository,
             XpEventJpaRepository xpEventRepository,
             AchievementUnlockJpaRepository achievementUnlockRepository,
@@ -69,6 +79,8 @@ public class UserDataEraser {
             SimulatedPositionRepository simulatedPositionRepository,
             HealthStore healthStore) {
         this.investmentRepository = investmentRepository;
+        this.petRepository = petRepository;
+        this.petAppLinkRepository = petAppLinkRepository;
         this.lessonProgressRepository = lessonProgressRepository;
         this.xpEventRepository = xpEventRepository;
         this.achievementUnlockRepository = achievementUnlockRepository;
@@ -97,6 +109,8 @@ public class UserDataEraser {
         simulatedPortfolioRepository.findByUser_Id(userId).ifPresent(this::erasePortfolio);
 
         investmentRepository.deleteByUserEmail(email);
+        petAppLinkRepository.deleteByUser_Id(userId);
+        petRepository.deleteByUser_Id(userId);
         lessonProgressRepository.deleteByUserId(userId);
         xpEventRepository.deleteByUserId(userId);
         achievementUnlockRepository.deleteByUserId(userId);

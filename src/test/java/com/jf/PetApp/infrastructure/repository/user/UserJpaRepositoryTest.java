@@ -1,9 +1,7 @@
 package com.jf.PetApp.infrastructure.repository.user;
 
 import com.jf.PetApp.application.user.port.UserRepository;
-import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
-import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -87,22 +85,5 @@ class UserJpaRepositoryTest {
 
         assertThat(found).isPresent();
         assertThat(found.get().getEmail()).isEqualTo("investor@test.com");
-    }
-
-    @Test
-    void save_WithPet_PersistsAndReturnsPetMappedBackToTheSavedUser() {
-        User user = newUser("investor", "investor@test.com");
-        Pet pet = new Pet();
-        pet.setName("Rex");
-        pet.setHealth(100);
-        pet.setSpecie(PetSpecieEnum.DOG);
-        user.setPet(pet);
-
-        User saved = adapter.save(user);
-
-        assertThat(saved.getPet()).isNotNull();
-        assertThat(saved.getPet().getName()).isEqualTo("Rex");
-        assertThat(saved.getPet().getSpecie()).isEqualTo(PetSpecieEnum.DOG);
-        assertThat(saved.getPet().getUser()).isSameAs(saved);
     }
 }

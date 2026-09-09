@@ -25,6 +25,10 @@ public class UserJpaEntity {
     @Column(name="user_id")
     private Long id;
 
+    public Long getId() {
+        return id;
+    }
+
     private String username;
 
     @Column(unique = true)
@@ -59,9 +63,6 @@ public class UserJpaEntity {
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private FinanceJpaEntity finance;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private PetJpaEntity pet;
-
     /* ---------- Mapping ---------- */
 
     public static UserJpaEntity fromDomain(User user) {
@@ -79,11 +80,6 @@ public class UserJpaEntity {
         entity.provider = user.getProvider();
         entity.providerId = user.getProviderId();
 
-        if (user.getPet() != null) {
-            entity.pet = PetJpaEntity.fromDomain(user.getPet());
-            entity.pet.setUser(entity);
-        }
-        
         return entity;
     }
 
@@ -102,23 +98,20 @@ public class UserJpaEntity {
         user.setProvider(provider);
         user.setProviderId(providerId);
 
-        if (pet != null) {
-            user.setPet(pet.toDomain(user));
-        }
-
         return user;
     }
 
     /**
      * Reverts this row to the same shape a genuinely brand-new signup has
      * (see RegisterUserUseCaseImpl / V5__seed_admin2_user.sql): onboarding
-     * not done, no investor profile, no pet or finance row. orphanRemoval on
-     * the pet/finance associations deletes the previous rows on save.
+     * not done, no investor profile, no finance row. orphanRemoval on the
+     * finance association deletes the previous row on save; pets are no
+     * longer part of this entity's graph (one per app, not one shared row —
+     * see PetJpaEntity) and are deleted explicitly by UserDataEraser instead.
      */
     public void resetToFreshSignupState() {
         this.hasAnsweredOnboarding = false;
         this.investorProfile = null;
-        this.pet = null;
         this.finance = null;
     }
 }

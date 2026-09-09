@@ -2,28 +2,27 @@ package com.jf.PetApp.application.pet.usecase;
 
 import com.jf.PetApp.application.pet.port.PetRepositoryPort;
 import com.jf.PetApp.application.user.port.UserRepository;
+import com.jf.PetApp.core.domain.Pet;
 import com.jf.PetApp.core.domain.User;
-import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
-public class GetPetStatusUseCaseImpl implements GetPetStatusUseCase {
+public class ListMyPetsUseCaseImpl implements ListMyPetsUseCase {
 
     private final UserRepository userRepository;
     private final PetRepositoryPort petRepository;
 
-    public GetPetStatusUseCaseImpl(UserRepository userRepository, PetRepositoryPort petRepository) {
+    public ListMyPetsUseCaseImpl(UserRepository userRepository, PetRepositoryPort petRepository) {
         this.userRepository = userRepository;
         this.petRepository = petRepository;
     }
 
     @Override
-    public boolean execute(String userEmail, AppContextEnum appContext) {
-        if (appContext == null) {
-            return false;
-        }
+    public List<Pet> execute(String userEmail) {
         User user = userRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new IllegalArgumentException("User not found"));
-        return petRepository.findByUserIdAndAppContext(user.getId(), appContext).isPresent();
+        return petRepository.findAllByUserId(user.getId());
     }
 }
