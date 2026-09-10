@@ -1,6 +1,31 @@
 package com.jf.PetApp.infrastructure.controller.health;
 
-import com.jf.PetApp.application.health.HealthService;
+import static com.jf.PetApp.application.health.dto.HealthCommands.*;
+
+import com.jf.PetApp.application.health.usecase.ArchiveHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.ArchiveHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.ConfirmHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthPurchaseUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransferUseCase;
+import com.jf.PetApp.application.health.usecase.DeactivateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.DeleteHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthSummaryUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthAccountsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthCardsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthInvoicesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthRecurrencesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthTransactionsUseCase;
+import com.jf.PetApp.application.health.usecase.PayHealthInvoiceUseCase;
+import com.jf.PetApp.application.health.usecase.SaveHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthTransactionUseCase;
 import com.jf.PetApp.core.security.SecurityUtils;
 import com.jf.PetApp.infrastructure.controller.health.dto.HealthApiDtos.*;
 
@@ -28,10 +53,10 @@ import java.util.List;
  *
  * <p>The owner is always {@link SecurityUtils#getCurrentUserEmail()}, resolved from the JWT
  * subject: no route accepts a user id, and every id in a path is checked against that owner
- * inside {@link HealthService}, which answers 404 rather than 403 for someone else's row so a
+ * inside the Health use cases, which answers 404 rather than 403 for someone else's row so a
  * probe cannot confirm that the row exists.
  *
- * <p>Validation lives in {@code HealthService} rather than in bean-validation annotations here,
+ * <p>Validation lives in the Health use cases rather than in bean-validation annotations here,
  * so a rule ("at most two decimal places", "the currency must match the profile") holds for every
  * caller and produces one stable error code, not two depending on which layer noticed first.
  *
@@ -42,10 +67,81 @@ import java.util.List;
 @RequestMapping("/api/v1/health")
 public class HealthController {
 
-    private final HealthService healthService;
+    private final GetHealthProfileUseCase getHealthProfileUseCase;
+    private final SaveHealthProfileUseCase saveHealthProfileUseCase;
+    private final ListHealthAccountsUseCase listHealthAccountsUseCase;
+    private final CreateHealthAccountUseCase createHealthAccountUseCase;
+    private final UpdateHealthAccountUseCase updateHealthAccountUseCase;
+    private final ArchiveHealthAccountUseCase archiveHealthAccountUseCase;
+    private final ListHealthTransactionsUseCase listHealthTransactionsUseCase;
+    private final CreateHealthTransactionUseCase createHealthTransactionUseCase;
+    private final UpdateHealthTransactionUseCase updateHealthTransactionUseCase;
+    private final ConfirmHealthTransactionUseCase confirmHealthTransactionUseCase;
+    private final DeleteHealthTransactionUseCase deleteHealthTransactionUseCase;
+    private final CreateHealthTransferUseCase createHealthTransferUseCase;
+    private final ListHealthRecurrencesUseCase listHealthRecurrencesUseCase;
+    private final CreateHealthRecurrenceUseCase createHealthRecurrenceUseCase;
+    private final UpdateHealthRecurrenceUseCase updateHealthRecurrenceUseCase;
+    private final DeactivateHealthRecurrenceUseCase deactivateHealthRecurrenceUseCase;
+    private final ListHealthCardsUseCase listHealthCardsUseCase;
+    private final CreateHealthCardUseCase createHealthCardUseCase;
+    private final UpdateHealthCardUseCase updateHealthCardUseCase;
+    private final ArchiveHealthCardUseCase archiveHealthCardUseCase;
+    private final CreateHealthPurchaseUseCase createHealthPurchaseUseCase;
+    private final ListHealthInvoicesUseCase listHealthInvoicesUseCase;
+    private final PayHealthInvoiceUseCase payHealthInvoiceUseCase;
+    private final GetHealthSummaryUseCase getHealthSummaryUseCase;
 
-    public HealthController(HealthService healthService) {
-        this.healthService = healthService;
+    public HealthController(
+            GetHealthProfileUseCase getHealthProfileUseCase,
+            SaveHealthProfileUseCase saveHealthProfileUseCase,
+            ListHealthAccountsUseCase listHealthAccountsUseCase,
+            CreateHealthAccountUseCase createHealthAccountUseCase,
+            UpdateHealthAccountUseCase updateHealthAccountUseCase,
+            ArchiveHealthAccountUseCase archiveHealthAccountUseCase,
+            ListHealthTransactionsUseCase listHealthTransactionsUseCase,
+            CreateHealthTransactionUseCase createHealthTransactionUseCase,
+            UpdateHealthTransactionUseCase updateHealthTransactionUseCase,
+            ConfirmHealthTransactionUseCase confirmHealthTransactionUseCase,
+            DeleteHealthTransactionUseCase deleteHealthTransactionUseCase,
+            CreateHealthTransferUseCase createHealthTransferUseCase,
+            ListHealthRecurrencesUseCase listHealthRecurrencesUseCase,
+            CreateHealthRecurrenceUseCase createHealthRecurrenceUseCase,
+            UpdateHealthRecurrenceUseCase updateHealthRecurrenceUseCase,
+            DeactivateHealthRecurrenceUseCase deactivateHealthRecurrenceUseCase,
+            ListHealthCardsUseCase listHealthCardsUseCase,
+            CreateHealthCardUseCase createHealthCardUseCase,
+            UpdateHealthCardUseCase updateHealthCardUseCase,
+            ArchiveHealthCardUseCase archiveHealthCardUseCase,
+            CreateHealthPurchaseUseCase createHealthPurchaseUseCase,
+            ListHealthInvoicesUseCase listHealthInvoicesUseCase,
+            PayHealthInvoiceUseCase payHealthInvoiceUseCase,
+            GetHealthSummaryUseCase getHealthSummaryUseCase
+    ) {
+        this.getHealthProfileUseCase = getHealthProfileUseCase;
+        this.saveHealthProfileUseCase = saveHealthProfileUseCase;
+        this.listHealthAccountsUseCase = listHealthAccountsUseCase;
+        this.createHealthAccountUseCase = createHealthAccountUseCase;
+        this.updateHealthAccountUseCase = updateHealthAccountUseCase;
+        this.archiveHealthAccountUseCase = archiveHealthAccountUseCase;
+        this.listHealthTransactionsUseCase = listHealthTransactionsUseCase;
+        this.createHealthTransactionUseCase = createHealthTransactionUseCase;
+        this.updateHealthTransactionUseCase = updateHealthTransactionUseCase;
+        this.confirmHealthTransactionUseCase = confirmHealthTransactionUseCase;
+        this.deleteHealthTransactionUseCase = deleteHealthTransactionUseCase;
+        this.createHealthTransferUseCase = createHealthTransferUseCase;
+        this.listHealthRecurrencesUseCase = listHealthRecurrencesUseCase;
+        this.createHealthRecurrenceUseCase = createHealthRecurrenceUseCase;
+        this.updateHealthRecurrenceUseCase = updateHealthRecurrenceUseCase;
+        this.deactivateHealthRecurrenceUseCase = deactivateHealthRecurrenceUseCase;
+        this.listHealthCardsUseCase = listHealthCardsUseCase;
+        this.createHealthCardUseCase = createHealthCardUseCase;
+        this.updateHealthCardUseCase = updateHealthCardUseCase;
+        this.archiveHealthCardUseCase = archiveHealthCardUseCase;
+        this.createHealthPurchaseUseCase = createHealthPurchaseUseCase;
+        this.listHealthInvoicesUseCase = listHealthInvoicesUseCase;
+        this.payHealthInvoiceUseCase = payHealthInvoiceUseCase;
+        this.getHealthSummaryUseCase = getHealthSummaryUseCase;
     }
 
     // ------------------------------------------------------------------ profile
@@ -57,7 +153,7 @@ public class HealthController {
      */
     @GetMapping("/profile")
     public ResponseEntity<ProfileResponse> getProfile() {
-        return healthService.getProfile(SecurityUtils.getCurrentUserEmail())
+        return getHealthProfileUseCase.execute(SecurityUtils.getCurrentUserEmail())
                 .map(ProfileResponse::from)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -66,34 +162,34 @@ public class HealthController {
     @PutMapping("/profile")
     public ResponseEntity<ProfileResponse> saveProfile(@RequestBody ProfileRequest request) {
         return ResponseEntity.ok(ProfileResponse.from(
-                healthService.saveProfile(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                saveHealthProfileUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     // ----------------------------------------------------------------- accounts
 
     @GetMapping("/accounts")
     public ResponseEntity<List<AccountResponse>> listAccounts() {
-        return ResponseEntity.ok(healthService.listAccounts(SecurityUtils.getCurrentUserEmail())
+        return ResponseEntity.ok(listHealthAccountsUseCase.execute(SecurityUtils.getCurrentUserEmail())
                 .stream().map(AccountResponse::from).toList());
     }
 
     @PostMapping("/accounts")
     public ResponseEntity<AccountResponse> createAccount(@RequestBody AccountRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(AccountResponse.from(
-                healthService.createAccount(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                createHealthAccountUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     @PutMapping("/accounts/{accountId}")
     public ResponseEntity<AccountResponse> updateAccount(@PathVariable long accountId,
                                                          @RequestBody AccountRequest request) {
-        return ResponseEntity.ok(AccountResponse.from(healthService.updateAccount(
+        return ResponseEntity.ok(AccountResponse.from(updateHealthAccountUseCase.execute(
                 SecurityUtils.getCurrentUserEmail(), accountId, request.toInput())));
     }
 
     /** Archives — history, balances and every row referencing the account are preserved. */
     @DeleteMapping("/accounts/{accountId}")
     public ResponseEntity<Void> archiveAccount(@PathVariable long accountId) {
-        healthService.archiveAccount(SecurityUtils.getCurrentUserEmail(), accountId);
+        archiveHealthAccountUseCase.execute(SecurityUtils.getCurrentUserEmail(), accountId);
         return ResponseEntity.noContent().build();
     }
 
@@ -106,21 +202,21 @@ public class HealthController {
             @RequestParam(required = false) Long accountId,
             @RequestParam(required = false) String category,
             @RequestParam(required = false) String status) {
-        var filter = new HealthService.TransactionFilter(from, to, accountId, category, status);
-        return ResponseEntity.ok(healthService.listTransactions(SecurityUtils.getCurrentUserEmail(), filter)
+        var filter = new TransactionFilter(from, to, accountId, category, status);
+        return ResponseEntity.ok(listHealthTransactionsUseCase.execute(SecurityUtils.getCurrentUserEmail(), filter)
                 .stream().map(TransactionResponse::from).toList());
     }
 
     @PostMapping("/transactions")
     public ResponseEntity<TransactionResponse> createTransaction(@RequestBody TransactionRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(TransactionResponse.from(
-                healthService.createTransaction(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                createHealthTransactionUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     @PutMapping("/transactions/{transactionId}")
     public ResponseEntity<TransactionResponse> updateTransaction(@PathVariable long transactionId,
                                                                  @RequestBody TransactionRequest request) {
-        return ResponseEntity.ok(TransactionResponse.from(healthService.updateTransaction(
+        return ResponseEntity.ok(TransactionResponse.from(updateHealthTransactionUseCase.execute(
                 SecurityUtils.getCurrentUserEmail(), transactionId, request.toInput())));
     }
 
@@ -132,12 +228,12 @@ public class HealthController {
     @PostMapping("/transactions/{transactionId}/confirm")
     public ResponseEntity<TransactionResponse> confirmTransaction(@PathVariable long transactionId) {
         return ResponseEntity.ok(TransactionResponse.from(
-                healthService.confirmTransaction(SecurityUtils.getCurrentUserEmail(), transactionId)));
+                confirmHealthTransactionUseCase.execute(SecurityUtils.getCurrentUserEmail(), transactionId)));
     }
 
     @DeleteMapping("/transactions/{transactionId}")
     public ResponseEntity<Void> deleteTransaction(@PathVariable long transactionId) {
-        healthService.deleteTransaction(SecurityUtils.getCurrentUserEmail(), transactionId);
+        deleteHealthTransactionUseCase.execute(SecurityUtils.getCurrentUserEmail(), transactionId);
         return ResponseEntity.noContent().build();
     }
 
@@ -147,21 +243,21 @@ public class HealthController {
     @PostMapping("/transfers")
     public ResponseEntity<TransferResponse> createTransfer(@RequestBody TransferRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(TransferResponse.from(
-                healthService.createTransfer(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                createHealthTransferUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     // -------------------------------------------------------------- recurrences
 
     @GetMapping("/recurrences")
     public ResponseEntity<List<RecurrenceResponse>> listRecurrences() {
-        return ResponseEntity.ok(healthService.listRecurrences(SecurityUtils.getCurrentUserEmail())
+        return ResponseEntity.ok(listHealthRecurrencesUseCase.execute(SecurityUtils.getCurrentUserEmail())
                 .stream().map(RecurrenceResponse::from).toList());
     }
 
     @PostMapping("/recurrences")
     public ResponseEntity<RecurrenceResponse> createRecurrence(@RequestBody RecurrenceRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(RecurrenceResponse.from(
-                healthService.createRecurrence(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                createHealthRecurrenceUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     /**
@@ -172,13 +268,13 @@ public class HealthController {
     @PutMapping("/recurrences/{recurrenceId}")
     public ResponseEntity<RecurrenceResponse> updateRecurrence(@PathVariable long recurrenceId,
                                                                @RequestBody RecurrenceRequest request) {
-        return ResponseEntity.ok(RecurrenceResponse.from(healthService.updateRecurrence(
+        return ResponseEntity.ok(RecurrenceResponse.from(updateHealthRecurrenceUseCase.execute(
                 SecurityUtils.getCurrentUserEmail(), recurrenceId, request.toInput())));
     }
 
     @DeleteMapping("/recurrences/{recurrenceId}")
     public ResponseEntity<Void> deactivateRecurrence(@PathVariable long recurrenceId) {
-        healthService.deactivateRecurrence(SecurityUtils.getCurrentUserEmail(), recurrenceId);
+        deactivateHealthRecurrenceUseCase.execute(SecurityUtils.getCurrentUserEmail(), recurrenceId);
         return ResponseEntity.noContent().build();
     }
 
@@ -186,26 +282,26 @@ public class HealthController {
 
     @GetMapping("/cards")
     public ResponseEntity<List<CardResponse>> listCards() {
-        return ResponseEntity.ok(healthService.listCards(SecurityUtils.getCurrentUserEmail())
+        return ResponseEntity.ok(listHealthCardsUseCase.execute(SecurityUtils.getCurrentUserEmail())
                 .stream().map(CardResponse::from).toList());
     }
 
     @PostMapping("/cards")
     public ResponseEntity<CardResponse> createCard(@RequestBody CardRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(CardResponse.from(
-                healthService.createCard(SecurityUtils.getCurrentUserEmail(), request.toInput())));
+                createHealthCardUseCase.execute(SecurityUtils.getCurrentUserEmail(), request.toInput())));
     }
 
     @PutMapping("/cards/{cardId}")
     public ResponseEntity<CardResponse> updateCard(@PathVariable long cardId,
                                                    @RequestBody CardRequest request) {
-        return ResponseEntity.ok(CardResponse.from(healthService.updateCard(
+        return ResponseEntity.ok(CardResponse.from(updateHealthCardUseCase.execute(
                 SecurityUtils.getCurrentUserEmail(), cardId, request.toInput())));
     }
 
     @DeleteMapping("/cards/{cardId}")
     public ResponseEntity<Void> archiveCard(@PathVariable long cardId) {
-        healthService.archiveCard(SecurityUtils.getCurrentUserEmail(), cardId);
+        archiveHealthCardUseCase.execute(SecurityUtils.getCurrentUserEmail(), cardId);
         return ResponseEntity.noContent().build();
     }
 
@@ -217,12 +313,12 @@ public class HealthController {
     public ResponseEntity<PurchaseResponse> createPurchase(@PathVariable long cardId,
                                                            @RequestBody PurchaseRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(PurchaseResponse.from(
-                healthService.createPurchase(SecurityUtils.getCurrentUserEmail(), cardId, request.toInput())));
+                createHealthPurchaseUseCase.execute(SecurityUtils.getCurrentUserEmail(), cardId, request.toInput())));
     }
 
     @GetMapping("/cards/{cardId}/invoices")
     public ResponseEntity<List<InvoiceResponse>> listInvoices(@PathVariable long cardId) {
-        return ResponseEntity.ok(healthService.listInvoices(SecurityUtils.getCurrentUserEmail(), cardId)
+        return ResponseEntity.ok(listHealthInvoicesUseCase.execute(SecurityUtils.getCurrentUserEmail(), cardId)
                 .stream().map(InvoiceResponse::from).toList());
     }
 
@@ -234,7 +330,7 @@ public class HealthController {
     public ResponseEntity<InvoiceResponse> payInvoice(@PathVariable long invoiceId,
                                                       @RequestBody InvoicePaymentRequest request) {
         return ResponseEntity.ok(InvoiceResponse.from(
-                healthService.payInvoice(SecurityUtils.getCurrentUserEmail(), invoiceId, request.toInput())));
+                payHealthInvoiceUseCase.execute(SecurityUtils.getCurrentUserEmail(), invoiceId, request.toInput())));
     }
 
     // ------------------------------------------------------------------ summary
@@ -243,7 +339,7 @@ public class HealthController {
     public ResponseEntity<SummaryResponse> summary(@RequestParam(required = false) String month) {
         YearMonth parsed = parseMonth(month);
         return ResponseEntity.ok(SummaryResponse.from(
-                healthService.summary(SecurityUtils.getCurrentUserEmail(), parsed)));
+                getHealthSummaryUseCase.execute(SecurityUtils.getCurrentUserEmail(), parsed)));
     }
 
     private static YearMonth parseMonth(String raw) {

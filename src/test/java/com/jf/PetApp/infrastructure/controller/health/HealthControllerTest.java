@@ -13,7 +13,32 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.jf.PetApp.application.health.HealthService;
+import static com.jf.PetApp.application.health.dto.HealthCommands.*;
+
+import com.jf.PetApp.application.health.usecase.ArchiveHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.ArchiveHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.ConfirmHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthPurchaseUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransferUseCase;
+import com.jf.PetApp.application.health.usecase.DeactivateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.DeleteHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthSummaryUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthAccountsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthCardsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthInvoicesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthRecurrencesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthTransactionsUseCase;
+import com.jf.PetApp.application.health.usecase.PayHealthInvoiceUseCase;
+import com.jf.PetApp.application.health.usecase.SaveHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthTransactionUseCase;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
 import com.jf.PetApp.infrastructure.security.jwt.JwtAuthenticationFilter;
 
@@ -41,7 +66,7 @@ import java.util.Optional;
  * and could show the user a cent that does not exist.
  *
  * <p>Web layer only — {@code HealthSecurityBoundaryTest} covers the real app_context gate and
- * {@code HealthServiceIntegrationTest} the rules behind these responses.
+ * {@code HealthUseCasesIntegrationTest} the rules behind these responses.
  */
 @WebMvcTest(controllers = HealthController.class)
 @AutoConfigureMockMvc(addFilters = false)
@@ -53,7 +78,76 @@ class HealthControllerTest {
     private MockMvc mockMvc;
 
     @MockitoBean
-    private HealthService healthService;
+    private GetHealthProfileUseCase getHealthProfileUseCase;
+
+    @MockitoBean
+    private SaveHealthProfileUseCase saveHealthProfileUseCase;
+
+    @MockitoBean
+    private ListHealthAccountsUseCase listHealthAccountsUseCase;
+
+    @MockitoBean
+    private CreateHealthAccountUseCase createHealthAccountUseCase;
+
+    @MockitoBean
+    private UpdateHealthAccountUseCase updateHealthAccountUseCase;
+
+    @MockitoBean
+    private ArchiveHealthAccountUseCase archiveHealthAccountUseCase;
+
+    @MockitoBean
+    private ListHealthTransactionsUseCase listHealthTransactionsUseCase;
+
+    @MockitoBean
+    private CreateHealthTransactionUseCase createHealthTransactionUseCase;
+
+    @MockitoBean
+    private UpdateHealthTransactionUseCase updateHealthTransactionUseCase;
+
+    @MockitoBean
+    private ConfirmHealthTransactionUseCase confirmHealthTransactionUseCase;
+
+    @MockitoBean
+    private DeleteHealthTransactionUseCase deleteHealthTransactionUseCase;
+
+    @MockitoBean
+    private CreateHealthTransferUseCase createHealthTransferUseCase;
+
+    @MockitoBean
+    private ListHealthRecurrencesUseCase listHealthRecurrencesUseCase;
+
+    @MockitoBean
+    private CreateHealthRecurrenceUseCase createHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private UpdateHealthRecurrenceUseCase updateHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private DeactivateHealthRecurrenceUseCase deactivateHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private ListHealthCardsUseCase listHealthCardsUseCase;
+
+    @MockitoBean
+    private CreateHealthCardUseCase createHealthCardUseCase;
+
+    @MockitoBean
+    private UpdateHealthCardUseCase updateHealthCardUseCase;
+
+    @MockitoBean
+    private ArchiveHealthCardUseCase archiveHealthCardUseCase;
+
+    @MockitoBean
+    private CreateHealthPurchaseUseCase createHealthPurchaseUseCase;
+
+    @MockitoBean
+    private ListHealthInvoicesUseCase listHealthInvoicesUseCase;
+
+    @MockitoBean
+    private PayHealthInvoiceUseCase payHealthInvoiceUseCase;
+
+    @MockitoBean
+    private GetHealthSummaryUseCase getHealthSummaryUseCase;
 
     @MockitoBean
     private JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -76,7 +170,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void getProfile_ReturnsTheStoredPreferencesAndWhetherTheCurrencyIsStillChangeable() throws Exception {
-        when(healthService.getProfile(USER)).thenReturn(Optional.of(new HealthService.ProfileView(profile(), false)));
+        when(getHealthProfileUseCase.execute(USER)).thenReturn(Optional.of(new ProfileView(profile(), false)));
 
         mockMvc.perform(get("/api/v1/health/profile"))
                 .andExpect(status().isOk())
@@ -89,7 +183,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void getProfile_BeforeOnboarding_Is404SoTheAppShowsOnboardingInsteadOfADefaultCountry() throws Exception {
-        when(healthService.getProfile(USER)).thenReturn(Optional.empty());
+        when(getHealthProfileUseCase.execute(USER)).thenReturn(Optional.empty());
 
         mockMvc.perform(get("/api/v1/health/profile")).andExpect(status().isNotFound());
     }
@@ -97,16 +191,16 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void putProfile_PassesCountryCurrencyAndLocaleThroughAsThreeIndependentFields() throws Exception {
-        when(healthService.saveProfile(eq(USER), any()))
-                .thenReturn(new HealthService.ProfileView(profile(), true));
+        when(saveHealthProfileUseCase.execute(eq(USER), any()))
+                .thenReturn(new ProfileView(profile(), true));
 
         mockMvc.perform(put("/api/v1/health/profile").contentType(MediaType.APPLICATION_JSON)
                         .content("{\"countryCode\":\"PT\",\"primaryCurrency\":\"EUR\",\"localeTag\":\"pt-PT\"}"))
                 .andExpect(status().isOk());
 
-        ArgumentCaptor<HealthService.ProfileInput> captor =
-                ArgumentCaptor.forClass(HealthService.ProfileInput.class);
-        verify(healthService).saveProfile(eq(USER), captor.capture());
+        ArgumentCaptor<ProfileInput> captor =
+                ArgumentCaptor.forClass(ProfileInput.class);
+        verify(saveHealthProfileUseCase).execute(eq(USER), captor.capture());
         org.junit.jupiter.api.Assertions.assertEquals("PT", captor.getValue().countryCode());
         org.junit.jupiter.api.Assertions.assertEquals("EUR", captor.getValue().primaryCurrency());
         org.junit.jupiter.api.Assertions.assertEquals("pt-PT", captor.getValue().localeTag());
@@ -115,8 +209,8 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void listAccounts_SerializesMoneyAsAStringAndDatesAsCivilDates() throws Exception {
-        when(healthService.listAccounts(USER)).thenReturn(List.of(
-                new HealthService.AccountView(account(), new BigDecimal("1480.50"))));
+        when(listHealthAccountsUseCase.execute(USER)).thenReturn(List.of(
+                new AccountView(account(), new BigDecimal("1480.50"))));
 
         mockMvc.perform(get("/api/v1/health/accounts"))
                 .andExpect(status().isOk())
@@ -134,8 +228,8 @@ class HealthControllerTest {
     void listAccounts_KeepsTrailingCentsRatherThanTrimmingThem() throws Exception {
         // 1480.5 and 1480.50 are the same number but not the same money string; the client
         // parses two decimal places, so a trimmed zero would be a contract break.
-        when(healthService.listAccounts(USER)).thenReturn(List.of(
-                new HealthService.AccountView(account(), new BigDecimal("1480.50"))));
+        when(listHealthAccountsUseCase.execute(USER)).thenReturn(List.of(
+                new AccountView(account(), new BigDecimal("1480.50"))));
 
         mockMvc.perform(get("/api/v1/health/accounts"))
                 .andExpect(jsonPath("$[0].currentBalance").value("1480.50"));
@@ -144,8 +238,8 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void createAccount_Returns201() throws Exception {
-        when(healthService.createAccount(eq(USER), any()))
-                .thenReturn(new HealthService.AccountView(account(), new BigDecimal("850.00")));
+        when(createHealthAccountUseCase.execute(eq(USER), any()))
+                .thenReturn(new AccountView(account(), new BigDecimal("850.00")));
 
         mockMvc.perform(post("/api/v1/health/accounts").contentType(MediaType.APPLICATION_JSON)
                         .content("{\"name\":\"Conta à ordem\",\"type\":\"CHECKING\",\"initialBalance\":\"850.00\","
@@ -160,13 +254,13 @@ class HealthControllerTest {
     void deleteAccount_Archives_AndAnswers204() throws Exception {
         mockMvc.perform(delete("/api/v1/health/accounts/10")).andExpect(status().isNoContent());
 
-        verify(healthService).archiveAccount(USER, 10L);
+        verify(archiveHealthAccountUseCase).execute(USER, 10L);
     }
 
     @Test
     @WithMockUser(username = USER)
     void listTransactions_ForwardsEveryFilterItWasGiven() throws Exception {
-        when(healthService.listTransactions(eq(USER), any())).thenReturn(List.of(
+        when(listHealthTransactionsUseCase.execute(eq(USER), any())).thenReturn(List.of(
                 transaction(EntryType.EXPENSE, EntryStatus.PLANNED)));
 
         mockMvc.perform(get("/api/v1/health/transactions")
@@ -178,10 +272,10 @@ class HealthControllerTest {
                 .andExpect(jsonPath("$[0].status").value("PLANNED"))
                 .andExpect(jsonPath("$[0].source").value("MANUAL"));
 
-        ArgumentCaptor<HealthService.TransactionFilter> captor =
-                ArgumentCaptor.forClass(HealthService.TransactionFilter.class);
-        verify(healthService).listTransactions(eq(USER), captor.capture());
-        HealthService.TransactionFilter filter = captor.getValue();
+        ArgumentCaptor<TransactionFilter> captor =
+                ArgumentCaptor.forClass(TransactionFilter.class);
+        verify(listHealthTransactionsUseCase).execute(eq(USER), captor.capture());
+        TransactionFilter filter = captor.getValue();
         org.junit.jupiter.api.Assertions.assertEquals(LocalDate.of(2026, 9, 1), filter.from());
         org.junit.jupiter.api.Assertions.assertEquals(LocalDate.of(2026, 9, 30), filter.to());
         org.junit.jupiter.api.Assertions.assertEquals(10L, filter.accountId());
@@ -192,7 +286,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void confirmTransaction_ReturnsTheSameEntryNowRealized() throws Exception {
-        when(healthService.confirmTransaction(USER, 31L))
+        when(confirmHealthTransactionUseCase.execute(USER, 31L))
                 .thenReturn(transaction(EntryType.EXPENSE, EntryStatus.REALIZED));
 
         mockMvc.perform(post("/api/v1/health/transactions/31/confirm"))
@@ -206,7 +300,7 @@ class HealthControllerTest {
     void createTransfer_ReturnsOneTransferWithItsTwoLegs() throws Exception {
         Transfer transfer = new Transfer(5L, 7L, 10L, 11L, new BigDecimal("100.00"), CurrencyCode.EUR,
                 LocalDate.of(2026, 9, 3), "Poupança", "key", Instant.EPOCH);
-        when(healthService.createTransfer(eq(USER), any())).thenReturn(new HealthService.TransferView(transfer,
+        when(createHealthTransferUseCase.execute(eq(USER), any())).thenReturn(new TransferView(transfer,
                 transaction(EntryType.TRANSFER_OUT, EntryStatus.REALIZED),
                 transaction(EntryType.TRANSFER_IN, EntryStatus.REALIZED)));
 
@@ -225,7 +319,7 @@ class HealthControllerTest {
         Purchase purchase = new Purchase(80L, 7L, 20L, new BigDecimal("999.99"), CurrencyCode.EUR,
                 "Computador", "shopping", LocalDate.of(2026, 9, 3), 3, RecordSource.MANUAL, null, null,
                 "key", Instant.EPOCH);
-        when(healthService.createPurchase(eq(USER), eq(20L), any())).thenReturn(new PurchaseWithInstallments(
+        when(createHealthPurchaseUseCase.execute(eq(USER), eq(20L), any())).thenReturn(new PurchaseWithInstallments(
                 purchase, List.of(
                         new Installment(1L, 7L, 80L, 90L, CurrencyCode.EUR, 1, 3, new BigDecimal("333.33")),
                         new Installment(2L, 7L, 80L, 91L, CurrencyCode.EUR, 2, 3, new BigDecimal("333.33")),
@@ -248,7 +342,7 @@ class HealthControllerTest {
         Invoice invoice = new Invoice(90L, 7L, 20L, CurrencyCode.EUR, YearMonth.of(2026, 9),
                 LocalDate.of(2026, 9, 25), LocalDate.of(2026, 10, 5), InvoiceStatus.OPEN, null, null,
                 Instant.EPOCH, Instant.EPOCH);
-        when(healthService.listInvoices(USER, 20L)).thenReturn(List.of(
+        when(listHealthInvoicesUseCase.execute(USER, 20L)).thenReturn(List.of(
                 new InvoiceWithTotal(invoice, new BigDecimal("333.33"))));
 
         mockMvc.perform(get("/api/v1/health/cards/20/invoices"))
@@ -266,7 +360,7 @@ class HealthControllerTest {
         Invoice paid = new Invoice(90L, 7L, 20L, CurrencyCode.EUR, YearMonth.of(2026, 9),
                 LocalDate.of(2026, 9, 25), LocalDate.of(2026, 10, 5), InvoiceStatus.PAID,
                 LocalDate.of(2026, 10, 5), 99L, Instant.EPOCH, Instant.EPOCH);
-        when(healthService.payInvoice(eq(USER), eq(90L), any()))
+        when(payHealthInvoiceUseCase.execute(eq(USER), eq(90L), any()))
                 .thenReturn(new InvoiceWithTotal(paid, new BigDecimal("333.33")));
 
         mockMvc.perform(post("/api/v1/health/cards/invoices/90/pay").contentType(MediaType.APPLICATION_JSON)
@@ -280,7 +374,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void summary_KeepsCurrentResultAndProjectedBalanceAsSeparateFields() throws Exception {
-        when(healthService.summary(USER, YearMonth.of(2026, 9))).thenReturn(new MonthlySummary(
+        when(getHealthSummaryUseCase.execute(USER, YearMonth.of(2026, 9))).thenReturn(new MonthlySummary(
                 YearMonth.of(2026, 9), CurrencyCode.EUR, new BigDecimal("2307.10"), new BigDecimal("1500.00"),
                 new BigDecimal("376.23"), new BigDecimal("0.00"), new BigDecimal("200.00"),
                 new BigDecimal("333.33"), new BigDecimal("1123.77"), new BigDecimal("1773.77"),
@@ -305,7 +399,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void summary_WithoutAMonth_LetsTheServiceDecideTheCurrentOne() throws Exception {
-        when(healthService.summary(USER, null)).thenReturn(new MonthlySummary(YearMonth.of(2026, 9),
+        when(getHealthSummaryUseCase.execute(USER, null)).thenReturn(new MonthlySummary(YearMonth.of(2026, 9),
                 CurrencyCode.BRL, BigDecimal.ZERO.setScale(2), BigDecimal.ZERO.setScale(2),
                 BigDecimal.ZERO.setScale(2), BigDecimal.ZERO.setScale(2), BigDecimal.ZERO.setScale(2),
                 BigDecimal.ZERO.setScale(2), BigDecimal.ZERO.setScale(2), BigDecimal.ZERO.setScale(2),
@@ -313,7 +407,7 @@ class HealthControllerTest {
 
         mockMvc.perform(get("/api/v1/health/summary")).andExpect(status().isOk());
 
-        verify(healthService).summary(USER, null);
+        verify(getHealthSummaryUseCase).execute(USER, null);
     }
 
     @Test
@@ -323,14 +417,14 @@ class HealthControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.code").value("INVALID_REQUEST"));
 
-        verify(healthService, never()).summary(any(), any());
+        verify(getHealthSummaryUseCase, never()).execute(any(), any());
     }
 
     @Test
     @WithMockUser(username = USER)
     void aCurrencyMismatch_IsA409CarryingItsStableCode() throws Exception {
         // The app localizes from `code`; it must never have to match on an English message.
-        when(healthService.createTransaction(eq(USER), any())).thenThrow(
+        when(createHealthTransactionUseCase.execute(eq(USER), any())).thenThrow(
                 new HealthConflictException("CURRENCY_MISMATCH", "A moeda do registro não corresponde."));
 
         mockMvc.perform(post("/api/v1/health/transactions").contentType(MediaType.APPLICATION_JSON)
@@ -344,7 +438,7 @@ class HealthControllerTest {
     @Test
     @WithMockUser(username = USER)
     void aLockedCurrency_IsA409TheAppCanExplainToTheUser() throws Exception {
-        when(healthService.saveProfile(eq(USER), any())).thenThrow(
+        when(saveHealthProfileUseCase.execute(eq(USER), any())).thenThrow(
                 new HealthConflictException("CURRENCY_CHANGE_LOCKED", "Já existem dados financeiros."));
 
         mockMvc.perform(put("/api/v1/health/profile").contentType(MediaType.APPLICATION_JSON)
