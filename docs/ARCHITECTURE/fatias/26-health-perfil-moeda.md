@@ -64,7 +64,7 @@ graph TB
     RHR["RemoteHealthRepository<br/>GET/PUT /api/v1/health/profile"]
 
     SEC["SecurityConfig<br/>APP_CONTEXT_HEALTH"]
-    HCTL["HealthController.java<br/>getProfile / saveProfile"]
+    HCTL["HealthProfileController.java<br/>getProfile / saveProfile"]
     HS["SaveHealthProfileUseCase<br/>valida e trava a moeda"]
     ST["JdbcHealthStore<br/>findProfileForUpdate / create / update<br/>hasFinancialData"]
     DB[("health.health_profiles<br/>PK user_id")]
@@ -123,7 +123,7 @@ E o backend recusa deliberadamente inventar um padrão:
 > *"404 before onboarding: a Petrimonium account exists (the token proves it),
 > but this user has no Health profile yet, and the app reads that as 'show
 > onboarding' rather than inventing a default country/currency for them."*
-> — `HealthController.java`
+> — `HealthProfileController.java`
 
 **Por quê:** um padrão inventado (`BR`/`BRL`) seria invisível e irreversível.
 A pessoa criaria a primeira conta em reais sem nunca ter escolhido reais — e a

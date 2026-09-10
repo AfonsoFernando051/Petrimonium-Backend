@@ -149,9 +149,10 @@ nos dois repositórios **podem ter divergido**. Nunca presuma que
 `Wallet/lib/features/mentor/...` e `Academy/lib/features/mentor/...` são iguais —
 compare antes de editar.
 
-O Health não veio desse clone: nasceu depois, sozinho, com 31 arquivos, um
-único controller de estado (`HealthController` + `HealthScope`) e um shell de
-4 abas (`home`, `transactions`, `accounts`, `mentor`). Ele **não** herda a DI
+O Health não veio desse clone: nasceu depois, sozinho, com ~34 arquivos, um
+controller de estado (`HealthController` + `HealthScope`, hoje já sem a
+navegação e sem o Mentor, que saíram para `HealthNavigationController` e
+`MentorChatController`) e um shell de 4 abas (`home`, `transactions`, `accounts`, `mentor`). Ele **não** herda a DI
 estática nem o `ApiClient` dos outros dois — tem os seus próprios em
 `lib/core/`. Corrigir um bug de rede no Wallet não corrige o mesmo bug lá.
 
@@ -171,7 +172,7 @@ o contrato de isolamento entre os dois produtos.
 | `/api/v1/lab/**` | `APP_CONTEXT_ACADEMY` | `LabController` |
 | `/api/v1/simulated-portfolios/**` | `APP_CONTEXT_ACADEMY` | `SimulatedPortfolioController` |
 | `/api/v1/missions/**` | `APP_CONTEXT_ACADEMY` | `MissionController` |
-| `/api/v1/health/**` | `APP_CONTEXT_HEALTH` | `HealthController` |
+| `/api/v1/health/**` | `APP_CONTEXT_HEALTH` | `HealthProfile/Account/Transaction/Recurrence/Card/SummaryController` |
 | `/api/mentor/**` | `WALLET` **ou** `ACADEMY` (precisa de um) | `MentorController` |
 | `/api/pets/**` | Só autenticado — **compartilhado** | `PetController` |
 | `/api/v1/gamification/**` | Só autenticado — **compartilhado** | `GamificationController` |
