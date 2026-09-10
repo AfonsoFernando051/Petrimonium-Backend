@@ -694,6 +694,7 @@ product/design decision still open.
 **Verified**: full `mvn test`, 1136/1136 green (including
 `SimulatedPortfolioBoundaryTest`/`HealthBoundaryTest`, which already
 wildcard-cover the new classes with no edits needed), plus
-`org.pitest:pitest-maven:mutationCoverage` run once at the end of the slice
-against the existing repo-wide gate (`mutationThreshold=70`,
+`org.pitest:pitest-maven:mutationCoverage` run once at the end of the
+slice, scoped to `application.*`/`core.domain.*`: 91% line coverage and
+79% mutation score, both above the gate (`mutationThreshold=70`,
 `coverageThreshold=80`).
