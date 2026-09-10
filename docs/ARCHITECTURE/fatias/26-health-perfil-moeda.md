@@ -65,7 +65,7 @@ graph TB
 
     SEC["SecurityConfig<br/>APP_CONTEXT_HEALTH"]
     HCTL["HealthController.java<br/>getProfile / saveProfile"]
-    HS["HealthService<br/>saveProfile: valida e trava"]
+    HS["SaveHealthProfileUseCase<br/>valida e trava a moeda"]
     ST["JdbcHealthStore<br/>findProfileForUpdate / create / update<br/>hasFinancialData"]
     DB[("health.health_profiles<br/>PK user_id")]
 
@@ -97,7 +97,9 @@ a interface seguiria o backend, não o toque.
 | `Health/lib/features/profile/presentation/regional_preferences_screen.dart` | Pós-onboarding: mesma escolha, respeitando a trava |
 | `Health/lib/features/health/presentation/health_controller.dart` | `saveOnboarding`, `updateProfile`, `onboardingStep`, `CurrencyLockedException` |
 | `Health/lib/core/i18n/locale_controller.dart` | Aplica o idioma e guarda em `SharedPreferences` (`health_last_locale`) |
-| `application/health/HealthService.java` | `saveProfile` — validação e a trava de moeda |
+| `application/health/usecase/SaveHealthProfileUseCaseImpl.java` | Validação e a trava de moeda |
+| `application/health/service/HealthLookups.java` | `requireProfile` e as demais resoluções de entidade |
+| `application/health/service/HealthValidation.java` | `enumValue`, `requireLocale` e a normalização de entrada |
 | `infrastructure/repository/health/JdbcHealthStore.java` | `findProfileForUpdate` (`for update`), `hasFinancialData` |
 | `db/migration/V29__health_schema.sql` | A tabela, os `check` e a unique que sustenta as FKs de moeda |
 
@@ -129,10 +131,11 @@ partir daí a moeda estaria travada (4.3) numa escolha que ela não fez.
 
 ### 4.2 Sem perfil, o Health inteiro devolve 404
 
-Todo método do `HealthService` que toca dinheiro começa por `requireProfile`:
+Todo use case do Health que toca dinheiro começa por `requireProfile`, hoje
+em `HealthLookups` — o colaborador que os 24 use cases partilham:
 
 ```java
-private Profile requireProfile(long userId) {
+public Profile requireProfile(long userId) {
     return store.findProfile(userId).orElseThrow(() ->
         new ResourceNotFoundException("Health profile not found. Complete Health onboarding first."));
 }
@@ -144,7 +147,7 @@ antes das outras três do Health.
 
 ### 4.3 A moeda trava quando existe qualquer dado financeiro — e a trava é dupla
 
-**Camada 1, aplicação** (`HealthService.saveProfile`):
+**Camada 1, aplicação** (`SaveHealthProfileUseCaseImpl.execute`):
 
 ```java
 boolean hasData = store.hasFinancialData(userId);
@@ -217,8 +220,8 @@ moeda travada — em vez de propor uma mudança que o backend recusaria.
 
 | Campo | Validação | Onde |
 |---|---|---|
-| `countryCode` | `enumValue(CountryCode.class, ...)` → `BR`/`PT` | `HealthService` |
-| `primaryCurrency` | `enumValue(CurrencyCode.class, ...)` → `BRL`/`EUR` | `HealthService` |
+| `countryCode` | `enumValue(CountryCode.class, ...)` → `BR`/`PT` | `HealthValidation` |
+| `primaryCurrency` | `enumValue(CurrencyCode.class, ...)` → `BRL`/`EUR` | `HealthValidation` |
 | `localeTag` | comparação literal com `"pt-BR"`/`"pt-PT"` | `requireLocale` |
 
 O idioma é o único que não é enum no backend — é `String` comparada a dois
@@ -356,7 +359,7 @@ que é o comportamento desejado offline.
 <details>
 <summary><b>Drill 5 —</b> Você quer adicionar espanhol (<code>es-ES</code>). Liste todos os pontos que precisam mudar antes de a primeira tela renderizar em espanhol.</summary>
 
-1. `requireLocale` no `HealthService` — hoje compara com dois literais.
+1. `requireLocale` em `HealthValidation` — hoje compara com dois literais.
 2. O `check constraint` `chk_health_profiles_locale` na V29 — via **nova
    migration**, `V31`, nunca editando a V29.
 3. O enum `InterfaceLocale` (`health_profile.dart`) — tag + `Locale`.

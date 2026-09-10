@@ -1,8 +1,21 @@
 # 00 — Visão geral do sistema
 
-> Estado verificado em 2026-09-04, lendo o código. Números conferidos:
-> Wallet 253 arquivos Dart · Academy 327 · Health 31 · Backend 592 arquivos Java,
-> 15 controllers, 84 arquivos de use case, 30 migrations (V1…V30).
+> Estado verificado em 2026-09-10, lendo o código. Números conferidos (`lib/`
+> e `src/main/`): Wallet 162 arquivos Dart · Academy 202 · Health 34 ·
+> pacotes partilhados 95 · Backend 440 arquivos Java, 15 controllers,
+> 137 arquivos de use case, 32 migrations (V1…V34 — dois números vagos).
+>
+> Contagem só de `lib/` — a linha anterior deste cabeçalho contava outra
+> coisa, por isso não compare os dois conjuntos directamente.
+>
+> Os totais dos apps caíram porque 48 arquivos que Academy e Wallet
+> duplicavam passaram para `packages/` (47 → 95 arquivos lá), levando Academy
+> de 244 para 202 e Wallet de 204 para 162. Nenhum código foi removido: cada
+> mudança dessas apaga a segunda cópia, não a funcionalidade.
+>
+> Os arquivos de use case do backend subiram de 84 para 137 porque o Health,
+> que não tinha nenhum, passou a ter 24 use cases (48 arquivos) no lugar de
+> um único `HealthService` de 857 linhas.
 
 ## 1. O que é o Petrimonium
 
@@ -175,7 +188,7 @@ Quatro categorias, e cada uma existe por um motivo:
 - **Exclusivo do Health** — fluxo de caixa real: contas, salário, despesas,
   faturas. Nem Academy nem Wallet alcançam, e a razão do Wallet não alcançar
   não é sigilo e sim escopo: ele responde "como está meu patrimônio", não "o
-  que sai da minha conta em 12 de março". O `HealthService` ainda deriva o
+  que sai da minha conta em 12 de março". O Health ainda deriva o
   dono do subject do JWT em toda chamada — a rota é o portão externo, não a
   única defesa.
 - **Compartilhado por decisão explícita** — o Pet é **um só companheiro** para
