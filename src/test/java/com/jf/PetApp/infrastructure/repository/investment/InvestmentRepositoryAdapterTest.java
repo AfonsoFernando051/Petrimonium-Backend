@@ -89,6 +89,41 @@ class InvestmentRepositoryAdapterTest {
     }
 
     @Test
+    void create_AssignsIdAndAuditTimestamps() {
+        LocalDate purchaseDate = LocalDate.of(2025, 3, 1);
+        Investment investment = new Investment(
+                null, EMAIL, "PETR4", BigDecimal.valueOf(100.0), BigDecimal.valueOf(30.5), purchaseDate, InvestmentType.STOCKS);
+
+        Investment created = adapter.create(EMAIL, investment);
+
+        assertThat(created.id()).isNotNull();
+        assertThat(created.userEmail()).isEqualTo(EMAIL);
+        assertThat(created.name()).isEqualTo("PETR4");
+        assertThat(adapter.findByUserEmail(EMAIL)).hasSize(1);
+    }
+
+    @Test
+    void create_DoesNotTouchOtherLotsOfTheSameUser() {
+        adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+
+        adapter.create(EMAIL, new Investment(
+                null, EMAIL, "VALE3", BigDecimal.valueOf(2), BigDecimal.valueOf(2), LocalDate.now(), InvestmentType.STOCKS));
+
+        List<Investment> found = adapter.findByUserEmail(EMAIL);
+        assertThat(found).hasSize(2);
+        assertThat(found).extracting(Investment::name).containsExactlyInAnyOrder("PETR4", "VALE3");
+    }
+
+    @Test
+    void create_ForUnknownUserEmail_ThrowsIllegalArgumentException() {
+        Investment investment = new Investment(
+                null, "ghost@test.com", "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS);
+
+        assertThrows(IllegalArgumentException.class, () -> adapter.create("ghost@test.com", investment));
+    }
+
+    @Test
     void findByUserEmail_IsolatedPerUser() {
         User otherUser = new User();
         otherUser.setUsername("other");

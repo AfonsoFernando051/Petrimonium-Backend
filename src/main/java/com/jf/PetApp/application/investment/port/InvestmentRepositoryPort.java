@@ -24,4 +24,7 @@ public interface InvestmentRepositoryPort {
      * adapter assigns real ids on save.
      */
     void saveAll(String userEmail, List<Investment> investments);
+
+    /** Appends one lot. {@code investment.id()} must be {@code null}; the adapter assigns it. */
+    Investment create(String userEmail, Investment investment);
 }

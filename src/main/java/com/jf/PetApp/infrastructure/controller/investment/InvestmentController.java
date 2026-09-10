@@ -1,6 +1,7 @@
 package com.jf.PetApp.infrastructure.controller.investment;
 
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentsUseCase;
+import com.jf.PetApp.application.investment.usecase.CreateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetAssetDetailsUseCase;
 import com.jf.PetApp.application.investment.usecase.GetDividendRadarUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioAllocationUseCase;
@@ -21,7 +22,9 @@ import com.jf.PetApp.infrastructure.controller.investment.dto.SyncRealPortfolioR
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.dto.AssetDetailsResponseDTO;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
+import com.jf.PetApp.application.investment.dto.InvestmentDTO;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
+import com.jf.PetApp.application.investment.usecase.InvestmentLotCommand;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioHistoryPointDTO;
@@ -30,6 +33,7 @@ import com.jf.PetApp.application.investment.dto.RealPortfolioSyncResultDTO;
 
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Valid;
 import jakarta.validation.Validator;
 
 import java.util.LinkedHashSet;
@@ -42,6 +46,7 @@ import java.util.Set;
 public class InvestmentController {
 
     private final ConfigureInvestmentsUseCase configureInvestmentsUseCase;
+    private final CreateInvestmentLotUseCase createInvestmentLotUseCase;
     private final ExternalInvestmentApiPort externalInvestmentApiPort;
     private final GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase;
     private final GetPortfolioSummaryUseCase getPortfolioSummaryUseCase;
@@ -53,6 +58,7 @@ public class InvestmentController {
     private final Validator validator;
 
     public InvestmentController(ConfigureInvestmentsUseCase configureInvestmentsUseCase,
+                                 CreateInvestmentLotUseCase createInvestmentLotUseCase,
                                  ExternalInvestmentApiPort externalInvestmentApiPort,
                                  GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase,
                                  GetPortfolioSummaryUseCase getPortfolioSummaryUseCase,
@@ -63,6 +69,7 @@ public class InvestmentController {
                                  SyncRealPortfolioUseCase syncRealPortfolioUseCase,
                                  Validator validator) {
         this.configureInvestmentsUseCase = configureInvestmentsUseCase;
+        this.createInvestmentLotUseCase = createInvestmentLotUseCase;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
         this.getPortfolioHoldingsUseCase = getPortfolioHoldingsUseCase;
         this.getPortfolioSummaryUseCase = getPortfolioSummaryUseCase;
@@ -117,6 +124,21 @@ public class InvestmentController {
                 .map(dto -> new ConfigureInvestmentCommand(
                         dto.name(), dto.quantity(), dto.purchasePrice(), dto.purchaseDate(), dto.type()))
                 .toList();
+    }
+
+    /**
+     * Appends one lot — never touches any existing lot. Unlike {@code /configure}, the body is a
+     * single object, so {@code @Valid} cascades into {@link AssetRegistrationDto} normally.
+     */
+    @PostMapping
+    public ResponseEntity<InvestmentDTO> createInvestment(@Valid @RequestBody AssetRegistrationDto request) {
+        String email = SecurityUtils.getCurrentUserEmail();
+        InvestmentDTO created = createInvestmentLotUseCase.execute(email, toCommand(request));
+        return ResponseEntity.status(HttpStatus.CREATED).body(created);
+    }
+
+    private InvestmentLotCommand toCommand(AssetRegistrationDto dto) {
+        return new InvestmentLotCommand(dto.name(), dto.quantity(), dto.purchasePrice(), dto.purchaseDate(), dto.type());
     }
 
     @GetMapping("/quote/{ticker}")

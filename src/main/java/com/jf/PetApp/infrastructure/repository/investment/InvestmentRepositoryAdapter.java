@@ -55,6 +55,16 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         investmentRepository.saveAll(entities);
     }
 
+    @Override
+    @Transactional
+    public Investment create(String userEmail, Investment investment) {
+        UserJpaEntity user = userJpaRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new IllegalArgumentException("User not found for email: " + userEmail));
+
+        InvestmentJpaEntity saved = investmentRepository.save(toEntity(investment, user));
+        return toDomain(saved, userEmail);
+    }
+
     private Investment toDomain(InvestmentJpaEntity entity, String userEmail) {
         return new Investment(
                 entity.getId(),

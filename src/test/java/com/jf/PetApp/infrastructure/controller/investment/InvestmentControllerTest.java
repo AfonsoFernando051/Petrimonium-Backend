@@ -23,10 +23,12 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
+import com.jf.PetApp.application.investment.dto.InvestmentDTO;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentsUseCase;
+import com.jf.PetApp.application.investment.usecase.CreateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetAssetDetailsUseCase;
 import com.jf.PetApp.application.investment.usecase.GetDividendRadarUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioAllocationUseCase;
@@ -44,6 +46,9 @@ class InvestmentControllerTest {
 
     @MockitoBean
     private ConfigureInvestmentsUseCase configureInvestmentsUseCase;
+
+    @MockitoBean
+    private CreateInvestmentLotUseCase createInvestmentLotUseCase;
 
     @MockitoBean
     private ExternalInvestmentApiPort externalInvestmentApiPort;
@@ -158,6 +163,52 @@ class InvestmentControllerTest {
                                 [{"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}]"""))
                 .andExpect(status().isConflict())
                 .andExpect(jsonPath("$.code").value("PORTFOLIO_REPLACE_NOT_CONFIRMED"));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_WithValidAsset_Returns201WithCreatedLot() throws Exception {
+        when(createInvestmentLotUseCase.execute(eq("investor@test.com"), any())).thenReturn(
+                new InvestmentDTO(7, "PETR4", BigDecimal.valueOf(100), BigDecimal.valueOf(30.5),
+                        java.time.LocalDate.of(2025, 1, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"PETR4","quantity":100,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}"""))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.id").value(7))
+                .andExpect(jsonPath("$.name").value("PETR4"));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_WithInvalidFields_Returns400ValidationError() throws Exception {
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"","quantity":-1,"purchasePrice":30.5,"purchaseDate":"2025-01-01","type":"STOCKS"}"""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
+
+        org.mockito.Mockito.verifyNoInteractions(createInvestmentLotUseCase);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_NeverCallsConfigureInvestmentsUseCase() throws Exception {
+        // Regression guard: the granular endpoint must never fall back to the full-replace path.
+        when(createInvestmentLotUseCase.execute(eq("investor@test.com"), any())).thenReturn(
+                new InvestmentDTO(1, "PETR4", BigDecimal.ONE, BigDecimal.TEN,
+                        java.time.LocalDate.now(), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"PETR4","quantity":1,"purchasePrice":10,"purchaseDate":"2025-01-01","type":"STOCKS"}"""))
+                .andExpect(status().isCreated());
+
+        org.mockito.Mockito.verifyNoInteractions(configureInvestmentsUseCase);
     }
 
     @Test
