@@ -2,7 +2,7 @@ package com.jf.PetApp.infrastructure.controller.health.dto;
 
 import static com.jf.PetApp.core.domain.health.HealthModels.*;
 
-import com.jf.PetApp.application.health.HealthService;
+import com.jf.PetApp.application.health.dto.HealthCommands;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -44,16 +44,16 @@ public final class HealthApiDtos {
     // ---------------------------------------------------------------- requests
 
     public record ProfileRequest(String countryCode, String primaryCurrency, String localeTag) {
-        public HealthService.ProfileInput toInput() {
-            return new HealthService.ProfileInput(countryCode, primaryCurrency, localeTag);
+        public HealthCommands.ProfileInput toInput() {
+            return new HealthCommands.ProfileInput(countryCode, primaryCurrency, localeTag);
         }
     }
 
     public record AccountRequest(String name, String type, String initialBalance,
                                  LocalDate balanceReferenceDate, String currency,
                                  String idempotencyKey) {
-        public HealthService.AccountInput toInput() {
-            return new HealthService.AccountInput(name, type, initialBalance, balanceReferenceDate,
+        public HealthCommands.AccountInput toInput() {
+            return new HealthCommands.AccountInput(name, type, initialBalance, balanceReferenceDate,
                     currency, idempotencyKey);
         }
     }
@@ -61,16 +61,16 @@ public final class HealthApiDtos {
     public record TransactionRequest(long accountId, String type, String status, String amount,
                                      String currency, String description, String category,
                                      LocalDate date, String idempotencyKey) {
-        public HealthService.TransactionInput toInput() {
-            return new HealthService.TransactionInput(accountId, type, status, amount, currency,
+        public HealthCommands.TransactionInput toInput() {
+            return new HealthCommands.TransactionInput(accountId, type, status, amount, currency,
                     description, category, date, idempotencyKey);
         }
     }
 
     public record TransferRequest(long fromAccountId, long toAccountId, String amount, String currency,
                                   LocalDate date, String description, String idempotencyKey) {
-        public HealthService.TransferInput toInput() {
-            return new HealthService.TransferInput(fromAccountId, toAccountId, amount, currency,
+        public HealthCommands.TransferInput toInput() {
+            return new HealthCommands.TransferInput(fromAccountId, toAccountId, amount, currency,
                     date, description, idempotencyKey);
         }
     }
@@ -78,31 +78,31 @@ public final class HealthApiDtos {
     public record RecurrenceRequest(long accountId, String type, String amount, String currency,
                                     String description, String category, int dayOfMonth,
                                     LocalDate startDate, LocalDate endDate, String idempotencyKey) {
-        public HealthService.RecurrenceInput toInput() {
-            return new HealthService.RecurrenceInput(accountId, type, amount, currency, description,
+        public HealthCommands.RecurrenceInput toInput() {
+            return new HealthCommands.RecurrenceInput(accountId, type, amount, currency, description,
                     category, dayOfMonth, startDate, endDate, idempotencyKey);
         }
     }
 
     public record CardRequest(String name, String currency, int closingDay, int dueDay,
                               String idempotencyKey) {
-        public HealthService.CardInput toInput() {
-            return new HealthService.CardInput(name, currency, closingDay, dueDay, idempotencyKey);
+        public HealthCommands.CardInput toInput() {
+            return new HealthCommands.CardInput(name, currency, closingDay, dueDay, idempotencyKey);
         }
     }
 
     public record PurchaseRequest(String amount, String currency, String description, String category,
                                   LocalDate purchaseDate, int installmentCount, String idempotencyKey) {
-        public HealthService.PurchaseInput toInput() {
-            return new HealthService.PurchaseInput(amount, currency, description, category,
+        public HealthCommands.PurchaseInput toInput() {
+            return new HealthCommands.PurchaseInput(amount, currency, description, category,
                     purchaseDate, installmentCount, idempotencyKey);
         }
     }
 
     public record InvoicePaymentRequest(long accountId, String currency, LocalDate paymentDate,
                                         String idempotencyKey) {
-        public HealthService.InvoicePaymentInput toInput() {
-            return new HealthService.InvoicePaymentInput(accountId, currency, paymentDate, idempotencyKey);
+        public HealthCommands.InvoicePaymentInput toInput() {
+            return new HealthCommands.InvoicePaymentInput(accountId, currency, paymentDate, idempotencyKey);
         }
     }
 
@@ -110,7 +110,7 @@ public final class HealthApiDtos {
 
     public record ProfileResponse(String countryCode, String primaryCurrency, String localeTag,
                                   boolean currencyChangeAllowed) {
-        public static ProfileResponse from(HealthService.ProfileView view) {
+        public static ProfileResponse from(HealthCommands.ProfileView view) {
             return new ProfileResponse(view.profile().countryCode().name(),
                     view.profile().primaryCurrency().name(), view.profile().localeTag(),
                     view.currencyChangeAllowed());
@@ -120,7 +120,7 @@ public final class HealthApiDtos {
     public record AccountResponse(long id, String name, String type, String initialBalance,
                                   LocalDate balanceReferenceDate, String currentBalance,
                                   String currency, boolean archived) {
-        public static AccountResponse from(HealthService.AccountView view) {
+        public static AccountResponse from(HealthCommands.AccountView view) {
             Account account = view.account();
             return new AccountResponse(account.id(), account.name(), account.type().name(),
                     money(account.initialBalance()), account.balanceReferenceDate(),
@@ -149,7 +149,7 @@ public final class HealthApiDtos {
     public record TransferResponse(long id, long fromAccountId, long toAccountId, String amount,
                                    String currency, LocalDate date, String description,
                                    TransactionResponse outLeg, TransactionResponse inLeg) {
-        public static TransferResponse from(HealthService.TransferView view) {
+        public static TransferResponse from(HealthCommands.TransferView view) {
             Transfer transfer = view.transfer();
             return new TransferResponse(transfer.id(), transfer.fromAccountId(), transfer.toAccountId(),
                     money(transfer.amount()), transfer.currency().name(), transfer.date(),

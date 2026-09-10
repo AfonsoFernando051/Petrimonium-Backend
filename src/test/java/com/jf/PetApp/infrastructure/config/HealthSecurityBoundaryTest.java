@@ -5,7 +5,30 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.jf.PetApp.application.auth.port.TokenProvider;
-import com.jf.PetApp.application.health.HealthService;
+import com.jf.PetApp.application.health.usecase.ArchiveHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.ArchiveHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.ConfirmHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthPurchaseUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.CreateHealthTransferUseCase;
+import com.jf.PetApp.application.health.usecase.DeactivateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.DeleteHealthTransactionUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.GetHealthSummaryUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthAccountsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthCardsUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthInvoicesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthRecurrencesUseCase;
+import com.jf.PetApp.application.health.usecase.ListHealthTransactionsUseCase;
+import com.jf.PetApp.application.health.usecase.PayHealthInvoiceUseCase;
+import com.jf.PetApp.application.health.usecase.SaveHealthProfileUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthAccountUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthCardUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthRecurrenceUseCase;
+import com.jf.PetApp.application.health.usecase.UpdateHealthTransactionUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
@@ -51,7 +74,76 @@ class HealthSecurityBoundaryTest {
     private UserRepository userRepository;
 
     @MockitoBean
-    private HealthService healthService;
+    private GetHealthProfileUseCase getHealthProfileUseCase;
+
+    @MockitoBean
+    private SaveHealthProfileUseCase saveHealthProfileUseCase;
+
+    @MockitoBean
+    private ListHealthAccountsUseCase listHealthAccountsUseCase;
+
+    @MockitoBean
+    private CreateHealthAccountUseCase createHealthAccountUseCase;
+
+    @MockitoBean
+    private UpdateHealthAccountUseCase updateHealthAccountUseCase;
+
+    @MockitoBean
+    private ArchiveHealthAccountUseCase archiveHealthAccountUseCase;
+
+    @MockitoBean
+    private ListHealthTransactionsUseCase listHealthTransactionsUseCase;
+
+    @MockitoBean
+    private CreateHealthTransactionUseCase createHealthTransactionUseCase;
+
+    @MockitoBean
+    private UpdateHealthTransactionUseCase updateHealthTransactionUseCase;
+
+    @MockitoBean
+    private ConfirmHealthTransactionUseCase confirmHealthTransactionUseCase;
+
+    @MockitoBean
+    private DeleteHealthTransactionUseCase deleteHealthTransactionUseCase;
+
+    @MockitoBean
+    private CreateHealthTransferUseCase createHealthTransferUseCase;
+
+    @MockitoBean
+    private ListHealthRecurrencesUseCase listHealthRecurrencesUseCase;
+
+    @MockitoBean
+    private CreateHealthRecurrenceUseCase createHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private UpdateHealthRecurrenceUseCase updateHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private DeactivateHealthRecurrenceUseCase deactivateHealthRecurrenceUseCase;
+
+    @MockitoBean
+    private ListHealthCardsUseCase listHealthCardsUseCase;
+
+    @MockitoBean
+    private CreateHealthCardUseCase createHealthCardUseCase;
+
+    @MockitoBean
+    private UpdateHealthCardUseCase updateHealthCardUseCase;
+
+    @MockitoBean
+    private ArchiveHealthCardUseCase archiveHealthCardUseCase;
+
+    @MockitoBean
+    private CreateHealthPurchaseUseCase createHealthPurchaseUseCase;
+
+    @MockitoBean
+    private ListHealthInvoicesUseCase listHealthInvoicesUseCase;
+
+    @MockitoBean
+    private PayHealthInvoiceUseCase payHealthInvoiceUseCase;
+
+    @MockitoBean
+    private GetHealthSummaryUseCase getHealthSummaryUseCase;
 
     private HttpEntity<Void> session(String email, AppContextEnum appContext) {
         User user = User.create("healthboundary", email, "irrelevant-hash", RoleEnum.USER);
@@ -107,7 +199,7 @@ class HealthSecurityBoundaryTest {
 
     @Test
     void healthEndpoint_WithHealthAppContext_ReachesTheController() {
-        org.mockito.Mockito.when(healthService.listAccounts("health-app@test.com")).thenReturn(List.of());
+        org.mockito.Mockito.when(listHealthAccountsUseCase.execute("health-app@test.com")).thenReturn(List.of());
 
         assertEquals(HttpStatus.OK,
                 statusOf(HEALTH_ACCOUNTS, session("health-app@test.com", AppContextEnum.HEALTH)));

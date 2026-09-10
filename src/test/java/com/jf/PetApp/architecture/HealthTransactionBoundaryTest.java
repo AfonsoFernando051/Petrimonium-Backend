@@ -21,7 +21,7 @@ import java.util.Locale;
 import java.util.Set;
 
 /**
- * Every {@code HealthService} entry point that can reach a write must be {@code @Transactional}.
+ * Every Health use case that can reach a write must be {@code @Transactional}.
  *
  * <p>Exists because {@code listTransactions} wasn't (DEM-114). It reads, but it materializes the
  * month's recurrences first, so it writes — and the write was three calls deep behind a private
@@ -31,6 +31,11 @@ import java.util.Set;
  * <p>Checking the reachable call graph rather than direct calls is the whole point: a rule that
  * only looked at methods calling {@code store.create...} directly would have passed on the very
  * bug it is meant to catch.
+ *
+ * <p>Since the split into use cases the walk must also follow calls into the collaborators in
+ * {@code application.health.service} — {@code RecurrenceMaterializer} is precisely where the
+ * DEM-114 write now lives, so a walk that stopped at the class boundary would go vacuous on the
+ * original bug. {@link #theRuleActuallyFindsWritingMethods} is what keeps that honest.
  */
 class HealthTransactionBoundaryTest {
 
@@ -55,8 +60,13 @@ class HealthTransactionBoundaryTest {
         return MUTATING_PREFIXES.stream().anyMatch(name::startsWith);
     }
 
-    /** Walks calls within {@code owner} from {@code entry}, reporting whether any of them writes. */
-    private static boolean reachesAWrite(JavaClass owner, JavaMethod entry) {
+    /** True for anything inside the Health slice: a use case impl or one of its collaborators. */
+    private static boolean insideHealthSlice(JavaMethodCall call) {
+        return call.getTargetOwner().getPackageName().startsWith("com.jf.PetApp.application.health");
+    }
+
+    /** Walks calls reachable from {@code entry} inside the Health slice, reporting whether any writes. */
+    private static boolean reachesAWrite(JavaMethod entry) {
         Set<String> seen = new HashSet<>();
         Deque<JavaMethod> queue = new ArrayDeque<>();
         queue.add(entry);
@@ -68,9 +78,10 @@ class HealthTransactionBoundaryTest {
                 if (isMutatingStoreCall(call)) {
                     return true;
                 }
-                // Follow calls that stay inside the service, so a write hidden behind a private
-                // helper still counts against the public method that can reach it.
-                if (!call.getTargetOwner().equals(owner)) {
+                // Follow calls that stay inside the Health slice, so a write hidden behind a
+                // private helper or a collaborator still counts against the use case that can
+                // reach it.
+                if (!insideHealthSlice(call)) {
                     continue;
                 }
                 call.getTarget().resolveMember().ifPresent(member -> {
@@ -83,27 +94,36 @@ class HealthTransactionBoundaryTest {
         return false;
     }
 
-    @Test
-    void everyHealthServiceMethodThatCanReachAWriteIsTransactional() {
-        JavaClass service = CLASSES.get("com.jf.PetApp.application.health.HealthService");
+    /** Every {@code execute} on a Health use case implementation. */
+    private static List<JavaMethod> useCaseEntryPoints() {
+        List<JavaMethod> entries = new ArrayList<>();
+        for (JavaClass type : CLASSES) {
+            if (!type.getSimpleName().endsWith("UseCaseImpl")) {
+                continue;
+            }
+            type.getMethods().stream()
+                    .filter(m -> m.getName().equals("execute"))
+                    .forEach(entries::add);
+        }
+        return entries;
+    }
 
+    @Test
+    void everyHealthUseCaseThatCanReachAWriteIsTransactional() {
         List<String> offenders = new ArrayList<>();
-        for (JavaMethod method : service.getMethods()) {
-            if (!method.getModifiers().contains(com.tngtech.archunit.core.domain.JavaModifier.PUBLIC)) {
+        for (JavaMethod entry : useCaseEntryPoints()) {
+            if (!reachesAWrite(entry)) {
                 continue;
             }
-            if (!reachesAWrite(service, method)) {
-                continue;
-            }
-            boolean transactional = method.isAnnotatedWith(Transactional.class)
-                    || service.isAnnotatedWith(Transactional.class);
+            boolean transactional = entry.isAnnotatedWith(Transactional.class)
+                    || entry.getOwner().isAnnotatedWith(Transactional.class);
             if (!transactional) {
-                offenders.add(method.getName());
+                offenders.add(entry.getOwner().getSimpleName());
             }
         }
 
         assertTrue(offenders.isEmpty(),
-                "these HealthService methods can reach a HealthStore write but are not @Transactional, "
+                "these Health use cases can reach a HealthStore write but are not @Transactional, "
                         + "so a partial failure cannot roll back and concurrent callers can race a "
                         + "unique constraint: " + offenders);
     }
@@ -115,15 +135,10 @@ class HealthTransactionBoundaryTest {
      */
     @Test
     void theRuleActuallyFindsWritingMethods() {
-        JavaClass service = CLASSES.get("com.jf.PetApp.application.health.HealthService");
-
-        long writers = service.getMethods().stream()
-                .filter(m -> m.getModifiers().contains(com.tngtech.archunit.core.domain.JavaModifier.PUBLIC))
-                .filter(m -> reachesAWrite(service, m))
-                .count();
+        long writers = useCaseEntryPoints().stream().filter(HealthTransactionBoundaryTest::reachesAWrite).count();
 
         assertTrue(writers > 5,
-                "expected the call-graph walk to still identify HealthService's writing methods, "
+                "expected the call-graph walk to still identify Health's writing use cases, "
                         + "found " + writers + " — the rule may have gone vacuous");
     }
 }
