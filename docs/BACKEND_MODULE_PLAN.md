@@ -641,3 +641,59 @@ gates).
 real product need): no UI/API to let a user see *which* app context a
 Mentor conversation belongs to, since each app's own conversation list is
 already implicitly scoped by the JWT it authenticates with.
+
+## 15. Granular investment CRUD (2026-09-10, Wallet data foundation)
+
+Until now, `/api/investments/configure` (a full delete-all-recreate,
+`ConfigureInvestmentsUseCaseImpl`) was the *only* write path for
+`jf_investments` — the Wallet app worked around this to "add one asset" by
+re-fetching every holding and resending the whole list with
+`confirmReplace: true` (`AddAssetScreen`, still doing so before this
+change). This violated FR-WAL-004/FR-WAL-011 (manual creation and
+*controlled* per-asset edit/removal) and was DEM-30 on the Demandas board.
+
+Three endpoints were added, all scoped by owner, none touching
+`/configure`, which is unchanged and still the Wallet onboarding wizard's
+full-portfolio-setup path (`InvestmentConfigurationScreen`):
+
+- `POST /api/investments` — appends one lot (`CreateInvestmentLotUseCase`).
+- `PUT /api/investments/{id}` — edits one lot in place, preserving
+  `created_at` (`UpdateInvestmentLotUseCase`).
+- `DELETE /api/investments/{id}` — removes one lot
+  (`DeleteInvestmentLotUseCase`).
+
+**Ownership scoping, and why 404 rather than 403**: `update`/`delete` on
+`InvestmentRepositoryPort` only exist in the form `(id, userEmail, ...)` —
+there is no unscoped `findById(Integer)` on the port, so a caller cannot
+accidentally reach another user's lot by forgetting a check; the scoped
+query itself is the only way in. When the id doesn't exist or belongs to
+someone else, both throw `ResourceNotFoundException` → 404, the same
+"as if it never existed" response either way. A 403 would leak that the id
+is real and just isn't the caller's — exactly the same reasoning already
+applied to Mentor conversations (`MentorConversationRepositoryPort`,
+§14 Finding 3's sibling pattern) and now mirrored for investments.
+
+`/configure`'s `DestructivePortfolioReplaceException` guard is untouched
+and irrelevant to the three new endpoints: it exists because a shorter list
+in a full-replace is ambiguous (deliberate removal vs. a client that forgot
+to resend everything). `DELETE /{id}` has no such ambiguity — the verb and
+the id already say which lot the caller means gone — so no confirmation
+flag was added.
+
+No migration was needed: every column the granular endpoints touch already
+existed since V31 (`created_at`/`updated_at`).
+
+**Not done in this stage, tracked separately, not prerequisites**:
+currency/data-origin validation on the write DTO (DEM-31) and a
+deterministic, versioned wealth-evolution calculation service (DEM-35).
+Also not done: no Flutter `updateInvestment`/`deleteInvestment` calls yet —
+no Wallet screen edits or removes an already-saved lot today, so wiring
+those without a consuming UI would be untested dead code; that UI is a
+product/design decision still open.
+
+**Verified**: full `mvn test`, 1136/1136 green (including
+`SimulatedPortfolioBoundaryTest`/`HealthBoundaryTest`, which already
+wildcard-cover the new classes with no edits needed), plus
+`org.pitest:pitest-maven:mutationCoverage` run once at the end of the slice
+against the existing repo-wide gate (`mutationThreshold=70`,
+`coverageThreshold=80`).
