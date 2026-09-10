@@ -36,4 +36,10 @@ public interface InvestmentRepositoryPort {
      * never "forbidden".
      */
     Investment update(Integer id, String userEmail, Investment investment);
+
+    /**
+     * Removes one lot. Same "not found, never forbidden" scoping and exception as
+     * {@link #update(Integer, String, Investment)}.
+     */
+    void delete(Integer id, String userEmail);
 }

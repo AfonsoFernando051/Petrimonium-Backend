@@ -167,6 +167,53 @@ class InvestmentRepositoryAdapterTest {
     }
 
     @Test
+    void delete_WhenOwnedByCaller_RemovesRow() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+
+        adapter.delete(created.id(), EMAIL);
+
+        assertThat(adapter.findByUserEmail(EMAIL)).isEmpty();
+    }
+
+    @Test
+    void delete_DoesNotTouchOtherLotsOfTheSameUser() {
+        Investment toDelete = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+        adapter.create(EMAIL, new Investment(
+                null, EMAIL, "VALE3", BigDecimal.valueOf(2), BigDecimal.valueOf(2), LocalDate.now(), InvestmentType.STOCKS));
+
+        adapter.delete(toDelete.id(), EMAIL);
+
+        List<Investment> remaining = adapter.findByUserEmail(EMAIL);
+        assertThat(remaining).hasSize(1);
+        assertThat(remaining.get(0).name()).isEqualTo("VALE3");
+    }
+
+    @Test
+    void delete_WhenOwnedByAnotherUser_ThrowsResourceNotFoundAndDoesNotRemoveIt() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+
+        User otherUser = new User();
+        otherUser.setUsername("other");
+        otherUser.setEmail("other@test.com");
+        otherUser.setPassword("hash");
+        userJpaRepository.save(UserJpaEntity.fromDomain(otherUser));
+
+        assertThrows(com.jf.PetApp.application.common.exception.ResourceNotFoundException.class,
+                () -> adapter.delete(created.id(), "other@test.com"));
+
+        assertThat(adapter.findByUserEmail(EMAIL)).hasSize(1);
+    }
+
+    @Test
+    void delete_WhenIdDoesNotExist_ThrowsResourceNotFound() {
+        assertThrows(com.jf.PetApp.application.common.exception.ResourceNotFoundException.class,
+                () -> adapter.delete(999999, EMAIL));
+    }
+
+    @Test
     void findByUserEmail_IsolatedPerUser() {
         User otherUser = new User();
         otherUser.setUsername("other");

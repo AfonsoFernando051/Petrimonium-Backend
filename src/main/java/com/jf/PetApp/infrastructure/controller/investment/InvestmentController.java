@@ -25,6 +25,7 @@ import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.InvestmentDTO;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
 import com.jf.PetApp.application.investment.usecase.InvestmentLotCommand;
+import com.jf.PetApp.application.investment.usecase.DeleteInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.UpdateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
@@ -49,6 +50,7 @@ public class InvestmentController {
     private final ConfigureInvestmentsUseCase configureInvestmentsUseCase;
     private final CreateInvestmentLotUseCase createInvestmentLotUseCase;
     private final UpdateInvestmentLotUseCase updateInvestmentLotUseCase;
+    private final DeleteInvestmentLotUseCase deleteInvestmentLotUseCase;
     private final ExternalInvestmentApiPort externalInvestmentApiPort;
     private final GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase;
     private final GetPortfolioSummaryUseCase getPortfolioSummaryUseCase;
@@ -62,6 +64,7 @@ public class InvestmentController {
     public InvestmentController(ConfigureInvestmentsUseCase configureInvestmentsUseCase,
                                  CreateInvestmentLotUseCase createInvestmentLotUseCase,
                                  UpdateInvestmentLotUseCase updateInvestmentLotUseCase,
+                                 DeleteInvestmentLotUseCase deleteInvestmentLotUseCase,
                                  ExternalInvestmentApiPort externalInvestmentApiPort,
                                  GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase,
                                  GetPortfolioSummaryUseCase getPortfolioSummaryUseCase,
@@ -74,6 +77,7 @@ public class InvestmentController {
         this.configureInvestmentsUseCase = configureInvestmentsUseCase;
         this.createInvestmentLotUseCase = createInvestmentLotUseCase;
         this.updateInvestmentLotUseCase = updateInvestmentLotUseCase;
+        this.deleteInvestmentLotUseCase = deleteInvestmentLotUseCase;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
         this.getPortfolioHoldingsUseCase = getPortfolioHoldingsUseCase;
         this.getPortfolioSummaryUseCase = getPortfolioSummaryUseCase;
@@ -154,6 +158,14 @@ public class InvestmentController {
         String email = SecurityUtils.getCurrentUserEmail();
         InvestmentDTO updated = updateInvestmentLotUseCase.execute(email, id, toCommand(request));
         return ResponseEntity.ok(updated);
+    }
+
+    /** Removes one lot. {@code id} not found or not owned by the caller surfaces as 404. */
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteInvestment(@PathVariable Integer id) {
+        String email = SecurityUtils.getCurrentUserEmail();
+        deleteInvestmentLotUseCase.execute(email, id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/quote/{ticker}")

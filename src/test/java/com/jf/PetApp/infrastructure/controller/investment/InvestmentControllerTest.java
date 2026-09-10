@@ -4,6 +4,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
@@ -31,6 +32,7 @@ import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentsUseCase;
 import com.jf.PetApp.application.investment.usecase.CreateInvestmentLotUseCase;
+import com.jf.PetApp.application.investment.usecase.DeleteInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetAssetDetailsUseCase;
 import com.jf.PetApp.application.investment.usecase.UpdateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetDividendRadarUseCase;
@@ -55,6 +57,9 @@ class InvestmentControllerTest {
 
     @MockitoBean
     private UpdateInvestmentLotUseCase updateInvestmentLotUseCase;
+
+    @MockitoBean
+    private DeleteInvestmentLotUseCase deleteInvestmentLotUseCase;
 
     @MockitoBean
     private ExternalInvestmentApiPort externalInvestmentApiPort;
@@ -258,6 +263,26 @@ class InvestmentControllerTest {
                 .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
 
         org.mockito.Mockito.verifyNoInteractions(updateInvestmentLotUseCase);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void deleteInvestment_WhenOwnedByCaller_Returns204() throws Exception {
+        mockMvc.perform(delete("/api/investments/7"))
+                .andExpect(status().isNoContent());
+
+        org.mockito.Mockito.verify(deleteInvestmentLotUseCase).execute("investor@test.com", 7);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void deleteInvestment_WhenLotNotFoundOrNotOwned_Returns404() throws Exception {
+        org.mockito.Mockito.doThrow(new ResourceNotFoundException("Investment not found: 7"))
+                .when(deleteInvestmentLotUseCase).execute("investor@test.com", 7);
+
+        mockMvc.perform(delete("/api/investments/7"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.code").value("RESOURCE_NOT_FOUND"));
     }
 
     @Test

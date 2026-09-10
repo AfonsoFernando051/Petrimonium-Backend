@@ -78,6 +78,12 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         return toDomain(investmentRepository.save(entity), userEmail);
     }
 
+    @Override
+    @Transactional
+    public void delete(Integer id, String userEmail) {
+        investmentRepository.delete(ownedOrThrow(id, userEmail));
+    }
+
     /**
      * Resolves a lot only when it belongs to {@code userEmail}. Anything else is reported as
      * missing rather than forbidden, so an id cannot be used to probe for the existence of
