@@ -16,12 +16,19 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "simulated_orders", schema = "simulated_portfolio")
+@Getter
+@Setter
 public class SimulatedOrderJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @ManyToOne(optional = false)
@@ -46,64 +53,4 @@ public class SimulatedOrderJpaEntity {
 
     @Column(name = "client_order_id", nullable = false, length = 100)
     private String clientOrderId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public SimulatedPortfolioJpaEntity getPortfolio() {
-        return portfolio;
-    }
-
-    public void setPortfolio(SimulatedPortfolioJpaEntity portfolio) {
-        this.portfolio = portfolio;
-    }
-
-    public String getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
-    }
-
-    public SimulatedOrderSide getSide() {
-        return side;
-    }
-
-    public void setSide(SimulatedOrderSide side) {
-        this.side = side;
-    }
-
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
-    public Instant getExecutedAt() {
-        return executedAt;
-    }
-
-    public void setExecutedAt(Instant executedAt) {
-        this.executedAt = executedAt;
-    }
-
-    public String getClientOrderId() {
-        return clientOrderId;
-    }
-
-    public void setClientOrderId(String clientOrderId) {
-        this.clientOrderId = clientOrderId;
-    }
 }

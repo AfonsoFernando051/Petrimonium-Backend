@@ -9,8 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "achievement_unlocks", schema = "gamification")
+@Getter
+@Setter
 public class AchievementUnlockJpaEntity {
 
     @Id
@@ -28,44 +33,4 @@ public class AchievementUnlockJpaEntity {
 
     @Column(name = "unlocked_at")
     private Instant unlockedAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getAchievementCode() {
-        return achievementCode;
-    }
-
-    public void setAchievementCode(String achievementCode) {
-        this.achievementCode = achievementCode;
-    }
-
-    public int getXpAwarded() {
-        return xpAwarded;
-    }
-
-    public void setXpAwarded(int xpAwarded) {
-        this.xpAwarded = xpAwarded;
-    }
-
-    public Instant getUnlockedAt() {
-        return unlockedAt;
-    }
-
-    public void setUnlockedAt(Instant unlockedAt) {
-        this.unlockedAt = unlockedAt;
-    }
 }

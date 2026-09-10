@@ -11,8 +11,13 @@ import jakarta.persistence.Table;
 
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "jf_mentor_messages", schema = "ai")
+@Getter
+@Setter
 public class MentorMessageJpaEntity {
 
     @Id
@@ -30,44 +35,4 @@ public class MentorMessageJpaEntity {
 
     @Column(name = "created_at", nullable = false)
     private Instant createdAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public MentorConversationJpaEntity getConversation() {
-        return conversation;
-    }
-
-    public void setConversation(MentorConversationJpaEntity conversation) {
-        this.conversation = conversation;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
 }

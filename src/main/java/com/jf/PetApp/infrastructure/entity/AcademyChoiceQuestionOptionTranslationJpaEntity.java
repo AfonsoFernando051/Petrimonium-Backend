@@ -7,12 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_choice_question_option_translations", schema = "education")
+@Getter
+@Setter
 public class AcademyChoiceQuestionOptionTranslationJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "option_id")
@@ -23,32 +30,4 @@ public class AcademyChoiceQuestionOptionTranslationJpaEntity {
 
     @Column(name = "option_text", length = 500)
     private String optionText;
-
-    public Long getId() {
-        return id;
-    }
-
-    public Long getOptionId() {
-        return optionId;
-    }
-
-    public void setOptionId(Long optionId) {
-        this.optionId = optionId;
-    }
-
-    public String getLang() {
-        return lang;
-    }
-
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
-
-    public String getOptionText() {
-        return optionText;
-    }
-
-    public void setOptionText(String optionText) {
-        this.optionText = optionText;
-    }
 }

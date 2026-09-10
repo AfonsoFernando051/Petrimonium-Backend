@@ -4,6 +4,12 @@ import com.jf.PetApp.core.domain.assessment.InvestorProfile;
 import com.jf.PetApp.core.domain.enums.AuthProviderEnum;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class User {
 
 	/**
@@ -44,6 +50,7 @@ public class User {
 	/**
 	 * Whether the user already answered the investor questionnaire.
 	 */
+	@Getter(AccessLevel.NONE)
 	boolean hasAnsweredOnboarding;
 
 	/**
@@ -73,108 +80,8 @@ public class User {
 	 */
 	String providerId;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public Finance getFinance() {
-		return finance;
-	}
-
-	public void setFinance(Finance finance) {
-		this.finance = finance;
-	}
-
-	public RoleEnum getRole() {
-		return role;
-	}
-
-	public void setRole(RoleEnum role) {
-		this.role = role;
-	}
-
-	public boolean isActive() {
-		return isActive;
-	}
-
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
-
 	public boolean hasAnsweredOnboarding() {
 		return hasAnsweredOnboarding;
-	}
-
-	public void setHasAnsweredOnboarding(boolean hasAnsweredOnboarding) {
-		this.hasAnsweredOnboarding = hasAnsweredOnboarding;
-	}
-
-	public InvestorProfile getInvestorProfile() {
-		return investorProfile;
-	}
-
-	public void setInvestorProfile(InvestorProfile investorProfile) {
-		this.investorProfile = investorProfile;
-	}
-
-	public String getPreferredLanguage() {
-		return preferredLanguage;
-	}
-
-	public void setPreferredLanguage(String preferredLanguage) {
-		this.preferredLanguage = preferredLanguage;
-	}
-
-	public String getCountryCode() {
-		return countryCode;
-	}
-
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
-
-	public AuthProviderEnum getProvider() {
-		return provider;
-	}
-
-	public void setProvider(AuthProviderEnum provider) {
-		this.provider = provider;
-	}
-
-	public String getProviderId() {
-		return providerId;
-	}
-
-	public void setProviderId(String providerId) {
-		this.providerId = providerId;
 	}
 
 	public static User create(String username, String email, String password, RoleEnum role) {

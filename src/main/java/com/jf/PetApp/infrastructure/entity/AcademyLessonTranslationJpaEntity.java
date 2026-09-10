@@ -7,12 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_lesson_translations", schema = "education")
+@Getter
+@Setter
 public class AcademyLessonTranslationJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "lesson_id")
@@ -27,40 +34,4 @@ public class AcademyLessonTranslationJpaEntity {
     /** What the learner can DO after this lesson — see DECISION-025. Nullable: not yet authored for every lesson. */
     @Column(name = "learning_objective")
     private String learningObjective;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
-    }
-
-    public String getLang() {
-        return lang;
-    }
-
-    public void setLang(String lang) {
-        this.lang = lang;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLearningObjective() {
-        return learningObjective;
-    }
-
-    public void setLearningObjective(String learningObjective) {
-        this.learningObjective = learningObjective;
-    }
 }

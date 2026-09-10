@@ -7,12 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_lesson_portfolio_concepts", schema = "education")
+@Getter
+@Setter
 public class AcademyLessonPortfolioConceptJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "lesson_id")
@@ -20,24 +27,4 @@ public class AcademyLessonPortfolioConceptJpaEntity {
 
     @Column(name = "concept_id")
     private String conceptId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
-    }
-
-    public String getConceptId() {
-        return conceptId;
-    }
-
-    public void setConceptId(String conceptId) {
-        this.conceptId = conceptId;
-    }
 }

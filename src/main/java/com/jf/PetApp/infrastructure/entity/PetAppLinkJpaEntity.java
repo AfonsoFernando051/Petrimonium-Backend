@@ -14,6 +14,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * Which pet currently answers for which app, per user (V34__pet_app_links.sql).
  * A pet can hold several of these at once (linked to more than one app); the
@@ -24,10 +28,13 @@ import jakarta.persistence.UniqueConstraint;
 @Entity
 @Table(name = "jf_pet_app_links", schema = "pet",
         uniqueConstraints = @UniqueConstraint(columnNames = {"user_id", "app_context"}))
+@Getter
+@Setter
 public class PetAppLinkJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Integer id;
 
     @ManyToOne(optional = false)
@@ -41,32 +48,4 @@ public class PetAppLinkJpaEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "app_context", nullable = false)
     private AppContextEnum appContext;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public PetJpaEntity getPet() {
-        return pet;
-    }
-
-    public void setPet(PetJpaEntity pet) {
-        this.pet = pet;
-    }
-
-    public UserJpaEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UserJpaEntity user) {
-        this.user = user;
-    }
-
-    public AppContextEnum getAppContext() {
-        return appContext;
-    }
-
-    public void setAppContext(AppContextEnum appContext) {
-        this.appContext = appContext;
-    }
 }

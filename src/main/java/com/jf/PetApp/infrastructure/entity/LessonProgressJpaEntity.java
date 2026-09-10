@@ -9,8 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "lesson_progress", schema = "education")
+@Getter
+@Setter
 public class LessonProgressJpaEntity {
 
     @Id
@@ -29,44 +34,4 @@ public class LessonProgressJpaEntity {
     /** Every question in this lesson answered correctly on the first try, at least once. Monotonic — see DECISION-025. */
     @Column(name = "perfect_first_try")
     private boolean perfectFirstTry;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
-    }
-
-    public Instant getCompletedAt() {
-        return completedAt;
-    }
-
-    public void setCompletedAt(Instant completedAt) {
-        this.completedAt = completedAt;
-    }
-
-    public boolean isPerfectFirstTry() {
-        return perfectFirstTry;
-    }
-
-    public void setPerfectFirstTry(boolean perfectFirstTry) {
-        this.perfectFirstTry = perfectFirstTry;
-    }
 }

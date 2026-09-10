@@ -16,8 +16,13 @@ import jakarta.persistence.Column;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "jf_investments", schema = "real_portfolio")
+@Getter
+@Setter
 public class InvestmentJpaEntity {
 
     @Id
@@ -47,76 +52,4 @@ public class InvestmentJpaEntity {
 
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPurchasePrice() {
-        return purchasePrice;
-    }
-
-    public void setPurchasePrice(BigDecimal purchasePrice) {
-        this.purchasePrice = purchasePrice;
-    }
-
-    public java.time.LocalDate getPurchaseDate() {
-        return purchaseDate;
-    }
-
-    public void setPurchaseDate(java.time.LocalDate purchaseDate) {
-        this.purchaseDate = purchaseDate;
-    }
-
-    public InvestmentType getType() {
-        return type;
-    }
-
-    public void setType(InvestmentType type) {
-        this.type = type;
-    }
-
-    public UserJpaEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UserJpaEntity user) {
-        this.user = user;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }

@@ -9,8 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "mission_completions", schema = "gamification")
+@Getter
+@Setter
 public class MissionCompletionJpaEntity {
 
     @Id
@@ -31,52 +36,4 @@ public class MissionCompletionJpaEntity {
 
     @Column(name = "completed_at")
     private Instant completedAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getMissionCode() {
-        return missionCode;
-    }
-
-    public void setMissionCode(String missionCode) {
-        this.missionCode = missionCode;
-    }
-
-    public String getPeriodKey() {
-        return periodKey;
-    }
-
-    public void setPeriodKey(String periodKey) {
-        this.periodKey = periodKey;
-    }
-
-    public int getXpAwarded() {
-        return xpAwarded;
-    }
-
-    public void setXpAwarded(int xpAwarded) {
-        this.xpAwarded = xpAwarded;
-    }
-
-    public Instant getCompletedAt() {
-        return completedAt;
-    }
-
-    public void setCompletedAt(Instant completedAt) {
-        this.completedAt = completedAt;
-    }
 }

@@ -3,6 +3,11 @@ package com.jf.PetApp.core.domain;
 import java.math.BigDecimal;
 import java.util.Collection;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Finance {
 
 	/**
@@ -19,29 +24,5 @@ public class Finance {
 	 * Collection of investments
 	 */
 	Collection<Investment> investments;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public BigDecimal getBalance() {
-		return balance;
-	}
-
-	public void setBalance(BigDecimal balance) {
-		this.balance = balance;
-	}
-
-	public Collection<Investment> getInvestments() {
-		return investments;
-	}
-
-	public void setInvestments(Collection<Investment> investments) {
-		this.investments = investments;
-	}
 
 }

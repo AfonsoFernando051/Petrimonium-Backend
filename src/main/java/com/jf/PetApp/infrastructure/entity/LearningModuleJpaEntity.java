@@ -5,8 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "learning_modules", schema = "education")
+@Getter
+@Setter
 public class LearningModuleJpaEntity {
 
     @Id
@@ -34,68 +39,4 @@ public class LearningModuleJpaEntity {
     /** FOUNDATION .. SPECIALIZATION — see DECISION-025. */
     @Column(name = "difficulty")
     private String difficulty;
-
-    public String getModuleId() {
-        return moduleId;
-    }
-
-    public void setModuleId(String moduleId) {
-        this.moduleId = moduleId;
-    }
-
-    public int getXpReward() {
-        return xpReward;
-    }
-
-    public void setXpReward(int xpReward) {
-        this.xpReward = xpReward;
-    }
-
-    public int getModuleOrder() {
-        return moduleOrder;
-    }
-
-    public void setModuleOrder(int moduleOrder) {
-        this.moduleOrder = moduleOrder;
-    }
-
-    public int getLessonCount() {
-        return lessonCount;
-    }
-
-    public void setLessonCount(int lessonCount) {
-        this.lessonCount = lessonCount;
-    }
-
-    public String getSchoolId() {
-        return schoolId;
-    }
-
-    public void setSchoolId(String schoolId) {
-        this.schoolId = schoolId;
-    }
-
-    public String getIconKey() {
-        return iconKey;
-    }
-
-    public void setIconKey(String iconKey) {
-        this.iconKey = iconKey;
-    }
-
-    public boolean isContentAvailable() {
-        return contentAvailable;
-    }
-
-    public void setContentAvailable(boolean contentAvailable) {
-        this.contentAvailable = contentAvailable;
-    }
-
-    public String getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
-    }
 }

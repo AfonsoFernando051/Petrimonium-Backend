@@ -12,12 +12,19 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.Instant;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "simulated_positions", schema = "simulated_portfolio")
+@Getter
+@Setter
 public class SimulatedPositionJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @ManyToOne(optional = false)
@@ -38,56 +45,4 @@ public class SimulatedPositionJpaEntity {
 
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
-
-    public Long getId() {
-        return id;
-    }
-
-    public SimulatedPortfolioJpaEntity getPortfolio() {
-        return portfolio;
-    }
-
-    public void setPortfolio(SimulatedPortfolioJpaEntity portfolio) {
-        this.portfolio = portfolio;
-    }
-
-    public String getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
-    }
-
-    public BigDecimal getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getAveragePrice() {
-        return averagePrice;
-    }
-
-    public void setAveragePrice(BigDecimal averagePrice) {
-        this.averagePrice = averagePrice;
-    }
-
-    public Instant getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Instant updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 }

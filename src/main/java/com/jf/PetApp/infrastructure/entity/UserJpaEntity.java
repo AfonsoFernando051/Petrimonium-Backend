@@ -16,6 +16,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+
 @Entity
 @Table(name = "jf_users", schema = "identity")
 public class UserJpaEntity {
@@ -23,11 +25,8 @@ public class UserJpaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_id")
+    @Getter
     private Long id;
-
-    public Long getId() {
-        return id;
-    }
 
     private String username;
 

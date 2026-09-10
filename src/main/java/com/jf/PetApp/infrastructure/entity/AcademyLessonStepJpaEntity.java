@@ -7,12 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_lesson_steps", schema = "education")
+@Getter
+@Setter
 public class AcademyLessonStepJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "lesson_id")
@@ -29,48 +36,4 @@ public class AcademyLessonStepJpaEntity {
 
     @Column(name = "correct_option_index")
     private Integer correctOptionIndex;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
-    }
-
-    public int getStepOrder() {
-        return stepOrder;
-    }
-
-    public void setStepOrder(int stepOrder) {
-        this.stepOrder = stepOrder;
-    }
-
-    public String getStepType() {
-        return stepType;
-    }
-
-    public void setStepType(String stepType) {
-        this.stepType = stepType;
-    }
-
-    public String getFraming() {
-        return framing;
-    }
-
-    public void setFraming(String framing) {
-        this.framing = framing;
-    }
-
-    public Integer getCorrectOptionIndex() {
-        return correctOptionIndex;
-    }
-
-    public void setCorrectOptionIndex(Integer correctOptionIndex) {
-        this.correctOptionIndex = correctOptionIndex;
-    }
 }

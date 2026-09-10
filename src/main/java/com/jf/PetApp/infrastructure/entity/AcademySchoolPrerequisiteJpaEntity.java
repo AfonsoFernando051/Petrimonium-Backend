@@ -7,12 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_school_prerequisites", schema = "education")
+@Getter
+@Setter
 public class AcademySchoolPrerequisiteJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "school_id")
@@ -20,24 +27,4 @@ public class AcademySchoolPrerequisiteJpaEntity {
 
     @Column(name = "prerequisite_school_id")
     private String prerequisiteSchoolId;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getSchoolId() {
-        return schoolId;
-    }
-
-    public void setSchoolId(String schoolId) {
-        this.schoolId = schoolId;
-    }
-
-    public String getPrerequisiteSchoolId() {
-        return prerequisiteSchoolId;
-    }
-
-    public void setPrerequisiteSchoolId(String prerequisiteSchoolId) {
-        this.prerequisiteSchoolId = prerequisiteSchoolId;
-    }
 }

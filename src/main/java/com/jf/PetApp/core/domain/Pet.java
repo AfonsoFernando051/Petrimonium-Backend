@@ -2,6 +2,11 @@ package com.jf.PetApp.core.domain;
 
 import com.jf.PetApp.core.domain.enums.PetSpecieEnum;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Pet {
 
 	/**
@@ -28,36 +33,4 @@ public class Pet {
 	 * The user's pet
 	 */
 	User user;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public PetSpecieEnum getSpecie() {
-		return specie;
-	}
-	public void setSpecie(PetSpecieEnum specie) {
-		this.specie = specie;
-	}
-	public int getHealth() {
-		return health;
-	}
-	public void setHealth(int health) {
-		this.health = health;
-	}
-	public User getUser() {
-		return user;
-	}
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 }

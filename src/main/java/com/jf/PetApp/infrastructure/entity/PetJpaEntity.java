@@ -14,6 +14,9 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * A pet a user owns. Which app(s) it currently answers for is not a column
  * here — see {@link PetAppLinkJpaEntity} — a user can own several pets and
@@ -26,6 +29,7 @@ public class PetJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter
     private Integer id;
 
     private String name;
@@ -37,19 +41,9 @@ public class PetJpaEntity {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
+    @Getter
+    @Setter
     private UserJpaEntity user;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public UserJpaEntity getUser() {
-        return user;
-    }
-
-    public void setUser(UserJpaEntity user) {
-        this.user = user;
-    }
 
     public static PetJpaEntity fromDomain(Pet pet) {
         PetJpaEntity entity = new PetJpaEntity();

@@ -5,8 +5,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "academy_schools", schema = "education")
+@Getter
+@Setter
 public class AcademySchoolJpaEntity {
 
     @Id
@@ -24,44 +29,4 @@ public class AcademySchoolJpaEntity {
 
     @Column(name = "content_available")
     private boolean contentAvailable;
-
-    public String getSchoolId() {
-        return schoolId;
-    }
-
-    public void setSchoolId(String schoolId) {
-        this.schoolId = schoolId;
-    }
-
-    public String getDomainId() {
-        return domainId;
-    }
-
-    public void setDomainId(String domainId) {
-        this.domainId = domainId;
-    }
-
-    public int getOrderIndex() {
-        return orderIndex;
-    }
-
-    public void setOrderIndex(int orderIndex) {
-        this.orderIndex = orderIndex;
-    }
-
-    public String getIconKey() {
-        return iconKey;
-    }
-
-    public void setIconKey(String iconKey) {
-        this.iconKey = iconKey;
-    }
-
-    public boolean isContentAvailable() {
-        return contentAvailable;
-    }
-
-    public void setContentAvailable(boolean contentAvailable) {
-        this.contentAvailable = contentAvailable;
-    }
 }

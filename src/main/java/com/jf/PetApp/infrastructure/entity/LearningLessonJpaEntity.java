@@ -7,8 +7,13 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "learning_lessons", schema = "education")
+@Getter
+@Setter
 public class LearningLessonJpaEntity {
 
     @Id
@@ -43,84 +48,4 @@ public class LearningLessonJpaEntity {
 
     @Column(name = "source")
     private String source;
-
-    public String getLessonId() {
-        return lessonId;
-    }
-
-    public void setLessonId(String lessonId) {
-        this.lessonId = lessonId;
-    }
-
-    public String getModuleId() {
-        return moduleId;
-    }
-
-    public void setModuleId(String moduleId) {
-        this.moduleId = moduleId;
-    }
-
-    public int getXpReward() {
-        return xpReward;
-    }
-
-    public void setXpReward(int xpReward) {
-        this.xpReward = xpReward;
-    }
-
-    public int getLessonOrder() {
-        return lessonOrder;
-    }
-
-    public void setLessonOrder(int lessonOrder) {
-        this.lessonOrder = lessonOrder;
-    }
-
-    public String getCompetency() {
-        return competency;
-    }
-
-    public void setCompetency(String competency) {
-        this.competency = competency;
-    }
-
-    public Integer getEstimatedMinutes() {
-        return estimatedMinutes;
-    }
-
-    public void setEstimatedMinutes(Integer estimatedMinutes) {
-        this.estimatedMinutes = estimatedMinutes;
-    }
-
-    public String getJurisdiction() {
-        return jurisdiction;
-    }
-
-    public void setJurisdiction(String jurisdiction) {
-        this.jurisdiction = jurisdiction;
-    }
-
-    public LocalDate getEffectiveDate() {
-        return effectiveDate;
-    }
-
-    public void setEffectiveDate(LocalDate effectiveDate) {
-        this.effectiveDate = effectiveDate;
-    }
-
-    public LocalDate getLastVerifiedAt() {
-        return lastVerifiedAt;
-    }
-
-    public void setLastVerifiedAt(LocalDate lastVerifiedAt) {
-        this.lastVerifiedAt = lastVerifiedAt;
-    }
-
-    public String getSource() {
-        return source;
-    }
-
-    public void setSource(String source) {
-        this.source = source;
-    }
 }

@@ -9,8 +9,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "activity_log", schema = "gamification")
+@Getter
+@Setter
 public class ActivityLogJpaEntity {
 
     @Id
@@ -22,28 +27,4 @@ public class ActivityLogJpaEntity {
 
     @Column(name = "activity_date")
     private LocalDate activityDate;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public LocalDate getActivityDate() {
-        return activityDate;
-    }
-
-    public void setActivityDate(LocalDate activityDate) {
-        this.activityDate = activityDate;
-    }
 }

@@ -13,12 +13,19 @@ import jakarta.persistence.Table;
 
 import java.time.Instant;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "real_portfolio_sync_log", schema = "real_portfolio")
+@Getter
+@Setter
 public class RealPortfolioSyncLogJpaEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
     private Long id;
 
     @Column(name = "user_email", nullable = false, length = 255)
@@ -42,64 +49,4 @@ public class RealPortfolioSyncLogJpaEntity {
 
     @Column(length = 500)
     private String message;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getProvider() {
-        return provider;
-    }
-
-    public void setProvider(String provider) {
-        this.provider = provider;
-    }
-
-    public String getIdempotencyKey() {
-        return idempotencyKey;
-    }
-
-    public void setIdempotencyKey(String idempotencyKey) {
-        this.idempotencyKey = idempotencyKey;
-    }
-
-    public RealPortfolioSyncStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(RealPortfolioSyncStatus status) {
-        this.status = status;
-    }
-
-    public Instant getStartedAt() {
-        return startedAt;
-    }
-
-    public void setStartedAt(Instant startedAt) {
-        this.startedAt = startedAt;
-    }
-
-    public Instant getFinishedAt() {
-        return finishedAt;
-    }
-
-    public void setFinishedAt(Instant finishedAt) {
-        this.finishedAt = finishedAt;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 }
