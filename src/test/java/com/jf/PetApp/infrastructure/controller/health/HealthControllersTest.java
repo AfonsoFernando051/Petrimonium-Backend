@@ -68,9 +68,16 @@ import java.util.Optional;
  * <p>Web layer only — {@code HealthSecurityBoundaryTest} covers the real app_context gate and
  * {@code HealthUseCasesIntegrationTest} the rules behind these responses.
  */
-@WebMvcTest(controllers = HealthController.class)
+@WebMvcTest(controllers = {
+    HealthProfileController.class,
+    HealthAccountController.class,
+    HealthTransactionController.class,
+    HealthRecurrenceController.class,
+    HealthCardController.class,
+    HealthSummaryController.class,
+})
 @AutoConfigureMockMvc(addFilters = false)
-class HealthControllerTest {
+class HealthControllersTest {
 
     private static final String USER = "ana@example.com";
 
