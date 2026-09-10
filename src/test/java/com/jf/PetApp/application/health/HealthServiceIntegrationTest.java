@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
+import com.jf.PetApp.application.health.service.HealthCalculations;
+import com.jf.PetApp.application.health.service.HealthLookups;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.enums.RoleEnum;
@@ -73,7 +75,7 @@ class HealthServiceIntegrationTest {
         Flyway.configure().dataSource(dataSource).locations("classpath:db/migration").load().migrate();
         jdbc = new JdbcTemplate(dataSource);
         store = new JdbcHealthStore(jdbc, new MockEnvironment());
-        service = new HealthService(store, userRepository);
+        service = new HealthService(store, new HealthLookups(store, userRepository));
         registerUser(ANA);
         registerUser(BRUNO);
     }
@@ -98,7 +100,7 @@ class HealthServiceIntegrationTest {
     }
 
     private static LocalDate day(int dayOfMonth) {
-        return HealthService.clampedDate(thisMonth(), dayOfMonth);
+        return HealthCalculations.clampedDate(thisMonth(), dayOfMonth);
     }
 
     private void onboard(String email, CountryCode country, CurrencyCode currency, String locale) {

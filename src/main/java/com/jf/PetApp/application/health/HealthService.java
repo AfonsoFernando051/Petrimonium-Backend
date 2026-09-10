@@ -5,7 +5,11 @@ import static com.jf.PetApp.core.domain.health.HealthModels.*;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.health.exception.HealthConflictException;
 import com.jf.PetApp.application.health.port.HealthStore;
+import com.jf.PetApp.application.health.service.HealthLookups;
 import com.jf.PetApp.application.user.port.UserRepository;
+
+import static com.jf.PetApp.application.health.service.HealthCalculations.*;
+import static com.jf.PetApp.application.health.service.HealthValidation.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,11 +37,11 @@ public class HealthService {
                     + "Uma migração de moeda será necessária para preservar os valores existentes.";
 
     private final HealthStore store;
-    private final UserRepository userRepository;
+    private final HealthLookups lookups;
 
-    public HealthService(HealthStore store, UserRepository userRepository) {
+    public HealthService(HealthStore store, HealthLookups lookups) {
         this.store = store;
-        this.userRepository = userRepository;
+        this.lookups = lookups;
     }
 
     public record ProfileInput(String countryCode, String primaryCurrency, String localeTag) {}
@@ -63,13 +67,13 @@ public class HealthService {
                                       String idempotencyKey) {}
 
     public Optional<ProfileView> getProfile(String email) {
-        long userId = userId(email);
+        long userId = lookups.userId(email);
         return store.findProfile(userId).map(p -> new ProfileView(p, !store.hasFinancialData(userId)));
     }
 
     @Transactional
     public ProfileView saveProfile(String email, ProfileInput input) {
-        long userId = userId(email);
+        long userId = lookups.userId(email);
         CountryCode country = enumValue(CountryCode.class, input.countryCode(), "countryCode");
         CurrencyCode currency = enumValue(CurrencyCode.class, input.primaryCurrency(), "primaryCurrency");
         String localeTag = requireLocale(input.localeTag());
@@ -89,8 +93,8 @@ public class HealthService {
     }
 
     public List<AccountView> listAccounts(String email) {
-        long userId = userId(email);
-        requireProfile(userId);
+        long userId = lookups.userId(email);
+        lookups.requireProfile(userId);
         return store.listAccounts(userId).stream()
                 .map(a -> new AccountView(a, money(store.accountBalance(userId, a))))
                 .toList();
@@ -98,9 +102,9 @@ public class HealthService {
 
     @Transactional
     public AccountView createAccount(String email, AccountInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        CurrencyCode currency = requireCurrency(profile, input.currency());
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
         String key = requireKey(input.idempotencyKey());
         BigDecimal initialBalance = parseMoney(input.initialBalance(), false, "initialBalance");
         String name = requireText(input.name(), "name", 100);
@@ -111,7 +115,7 @@ public class HealthService {
         if (existing.isPresent()) {
             Account account = existing.get();
             if (!sameAccount(account, name, type, initialBalance, referenceDate, currency)) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return new AccountView(account, money(store.accountBalance(userId, account)));
         }
@@ -121,12 +125,12 @@ public class HealthService {
 
     @Transactional
     public AccountView updateAccount(String email, long accountId, AccountInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Account current = requireAccount(userId, accountId);
-        CurrencyCode currency = requireCurrency(profile, input.currency());
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Account current = lookups.requireAccount(userId, accountId);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
         if (current.currency() != currency) {
-            throw currencyMismatch(profile.primaryCurrency(), currency);
+            throw lookups.currencyMismatch(profile.primaryCurrency(), currency);
         }
         Account updated = store.updateAccount(userId, accountId,
                 requireText(input.name(), "name", 100), enumValue(AccountType.class, input.type(), "type"),
@@ -137,8 +141,8 @@ public class HealthService {
 
     @Transactional
     public void archiveAccount(String email, long accountId) {
-        long userId = userId(email);
-        requireAccount(userId, accountId);
+        long userId = lookups.userId(email);
+        lookups.requireAccount(userId, accountId);
         store.archiveAccount(userId, accountId);
     }
 
@@ -151,8 +155,8 @@ public class HealthService {
      */
     @Transactional
     public List<Transaction> listTransactions(String email, TransactionFilter filter) {
-        long userId = userId(email);
-        requireProfile(userId);
+        long userId = lookups.userId(email);
+        lookups.requireProfile(userId);
         if (filter != null && filter.to() != null) {
             materializeRecurrences(userId, YearMonth.from(filter.to()));
         } else {
@@ -172,11 +176,11 @@ public class HealthService {
 
     @Transactional
     public Transaction createTransaction(String email, TransactionInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Account account = requireActiveAccount(userId, input.accountId());
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(account.currency(), currency);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Account account = lookups.requireActiveAccount(userId, input.accountId());
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(account.currency(), currency);
         EntryType type = publicEntryType(input.type());
         EntryStatus status = enumValue(EntryStatus.class, input.status(), "status");
         BigDecimal amount = parseMoney(input.amount(), true, "amount");
@@ -189,7 +193,7 @@ public class HealthService {
         if (existing.isPresent()) {
             if (!sameTransaction(existing.get(), account.id(), type, status, amount, currency,
                     description, category, date)) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return existing.get();
         }
@@ -200,17 +204,17 @@ public class HealthService {
 
     @Transactional
     public Transaction updateTransaction(String email, long transactionId, TransactionInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Transaction current = requireTransaction(userId, transactionId);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Transaction current = lookups.requireTransaction(userId, transactionId);
         if (current.type() == EntryType.TRANSFER_IN || current.type() == EntryType.TRANSFER_OUT
                 || current.type() == EntryType.INVOICE_PAYMENT) {
             throw new HealthConflictException("SYSTEM_ENTRY_IMMUTABLE",
                     "Transferências e pagamentos de fatura devem ser alterados pelo fluxo que os criou.");
         }
-        Account account = requireActiveAccount(userId, input.accountId());
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(account.currency(), currency);
+        Account account = lookups.requireActiveAccount(userId, input.accountId());
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(account.currency(), currency);
         return store.updateTransaction(userId, transactionId, account.id(), publicEntryType(input.type()),
                 enumValue(EntryStatus.class, input.status(), "status"),
                 parseMoney(input.amount(), true, "amount"), currency,
@@ -220,8 +224,8 @@ public class HealthService {
 
     @Transactional
     public Transaction confirmTransaction(String email, long transactionId) {
-        long userId = userId(email);
-        Transaction current = requireTransaction(userId, transactionId);
+        long userId = lookups.userId(email);
+        Transaction current = lookups.requireTransaction(userId, transactionId);
         if (current.status() == EntryStatus.REALIZED) {
             return current;
         }
@@ -232,8 +236,8 @@ public class HealthService {
 
     @Transactional
     public void deleteTransaction(String email, long transactionId) {
-        long userId = userId(email);
-        Transaction current = requireTransaction(userId, transactionId);
+        long userId = lookups.userId(email);
+        Transaction current = lookups.requireTransaction(userId, transactionId);
         if (current.transferId() != null || current.invoiceId() != null) {
             throw new HealthConflictException("SYSTEM_ENTRY_IMMUTABLE",
                     "Transferências e pagamentos de fatura não podem ser excluídos como lançamentos isolados.");
@@ -243,16 +247,16 @@ public class HealthService {
 
     @Transactional
     public TransferView createTransfer(String email, TransferInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Account from = requireActiveAccount(userId, input.fromAccountId());
-        Account to = requireActiveAccount(userId, input.toAccountId());
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Account from = lookups.requireActiveAccount(userId, input.fromAccountId());
+        Account to = lookups.requireActiveAccount(userId, input.toAccountId());
         if (from.id() == to.id()) {
             throw new IllegalArgumentException("fromAccountId and toAccountId must be different");
         }
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(from.currency(), currency);
-        requireSameCurrency(to.currency(), currency);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(from.currency(), currency);
+        lookups.requireSameCurrency(to.currency(), currency);
         BigDecimal amount = parseMoney(input.amount(), true, "amount");
         LocalDate date = requireDate(input.date(), "date");
         String description = optionalText(input.description(), "description", 200);
@@ -264,7 +268,7 @@ public class HealthService {
             if (transfer.fromAccountId() != from.id() || transfer.toAccountId() != to.id()
                     || transfer.amount().compareTo(amount) != 0 || transfer.currency() != currency
                     || !transfer.date().equals(date) || !Objects.equals(transfer.description(), description)) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return transferView(userId, transfer);
         }
@@ -291,18 +295,18 @@ public class HealthService {
     }
 
     public List<Recurrence> listRecurrences(String email) {
-        long userId = userId(email);
-        requireProfile(userId);
+        long userId = lookups.userId(email);
+        lookups.requireProfile(userId);
         return store.listRecurrences(userId);
     }
 
     @Transactional
     public Recurrence createRecurrence(String email, RecurrenceInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Account account = requireActiveAccount(userId, input.accountId());
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(account.currency(), currency);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Account account = lookups.requireActiveAccount(userId, input.accountId());
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(account.currency(), currency);
         EntryType type = publicEntryType(input.type());
         BigDecimal amount = parseMoney(input.amount(), true, "amount");
         int day = requireDay(input.dayOfMonth(), "dayOfMonth");
@@ -319,7 +323,7 @@ public class HealthService {
             Recurrence r = existing.get();
             if (!sameRecurrence(r, account.id(), type, amount, currency, description, category,
                     day, start, input.endDate())) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return r;
         }
@@ -331,12 +335,12 @@ public class HealthService {
 
     @Transactional
     public Recurrence updateRecurrence(String email, long recurrenceId, RecurrenceInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        requireRecurrence(userId, recurrenceId);
-        Account account = requireActiveAccount(userId, input.accountId());
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(account.currency(), currency);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        lookups.requireRecurrence(userId, recurrenceId);
+        Account account = lookups.requireActiveAccount(userId, input.accountId());
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(account.currency(), currency);
         EntryType type = publicEntryType(input.type());
         BigDecimal amount = parseMoney(input.amount(), true, "amount");
         int day = requireDay(input.dayOfMonth(), "dayOfMonth");
@@ -371,23 +375,23 @@ public class HealthService {
 
     @Transactional
     public void deactivateRecurrence(String email, long recurrenceId) {
-        long userId = userId(email);
-        requireRecurrence(userId, recurrenceId);
+        long userId = lookups.userId(email);
+        lookups.requireRecurrence(userId, recurrenceId);
         store.deactivateRecurrence(userId, recurrenceId);
         store.deletePlannedRecurrenceOccurrencesFrom(userId, recurrenceId, LocalDate.now());
     }
 
     public List<Card> listCards(String email) {
-        long userId = userId(email);
-        requireProfile(userId);
+        long userId = lookups.userId(email);
+        lookups.requireProfile(userId);
         return store.listCards(userId);
     }
 
     @Transactional
     public Card createCard(String email, CardInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        CurrencyCode currency = requireCurrency(profile, input.currency());
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
         String name = requireText(input.name(), "name", 100);
         int closingDay = requireDay(input.closingDay(), "closingDay");
         int dueDay = requireDay(input.dueDay(), "dueDay");
@@ -397,7 +401,7 @@ public class HealthService {
             Card card = existing.get();
             if (!card.name().equals(name) || card.currency() != currency
                     || card.closingDay() != closingDay || card.dueDay() != dueDay) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return card;
         }
@@ -406,28 +410,28 @@ public class HealthService {
 
     @Transactional
     public Card updateCard(String email, long cardId, CardInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        requireCard(userId, cardId);
-        CurrencyCode currency = requireCurrency(profile, input.currency());
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        lookups.requireCard(userId, cardId);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
         return store.updateCard(userId, cardId, requireText(input.name(), "name", 100), currency,
                 requireDay(input.closingDay(), "closingDay"), requireDay(input.dueDay(), "dueDay"));
     }
 
     @Transactional
     public void archiveCard(String email, long cardId) {
-        long userId = userId(email);
-        requireCard(userId, cardId);
+        long userId = lookups.userId(email);
+        lookups.requireCard(userId, cardId);
         store.archiveCard(userId, cardId);
     }
 
     @Transactional
     public PurchaseWithInstallments createPurchase(String email, long cardId, PurchaseInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Card card = requireActiveCard(userId, cardId);
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(card.currency(), currency);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Card card = lookups.requireActiveCard(userId, cardId);
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(card.currency(), currency);
         BigDecimal total = parseMoney(input.amount(), true, "amount");
         String description = requireText(input.description(), "description", 200);
         String category = optionalText(input.category(), "category", 80);
@@ -442,7 +446,7 @@ public class HealthService {
             if (p.cardId() != cardId || p.totalAmount().compareTo(total) != 0 || p.currency() != currency
                     || !p.description().equals(description) || !Objects.equals(p.category(), category)
                     || !p.purchaseDate().equals(purchaseDate) || p.installmentCount() != input.installmentCount()) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
             return new PurchaseWithInstallments(p, store.listInstallmentsByPurchase(userId, p.id()));
         }
@@ -461,8 +465,8 @@ public class HealthService {
     }
 
     public List<InvoiceWithTotal> listInvoices(String email, long cardId) {
-        long userId = userId(email);
-        requireCard(userId, cardId);
+        long userId = lookups.userId(email);
+        lookups.requireCard(userId, cardId);
         return store.listInvoices(userId, cardId).stream()
                 .map(i -> new InvoiceWithTotal(i, money(store.invoiceTotal(userId, i.id()))))
                 .toList();
@@ -470,13 +474,13 @@ public class HealthService {
 
     @Transactional
     public InvoiceWithTotal payInvoice(String email, long invoiceId, InvoicePaymentInput input) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
-        Invoice invoice = requireInvoice(userId, invoiceId);
-        Account account = requireActiveAccount(userId, input.accountId());
-        CurrencyCode currency = requireCurrency(profile, input.currency());
-        requireSameCurrency(invoice.currency(), currency);
-        requireSameCurrency(account.currency(), currency);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
+        Invoice invoice = lookups.requireInvoice(userId, invoiceId);
+        Account account = lookups.requireActiveAccount(userId, input.accountId());
+        CurrencyCode currency = lookups.requireCurrency(profile, input.currency());
+        lookups.requireSameCurrency(invoice.currency(), currency);
+        lookups.requireSameCurrency(account.currency(), currency);
         LocalDate paymentDate = requireDate(input.paymentDate(), "paymentDate");
         String key = requireKey(input.idempotencyKey());
 
@@ -484,9 +488,9 @@ public class HealthService {
         if (existingPayment.isPresent()) {
             if (!Objects.equals(existingPayment.get().invoiceId(), invoiceId)
                     || existingPayment.get().accountId() != account.id()) {
-                throw idempotencyConflict();
+                throw lookups.idempotencyConflict();
             }
-            Invoice current = requireInvoice(userId, invoiceId);
+            Invoice current = lookups.requireInvoice(userId, invoiceId);
             return new InvoiceWithTotal(current, money(store.invoiceTotal(userId, invoiceId)));
         }
         if (invoice.status() == InvoiceStatus.PAID) {
@@ -506,8 +510,8 @@ public class HealthService {
 
     @Transactional
     public MonthlySummary summary(String email, YearMonth month) {
-        long userId = userId(email);
-        Profile profile = requireProfile(userId);
+        long userId = lookups.userId(email);
+        Profile profile = lookups.requireProfile(userId);
         YearMonth requestedMonth = month == null ? YearMonth.now() : month;
         materializeRecurrences(userId, requestedMonth);
 
@@ -624,234 +628,11 @@ public class HealthService {
                 });
     }
 
-    static YearMonth firstInvoiceCycle(Card card, LocalDate purchaseDate) {
-        YearMonth purchaseMonth = YearMonth.from(purchaseDate);
-        LocalDate closing = clampedDate(purchaseMonth, card.closingDay());
-        return purchaseDate.isAfter(closing) ? purchaseMonth.plusMonths(1) : purchaseMonth;
-    }
-
-    static LocalDate clampedDate(YearMonth month, int requestedDay) {
-        return month.atDay(Math.min(requestedDay, month.lengthOfMonth()));
-    }
-
-    static List<BigDecimal> splitInstallments(BigDecimal total, int count) {
-        if (total == null || total.scale() > 2 || total.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("total must be a positive scale-2 monetary value");
-        }
-        if (count < 1 || count > 120) {
-            throw new IllegalArgumentException("installmentCount must be between 1 and 120");
-        }
-        BigInteger minor = total.movePointRight(2).toBigIntegerExact();
-        BigInteger[] division = minor.divideAndRemainder(BigInteger.valueOf(count));
-        List<BigDecimal> values = new ArrayList<>(count);
-        for (int i = 0; i < count; i++) {
-            BigInteger cents = division[0].add(i < division[1].intValueExact() ? BigInteger.ONE : BigInteger.ZERO);
-            values.add(new BigDecimal(cents, 2));
-        }
-        return List.copyOf(values);
-    }
 
     private BigDecimal sumTransactions(List<Transaction> transactions, EntryType type, EntryStatus status) {
         return transactions.stream().filter(t -> t.type() == type && t.status() == status)
                 .map(Transaction::amount).reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    private long userId(String email) {
-        return userRepository.findByEmail(email)
-                .filter(user -> user.getId() != null)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found"))
-                .getId();
-    }
 
-    private Profile requireProfile(long userId) {
-        return store.findProfile(userId).orElseThrow(() ->
-                new ResourceNotFoundException("Health profile not found. Complete Health onboarding first."));
-    }
-
-    private Account requireAccount(long userId, long accountId) {
-        return store.findAccount(userId, accountId)
-                .orElseThrow(() -> new ResourceNotFoundException("Account not found"));
-    }
-
-    private Account requireActiveAccount(long userId, long accountId) {
-        Account account = requireAccount(userId, accountId);
-        if (account.archived()) {
-            throw new HealthConflictException("ACCOUNT_ARCHIVED", "A conta está arquivada.");
-        }
-        return account;
-    }
-
-    private Transaction requireTransaction(long userId, long transactionId) {
-        return store.findTransaction(userId, transactionId)
-                .orElseThrow(() -> new ResourceNotFoundException("Transaction not found"));
-    }
-
-    private Recurrence requireRecurrence(long userId, long recurrenceId) {
-        return store.findRecurrence(userId, recurrenceId)
-                .orElseThrow(() -> new ResourceNotFoundException("Recurrence not found"));
-    }
-
-    private Card requireCard(long userId, long cardId) {
-        return store.findCard(userId, cardId)
-                .orElseThrow(() -> new ResourceNotFoundException("Card not found"));
-    }
-
-    private Card requireActiveCard(long userId, long cardId) {
-        Card card = requireCard(userId, cardId);
-        if (card.archived()) {
-            throw new HealthConflictException("CARD_ARCHIVED", "O cartão está arquivado.");
-        }
-        return card;
-    }
-
-    private Invoice requireInvoice(long userId, long invoiceId) {
-        return store.findInvoice(userId, invoiceId)
-                .orElseThrow(() -> new ResourceNotFoundException("Invoice not found"));
-    }
-
-    private CurrencyCode requireCurrency(Profile profile, String requested) {
-        CurrencyCode currency = enumValue(CurrencyCode.class, requested, "currency");
-        if (profile.primaryCurrency() != currency) {
-            throw currencyMismatch(profile.primaryCurrency(), currency);
-        }
-        return currency;
-    }
-
-    private void requireSameCurrency(CurrencyCode expected, CurrencyCode actual) {
-        if (expected != actual) {
-            throw currencyMismatch(expected, actual);
-        }
-    }
-
-    private HealthConflictException currencyMismatch(CurrencyCode expected, CurrencyCode actual) {
-        return new HealthConflictException("CURRENCY_MISMATCH",
-                "A moeda do registro (" + actual + ") não corresponde à moeda principal (" + expected + ").");
-    }
-
-    private HealthConflictException idempotencyConflict() {
-        return new HealthConflictException("IDEMPOTENCY_KEY_REUSED",
-                "A chave de idempotência já foi usada com dados diferentes.");
-    }
-
-    private static BigDecimal parseMoney(String raw, boolean positive, String field) {
-        if (raw == null || raw.isBlank()) {
-            throw new IllegalArgumentException(field + " is required as a decimal string");
-        }
-        final BigDecimal parsed;
-        try {
-            parsed = new BigDecimal(raw.trim());
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(field + " must be a decimal string");
-        }
-        BigDecimal stripped = parsed.stripTrailingZeros();
-        if (stripped.scale() > 2) {
-            throw new IllegalArgumentException(field + " must have at most 2 decimal places");
-        }
-        BigDecimal value = parsed.setScale(2, RoundingMode.UNNECESSARY);
-        if (value.precision() > 19) {
-            throw new IllegalArgumentException(field + " is too large");
-        }
-        if (positive && value.compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException(field + " must be greater than zero");
-        }
-        return value;
-    }
-
-    private static BigDecimal money(BigDecimal value) {
-        return value.setScale(2, RoundingMode.UNNECESSARY);
-    }
-
-    private static <E extends Enum<E>> E enumValue(Class<E> type, String raw, String field) {
-        if (raw == null || raw.isBlank()) {
-            throw new IllegalArgumentException(field + " is required");
-        }
-        try {
-            return Enum.valueOf(type, raw.trim().toUpperCase(Locale.ROOT));
-        } catch (IllegalArgumentException e) {
-            throw new IllegalArgumentException("Unsupported " + field + ": " + raw);
-        }
-    }
-
-    private static EntryType publicEntryType(String raw) {
-        EntryType type = enumValue(EntryType.class, raw, "type");
-        if (type != EntryType.INCOME && type != EntryType.EXPENSE) {
-            throw new IllegalArgumentException("type must be INCOME or EXPENSE");
-        }
-        return type;
-    }
-
-    private static String requireLocale(String locale) {
-        if (!"pt-BR".equals(locale) && !"pt-PT".equals(locale)) {
-            throw new IllegalArgumentException("localeTag must be 'pt-BR' or 'pt-PT'");
-        }
-        return locale;
-    }
-
-    private static String requireText(String value, String field, int maxLength) {
-        if (value == null || value.isBlank()) {
-            throw new IllegalArgumentException(field + " is required");
-        }
-        String trimmed = value.trim();
-        if (trimmed.length() > maxLength) {
-            throw new IllegalArgumentException(field + " must have at most " + maxLength + " characters");
-        }
-        return trimmed;
-    }
-
-    private static String optionalText(String value, String field, int maxLength) {
-        if (value == null || value.isBlank()) {
-            return null;
-        }
-        return requireText(value, field, maxLength);
-    }
-
-    private static LocalDate requireDate(LocalDate date, String field) {
-        if (date == null) {
-            throw new IllegalArgumentException(field + " is required");
-        }
-        return date;
-    }
-
-    private static int requireDay(int value, String field) {
-        if (value < 1 || value > 31) {
-            throw new IllegalArgumentException(field + " must be between 1 and 31");
-        }
-        return value;
-    }
-
-    private static String requireKey(String key) {
-        return requireText(key, "idempotencyKey", 64);
-    }
-
-    private static String normalizeCategory(String category) {
-        return category == null ? null : category.trim().toLowerCase(Locale.ROOT);
-    }
-
-    private static String categoryOrOther(String category) {
-        return category == null || category.isBlank() ? "other" : category;
-    }
-
-    private static boolean sameAccount(Account a, String name, AccountType type, BigDecimal initial,
-                                       LocalDate date, CurrencyCode currency) {
-        return a.name().equals(name) && a.type() == type && a.initialBalance().compareTo(initial) == 0
-                && a.balanceReferenceDate().equals(date) && a.currency() == currency;
-    }
-
-    private static boolean sameTransaction(Transaction t, long accountId, EntryType type, EntryStatus status,
-                                           BigDecimal amount, CurrencyCode currency, String description,
-                                           String category, LocalDate date) {
-        return t.accountId() == accountId && t.type() == type && t.status() == status
-                && t.amount().compareTo(amount) == 0 && t.currency() == currency
-                && t.description().equals(description) && Objects.equals(t.category(), category)
-                && t.date().equals(date) && t.deletedAt() == null;
-    }
-
-    private static boolean sameRecurrence(Recurrence r, long accountId, EntryType type, BigDecimal amount,
-                                          CurrencyCode currency, String description, String category, int day,
-                                          LocalDate start, LocalDate end) {
-        return r.accountId() == accountId && r.type() == type && r.amount().compareTo(amount) == 0
-                && r.currency() == currency && r.description().equals(description)
-                && Objects.equals(r.category(), category) && r.dayOfMonth() == day
-                && r.startDate().equals(start) && Objects.equals(r.endDate(), end);
-    }
 }

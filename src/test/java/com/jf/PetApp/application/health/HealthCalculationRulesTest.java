@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.health;
 
+import com.jf.PetApp.application.health.service.HealthCalculations;
 import static com.jf.PetApp.core.domain.health.HealthModels.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -35,7 +36,7 @@ class HealthCalculationRulesTest {
 
     @Test
     void installmentsOfAnExactlyDivisibleTotalAreAllEqual() {
-        List<BigDecimal> parts = HealthService.splitInstallments(new BigDecimal("999.99"), 3);
+        List<BigDecimal> parts = HealthCalculations.splitInstallments(new BigDecimal("999.99"), 3);
 
         assertEquals(List.of(new BigDecimal("333.33"), new BigDecimal("333.33"), new BigDecimal("333.33")), parts);
         assertEquals(0, sum(parts).compareTo(new BigDecimal("999.99")));
@@ -45,7 +46,7 @@ class HealthCalculationRulesTest {
     void anIndivisibleTotalPutsTheLeftoverCentsOnTheEarliestInstallments() {
         // 100.00 / 3 = 33.333... The cent that cannot be split is charged first, never dropped:
         // 33.33 x 3 would silently lose a cent of the user's money.
-        List<BigDecimal> parts = HealthService.splitInstallments(new BigDecimal("100.00"), 3);
+        List<BigDecimal> parts = HealthCalculations.splitInstallments(new BigDecimal("100.00"), 3);
 
         assertEquals(List.of(new BigDecimal("33.34"), new BigDecimal("33.33"), new BigDecimal("33.33")), parts);
         assertEquals(0, sum(parts).compareTo(new BigDecimal("100.00")));
@@ -55,7 +56,7 @@ class HealthCalculationRulesTest {
     @CsvSource({"0.01,1", "0.05,4", "10.00,3", "1234.56,7", "999999.99,12", "50.00,120", "0.02,3"})
     void everySplitAddsBackUpToTheOriginalTotal(String total, int count) {
         BigDecimal amount = new BigDecimal(total);
-        List<BigDecimal> parts = HealthService.splitInstallments(amount, count);
+        List<BigDecimal> parts = HealthCalculations.splitInstallments(amount, count);
 
         assertEquals(count, parts.size());
         assertEquals(0, sum(parts).compareTo(amount),
@@ -67,7 +68,7 @@ class HealthCalculationRulesTest {
     void aTotalSmallerThanOneCentPerInstallmentStillNeverInventsMoney() {
         // 0.02 over 3 installments cannot give every installment a positive value; what it must
         // never do is round each one up to a cent and charge 0.03.
-        List<BigDecimal> parts = HealthService.splitInstallments(new BigDecimal("0.02"), 3);
+        List<BigDecimal> parts = HealthCalculations.splitInstallments(new BigDecimal("0.02"), 3);
 
         assertEquals(0, sum(parts).compareTo(new BigDecimal("0.02")));
     }
@@ -75,41 +76,41 @@ class HealthCalculationRulesTest {
     @Test
     void splittingRejectsAnAmountThatIsNotMoney() {
         assertThrows(IllegalArgumentException.class,
-                () -> HealthService.splitInstallments(new BigDecimal("10.005"), 2));
+                () -> HealthCalculations.splitInstallments(new BigDecimal("10.005"), 2));
         assertThrows(IllegalArgumentException.class,
-                () -> HealthService.splitInstallments(new BigDecimal("0.00"), 2));
+                () -> HealthCalculations.splitInstallments(new BigDecimal("0.00"), 2));
         assertThrows(IllegalArgumentException.class,
-                () -> HealthService.splitInstallments(new BigDecimal("-10.00"), 2));
+                () -> HealthCalculations.splitInstallments(new BigDecimal("-10.00"), 2));
         assertThrows(IllegalArgumentException.class,
-                () -> HealthService.splitInstallments(new BigDecimal("10.00"), 0));
+                () -> HealthCalculations.splitInstallments(new BigDecimal("10.00"), 0));
         assertThrows(IllegalArgumentException.class,
-                () -> HealthService.splitInstallments(new BigDecimal("10.00"), 121));
+                () -> HealthCalculations.splitInstallments(new BigDecimal("10.00"), 121));
     }
 
     @Test
     void aPurchaseBeforeTheClosingDayFallsOnTheSameMonthsInvoice() {
         assertEquals(YearMonth.of(2026, 3),
-                HealthService.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 19)));
+                HealthCalculations.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 19)));
     }
 
     @Test
     void aPurchaseOnTheClosingDayItselfStillFallsOnThatInvoice() {
         // The closing day is inclusive: the statement closes at the end of that day.
         assertEquals(YearMonth.of(2026, 3),
-                HealthService.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 20)));
+                HealthCalculations.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 20)));
     }
 
     @Test
     void aPurchaseAfterTheClosingDayRollsToTheNextInvoice() {
         assertEquals(YearMonth.of(2026, 4),
-                HealthService.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 21)));
+                HealthCalculations.firstInvoiceCycle(card(20, 28), LocalDate.of(2026, 3, 21)));
     }
 
     @Test
     void aClosingDayThatFebruaryDoesNotHaveClosesOnItsLastDay() {
         // Closing day 31 in a 28-day February: a purchase on the 28th is still inside the cycle.
         assertEquals(YearMonth.of(2026, 2),
-                HealthService.firstInvoiceCycle(card(31, 10), LocalDate.of(2026, 2, 28)));
+                HealthCalculations.firstInvoiceCycle(card(31, 10), LocalDate.of(2026, 2, 28)));
     }
 
     @ParameterizedTest
@@ -123,6 +124,6 @@ class HealthCalculationRulesTest {
             "2026-06,1,2026-06-01"
     })
     void aDueDayMissingFromTheMonthMovesToItsLastDay(String month, int day, String expected) {
-        assertEquals(LocalDate.parse(expected), HealthService.clampedDate(YearMonth.parse(month), day));
+        assertEquals(LocalDate.parse(expected), HealthCalculations.clampedDate(YearMonth.parse(month), day));
     }
 }
