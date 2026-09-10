@@ -124,6 +124,49 @@ class InvestmentRepositoryAdapterTest {
     }
 
     @Test
+    void update_WhenOwnedByCaller_UpdatesInPlace() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.valueOf(100), BigDecimal.valueOf(30.5),
+                LocalDate.of(2025, 1, 1), InvestmentType.STOCKS));
+
+        Investment updated = adapter.update(created.id(), EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.valueOf(150), BigDecimal.valueOf(31.0),
+                LocalDate.of(2025, 2, 1), InvestmentType.STOCKS));
+
+        assertThat(updated.id()).isEqualTo(created.id());
+        assertThat(updated.quantity()).isEqualByComparingTo("150");
+        assertThat(updated.purchasePrice()).isEqualByComparingTo("31.0");
+        assertThat(updated.purchaseDate()).isEqualTo(LocalDate.of(2025, 2, 1));
+        assertThat(adapter.findByUserEmail(EMAIL)).hasSize(1);
+    }
+
+    @Test
+    void update_WhenOwnedByAnotherUser_ThrowsResourceNotFound() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+
+        User otherUser = new User();
+        otherUser.setUsername("other");
+        otherUser.setEmail("other@test.com");
+        otherUser.setPassword("hash");
+        userJpaRepository.save(UserJpaEntity.fromDomain(otherUser));
+
+        Investment attempt = new Investment(
+                null, "other@test.com", "PETR4", BigDecimal.TEN, BigDecimal.TEN, LocalDate.now(), InvestmentType.STOCKS);
+
+        assertThrows(com.jf.PetApp.application.common.exception.ResourceNotFoundException.class,
+                () -> adapter.update(created.id(), "other@test.com", attempt));
+    }
+
+    @Test
+    void update_WhenIdDoesNotExist_ThrowsResourceNotFound() {
+        Investment attempt = new Investment(null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS);
+
+        assertThrows(com.jf.PetApp.application.common.exception.ResourceNotFoundException.class,
+                () -> adapter.update(999999, EMAIL, attempt));
+    }
+
+    @Test
     void findByUserEmail_IsolatedPerUser() {
         User otherUser = new User();
         otherUser.setUsername("other");

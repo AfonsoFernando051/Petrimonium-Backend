@@ -27,4 +27,13 @@ public interface InvestmentRepositoryPort {
 
     /** Appends one lot. {@code investment.id()} must be {@code null}; the adapter assigns it. */
     Investment create(String userEmail, Investment investment);
+
+    /**
+     * Updates a lot in place, preserving its {@code createdAt}. Throws
+     * {@link com.jf.PetApp.application.common.exception.ResourceNotFoundException} when
+     * {@code id} doesn't exist or doesn't belong to {@code userEmail} — the two cases are
+     * indistinguishable on purpose, so an id from another user is reported as "not found",
+     * never "forbidden".
+     */
+    Investment update(Integer id, String userEmail, Investment investment);
 }

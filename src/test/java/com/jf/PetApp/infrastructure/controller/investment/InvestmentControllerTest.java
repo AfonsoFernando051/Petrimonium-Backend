@@ -6,6 +6,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -22,6 +23,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.InvestmentDTO;
 import com.jf.PetApp.application.investment.exception.DestructivePortfolioReplaceException;
@@ -30,6 +32,7 @@ import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.investment.usecase.ConfigureInvestmentsUseCase;
 import com.jf.PetApp.application.investment.usecase.CreateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetAssetDetailsUseCase;
+import com.jf.PetApp.application.investment.usecase.UpdateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.usecase.GetDividendRadarUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioAllocationUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioHistoryUseCase;
@@ -49,6 +52,9 @@ class InvestmentControllerTest {
 
     @MockitoBean
     private CreateInvestmentLotUseCase createInvestmentLotUseCase;
+
+    @MockitoBean
+    private UpdateInvestmentLotUseCase updateInvestmentLotUseCase;
 
     @MockitoBean
     private ExternalInvestmentApiPort externalInvestmentApiPort;
@@ -209,6 +215,49 @@ class InvestmentControllerTest {
                 .andExpect(status().isCreated());
 
         org.mockito.Mockito.verifyNoInteractions(configureInvestmentsUseCase);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void updateInvestment_WithValidAsset_Returns200WithUpdatedLot() throws Exception {
+        when(updateInvestmentLotUseCase.execute(eq("investor@test.com"), eq(7), any())).thenReturn(
+                new InvestmentDTO(7, "PETR4", BigDecimal.valueOf(150), BigDecimal.valueOf(31.0),
+                        java.time.LocalDate.of(2025, 2, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+
+        mockMvc.perform(put("/api/investments/7")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"PETR4","quantity":150,"purchasePrice":31.0,"purchaseDate":"2025-02-01","type":"STOCKS"}"""))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(7))
+                .andExpect(jsonPath("$.quantity").value(150));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void updateInvestment_WhenLotNotFoundOrNotOwned_Returns404() throws Exception {
+        org.mockito.Mockito.doThrow(new ResourceNotFoundException("Investment not found: 7"))
+                .when(updateInvestmentLotUseCase).execute(eq("investor@test.com"), eq(7), any());
+
+        mockMvc.perform(put("/api/investments/7")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"PETR4","quantity":150,"purchasePrice":31.0,"purchaseDate":"2025-02-01","type":"STOCKS"}"""))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.code").value("RESOURCE_NOT_FOUND"));
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void updateInvestment_WithInvalidFields_Returns400ValidationError() throws Exception {
+        mockMvc.perform(put("/api/investments/7")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name":"","quantity":-1,"purchasePrice":31.0,"purchaseDate":"2025-02-01","type":"STOCKS"}"""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
+
+        org.mockito.Mockito.verifyNoInteractions(updateInvestmentLotUseCase);
     }
 
     @Test

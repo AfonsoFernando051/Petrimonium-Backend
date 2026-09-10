@@ -25,6 +25,7 @@ import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.InvestmentDTO;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
 import com.jf.PetApp.application.investment.usecase.InvestmentLotCommand;
+import com.jf.PetApp.application.investment.usecase.UpdateInvestmentLotUseCase;
 import com.jf.PetApp.application.investment.dto.PortfolioSummaryDTO;
 import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioHistoryPointDTO;
@@ -47,6 +48,7 @@ public class InvestmentController {
 
     private final ConfigureInvestmentsUseCase configureInvestmentsUseCase;
     private final CreateInvestmentLotUseCase createInvestmentLotUseCase;
+    private final UpdateInvestmentLotUseCase updateInvestmentLotUseCase;
     private final ExternalInvestmentApiPort externalInvestmentApiPort;
     private final GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase;
     private final GetPortfolioSummaryUseCase getPortfolioSummaryUseCase;
@@ -59,6 +61,7 @@ public class InvestmentController {
 
     public InvestmentController(ConfigureInvestmentsUseCase configureInvestmentsUseCase,
                                  CreateInvestmentLotUseCase createInvestmentLotUseCase,
+                                 UpdateInvestmentLotUseCase updateInvestmentLotUseCase,
                                  ExternalInvestmentApiPort externalInvestmentApiPort,
                                  GetPortfolioHoldingsUseCase getPortfolioHoldingsUseCase,
                                  GetPortfolioSummaryUseCase getPortfolioSummaryUseCase,
@@ -70,6 +73,7 @@ public class InvestmentController {
                                  Validator validator) {
         this.configureInvestmentsUseCase = configureInvestmentsUseCase;
         this.createInvestmentLotUseCase = createInvestmentLotUseCase;
+        this.updateInvestmentLotUseCase = updateInvestmentLotUseCase;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
         this.getPortfolioHoldingsUseCase = getPortfolioHoldingsUseCase;
         this.getPortfolioSummaryUseCase = getPortfolioSummaryUseCase;
@@ -139,6 +143,17 @@ public class InvestmentController {
 
     private InvestmentLotCommand toCommand(AssetRegistrationDto dto) {
         return new InvestmentLotCommand(dto.name(), dto.quantity(), dto.purchasePrice(), dto.purchaseDate(), dto.type());
+    }
+
+    /**
+     * Edits one lot in place. {@code id} not found or not owned by the caller surfaces as 404 —
+     * {@link UpdateInvestmentLotUseCase} never distinguishes the two.
+     */
+    @PutMapping("/{id}")
+    public ResponseEntity<InvestmentDTO> updateInvestment(@PathVariable Integer id, @Valid @RequestBody AssetRegistrationDto request) {
+        String email = SecurityUtils.getCurrentUserEmail();
+        InvestmentDTO updated = updateInvestmentLotUseCase.execute(email, id, toCommand(request));
+        return ResponseEntity.ok(updated);
     }
 
     @GetMapping("/quote/{ticker}")

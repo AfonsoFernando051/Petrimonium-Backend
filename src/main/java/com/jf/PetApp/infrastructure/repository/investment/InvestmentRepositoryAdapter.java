@@ -65,6 +65,30 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         return toDomain(saved, userEmail);
     }
 
+    @Override
+    @Transactional
+    public Investment update(Integer id, String userEmail, Investment investment) {
+        InvestmentJpaEntity entity = ownedOrThrow(id, userEmail);
+        entity.setName(investment.name());
+        entity.setQuantity(investment.quantity());
+        entity.setPurchasePrice(investment.purchasePrice());
+        entity.setPurchaseDate(investment.purchaseDate());
+        entity.setType(investment.type());
+        entity.setUpdatedAt(Instant.now());
+        return toDomain(investmentRepository.save(entity), userEmail);
+    }
+
+    /**
+     * Resolves a lot only when it belongs to {@code userEmail}. Anything else is reported as
+     * missing rather than forbidden, so an id cannot be used to probe for the existence of
+     * another user's lot — same pattern as {@code MentorConversationRepositoryAdapter}.
+     */
+    private InvestmentJpaEntity ownedOrThrow(Integer id, String userEmail) {
+        return investmentRepository.findByIdAndUser_Email(id, userEmail)
+                .orElseThrow(() -> new com.jf.PetApp.application.common.exception.ResourceNotFoundException(
+                        "Investment not found: " + id));
+    }
+
     private Investment toDomain(InvestmentJpaEntity entity, String userEmail) {
         return new Investment(
                 entity.getId(),
@@ -85,12 +109,9 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         entity.setPurchasePrice(investment.purchasePrice());
         entity.setPurchaseDate(investment.purchaseDate());
         entity.setType(investment.type());
-        // saveAll's only caller (ConfigureInvestmentsUseCaseImpl) always deletes every existing
-        // row first and inserts fresh ones — there is no in-place update path yet (see DEM-30),
-        // so created_at and updated_at are legitimately identical for every row today. Both are
-        // still recorded, matching every other audited entity in this codebase
-        // (SimulatedPortfolioJpaEntity, XpEventJpaEntity, MentorConversationJpaEntity), so an
-        // update path added later doesn't also need a backfill migration.
+        // Only used for brand-new rows (create, and saveAll's always-delete-then-insert), so
+        // created_at and updated_at start identical — #update() is the only path that changes
+        // updated_at afterwards, and it never calls this method.
         Instant now = Instant.now();
         entity.setCreatedAt(now);
         entity.setUpdatedAt(now);
