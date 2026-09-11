@@ -1,6 +1,7 @@
 package com.jf.PetApp.application.investment.dto;
 
 import com.jf.PetApp.core.domain.enums.DividendType;
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -17,7 +18,7 @@ class AssetDetailsResponseDTOTest {
     private UserPositionDTO samplePosition() {
         return new UserPositionDTO(
                 BigDecimal.valueOf(10), BigDecimal.valueOf(20), BigDecimal.valueOf(200), BigDecimal.valueOf(250),
-                BigDecimal.valueOf(50), BigDecimal.valueOf(25), BigDecimal.valueOf(0.1));
+                BigDecimal.valueOf(50), BigDecimal.valueOf(25), BigDecimal.valueOf(0.1), PriceStatus.LIVE);
     }
 
     private DividendRadarEntryDTO sampleDividend() {

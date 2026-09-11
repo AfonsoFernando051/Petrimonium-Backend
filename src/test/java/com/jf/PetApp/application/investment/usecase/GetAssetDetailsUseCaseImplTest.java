@@ -13,6 +13,7 @@ import com.jf.PetApp.application.investment.service.UserPositionCalculator;
 import com.jf.PetApp.core.domain.Investment;
 import com.jf.PetApp.core.domain.enums.DividendType;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -63,7 +64,11 @@ class GetAssetDetailsUseCaseImplTest {
     }
 
     private Investment lot(String ticker, double quantity, double purchasePrice) {
-        return new Investment(1, EMAIL, ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(purchasePrice), LocalDate.now(), InvestmentType.STOCKS);
+        return lot(ticker, quantity, purchasePrice, InvestmentType.STOCKS);
+    }
+
+    private Investment lot(String ticker, double quantity, double purchasePrice, InvestmentType type) {
+        return new Investment(1, EMAIL, ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(purchasePrice), LocalDate.now(), type);
     }
 
     /** Compares a plain double to a BigDecimal money/quantity field by value, ignoring scale —
@@ -171,6 +176,32 @@ class GetAssetDetailsUseCaseImplTest {
         assertNotNull(position);
         assertMoney(300.0, position.currentValue()); // 10 * 30
         assertMoney(0.0, position.unrealizedGain());
+        assertEquals(PriceStatus.STALE_PURCHASE_PRICE, position.priceStatus());
+    }
+
+    // ── Price provenance ─────────────────────────────────────────────────
+
+    @Test
+    void execute_LiveQuoteFetched_PriceStatusIsLive() {
+        when(investmentRepo.findByUserEmail(EMAIL)).thenReturn(List.of(lot("PETR4", 10.0, 30.0)));
+        when(externalApi.getEnrichedQuote("PETR4")).thenReturn(Optional.of(enrichedData(35.0)));
+        when(externalApi.getDividends("PETR4")).thenReturn(List.of());
+
+        UserPositionDTO position = useCase.execute(EMAIL, "PETR4").userPosition();
+
+        assertEquals(PriceStatus.LIVE, position.priceStatus());
+    }
+
+    @Test
+    void execute_UserOwnsFixedIncomeLot_PriceStatusIsNotQuoted() {
+        when(investmentRepo.findByUserEmail(EMAIL)).thenReturn(
+                List.of(lot("TESOURO-SELIC", 10.0, 100.0, InvestmentType.FIXED_INCOME)));
+        when(externalApi.getEnrichedQuote("TESOURO-SELIC")).thenReturn(Optional.empty());
+        when(externalApi.getQuote("TESOURO-SELIC")).thenReturn(Optional.empty());
+
+        UserPositionDTO position = useCase.execute(EMAIL, "TESOURO-SELIC").userPosition();
+
+        assertEquals(PriceStatus.NOT_QUOTED, position.priceStatus());
     }
 
     // ── Dividend enrichment ──────────────────────────────────────────────

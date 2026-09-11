@@ -2,6 +2,8 @@ package com.jf.PetApp.application.investment.service;
 
 import com.jf.PetApp.application.investment.dto.UserPositionDTO;
 import com.jf.PetApp.core.domain.Investment;
+import com.jf.PetApp.core.domain.enums.InvestmentType;
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
@@ -69,10 +71,22 @@ public class UserPositionCalculator {
                 ? ZERO
                 : currentValue.multiply(HUNDRED).divide(totalPortfolioValue, MONEY_SCALE, RoundingMode.HALF_UP);
 
+        PriceStatus priceStatus = priceStatus(tickerLots.get(0).type(), currentPrice);
+
         return new UserPositionDTO(
             quantity, averagePrice, investedValue, currentValue,
-            unrealizedGain, unrealizedGainPercent, portfolioWeight
+            unrealizedGain, unrealizedGainPercent, portfolioWeight, priceStatus
         );
+    }
+
+    /**
+     * Mirrors {@code GetPortfolioHoldingsUseCaseImpl.fetchCurrentPrice}: fixed income has no
+     * quote feed at all (NOT_QUOTED, not a failure), otherwise a missing price means the caller
+     * already fell back to the purchase price (STALE_PURCHASE_PRICE).
+     */
+    private static PriceStatus priceStatus(InvestmentType type, BigDecimal currentPrice) {
+        if (type == InvestmentType.FIXED_INCOME) return PriceStatus.NOT_QUOTED;
+        return currentPrice != null ? PriceStatus.LIVE : PriceStatus.STALE_PURCHASE_PRICE;
     }
 
     private static BigDecimal money(BigDecimal value) {

@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.investment.dto;
 
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ class UserPositionDTOTest {
     void accessorsReturnConstructedValues() {
         UserPositionDTO dto = new UserPositionDTO(
                 BigDecimal.valueOf(10.0), BigDecimal.valueOf(20.0), BigDecimal.valueOf(200.0), BigDecimal.valueOf(250.0),
-                BigDecimal.valueOf(50.0), BigDecimal.valueOf(25.0), BigDecimal.valueOf(0.4));
+                BigDecimal.valueOf(50.0), BigDecimal.valueOf(25.0), BigDecimal.valueOf(0.4), PriceStatus.LIVE);
 
         assertEquals(BigDecimal.valueOf(10.0), dto.quantity());
         assertEquals(BigDecimal.valueOf(20.0), dto.averagePrice());
@@ -21,5 +22,6 @@ class UserPositionDTOTest {
         assertEquals(BigDecimal.valueOf(50.0), dto.unrealizedGain());
         assertEquals(BigDecimal.valueOf(25.0), dto.unrealizedGainPercent());
         assertEquals(BigDecimal.valueOf(0.4), dto.portfolioWeight());
+        assertEquals(PriceStatus.LIVE, dto.priceStatus());
     }
 }

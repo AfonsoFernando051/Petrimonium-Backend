@@ -3,6 +3,7 @@ package com.jf.PetApp.application.investment.service;
 import com.jf.PetApp.application.investment.dto.UserPositionDTO;
 import com.jf.PetApp.core.domain.Investment;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
+import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -18,7 +19,11 @@ class UserPositionCalculatorTest {
     private final UserPositionCalculator calculator = new UserPositionCalculator();
 
     private Investment lot(String ticker, double quantity, double purchasePrice) {
-        return new Investment(1, "investor@test.com", ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(purchasePrice), LocalDate.now(), InvestmentType.STOCKS);
+        return lot(ticker, quantity, purchasePrice, InvestmentType.STOCKS);
+    }
+
+    private Investment lot(String ticker, double quantity, double purchasePrice, InvestmentType type) {
+        return new Investment(1, "investor@test.com", ticker, BigDecimal.valueOf(quantity), BigDecimal.valueOf(purchasePrice), LocalDate.now(), type);
     }
 
     private static BigDecimal price(double value) {
@@ -90,5 +95,32 @@ class UserPositionCalculatorTest {
         UserPositionDTO result = calculator.compute(List.of(lot("petr4", 10, 20.0)), "PETR4", price(20.0));
 
         assertMoney(10, result.quantity());
+    }
+
+    // ── Price provenance ─────────────────────────────────────────────────
+    // Without this flag, a stale/missing quote is indistinguishable downstream from a real
+    // quote that happens to equal the purchase price — both render as "0% gain" (see PriceStatus).
+
+    @Test
+    void compute_LivePriceGiven_StatusIsLive() {
+        UserPositionDTO result = calculator.compute(List.of(lot("PETR4", 10, 25.0)), "PETR4", price(30.0));
+
+        assertEquals(PriceStatus.LIVE, result.priceStatus());
+    }
+
+    @Test
+    void compute_NoCurrentPrice_StatusIsStalePurchasePrice() {
+        UserPositionDTO result = calculator.compute(List.of(lot("PETR4", 10, 25.0)), "PETR4", null);
+
+        assertEquals(PriceStatus.STALE_PURCHASE_PRICE, result.priceStatus());
+    }
+
+    @Test
+    void compute_FixedIncomeLot_StatusIsNotQuotedEvenWithAPriceGiven() {
+        List<Investment> lots = List.of(lot("TESOURO-SELIC", 10, 100.0, InvestmentType.FIXED_INCOME));
+
+        UserPositionDTO result = calculator.compute(lots, "TESOURO-SELIC", null);
+
+        assertEquals(PriceStatus.NOT_QUOTED, result.priceStatus());
     }
 }
