@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -112,6 +113,17 @@ public class GlobalExceptionHandler {
         log.warn("Rejected unconfirmed portfolio replacement: {} existing lot(s) -> {} submitted",
                 e.currentLotCount(), e.submittedLotCount());
         return problem(HttpStatus.CONFLICT, "PORTFOLIO_REPLACE_NOT_CONFIRMED", e.getMessage());
+    }
+
+    /**
+     * The row a caller loaded was already changed by another write (e.g. a second device editing
+     * the same investment lot) by the time this one tried to save — Hibernate's {@code @Version}
+     * check caught it before either edit silently clobbered the other.
+     */
+    @ExceptionHandler(ObjectOptimisticLockingFailureException.class)
+    public ProblemDetail handleOptimisticLockingFailure(ObjectOptimisticLockingFailureException e) {
+        log.warn("Rejected stale update: {}", e.getMessage());
+        return problem(HttpStatus.CONFLICT, "STALE_UPDATE", "This item was changed elsewhere. Please reload and try again.");
     }
 
     @ExceptionHandler(UserAlreadyExistsException.class)

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.server.ResponseStatusException;
@@ -74,6 +75,17 @@ class GlobalExceptionHandlerTest {
         assertEquals(HttpStatus.BAD_REQUEST.value(), result.getStatus());
         assertEquals("INVALID_REQUEST", result.getProperties().get("code"));
         assertEquals("bad input", result.getDetail());
+    }
+
+    @Test
+    void handleOptimisticLockingFailure_MapsToConflictWithStaleUpdateCode() {
+        ObjectOptimisticLockingFailureException e =
+                new ObjectOptimisticLockingFailureException("InvestmentJpaEntity", 42);
+
+        ProblemDetail result = handler.handleOptimisticLockingFailure(e);
+
+        assertEquals(HttpStatus.CONFLICT.value(), result.getStatus());
+        assertEquals("STALE_UPDATE", result.getProperties().get("code"));
     }
 
     @Test

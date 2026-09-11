@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
+import jakarta.persistence.Version;
 
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -52,4 +53,12 @@ public class InvestmentJpaEntity {
 
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
+
+    /**
+     * Detects two concurrent edits of the same lot (e.g. two devices) — without it, whichever
+     * request flushes last silently overwrites the other with no signal to either caller. See
+     * V35__investment_optimistic_lock.sql.
+     */
+    @Version
+    private Integer version;
 }

@@ -8,10 +8,14 @@ import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
 import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
 import com.jf.PetApp.infrastructure.repository.user.SpringUserJpaRepository;
 
+import com.jf.PetApp.infrastructure.entity.InvestmentJpaEntity;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
+import org.springframework.boot.jpa.test.autoconfigure.TestEntityManager;
+import org.springframework.orm.ObjectOptimisticLockingFailureException;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -28,6 +32,9 @@ class InvestmentRepositoryAdapterTest {
 
     @Autowired
     private SpringUserJpaRepository userJpaRepository;
+
+    @Autowired
+    private TestEntityManager entityManager;
 
     private InvestmentRepositoryPort adapter;
 
@@ -156,6 +163,35 @@ class InvestmentRepositoryAdapterTest {
 
         assertThrows(com.jf.PetApp.application.common.exception.ResourceNotFoundException.class,
                 () -> adapter.update(created.id(), "other@test.com", attempt));
+    }
+
+    /**
+     * Exercises the {@code @Version} column directly at the Spring Data/entity level rather than
+     * through {@code adapter.update()} — two calls to {@code adapter.update()} within one test
+     * transaction would share the same Hibernate persistence-context cache and never reproduce a
+     * real race, since both would load (and mutate) the *same* managed instance. Detaching and
+     * re-fetching simulates two independent requests (e.g. two devices) that each loaded the lot
+     * before either one saved.
+     */
+    @Test
+    void update_WhenAnotherEditSavedFirst_ThrowsOptimisticLockingFailure() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS));
+        entityManager.flush();
+        entityManager.clear();
+
+        InvestmentJpaEntity staleCopy = investmentRepository.findById(created.id()).orElseThrow();
+        entityManager.detach(staleCopy);
+        entityManager.clear();
+
+        InvestmentJpaEntity firstEditor = investmentRepository.findById(created.id()).orElseThrow();
+        firstEditor.setQuantity(BigDecimal.TEN);
+        investmentRepository.saveAndFlush(firstEditor);
+        entityManager.clear();
+
+        staleCopy.setQuantity(BigDecimal.valueOf(20));
+        assertThrows(ObjectOptimisticLockingFailureException.class,
+                () -> investmentRepository.saveAndFlush(staleCopy));
     }
 
     @Test
