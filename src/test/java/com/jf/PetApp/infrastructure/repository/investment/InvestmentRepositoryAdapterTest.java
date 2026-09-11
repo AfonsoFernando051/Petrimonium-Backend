@@ -3,6 +3,7 @@ package com.jf.PetApp.infrastructure.repository.investment;
 import com.jf.PetApp.application.investment.port.InvestmentRepositoryPort;
 import com.jf.PetApp.core.domain.Investment;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.infrastructure.entity.UserJpaEntity;
 import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
@@ -69,6 +70,8 @@ class InvestmentRepositoryAdapterTest {
         assertThat(saved.purchasePrice()).isEqualByComparingTo("30.5");
         assertThat(saved.purchaseDate()).isEqualTo(purchaseDate);
         assertThat(saved.type()).isEqualTo(InvestmentType.STOCKS);
+        assertThat(saved.currency()).isEqualTo("BRL");
+        assertThat(saved.origin()).isEqualTo(AssetOrigin.MANUAL);
     }
 
     @Test
@@ -145,6 +148,26 @@ class InvestmentRepositoryAdapterTest {
         assertThat(updated.purchasePrice()).isEqualByComparingTo("31.0");
         assertThat(updated.purchaseDate()).isEqualTo(LocalDate.of(2025, 2, 1));
         assertThat(adapter.findByUserEmail(EMAIL)).hasSize(1);
+    }
+
+    /**
+     * currency/origin are set once at creation and never re-derived from an edit's payload — an
+     * edit only touches the fields the user can actually change (name/quantity/price/date/type).
+     * The 7-arg {@link Investment} constructor used to build the update payload always defaults
+     * to BRL/MANUAL, so without this guard every edit would silently reset a future synced lot's
+     * origin back to MANUAL.
+     */
+    @Test
+    void update_NeverOverwritesCurrencyOrOrigin() {
+        Investment created = adapter.create(EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.ONE, BigDecimal.ONE, LocalDate.now(), InvestmentType.STOCKS,
+                "USD", AssetOrigin.BROKER_SYNC));
+
+        Investment updated = adapter.update(created.id(), EMAIL, new Investment(
+                null, EMAIL, "PETR4", BigDecimal.TEN, BigDecimal.TEN, LocalDate.now(), InvestmentType.STOCKS));
+
+        assertThat(updated.currency()).isEqualTo("USD");
+        assertThat(updated.origin()).isEqualTo(AssetOrigin.BROKER_SYNC);
     }
 
     @Test

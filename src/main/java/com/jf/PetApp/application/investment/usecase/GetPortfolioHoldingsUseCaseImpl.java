@@ -59,7 +59,9 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
                     currentPrice,
                     investedValue,
                     currentValue,
-                    quote.status()
+                    quote.status(),
+                    lot.currency(),
+                    lot.origin()
             );
         }).collect(Collectors.toList());
     }

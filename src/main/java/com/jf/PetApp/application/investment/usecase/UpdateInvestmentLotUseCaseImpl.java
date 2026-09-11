@@ -28,6 +28,7 @@ public class UpdateInvestmentLotUseCaseImpl implements UpdateInvestmentLotUseCas
     private InvestmentDTO toDTO(Investment investment) {
         return new InvestmentDTO(
                 investment.id(), investment.name(), investment.quantity(),
-                investment.purchasePrice(), investment.purchaseDate(), investment.type());
+                investment.purchasePrice(), investment.purchaseDate(), investment.type(),
+                investment.currency(), investment.origin());
     }
 }

@@ -1,5 +1,6 @@
 package com.jf.PetApp.infrastructure.entity;
 
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 
 import jakarta.persistence.Entity;
@@ -43,6 +44,11 @@ public class InvestmentJpaEntity {
 
     @Enumerated(EnumType.STRING)
     private InvestmentType type;
+
+    private String currency;
+
+    @Enumerated(EnumType.STRING)
+    private AssetOrigin origin;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)

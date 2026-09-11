@@ -2,6 +2,7 @@ package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
 import com.jf.PetApp.application.investment.dto.PortfolioHistoryPointDTO;
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,7 +40,8 @@ class GetPortfolioHistoryUseCaseImplTest {
         BigDecimal current = BigDecimal.valueOf(currentPrice);
         return new InvestmentLotDTO(
                 1, "PETR4", InvestmentType.STOCKS, q, purchase, purchaseDate,
-                current, q.multiply(purchase), q.multiply(current), PriceStatus.LIVE
+                current, q.multiply(purchase), q.multiply(current), PriceStatus.LIVE,
+                "BRL", AssetOrigin.MANUAL
         );
     }
 

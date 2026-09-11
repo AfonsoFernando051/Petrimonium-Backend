@@ -103,7 +103,9 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
                 entity.getQuantity(),
                 entity.getPurchasePrice(),
                 entity.getPurchaseDate(),
-                entity.getType()
+                entity.getType(),
+                entity.getCurrency(),
+                entity.getOrigin()
         );
     }
 
@@ -115,6 +117,8 @@ public class InvestmentRepositoryAdapter implements InvestmentRepositoryPort {
         entity.setPurchasePrice(investment.purchasePrice());
         entity.setPurchaseDate(investment.purchaseDate());
         entity.setType(investment.type());
+        entity.setCurrency(investment.currency());
+        entity.setOrigin(investment.origin());
         // Only used for brand-new rows (create, and saveAll's always-delete-then-insert), so
         // created_at and updated_at start identical — #update() is the only path that changes
         // updated_at afterwards, and it never calls this method.

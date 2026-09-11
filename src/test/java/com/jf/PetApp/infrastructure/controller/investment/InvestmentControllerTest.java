@@ -181,7 +181,8 @@ class InvestmentControllerTest {
     void createInvestment_WithValidAsset_Returns201WithCreatedLot() throws Exception {
         when(createInvestmentLotUseCase.execute(eq("investor@test.com"), any())).thenReturn(
                 new InvestmentDTO(7, "PETR4", BigDecimal.valueOf(100), BigDecimal.valueOf(30.5),
-                        java.time.LocalDate.of(2025, 1, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+                        java.time.LocalDate.of(2025, 1, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS,
+                        "BRL", com.jf.PetApp.core.domain.enums.AssetOrigin.MANUAL));
 
         mockMvc.perform(post("/api/investments")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -211,7 +212,8 @@ class InvestmentControllerTest {
         // Regression guard: the granular endpoint must never fall back to the full-replace path.
         when(createInvestmentLotUseCase.execute(eq("investor@test.com"), any())).thenReturn(
                 new InvestmentDTO(1, "PETR4", BigDecimal.ONE, BigDecimal.TEN,
-                        java.time.LocalDate.now(), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+                        java.time.LocalDate.now(), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS,
+                        "BRL", com.jf.PetApp.core.domain.enums.AssetOrigin.MANUAL));
 
         mockMvc.perform(post("/api/investments")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -227,7 +229,8 @@ class InvestmentControllerTest {
     void updateInvestment_WithValidAsset_Returns200WithUpdatedLot() throws Exception {
         when(updateInvestmentLotUseCase.execute(eq("investor@test.com"), eq(7), any())).thenReturn(
                 new InvestmentDTO(7, "PETR4", BigDecimal.valueOf(150), BigDecimal.valueOf(31.0),
-                        java.time.LocalDate.of(2025, 2, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS));
+                        java.time.LocalDate.of(2025, 2, 1), com.jf.PetApp.core.domain.enums.InvestmentType.STOCKS,
+                        "BRL", com.jf.PetApp.core.domain.enums.AssetOrigin.MANUAL));
 
         mockMvc.perform(put("/api/investments/7")
                         .contentType(MediaType.APPLICATION_JSON)

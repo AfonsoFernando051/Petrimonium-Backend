@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.investment.dto;
 
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.core.domain.enums.PriceStatus;
 
@@ -24,6 +25,8 @@ public record InvestmentLotDTO(
     BigDecimal currentPrice,
     BigDecimal investedValue,
     BigDecimal currentValue,
-    PriceStatus priceStatus
+    PriceStatus priceStatus,
+    String currency,
+    AssetOrigin origin
 ) {
 }

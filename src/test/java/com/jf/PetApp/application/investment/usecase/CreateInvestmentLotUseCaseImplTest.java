@@ -6,6 +6,7 @@ import com.jf.PetApp.application.investment.port.InvestmentRepositoryPort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.Investment;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -58,12 +59,17 @@ class CreateInvestmentLotUseCaseImplTest {
         assertEquals(7, result.id());
         assertEquals("PETR4", result.name());
         assertEquals(BigDecimal.valueOf(100), result.quantity());
+        // Every write path today is manual BRL entry — see Investment's javadoc.
+        assertEquals("BRL", result.currency());
+        assertEquals(AssetOrigin.MANUAL, result.origin());
 
         ArgumentCaptor<Investment> captor = ArgumentCaptor.forClass(Investment.class);
         verify(investmentRepositoryPort).create(eq(EMAIL), captor.capture());
         assertEquals(EMAIL, captor.getValue().userEmail());
         assertEquals("PETR4", captor.getValue().name());
         assertEquals(null, captor.getValue().id());
+        assertEquals("BRL", captor.getValue().currency());
+        assertEquals(AssetOrigin.MANUAL, captor.getValue().origin());
     }
 
     @Test

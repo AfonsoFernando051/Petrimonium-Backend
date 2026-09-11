@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.investment.dto;
 
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 
 import java.math.BigDecimal;
@@ -19,6 +20,8 @@ public record InvestmentDTO(
         BigDecimal quantity,
         BigDecimal purchasePrice,
         LocalDate purchaseDate,
-        InvestmentType type
+        InvestmentType type,
+        String currency,
+        AssetOrigin origin
 ) {
 }

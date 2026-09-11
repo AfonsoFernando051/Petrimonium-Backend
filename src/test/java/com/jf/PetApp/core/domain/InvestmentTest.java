@@ -9,12 +9,15 @@ import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 
 /**
- * Investment is a plain record with no custom behavior beyond the
- * compiler-generated accessors/equals — this confirms construction and the
- * documented "null id means unsaved" convention.
+ * Investment is mostly a plain record (compiler-generated accessors/equals)
+ * plus one deliberate custom constructor: the 7-arg form stamps
+ * currency/origin defaults rather than requiring every one of ~13 existing
+ * call sites to specify them, since every write path is manual BRL entry
+ * today (see the type's own javadoc).
  */
 class InvestmentTest {
 
@@ -34,6 +37,25 @@ class InvestmentTest {
         assertEquals(PRICE, investment.purchasePrice());
         assertEquals(purchaseDate, investment.purchaseDate());
         assertEquals(InvestmentType.STOCKS, investment.type());
+    }
+
+    @Test
+    void sevenArgConstructor_DefaultsCurrencyToBrlAndOriginToManual() {
+        Investment investment = new Investment(
+                1, "user@test.com", "PETR4", QUANTITY, PRICE, LocalDate.now(), InvestmentType.STOCKS);
+
+        assertEquals("BRL", investment.currency());
+        assertEquals(AssetOrigin.MANUAL, investment.origin());
+    }
+
+    @Test
+    void nineArgConstructor_KeepsTheExplicitCurrencyAndOrigin() {
+        Investment investment = new Investment(
+                1, "user@test.com", "PETR4", QUANTITY, PRICE, LocalDate.now(), InvestmentType.STOCKS,
+                "USD", AssetOrigin.BROKER_SYNC);
+
+        assertEquals("USD", investment.currency());
+        assertEquals(AssetOrigin.BROKER_SYNC, investment.origin());
     }
 
     @Test

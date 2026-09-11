@@ -30,6 +30,7 @@ import com.jf.PetApp.application.investment.usecase.GetPortfolioHoldingsUseCase;
 import com.jf.PetApp.application.investment.usecase.GetPortfolioSummaryUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.core.domain.enums.PriceStatus;
 
@@ -85,7 +86,8 @@ class EvaluateAchievementsUseCaseImplTest {
     void execute_HasHoldings_UnlocksFirstInvestmentExactlyOnce() {
         InvestmentLotDTO lot = new InvestmentLotDTO(
                 1, "PETR4", InvestmentType.STOCKS, BigDecimal.valueOf(10.0), BigDecimal.valueOf(30.0), LocalDate.now(),
-                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), PriceStatus.LIVE);
+                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), PriceStatus.LIVE,
+                "BRL", AssetOrigin.MANUAL);
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of(lot));
         when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(
                 BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), BigDecimal.ZERO, BigDecimal.ZERO, 1));
@@ -106,7 +108,8 @@ class EvaluateAchievementsUseCaseImplTest {
     void execute_AlreadyUnlocked_NeverReGrantsXp() {
         InvestmentLotDTO lot = new InvestmentLotDTO(
                 1, "PETR4", InvestmentType.STOCKS, BigDecimal.valueOf(10.0), BigDecimal.valueOf(30.0), LocalDate.now(),
-                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), PriceStatus.LIVE);
+                BigDecimal.valueOf(30.0), BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), PriceStatus.LIVE,
+                "BRL", AssetOrigin.MANUAL);
         when(getPortfolioHoldingsUseCase.execute(EMAIL)).thenReturn(List.of(lot));
         when(getPortfolioSummaryUseCase.execute(EMAIL)).thenReturn(new PortfolioSummaryDTO(
                 BigDecimal.valueOf(300.0), BigDecimal.valueOf(300.0), BigDecimal.ZERO, BigDecimal.ZERO, 1));

@@ -2,6 +2,7 @@ package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.application.investment.dto.AllocationSliceDTO;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
+import com.jf.PetApp.core.domain.enums.AssetOrigin;
 import com.jf.PetApp.core.domain.enums.InvestmentType;
 import com.jf.PetApp.core.domain.enums.PriceStatus;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,7 +36,9 @@ class GetPortfolioAllocationUseCaseImplTest {
 
     private InvestmentLotDTO lot(InvestmentType type, double currentValue) {
         BigDecimal value = BigDecimal.valueOf(currentValue);
-        return new InvestmentLotDTO(1, "X", type, BigDecimal.ONE, value, LocalDate.now(), value, value, value, PriceStatus.LIVE);
+        return new InvestmentLotDTO(
+                1, "X", type, BigDecimal.ONE, value, LocalDate.now(), value, value, value, PriceStatus.LIVE,
+                "BRL", AssetOrigin.MANUAL);
     }
 
     /** Compares a plain double to a BigDecimal money/percent field by value, ignoring scale. */
