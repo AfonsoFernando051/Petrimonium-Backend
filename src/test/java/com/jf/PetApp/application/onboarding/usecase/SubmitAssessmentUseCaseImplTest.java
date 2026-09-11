@@ -3,15 +3,17 @@ package com.jf.PetApp.application.onboarding.usecase;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.assessment.AcademyOnboardingAnswers;
+import com.jf.PetApp.core.domain.assessment.ExperienceLevel;
+import com.jf.PetApp.core.domain.assessment.FinancialGoal;
+import com.jf.PetApp.core.domain.assessment.InvestmentHorizon;
 import com.jf.PetApp.core.domain.assessment.InvestorProfile;
-import com.jf.PetApp.core.domain.assessment.UserAssessment;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -30,6 +32,9 @@ class SubmitAssessmentUseCaseImplTest {
     @InjectMocks
     private SubmitAssessmentUseCaseImpl submitAssessmentUseCase;
 
+    private static final AcademyOnboardingAnswers ANSWERS = new AcademyOnboardingAnswers(
+            FinancialGoal.INVEST_WITH_CONFIDENCE, InvestmentHorizon.MORE_THAN_FIVE_YEARS, ExperienceLevel.PRACTITIONER);
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -44,10 +49,10 @@ class SubmitAssessmentUseCaseImplTest {
         user.setHasAnsweredOnboarding(false);
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
-        when(calculateInvestorProfileUseCase.execute(any(UserAssessment.class))).thenReturn(InvestorProfile.TACTICIAN);
+        when(calculateInvestorProfileUseCase.execute(any(AcademyOnboardingAnswers.class))).thenReturn(InvestorProfile.TACTICIAN);
         when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        InvestorProfile result = submitAssessmentUseCase.execute(email, List.of("opt1", "opt2"));
+        InvestorProfile result = submitAssessmentUseCase.execute(email, ANSWERS);
 
         assertEquals(InvestorProfile.TACTICIAN, result);
         assertEquals(InvestorProfile.TACTICIAN, user.getInvestorProfile());
@@ -66,7 +71,7 @@ class SubmitAssessmentUseCaseImplTest {
 
         when(userRepository.findByEmail(email)).thenReturn(Optional.of(user));
 
-        InvestorProfile result = submitAssessmentUseCase.execute(email, List.of("opt1"));
+        InvestorProfile result = submitAssessmentUseCase.execute(email, ANSWERS);
 
         assertEquals(InvestorProfile.GUARDIAN, result);
         verify(calculateInvestorProfileUseCase, never()).execute(any());
@@ -79,7 +84,7 @@ class SubmitAssessmentUseCaseImplTest {
         when(userRepository.findByEmail(email)).thenReturn(Optional.empty());
 
         assertThrows(ResourceNotFoundException.class, () ->
-            submitAssessmentUseCase.execute(email, List.of("opt1")));
+                submitAssessmentUseCase.execute(email, ANSWERS));
 
         verify(userRepository, never()).save(any());
     }

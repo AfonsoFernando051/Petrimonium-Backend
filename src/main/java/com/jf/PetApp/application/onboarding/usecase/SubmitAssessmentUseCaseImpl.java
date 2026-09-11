@@ -3,11 +3,9 @@ package com.jf.PetApp.application.onboarding.usecase;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.assessment.AcademyOnboardingAnswers;
 import com.jf.PetApp.core.domain.assessment.InvestorProfile;
-import com.jf.PetApp.core.domain.assessment.UserAssessment;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class SubmitAssessmentUseCaseImpl implements SubmitAssessmentUseCase {
@@ -22,7 +20,7 @@ public class SubmitAssessmentUseCaseImpl implements SubmitAssessmentUseCase {
     }
 
     @Override
-    public InvestorProfile execute(String email, List<String> selectedOptionIds) {
+    public InvestorProfile execute(String email, AcademyOnboardingAnswers answers) {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for email: " + email));
 
@@ -32,8 +30,7 @@ public class SubmitAssessmentUseCaseImpl implements SubmitAssessmentUseCase {
             return user.getInvestorProfile();
         }
 
-        UserAssessment assessment = new UserAssessment(user.getId(), selectedOptionIds);
-        InvestorProfile profile = calculateInvestorProfileUseCase.execute(assessment);
+        InvestorProfile profile = calculateInvestorProfileUseCase.execute(answers);
 
         user.setHasAnsweredOnboarding(true);
         user.setInvestorProfile(profile);
