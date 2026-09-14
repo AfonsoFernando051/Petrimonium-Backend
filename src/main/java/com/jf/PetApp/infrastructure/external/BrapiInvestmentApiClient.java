@@ -10,9 +10,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpStatusCodeException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
@@ -98,32 +103,55 @@ public class BrapiInvestmentApiClient implements ExternalInvestmentApiPort {
         }
 
         try {
-            String url = String.format("%s/api/quote/%s?token=%s", baseUrl, encode(ticker), encode(token));
-            Map<String, Object> response = restTemplate.getForObject(url, Map.class);
-
-            List<Map<String, Object>> results = extractResults(response);
-            if (results.isEmpty()) {
-                return Optional.empty();
-            }
-
-            Map<String, Object> data = results.get(0);
-            String symbol = (String) data.getOrDefault("symbol", ticker);
-            String shortName = (String) data.getOrDefault("shortName", "");
-            Double price = RawFieldExtractor.toDouble(data.get("regularMarketPrice"));
-            String currency = (String) data.getOrDefault("currency", "BRL");
-            Double changePercent = RawFieldExtractor.toDouble(data.get("regularMarketChangePercent"));
-
-            return Optional.of(new AssetQuoteResponse(
-                    symbol, shortName, price, currency, changePercent != null ? changePercent : 0.0));
-        } catch (HttpClientErrorException e) {
+            return fetchQuoteViaV2(ticker);
+        } catch (HttpStatusCodeException e) {
             log.warn("Brapi quote request failed for {}: HTTP {}", ticker, e.getStatusCode());
             return Optional.empty();
         } catch (Exception e) {
             // Don't log e.getMessage()/stack trace here: connectivity exceptions from
-            // RestTemplate commonly embed the full request URL, which includes the token.
+            // RestTemplate can embed request details we'd rather not surface either way.
             log.warn("Brapi quote request failed for {}: {}", ticker, e.getClass().getSimpleName());
             return Optional.empty();
         }
+    }
+
+    /**
+     * Fetches a single quote from Brapi's {@code /api/v2/stocks/quote} endpoint, authenticating
+     * with {@code Authorization: Bearer <token>} rather than a {@code ?token=} query parameter —
+     * Brapi's own docs recommend the header specifically because a query-string token leaks into
+     * browser history and server/proxy access logs, which a request header does not. This also
+     * retires the one reason earlier revisions of this class had to avoid logging request URLs.
+     *
+     * <p>Each entry in {@code results} nests its quote fields under {@code data}
+     * (e.g. {@code results[0].data.regularMarketPrice}), unlike the v1 endpoints below.
+     */
+    @SuppressWarnings("unchecked")
+    private Optional<AssetQuoteResponse> fetchQuoteViaV2(String ticker) {
+        String url = String.format("%s/api/v2/stocks/quote?symbols=%s", baseUrl, encode(ticker.toUpperCase()));
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(token);
+        ResponseEntity<Map> response = restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(headers), Map.class);
+
+        List<Map<String, Object>> results = extractResults(response.getBody());
+        if (results.isEmpty()) {
+            return Optional.empty();
+        }
+
+        Map<String, Object> entry = results.get(0);
+        Object dataObj = entry.get("data");
+        if (!(dataObj instanceof Map)) {
+            return Optional.empty();
+        }
+        Map<String, Object> data = (Map<String, Object>) dataObj;
+
+        String symbol = (String) entry.getOrDefault("symbol", ticker.toUpperCase());
+        String shortName = (String) data.getOrDefault("shortName", "");
+        Double price = RawFieldExtractor.toDouble(data.get("regularMarketPrice"));
+        String currency = (String) data.getOrDefault("currency", "BRL");
+        Double changePercent = RawFieldExtractor.toDouble(data.get("regularMarketChangePercent"));
+
+        return Optional.of(new AssetQuoteResponse(
+                symbol, shortName, price, currency, changePercent != null ? changePercent : 0.0));
     }
 
     /**

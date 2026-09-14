@@ -97,6 +97,32 @@ nunca `e.getMessage()` nem o stack trace. O comentário explica:
      "para facilitar o debug" vaza a credencial da brapi para o log de produção.
      Vale conferir isso em toda revisão que toque este arquivo. -->
 
+**Atualizado em 2026-09-14 — `getQuote` migrou para v2 + Authorization
+Bearer, os outros quatro não:** `getQuote` agora chama
+`GET /api/v2/stocks/quote?symbols=<TICKER>` com o token no header
+`Authorization: Bearer <token>`, em vez do antigo `/api/quote/{ticker}?token=`
+(v1, query string). A motivação é a própria documentação da brapi — ela
+recomenda explicitamente o header porque um token na query string vaza para
+o histórico do navegador e para logs de proxy/servidor, o exato risco que
+esta seção documenta. `getQuote` deixou de ter esse risco: a URL que o
+`RestTemplate` embutiria numa exceção de conectividade não carrega mais o
+token.
+
+Isso **não** se estende às outras quatro operações — `getQuoteAtDate` (ramo
+histórico), `searchQuotes`, `getDividends` e `getEnrichedQuote` continuam
+autenticando via `?token=` na query string (v1, ou v2 no caso de
+`getDividends`). A armadilha do Drill 2 abaixo continua valendo integralmente
+para essas quatro; só não vale mais para `getQuote`.
+
+<!-- Por que não migrar as outras quatro juntas: o pedido que motivou a
+     mudança em 2026-09-14 era especificamente "integre GET
+     /api/v2/stocks/quote com Authorization: Bearer" — escopo cirúrgico, não
+     "troque toda a autenticação da brapi". As outras quatro chamam
+     endpoints com formatos de resposta diferentes (histórico com
+     historicalDataPrice, busca sem token, dividendos com data aninhado,
+     enriched com modules=) — migrá-las é trabalho novo, não uma
+     consequência automática desta mudança. -->
+
 ### 4.3 O histórico escolhe o menor balde que alcança a data
 
 `rangeFor(daysAgo)` mapeia a distância até a data pedida no menor bucket da
@@ -173,7 +199,7 @@ O único estado é o `AssetDetailsCache`, em memória, por instância.
 | Sem token, fora de prod | Preço mock R$ 50,00, log em `warn` | regra 4.1 |
 | **Sem token, em prod** | `Optional.empty()` + log em `error` | regra 4.1 |
 | brapi fora do ar | `Optional.empty()`, log só com a classe da exceção | regra 4.2 |
-| brapi devolve 4xx | `Optional.empty()`, log com o status | `getQuote` |
+| brapi devolve 4xx ou 5xx | `Optional.empty()`, log com o status | `getQuote` via `HttpStatusCodeException` (desde 2026-09-14; antes só 4xx era distinguido, 5xx caía no catch genérico com o mesmo resultado) |
 | Ticker inexistente | `results` vazio → `Optional.empty()` | `extractResults` |
 | Data anterior à existência do ticker | `Optional.empty()` | regra 4.4 |
 | Qualquer uma das acima, vista pelo usuário | **Ganho zero**, sem aviso | regra 4.6 |
@@ -208,15 +234,23 @@ esse tipo de configuração ausente.
 <details>
 <summary><b>Drill 2 —</b> Você acrescenta <code>e.getMessage()</code> a um log deste arquivo para facilitar o debug. Qual o risco?</summary>
 
-Vazar o token da brapi para o log de produção.
+Depende de qual método — e essa é a parte que muda desde 2026-09-14.
 
-Exceções de conectividade do `RestTemplate` comumente embutem a **URL completa**
-da requisição — e o token vai na query string
-(`?token=...`). Por isso todo `catch` genérico do client loga apenas
-`e.getClass().getSimpleName()`.
+Para `getQuoteAtDate` (ramo histórico), `searchQuotes`, `getDividends` e
+`getEnrichedQuote`: vazar o token da brapi para o log de produção. Exceções
+de conectividade do `RestTemplate` comumente embutem a **URL completa** da
+requisição — e essas quatro ainda passam o token na query string
+(`?token=...`).
 
-É uma armadilha fácil de reintroduzir com a melhor das intenções. Vale conferir
-em toda revisão que toque este arquivo.
+Para `getQuote`: nenhum — desde a migração para v2 + `Authorization: Bearer`
+(regra 4.2), o token não trafega mais na URL, então uma exceção de
+conectividade nesse método não o carrega.
+
+Ainda assim, o `catch` genérico de `getQuote` continua sem logar
+`e.getMessage()`, por uniformidade com o resto do client e porque nada
+obriga a mudar um hábito seguro quando ele deixa de ser estritamente
+necessário. Mas para os outros quatro métodos a armadilha é real e vale
+conferir em toda revisão que os toque.
 </details>
 
 <details>
@@ -274,3 +308,10 @@ Por isso a Academy ganhou endpoints próprios de cotação
 - **Persistir cotações históricas** → resolveria o drill 4 e reduziria chamadas
   ao provedor. Custa uma tabela e uma política de invalidação.
 - **Segundo provedor** → o port já permite; hoje há uma implementação só.
+- **Migrar as outras quatro operações para Authorization Bearer** → só
+  `getQuote` foi migrado (regra 4.2, 2026-09-14); `getQuoteAtDate` (ramo
+  histórico), `searchQuotes` (quando aplicável), `getDividends` e
+  `getEnrichedQuote` ainda levam o token na query string, com o risco de
+  vazamento em log que o Drill 2 descreve. Não foi feito junto porque o
+  pedido original tinha escopo cirúrgico (um endpoint específico); fica como
+  trabalho de consistência pendente, não como bug.

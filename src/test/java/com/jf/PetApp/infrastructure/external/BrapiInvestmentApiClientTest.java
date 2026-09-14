@@ -6,9 +6,14 @@ import com.jf.PetApp.core.domain.enums.DividendType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mock.env.MockEnvironment;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
@@ -19,8 +24,11 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 class BrapiInvestmentApiClientTest {
@@ -67,18 +75,21 @@ class BrapiInvestmentApiClientTest {
         assertEquals("VALE3", result.get().symbol());
     }
 
+    private static void mockV2QuoteResponse(RestTemplate restTemplate, Map<String, Object> body) {
+        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), eq(Map.class)))
+                .thenReturn(new ResponseEntity<>(body, HttpStatus.OK));
+    }
+
     @Test
-    void getQuote_WithSuccessfulResponse_ParsesTheFirstResult() {
+    void getQuote_WithSuccessfulResponse_ParsesResultsZeroData() {
         Map<String, Object> data = Map.of(
-                "symbol", "PETR4",
                 "shortName", "Petrobras PN",
                 "regularMarketPrice", 34.5,
                 "currency", "BRL",
                 "regularMarketChangePercent", 1.25
         );
-        Map<String, Object> response = Map.of("results", List.of(data));
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(response);
+        Map<String, Object> entry = Map.of("requestedSymbol", "PETR4", "symbol", "PETR4", "data", data);
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of(entry)));
 
         Optional<AssetQuoteResponse> result = client.getQuote("petr4");
 
@@ -91,11 +102,27 @@ class BrapiInvestmentApiClientTest {
     }
 
     @Test
+    void getQuote_SendsTheTokenAsABearerHeaderNeverInTheUrl() {
+        Map<String, Object> data = Map.of("regularMarketPrice", 34.5);
+        Map<String, Object> entry = Map.of("symbol", "PETR4", "data", data);
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of(entry)));
+
+        client.getQuote("petr4");
+
+        org.mockito.ArgumentCaptor<String> urlCaptor = org.mockito.ArgumentCaptor.forClass(String.class);
+        org.mockito.ArgumentCaptor<HttpEntity> entityCaptor = org.mockito.ArgumentCaptor.forClass(HttpEntity.class);
+        verify(restTemplate).exchange(urlCaptor.capture(), eq(HttpMethod.GET), entityCaptor.capture(), eq(Map.class));
+
+        assertTrue(urlCaptor.getValue().contains("/api/v2/stocks/quote?symbols=PETR4"));
+        assertFalse(urlCaptor.getValue().contains("test-token"));
+        assertEquals("Bearer test-token", entityCaptor.getValue().getHeaders().getFirst("Authorization"));
+    }
+
+    @Test
     void getQuote_WithMissingChangePercent_DefaultsToZero() {
-        Map<String, Object> data = Map.of("symbol", "PETR4", "regularMarketPrice", 34.5);
-        Map<String, Object> response = Map.of("results", List.of(data));
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(response);
+        Map<String, Object> data = Map.of("regularMarketPrice", 34.5);
+        Map<String, Object> entry = Map.of("symbol", "PETR4", "data", data);
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of(entry)));
 
         Optional<AssetQuoteResponse> result = client.getQuote("petr4");
 
@@ -104,32 +131,37 @@ class BrapiInvestmentApiClientTest {
 
     @Test
     void getQuote_WithEmptyResultsArray_ReturnsEmpty() {
-        Map<String, Object> response = Map.of("results", List.of());
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(response);
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of()));
 
         assertTrue(client.getQuote("petr4").isEmpty());
     }
 
     @Test
     void getQuote_WithNoResultsKey_ReturnsEmpty() {
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(Map.of("other", "field"));
+        mockV2QuoteResponse(restTemplate, Map.of("other", "field"));
+
+        assertTrue(client.getQuote("petr4").isEmpty());
+    }
+
+    @Test
+    void getQuote_WithDataFieldNotAMap_ReturnsEmpty() {
+        Map<String, Object> entry = Map.of("symbol", "PETR4", "data", "not-a-map");
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of(entry)));
 
         assertTrue(client.getQuote("petr4").isEmpty());
     }
 
     @Test
     void getQuote_WithNullResponseBody_ReturnsEmpty() {
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(null);
+        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), eq(Map.class)))
+                .thenReturn(new ResponseEntity<Map>(HttpStatus.OK));
 
         assertTrue(client.getQuote("petr4").isEmpty());
     }
 
     @Test
     void getQuote_WhenHttpClientErrorOccurs_ReturnsEmptyInsteadOfThrowing() {
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
+        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), eq(Map.class)))
                 .thenThrow(HttpClientErrorException.create(
                         org.springframework.http.HttpStatus.NOT_FOUND, "Not Found", null, null, null));
 
@@ -137,9 +169,18 @@ class BrapiInvestmentApiClientTest {
     }
 
     @Test
+    void getQuote_WhenHttpServerErrorOccurs_ReturnsEmptyInsteadOfThrowing() {
+        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), eq(Map.class)))
+                .thenThrow(HttpServerErrorException.create(
+                        org.springframework.http.HttpStatus.BAD_GATEWAY, "Bad Gateway", null, null, null));
+
+        assertTrue(client.getQuote("petr4").isEmpty());
+    }
+
+    @Test
     void getQuote_WhenGenericExceptionOccurs_ReturnsEmptyInsteadOfThrowing() {
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenThrow(new RuntimeException("connection reset, url had token=test-token"));
+        when(restTemplate.exchange(anyString(), eq(HttpMethod.GET), any(HttpEntity.class), eq(Map.class)))
+                .thenThrow(new RuntimeException("connection reset"));
 
         assertTrue(client.getQuote("petr4").isEmpty());
     }
@@ -148,10 +189,9 @@ class BrapiInvestmentApiClientTest {
 
     @Test
     void getQuoteAtDate_WithTodayOrFutureDate_DelegatesToGetQuote() {
-        Map<String, Object> data = Map.of("symbol", "PETR4", "regularMarketPrice", 34.5);
-        Map<String, Object> response = Map.of("results", List.of(data));
-        when(restTemplate.getForObject(anyString(), org.mockito.ArgumentMatchers.eq(Map.class)))
-                .thenReturn(response);
+        Map<String, Object> data = Map.of("regularMarketPrice", 34.5);
+        Map<String, Object> entry = Map.of("symbol", "PETR4", "data", data);
+        mockV2QuoteResponse(restTemplate, Map.of("results", List.of(entry)));
 
         Optional<AssetQuoteResponse> result = client.getQuoteAtDate("petr4", LocalDate.now(java.time.ZoneOffset.UTC));
 
