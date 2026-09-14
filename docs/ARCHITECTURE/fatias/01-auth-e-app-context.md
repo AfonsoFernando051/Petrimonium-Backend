@@ -1,9 +1,22 @@
 # Fatia 01 — Autenticação e `app_context`
 
-> Verificado em 2026-09-02 lendo o código. Toda linha aqui é rastreável a um arquivo.
+> Escrita em 2026-09-02, **revisada em 2026-09-14** lendo o código atual —
+> a revisão corrigiu uma fatia inteira que ainda descrevia uma era de dois
+> apps (Wallet/Academy, cada um em seu próprio repo Flutter). Hoje são três
+> (Wallet/Academy/Health, todos em `petrimonium-mobile`, um workspace Melos)
+> e a UI e testes automatizados já refletem isso — só esta fatia não
+> refletia. Toda linha aqui é rastreável a um arquivo.
 
-Esta é a fatia fundadora. Ela é o que faz *um* backend servir *dois* produtos
-sem que um veja os dados do outro.
+Esta é a fatia fundadora. Ela é o que faz *um* backend servir *três*
+produtos sem que um veja os dados do outro.
+
+**Prova executável, não só este texto:**
+`src/test/java/com/jf/PetApp/infrastructure/controller/auth/AuthEndToEndFlowTest.java`
+chama os endpoints reais `/auth/register`/`/auth/login`/`/auth/refresh`/`/auth/logout`
+por HTTP de verdade (não usecases mockados, não tokens forjados) contra um H2
+real, e é onde o cenário "mesma conta, três apps" deste documento é verificado
+a cada `mvn test` — se este arquivo e aquele teste um dia discordarem, o teste
+está certo até prova em contrário.
 
 ---
 
@@ -14,8 +27,14 @@ Enquanto usa, nunca mais pensa em login: se a sessão expira, o app renova
 sozinha; se a renovação falha, ele volta para a tela de login com a sessão
 limpa.
 
+No cadastro (Wallet/Academy — não no Health, ver §3), o formulário compartilhado
+já diz isso ao usuário em texto, não é só um detalhe de implementação: *"Mesma
+conta Petrimonium da Wallet, da Academy e do Health. Se você já tem uma, seu
+Pet e preferências vêm junto."* (`SharedStrings.sharedAccountNotice`,
+`petrimonium_shared_features/lib/src/i18n/shared_copy.dart:35`, pt/en/es).
+
 O que ele **não** vê, e é o ponto central: no mesmo instante do login, o
-backend carimba na sessão **qual dos dois apps** fez o pedido. Esse carimbo
+backend carimba na sessão **qual dos três apps** fez o pedido. Esse carimbo
 acompanha a sessão até o logout, e é ele que decide, em toda requisição
 seguinte, se `/api/investments` responde ou devolve 403.
 
@@ -28,10 +47,10 @@ seguinte, se `/api/investments` responde ou devolve 403.
 ```mermaid
 sequenceDiagram
     participant U as Usuário
-    participant LF as login_form.dart
-    participant AR as AuthRepository
+    participant LF as LoginForm<br/>(petrimonium_shared_features)
+    participant AR as AuthRepository<br/>(por app — ver §3)
     participant DS as AuthRemoteDataSource
-    participant AC as ApiClient
+    participant AC as ApiClient<br/>(petrimonium_flutter_core)
     participant CT as AuthController
     participant UC as LoginUseCaseImpl
     participant IS as RefreshTokenIssuerService
@@ -39,7 +58,7 @@ sequenceDiagram
     participant DB as identity.*
 
     U->>LF: e-mail + senha
-    LF->>AR: login(email, password)
+    LF->>AR: onLogin(email, password)<br/>= DI.authRepository.login
     AR->>DS: login(...)
     DS->>AC: POST /auth/login<br/>{email, password, appContext:"wallet"}
     AC->>CT: HTTP
@@ -126,19 +145,49 @@ sequenceDiagram
 
 ## 3. Arquivos que importam
 
-### Flutter (idêntico nos dois apps, exceto onde indicado)
+### Flutter — `petrimonium-mobile` (um workspace Melos, três apps + pacotes compartilhados)
+
+Wallet e Academy compartilham a mesma forma (nasceram do mesmo fork); Health
+reimplementa a tela por conta própria. Isso não é inconsistência por
+descuido — é o "DRY entre os três apps" do `AGENTS.md` do mobile: a UI só foi
+para `packages/` depois que Wallet e Academy provaram ser *genuinamente* a
+mesma coisa (layout, campos, validação, cópia por parâmetro), e Health nunca
+passou por essa prova. Consequência real, não cosmética: a tela de login do
+Health (`apps/health/lib/features/auth/presentation/login_screen.dart`) não
+mostra o aviso de conta compartilhada do §1, porque esse aviso vive dentro do
+`LoginForm`/`SignupForm` compartilhado que Health não usa.
+
+**Compartilhado (`packages/`), usado por Wallet e Academy:**
 
 | Arquivo | Papel |
 |---|---|
-| `lib/features/auth/presentation/widgets/login_form.dart:47` | Chama `DI.authRepository.login` |
-| `lib/features/auth/presentation/widgets/signup_form.dart:108-111` | Registra e **em seguida faz login** — `/auth/register` não devolve token |
+| `petrimonium_shared_features/lib/src/auth/presentation/login_form.dart` | Widget puro — recebe `onLogin`/`onGoogleLogin`/`onSuccess`/`errorMessageBuilder` como parâmetros, não conhece `AuthRepository` nem `DI` |
+| `petrimonium_shared_features/lib/src/auth/presentation/signup_form.dart:145` | `await widget.onRegister(...)` **seguido de** `await widget.onLoginAfterRegister(...)` — `/auth/register` não devolve token, então cada app passa seu próprio `register`/`login` como os dois callbacks |
+| `petrimonium_shared_features/lib/src/i18n/shared_copy.dart:35` | Texto do aviso de conta compartilhada (§1), em pt/en/es |
+| `petrimonium_flutter_core/lib/src/network/api_client.dart` | Tokens, headers, 401/refresh/retry. O coração da fatia no lado do app — compartilhado pelos três |
+
+**Por app (`apps/wallet`, `apps/academy` — estrutura idêntica entre os dois; caminhos abaixo são do Wallet):**
+
+| Arquivo | Papel |
+|---|---|
+| `lib/features/auth/presentation/widgets/login_card.dart:90-108` | Liga os callbacks do `LoginForm`/`SignupForm` a `DI.authRepository.{login,register,loginWithGoogle}` |
 | `lib/features/auth/data/repositories/auth_repository.dart` | Orquestra: chama o datasource, guarda tokens, guarda e-mail |
 | `lib/features/auth/data/datasources/auth_remote_datasource.dart` | Monta os corpos HTTP; **é aqui que `appContext` entra** |
 | `lib/features/auth/data/models/user_model.dart` | Parse da resposta |
-| `lib/core/constants/api_constants.dart:42` | `appContext = 'wallet'` — **no Academy, linha 43: `'academy'`** |
-| `lib/core/network/api_client.dart` | Tokens, headers, 401/refresh/retry. O coração da fatia no lado do app |
+| `lib/core/constants/api_constants.dart:37` | `appContext = 'wallet'` — **no Academy, `api_constants.dart:38`: `'academy'`** |
 | `lib/core/navigation/start_route_resolver.dart` | Decide a rota inicial ao abrir o app |
-| `lib/main.dart:78` | Listener global do `SessionExpiredEvent` |
+| `lib/main.dart:80` | Listener global do `SessionExpiredEvent` |
+
+**Health — mesma API HTTP, arquitetura de app diferente:**
+
+| Arquivo | Papel |
+|---|---|
+| `apps/health/lib/features/auth/presentation/login_screen.dart` | Tela própria (321 linhas), não usa `LoginForm`/`SignupForm` |
+| `apps/health/lib/features/health/presentation/health_controller.dart:84-99` | `login`/`register`/`loginWithGoogle` delegam a `HealthRepository` — um repositório único para o app inteiro (padrão de app, ver `AGENTS.md` do mobile), não um `AuthRepository` dedicado |
+| `apps/health/lib/core/config/api_config.dart:2` | `appContext = 'health'` |
+
+Nos três apps, o contrato HTTP e o `appContext` enviado são os mesmos — só
+muda **quem** monta a requisição e **como** a UI é composta.
 
 ### Backend
 
@@ -284,9 +333,9 @@ de uso futuro, é mudança de arquitetura, não ajuste.
 | Situação | O que acontece | Onde |
 |---|---|---|
 | Senha errada / usuário inexistente | `AuthenticationException` — mesma resposta nos dois casos | `LoginUseCaseImpl` |
-| `appContext` com typo | Erro imediato, `"appContext must be 'academy' or 'wallet'"` | `AppContextEnum.fromRequestValue` |
+| `appContext` com typo | Erro imediato, `"appContext must be 'academy', 'wallet' or 'health'"` | `AppContextEnum.fromRequestValue` |
 | Token sem `app_context` chamando `/api/investments` | **403** antes do controller | `SecurityConfig` |
-| Token sem `app_context` chamando `/api/mentor/chat` | **403** — exige um dos dois | `SecurityConfig` |
+| Token sem `app_context` chamando `/api/mentor/chat` | **403** — exige um dos três (`WALLET`/`ACADEMY`/`HEALTH`) | `SecurityConfig` |
 | Token sem `app_context` chamando `/api/pets` | **200** — rota compartilhada | `SecurityConfig` |
 | JWT inválido/expirado | Filtro não autentica → cai em `anyRequest().authenticated()` → 401 | `JwtAuthenticationFilter` |
 | JWT válido de usuário deletado | `findByEmail` vazio → não autentica → 401 | `JwtAuthenticationFilter` |
@@ -322,24 +371,33 @@ dados do outro produto.
 
 **200.** `/api/pets/**` cai em `anyRequest().authenticated()`. O Pet é
 compartilhado por decisão de produto: é um companheiro só, para a pessoa, nos
-dois apps.
+três apps.
 </details>
 
 <details>
 <summary><b>Drill 3 —</b> Você quer que o Mentor volte a atender sessões sem contexto, com o prompt do Wallet. Quantos lugares precisa mudar?</summary>
 
-**Dois, e o segundo é o que se esquece.**
+**Só um, e não é o que a pergunta espera** — a correção de 2026-09-04 (DEM-106,
+quando Health ganhou seu próprio prompt) já resolveu metade disto.
 
-1. `SecurityConfig`: trocar `hasAnyAuthority(...)` por `authenticated()` em
-   `/api/mentor/**`.
-2. `GetMentorReplyUseCaseImpl`: **já** trata contexto nulo caindo no caminho
-   Wallet — a linha decisiva é `boolean isAcademy = appContext ==
-   AppContextEnum.ACADEMY`, então qualquer valor que não seja `ACADEMY`
-   (inclusive `null`) usa `buildForWallet`. Verificado. Mas isso hoje é
-   inalcançável, porque o `SecurityConfig` barra antes; ao abrir a rota, esse
-   caminho passa a ser executável e precisa de teste próprio.
+1. `SecurityConfig`: `hasAnyAuthority(...)` hoje já lista as três authorities
+   (`WALLET`, `ACADEMY`, `HEALTH`) — sessão sem contexto continua sendo a
+   única barrada em `/api/mentor/**`, então esse é o único ponto que ainda
+   precisaria mudar (para `authenticated()`).
+2. `GetMentorReplyUseCaseImpl` **já não tem mais** o `isAcademy ? ... : buildForWallet`
+   binário que esta pergunta pressupõe — ele foi deliberadamente substituído
+   por um branch exaustivo (`walletShaped` cobre `null` e `WALLET`, mais um
+   branch dedicado para `ACADEMY` e outro para `HEALTH`) que **recusa**
+   qualquer contexto sem prompt (`UnsupportedMentorContextException`) em vez
+   de cair no `else` do Wallet por omissão — exatamente para que abrir a rota
+   para um contexto futuro sem prompt pronto quebre alto, não vaze o
+   portfólio real. `null` continua mapeando para Wallet **de propósito**
+   (comentário no código: token antigo sem a claim), então o resultado
+   prático desta pergunta não muda — mas o motivo de estar seguro mudou de
+   "é o caminho `else`" para "é um branch nomeado, com um refuse-by-default
+   ao lado dele".
 
-E há um terceiro efeito, não óbvio: conversas do Mentor são escopadas por
+E o efeito que continua não óbvio: conversas do Mentor são escopadas por
 `app_context` no banco (`V27`). Uma sessão sem contexto passa a ter uma
 visibilidade indefinida sobre conversas existentes. **Verifique isso antes de
 fazer a mudança.**
@@ -400,9 +458,13 @@ aponta para ambientes diferentes.
 
 ## 8. Se você fosse mudar algo aqui
 
-- **Adicionar um terceiro app** → o enum, as regras de rota e a coluna
-  `app_context` já suportam. O trabalho real é decidir, endpoint por endpoint,
-  em qual das três categorias da §5 da visão geral ele cai.
+- **Adicionar um quarto app** (Health foi o terceiro, já em produção — a
+  prova de que este item já foi feito uma vez) → o enum, as regras de rota e
+  a coluna `app_context` já suportam mais um valor. O trabalho real é
+  decidir, endpoint por endpoint, em qual das quatro categorias da §5 da
+  visão geral ele cai — e, do lado Flutter, decidir se a UI de login/cadastro
+  do novo app reaproveita `LoginForm`/`SignupForm` (Wallet/Academy) ou
+  implementa a própria tela (o caminho que Health escolheu — §3).
 - **Revogar access tokens** → exige mudança de arquitetura (blacklist ou
   tokens stateful). Hoje é impossível por design.
 - **Papéis de admin** → `@EnableMethodSecurity` já está ligado, sem nenhum uso.

@@ -3,6 +3,7 @@ package com.jf.PetApp.infrastructure.controller.auth;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -104,6 +105,21 @@ class AuthControllerTest {
                                 {"email":"","password":"Str0ngPass"}"""))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
+    }
+
+    @Test
+    void login_WithUnrecognizedAppContextValue_Returns400WithoutReachingTheUseCase() throws Exception {
+        // AppContextEnum.fromRequestValue runs directly in the controller, before the (here
+        // mocked) use case is ever called — a client typo must fail loudly rather than silently
+        // mint a session with no app_context claim (see fatia 01, §4.1).
+        mockMvc.perform(post("/auth/login")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"email":"investor@test.com","password":"Str0ngPass","appContext":"walet"}"""))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("INVALID_REQUEST"));
+
+        verifyNoInteractions(loginUseCase);
     }
 
     // ── /auth/google ─────────────────────────────────────────────────────
