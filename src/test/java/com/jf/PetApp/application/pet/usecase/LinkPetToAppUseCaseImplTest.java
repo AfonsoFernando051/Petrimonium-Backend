@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.pet.usecase;
 
+import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.pet.port.PetRepositoryPort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.Pet;
@@ -57,18 +58,22 @@ class LinkPetToAppUseCaseImplTest {
     }
 
     @Test
-    void execute_WhenPetIdDoesNotExist_ThrowsInsteadOfCallingLink() {
+    void execute_WhenPetIdDoesNotExist_ThrowsResourceNotFoundInsteadOfCallingLink() {
         User user = new User();
         user.setId(USER_ID);
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(user));
         when(petRepository.findById(999)).thenReturn(Optional.empty());
 
-        assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, 999, AppContextEnum.WALLET));
+        assertThrows(ResourceNotFoundException.class, () -> useCase.execute(EMAIL, 999, AppContextEnum.WALLET));
         verify(petRepository, never()).link(any(), any(), any());
     }
 
     @Test
-    void execute_WhenPetBelongsToAnotherUser_ThrowsInsteadOfCallingLink() {
+    void execute_WhenPetBelongsToAnotherUser_ThrowsResourceNotFoundInsteadOfCallingLink() {
+        // 404, not 400: a pet owned by someone else must look the same to the caller as a pet id
+        // that doesn't exist at all — this is the same "not found or not yours" pattern Investment
+        // and Health already use, and it keeps ownership probing from being distinguishable from a
+        // plain typo in the id.
         User user = new User();
         user.setId(USER_ID);
         User someoneElse = new User();
@@ -80,8 +85,8 @@ class LinkPetToAppUseCaseImplTest {
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(user));
         when(petRepository.findById(3)).thenReturn(Optional.of(pet));
 
-        IllegalArgumentException thrown = assertThrows(
-                IllegalArgumentException.class, () -> useCase.execute(EMAIL, 3, AppContextEnum.WALLET));
+        ResourceNotFoundException thrown = assertThrows(
+                ResourceNotFoundException.class, () -> useCase.execute(EMAIL, 3, AppContextEnum.WALLET));
         assertEquals("Pet not found for this user", thrown.getMessage());
         verify(petRepository, never()).link(any(), any(), any());
     }
