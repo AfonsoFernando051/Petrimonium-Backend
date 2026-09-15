@@ -184,6 +184,53 @@ class RateLimitingFilterTest {
     }
 
     /**
+     * The Mentor endpoints call a paid LLM API on every request; unlike the progression group
+     * they had no rate limit at all before, so an authenticated user could generate unlimited
+     * chat completions with only the manual app.mentor.enabled kill switch as a brake.
+     */
+    @Test
+    void doFilterInternal_MentorChat_IsRateLimitedAt20PerMinute() throws Exception {
+        when(request.getRequestURI()).thenReturn("/api/mentor/chat");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.30");
+
+        for (int i = 0; i < 20; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(20)).doFilter(request, response);
+    }
+
+    @Test
+    void doFilterInternal_MentorSuggestions_IsRateLimitedAt20PerMinute() throws Exception {
+        when(request.getRequestURI()).thenReturn("/api/mentor/suggestions");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.31");
+
+        for (int i = 0; i < 20; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(20)).doFilter(request, response);
+    }
+
+    @Test
+    void doFilterInternal_MentorChatAndSuggestions_TrackedIndependentlyPerPathForSameIp() throws Exception {
+        when(request.getRemoteAddr()).thenReturn("10.0.0.32");
+
+        when(request.getRequestURI()).thenReturn("/api/mentor/chat");
+        for (int i = 0; i < 20; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        when(request.getRequestURI()).thenReturn("/api/mentor/suggestions");
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response, never()).setStatus(429);
+    }
+
+    /**
      * DEM-78: requestLog never dropped a key once created, so a client that made one request
      * and never came back left a permanent entry — unbounded growth over the app's lifetime.
      */

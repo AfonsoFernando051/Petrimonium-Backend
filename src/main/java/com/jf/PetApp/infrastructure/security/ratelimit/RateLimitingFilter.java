@@ -55,7 +55,16 @@ public class RateLimitingFilter extends OncePerRequestFilter {
                             || path.equals("/api/v1/missions")
                             || path.equals("/api/v1/gamification/summary")
                             || (path.startsWith("/api/v1/learning/lessons/") && path.endsWith("/complete")),
-                    60, Duration.ofSeconds(60)));
+                    60, Duration.ofSeconds(60)),
+            // The Mentor chat/suggestions endpoints call a paid LLM API (Anthropic/Gemini) on
+            // every request. Unlike the progression rule above, legitimate use of these two is
+            // inherently bursty but low-frequency (a person typing messages, not a screen
+            // re-polling), so a much tighter cap is both safe for normal usage and an actual
+            // cost backstop — today app.mentor.enabled is the only other brake, and it's a
+            // manual, all-or-nothing kill switch, not a per-user/IP limit.
+            new Rule(
+                    path -> path.equals("/api/mentor/chat") || path.equals("/api/mentor/suggestions"),
+                    20, Duration.ofSeconds(60)));
 
     private final ConcurrentHashMap<String, Deque<Instant>> requestLog = new ConcurrentHashMap<>();
 
