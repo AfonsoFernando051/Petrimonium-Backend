@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import com.jf.PetApp.core.domain.Finance;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,7 +23,7 @@ public class FinanceJpaEntity {
 
     private BigDecimal balance;
 
-    @OneToOne(optional = false)
+    @OneToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private UserJpaEntity user;
 
