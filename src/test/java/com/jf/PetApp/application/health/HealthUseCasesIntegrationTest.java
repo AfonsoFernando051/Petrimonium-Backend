@@ -942,6 +942,54 @@ class HealthUseCasesIntegrationTest {
                 null, null, null)).isEmpty());
     }
 
+    /**
+     * ListHealthTransactionsUseCaseImpl used to fetch every transaction the user has ever
+     * recorded and filter/truncate it in memory -- an unbounded {@code SELECT *}. Calling the
+     * store directly here (bypassing the use case's own hardcoded cap) proves the {@code LIMIT}
+     * is enforced by the SQL query itself, not by truncating an already-fetched in-memory list
+     * afterward: with 3 rows in the table and a limit of 2, exactly the 2 most recent must come
+     * back, in the same transaction_date desc, id desc order the unfiltered listing already uses.
+     */
+    @Test
+    void storeListTransactionsAppliesTheLimitInSqlNotInMemory() {
+        onboard(ANA, CountryCode.BR, CurrencyCode.BRL, "pt-BR");
+        long checking = account(ANA, "Corrente", "1000.00", CurrencyCode.BRL);
+        entry(ANA, checking, "EXPENSE", "REALIZED", "10.00", CurrencyCode.BRL, "food", day(1), "lim-1");
+        entry(ANA, checking, "EXPENSE", "REALIZED", "10.00", CurrencyCode.BRL, "food", day(2), "lim-2");
+        entry(ANA, checking, "EXPENSE", "REALIZED", "10.00", CurrencyCode.BRL, "food", day(3), "lim-3");
+        long userId = users.get(ANA).getId();
+
+        List<Transaction> limited = store.listTransactions(userId, null, null, null, null, null, 2);
+
+        assertEquals(2, limited.size());
+        assertEquals(day(3), limited.get(0).date());
+        assertEquals(day(2), limited.get(1).date());
+    }
+
+    /**
+     * Same filters as {@link #filtersNarrowTheEntryListWithoutLeavingTheUsersOwnData}, but
+     * exercised directly at the store so the SQL predicates themselves are under test, not just
+     * their observable effect through the use case. Category comparison in particular must stay
+     * case- and whitespace-insensitive now that it runs as SQL rather than
+     * {@code HealthValidation#normalizeCategory} in a Java stream.
+     */
+    @Test
+    void storeListTransactionsFiltersInSqlCaseAndWhitespaceInsensitively() {
+        onboard(ANA, CountryCode.BR, CurrencyCode.BRL, "pt-BR");
+        long checking = account(ANA, "Corrente", "1000.00", CurrencyCode.BRL);
+        entry(ANA, checking, "EXPENSE", "REALIZED", "10.00", CurrencyCode.BRL, "  Food  ", day(2), "cat-1");
+        entry(ANA, checking, "EXPENSE", "REALIZED", "20.00", CurrencyCode.BRL, "leisure", day(3), "cat-2");
+        long userId = users.get(ANA).getId();
+
+        List<Transaction> matched = store.listTransactions(userId, null, null, null, "food", null, 500);
+
+        assertEquals(1, matched.size());
+        // CreateHealthTransactionUseCaseImpl already trims the category before persisting it;
+        // what this test is really pinning down is that the SQL filter matches "food" against
+        // the stored "Food" case-insensitively, the same as before the filter moved into SQL.
+        assertEquals("Food", matched.get(0).category());
+    }
+
     @Test
     void theStoreNeverReturnsAnotherUsersRowEvenWhenAskedDirectlyById() {
         onboard(ANA, CountryCode.BR, CurrencyCode.BRL, "pt-BR");

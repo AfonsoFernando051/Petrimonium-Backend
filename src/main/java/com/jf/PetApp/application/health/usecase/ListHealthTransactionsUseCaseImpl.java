@@ -15,19 +15,22 @@ import com.jf.PetApp.application.health.service.RecurrenceMaterializer;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.YearMonth;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
 
 @Service
 public class ListHealthTransactionsUseCaseImpl implements ListHealthTransactionsUseCase {
+
+    /**
+     * Bounds what used to be an unbounded {@code SELECT *}. The listing endpoint still returns a
+     * plain JSON array (see {@code HealthTransactionController}) rather than a paginated envelope
+     * -- the mobile client neither sends nor expects page/size params today (it decodes a bare
+     * list) -- so introducing a page contract here would be a breaking API change made without a
+     * mobile consumer ready for it. This cap is the conservative half of the fix: move filtering
+     * into SQL and stop scanning/returning every row a user has ever recorded, without changing
+     * the response shape. A real pagination contract is a separate, larger change.
+     */
+    private static final int MAX_RESULTS = 500;
 
     private final HealthStore store;
     private final HealthLookups lookups;
@@ -49,15 +52,12 @@ public class ListHealthTransactionsUseCaseImpl implements ListHealthTransactions
         } else {
             recurrences.materializeRecurrences(userId, YearMonth.now());
         }
-        EntryStatus wantedStatus = filter == null || filter.status() == null || filter.status().isBlank()
+        if (filter == null) {
+            return store.listTransactions(userId, null, null, null, null, null, MAX_RESULTS);
+        }
+        EntryStatus wantedStatus = filter.status() == null || filter.status().isBlank()
                 ? null : enumValue(EntryStatus.class, filter.status(), "status");
-        return store.listTransactions(userId).stream()
-                .filter(tx -> filter == null || filter.from() == null || !tx.date().isBefore(filter.from()))
-                .filter(tx -> filter == null || filter.to() == null || !tx.date().isAfter(filter.to()))
-                .filter(tx -> filter == null || filter.accountId() == null || tx.accountId() == filter.accountId())
-                .filter(tx -> filter == null || filter.category() == null || filter.category().isBlank()
-                        || Objects.equals(normalizeCategory(tx.category()), normalizeCategory(filter.category())))
-                .filter(tx -> wantedStatus == null || tx.status() == wantedStatus)
-                .toList();
+        String category = filter.category() == null || filter.category().isBlank() ? null : filter.category();
+        return store.listTransactions(userId, filter.from(), filter.to(), filter.accountId(), category, wantedStatus, MAX_RESULTS);
     }
 }

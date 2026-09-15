@@ -16,6 +16,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.YearMonth;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -277,6 +278,42 @@ public class JdbcHealthStore implements HealthStore {
         return jdbc.query("select * from " + t("health_transactions")
                 + " where user_id=? and deleted_at is null order by transaction_date desc,id desc",
                 this::mapTransaction, userId);
+    }
+
+    @Override
+    public List<Transaction> listTransactions(long userId, LocalDate from, LocalDate to, Long accountId,
+                                              String category, EntryStatus status, int limit) {
+        StringBuilder sql = new StringBuilder("select * from " + t("health_transactions")
+                + " where user_id=? and deleted_at is null");
+        List<Object> params = new ArrayList<>();
+        params.add(userId);
+
+        if (from != null) {
+            sql.append(" and transaction_date>=?");
+            params.add(from);
+        }
+        if (to != null) {
+            sql.append(" and transaction_date<=?");
+            params.add(to);
+        }
+        if (accountId != null) {
+            sql.append(" and account_id=?");
+            params.add(accountId);
+        }
+        if (category != null && !category.isBlank()) {
+            // Same normalization as HealthValidation#normalizeCategory (trim + lowercase),
+            // applied to both sides so "Food", " food " and "food" all match.
+            sql.append(" and lower(trim(category))=lower(trim(?))");
+            params.add(category);
+        }
+        if (status != null) {
+            sql.append(" and entry_status=?");
+            params.add(status.name());
+        }
+        sql.append(" order by transaction_date desc,id desc limit ?");
+        params.add(limit);
+
+        return jdbc.query(sql.toString(), this::mapTransaction, params.toArray());
     }
 
     @Override

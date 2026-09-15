@@ -36,6 +36,19 @@ public interface HealthStore {
     BigDecimal accountBalance(long userId, Account account);
 
     List<Transaction> listTransactions(long userId);
+
+    /**
+     * Same rows as {@link #listTransactions(long)}, but with the caller's filters applied in SQL
+     * (a {@code WHERE} per non-null argument) and a hard {@code LIMIT}, instead of fetching every
+     * transaction the user has ever recorded and filtering/truncating in memory. {@code category}
+     * is compared case- and whitespace-insensitively, matching {@code
+     * HealthValidation#normalizeCategory}. Used by the transaction-history listing endpoint;
+     * other callers that genuinely need the complete unfiltered set (recurrence updates, the
+     * monthly summary) keep using the single-argument overload above.
+     */
+    List<Transaction> listTransactions(long userId, LocalDate from, LocalDate to, Long accountId,
+                                       String category, EntryStatus status, int limit);
+
     Optional<Transaction> findTransaction(long userId, long transactionId);
     Optional<Transaction> findTransactionByIdempotencyKey(long userId, String key);
     List<Transaction> findTransactionsByTransfer(long userId, long transferId);
