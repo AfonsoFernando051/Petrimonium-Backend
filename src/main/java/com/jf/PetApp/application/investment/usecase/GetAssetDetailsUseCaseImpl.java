@@ -1,6 +1,7 @@
 package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.application.investment.cache.AssetDetailsCache;
+import com.jf.PetApp.application.investment.cache.QuoteCache;
 import com.jf.PetApp.application.investment.dto.AssetDetailsResponseDTO;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.DividendDTO;
@@ -44,6 +45,7 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
     private final ExternalInvestmentApiPort externalApi;
     private final InvestmentRepositoryPort investmentRepo;
     private final AssetDetailsCache cache;
+    private final QuoteCache quoteCache;
     private final AssetDetailsResponseMapper mapper;
     private final UserPositionCalculator positionCalculator;
 
@@ -51,12 +53,14 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
             ExternalInvestmentApiPort externalApi,
             InvestmentRepositoryPort investmentRepo,
             AssetDetailsCache cache,
+            QuoteCache quoteCache,
             AssetDetailsResponseMapper mapper,
             UserPositionCalculator positionCalculator
     ) {
         this.externalApi = externalApi;
         this.investmentRepo = investmentRepo;
         this.cache = cache;
+        this.quoteCache = quoteCache;
         this.mapper = mapper;
         this.positionCalculator = positionCalculator;
     }
@@ -77,8 +81,20 @@ public class GetAssetDetailsUseCaseImpl implements GetAssetDetailsUseCase {
         Optional<Map<String, Object>> enrichedOpt = externalApi.getEnrichedQuote(normalizedTicker);
 
         if (enrichedOpt.isEmpty()) {
-            // Fallback: try the simpler getQuote for basic price data
-            Optional<AssetQuoteResponse> simpleQuote = externalApi.getQuote(normalizedTicker);
+            // Fallback: try the simpler getQuote for basic price data. Cached separately (short
+            // TTL, see QuoteCache) from the enriched response above it: this is the same plain
+            // quote GetPortfolioHoldingsUseCaseImpl fetches, so repeatedly opening this asset's
+            // details page while the enriched provider is degraded shouldn't re-hit the external
+            // API for a price that can't have moved in the last few seconds.
+            AssetQuoteResponse cachedQuote = quoteCache.get(normalizedTicker);
+            Optional<AssetQuoteResponse> simpleQuote = cachedQuote != null
+                    ? Optional.of(cachedQuote)
+                    : externalApi.getQuote(normalizedTicker);
+            // Only a genuine, priced, non-simulated quote is worth caching -- same policy as
+            // GetPortfolioHoldingsUseCaseImpl, and this line intentionally does not change
+            // whether a simulated/priceless quote is used below, only whether it gets cached.
+            simpleQuote.filter(quote -> !quote.simulated() && quote.regularMarketPrice() != null)
+                    .ifPresent(quote -> quoteCache.put(normalizedTicker, quote));
             if (simpleQuote.isEmpty()) {
                 UserPositionDTO userPosition = computeUserPosition(email, normalizedTicker, null);
                 return mapper.unavailable(normalizedTicker, userPosition);

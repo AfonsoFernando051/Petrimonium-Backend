@@ -1,5 +1,6 @@
 package com.jf.PetApp.application.investment.usecase;
 
+import com.jf.PetApp.application.investment.cache.QuoteCache;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
@@ -36,7 +37,9 @@ class GetPortfolioHoldingsUseCaseImplTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        useCase = new GetPortfolioHoldingsUseCaseImpl(investmentRepositoryPort, externalInvestmentApiPort);
+        // A real (not mocked) cache: cache behavior itself is the thing several tests below
+        // assert on, and it must be a fresh instance per test so no state leaks between them.
+        useCase = new GetPortfolioHoldingsUseCaseImpl(investmentRepositoryPort, externalInvestmentApiPort, new QuoteCache());
     }
 
     private Investment lot(Integer id, String ticker, double quantity, double purchasePrice) {
@@ -209,5 +212,50 @@ class GetPortfolioHoldingsUseCaseImplTest {
         assertEquals(PriceStatus.STALE_PURCHASE_PRICE, result.priceStatus());
         assertMoney(30.0, result.currentPrice());
         assertMoney(300.0, result.currentValue());
+    }
+
+    /**
+     * The whole point of QuoteCache: opening the Wallet dashboard calls holdings, summary and
+     * allocation back-to-back, and summary/allocation both delegate to this same use case
+     * (GetPortfolioSummaryUseCaseImpl, GetPortfolioAllocationUseCaseImpl). Without a cache shared
+     * across calls, each of those three requests independently re-fetched every ticker from the
+     * external provider — a single dashboard load tripling calls to a rate-limited HTTP API.
+     */
+    @Test
+    void execute_CalledTwiceWithinTtl_FetchesQuoteFromExternalApiOnlyOnce() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10.0, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4"))
+                .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 35.0, "BRL")));
+
+        InvestmentLotDTO first = useCase.execute(EMAIL).get(0);
+        InvestmentLotDTO second = useCase.execute(EMAIL).get(0);
+
+        assertMoney(35.0, first.currentPrice());
+        assertMoney(35.0, second.currentPrice());
+        assertEquals(PriceStatus.LIVE, second.priceStatus());
+        verify(externalInvestmentApiPort, times(1)).getQuote("PETR4");
+    }
+
+    @Test
+    void execute_WhenQuoteMissing_DoesNotCacheSoTheNextCallRetriesTheProvider() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "UNKNOWN4", 10.0, 50.0)));
+        when(externalInvestmentApiPort.getQuote("UNKNOWN4")).thenReturn(Optional.empty());
+
+        useCase.execute(EMAIL);
+        useCase.execute(EMAIL);
+
+        verify(externalInvestmentApiPort, times(2)).getQuote("UNKNOWN4");
+    }
+
+    @Test
+    void execute_WithSimulatedQuote_DoesNotCacheTheFabricatedPrice() {
+        when(investmentRepositoryPort.findByUserEmail(EMAIL)).thenReturn(List.of(lot(1, "PETR4", 10, 30.0)));
+        when(externalInvestmentApiPort.getQuote("PETR4"))
+                .thenReturn(Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
+
+        useCase.execute(EMAIL);
+        useCase.execute(EMAIL);
+
+        verify(externalInvestmentApiPort, times(2)).getQuote("PETR4");
     }
 }

@@ -1,6 +1,7 @@
 package com.jf.PetApp.application.investment.usecase;
 
 import com.jf.PetApp.application.investment.cache.AssetDetailsCache;
+import com.jf.PetApp.application.investment.cache.QuoteCache;
 import com.jf.PetApp.application.investment.dto.AssetDetailsResponseDTO;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.DividendDTO;
@@ -34,6 +35,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -51,13 +53,18 @@ class GetAssetDetailsUseCaseImplTest {
     @Mock
     private AssetDetailsCache cache;
 
+    // Real (not mocked) instance: the quote-cache-reuse tests below assert on its actual
+    // TTL/hit behavior, same reasoning as GetPortfolioHoldingsUseCaseImplTest.
+    private QuoteCache quoteCache;
+
     private GetAssetDetailsUseCaseImpl useCase;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        quoteCache = new QuoteCache();
         useCase = new GetAssetDetailsUseCaseImpl(
-            externalApi, investmentRepo, cache,
+            externalApi, investmentRepo, cache, quoteCache,
             new AssetDetailsResponseMapper(), new UserPositionCalculator()
         );
         when(cache.get(any())).thenReturn(null);
@@ -343,6 +350,27 @@ class GetAssetDetailsUseCaseImplTest {
 
         assertEquals(35.0, result.currentPrice());
         assertEquals("PARTIAL", result.dataStatus());
+    }
+
+    /**
+     * Same QuoteCache GetPortfolioHoldingsUseCaseImpl uses, applied to the simpleQuote fallback:
+     * repeatedly opening this asset's details page while the enriched provider is degraded must
+     * not re-hit getQuote for a price that can't have moved within the cache's TTL.
+     */
+    @Test
+    void execute_EnrichedQuoteEmptyCalledTwiceWithinTtl_FetchesSimpleQuoteFromExternalApiOnlyOnce() {
+        when(investmentRepo.findByUserEmail(EMAIL)).thenReturn(List.of());
+        when(externalApi.getEnrichedQuote("PETR4")).thenReturn(Optional.empty());
+        when(externalApi.getQuote("PETR4"))
+                .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 35.0, "BRL", 1.5)));
+        when(externalApi.getDividends("PETR4")).thenReturn(List.of());
+
+        AssetDetailsResponseDTO first = useCase.execute(EMAIL, "PETR4");
+        AssetDetailsResponseDTO second = useCase.execute(EMAIL, "PETR4");
+
+        assertEquals(35.0, first.currentPrice());
+        assertEquals(35.0, second.currentPrice());
+        verify(externalApi, times(1)).getQuote("PETR4");
     }
 
     @Test

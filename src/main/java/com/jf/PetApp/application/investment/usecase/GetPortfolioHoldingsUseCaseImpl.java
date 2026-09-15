@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import com.jf.PetApp.application.investment.cache.QuoteCache;
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.dto.InvestmentLotDTO;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
@@ -28,11 +29,14 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
 
     private final InvestmentRepositoryPort investmentRepositoryPort;
     private final ExternalInvestmentApiPort externalInvestmentApiPort;
+    private final QuoteCache quoteCache;
 
     public GetPortfolioHoldingsUseCaseImpl(InvestmentRepositoryPort investmentRepositoryPort,
-                                            ExternalInvestmentApiPort externalInvestmentApiPort) {
+                                            ExternalInvestmentApiPort externalInvestmentApiPort,
+                                            QuoteCache quoteCache) {
         this.investmentRepositoryPort = investmentRepositoryPort;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
+        this.quoteCache = quoteCache;
     }
 
     @Override
@@ -86,18 +90,29 @@ public class GetPortfolioHoldingsUseCaseImpl implements GetPortfolioHoldingsUseC
         if (type == InvestmentType.FIXED_INCOME) {
             return new PricedQuote(fallbackPrice, PriceStatus.NOT_QUOTED);
         }
+
+        // Opening the Wallet dashboard calls holdings/summary/allocation in quick succession, and
+        // summary/allocation both delegate to this use case — without this cache each of those
+        // three requests independently re-fetched every ticker from the external provider.
+        AssetQuoteResponse cachedQuote = quoteCache.get(ticker);
+        if (cachedQuote != null) {
+            return new PricedQuote(money(BigDecimal.valueOf(cachedQuote.regularMarketPrice())), PriceStatus.LIVE);
+        }
+
         try {
             return externalInvestmentApiPort.getQuote(ticker)
                     // A placeholder quote is not a price. Dropping it here means it takes the
                     // same STALE_PURCHASE_PRICE path as a provider outage, so a fabricated
                     // number can never reach a real portfolio valuation labelled as LIVE.
                     .filter(quote -> !quote.simulated())
-                    .map(AssetQuoteResponse::regularMarketPrice)
-                    .filter(price -> price != null)
-                    // The quote feed is an external market-data source and stays
-                    // Double; this is the single boundary where it enters the
-                    // BigDecimal ledger chain.
-                    .map(price -> new PricedQuote(money(BigDecimal.valueOf(price)), PriceStatus.LIVE))
+                    .filter(quote -> quote.regularMarketPrice() != null)
+                    .map(quote -> {
+                        // Only a genuine, priced, non-simulated quote is worth caching: caching a
+                        // "no quote" result would risk papering over a transient provider outage
+                        // for the whole TTL instead of retrying on the very next request.
+                        quoteCache.put(ticker, quote);
+                        return new PricedQuote(money(BigDecimal.valueOf(quote.regularMarketPrice())), PriceStatus.LIVE);
+                    })
                     .orElseGet(() -> {
                         log.warn("No quote available for ticker {}; reporting purchase price as stale", ticker);
                         return new PricedQuote(fallbackPrice, PriceStatus.STALE_PURCHASE_PRICE);
