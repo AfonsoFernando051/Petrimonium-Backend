@@ -87,7 +87,7 @@ class DemoAccountResetAdapterTest {
         // não é JPA, por isso as tabelas dele nem existem aqui. O que este
         // teste verifica é o lado JPA da limpeza; a parte do Health tem
         // cobertura própria em UserDataErasureCoverageTest.
-        UserDataEraser eraser = new UserDataEraser(
+        UserDataErasureAdapter eraser = new UserDataErasureAdapter(
                 investmentRepository, petRepository, petAppLinkRepository, lessonProgressRepository, xpEventRepository,
                 achievementUnlockRepository, activityLogRepository, missionCompletionRepository,
                 mentorConversationRepository, refreshTokenRepository, passwordResetTokenRepository,

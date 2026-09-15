@@ -24,7 +24,7 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
  */
 class UserDataErasureCoverageTest {
 
-    /** Apagadas explicitamente pelo {@code UserDataEraser}. */
+    /** Apagadas explicitamente pelo {@code UserDataErasureAdapter}. */
     private static final Set<String> ERASED_EXPLICITLY = Set.of(
         "achievement_unlocks", "activity_log", "lesson_progress", "mission_completions",
         "xp_events", "jf_investments", "jf_pets", "jf_pet_app_links", "jf_mentor_conversations", "jf_refresh_tokens",
@@ -64,7 +64,7 @@ class UserDataErasureCoverageTest {
             assertTrue(
                 semTratamento.isEmpty(),
                 "tabelas com user_id que ninguém apaga ao remover a conta: " + semTratamento
-                    + " — trate-as no UserDataEraser e declare-as neste teste");
+                    + " — trate-as no UserDataErasureAdapter e declare-as neste teste");
 
             Set<String> declaradasQueNaoExistem = new TreeSet<>(cobertas);
             declaradasQueNaoExistem.removeAll(naBase);

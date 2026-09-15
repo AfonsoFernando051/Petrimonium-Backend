@@ -1,8 +1,8 @@
 package com.jf.PetApp.application.settings.usecase;
 
+import com.jf.PetApp.application.user.port.UserDataErasurePort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
-import com.jf.PetApp.infrastructure.repository.user.UserDataEraser;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
@@ -22,7 +22,7 @@ class DeleteAccountUseCaseImplTest {
     private UserRepository userRepository;
 
     @Mock
-    private UserDataEraser userDataEraser;
+    private UserDataErasurePort userDataEraser;
 
     @InjectMocks
     private DeleteAccountUseCaseImpl deleteAccountUseCase;

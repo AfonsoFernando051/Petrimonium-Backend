@@ -26,9 +26,9 @@ public class DemoAccountResetAdapter implements DemoAccountResetPort {
     private static final Set<String> DEMO_USERNAMES = Set.of("admin2");
 
     private final SpringUserJpaRepository userJpaRepository;
-    private final UserDataEraser userDataEraser;
+    private final UserDataErasureAdapter userDataEraser;
 
-    public DemoAccountResetAdapter(SpringUserJpaRepository userJpaRepository, UserDataEraser userDataEraser) {
+    public DemoAccountResetAdapter(SpringUserJpaRepository userJpaRepository, UserDataErasureAdapter userDataEraser) {
         this.userJpaRepository = userJpaRepository;
         this.userDataEraser = userDataEraser;
     }

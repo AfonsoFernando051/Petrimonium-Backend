@@ -5,9 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.jf.PetApp.application.user.port.UserDataErasurePort;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
-import com.jf.PetApp.infrastructure.repository.user.UserDataEraser;
 
 /**
  * Exclusão definitiva, sem período de carência: o utilizador pede e os dados
@@ -22,9 +22,9 @@ import com.jf.PetApp.infrastructure.repository.user.UserDataEraser;
 public class DeleteAccountUseCaseImpl implements DeleteAccountUseCase {
 
     private final UserRepository userRepository;
-    private final UserDataEraser userDataEraser;
+    private final UserDataErasurePort userDataEraser;
 
-    public DeleteAccountUseCaseImpl(UserRepository userRepository, UserDataEraser userDataEraser) {
+    public DeleteAccountUseCaseImpl(UserRepository userRepository, UserDataErasurePort userDataEraser) {
         this.userRepository = userRepository;
         this.userDataEraser = userDataEraser;
     }

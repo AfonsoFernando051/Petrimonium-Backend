@@ -14,7 +14,7 @@ public interface HealthStore {
     /**
      * Apaga tudo o que este utilizador tem no contexto Health. Usado pela
      * exclusão de conta e pelo reset da conta de demonstração — ver
-     * {@code UserDataEraser}. O contexto Health não é JPA, por isso nada aqui
+     * {@code UserDataErasureAdapter}. O contexto Health não é JPA, por isso nada aqui
      * é apanhado pela cascata do UserJpaEntity.
      */
     void deleteAllForUser(long userId);

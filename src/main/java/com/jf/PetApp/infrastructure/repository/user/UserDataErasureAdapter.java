@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.jf.PetApp.application.health.port.HealthStore;
+import com.jf.PetApp.application.user.port.UserDataErasurePort;
 import com.jf.PetApp.infrastructure.entity.SimulatedPortfolioJpaEntity;
 import com.jf.PetApp.infrastructure.repository.InvestmentRepository;
 import com.jf.PetApp.infrastructure.repository.PetRepository;
@@ -44,7 +45,7 @@ import com.jf.PetApp.infrastructure.repository.mentor.SpringMentorConversationJp
  * falha.
  */
 @Component
-public class UserDataEraser {
+public class UserDataErasureAdapter implements UserDataErasurePort {
 
     private final InvestmentRepository investmentRepository;
     private final PetRepository petRepository;
@@ -62,7 +63,7 @@ public class UserDataEraser {
     private final SimulatedPositionRepository simulatedPositionRepository;
     private final HealthStore healthStore;
 
-    public UserDataEraser(
+    public UserDataErasureAdapter(
             InvestmentRepository investmentRepository,
             PetRepository petRepository,
             PetAppLinkRepository petAppLinkRepository,
@@ -99,6 +100,7 @@ public class UserDataEraser {
      * @param userId id do utilizador; {@code email} porque o portfólio real
      *               ainda é indexado por e-mail, não por id.
      */
+    @Override
     @Transactional
     public void eraseAll(Long userId, String email) {
         // Health primeiro: é o único contexto fora do JPA e tem a cadeia de

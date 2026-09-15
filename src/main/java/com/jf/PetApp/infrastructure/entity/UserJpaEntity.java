@@ -106,7 +106,7 @@ public class UserJpaEntity {
      * not done, no investor profile, no finance row. orphanRemoval on the
      * finance association deletes the previous row on save; pets are no
      * longer part of this entity's graph (one per app, not one shared row —
-     * see PetJpaEntity) and are deleted explicitly by UserDataEraser instead.
+     * see PetJpaEntity) and are deleted explicitly by UserDataErasureAdapter instead.
      */
     public void resetToFreshSignupState() {
         this.hasAnsweredOnboarding = false;
