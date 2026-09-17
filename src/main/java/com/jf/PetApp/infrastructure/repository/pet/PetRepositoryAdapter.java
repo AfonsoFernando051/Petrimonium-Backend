@@ -32,7 +32,16 @@ public class PetRepositoryAdapter implements PetRepositoryPort {
         this.userJpaRepository = userJpaRepository;
     }
 
+    // Read-only, but not optional: linkRepository.findByUser_IdAndAppContext(...) is itself
+    // transactional (Spring Data wraps every derived-query call), and that transaction closes the
+    // moment it returns — before this method's own .map() runs. That was invisible as long as
+    // PetAppLinkJpaEntity.pet was EAGER (link.getPet() came back fully loaded, no session needed
+    // to call toDomain() on it); now that it's LAZY, link.getPet() is a Hibernate proxy, and
+    // calling a real method on it outside a transaction throws LazyInitializationException (see
+    // PetRepositoryAdapterTest — it fails with exactly that exception if this annotation is
+    // removed). @Transactional here keeps one session open across both the query and the mapping.
     @Override
+    @Transactional(readOnly = true)
     public Optional<Pet> findByUserIdAndAppContext(Long userId, AppContextEnum appContext) {
         return linkRepository.findByUser_IdAndAppContext(userId, appContext)
                 .map(link -> link.getPet().toDomain(null));
