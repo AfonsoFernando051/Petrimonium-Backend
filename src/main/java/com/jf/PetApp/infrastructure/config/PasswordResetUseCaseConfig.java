@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import com.jf.PetApp.application.auth.port.PasswordEncoderPort;
 import com.jf.PetApp.application.auth.port.PasswordResetMailerPort;
 import com.jf.PetApp.application.auth.port.PasswordResetTokenRepositoryPort;
+import com.jf.PetApp.application.auth.port.RefreshTokenRepositoryPort;
 import com.jf.PetApp.application.auth.usecase.RequestPasswordResetUseCase;
 import com.jf.PetApp.application.auth.usecase.RequestPasswordResetUseCaseImpl;
 import com.jf.PetApp.application.auth.usecase.ResetPasswordUseCase;
@@ -28,8 +29,9 @@ public class PasswordResetUseCaseConfig {
     public ResetPasswordUseCase resetPasswordUseCase(
         UserRepository userRepository,
         PasswordResetTokenRepositoryPort tokenRepository,
-        PasswordEncoderPort passwordEncoder
+        PasswordEncoderPort passwordEncoder,
+        RefreshTokenRepositoryPort refreshTokenRepository
     ) {
-        return new ResetPasswordUseCaseImpl(userRepository, tokenRepository, passwordEncoder);
+        return new ResetPasswordUseCaseImpl(userRepository, tokenRepository, passwordEncoder, refreshTokenRepository);
     }
 }

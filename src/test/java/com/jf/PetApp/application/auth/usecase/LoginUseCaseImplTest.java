@@ -21,6 +21,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 class LoginUseCaseImplTest {
@@ -105,7 +106,63 @@ class LoginUseCaseImplTest {
         assertThrows(AuthenticationException.class, () ->
             loginUseCase.execute(new LoginCommand("missing@test.com", "any-password")));
 
-        verifyNoInteractions(passwordEncoder, refreshTokenIssuerService);
+        verifyNoInteractions(refreshTokenIssuerService);
+    }
+
+    /**
+     * The error message alone is not the whole answer surface. Returning before any hashing
+     * happens makes an unknown account answer measurably faster than a known one with a wrong
+     * password, which is a working account-enumeration oracle — the same thing
+     * {@code RequestPasswordResetUseCaseImpl} deliberately refuses to leak on the
+     * forgot-password path. So the miss path pays the same BCrypt cost as a real verification.
+     */
+    @Test
+    void execute_WithUnknownEmail_StillVerifiesAPasswordSoTheMissCostsTheSameAsAHit() {
+        when(userRepository.findByEmail("missing@test.com")).thenReturn(Optional.empty());
+        when(userRepository.findByUsername("missing@test.com")).thenReturn(Optional.empty());
+
+        assertThrows(AuthenticationException.class, () ->
+            loginUseCase.execute(new LoginCommand("missing@test.com", "any-password")));
+
+        verify(passwordEncoder).matches("any-password", LoginUseCaseImpl.NO_SUCH_USER_PASSWORD_HASH);
+    }
+
+    /**
+     * A Google-created account has {@code password == null} (see {@code User.createFromGoogle}).
+     * Such an account must never be reachable by the password path, and the null must never
+     * reach the encoder — both of which the dummy-hash substitution handles in one place.
+     */
+    @Test
+    void execute_ForAGoogleAccountWithNoLocalPassword_NeverPassesNullToTheEncoder() {
+        User googleUser = new User();
+        googleUser.setEmail("investor@test.com");
+        googleUser.setPassword(null);
+
+        when(userRepository.findByEmail("investor@test.com")).thenReturn(Optional.of(googleUser));
+
+        assertThrows(AuthenticationException.class, () ->
+            loginUseCase.execute(new LoginCommand("investor@test.com", "any-password")));
+
+        verify(passwordEncoder).matches("any-password", LoginUseCaseImpl.NO_SUCH_USER_PASSWORD_HASH);
+        verifyNoInteractions(refreshTokenIssuerService);
+    }
+
+    /**
+     * Guards the one way this could go wrong silently: if the dummy hash were ever replaced by
+     * something a caller can guess the plaintext of, {@code matches} would return true on the
+     * miss path and the "user was not found" branch would be the only thing left standing
+     * between an attacker and a token.
+     */
+    @Test
+    void execute_WithUnknownEmail_RefusesEvenIfTheDummyHashSomehowMatches() {
+        when(userRepository.findByEmail("missing@test.com")).thenReturn(Optional.empty());
+        when(userRepository.findByUsername("missing@test.com")).thenReturn(Optional.empty());
+        when(passwordEncoder.matches(anyString(), anyString())).thenReturn(true);
+
+        assertThrows(AuthenticationException.class, () ->
+            loginUseCase.execute(new LoginCommand("missing@test.com", "any-password")));
+
+        verifyNoInteractions(refreshTokenIssuerService);
     }
 
     @Test

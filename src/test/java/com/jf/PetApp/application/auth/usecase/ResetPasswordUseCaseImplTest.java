@@ -3,6 +3,7 @@ package com.jf.PetApp.application.auth.usecase;
 import com.jf.PetApp.application.auth.exception.PasswordResetTokenInvalidException;
 import com.jf.PetApp.application.auth.port.PasswordEncoderPort;
 import com.jf.PetApp.application.auth.port.PasswordResetTokenRepositoryPort;
+import com.jf.PetApp.application.auth.port.RefreshTokenRepositoryPort;
 import com.jf.PetApp.application.common.exception.ResourceNotFoundException;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.PasswordResetToken;
@@ -38,12 +39,15 @@ class ResetPasswordUseCaseImplTest {
     @Mock
     private PasswordEncoderPort passwordEncoder;
 
+    @Mock
+    private RefreshTokenRepositoryPort refreshTokenRepository;
+
     private ResetPasswordUseCaseImpl useCase;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        useCase = new ResetPasswordUseCaseImpl(userRepository, tokenRepository, passwordEncoder);
+        useCase = new ResetPasswordUseCaseImpl(userRepository, tokenRepository, passwordEncoder, refreshTokenRepository);
     }
 
     private PasswordResetToken validToken() {
@@ -111,5 +115,32 @@ class ResetPasswordUseCaseImplTest {
         assertThrows(ResourceNotFoundException.class, () -> useCase.execute(RAW_TOKEN, "NewStr0ngPass"));
 
         verify(tokenRepository, never()).markUsed(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any());
+    }
+
+    /**
+     * The whole point of resetting a password is to lock out whoever should no longer be in the
+     * account. A refresh token that survives the reset keeps minting access tokens for 30 more
+     * days, rotating itself indefinitely — so the one recovery action a user believes is
+     * decisive would leave the attacker exactly where they were.
+     */
+    @Test
+    void execute_WithValidToken_RevokesEveryActiveSessionForThatUser() {
+        when(tokenRepository.findByTokenHash(TOKEN_HASH)).thenReturn(Optional.of(validToken()));
+        when(userRepository.findById(1)).thenReturn(Optional.of(userWith(1L, "investor@test.com")));
+        when(passwordEncoder.encode("NewStr0ngPass")).thenReturn("hashed-new-password");
+
+        useCase.execute(RAW_TOKEN, "NewStr0ngPass");
+
+        verify(refreshTokenRepository).revokeAllForUser(eq(1L), org.mockito.ArgumentMatchers.any(Instant.class));
+    }
+
+    @Test
+    void execute_WithInvalidToken_DoesNotRevokeAnySession() {
+        when(tokenRepository.findByTokenHash(TOKEN_HASH)).thenReturn(Optional.empty());
+
+        assertThrows(PasswordResetTokenInvalidException.class, () -> useCase.execute(RAW_TOKEN, "NewStr0ngPass"));
+
+        verify(refreshTokenRepository, never()).revokeAllForUser(
+                org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any());
     }
 }

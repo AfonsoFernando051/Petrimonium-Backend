@@ -10,6 +10,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -22,25 +23,58 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * Simple in-memory sliding-window rate limiter. Single-instance app, no distributed state
- * needed — a {@code ConcurrentHashMap} keyed by client IP + path is enough; no new dependency
- * (e.g. Bucket4j/Redis) justified for this scale.
+ * needed — a {@code ConcurrentHashMap} keyed by client IP plus the matched rule's bucket is
+ * enough; no new dependency (e.g. Bucket4j/Redis) justified for this scale.
  *
  * Deliberately not general-purpose middleware: only the path patterns listed in
- * {@link #RULES} are limited, everything else passes straight through. Two rule groups exist
- * because they guard different things — the auth rule is a tight credential-stuffing/
- * enumeration deterrent, the progression rule is a looser abuse/DoS backstop on endpoints that
- * legitimate app usage already calls repeatedly (e.g. every gamification screen re-evaluates
- * achievements/missions/XP live), so it must not false-positive on normal use.
+ * {@link #RULES} are limited, everything else passes straight through. The rules fall into
+ * three kinds, because they guard different things and a single cap would be wrong for all
+ * three:
+ * <ul>
+ *   <li><b>Credential</b> (5/min) — tight credential-stuffing/enumeration deterrent on the
+ *       endpoints that establish or change a session without needing one.</li>
+ *   <li><b>Destructive</b> (5/min) — irreversible operations that no legitimate client repeats.</li>
+ *   <li><b>Cost/abuse backstop</b> (20-60/min) — endpoints that spend a paid third-party quota
+ *       (Mentor's LLM, Brapi's market data) or that normal app usage already calls repeatedly
+ *       (every gamification screen re-evaluates achievements/missions/XP live), so the cap must
+ *       be loose enough never to false-positive on real use.</li>
+ * </ul>
+ *
+ * Each rule declares which counter it spends from — see {@link Rule}. That distinction is load
+ * bearing, not cosmetic: a rule whose path contains an attacker-chosen segment (a ticker, a
+ * lesson id) must share one bucket, or the limit is trivially sidestepped by varying it.
  */
 public class RateLimitingFilter extends OncePerRequestFilter {
 
-    private record Rule(Predicate<String> pathMatches, int maxRequests, Duration window) {
+    /**
+     * {@code bucketKey} maps a matched path to the counter it spends from. Exact-path rules key
+     * by the path itself, so sibling endpoints in the same group keep independent allowances
+     * (a burst of registrations must not consume someone's login attempts on a shared NAT).
+     * Pattern rules must NOT do that: the variable part of the path is attacker-chosen, so a
+     * per-URI counter hands out a fresh allowance per ticker or per lesson id and limits
+     * nothing. Those share one named bucket across the whole rule — see {@link #shared}.
+     */
+    private record Rule(Predicate<String> pathMatches, Function<String, String> bucketKey, int maxRequests,
+            Duration window) {
+    }
+
+    private static Function<String, String> perPath() {
+        return path -> path;
+    }
+
+    private static Function<String, String> shared(String bucketName) {
+        return path -> bucketName;
     }
 
     private static final List<Rule> RULES = List.of(
             new Rule(
                     path -> path.equals("/auth/login")
                             || path.equals("/auth/register")
+                            // Verifies a Google ID token, which costs an outbound call to Google
+                            // on every request and needs no existing session to reach — the same
+                            // credential-stuffing/enumeration shape as /auth/login, and leaving it
+                            // out made it the one unmetered way into the auth surface.
+                            || path.equals("/auth/google")
                             || path.equals("/auth/forgot-password")
                             // Consumes a reset token: unlimited attempts make the token
                             // brute-forceable, and it is the one credential-changing endpoint that
@@ -48,14 +82,33 @@ public class RateLimitingFilter extends OncePerRequestFilter {
                             // limiting the request side but not the redemption side left the
                             // cheaper half of the attack open.
                             || path.equals("/auth/reset-password"),
-                    5, Duration.ofSeconds(60)),
+                    perPath(), 5, Duration.ofSeconds(60)),
+            // Deliberately looser than the credential group: a refresh is an automated client
+            // action (every in-flight 401 can trigger one), not a human typing, so a 5/minute cap
+            // would break legitimate bursts. It is an abuse backstop, not a credential guard —
+            // the refresh token's own 256 bits of entropy are what make it unguessable.
+            new Rule(path -> path.equals("/auth/refresh"), perPath(), 30, Duration.ofSeconds(60)),
+            // Irreversible, no grace period, and reachable with nothing but a bearer token. The
+            // limit exists so a stolen token can't be scripted through this endpoint at volume.
+            new Rule(path -> path.equals("/api/settings/account"), perPath(), 5, Duration.ofSeconds(60)),
             new Rule(
                     path -> path.equals("/api/v1/learning/progress")
                             || path.equals("/api/v1/achievements")
                             || path.equals("/api/v1/missions")
                             || path.equals("/api/v1/gamification/summary")
                             || (path.startsWith("/api/v1/learning/lessons/") && path.endsWith("/complete")),
-                    60, Duration.ofSeconds(60)),
+                    shared("progression"), 60, Duration.ofSeconds(60)),
+            // Every one of these spends the Brapi quota (a paid, per-call provider) whenever the
+            // 5-minute QuoteCache/AssetDetailsCache misses — and a distinct ticker is precisely
+            // what misses. So the abuse shape is "walk the symbol list", which a per-URI bucket
+            // would not touch at all: hence shared(). 60/minute is sized to stay clear of
+            // legitimate use (a search box typing ahead, an asset page opening) the same way the
+            // progression rule is.
+            new Rule(
+                    path -> path.startsWith("/api/investments/quote/")
+                            || path.equals("/api/investments/search")
+                            || path.startsWith("/api/investments/asset-details/"),
+                    shared("market-data"), 60, Duration.ofSeconds(60)),
             // The Mentor chat/suggestions endpoints call a paid LLM API (Anthropic/Gemini) on
             // every request. Unlike the progression rule above, legitimate use of these two is
             // inherently bursty but low-frequency (a person typing messages, not a screen
@@ -64,7 +117,7 @@ public class RateLimitingFilter extends OncePerRequestFilter {
             // manual, all-or-nothing kill switch, not a per-user/IP limit.
             new Rule(
                     path -> path.equals("/api/mentor/chat") || path.equals("/api/mentor/suggestions"),
-                    20, Duration.ofSeconds(60)));
+                    perPath(), 20, Duration.ofSeconds(60)));
 
     private final ConcurrentHashMap<String, Deque<Instant>> requestLog = new ConcurrentHashMap<>();
 
@@ -117,7 +170,7 @@ public class RateLimitingFilter extends OncePerRequestFilter {
             return;
         }
 
-        String key = clientIp(request) + ":" + path;
+        String key = clientIp(request) + ":" + rule.bucketKey().apply(path);
         if (isRateLimited(key, rule)) {
             response.setStatus(429);
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);

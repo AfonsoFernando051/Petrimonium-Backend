@@ -42,7 +42,7 @@ class RateLimitingFilterTest {
 
     @Test
     void doFilterInternal_PathNotRateLimited_AlwaysPassesThrough() throws Exception {
-        when(request.getRequestURI()).thenReturn("/api/investments/quote/PETR4");
+        when(request.getRequestURI()).thenReturn("/api/users/me");
         when(request.getRemoteAddr()).thenReturn("10.0.0.1");
 
         for (int i = 0; i < 20; i++) {
@@ -267,5 +267,119 @@ class RateLimitingFilterTest {
         filter.cleanupStaleKeys();
 
         assertThat(filter.trackedKeyCount()).isEqualTo(1);
+    }
+
+    /**
+     * Every quote-shaped endpoint spends the Brapi quota (a paid, per-call provider) on a cache
+     * miss, and a miss is exactly what a distinct ticker produces — so the abuse shape here is
+     * "iterate symbols", not "hammer one symbol". The bucket therefore has to be shared across
+     * the whole rule rather than keyed per URI, or each new ticker would simply open its own.
+     */
+    @Test
+    void doFilterInternal_MarketDataEndpoints_ShareOneBucketAcrossDifferentTickers() throws Exception {
+        when(request.getRemoteAddr()).thenReturn("10.0.0.40");
+
+        for (int i = 0; i < 60; i++) {
+            when(request.getRequestURI()).thenReturn("/api/investments/quote/TICKER" + i);
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        when(request.getRequestURI()).thenReturn("/api/investments/quote/PETR4");
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(60)).doFilter(request, response);
+    }
+
+    @Test
+    void doFilterInternal_MarketDataEndpoints_ShareOneBucketAcrossSearchQuoteAndAssetDetails() throws Exception {
+        when(request.getRemoteAddr()).thenReturn("10.0.0.41");
+
+        for (int i = 0; i < 20; i++) {
+            when(request.getRequestURI()).thenReturn("/api/investments/search");
+            filter.doFilterInternal(request, response, filterChain);
+            when(request.getRequestURI()).thenReturn("/api/investments/quote/PETR" + i);
+            filter.doFilterInternal(request, response, filterChain);
+            when(request.getRequestURI()).thenReturn("/api/investments/asset-details/VALE" + i);
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        when(request.getRequestURI()).thenReturn("/api/investments/search");
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(60)).doFilter(request, response);
+    }
+
+    /**
+     * Same per-URI bucket flaw as the market-data rule above: the lesson id is part of the path,
+     * so before the bucket was shared, "complete a different lesson" reset the allowance every
+     * time and this rule limited nothing an abuser would actually do.
+     */
+    @Test
+    void doFilterInternal_LessonCompletion_SharesOneBucketAcrossDifferentLessonIds() throws Exception {
+        when(request.getRemoteAddr()).thenReturn("10.0.0.42");
+
+        for (int i = 0; i < 60; i++) {
+            when(request.getRequestURI()).thenReturn("/api/v1/learning/lessons/lesson-" + i + "/complete");
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        when(request.getRequestURI()).thenReturn("/api/v1/learning/lessons/lesson-999/complete");
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+    }
+
+    /**
+     * /auth/google is a login endpoint that additionally makes an outbound call to Google to
+     * verify the ID token, with no session required to reach it — it belongs in the same
+     * credential group as /auth/login rather than being the one unlimited way in.
+     */
+    @Test
+    void doFilterInternal_GoogleLogin_IsRateLimitedLikeTheOtherCredentialEndpoints() throws Exception {
+        when(request.getRequestURI()).thenReturn("/auth/google");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.43");
+
+        for (int i = 0; i < 5; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(5)).doFilter(request, response);
+    }
+
+    /**
+     * Looser than the credential group on purpose: refresh is an automated, bursty client
+     * action (every 401 in flight can trigger one), not a human typing a password, so a
+     * 5/minute cap would break legitimate use. It is here as an abuse backstop only.
+     */
+    @Test
+    void doFilterInternal_Refresh_IsRateLimitedAt30PerMinute() throws Exception {
+        when(request.getRequestURI()).thenReturn("/auth/refresh");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.44");
+
+        for (int i = 0; i < 30; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
+        verify(filterChain, times(30)).doFilter(request, response);
+    }
+
+    /**
+     * Account deletion is irreversible and has no grace period, so it should never be reachable
+     * at any volume — this is the backstop against a scripted run through stolen tokens.
+     */
+    @Test
+    void doFilterInternal_AccountDeletion_IsRateLimited() throws Exception {
+        when(request.getRequestURI()).thenReturn("/api/settings/account");
+        when(request.getRemoteAddr()).thenReturn("10.0.0.45");
+
+        for (int i = 0; i < 5; i++) {
+            filter.doFilterInternal(request, response, filterChain);
+        }
+        filter.doFilterInternal(request, response, filterChain);
+
+        verify(response).setStatus(429);
     }
 }

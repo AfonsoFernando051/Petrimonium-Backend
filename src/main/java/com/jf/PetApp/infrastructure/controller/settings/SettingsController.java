@@ -1,5 +1,6 @@
 package com.jf.PetApp.infrastructure.controller.settings;
 
+import com.jf.PetApp.application.settings.dto.DeleteAccountCommand;
 import com.jf.PetApp.application.settings.usecase.DeleteAccountUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateCountryUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateLanguageUseCase;
@@ -63,13 +64,25 @@ public class SettingsController {
      * Irreversível: apaga a conta e todos os dados dela em todos os contextos.
      * Não há período de carência. Os tokens saem junto, por isso o pedido
      * seguinte deste cliente responde 401 — é o esperado.
+     *
+     * <p>O corpo é obrigatório e tem de reprovar a identidade (senha atual, ou um ID token
+     * Google fresco para uma conta criada pelo Google) — o bearer token sozinho não chega.
+     * Um cliente antigo, que não envia corpo nenhum, recebe 401 em vez de apagar a conta:
+     * falhar fechado é a única falha aceitável numa operação sem volta. Ver
+     * {@link DeleteAccountCommand}.
      */
     @DeleteMapping("/account")
-    public ResponseEntity<Void> deleteAccount() {
-        deleteAccountUseCase.execute(SecurityUtils.getCurrentUserEmail());
+    public ResponseEntity<Void> deleteAccount(@RequestBody(required = false) DeleteAccountRequestDTO request) {
+        String email = SecurityUtils.getCurrentUserEmail();
+        deleteAccountUseCase.execute(new DeleteAccountCommand(
+                email,
+                request != null ? request.password() : null,
+                request != null ? request.googleIdToken() : null));
         return ResponseEntity.noContent().build();
     }
 
+    /** Exatamente um dos dois campos é esperado — ver {@link DeleteAccountCommand}. */
+    public record DeleteAccountRequestDTO(String password, String googleIdToken) {}
     public record LanguageResponseDTO(String language) {}
     public record UpdateLanguageRequestDTO(String language) {}
     public record CountryResponseDTO(String countryCode) {}
