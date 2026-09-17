@@ -11,10 +11,11 @@ import java.util.List;
 
 /**
  * The {@link MentorChatPort} bean the rest of the app actually depends on: tries
- * {@link AnthropicChatClient} (Claude, the Mentor's primary provider) and falls back to
- * {@link GeminiChatClient} if that throws — e.g. no API key configured, rate limit, outage.
- * {@code GetMentorReplyUseCaseImpl}'s own catch around this call is the last resort (a canned
- * reply) if both providers fail.
+ * {@link GeminiChatClient} (Gemini Flash, the Mentor's primary provider — cheaper per token
+ * than any Claude tier, see the cost comparison that drove this switch) and falls back to
+ * {@link AnthropicChatClient} (Claude) if that throws — e.g. no API key configured, rate limit,
+ * outage. {@code GetMentorReplyUseCaseImpl}'s own catch around this call is the last resort (a
+ * canned reply) if both providers fail.
  */
 @Service
 @Primary
@@ -33,12 +34,12 @@ public class MentorChatFallbackClient implements MentorChatPort {
     @Override
     public String generateReply(String systemPrompt, List<MentorTurnDTO> history, String userMessage) {
         try {
-            return anthropicChatClient.generateReply(systemPrompt, history, userMessage);
+            return geminiChatClient.generateReply(systemPrompt, history, userMessage);
         } catch (Exception e) {
             // e.getMessage() is safe to log: neither client ever lets its API key reach an
             // exception message (see each client's own catch block).
-            log.warn("Anthropic call failed, falling back to Gemini: {}", e.getMessage());
-            return geminiChatClient.generateReply(systemPrompt, history, userMessage);
+            log.warn("Gemini call failed, falling back to Anthropic: {}", e.getMessage());
+            return anthropicChatClient.generateReply(systemPrompt, history, userMessage);
         }
     }
 }

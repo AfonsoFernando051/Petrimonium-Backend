@@ -30,7 +30,7 @@ class GeminiChatClientTest {
     @BeforeEach
     void configureApiKey() {
         ReflectionTestUtils.setField(client, "apiKey", "test-api-key");
-        ReflectionTestUtils.setField(client, "model", "gemini-2.0-flash");
+        ReflectionTestUtils.setField(client, "model", "gemini-2.5-flash");
         ReflectionTestUtils.setField(client, "baseUrl", "https://generativelanguage.googleapis.com/v1beta");
     }
 

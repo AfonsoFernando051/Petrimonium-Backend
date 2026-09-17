@@ -16,8 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The Mentor's fallback provider — {@link MentorChatFallbackClient} tries
- * {@link AnthropicChatClient} first and only calls this if that fails.
+ * The Mentor's primary chat provider (Gemini Flash, via the Gemini API) — switched from Claude
+ * on cost grounds (Flash-tier pricing is roughly an order of magnitude cheaper per token than
+ * any Claude tier). {@link MentorChatFallbackClient} tries this first and only falls back to
+ * {@link AnthropicChatClient} (Claude) if this throws.
  */
 @Service
 public class GeminiChatClient implements MentorChatPort {
@@ -27,7 +29,9 @@ public class GeminiChatClient implements MentorChatPort {
     @Value("${api.gemini.key:}")
     private String apiKey;
 
-    @Value("${api.gemini.model:gemini-2.0-flash}")
+    // gemini-2.5-flash, not the older gemini-2.0-flash this used to default to — 2.5 is the
+    // current Flash tier at the time this became the primary provider.
+    @Value("${api.gemini.model:gemini-2.5-flash}")
     private String model;
 
     @Value("${api.gemini.baseUrl:https://generativelanguage.googleapis.com/v1beta}")

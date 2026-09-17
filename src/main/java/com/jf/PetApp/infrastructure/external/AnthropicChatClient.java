@@ -17,10 +17,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * The Mentor's primary chat provider (Claude, via the Anthropic Messages API). Plain
- * {@link RestTemplate}, matching the existing Brapi/LibreTranslate/Gemini client style rather
- * than pulling in the Anthropic SDK for one call shape. {@link MentorChatFallbackClient} is what
- * callers actually depend on — it falls back to {@link GeminiChatClient} if this throws.
+ * The Mentor's fallback chat provider (Claude, via the Anthropic Messages API) — demoted from
+ * primary in favor of {@link GeminiChatClient} (Gemini Flash) on cost grounds, kept as the
+ * safety net {@link MentorChatFallbackClient} calls if Gemini throws. Plain {@link RestTemplate},
+ * matching the existing Brapi/LibreTranslate/Gemini client style rather than pulling in the
+ * Anthropic SDK for one call shape.
  */
 @Service
 public class AnthropicChatClient implements MentorChatPort {
