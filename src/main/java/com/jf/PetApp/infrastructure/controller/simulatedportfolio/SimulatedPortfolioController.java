@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -77,6 +78,17 @@ public class SimulatedPortfolioController {
         return quote.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // Lets the order screen show the close a backdated order will actually fill at, before the
+    // student confirms — the fill itself is always re-resolved server-side (see
+    // PlaceSimulatedOrderUseCaseImpl), never trusted from this preview.
+    @GetMapping("/quotes/{ticker}/at-date")
+    public ResponseEntity<AssetQuoteResponse> getQuoteAtDate(
+            @PathVariable String ticker,
+            @RequestParam LocalDate date) {
+        Optional<AssetQuoteResponse> quote = externalInvestmentApiPort.getQuoteAtDate(ticker, date);
+        return quote.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @GetMapping("/me")
     public ResponseEntity<SimulatedPortfolioSummaryDTO> getMyPortfolio() {
         String email = SecurityUtils.getCurrentUserEmail();
@@ -88,7 +100,8 @@ public class SimulatedPortfolioController {
         String email = SecurityUtils.getCurrentUserEmail();
         SimulatedOrderDTO result = placeSimulatedOrderUseCase.execute(
                 email,
-                new PlaceSimulatedOrderCommand(request.ticker(), request.side(), request.quantity(), request.clientOrderId())
+                new PlaceSimulatedOrderCommand(
+                        request.ticker(), request.side(), request.quantity(), request.clientOrderId(), request.tradeDate())
         );
         return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }

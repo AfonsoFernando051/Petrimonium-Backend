@@ -6,12 +6,14 @@ import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedOrderDTO;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedPortfolioSummaryDTO;
 import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedOrderHistoryUseCase;
 import com.jf.PetApp.application.simulatedportfolio.usecase.GetSimulatedPortfolioUseCase;
+import com.jf.PetApp.application.simulatedportfolio.usecase.PlaceSimulatedOrderCommand;
 import com.jf.PetApp.application.simulatedportfolio.usecase.PlaceSimulatedOrderUseCase;
 import com.jf.PetApp.application.simulatedportfolio.usecase.ResetSimulatedPortfolioUseCase;
 import com.jf.PetApp.core.domain.enums.SimulatedOrderSide;
 import com.jf.PetApp.infrastructure.security.jwt.JwtAuthenticationFilter;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest;
@@ -22,9 +24,11 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.never;
@@ -176,5 +180,44 @@ class SimulatedPortfolioControllerTest {
 
         mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/GHOST99"))
                 .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuoteAtDate_WhenFound_ReturnsTheHistoricalClose() throws Exception {
+        when(externalInvestmentApiPort.getQuoteAtDate("PETR4", LocalDate.of(2025, 3, 14))).thenReturn(
+                Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 36.10, "BRL")));
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/PETR4/at-date").param("date", "2025-03-14"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.regularMarketPrice").value(36.10));
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuoteAtDate_WhenThereIsNoHistoricalQuote_ReturnsNotFound() throws Exception {
+        when(externalInvestmentApiPort.getQuoteAtDate("PETR4", LocalDate.of(2001, 1, 2))).thenReturn(Optional.empty());
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/PETR4/at-date").param("date", "2001-01-02"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void placeOrder_WithATradeDate_PassesItToTheUseCase() throws Exception {
+        when(placeSimulatedOrderUseCase.execute(eq("learner@test.com"), any())).thenReturn(
+                new SimulatedOrderDTO(1L, "PETR4", SimulatedOrderSide.BUY,
+                        new BigDecimal("10"), new BigDecimal("36.10"), new BigDecimal("361.00"),
+                        Instant.parse("2025-03-14T12:00:00Z"), "generated-id"));
+
+        mockMvc.perform(post("/api/v1/simulated-portfolios/orders")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"ticker\":\"PETR4\",\"side\":\"BUY\",\"quantity\":10,\"tradeDate\":\"2025-03-14\"}"))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.executedAt").value("2025-03-14T12:00:00Z"));
+
+        ArgumentCaptor<PlaceSimulatedOrderCommand> command = ArgumentCaptor.forClass(PlaceSimulatedOrderCommand.class);
+        verify(placeSimulatedOrderUseCase).execute(eq("learner@test.com"), command.capture());
+        assertEquals(LocalDate.of(2025, 3, 14), command.getValue().tradeDate());
     }
 }

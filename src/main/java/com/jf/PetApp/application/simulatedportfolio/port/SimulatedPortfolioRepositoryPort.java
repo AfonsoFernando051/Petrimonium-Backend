@@ -6,6 +6,7 @@ import com.jf.PetApp.core.domain.SimulatedPosition;
 import com.jf.PetApp.core.domain.enums.SimulatedOrderSide;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,6 +46,7 @@ public interface SimulatedPortfolioRepositoryPort {
             SimulatedOrderSide side,
             BigDecimal quantity,
             BigDecimal price,
+            Instant executedAt,
             String clientOrderId
     );
 

@@ -7,11 +7,13 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public record PlaceSimulatedOrderRequest(
         @NotBlank String ticker,
         @NotNull SimulatedOrderSide side,
         @NotNull @DecimalMin(value = "0.000001", message = "quantity must be greater than zero") BigDecimal quantity,
-        String clientOrderId
+        String clientOrderId,
+        LocalDate tradeDate
 ) {
 }

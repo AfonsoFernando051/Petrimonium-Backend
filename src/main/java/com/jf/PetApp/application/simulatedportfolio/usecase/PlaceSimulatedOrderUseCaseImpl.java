@@ -14,6 +14,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneOffset;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -22,7 +26,15 @@ import java.util.UUID;
  * (never a client-supplied price — same reasoning as never trusting a
  * client-supplied user id, applied to money: a simulated fill still has to
  * be realistic to be educational, and a client-chosen price would make the
- * "practice on real reference prices" premise meaningless). Uses the same
+ * "practice on real reference prices" premise meaningless).
+ *
+ * <p>A past {@code tradeDate} backdates the order: it fills at that day's
+ * historical close (the most recent trading day on or before it) and is
+ * stamped at noon UTC of that date — noon, not midnight, so the calendar
+ * day survives a conversion to any local timezone. That is what lets a
+ * student assemble a portfolio "as if" they had bought months ago. The
+ * virtual balance is a running total, not replayed by date, so a backdated
+ * order debits/credits the current balance. Uses the same
  * {@link ExternalInvestmentApiPort} the real_portfolio context uses for
  * quotes — a deliberate, narrow exception to the simulated/real boundary
  * (read-only public market data, not portfolio state) — see
@@ -30,6 +42,8 @@ import java.util.UUID;
  */
 @Service
 public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCase {
+
+    private static final LocalTime BACKDATED_EXECUTION_TIME = LocalTime.NOON;
 
     private final GetOrCreateSimulatedPortfolioUseCase getOrCreateSimulatedPortfolioUseCase;
     private final SimulatedPortfolioRepositoryPort simulatedPortfolioRepository;
@@ -67,12 +81,24 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
             return toDto(existing.get());
         }
 
-        BigDecimal price = resolveReferencePrice(ticker);
+        LocalDate today = LocalDate.now(ZoneOffset.UTC);
+        LocalDate tradeDate = command.tradeDate();
+        if (tradeDate != null && tradeDate.isAfter(today)) {
+            throw new IllegalArgumentException("Trade date must not be in the future: " + tradeDate);
+        }
+        boolean backdated = tradeDate != null && tradeDate.isBefore(today);
+
+        BigDecimal price = backdated ? resolveHistoricalPrice(ticker, tradeDate) : resolveReferencePrice(ticker);
+        Instant executedAt = backdated ? tradeDate.atTime(BACKDATED_EXECUTION_TIME).toInstant(ZoneOffset.UTC) : Instant.now();
         BigDecimal quantity = command.quantity();
 
+        if (backdated && command.side() == SimulatedOrderSide.SELL) {
+            requireHeldSince(portfolio, ticker, tradeDate);
+        }
+
         SimulatedOrder order = switch (command.side()) {
-            case BUY -> executeBuy(portfolio, ticker, quantity, price, clientOrderId);
-            case SELL -> executeSell(portfolio, ticker, quantity, price, clientOrderId);
+            case BUY -> executeBuy(portfolio, ticker, quantity, price, executedAt, clientOrderId);
+            case SELL -> executeSell(portfolio, ticker, quantity, price, executedAt, clientOrderId);
         };
 
         return toDto(order);
@@ -87,8 +113,33 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
     }
 
+    /** Empty means no close on or before {@code date} — never falls back to today's price. */
+    private BigDecimal resolveHistoricalPrice(String ticker, LocalDate date) {
+        AssetQuoteResponse quote = externalInvestmentApiPort.getQuoteAtDate(ticker, date)
+                .orElseThrow(() -> new IllegalArgumentException(
+                        "No historical price available for " + ticker + " on " + date));
+        if (quote.regularMarketPrice() == null) {
+            throw new IllegalArgumentException("No historical price available for " + ticker + " on " + date);
+        }
+        return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
+    }
+
+    // A sell dated before the first buy of that ticker would leave the order ledger claiming the
+    // student sold something they did not yet own, which the wealth-evolution chart replays.
+    private void requireHeldSince(SimulatedPortfolio portfolio, String ticker, LocalDate sellDate) {
+        Optional<LocalDate> firstBuyDate = simulatedPortfolioRepository.findOrders(portfolio.id()).stream()
+                .filter(o -> o.side() == SimulatedOrderSide.BUY && o.ticker().equals(ticker))
+                .map(o -> o.executedAt().atZone(ZoneOffset.UTC).toLocalDate())
+                .min(LocalDate::compareTo);
+        if (firstBuyDate.isPresent() && sellDate.isBefore(firstBuyDate.get())) {
+            throw new IllegalArgumentException(
+                    "Cannot sell " + ticker + " on " + sellDate + ", before it was first bought on " + firstBuyDate.get());
+        }
+    }
+
     private SimulatedOrder executeBuy(
-            SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price, String clientOrderId
+            SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price,
+            Instant executedAt, String clientOrderId
     ) {
         BigDecimal cost = price.multiply(quantity).setScale(2, RoundingMode.HALF_UP);
         if (cost.compareTo(portfolio.virtualBalance()) > 0) {
@@ -106,11 +157,12 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         simulatedPortfolioRepository.updateBalance(portfolio.id(), portfolio.virtualBalance().subtract(cost));
 
         return simulatedPortfolioRepository.saveOrder(
-                portfolio.id(), ticker, SimulatedOrderSide.BUY, quantity, price, clientOrderId);
+                portfolio.id(), ticker, SimulatedOrderSide.BUY, quantity, price, executedAt, clientOrderId);
     }
 
     private SimulatedOrder executeSell(
-            SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price, String clientOrderId
+            SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price,
+            Instant executedAt, String clientOrderId
     ) {
         SimulatedPosition position = simulatedPortfolioRepository.findPosition(portfolio.id(), ticker)
                 .orElseThrow(() -> new IllegalArgumentException("No simulated position held in " + ticker));
@@ -131,7 +183,7 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         simulatedPortfolioRepository.updateBalance(portfolio.id(), portfolio.virtualBalance().add(proceeds));
 
         return simulatedPortfolioRepository.saveOrder(
-                portfolio.id(), ticker, SimulatedOrderSide.SELL, quantity, price, clientOrderId);
+                portfolio.id(), ticker, SimulatedOrderSide.SELL, quantity, price, executedAt, clientOrderId);
     }
 
     // Cost-weighted average, same formula used to accumulate a real position's average price

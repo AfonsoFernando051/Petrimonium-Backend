@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 
@@ -132,7 +133,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
         SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
 
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
-                new BigDecimal("10.000000"), new BigDecimal("30.50"), "order-1");
+                new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
 
         List<SimulatedOrder> orders = adapter.findOrders(portfolio.id());
         assertThat(orders).hasSize(1);
@@ -141,10 +142,21 @@ class SimulatedPortfolioRepositoryAdapterTest {
     }
 
     @Test
+    void saveOrder_PersistsTheGivenExecutionInstantRatherThanNow() {
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        Instant sixMonthsAgo = Instant.parse("2025-03-14T12:00:00Z");
+
+        adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
+                new BigDecimal("10.000000"), new BigDecimal("36.10"), sixMonthsAgo, "order-1");
+
+        assertThat(adapter.findOrders(portfolio.id()).get(0).executedAt()).isEqualTo(sixMonthsAgo);
+    }
+
+    @Test
     void findOrderByClientOrderId_FindsTheMatchingOrder() {
         SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
-                new BigDecimal("10.000000"), new BigDecimal("30.50"), "order-1");
+                new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
 
         Optional<SimulatedOrder> found = adapter.findOrderByClientOrderId(portfolio.id(), "order-1");
 
@@ -164,7 +176,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
         SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("10.000000"), new BigDecimal("30.50"));
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
-                new BigDecimal("10.000000"), new BigDecimal("30.50"), "order-1");
+                new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
         adapter.updateBalance(portfolio.id(), new BigDecimal("9695.00"));
 
         adapter.resetPortfolio(portfolio.id(), INITIAL_BALANCE);

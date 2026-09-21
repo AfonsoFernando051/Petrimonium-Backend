@@ -139,6 +139,7 @@ public class SimulatedPortfolioRepositoryAdapter implements SimulatedPortfolioRe
             SimulatedOrderSide side,
             BigDecimal quantity,
             BigDecimal price,
+            Instant executedAt,
             String clientOrderId
     ) {
         SimulatedPortfolioJpaEntity portfolio = portfolioRepository.findById(portfolioId)
@@ -150,7 +151,7 @@ public class SimulatedPortfolioRepositoryAdapter implements SimulatedPortfolioRe
         entity.setSide(side);
         entity.setQuantity(quantity);
         entity.setPrice(price);
-        entity.setExecutedAt(Instant.now());
+        entity.setExecutedAt(executedAt);
         entity.setClientOrderId(clientOrderId);
 
         return toDomain(orderRepository.save(entity));
