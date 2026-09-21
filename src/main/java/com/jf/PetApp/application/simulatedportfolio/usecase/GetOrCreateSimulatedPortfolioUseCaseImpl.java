@@ -5,16 +5,14 @@ import com.jf.PetApp.application.simulatedportfolio.port.SimulatedPortfolioRepos
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.SimulatedPortfolio;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
-import java.math.BigDecimal;
 
 /**
  * "Create a fictitious wallet" is satisfied lazily: the first time a user's
  * simulated portfolio is requested (dashboard load, order placement, reset),
- * a row is provisioned with the configured starting virtual balance. There
- * is no separate user-facing "create wallet" step to get out of sync with.
+ * an empty row is provisioned — no starting balance, no seed positions: the
+ * wallet only ever contains what the user registers. There is no separate
+ * user-facing "create wallet" step to get out of sync with.
  */
 @Service
 public class GetOrCreateSimulatedPortfolioUseCaseImpl implements GetOrCreateSimulatedPortfolioUseCase {
@@ -23,16 +21,13 @@ public class GetOrCreateSimulatedPortfolioUseCaseImpl implements GetOrCreateSimu
 
     private final SimulatedPortfolioRepositoryPort simulatedPortfolioRepository;
     private final UserRepository userRepository;
-    private final BigDecimal initialBalance;
 
     public GetOrCreateSimulatedPortfolioUseCaseImpl(
             SimulatedPortfolioRepositoryPort simulatedPortfolioRepository,
-            UserRepository userRepository,
-            @Value("${app.simulated-portfolio.initial-balance}") BigDecimal initialBalance
+            UserRepository userRepository
     ) {
         this.simulatedPortfolioRepository = simulatedPortfolioRepository;
         this.userRepository = userRepository;
-        this.initialBalance = initialBalance;
     }
 
     @Override
@@ -41,6 +36,6 @@ public class GetOrCreateSimulatedPortfolioUseCaseImpl implements GetOrCreateSimu
                 .orElseThrow(() -> new ResourceNotFoundException("User not found for email: " + email));
 
         return simulatedPortfolioRepository.findByUserEmail(email)
-                .orElseGet(() -> simulatedPortfolioRepository.create(email, initialBalance, CURRENCY));
+                .orElseGet(() -> simulatedPortfolioRepository.create(email, CURRENCY));
     }
 }

@@ -10,8 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-
-import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Optional;
 
@@ -34,40 +32,39 @@ class GetOrCreateSimulatedPortfolioUseCaseImplTest {
     private GetOrCreateSimulatedPortfolioUseCaseImpl useCase;
 
     private static final String EMAIL = "learner@test.com";
-    private static final BigDecimal INITIAL_BALANCE = new BigDecimal("10000.00");
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         useCase = new GetOrCreateSimulatedPortfolioUseCaseImpl(
-                simulatedPortfolioRepository, userRepository, INITIAL_BALANCE);
+                simulatedPortfolioRepository, userRepository);
     }
 
     @Test
     void execute_WhenPortfolioAlreadyExists_ReturnsItWithoutCreatingANewOne() {
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(new User()));
         SimulatedPortfolio existing = new SimulatedPortfolio(
-                1L, EMAIL, INITIAL_BALANCE, INITIAL_BALANCE, "BRL", null, Instant.now(), Instant.now());
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
         when(simulatedPortfolioRepository.findByUserEmail(EMAIL)).thenReturn(Optional.of(existing));
 
         SimulatedPortfolio result = useCase.execute(EMAIL);
 
         assertEquals(existing, result);
-        verify(simulatedPortfolioRepository, never()).create(any(), any(), any());
+        verify(simulatedPortfolioRepository, never()).create(any(), any());
     }
 
     @Test
-    void execute_WhenNoPortfolioYet_CreatesOneWithTheConfiguredInitialBalance() {
+    void execute_WhenNoPortfolioYet_CreatesAnEmptyOneWithNoStartingBalance() {
         when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(new User()));
         when(simulatedPortfolioRepository.findByUserEmail(EMAIL)).thenReturn(Optional.empty());
         SimulatedPortfolio created = new SimulatedPortfolio(
-                1L, EMAIL, INITIAL_BALANCE, INITIAL_BALANCE, "BRL", null, Instant.now(), Instant.now());
-        when(simulatedPortfolioRepository.create(EMAIL, INITIAL_BALANCE, "BRL")).thenReturn(created);
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
+        when(simulatedPortfolioRepository.create(EMAIL, "BRL")).thenReturn(created);
 
         SimulatedPortfolio result = useCase.execute(EMAIL);
 
         assertEquals(created, result);
-        verify(simulatedPortfolioRepository).create(eq(EMAIL), eq(INITIAL_BALANCE), eq("BRL"));
+        verify(simulatedPortfolioRepository).create(eq(EMAIL), eq("BRL"));
     }
 
     @Test
@@ -77,6 +74,6 @@ class GetOrCreateSimulatedPortfolioUseCaseImplTest {
         assertThrows(ResourceNotFoundException.class, () -> useCase.execute("missing@test.com"));
 
         verify(simulatedPortfolioRepository, never()).findByUserEmail(any());
-        verify(simulatedPortfolioRepository, never()).create(any(), any(), any());
+        verify(simulatedPortfolioRepository, never()).create(any(), any());
     }
 }

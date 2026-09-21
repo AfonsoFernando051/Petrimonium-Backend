@@ -92,7 +92,7 @@ class GetMentorReplyUseCaseImplTest {
     private static final AcademyCatalogResult EMPTY_ACADEMY_CATALOG =
             new AcademyCatalogResult(List.of(), List.of(), List.of(), List.of());
     private static final SimulatedPortfolioSummaryDTO EMPTY_SIMULATED_PORTFOLIO =
-            new SimulatedPortfolioSummaryDTO(java.math.BigDecimal.valueOf(10000), java.math.BigDecimal.valueOf(10000), "BRL", Instant.now(), List.of());
+            new SimulatedPortfolioSummaryDTO("BRL", Instant.now(), List.of());
 
     @BeforeEach
     void setUp() {

@@ -69,11 +69,12 @@ class SimulatedPortfolioControllerTest {
     void getMyPortfolio_ReturnsTheSummary() throws Exception {
         when(getSimulatedPortfolioUseCase.execute("learner@test.com")).thenReturn(
                 new SimulatedPortfolioSummaryDTO(
-                        new BigDecimal("10000.00"), new BigDecimal("10000.00"), "BRL", null, List.of()));
+                        "BRL", null, List.of()));
 
         mockMvc.perform(get("/api/v1/simulated-portfolios/me"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.virtualBalance").value(10000.00))
+                .andExpect(jsonPath("$.virtualBalance").doesNotExist())
+                .andExpect(jsonPath("$.positions").isEmpty())
                 .andExpect(jsonPath("$.currency").value("BRL"));
     }
 
@@ -219,5 +220,25 @@ class SimulatedPortfolioControllerTest {
         ArgumentCaptor<PlaceSimulatedOrderCommand> command = ArgumentCaptor.forClass(PlaceSimulatedOrderCommand.class);
         verify(placeSimulatedOrderUseCase).execute(eq("learner@test.com"), command.capture());
         assertEquals(LocalDate.of(2025, 3, 14), command.getValue().tradeDate());
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuote_WhenTheQuoteIsAPlaceholder_ReturnsNotFoundInsteadOfAnInventedPrice() throws Exception {
+        when(externalInvestmentApiPort.getQuote("PETR4")).thenReturn(
+                Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/PETR4"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    @WithMockUser(username = "learner@test.com")
+    void getQuoteAtDate_WhenTheQuoteIsAPlaceholder_ReturnsNotFoundInsteadOfAnInventedPrice() throws Exception {
+        when(externalInvestmentApiPort.getQuoteAtDate("PETR4", LocalDate.of(2025, 3, 14))).thenReturn(
+                Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
+
+        mockMvc.perform(get("/api/v1/simulated-portfolios/quotes/PETR4/at-date").param("date", "2025-03-14"))
+                .andExpect(status().isNotFound());
     }
 }

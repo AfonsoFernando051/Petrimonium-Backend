@@ -24,9 +24,7 @@ public interface SimulatedPortfolioRepositoryPort {
 
     Optional<SimulatedPortfolio> findByUserEmail(String userEmail);
 
-    SimulatedPortfolio create(String userEmail, BigDecimal initialBalance, String currency);
-
-    void updateBalance(Long portfolioId, BigDecimal newBalance);
+    SimulatedPortfolio create(String userEmail, String currency);
 
     List<SimulatedPosition> findPositions(Long portfolioId);
 
@@ -51,11 +49,11 @@ public interface SimulatedPortfolioRepositoryPort {
     );
 
     /**
-     * Wipes every position and order for {@code portfolioId} and resets its
-     * balance to {@code initialBalance} — "reiniciar a simulação". Requires
+     * Wipes every position and order for {@code portfolioId} — "reiniciar a
+     * simulação". Requires
      * explicit user confirmation upstream (see
      * ResetSimulatedPortfolioUseCaseImpl); this method itself performs the
      * reset unconditionally once called.
      */
-    void resetPortfolio(Long portfolioId, BigDecimal initialBalance);
+    void resetPortfolio(Long portfolioId);
 }

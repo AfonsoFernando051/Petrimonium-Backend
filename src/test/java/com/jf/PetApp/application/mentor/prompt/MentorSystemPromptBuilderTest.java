@@ -202,19 +202,19 @@ class MentorSystemPromptBuilderTest {
     void buildForAcademy_WithNullSimulatedPortfolio_StatesNoPositionsYet() {
         String prompt = MentorSystemPromptBuilder.buildForAcademy(null, null, null, "pt", null, null, null);
 
-        assertTrue(prompt.contains("Simulated practice portfolio (virtual money, NOT real"));
+        assertTrue(prompt.contains("Simulated practice portfolio (positions the user registered to practice, NOT real"));
         assertTrue(prompt.contains("no positions yet"));
     }
 
     @Test
     void buildForAcademy_WithPositions_ListsEachTickerAndAlwaysFramesItAsSimulated() {
         SimulatedPortfolioSummaryDTO simulated = new SimulatedPortfolioSummaryDTO(
-                BigDecimal.valueOf(9500), BigDecimal.valueOf(10000), "BRL", Instant.now(),
+                "BRL", Instant.now(),
                 List.of(new SimulatedPositionDTO("PETR4", BigDecimal.valueOf(10), BigDecimal.valueOf(30), BigDecimal.valueOf(300), BigDecimal.valueOf(100))));
 
         String prompt = MentorSystemPromptBuilder.buildForAcademy(null, simulated, null, "pt", null, null, null);
 
-        assertTrue(prompt.contains("Simulated practice portfolio (virtual money, NOT real"));
+        assertTrue(prompt.contains("Simulated practice portfolio (positions the user registered to practice, NOT real"));
         assertTrue(prompt.contains("Simulated holdings by ticker:"));
         assertTrue(prompt.contains("PETR4:"));
     }

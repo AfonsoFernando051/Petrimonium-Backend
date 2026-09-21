@@ -37,22 +37,22 @@ class GetSimulatedPortfolioUseCaseImplTest {
     }
 
     @Test
-    void execute_WithNoPositions_ReturnsBalanceAndEmptyPositionList() {
+    void execute_WithNoPositions_ReturnsAnEmptyPositionList() {
         SimulatedPortfolio portfolio = new SimulatedPortfolio(
-                1L, EMAIL, new BigDecimal("10000.00"), new BigDecimal("10000.00"), "BRL", null, Instant.now(), Instant.now());
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio);
         when(simulatedPortfolioRepository.findPositions(1L)).thenReturn(List.of());
 
         SimulatedPortfolioSummaryDTO result = useCase.execute(EMAIL);
 
-        assertEquals(new BigDecimal("10000.00"), result.virtualBalance());
+        assertEquals("BRL", result.currency());
         assertTrue(result.positions().isEmpty());
     }
 
     @Test
     void execute_WithPositions_ComputesAllocationPercentagesSummingToOneHundred() {
         SimulatedPortfolio portfolio = new SimulatedPortfolio(
-                1L, EMAIL, new BigDecimal("4000.00"), new BigDecimal("10000.00"), "BRL", null, Instant.now(), Instant.now());
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio);
         when(simulatedPortfolioRepository.findPositions(1L)).thenReturn(List.of(
                 new SimulatedPosition(1L, 1L, "PETR4", new BigDecimal("100"), new BigDecimal("30.00")), // cost 3000

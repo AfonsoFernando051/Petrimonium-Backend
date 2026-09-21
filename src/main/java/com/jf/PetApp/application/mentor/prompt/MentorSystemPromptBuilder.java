@@ -298,7 +298,7 @@ public final class MentorSystemPromptBuilder {
 
     /**
      * Academy (simulated): simulated portfolio + pet + learning progress only. Never sees real
-     * portfolio data. The simulated portfolio is always framed as practice/virtual money so the
+     * portfolio data. The simulated portfolio is always framed as practice (positions the user registered, never real holdings) so the
      * mentor's own language reinforces the app's on-screen disclaimer rather than contradicting it.
      */
     public static String buildForAcademy(
@@ -358,16 +358,13 @@ public final class MentorSystemPromptBuilder {
 
     private static void appendSimulatedPortfolioBlock(StringBuilder context, SimulatedPortfolioSummaryDTO simulatedPortfolio) {
         if (simulatedPortfolio == null || simulatedPortfolio.positions() == null || simulatedPortfolio.positions().isEmpty()) {
-            context.append(String.format(Locale.US,
-                    "- Simulated practice portfolio (virtual money, NOT real — always make this clear): no positions yet, virtual balance %.2f %s.%n",
-                    simulatedPortfolio == null ? 0.0 : simulatedPortfolio.virtualBalance().doubleValue(),
-                    simulatedPortfolio == null ? "" : simulatedPortfolio.currency()));
+            context.append("- Simulated practice portfolio (positions the user registered to practice, NOT real holdings — always make this clear): no positions yet.\n");
             return;
         }
 
         context.append(String.format(Locale.US,
-                "- Simulated practice portfolio (virtual money, NOT real — always make this clear): %d position(s), virtual balance %.2f %s.%n",
-                simulatedPortfolio.positions().size(), simulatedPortfolio.virtualBalance().doubleValue(), simulatedPortfolio.currency()));
+                "- Simulated practice portfolio (positions the user registered to practice, NOT real holdings — always make this clear): %d position(s), currency %s.%n",
+                simulatedPortfolio.positions().size(), simulatedPortfolio.currency()));
         context.append("- Simulated holdings by ticker:\n");
         for (SimulatedPositionDTO position : simulatedPortfolio.positions()) {
             context.append(String.format(Locale.US, "  - %s: %.6f shares @ avg %.2f (%.1f%% of the simulated portfolio)%n",

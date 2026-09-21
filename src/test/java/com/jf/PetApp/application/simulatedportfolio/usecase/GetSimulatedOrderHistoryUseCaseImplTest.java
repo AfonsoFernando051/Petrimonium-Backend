@@ -39,7 +39,7 @@ class GetSimulatedOrderHistoryUseCaseImplTest {
     @Test
     void execute_MapsEachOrderIncludingComputedTotal() {
         SimulatedPortfolio portfolio = new SimulatedPortfolio(
-                1L, EMAIL, new BigDecimal("10000.00"), new BigDecimal("10000.00"), "BRL", null, Instant.now(), Instant.now());
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio);
         when(simulatedPortfolioRepository.findOrders(1L)).thenReturn(List.of(
                 new SimulatedOrder(1L, 1L, "PETR4", SimulatedOrderSide.BUY,

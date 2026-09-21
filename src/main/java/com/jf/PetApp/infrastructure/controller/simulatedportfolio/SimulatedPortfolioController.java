@@ -60,6 +60,9 @@ public class SimulatedPortfolioController {
         this.externalInvestmentApiPort = externalInvestmentApiPort;
     }
 
+    // A placeholder quote (dev-only, no market-data token) is answered as 404 by both quote endpoints
+    // below: the wallet must never show or price anything off a fabricated number.
+    //
     // Academy has no reachable equivalent of /api/investments/search or
     // /api/investments/quote/{ticker} — those are Wallet-only per SecurityConfig. These two
     // read-only passthroughs give Academy's order-placement UI a way to search tickers and
@@ -74,7 +77,7 @@ public class SimulatedPortfolioController {
 
     @GetMapping("/quotes/{ticker}")
     public ResponseEntity<AssetQuoteResponse> getQuote(@PathVariable String ticker) {
-        Optional<AssetQuoteResponse> quote = externalInvestmentApiPort.getQuote(ticker);
+        Optional<AssetQuoteResponse> quote = externalInvestmentApiPort.getQuote(ticker).filter(q -> !q.simulated());
         return quote.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -85,7 +88,8 @@ public class SimulatedPortfolioController {
     public ResponseEntity<AssetQuoteResponse> getQuoteAtDate(
             @PathVariable String ticker,
             @RequestParam LocalDate date) {
-        Optional<AssetQuoteResponse> quote = externalInvestmentApiPort.getQuoteAtDate(ticker, date);
+        Optional<AssetQuoteResponse> quote =
+                externalInvestmentApiPort.getQuoteAtDate(ticker, date).filter(q -> !q.simulated());
         return quote.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 

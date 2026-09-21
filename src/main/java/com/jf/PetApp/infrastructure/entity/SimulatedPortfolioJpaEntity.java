@@ -10,7 +10,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 
 import lombok.AccessLevel;
@@ -31,12 +30,6 @@ public class SimulatedPortfolioJpaEntity {
     @OneToOne(optional = false, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, unique = true)
     private UserJpaEntity user;
-
-    @Column(name = "virtual_balance", precision = 19, scale = 2, nullable = false)
-    private BigDecimal virtualBalance;
-
-    @Column(name = "initial_balance", precision = 19, scale = 2, nullable = false)
-    private BigDecimal initialBalance;
 
     @Column(nullable = false, length = 3)
     private String currency;

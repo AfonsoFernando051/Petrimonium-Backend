@@ -42,7 +42,6 @@ class SimulatedPortfolioRepositoryAdapterTest {
     private SimulatedPortfolioRepositoryPort adapter;
 
     private static final String EMAIL = "learner@test.com";
-    private static final BigDecimal INITIAL_BALANCE = new BigDecimal("10000.00");
 
     @BeforeEach
     void setUp() {
@@ -58,12 +57,10 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void create_ThenFindByUserEmail_RoundTrips() {
-        SimulatedPortfolio created = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio created = adapter.create(EMAIL, "BRL");
 
         assertThat(created.id()).isNotNull();
         assertThat(created.userEmail()).isEqualTo(EMAIL);
-        assertThat(created.virtualBalance()).isEqualByComparingTo(INITIAL_BALANCE);
-        assertThat(created.initialBalance()).isEqualByComparingTo(INITIAL_BALANCE);
         assertThat(created.currency()).isEqualTo("BRL");
         assertThat(created.resetAt()).isNull();
 
@@ -81,22 +78,12 @@ class SimulatedPortfolioRepositoryAdapterTest {
     void create_ForUnknownEmail_ThrowsIllegalArgumentException() {
         org.junit.jupiter.api.Assertions.assertThrows(
                 IllegalArgumentException.class,
-                () -> adapter.create("ghost@test.com", INITIAL_BALANCE, "BRL"));
-    }
-
-    @Test
-    void updateBalance_PersistsNewBalance() {
-        SimulatedPortfolio created = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
-
-        adapter.updateBalance(created.id(), new BigDecimal("9500.00"));
-
-        SimulatedPortfolio reloaded = adapter.findByUserEmail(EMAIL).orElseThrow();
-        assertThat(reloaded.virtualBalance()).isEqualByComparingTo("9500.00");
+                () -> adapter.create("ghost@test.com", "BRL"));
     }
 
     @Test
     void upsertPosition_ThenFindPosition_RoundTrips() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
 
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("10.000000"), new BigDecimal("30.50"));
 
@@ -108,7 +95,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void upsertPosition_CalledTwice_UpdatesTheSameRowInsteadOfDuplicating() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
 
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("10.000000"), new BigDecimal("30.50"));
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("15.000000"), new BigDecimal("31.00"));
@@ -120,7 +107,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void deletePosition_RemovesIt() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("10.000000"), new BigDecimal("30.50"));
 
         adapter.deletePosition(portfolio.id(), "PETR4");
@@ -130,7 +117,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void saveOrder_ThenFindOrders_RoundTrips() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
 
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
                 new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
@@ -143,7 +130,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void saveOrder_PersistsTheGivenExecutionInstantRatherThanNow() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
         Instant sixMonthsAgo = Instant.parse("2025-03-14T12:00:00Z");
 
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
@@ -154,7 +141,7 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void findOrderByClientOrderId_FindsTheMatchingOrder() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
                 new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
 
@@ -166,23 +153,21 @@ class SimulatedPortfolioRepositoryAdapterTest {
 
     @Test
     void findOrderByClientOrderId_WhenAbsent_ReturnsEmpty() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
 
         assertThat(adapter.findOrderByClientOrderId(portfolio.id(), "does-not-exist")).isEmpty();
     }
 
     @Test
-    void resetPortfolio_WipesPositionsAndOrdersAndRestoresInitialBalance() {
-        SimulatedPortfolio portfolio = adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
+    void resetPortfolio_WipesPositionsAndOrdersAndStampsResetAt() {
+        SimulatedPortfolio portfolio = adapter.create(EMAIL, "BRL");
         adapter.upsertPosition(portfolio.id(), "PETR4", new BigDecimal("10.000000"), new BigDecimal("30.50"));
         adapter.saveOrder(portfolio.id(), "PETR4", SimulatedOrderSide.BUY,
                 new BigDecimal("10.000000"), new BigDecimal("30.50"), Instant.now(), "order-1");
-        adapter.updateBalance(portfolio.id(), new BigDecimal("9695.00"));
 
-        adapter.resetPortfolio(portfolio.id(), INITIAL_BALANCE);
+        adapter.resetPortfolio(portfolio.id());
 
         SimulatedPortfolio reloaded = adapter.findByUserEmail(EMAIL).orElseThrow();
-        assertThat(reloaded.virtualBalance()).isEqualByComparingTo(INITIAL_BALANCE);
         assertThat(reloaded.resetAt()).isNotNull();
         assertThat(adapter.findPositions(portfolio.id())).isEmpty();
         assertThat(adapter.findOrders(portfolio.id())).isEmpty();
@@ -196,11 +181,11 @@ class SimulatedPortfolioRepositoryAdapterTest {
         otherUser.setPassword("hash");
         userJpaRepository.save(UserJpaEntity.fromDomain(otherUser));
 
-        adapter.create(EMAIL, INITIAL_BALANCE, "BRL");
-        SimulatedPortfolio otherPortfolio = adapter.create("other-learner@test.com", new BigDecimal("5000.00"), "BRL");
+        SimulatedPortfolio own = adapter.create(EMAIL, "BRL");
+        SimulatedPortfolio other = adapter.create("other-learner@test.com", "BRL");
 
-        assertThat(adapter.findByUserEmail(EMAIL).orElseThrow().virtualBalance())
-                .isEqualByComparingTo(INITIAL_BALANCE);
-        assertThat(otherPortfolio.virtualBalance()).isEqualByComparingTo("5000.00");
+        assertThat(adapter.findByUserEmail(EMAIL).orElseThrow().id()).isEqualTo(own.id());
+        assertThat(adapter.findByUserEmail("other-learner@test.com").orElseThrow().id()).isEqualTo(other.id());
+        assertThat(own.id()).isNotEqualTo(other.id());
     }
 }

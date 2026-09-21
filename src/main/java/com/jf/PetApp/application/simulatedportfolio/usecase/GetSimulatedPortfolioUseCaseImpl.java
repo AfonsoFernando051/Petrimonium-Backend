@@ -40,8 +40,6 @@ public class GetSimulatedPortfolioUseCaseImpl implements GetSimulatedPortfolioUs
                 .toList();
 
         return new SimulatedPortfolioSummaryDTO(
-                portfolio.virtualBalance(),
-                portfolio.initialBalance(),
                 portfolio.currency(),
                 portfolio.resetAt(),
                 positionDTOs

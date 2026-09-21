@@ -54,30 +54,18 @@ public class SimulatedPortfolioRepositoryAdapter implements SimulatedPortfolioRe
 
     @Override
     @Transactional
-    public SimulatedPortfolio create(String userEmail, BigDecimal initialBalance, String currency) {
+    public SimulatedPortfolio create(String userEmail, String currency) {
         UserJpaEntity user = userJpaRepository.findByEmail(userEmail)
                 .orElseThrow(() -> new IllegalArgumentException("User not found for email: " + userEmail));
 
         Instant now = Instant.now();
         SimulatedPortfolioJpaEntity entity = new SimulatedPortfolioJpaEntity();
         entity.setUser(user);
-        entity.setVirtualBalance(initialBalance);
-        entity.setInitialBalance(initialBalance);
         entity.setCurrency(currency);
         entity.setCreatedAt(now);
         entity.setUpdatedAt(now);
 
         return toDomain(portfolioRepository.save(entity), userEmail);
-    }
-
-    @Override
-    @Transactional
-    public void updateBalance(Long portfolioId, BigDecimal newBalance) {
-        SimulatedPortfolioJpaEntity entity = portfolioRepository.findById(portfolioId)
-                .orElseThrow(() -> new IllegalArgumentException("Simulated portfolio not found: " + portfolioId));
-        entity.setVirtualBalance(newBalance);
-        entity.setUpdatedAt(Instant.now());
-        portfolioRepository.save(entity);
     }
 
     @Override
@@ -159,14 +147,13 @@ public class SimulatedPortfolioRepositoryAdapter implements SimulatedPortfolioRe
 
     @Override
     @Transactional
-    public void resetPortfolio(Long portfolioId, BigDecimal initialBalance) {
+    public void resetPortfolio(Long portfolioId) {
         orderRepository.deleteByPortfolioId(portfolioId);
         positionRepository.deleteByPortfolioId(portfolioId);
 
         SimulatedPortfolioJpaEntity entity = portfolioRepository.findById(portfolioId)
                 .orElseThrow(() -> new IllegalArgumentException("Simulated portfolio not found: " + portfolioId));
         Instant now = Instant.now();
-        entity.setVirtualBalance(initialBalance);
         entity.setResetAt(now);
         entity.setUpdatedAt(now);
         portfolioRepository.save(entity);
@@ -176,8 +163,6 @@ public class SimulatedPortfolioRepositoryAdapter implements SimulatedPortfolioRe
         return new SimulatedPortfolio(
                 entity.getId(),
                 userEmail,
-                entity.getVirtualBalance(),
-                entity.getInitialBalance(),
                 entity.getCurrency(),
                 entity.getResetAt(),
                 entity.getCreatedAt(),

@@ -57,15 +57,14 @@ class PlaceSimulatedOrderUseCaseImplTest {
                 getOrCreateSimulatedPortfolioUseCase, simulatedPortfolioRepository, externalInvestmentApiPort);
     }
 
-    private SimulatedPortfolio portfolioWithBalance(BigDecimal balance) {
-        return new SimulatedPortfolio(
-                PORTFOLIO_ID, EMAIL, balance, new BigDecimal("10000.00"), "BRL", null, Instant.now(), Instant.now());
+    private SimulatedPortfolio portfolio() {
+        return new SimulatedPortfolio(PORTFOLIO_ID, EMAIL, "BRL", null, Instant.now(), Instant.now());
     }
 
     @Test
-    void execute_Buy_WithSufficientBalance_DebitsBalanceAndCreatesPosition() {
+    void execute_Buy_CreatesThePositionAtTheReferencePrice() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("10000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -82,30 +81,30 @@ class PlaceSimulatedOrderUseCaseImplTest {
         assertEquals("PETR4", result.ticker());
         verify(simulatedPortfolioRepository).upsertPosition(
                 eq(PORTFOLIO_ID), eq("PETR4"), eq(new BigDecimal("10")), eq(new BigDecimal("30.50")));
-        verify(simulatedPortfolioRepository).updateBalance(PORTFOLIO_ID, new BigDecimal("9695.00"));
     }
 
     @Test
-    void execute_Buy_WithInsufficientBalance_ThrowsAndNeverTouchesPositionOrBalance() {
-        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("100.00")));
+    void execute_Buy_IsNeverRefusedForLackOfFunds_BecauseTheWalletHasNoBalance() {
+        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
                 .thenReturn(Optional.empty());
+        when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4")).thenReturn(Optional.empty());
+        when(simulatedPortfolioRepository.saveOrder(any(), any(), any(), any(), any(), any(), any()))
+                .thenReturn(savedOrder(SimulatedOrderSide.BUY, new BigDecimal("30.50"), Instant.now()));
 
-        assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
-                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null)));
+        useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, new BigDecimal("1000000"), null));
 
-        verify(simulatedPortfolioRepository, never()).upsertPosition(any(), any(), any(), any());
-        verify(simulatedPortfolioRepository, never()).updateBalance(any(), any());
-        verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
+        verify(simulatedPortfolioRepository).upsertPosition(
+                eq(PORTFOLIO_ID), eq("PETR4"), eq(new BigDecimal("1000000")), eq(new BigDecimal("30.50")));
     }
 
     @Test
     void execute_Buy_AddsToAnExistingPositionWithWeightedAveragePrice() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("10000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 40.00, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -125,9 +124,9 @@ class PlaceSimulatedOrderUseCaseImplTest {
     }
 
     @Test
-    void execute_Sell_WithSufficientPosition_CreditsBalanceAndReducesPosition() {
+    void execute_Sell_ReducesThePositionAndKeepsItsAveragePrice() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("1000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -140,8 +139,6 @@ class PlaceSimulatedOrderUseCaseImplTest {
                         new BigDecimal("4"), new BigDecimal("30.00"), Instant.now(), "generated-id"));
 
         useCase.execute(EMAIL, new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.SELL, new BigDecimal("4"), null));
-
-        verify(simulatedPortfolioRepository).updateBalance(PORTFOLIO_ID, new BigDecimal("1120.00"));
         verify(simulatedPortfolioRepository).upsertPosition(
                 eq(PORTFOLIO_ID), eq("PETR4"), eq(new BigDecimal("6")), eq(new BigDecimal("25.00")));
         verify(simulatedPortfolioRepository, never()).deletePosition(any(), any());
@@ -150,7 +147,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_Sell_ThatClosesTheEntirePosition_DeletesIt() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("1000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -171,7 +168,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_Sell_WithNoPosition_Throws() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("1000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -185,7 +182,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_Sell_MoreThanHeld_Throws() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("1000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -201,7 +198,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_WithUnknownTicker_Throws() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("1000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("GHOST99")).thenReturn(Optional.empty());
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
                 .thenReturn(Optional.empty());
@@ -223,7 +220,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
         SimulatedOrder existingOrder = new SimulatedOrder(1L, PORTFOLIO_ID, "PETR4", SimulatedOrderSide.BUY,
                 new BigDecimal("10"), new BigDecimal("30.50"), Instant.now(), "retry-key");
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("10000.00")));
+                .thenReturn(portfolio());
         when(simulatedPortfolioRepository.findOrderByClientOrderId(PORTFOLIO_ID, "retry-key"))
                 .thenReturn(Optional.of(existingOrder));
 
@@ -233,14 +230,13 @@ class PlaceSimulatedOrderUseCaseImplTest {
         assertEquals(existingOrder.id(), result.id());
         verify(externalInvestmentApiPort, never()).getQuote(any());
         verify(simulatedPortfolioRepository, never()).upsertPosition(any(), any(), any(), any());
-        verify(simulatedPortfolioRepository, never()).updateBalance(any(), any());
         verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
     }
 
     @Test
     void execute_WithoutClientOrderId_GeneratesOneBeforeSaving() {
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL))
-                .thenReturn(portfolioWithBalance(new BigDecimal("10000.00")));
+                .thenReturn(portfolio());
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
@@ -258,8 +254,8 @@ class PlaceSimulatedOrderUseCaseImplTest {
         assertEquals(36, clientOrderIdCaptor.getValue().length()); // UUID string length
     }
 
-    private void stubPortfolioAndNoPriorOrder(BigDecimal balance) {
-        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolioWithBalance(balance));
+    private void stubPortfolioAndNoPriorOrder() {
+        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio());
         when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
                 .thenReturn(Optional.empty());
     }
@@ -271,7 +267,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_Buy_WithAPastTradeDate_UsesTheHistoricalCloseAndStampsTheOrderAtThatDate() {
         LocalDate tradeDate = LocalDate.now(ZoneOffset.UTC).minusMonths(6);
-        stubPortfolioAndNoPriorOrder(new BigDecimal("10000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuoteAtDate("PETR4", tradeDate))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 25.00, "BRL")));
         when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4")).thenReturn(Optional.empty());
@@ -284,14 +280,13 @@ class PlaceSimulatedOrderUseCaseImplTest {
 
         verify(simulatedPortfolioRepository).saveOrder(eq(PORTFOLIO_ID), eq("PETR4"), eq(SimulatedOrderSide.BUY),
                 eq(new BigDecimal("10")), eq(new BigDecimal("25.00")), eq(expectedExecutedAt), anyString());
-        verify(simulatedPortfolioRepository).updateBalance(PORTFOLIO_ID, new BigDecimal("9750.00"));
         verify(externalInvestmentApiPort, never()).getQuote(any());
         assertEquals(expectedExecutedAt, result.executedAt());
     }
 
     @Test
     void execute_Buy_WithATradeDateOfToday_IsAnOrdinaryLiveOrder() {
-        stubPortfolioAndNoPriorOrder(new BigDecimal("10000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuote("PETR4"))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
         when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4")).thenReturn(Optional.empty());
@@ -309,7 +304,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
 
     @Test
     void execute_WithAFutureTradeDate_ThrowsBeforeFetchingAnyQuote() {
-        stubPortfolioAndNoPriorOrder(new BigDecimal("10000.00"));
+        stubPortfolioAndNoPriorOrder();
 
         assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, new PlaceSimulatedOrderCommand(
                 "PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null, LocalDate.now(ZoneOffset.UTC).plusDays(1))));
@@ -322,7 +317,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Test
     void execute_WithAPastTradeDateAndNoHistoricalQuote_ThrowsInsteadOfFallingBackToTheLivePrice() {
         LocalDate tradeDate = LocalDate.now(ZoneOffset.UTC).minusYears(30);
-        stubPortfolioAndNoPriorOrder(new BigDecimal("10000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuoteAtDate("PETR4", tradeDate)).thenReturn(Optional.empty());
 
         assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, new PlaceSimulatedOrderCommand(
@@ -336,7 +331,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
     void execute_Sell_DatedBeforeTheFirstBuyOfThatTicker_Throws() {
         LocalDate firstBuy = LocalDate.now(ZoneOffset.UTC).minusMonths(2);
         LocalDate sellDate = firstBuy.minusDays(1);
-        stubPortfolioAndNoPriorOrder(new BigDecimal("1000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuoteAtDate("PETR4", sellDate))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 20.00, "BRL")));
         when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4"))
@@ -348,16 +343,14 @@ class PlaceSimulatedOrderUseCaseImplTest {
 
         assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, new PlaceSimulatedOrderCommand(
                 "PETR4", SimulatedOrderSide.SELL, new BigDecimal("4"), null, sellDate)));
-
-        verify(simulatedPortfolioRepository, never()).updateBalance(any(), any());
         verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
     }
 
     @Test
-    void execute_Sell_DatedOnOrAfterTheFirstBuy_UsesTheHistoricalCloseAndCreditsTheBalance() {
+    void execute_Sell_DatedOnOrAfterTheFirstBuy_UsesTheHistoricalClose() {
         LocalDate firstBuy = LocalDate.now(ZoneOffset.UTC).minusMonths(2);
         LocalDate sellDate = firstBuy.plusDays(10);
-        stubPortfolioAndNoPriorOrder(new BigDecimal("1000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuoteAtDate("PETR4", sellDate))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
         when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4"))
@@ -372,8 +365,6 @@ class PlaceSimulatedOrderUseCaseImplTest {
 
         useCase.execute(EMAIL, new PlaceSimulatedOrderCommand(
                 "PETR4", SimulatedOrderSide.SELL, new BigDecimal("4"), null, sellDate));
-
-        verify(simulatedPortfolioRepository).updateBalance(PORTFOLIO_ID, new BigDecimal("1120.00"));
         verify(simulatedPortfolioRepository).saveOrder(eq(PORTFOLIO_ID), eq("PETR4"), eq(SimulatedOrderSide.SELL),
                 eq(new BigDecimal("4")), eq(new BigDecimal("30.00")), eq(expectedExecutedAt), anyString());
     }
@@ -383,7 +374,7 @@ class PlaceSimulatedOrderUseCaseImplTest {
         LocalDate petrFirstBuy = LocalDate.now(ZoneOffset.UTC).minusMonths(2);
         LocalDate sellDate = petrFirstBuy.minusDays(5);
         Instant earlier = petrFirstBuy.minusMonths(1).atTime(12, 0).toInstant(ZoneOffset.UTC);
-        stubPortfolioAndNoPriorOrder(new BigDecimal("1000.00"));
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuoteAtDate("PETR4", sellDate))
                 .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 20.00, "BRL")));
         when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4"))
@@ -402,17 +393,28 @@ class PlaceSimulatedOrderUseCaseImplTest {
     }
 
     @Test
-    void execute_Buy_ThatCostsExactlyTheWholeBalance_IsAllowed() {
-        stubPortfolioAndNoPriorOrder(new BigDecimal("305.00"));
+    void execute_Buy_WithAPlaceholderLiveQuote_ThrowsRatherThanFillingAtAnInventedPrice() {
+        stubPortfolioAndNoPriorOrder();
         when(externalInvestmentApiPort.getQuote("PETR4"))
-                .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.50, "BRL")));
-        when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4")).thenReturn(Optional.empty());
-        when(simulatedPortfolioRepository.saveOrder(any(), any(), any(), any(), any(), any(), any()))
-                .thenReturn(savedOrder(SimulatedOrderSide.BUY, new BigDecimal("30.50"), Instant.now()));
+                .thenReturn(Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
 
-        useCase.execute(EMAIL,
-                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null));
+        assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null)));
 
-        verify(simulatedPortfolioRepository).updateBalance(PORTFOLIO_ID, new BigDecimal("0.00"));
+        verify(simulatedPortfolioRepository, never()).upsertPosition(any(), any(), any(), any());
+        verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
+    }
+
+    @Test
+    void execute_Buy_WithAPlaceholderHistoricalQuote_ThrowsRatherThanFillingAtAnInventedPrice() {
+        LocalDate tradeDate = LocalDate.now(ZoneOffset.UTC).minusMonths(3);
+        stubPortfolioAndNoPriorOrder();
+        when(externalInvestmentApiPort.getQuoteAtDate("PETR4", tradeDate))
+                .thenReturn(Optional.of(AssetQuoteResponse.simulated("PETR4", "Simulated PETR4", 50.0, "BRL")));
+
+        assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, new PlaceSimulatedOrderCommand(
+                "PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null, tradeDate)));
+
+        verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
     }
 }

@@ -33,8 +33,11 @@ import java.util.UUID;
  * stamped at noon UTC of that date — noon, not midnight, so the calendar
  * day survives a conversion to any local timezone. That is what lets a
  * student assemble a portfolio "as if" they had bought months ago. The
- * virtual balance is a running total, not replayed by date, so a backdated
- * order debits/credits the current balance. Uses the same
+ * wallet has no cash or balance — it only holds the positions the student
+ * registers — so no order is ever refused for lack of funds. A placeholder
+ * quote (the dev-only fabricated price served when no market-data token is
+ * configured) is refused like a missing one, so no invented price is ever
+ * stored as a fill. Uses the same
  * {@link ExternalInvestmentApiPort} the real_portfolio context uses for
  * quotes — a deliberate, narrow exception to the simulated/real boundary
  * (read-only public market data, not portfolio state) — see
@@ -107,7 +110,7 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
     private BigDecimal resolveReferencePrice(String ticker) {
         AssetQuoteResponse quote = externalInvestmentApiPort.getQuote(ticker)
                 .orElseThrow(() -> new IllegalArgumentException("Unknown ticker for simulation: " + ticker));
-        if (quote.regularMarketPrice() == null) {
+        if (quote.regularMarketPrice() == null || quote.simulated()) {
             throw new IllegalArgumentException("No reference price available for ticker: " + ticker);
         }
         return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
@@ -118,7 +121,7 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         AssetQuoteResponse quote = externalInvestmentApiPort.getQuoteAtDate(ticker, date)
                 .orElseThrow(() -> new IllegalArgumentException(
                         "No historical price available for " + ticker + " on " + date));
-        if (quote.regularMarketPrice() == null) {
+        if (quote.regularMarketPrice() == null || quote.simulated()) {
             throw new IllegalArgumentException("No historical price available for " + ticker + " on " + date);
         }
         return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
@@ -141,11 +144,6 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
             SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price,
             Instant executedAt, String clientOrderId
     ) {
-        BigDecimal cost = price.multiply(quantity).setScale(2, RoundingMode.HALF_UP);
-        if (cost.compareTo(portfolio.virtualBalance()) > 0) {
-            throw new IllegalArgumentException("Insufficient virtual balance to buy " + quantity + " " + ticker);
-        }
-
         Optional<SimulatedPosition> existingPosition =
                 simulatedPortfolioRepository.findPosition(portfolio.id(), ticker);
         BigDecimal newQuantity = existingPosition.map(SimulatedPosition::quantity).orElse(BigDecimal.ZERO).add(quantity);
@@ -154,7 +152,6 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
                 .orElse(price);
 
         simulatedPortfolioRepository.upsertPosition(portfolio.id(), ticker, newQuantity, newAveragePrice);
-        simulatedPortfolioRepository.updateBalance(portfolio.id(), portfolio.virtualBalance().subtract(cost));
 
         return simulatedPortfolioRepository.saveOrder(
                 portfolio.id(), ticker, SimulatedOrderSide.BUY, quantity, price, executedAt, clientOrderId);
@@ -172,7 +169,6 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
                     "Insufficient simulated position quantity in " + ticker + " to sell " + quantity);
         }
 
-        BigDecimal proceeds = price.multiply(quantity).setScale(2, RoundingMode.HALF_UP);
         BigDecimal remainingQuantity = position.quantity().subtract(quantity);
 
         if (remainingQuantity.compareTo(BigDecimal.ZERO) == 0) {
@@ -180,7 +176,6 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         } else {
             simulatedPortfolioRepository.upsertPosition(portfolio.id(), ticker, remainingQuantity, position.averagePrice());
         }
-        simulatedPortfolioRepository.updateBalance(portfolio.id(), portfolio.virtualBalance().add(proceeds));
 
         return simulatedPortfolioRepository.saveOrder(
                 portfolio.id(), ticker, SimulatedOrderSide.SELL, quantity, price, executedAt, clientOrderId);

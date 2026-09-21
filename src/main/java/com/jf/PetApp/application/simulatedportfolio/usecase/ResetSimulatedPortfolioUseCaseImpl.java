@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Wipes every simulated position and order and restores the portfolio's
- * original starting balance — "reiniciar a simulação mediante confirmação".
+ * Wipes every simulated position and order, leaving the wallet empty —
+ * "reiniciar a simulação mediante confirmação".
  * {@code confirm} is validated here too (defense in depth beyond the
  * controller's {@code @AssertTrue}), since this is a destructive operation.
  */
@@ -34,6 +34,6 @@ public class ResetSimulatedPortfolioUseCaseImpl implements ResetSimulatedPortfol
         }
 
         SimulatedPortfolio portfolio = getOrCreateSimulatedPortfolioUseCase.execute(email);
-        simulatedPortfolioRepository.resetPortfolio(portfolio.id(), portfolio.initialBalance());
+        simulatedPortfolioRepository.resetPortfolio(portfolio.id());
     }
 }

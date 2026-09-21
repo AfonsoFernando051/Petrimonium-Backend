@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.math.BigDecimal;
 import java.time.Instant;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -37,12 +36,12 @@ class ResetSimulatedPortfolioUseCaseImplTest {
     @Test
     void execute_WithConfirmTrue_ResetsThePortfolio() {
         SimulatedPortfolio portfolio = new SimulatedPortfolio(
-                1L, EMAIL, new BigDecimal("500.00"), new BigDecimal("10000.00"), "BRL", null, Instant.now(), Instant.now());
+                1L, EMAIL, "BRL", null, Instant.now(), Instant.now());
         when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio);
 
         useCase.execute(EMAIL, true);
 
-        verify(simulatedPortfolioRepository).resetPortfolio(1L, new BigDecimal("10000.00"));
+        verify(simulatedPortfolioRepository).resetPortfolio(1L);
     }
 
     @Test
@@ -50,6 +49,6 @@ class ResetSimulatedPortfolioUseCaseImplTest {
         assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL, false));
 
         verify(getOrCreateSimulatedPortfolioUseCase, never()).execute(EMAIL);
-        verify(simulatedPortfolioRepository, never()).resetPortfolio(org.mockito.ArgumentMatchers.any(), org.mockito.ArgumentMatchers.any());
+        verify(simulatedPortfolioRepository, never()).resetPortfolio(org.mockito.ArgumentMatchers.any());
     }
 }
