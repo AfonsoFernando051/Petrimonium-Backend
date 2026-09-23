@@ -1526,174 +1526,174 @@
           ]
         },
         {
-              "lessonId": "behavioral_endowment_effect",
-              "order": 5,
-              "xpReward": 20,
-              "competency": "APPLY",
-              "estimatedMinutes": 3,
+          "lessonId": "behavioral_endowment_effect",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Efeito Dotação",
+              "learningObjective": "Reconhecer quando o simples fato de possuir um ativo está inflando sua avaliação sobre o valor dele, independentemente dos fundamentos."
+            },
+            "en": {
+              "title": "Endowment Effect",
+              "learningObjective": "Recognize when the simple fact of owning an asset is inflating your assessment of its value, regardless of the fundamentals."
+            },
+            "es": {
+              "title": "Efecto Dotación",
+              "learningObjective": "Reconocer cuándo el simple hecho de poseer un activo está inflando tu evaluación de su valor, independientemente de los fundamentos."
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
               "translations": {
                 "pt": {
-                  "title": "Efeito Dotação",
-                  "learningObjective": "Reconhecer quando o simples fato de possuir um ativo está inflando sua avaliação sobre o valor dele, independentemente dos fundamentos."
+                  "title": "Vale mais só porque é seu",
+                  "body": "Efeito dotação é a tendência de atribuir mais valor a algo simplesmente porque você já o possui, comparado a quanto você pagaria para adquirir a mesma coisa caso ainda não a tivesse. Em investimentos, isso pode levar a pedir um preço mais alto para vender um ativo do que se estaria disposto a pagar para comprá-lo, mesmo sem nenhuma diferença real nos fundamentos — o simples fato de já ser seu já muda a percepção de valor."
                 },
                 "en": {
-                  "title": "Endowment Effect",
-                  "learningObjective": "Recognize when the simple fact of owning an asset is inflating your assessment of its value, regardless of the fundamentals."
+                  "title": "It's worth more just because it's yours",
+                  "body": "The endowment effect is the tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire that same thing if you didn't have it yet. In investing, this can lead to asking a higher price to sell an asset than you'd be willing to pay to buy it, even with no real difference in the fundamentals — the mere fact of already owning it changes the perception of value."
                 },
                 "es": {
-                  "title": "Efecto Dotación",
-                  "learningObjective": "Reconocer cuándo el simple hecho de poseer un activo está inflando tu evaluación de su valor, independientemente de los fundamentos."
+                  "title": "Vale más solo porque es tuyo",
+                  "body": "El efecto dotación es la tendencia a atribuir más valor a algo simplemente porque ya lo posees, comparado con cuánto pagarías por adquirir esa misma cosa si todavía no la tuvieras. En las inversiones, esto puede llevar a pedir un precio más alto para vender un activo del que estarías dispuesto a pagar para comprarlo, incluso sin ninguna diferencia real en los fundamentos — el simple hecho de ya poseerlo cambia la percepción de valor."
                 }
-              },
-              "steps": [
-                {
-                  "type": "explanation",
-                  "order": 1,
-                  "translations": {
-                    "pt": {
-                      "title": "Vale mais só porque é seu",
-                      "body": "Efeito dotação é a tendência de atribuir mais valor a algo simplesmente porque você já o possui, comparado a quanto você pagaria para adquirir a mesma coisa caso ainda não a tivesse. Em investimentos, isso pode levar a pedir um preço mais alto para vender um ativo do que se estaria disposto a pagar para comprá-lo, mesmo sem nenhuma diferença real nos fundamentos — o simples fato de já ser seu já muda a percepção de valor."
-                    },
-                    "en": {
-                      "title": "It's worth more just because it's yours",
-                      "body": "The endowment effect is the tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire that same thing if you didn't have it yet. In investing, this can lead to asking a higher price to sell an asset than you'd be willing to pay to buy it, even with no real difference in the fundamentals — the mere fact of already owning it changes the perception of value."
-                    },
-                    "es": {
-                      "title": "Vale más solo porque es tuyo",
-                      "body": "El efecto dotación es la tendencia a atribuir más valor a algo simplemente porque ya lo posees, comparado con cuánto pagarías por adquirir esa misma cosa si todavía no la tuvieras. En las inversiones, esto puede llevar a pedir un precio más alto para vender un activo del que estarías dispuesto a pagar para comprarlo, incluso sin ninguna diferencia real en los fundamentos — el simple hecho de ya poseerlo cambia la percepción de valor."
-                    }
-                  }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor recebeu ações de uma empresa como herança e, embora nunca compraria essas mesmas ações hoje pelo preço atual de mercado, se recusa a vendê-las por esse mesmo preço — 'são minhas, valem mais do que isso'. O valor de mercado é o mesmo dos dois lados da decisão; o que mudou foi apenas o fato de ele já possuir o ativo."
                 },
-                {
-                  "type": "example",
-                  "order": 2,
-                  "translations": {
-                    "pt": {
-                      "title": "Na prática",
-                      "body": "Um investidor recebeu ações de uma empresa como herança e, embora nunca compraria essas mesmas ações hoje pelo preço atual de mercado, se recusa a vendê-las por esse mesmo preço — 'são minhas, valem mais do que isso'. O valor de mercado é o mesmo dos dois lados da decisão; o que mudou foi apenas o fato de ele já possuir o ativo."
-                    },
-                    "en": {
-                      "title": "In practice",
-                      "body": "An investor inherited shares in a company and, although they would never buy those same shares today at the current market price, they refuse to sell them at that same price — 'they're mine, they're worth more than that.' The market value is the same on both sides of the decision; what changed was simply the fact that they already own the asset."
-                    },
-                    "es": {
-                      "title": "En la práctica",
-                      "body": "Un inversor heredó acciones de una empresa y, aunque nunca compraría esas mismas acciones hoy al precio actual de mercado, se niega a venderlas a ese mismo precio — 'son mías, valen más que eso'. El valor de mercado es el mismo en ambos lados de la decisión; lo que cambió fue simplemente el hecho de que ya posee el activo."
-                    }
-                  }
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor inherited shares in a company and, although they would never buy those same shares today at the current market price, they refuse to sell them at that same price — 'they're mine, they're worth more than that.' The market value is the same on both sides of the decision; what changed was simply the fact that they already own the asset."
                 },
-                {
-                  "type": "choice_question",
-                  "order": 3,
-                  "framing": "micro_exercise",
-                  "correctIndex": 1,
-                  "translations": {
-                    "pt": {
-                      "prompt": "O que caracteriza o efeito dotação?",
-                      "options": [
-                        "A tendência de nunca vender nenhum ativo, independentemente do preço",
-                        "A tendência de atribuir mais valor a algo simplesmente por já possuí-lo, comparado a quanto se pagaria para adquiri-lo",
-                        "Um tipo de taxa cobrada na venda de ativos herdados",
-                        "A certeza de que ativos herdados sempre valorizam mais do que os comprados"
-                      ],
-                      "explanation": "Efeito dotação é sobre a diferença de valor percebido entre possuir algo e não possuir, mesmo quando o valor de mercado objetivo é exatamente o mesmo."
-                    },
-                    "en": {
-                      "prompt": "What characterizes the endowment effect?",
-                      "options": [
-                        "The tendency to never sell any asset, regardless of price",
-                        "The tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire it",
-                        "A type of fee charged on the sale of inherited assets",
-                        "The certainty that inherited assets always appreciate more than purchased ones"
-                      ],
-                      "explanation": "The endowment effect is about the difference in perceived value between owning something and not owning it, even when the objective market value is exactly the same."
-                    },
-                    "es": {
-                      "prompt": "¿Qué caracteriza al efecto dotación?",
-                      "options": [
-                        "La tendencia a nunca vender ningún activo, sin importar el precio",
-                        "La tendencia a atribuir más valor a algo simplemente por ya poseerlo, comparado con cuánto se pagaría para adquirirlo",
-                        "Un tipo de tasa cobrada en la venta de activos heredados",
-                        "La certeza de que los activos heredados siempre se valorizan más que los comprados"
-                      ],
-                      "explanation": "El efecto dotación trata sobre la diferencia de valor percibido entre poseer algo y no poseerlo, incluso cuando el valor de mercado objetivo es exactamente el mismo."
-                    }
-                  }
-                },
-                {
-                  "type": "choice_question",
-                  "order": 4,
-                  "framing": "apply",
-                  "correctIndex": 1,
-                  "translations": {
-                    "pt": {
-                      "prompt": "Você já entende aversão à perda de outra lição. Por que abrir mão de um ativo que você já possui pode ser sentido como uma perda, inflando o valor que você atribui a ele para vendê-lo?",
-                      "options": [
-                        "Porque vender um ativo nunca envolve nenhum tipo de emoção",
-                        "Porque, assim como a aversão à perda faz o desconforto de perder pesar mais do que o prazer de ganhar, desfazer-se de algo que já é seu pode ser sentido como uma perda, o que ajuda a explicar por que se pede mais para vender do que se pagaria para comprar",
-                        "Porque aversão à perda só se aplica a dinheiro, nunca a ativos possuídos",
-                        "Porque o efeito dotação e a aversão à perda não têm nenhuma relação entre si"
-                      ],
-                      "explanation": "O efeito dotação está relacionado à aversão à perda: desfazer-se de algo que já se possui pode ser sentido como uma perda, o que ajuda a explicar por que o preço mínimo de venda tende a ser maior do que o preço máximo de compra para o mesmo ativo."
-                    },
-                    "en": {
-                      "prompt": "You already understand loss aversion from another lesson. Why can giving up an asset you already own be felt as a loss, inflating the value you assign to it in order to sell it?",
-                      "options": [
-                        "Because selling an asset never involves any kind of emotion",
-                        "Because, just as loss aversion makes the discomfort of losing weigh more than the pleasure of gaining, giving up something that's already yours can be felt as a loss, which helps explain why people ask for more to sell than they'd pay to buy",
-                        "Because loss aversion only applies to money, never to owned assets",
-                        "Because the endowment effect and loss aversion have no relation to each other"
-                      ],
-                      "explanation": "The endowment effect is related to loss aversion: giving up something you already own can be felt as a loss, which helps explain why the minimum selling price tends to be higher than the maximum buying price for the same asset."
-                    },
-                    "es": {
-                      "prompt": "Ya entiendes la aversión a la pérdida de otra lección. ¿Por qué renunciar a un activo que ya posees puede sentirse como una pérdida, inflando el valor que le atribuyes para venderlo?",
-                      "options": [
-                        "Porque vender un activo nunca involucra ningún tipo de emoción",
-                        "Porque, así como la aversión a la pérdida hace que el malestar de perder pese más que el placer de ganar, desprenderse de algo que ya es tuyo puede sentirse como una pérdida, lo que ayuda a explicar por qué se pide más para vender de lo que se pagaría para comprar",
-                        "Porque la aversión a la pérdida solo se aplica al dinero, nunca a activos poseídos",
-                        "Porque el efecto dotación y la aversión a la pérdida no tienen ninguna relación entre sí"
-                      ],
-                      "explanation": "El efecto dotación está relacionado con la aversión a la pérdida: desprenderse de algo que ya se posee puede sentirse como una pérdida, lo que ayuda a explicar por qué el precio mínimo de venta tiende a ser mayor que el precio máximo de compra para el mismo activo."
-                    }
-                  }
-                },
-                {
-                  "type": "summary",
-                  "order": 5,
-                  "translations": {
-                    "pt": {
-                      "title": "O que você aprendeu",
-                      "takeaways": [
-                        "Efeito dotação é atribuir mais valor a algo simplesmente por já possuí-lo.",
-                        "Isso pode levar a pedir mais para vender um ativo do que se pagaria para comprá-lo, sem diferença real nos fundamentos.",
-                        "Esse viés está relacionado à aversão à perda, já estudada em outra lição."
-                      ]
-                    },
-                    "en": {
-                      "title": "What you learned",
-                      "takeaways": [
-                        "The endowment effect is attributing more value to something simply because you already own it.",
-                        "This can lead to asking more to sell an asset than you'd pay to buy it, with no real difference in the fundamentals.",
-                        "This bias is related to loss aversion, already studied in another lesson."
-                      ]
-                    },
-                    "es": {
-                      "title": "Lo que aprendiste",
-                      "takeaways": [
-                        "El efecto dotación es atribuir más valor a algo simplemente por ya poseerlo.",
-                        "Esto puede llevar a pedir más para vender un activo del que se pagaría para comprarlo, sin diferencia real en los fundamentos.",
-                        "Este sesgo está relacionado con la aversión a la pérdida, ya estudiada en otra lección."
-                      ]
-                    }
-                  }
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor heredó acciones de una empresa y, aunque nunca compraría esas mismas acciones hoy al precio actual de mercado, se niega a venderlas a ese mismo precio — 'son mías, valen más que eso'. El valor de mercado es el mismo en ambos lados de la decisión; lo que cambió fue simplemente el hecho de que ya posee el activo."
                 }
-              ]
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o efeito dotação?",
+                  "options": [
+                    "A tendência de nunca vender nenhum ativo, independentemente do preço",
+                    "A tendência de atribuir mais valor a algo simplesmente por já possuí-lo, comparado a quanto se pagaria para adquiri-lo",
+                    "Um tipo de taxa cobrada na venda de ativos herdados",
+                    "A certeza de que ativos herdados sempre valorizam mais do que os comprados"
+                  ],
+                  "explanation": "Efeito dotação é sobre a diferença de valor percebido entre possuir algo e não possuir, mesmo quando o valor de mercado objetivo é exatamente o mesmo."
+                },
+                "en": {
+                  "prompt": "What characterizes the endowment effect?",
+                  "options": [
+                    "The tendency to never sell any asset, regardless of price",
+                    "The tendency to attribute more value to something simply because you already own it, compared to how much you'd pay to acquire it",
+                    "A type of fee charged on the sale of inherited assets",
+                    "The certainty that inherited assets always appreciate more than purchased ones"
+                  ],
+                  "explanation": "The endowment effect is about the difference in perceived value between owning something and not owning it, even when the objective market value is exactly the same."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al efecto dotación?",
+                  "options": [
+                    "La tendencia a nunca vender ningún activo, sin importar el precio",
+                    "La tendencia a atribuir más valor a algo simplemente por ya poseerlo, comparado con cuánto se pagaría para adquirirlo",
+                    "Un tipo de tasa cobrada en la venta de activos heredados",
+                    "La certeza de que los activos heredados siempre se valorizan más que los comprados"
+                  ],
+                  "explanation": "El efecto dotación trata sobre la diferencia de valor percibido entre poseer algo y no poseerlo, incluso cuando el valor de mercado objetivo es exactamente el mismo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já entende aversão à perda de outra lição. Por que abrir mão de um ativo que você já possui pode ser sentido como uma perda, inflando o valor que você atribui a ele para vendê-lo?",
+                  "options": [
+                    "Porque vender um ativo nunca envolve nenhum tipo de emoção",
+                    "Porque, assim como a aversão à perda faz o desconforto de perder pesar mais do que o prazer de ganhar, desfazer-se de algo que já é seu pode ser sentido como uma perda, o que ajuda a explicar por que se pede mais para vender do que se pagaria para comprar",
+                    "Porque aversão à perda só se aplica a dinheiro, nunca a ativos possuídos",
+                    "Porque o efeito dotação e a aversão à perda não têm nenhuma relação entre si"
+                  ],
+                  "explanation": "O efeito dotação está relacionado à aversão à perda: desfazer-se de algo que já se possui pode ser sentido como uma perda, o que ajuda a explicar por que o preço mínimo de venda tende a ser maior do que o preço máximo de compra para o mesmo ativo."
+                },
+                "en": {
+                  "prompt": "You already understand loss aversion from another lesson. Why can giving up an asset you already own be felt as a loss, inflating the value you assign to it in order to sell it?",
+                  "options": [
+                    "Because selling an asset never involves any kind of emotion",
+                    "Because, just as loss aversion makes the discomfort of losing weigh more than the pleasure of gaining, giving up something that's already yours can be felt as a loss, which helps explain why people ask for more to sell than they'd pay to buy",
+                    "Because loss aversion only applies to money, never to owned assets",
+                    "Because the endowment effect and loss aversion have no relation to each other"
+                  ],
+                  "explanation": "The endowment effect is related to loss aversion: giving up something you already own can be felt as a loss, which helps explain why the minimum selling price tends to be higher than the maximum buying price for the same asset."
+                },
+                "es": {
+                  "prompt": "Ya entiendes la aversión a la pérdida de otra lección. ¿Por qué renunciar a un activo que ya posees puede sentirse como una pérdida, inflando el valor que le atribuyes para venderlo?",
+                  "options": [
+                    "Porque vender un activo nunca involucra ningún tipo de emoción",
+                    "Porque, así como la aversión a la pérdida hace que el malestar de perder pese más que el placer de ganar, desprenderse de algo que ya es tuyo puede sentirse como una pérdida, lo que ayuda a explicar por qué se pide más para vender de lo que se pagaría para comprar",
+                    "Porque la aversión a la pérdida solo se aplica al dinero, nunca a activos poseídos",
+                    "Porque el efecto dotación y la aversión a la pérdida no tienen ninguna relación entre sí"
+                  ],
+                  "explanation": "El efecto dotación está relacionado con la aversión a la pérdida: desprenderse de algo que ya se posee puede sentirse como una pérdida, lo que ayuda a explicar por qué el precio mínimo de venta tiende a ser mayor que el precio máximo de compra para el mismo activo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Efeito dotação é atribuir mais valor a algo simplesmente por já possuí-lo.",
+                    "Isso pode levar a pedir mais para vender um ativo do que se pagaria para comprá-lo, sem diferença real nos fundamentos.",
+                    "Esse viés está relacionado à aversão à perda, já estudada em outra lição."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The endowment effect is attributing more value to something simply because you already own it.",
+                    "This can lead to asking more to sell an asset than you'd pay to buy it, with no real difference in the fundamentals.",
+                    "This bias is related to loss aversion, already studied in another lesson."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El efecto dotación es atribuir más valor a algo simplemente por ya poseerlo.",
+                    "Esto puede llevar a pedir más para vender un activo del que se pagaría para comprarlo, sin diferencia real en los fundamentos.",
+                    "Este sesgo está relacionado con la aversión a la pérdida, ya estudiada en otra lección."
+                  ]
+                }
+              }
             }
           ]
-        },
-        {
-          "moduleId": "expert_behavioral_biases",
+        }
+      ]
+    },
+    {
+      "moduleId": "expert_behavioral_biases",
       "order": 3,
       "iconKey": "psychology_outlined",
       "xpReward": 100,
@@ -2521,6 +2521,843 @@
                     "El sesgo de recencia da un peso desproporcionado a eventos recientes, en detrimento de un historial más largo.",
                     "Comparte una raíz común con la heurística de la disponibilidad y la falacia del jugador.",
                     "Completaste el módulo avanzado de sesgos conductuales: disponibilidad, falacia del jugador, statu quo, efecto disposición y recencia."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "moduleId": "behavioral_defenses",
+      "order": 4,
+      "iconKey": "psychology_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "expert_behavioral_biases"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Defesas Práticas Contra os Próprios Vieses",
+          "description": "Viés retrospectivo, resultado x processo, diário de decisões, pré-compromisso e frequência de checagem."
+        },
+        "en": {
+          "title": "Practical Defenses Against Your Own Biases",
+          "description": "Hindsight bias, outcome vs. process, a decision journal, precommitment and checking frequency."
+        },
+        "es": {
+          "title": "Defensas Prácticas Contra los Propios Sesgos",
+          "description": "Sesgo retrospectivo, resultado vs. proceso, diario de decisiones, precompromiso y frecuencia de revisión."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "behavioral_hindsight_bias",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Viés Retrospectivo: 'Eu Sabia que Ia Acontecer'"
+            },
+            "en": {
+              "title": "Hindsight Bias: 'I Knew It Would Happen'"
+            },
+            "es": {
+              "title": "Sesgo Retrospectivo: 'Yo Sabía que Iba a Pasar'"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Depois que acontece, tudo parece óbvio",
+                  "body": "O viés retrospectivo é a tendência de, depois de conhecer o resultado, acreditar que ele era previsível o tempo todo. Ele é perigoso porque apaga a incerteza que existia no momento da decisão: se o que aconteceu 'era óbvio', então quem não viu foi incompetente — inclusive você mesmo. Isso distorce tanto a avaliação de erros quanto a confiança na próxima aposta, porque cria a sensação de um poder de previsão que você não tem."
+                },
+                "en": {
+                  "title": "Once it happens, everything looks obvious",
+                  "body": "Hindsight bias is the tendency, after learning the outcome, to believe it was predictable all along. It's dangerous because it erases the uncertainty that existed when the decision was made: if what happened 'was obvious', then whoever missed it was incompetent — including you. That distorts both how you judge mistakes and how confident you feel about the next bet, because it creates a sense of predictive power you don't have."
+                },
+                "es": {
+                  "title": "Después de que ocurre, todo parece obvio",
+                  "body": "El sesgo retrospectivo es la tendencia a creer, después de conocer el resultado, que era previsible todo el tiempo. Es peligroso porque borra la incertidumbre que existía en el momento de la decisión: si lo que ocurrió 'era obvio', entonces quien no lo vio fue incompetente — incluido tú mismo. Eso distorsiona tanto la evaluación de los errores como la confianza en la próxima apuesta, porque crea una sensación de poder de predicción que no tienes."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de uma queda forte de mercado, aparecem muitas análises explicando por que era inevitável. Se fosse mesmo, os preços antes da queda teriam refletido isso. O que existe depois é uma reconstrução: os sinais que apontavam naquela direção ficam vívidos, e os muitos sinais que apontavam para o contrário desaparecem da memória — junto com a incerteza real de quem decidia naquele momento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After a sharp market drop, plenty of analyses appear explaining why it was inevitable. If it truly were, prices before the drop would have reflected it. What exists afterwards is a reconstruction: the signals pointing that way become vivid, and the many signals pointing the other way vanish from memory — along with the real uncertainty faced by whoever was deciding at the time."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Después de una caída fuerte del mercado, aparecen muchos análisis explicando por qué era inevitable. Si de verdad lo fuera, los precios antes de la caída lo habrían reflejado. Lo que existe después es una reconstrucción: las señales que apuntaban en esa dirección se vuelven vívidas, y las muchas señales que apuntaban a lo contrario desaparecen de la memoria — junto con la incertidumbre real de quien decidía en ese momento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o viés retrospectivo?",
+                  "options": [
+                    "Acreditar que o futuro será igual ao passado recente",
+                    "Acreditar, depois de conhecer o resultado, que ele era previsível desde o início",
+                    "Preferir manter tudo como está por comodidade",
+                    "Buscar apenas informações que confirmem a própria opinião"
+                  ],
+                  "explanation": "É a reescrita do passado à luz do resultado: a incerteza que existia no momento da decisão some da lembrança."
+                },
+                "en": {
+                  "prompt": "What characterizes hindsight bias?",
+                  "options": [
+                    "Believing the future will look like the recent past",
+                    "Believing, after learning the outcome, that it was predictable from the start",
+                    "Preferring to keep everything as it is out of convenience",
+                    "Seeking only information that confirms your own view"
+                  ],
+                  "explanation": "It's rewriting the past in light of the outcome: the uncertainty that existed at decision time disappears from memory."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al sesgo retrospectivo?",
+                  "options": [
+                    "Creer que el futuro será igual al pasado reciente",
+                    "Creer, después de conocer el resultado, que era previsible desde el inicio",
+                    "Preferir mantener todo como está por comodidad",
+                    "Buscar solo información que confirme la propia opinión"
+                  ],
+                  "explanation": "Es la reescritura del pasado a la luz del resultado: la incertidumbre que existía en el momento de la decisión desaparece del recuerdo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você se pega pensando 'eu sabia que aquele ativo ia cair, devia ter vendido'. Qual verificação honesta desarma o viés?",
+                  "options": [
+                    "Confiar na lembrança, porque a memória do próprio raciocínio é confiável",
+                    "Concluir que você tem boa intuição e passar a agir mais por ela",
+                    "Procurar registro do que você de fato pensava antes — e, se não houver registro, tratar a certeza atual como reconstrução",
+                    "Ignorar o episódio, porque analisar o passado nunca ajuda"
+                  ],
+                  "explanation": "Sem registro do raciocínio anterior, não há como distinguir previsão de reconstrução. É exatamente esse vazio que o viés preenche com falsa certeza."
+                },
+                "en": {
+                  "prompt": "You catch yourself thinking 'I knew that asset would fall, I should have sold'. Which honest check defuses the bias?",
+                  "options": [
+                    "Trust the memory, because your recollection of your own reasoning is reliable",
+                    "Conclude that you have good intuition and start acting on it more",
+                    "Look for a record of what you actually thought beforehand — and, if there's none, treat today's certainty as a reconstruction",
+                    "Ignore the episode, because analyzing the past never helps"
+                  ],
+                  "explanation": "Without a record of the earlier reasoning, there's no way to tell prediction from reconstruction. That gap is exactly what the bias fills with false certainty."
+                },
+                "es": {
+                  "prompt": "Te descubres pensando 'yo sabía que ese activo iba a caer, debí haber vendido'. ¿Qué verificación honesta desarma el sesgo?",
+                  "options": [
+                    "Confiar en el recuerdo, porque la memoria del propio razonamiento es confiable",
+                    "Concluir que tienes buena intuición y pasar a actuar más por ella",
+                    "Buscar un registro de lo que de hecho pensabas antes — y, si no hay registro, tratar la certeza actual como una reconstrucción",
+                    "Ignorar el episodio, porque analizar el pasado nunca ayuda"
+                  ],
+                  "explanation": "Sin registro del razonamiento anterior, no hay forma de distinguir predicción de reconstrucción. Ese vacío es exactamente lo que el sesgo llena con falsa certeza."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O viés retrospectivo faz o resultado parecer previsível depois que já aconteceu.",
+                    "Ele apaga a incerteza real que existia no momento da decisão.",
+                    "Só um registro do raciocínio anterior distingue previsão de reconstrução."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Hindsight bias makes an outcome look predictable after it has happened.",
+                    "It erases the real uncertainty that existed at decision time.",
+                    "Only a record of the earlier reasoning tells prediction from reconstruction."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El sesgo retrospectivo hace que el resultado parezca previsible después de ocurrido.",
+                    "Borra la incertidumbre real que existía en el momento de la decisión.",
+                    "Solo un registro del razonamiento anterior distingue predicción de reconstrucción."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_outcome_vs_process",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Resultado x Processo: Julgando a Decisão Certa"
+            },
+            "en": {
+              "title": "Outcome vs. Process: Judging the Right Thing"
+            },
+            "es": {
+              "title": "Resultado vs. Proceso: Juzgando la Decisión Correcta"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma boa decisão pode ter um resultado ruim",
+                  "body": "Em qualquer ambiente com incerteza, decisão e resultado são coisas separadas. Uma decisão bem fundamentada pode dar errado por azar, e uma decisão imprudente pode dar certo por sorte. Julgar a qualidade da decisão pelo resultado — um erro conhecido como confundir o placar com o jogo — ensina a lição errada: pune o cuidado que não foi recompensado e premia a imprudência que escapou ilesa."
+                },
+                "en": {
+                  "title": "A good decision can have a bad outcome",
+                  "body": "In any environment with uncertainty, decision and outcome are separate things. A well-reasoned decision can go wrong through bad luck, and a reckless one can work out through good luck. Judging decision quality by the outcome — an error known as mistaking the scoreboard for the game — teaches the wrong lesson: it punishes care that went unrewarded and rewards recklessness that got away unscathed."
+                },
+                "es": {
+                  "title": "Una buena decisión puede tener un mal resultado",
+                  "body": "En cualquier entorno con incertidumbre, decisión y resultado son cosas separadas. Una decisión bien fundamentada puede salir mal por mala suerte, y una decisión imprudente puede salir bien por suerte. Juzgar la calidad de la decisión por el resultado — un error conocido como confundir el marcador con el juego — enseña la lección equivocada: castiga el cuidado que no fue recompensado y premia la imprudencia que salió ilesa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas colocam dinheiro em um ativo muito arriscado sem análise nenhuma. Uma ganha, a outra perde. Se cada uma julgar a decisão pelo que aconteceu, a primeira conclui que a estratégia funciona e repete — com valores maiores. O processo foi igualmente ruim nos dois casos; só o resultado diferiu, e é justamente o resultado que vai determinar quem repete o erro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people put money in a very risky asset with no analysis at all. One wins, the other loses. If each judges the decision by what happened, the first concludes the strategy works and repeats it — with larger amounts. The process was equally poor in both cases; only the outcome differed, and it's precisely the outcome that will determine who repeats the mistake."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas ponen dinero en un activo muy arriesgado sin ningún análisis. Una gana, la otra pierde. Si cada una juzga la decisión por lo que ocurrió, la primera concluye que la estrategia funciona y la repite — con montos mayores. El proceso fue igualmente malo en ambos casos; solo el resultado difirió, y es justamente el resultado lo que determinará quién repite el error."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que julgar decisões apenas pelo resultado é perigoso em investimentos?",
+                  "options": [
+                    "Porque resultados nunca refletem a realidade do mercado",
+                    "Porque o resultado só pode ser medido depois de muitos anos",
+                    "Porque toda decisão de investimento tem o mesmo processo por trás",
+                    "Porque a sorte participa do resultado, e um bom resultado pode validar um processo ruim"
+                  ],
+                  "explanation": "Com incerteza envolvida, o mesmo processo pode gerar resultados opostos — por isso o processo precisa ser avaliado à parte."
+                },
+                "en": {
+                  "prompt": "Why is judging decisions only by outcome dangerous in investing?",
+                  "options": [
+                    "Because outcomes never reflect market reality",
+                    "Because the outcome can only be measured after many years",
+                    "Because every investment decision has the same process behind it",
+                    "Because luck takes part in the outcome, and a good outcome can validate a poor process"
+                  ],
+                  "explanation": "With uncertainty involved, the same process can produce opposite outcomes — which is why the process must be assessed separately."
+                },
+                "es": {
+                  "prompt": "¿Por qué juzgar decisiones solo por el resultado es peligroso en inversiones?",
+                  "options": [
+                    "Porque los resultados nunca reflejan la realidad del mercado",
+                    "Porque el resultado solo puede medirse después de muchos años",
+                    "Porque toda decisión de inversión tiene el mismo proceso detrás",
+                    "Porque la suerte participa del resultado, y un buen resultado puede validar un mal proceso"
+                  ],
+                  "explanation": "Con incertidumbre de por medio, el mismo proceso puede generar resultados opuestos — por eso el proceso debe evaluarse aparte."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma decisão sua, bem fundamentada e dentro do seu plano, resultou em prejuízo. Como avaliá-la de forma útil?",
+                  "options": [
+                    "Revisar se a informação disponível na época sustentava a decisão e se o tamanho da posição respeitou o plano — e, se sim, registrar como decisão boa com resultado ruim",
+                    "Concluir que o processo está errado, já que o resultado foi negativo",
+                    "Abandonar o plano e adotar a estratégia de quem teve lucro no mesmo período",
+                    "Repetir a mesma decisão com o dobro do valor, para compensar o prejuízo"
+                  ],
+                  "explanation": "A pergunta útil é se a decisão fazia sentido com o que se sabia então. Trocar um processo sólido por causa de um resultado ruim é aprender a lição errada."
+                },
+                "en": {
+                  "prompt": "A well-reasoned decision of yours, within your plan, ended in a loss. How do you assess it usefully?",
+                  "options": [
+                    "Review whether the information available at the time supported the decision and whether the position size respected the plan — and, if so, record it as a good decision with a bad outcome",
+                    "Conclude the process is wrong, since the outcome was negative",
+                    "Abandon the plan and adopt the strategy of whoever profited in the same period",
+                    "Repeat the same decision at double the size, to make up the loss"
+                  ],
+                  "explanation": "The useful question is whether the decision made sense given what was known then. Swapping a sound process because of a bad outcome is learning the wrong lesson."
+                },
+                "es": {
+                  "prompt": "Una decisión tuya, bien fundamentada y dentro de tu plan, terminó en pérdida. ¿Cómo evaluarla de forma útil?",
+                  "options": [
+                    "Revisar si la información disponible en la época sostenía la decisión y si el tamaño de la posición respetó el plan — y, si es así, registrarla como buena decisión con mal resultado",
+                    "Concluir que el proceso está equivocado, ya que el resultado fue negativo",
+                    "Abandonar el plan y adoptar la estrategia de quien tuvo ganancias en el mismo período",
+                    "Repetir la misma decisión con el doble del monto, para compensar la pérdida"
+                  ],
+                  "explanation": "La pregunta útil es si la decisión tenía sentido con lo que se sabía entonces. Cambiar un proceso sólido por un mal resultado es aprender la lección equivocada."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Sob incerteza, decisão e resultado são coisas distintas.",
+                    "Um bom resultado pode validar um processo ruim, e vice-versa.",
+                    "A avaliação útil pergunta se a decisão fazia sentido com o que se sabia na época."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Under uncertainty, decision and outcome are distinct things.",
+                    "A good outcome can validate a poor process, and vice versa.",
+                    "The useful assessment asks whether the decision made sense given what was known then."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Bajo incertidumbre, decisión y resultado son cosas distintas.",
+                    "Un buen resultado puede validar un mal proceso, y viceversa.",
+                    "La evaluación útil pregunta si la decisión tenía sentido con lo que se sabía entonces."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_decision_journal",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Diário de Decisões: Registrar Antes do Resultado"
+            },
+            "en": {
+              "title": "A Decision Journal: Recording Before the Outcome"
+            },
+            "es": {
+              "title": "Diario de Decisiones: Registrar Antes del Resultado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A defesa mais simples contra a própria memória",
+                  "body": "Um diário de decisões é um registro curto feito no momento em que você decide: o que você está fazendo, por quê, o que espera que aconteça e o que provaria que você errou. Escrever isso leva poucos minutos e resolve um problema que nenhuma análise posterior resolve: sem o registro, sua memória reconstrói o raciocínio à luz do que aconteceu, e você perde a única evidência do que realmente pensava."
+                },
+                "en": {
+                  "title": "The simplest defense against your own memory",
+                  "body": "A decision journal is a short record made at the moment you decide: what you're doing, why, what you expect to happen and what would prove you wrong. Writing it takes a few minutes and solves a problem no later analysis can: without the record, your memory reconstructs the reasoning in light of what happened, and you lose the only evidence of what you actually thought."
+                },
+                "es": {
+                  "title": "La defensa más simple contra la propia memoria",
+                  "body": "Un diario de decisiones es un registro corto hecho en el momento en que decides: qué estás haciendo, por qué, qué esperas que ocurra y qué probaría que te equivocaste. Escribirlo lleva pocos minutos y resuelve un problema que ningún análisis posterior resuelve: sin el registro, tu memoria reconstruye el razonamiento a la luz de lo ocurrido, y pierdes la única evidencia de lo que realmente pensabas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Ao comprar um ativo, alguém anota três linhas: por que acredita na tese, qual horizonte pretende dar a ela e qual fato a invalidaria. Meses depois, relendo, duas coisas podem acontecer: o fato que invalidaria a tese aconteceu — e a decisão de sair fica evidente — ou a tese segue válida e o preço apenas oscilou. Sem o registro, as duas situações se parecem demais no meio da emoção."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When buying an asset, someone writes three lines: why they believe the thesis, what horizon they intend to give it and what fact would invalidate it. Months later, rereading, two things can happen: the invalidating fact occurred — and the decision to exit becomes obvious — or the thesis still holds and only the price moved. Without the record, those two situations look far too similar in the middle of emotion."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Al comprar un activo, alguien anota tres líneas: por qué cree en la tesis, qué horizonte pretende darle y qué hecho la invalidaría. Meses después, al releer, pueden pasar dos cosas: el hecho que invalidaría la tesis ocurrió — y la decisión de salir queda evidente — o la tesis sigue válida y el precio solo osciló. Sin el registro, ambas situaciones se parecen demasiado en medio de la emoción."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o elemento mais importante de um registro de decisão, do ponto de vista de aprendizado?",
+                  "options": [
+                    "O valor exato investido, em detalhe",
+                    "A opinião de outras pessoas sobre o ativo",
+                    "O que você espera que aconteça e o que provaria que sua tese está errada",
+                    "O gráfico de preços do dia da compra"
+                  ],
+                  "explanation": "Registrar a expectativa e o critério de invalidação é o que permite, depois, comparar o que você pensava com o que aconteceu."
+                },
+                "en": {
+                  "prompt": "What's the most important element of a decision record, from a learning standpoint?",
+                  "options": [
+                    "The exact amount invested, in detail",
+                    "Other people's opinions about the asset",
+                    "What you expect to happen and what would prove your thesis wrong",
+                    "The price chart on the day of purchase"
+                  ],
+                  "explanation": "Recording the expectation and the invalidation criterion is what later lets you compare what you thought with what happened."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el elemento más importante de un registro de decisión, desde el punto de vista del aprendizaje?",
+                  "options": [
+                    "El monto exacto invertido, en detalle",
+                    "La opinión de otras personas sobre el activo",
+                    "Qué esperas que ocurra y qué probaría que tu tesis está equivocada",
+                    "El gráfico de precios del día de la compra"
+                  ],
+                  "explanation": "Registrar la expectativa y el criterio de invalidación es lo que permite, después, comparar lo que pensabas con lo que ocurrió."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você relê um registro de seis meses atrás e percebe que a tese original já não se sustenta, embora o preço tenha subido. Como usar essa informação?",
+                  "options": [
+                    "Concluir que o registro é irrelevante, já que o resultado foi positivo",
+                    "Reconhecer que o ganho veio de outro motivo, reavaliar a posição pela tese atual e anotar o que isso ensina sobre a análise original",
+                    "Reforçar a posição, porque o preço confirmou que você estava certo",
+                    "Apagar o registro, para não contaminar decisões futuras"
+                  ],
+                  "explanation": "Ganhar por um motivo diferente do previsto é exatamente o caso que o registro revela — e o único jeito de não confundir sorte com acerto de análise."
+                },
+                "en": {
+                  "prompt": "You reread a record from six months ago and see the original thesis no longer holds, even though the price went up. How do you use that?",
+                  "options": [
+                    "Conclude the record is irrelevant, since the outcome was positive",
+                    "Recognize the gain came from another reason, reassess the position on today's thesis and note what that teaches about the original analysis",
+                    "Add to the position, because the price confirmed you were right",
+                    "Delete the record, so it doesn't contaminate future decisions"
+                  ],
+                  "explanation": "Winning for a different reason than predicted is exactly the case the record reveals — and the only way not to mistake luck for analytical skill."
+                },
+                "es": {
+                  "prompt": "Relees un registro de hace seis meses y ves que la tesis original ya no se sostiene, aunque el precio subió. ¿Cómo usar esa información?",
+                  "options": [
+                    "Concluir que el registro es irrelevante, ya que el resultado fue positivo",
+                    "Reconocer que la ganancia vino de otro motivo, reevaluar la posición por la tesis actual y anotar qué enseña eso sobre el análisis original",
+                    "Reforzar la posición, porque el precio confirmó que tenías razón",
+                    "Borrar el registro, para no contaminar decisiones futuras"
+                  ],
+                  "explanation": "Ganar por un motivo distinto al previsto es exactamente el caso que el registro revela — y la única forma de no confundir suerte con acierto de análisis."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O diário de decisões registra tese, expectativa e critério de invalidação antes do resultado.",
+                    "Ele é a evidência que a memória, sozinha, não preserva.",
+                    "Reler o registro separa acerto de análise de acerto por outro motivo."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A decision journal records thesis, expectation and invalidation criterion before the outcome.",
+                    "It's the evidence that memory alone doesn't preserve.",
+                    "Rereading the record separates analytical success from being right for another reason."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El diario de decisiones registra tesis, expectativa y criterio de invalidación antes del resultado.",
+                    "Es la evidencia que la memoria, por sí sola, no preserva.",
+                    "Releer el registro separa el acierto de análisis del acierto por otro motivo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_precommitment",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Pré-Compromisso: Decidir Hoje Pelo Você de Amanhã"
+            },
+            "en": {
+              "title": "Precommitment: Deciding Today for Tomorrow's You"
+            },
+            "es": {
+              "title": "Precompromiso: Decidir Hoy por el Tú de Mañana"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Amarrar as próprias mãos é uma estratégia, não fraqueza",
+                  "body": "Pré-compromisso é tomar, num momento de clareza, uma decisão que limita deliberadamente as opções do seu eu futuro — aquele que estará com medo, com pressa ou empolgado. Regras como 'todo aporte é automático no dia do salário', 'nenhuma posição passa deste percentual' ou 'nenhuma compra acima deste valor no mesmo dia em que eu tiver a ideia' não são desconfiança de si: são reconhecimento de que a versão calma e a versão emocionada de você decidem de formas diferentes."
+                },
+                "en": {
+                  "title": "Tying your own hands is a strategy, not weakness",
+                  "body": "Precommitment means making, in a moment of clarity, a decision that deliberately limits your future self's options — the one who will be scared, rushed or excited. Rules like 'every contribution is automatic on payday', 'no position goes above this percentage' or 'no purchase above this amount on the same day I have the idea' aren't self-distrust: they acknowledge that the calm version and the emotional version of you decide differently."
+                },
+                "es": {
+                  "title": "Atarse las propias manos es una estrategia, no una debilidad",
+                  "body": "El precompromiso es tomar, en un momento de claridad, una decisión que limita deliberadamente las opciones de tu yo futuro — aquel que estará con miedo, con prisa o entusiasmado. Reglas como 'todo aporte es automático el día del salario', 'ninguna posición supera este porcentaje' o 'ninguna compra por encima de este monto el mismo día en que tengo la idea' no son desconfianza en ti: reconocen que la versión calmada y la versión emocionada de ti deciden de formas distintas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma regra de espera de alguns dias antes de qualquer compra acima de um valor definido não impede nenhuma decisão — só impede a decisão tomada no impulso. O que sobrevive à espera continua possível; o que só fazia sentido no calor do momento se dissolve sozinho. O custo da regra é pequeno, e ela age exatamente quando você está menos capaz de avaliar."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A rule to wait a few days before any purchase above a set amount blocks no decision — it only blocks the decision made on impulse. What survives the wait remains possible; what only made sense in the heat of the moment dissolves on its own. The rule's cost is small, and it acts exactly when you're least able to assess."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una regla de esperar algunos días antes de cualquier compra por encima de un monto definido no impide ninguna decisión — solo impide la decisión tomada por impulso. Lo que sobrevive a la espera sigue siendo posible; lo que solo tenía sentido en el calor del momento se disuelve solo. El costo de la regla es pequeño, y actúa exactamente cuando estás menos capaz de evaluar."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é uma estratégia de pré-compromisso?",
+                  "options": [
+                    "Uma regra definida antecipadamente que limita as opções do seu eu futuro em momentos de emoção",
+                    "Um contrato assinado com a corretora garantindo um retorno mínimo",
+                    "A promessa de nunca mais mudar sua carteira",
+                    "A decisão de só investir depois de estudar tudo sobre o mercado"
+                  ],
+                  "explanation": "É uma restrição escolhida por você mesmo, no momento calmo, para valer no momento em que decidir bem é mais difícil."
+                },
+                "en": {
+                  "prompt": "What is a precommitment strategy?",
+                  "options": [
+                    "A rule set in advance that limits your future self's options in emotional moments",
+                    "A contract signed with the broker guaranteeing a minimum return",
+                    "The promise never to change your portfolio again",
+                    "The decision to only invest after studying everything about the market"
+                  ],
+                  "explanation": "It's a constraint you choose yourself, in the calm moment, to apply when deciding well is hardest."
+                },
+                "es": {
+                  "prompt": "¿Qué es una estrategia de precompromiso?",
+                  "options": [
+                    "Una regla definida de antemano que limita las opciones de tu yo futuro en momentos de emoción",
+                    "Un contrato firmado con la corredora garantizando un retorno mínimo",
+                    "La promesa de nunca más cambiar tu cartera",
+                    "La decisión de invertir solo después de estudiar todo sobre el mercado"
+                  ],
+                  "explanation": "Es una restricción elegida por ti mismo, en el momento calmado, para valer en el momento en que decidir bien es más difícil."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer manter os aportes mesmo em meses de mercado em queda, mas sabe que tende a adiar quando tudo está vermelho. Qual pré-compromisso resolve melhor isso?",
+                  "options": [
+                    "Prometer a si mesmo que vai aportar, confiando na disciplina no momento",
+                    "Aportar apenas nos meses em que o mercado subir, evitando o desconforto",
+                    "Acompanhar o mercado diariamente para escolher o melhor dia de cada mês",
+                    "Automatizar o aporte na data do salário, tirando a decisão do momento de desconforto"
+                  ],
+                  "explanation": "Automatizar transfere a decisão do momento difícil para o momento calmo. A promessa sem mecanismo depende justamente da disciplina que costuma falhar ali."
+                },
+                "en": {
+                  "prompt": "You want to keep contributing even in down-market months, but you know you tend to postpone when everything is red. Which precommitment handles that best?",
+                  "options": [
+                    "Promise yourself you'll contribute, trusting discipline in the moment",
+                    "Contribute only in months when the market rises, avoiding the discomfort",
+                    "Watch the market daily to pick the best day each month",
+                    "Automate the contribution on payday, removing the decision from the uncomfortable moment"
+                  ],
+                  "explanation": "Automating moves the decision from the hard moment to the calm one. A promise without a mechanism relies precisely on the discipline that tends to fail there."
+                },
+                "es": {
+                  "prompt": "Quieres mantener los aportes incluso en meses de mercado a la baja, pero sabes que tiendes a posponer cuando todo está en rojo. ¿Qué precompromiso lo resuelve mejor?",
+                  "options": [
+                    "Prometerte a ti mismo que aportarás, confiando en la disciplina del momento",
+                    "Aportar solo en los meses en que el mercado suba, evitando la incomodidad",
+                    "Seguir el mercado a diario para elegir el mejor día de cada mes",
+                    "Automatizar el aporte en la fecha del salario, sacando la decisión del momento de incomodidad"
+                  ],
+                  "explanation": "Automatizar traslada la decisión del momento difícil al momento calmado. La promesa sin mecanismo depende justamente de la disciplina que suele fallar allí."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Pré-compromisso é limitar, na calma, as opções do seu eu emocionado.",
+                    "Regras simples — automatizar, limitar percentual, esperar alguns dias — custam pouco e agem na hora certa.",
+                    "Promessa sem mecanismo depende da disciplina que costuma faltar no momento difícil."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Precommitment means limiting, while calm, your emotional self's options.",
+                    "Simple rules — automate, cap a percentage, wait a few days — cost little and act at the right time.",
+                    "A promise without a mechanism relies on the discipline that tends to be missing in the hard moment."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El precompromiso es limitar, en la calma, las opciones de tu yo emocionado.",
+                    "Reglas simples — automatizar, limitar porcentaje, esperar algunos días — cuestan poco y actúan en el momento justo.",
+                    "Una promesa sin mecanismo depende de la disciplina que suele faltar en el momento difícil."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "behavioral_information_diet",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Frequência de Checagem e Ruído"
+            },
+            "en": {
+              "title": "Checking Frequency and Noise"
+            },
+            "es": {
+              "title": "Frecuencia de Revisión y Ruido"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Olhar mais vezes não é saber mais",
+                  "body": "Quanto mais curto o intervalo que você observa, maior a proporção de oscilação aleatória e menor a de informação real. Acompanhar a carteira várias vezes ao dia expõe você a muitas quedas momentâneas — e cada uma delas custa desconforto e convida a agir. A frequência de checagem deveria ser definida pelo horizonte do dinheiro: quem investe para dez anos não precisa de uma leitura de dez minutos."
+                },
+                "en": {
+                  "title": "Looking more often isn't knowing more",
+                  "body": "The shorter the interval you observe, the greater the share of random noise and the smaller the share of real information. Checking the portfolio several times a day exposes you to many momentary drops — each one costing discomfort and inviting action. Checking frequency should be set by the money's horizon: someone investing for ten years doesn't need a ten-minute reading."
+                },
+                "es": {
+                  "title": "Mirar más veces no es saber más",
+                  "body": "Cuanto más corto es el intervalo que observas, mayor es la proporción de oscilación aleatoria y menor la de información real. Seguir la cartera varias veces al día te expone a muchas caídas momentáneas — y cada una cuesta incomodidad e invita a actuar. La frecuencia de revisión debería definirse por el horizonte del dinero: quien invierte a diez años no necesita una lectura de diez minutos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas têm exatamente a mesma carteira e o mesmo horizonte. Uma abre o aplicativo várias vezes por dia; a outra, uma vez por mês. Ao final do período, o desempenho dos ativos foi idêntico — mas a primeira conviveu com dezenas de momentos de desconforto, e cada um deles foi uma oportunidade de tomar uma decisão que o plano não pedia."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people hold exactly the same portfolio with the same horizon. One opens the app several times a day; the other, once a month. By the end of the period, the assets performed identically — but the first lived through dozens of uncomfortable moments, and each one was an opportunity to make a decision the plan never called for."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas tienen exactamente la misma cartera y el mismo horizonte. Una abre la aplicación varias veces al día; la otra, una vez al mes. Al final del período, el desempeño de los activos fue idéntico — pero la primera convivió con decenas de momentos de incomodidad, y cada uno fue una oportunidad de tomar una decisión que el plan no pedía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que observar a carteira com altíssima frequência raramente melhora as decisões?",
+                  "options": [
+                    "Porque os preços só são atualizados uma vez por semana",
+                    "Porque acompanhar a carteira é proibido para investidores de longo prazo",
+                    "Porque em intervalos curtos predomina a oscilação aleatória, não a informação relevante",
+                    "Porque a corretora cobra uma taxa a cada consulta"
+                  ],
+                  "explanation": "Em janelas curtas, o ruído domina. Mais observações significam mais estímulos para agir, não mais informação útil."
+                },
+                "en": {
+                  "prompt": "Why does watching the portfolio at very high frequency rarely improve decisions?",
+                  "options": [
+                    "Because prices only update once a week",
+                    "Because tracking the portfolio is forbidden for long-term investors",
+                    "Because over short intervals random noise dominates, not relevant information",
+                    "Because the broker charges a fee per check"
+                  ],
+                  "explanation": "In short windows, noise dominates. More observations mean more prompts to act, not more useful information."
+                },
+                "es": {
+                  "prompt": "¿Por qué observar la cartera con altísima frecuencia rara vez mejora las decisiones?",
+                  "options": [
+                    "Porque los precios solo se actualizan una vez por semana",
+                    "Porque seguir la cartera está prohibido para inversores de largo plazo",
+                    "Porque en intervalos cortos predomina la oscilación aleatoria, no la información relevante",
+                    "Porque la corredora cobra una comisión por cada consulta"
+                  ],
+                  "explanation": "En ventanas cortas, el ruido domina. Más observaciones significan más estímulos para actuar, no más información útil."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você investe com horizonte de mais de dez anos, mas checa a carteira várias vezes ao dia e se sente ansioso. Qual ajuste é mais coerente com o seu plano?",
+                  "options": [
+                    "Vender os ativos mais voláteis para que a checagem diária fique confortável",
+                    "Definir uma frequência de revisão compatível com o horizonte e manter a checagem fora da rotina diária",
+                    "Continuar checando diariamente até se acostumar com a oscilação",
+                    "Trocar para ativos cujo preço não seja divulgado, eliminando o desconforto"
+                  ],
+                  "explanation": "Ajustar a frequência resolve a causa: menos exposição a ruído, menos convites a decidir fora do plano — sem mudar a carteira que o horizonte justifica."
+                },
+                "en": {
+                  "prompt": "You invest with a horizon beyond ten years, but check the portfolio several times a day and feel anxious. Which adjustment fits your plan better?",
+                  "options": [
+                    "Sell the most volatile assets so that daily checking feels comfortable",
+                    "Set a review frequency that matches the horizon and keep checking out of the daily routine",
+                    "Keep checking daily until you get used to the swings",
+                    "Switch to assets whose price isn't published, removing the discomfort"
+                  ],
+                  "explanation": "Adjusting frequency addresses the cause: less exposure to noise, fewer invitations to decide outside the plan — without changing the portfolio the horizon justifies."
+                },
+                "es": {
+                  "prompt": "Inviertes con horizonte de más de diez años, pero revisas la cartera varias veces al día y te sientes ansioso. ¿Qué ajuste es más coherente con tu plan?",
+                  "options": [
+                    "Vender los activos más volátiles para que la revisión diaria sea cómoda",
+                    "Definir una frecuencia de revisión compatible con el horizonte y sacar la revisión de la rutina diaria",
+                    "Seguir revisando a diario hasta acostumbrarte a la oscilación",
+                    "Cambiar a activos cuyo precio no se publique, eliminando la incomodidad"
+                  ],
+                  "explanation": "Ajustar la frecuencia ataca la causa: menos exposición al ruido, menos invitaciones a decidir fuera del plan — sin cambiar la cartera que el horizonte justifica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Em intervalos curtos, a oscilação aleatória domina a informação real.",
+                    "Checar mais vezes aumenta o desconforto e os convites a agir fora do plano.",
+                    "A frequência de revisão deve seguir o horizonte do dinheiro, não a ansiedade."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Over short intervals, random noise dominates real information.",
+                    "Checking more often increases discomfort and prompts to act outside the plan.",
+                    "Review frequency should follow the money's horizon, not anxiety."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "En intervalos cortos, la oscilación aleatoria domina la información real.",
+                    "Revisar más veces aumenta la incomodidad y los estímulos para actuar fuera del plan.",
+                    "La frecuencia de revisión debe seguir el horizonte del dinero, no la ansiedad."
                   ]
                 }
               }
