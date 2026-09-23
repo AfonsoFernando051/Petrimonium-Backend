@@ -2528,6 +2528,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "retirement_transition_decisions",
+      "order": 4,
+      "iconKey": "beach_access_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "retirement_advanced_planning"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Decisões da Transição",
+          "description": "Risco de longevidade, retirada flexível, a curva de gastos ao longo da aposentadoria, aposentadoria gradual e o momento de solicitar o benefício."
+        },
+        "en": {
+          "title": "Transition Decisions",
+          "description": "Longevity risk, flexible withdrawal, the retirement spending curve, phased retirement and when to claim the benefit."
+        },
+        "es": {
+          "title": "Decisiones de la Transición",
+          "description": "Riesgo de longevidad, retiro flexible, la curva de gastos en la jubilación, jubilación gradual y el momento de solicitar el beneficio."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "retirement_longevity_risk",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Longevidade: Viver Mais que o Dinheiro"
+            },
+            "en": {
+              "title": "Longevity Risk: Outliving Your Money"
+            },
+            "es": {
+              "title": "Riesgo de Longevidad: Vivir Más que el Dinero"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O melhor cenário possível também é um risco financeiro",
+                  "body": "Risco de longevidade é a possibilidade de viver mais tempo do que o patrimônio consegue sustentar. É um risco peculiar: o cenário indesejado do ponto de vista financeiro é exatamente o desejado do ponto de vista humano. Planejar pela expectativa média de vida é o erro mais comum, porque metade das pessoas vive mais do que a média — e quem planejou pela média não tem plano justamente para o cenário em que mais precisaria dele."
+                },
+                "en": {
+                  "title": "The best possible scenario is also a financial risk",
+                  "body": "Longevity risk is the possibility of living longer than your wealth can sustain. It's a peculiar risk: the undesired scenario financially is exactly the desired one humanly. Planning for average life expectancy is the most common mistake, because half of people live longer than average — and whoever planned for the average has no plan precisely for the scenario where they'd need one most."
+                },
+                "es": {
+                  "title": "El mejor escenario posible también es un riesgo financiero",
+                  "body": "El riesgo de longevidad es la posibilidad de vivir más tiempo del que el patrimonio puede sostener. Es un riesgo peculiar: el escenario indeseado desde el punto de vista financiero es exactamente el deseado desde el punto de vista humano. Planificar por la expectativa media de vida es el error más común, porque la mitad de las personas vive más que el promedio — y quien planificó por el promedio no tiene plan justamente para el escenario en que más lo necesitaría."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas montam planos que duram exatamente até a expectativa média de vida. Uma vive menos do que isso e deixa patrimônio; a outra vive bem mais e, aos poucos, precisa reduzir o padrão de vida em uma idade em que voltar a trabalhar já não é uma opção realista. O plano não estava errado na matemática — estava errado na premissa de duração."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people build plans that last exactly until average life expectancy. One lives less than that and leaves wealth behind; the other lives considerably longer and gradually has to cut their standard of living at an age when going back to work is no longer a realistic option. The plan wasn't wrong in its math — it was wrong in its assumption about duration."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas arman planes que duran exactamente hasta la expectativa media de vida. Una vive menos que eso y deja patrimonio; la otra vive bastante más y, poco a poco, necesita reducir su nivel de vida a una edad en que volver a trabajar ya no es una opción realista. El plan no estaba equivocado en la matemática — estaba equivocado en la premisa de duración."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que planejar a aposentadoria pela expectativa média de vida é arriscado?",
+                  "options": [
+                    "Porque a expectativa média é sempre subestimada pelos órgãos oficiais",
+                    "Porque o patrimônio deixa de render a partir dessa idade",
+                    "Porque cerca de metade das pessoas vive mais do que a média, e é justamente esse grupo que ficaria sem plano",
+                    "Porque a média só se aplica a quem tem previdência privada"
+                  ],
+                  "explanation": "A média é um ponto central, não um limite. Planejar até ela é deixar a metade mais longeva sem cobertura."
+                },
+                "en": {
+                  "prompt": "Why is planning retirement around average life expectancy risky?",
+                  "options": [
+                    "Because the average is always underestimated by official agencies",
+                    "Because wealth stops earning returns from that age on",
+                    "Because about half of people live longer than average, and that's exactly the group left without a plan",
+                    "Because the average only applies to those with private pension plans"
+                  ],
+                  "explanation": "The average is a central point, not a cap. Planning up to it leaves the longer-lived half uncovered."
+                },
+                "es": {
+                  "prompt": "¿Por qué planificar la jubilación por la expectativa media de vida es arriesgado?",
+                  "options": [
+                    "Porque la media siempre es subestimada por los organismos oficiales",
+                    "Porque el patrimonio deja de rendir a partir de esa edad",
+                    "Porque cerca de la mitad de las personas vive más que el promedio, y es justamente ese grupo el que quedaría sin plan",
+                    "Porque la media solo se aplica a quien tiene previsión privada"
+                  ],
+                  "explanation": "La media es un punto central, no un límite. Planificar hasta ella deja sin cobertura a la mitad más longeva."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Como reduzir o risco de longevidade de forma prática?",
+                  "options": [
+                    "Planejar para um horizonte mais longo que a média e prever alguma fonte de renda que não se esgote com o tempo",
+                    "Gastar mais nos primeiros anos, aproveitando enquanto há saúde",
+                    "Concentrar todo o patrimônio em ativos de maior risco, para que renda mais",
+                    "Ignorar o tema, já que ninguém sabe quanto tempo vai viver"
+                  ],
+                  "explanation": "Não saber a duração é justamente o motivo para planejar com folga e prever uma renda que não dependa só de o patrimônio durar."
+                },
+                "en": {
+                  "prompt": "How do you practically reduce longevity risk?",
+                  "options": [
+                    "Plan for a horizon longer than average and provide for some income source that doesn't run out over time",
+                    "Spend more in the first years, enjoying it while health lasts",
+                    "Concentrate all wealth in higher-risk assets, so it earns more",
+                    "Ignore the topic, since nobody knows how long they'll live"
+                  ],
+                  "explanation": "Not knowing the duration is exactly the reason to plan with margin and provide income that doesn't depend solely on the portfolio lasting."
+                },
+                "es": {
+                  "prompt": "¿Cómo reducir el riesgo de longevidad de forma práctica?",
+                  "options": [
+                    "Planificar para un horizonte más largo que el promedio y prever alguna fuente de renta que no se agote con el tiempo",
+                    "Gastar más en los primeros años, aprovechando mientras hay salud",
+                    "Concentrar todo el patrimonio en activos de mayor riesgo, para que rinda más",
+                    "Ignorar el tema, ya que nadie sabe cuánto va a vivir"
+                  ],
+                  "explanation": "No saber la duración es justamente el motivo para planificar con margen y prever una renta que no dependa solo de que el patrimonio dure."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de longevidade é viver mais do que o patrimônio sustenta.",
+                    "Planejar pela expectativa média deixa metade dos casos sem plano.",
+                    "A defesa é horizonte com folga e alguma renda que não se esgote."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Longevity risk is outliving what your wealth can sustain.",
+                    "Planning for the average leaves half the cases without a plan.",
+                    "The defense is a horizon with margin and some income that doesn't run out."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de longevidad es vivir más de lo que el patrimonio sostiene.",
+                    "Planificar por el promedio deja la mitad de los casos sin plan.",
+                    "La defensa es un horizonte con margen y alguna renta que no se agote."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_flexible_withdrawal",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Retirada Flexível: Ajustando os Saques ao Mercado"
+            },
+            "en": {
+              "title": "Flexible Withdrawal: Adjusting to the Market"
+            },
+            "es": {
+              "title": "Retiro Flexible: Ajustando a la Realidad del Mercado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma retirada fixa ignora o que aconteceu no caminho",
+                  "body": "Retirar sempre o mesmo valor, corrigido pela inflação, é simples — mas trata anos muito ruins e muito bons exatamente igual. Regras de retirada flexível fazem o saque acompanhar, em alguma medida, o desempenho da carteira: reduzem um pouco depois de quedas fortes e permitem subir em anos favoráveis. Em troca de um pouco de previsibilidade no orçamento, ganha-se durabilidade no patrimônio, porque se evita vender muito justamente depois de o preço cair."
+                },
+                "en": {
+                  "title": "A fixed withdrawal ignores what happened along the way",
+                  "body": "Withdrawing the same amount every year, adjusted for inflation, is simple — but it treats very bad and very good years exactly alike. Flexible withdrawal rules make the withdrawal follow, to some degree, the portfolio's performance: trimming a bit after sharp drops and allowing increases in favorable years. In exchange for a little budget predictability, you gain portfolio durability, because you avoid selling heavily right after prices have fallen."
+                },
+                "es": {
+                  "title": "Un retiro fijo ignora lo que ocurrió en el camino",
+                  "body": "Retirar siempre el mismo monto, corregido por la inflación, es simple — pero trata años muy malos y muy buenos exactamente igual. Las reglas de retiro flexible hacen que el retiro acompañe, en alguna medida, el desempeño de la cartera: reducen un poco tras caídas fuertes y permiten subir en años favorables. A cambio de un poco de previsibilidad en el presupuesto, se gana durabilidad del patrimonio, porque se evita vender mucho justamente después de que el precio cayó."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de um ano de queda forte, quem retira um valor fixo precisa vender uma quantidade maior de cotas para obter o mesmo dinheiro — exatamente o oposto do que se gostaria de fazer. Quem adota uma regra flexível reduz temporariamente a retirada em alguma proporção, vende menos naquele momento e preserva a base que vai se recuperar. A diferença aparece anos depois, na duração do patrimônio."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After a year of sharp declines, someone withdrawing a fixed amount has to sell a larger number of units to obtain the same money — exactly the opposite of what one would want. Someone with a flexible rule temporarily trims the withdrawal by some proportion, sells less at that moment and preserves the base that will recover. The difference shows up years later, in how long the portfolio lasts."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Tras un año de caída fuerte, quien retira un monto fijo necesita vender una cantidad mayor de cuotas para obtener el mismo dinero — exactamente lo opuesto a lo que se querría hacer. Quien adopta una regla flexible reduce temporalmente el retiro en alguna proporción, vende menos en ese momento y preserva la base que se recuperará. La diferencia aparece años después, en la duración del patrimonio."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma regra de retirada flexível?",
+                  "options": [
+                    "Retirar sempre o mesmo valor nominal, sem correção nenhuma",
+                    "Ajustar o valor retirado conforme o desempenho da carteira, reduzindo após quedas fortes",
+                    "Retirar todo o patrimônio de uma vez e administrar o dinheiro fora da carteira",
+                    "Deixar de retirar qualquer valor em anos de queda"
+                  ],
+                  "explanation": "Flexível não significa parar de retirar: significa que o valor responde ao que aconteceu com a carteira, em vez de ignorá-lo."
+                },
+                "en": {
+                  "prompt": "What characterizes a flexible withdrawal rule?",
+                  "options": [
+                    "Withdrawing the same nominal amount forever, with no adjustment at all",
+                    "Adjusting the amount withdrawn according to the portfolio's performance, trimming after sharp drops",
+                    "Withdrawing the entire portfolio at once and managing the money outside it",
+                    "Withdrawing nothing at all in down years"
+                  ],
+                  "explanation": "Flexible doesn't mean stopping withdrawals: it means the amount responds to what happened to the portfolio, instead of ignoring it."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una regla de retiro flexible?",
+                  "options": [
+                    "Retirar siempre el mismo monto nominal, sin ninguna corrección",
+                    "Ajustar el monto retirado según el desempeño de la cartera, reduciendo tras caídas fuertes",
+                    "Retirar todo el patrimonio de una vez y administrar el dinero fuera de la cartera",
+                    "Dejar de retirar cualquier monto en años de caída"
+                  ],
+                  "explanation": "Flexible no significa dejar de retirar: significa que el monto responde a lo que ocurrió con la cartera, en vez de ignorarlo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer adotar uma regra flexível, mas tem despesas fixas que não podem cair. Como conciliar as duas coisas?",
+                  "options": [
+                    "Abandonar a ideia: retirada flexível é incompatível com qualquer despesa fixa",
+                    "Reduzir as retiradas igualmente em todas as categorias de gasto",
+                    "Cobrir as despesas fixas vendendo mais ativos justamente nos anos ruins",
+                    "Separar o orçamento em uma base essencial, coberta por fontes mais previsíveis, e uma parcela flexível que acompanha o desempenho da carteira"
+                  ],
+                  "explanation": "Flexibilidade precisa ter onde acontecer. Separar o essencial do ajustável permite proteger o que não pode cair e ainda assim reagir ao mercado."
+                },
+                "en": {
+                  "prompt": "You want a flexible rule, but you have fixed expenses that can't fall. How do you reconcile the two?",
+                  "options": [
+                    "Drop the idea: flexible withdrawal is incompatible with any fixed expense",
+                    "Cut withdrawals equally across all spending categories",
+                    "Cover fixed expenses by selling more assets precisely in the bad years",
+                    "Split the budget into an essential base, covered by more predictable sources, and a flexible portion that follows the portfolio's performance"
+                  ],
+                  "explanation": "Flexibility needs somewhere to happen. Separating the essential from the adjustable protects what can't fall while still responding to the market."
+                },
+                "es": {
+                  "prompt": "Quieres adoptar una regla flexible, pero tienes gastos fijos que no pueden bajar. ¿Cómo conciliar ambas cosas?",
+                  "options": [
+                    "Abandonar la idea: el retiro flexible es incompatible con cualquier gasto fijo",
+                    "Reducir los retiros por igual en todas las categorías de gasto",
+                    "Cubrir los gastos fijos vendiendo más activos justamente en los años malos",
+                    "Separar el presupuesto en una base esencial, cubierta por fuentes más previsibles, y una porción flexible que acompaña el desempeño de la cartera"
+                  ],
+                  "explanation": "La flexibilidad necesita dónde ocurrir. Separar lo esencial de lo ajustable protege lo que no puede bajar y aun así responde al mercado."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Retirada fixa trata anos bons e ruins de forma idêntica.",
+                    "Regras flexíveis reduzem o saque após quedas e preservam o patrimônio.",
+                    "Separar base essencial de parcela flexível é o que torna a regra viável."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A fixed withdrawal treats good and bad years identically.",
+                    "Flexible rules trim withdrawals after drops and preserve the portfolio.",
+                    "Splitting an essential base from a flexible portion is what makes the rule workable."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El retiro fijo trata años buenos y malos de forma idéntica.",
+                    "Las reglas flexibles reducen el retiro tras caídas y preservan el patrimonio.",
+                    "Separar base esencial de porción flexible es lo que hace viable la regla."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_spending_curve",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O Gasto na Aposentadoria Não é Constante"
+            },
+            "en": {
+              "title": "Retirement Spending Isn't Constant"
+            },
+            "es": {
+              "title": "El Gasto en la Jubilación No es Constante"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Três fases, três padrões de despesa",
+                  "body": "A maioria das projeções assume um gasto constante por trinta anos, o que raramente descreve uma vida real. É comum haver uma fase inicial mais ativa, com viagens e projetos adiados, um período intermediário de ritmo mais tranquilo e gasto menor, e uma fase final em que despesas de saúde e apoio podem crescer. Reconhecer essas fases muda a conta: o total pode ser parecido, mas a distribuição no tempo é bem diferente."
+                },
+                "en": {
+                  "title": "Three phases, three spending patterns",
+                  "body": "Most projections assume constant spending for thirty years, which rarely describes a real life. It's common to see an active early phase, with travel and postponed projects, an intermediate period at a calmer pace and lower spending, and a final phase where health and support expenses can grow. Recognizing these phases changes the math: the total may be similar, but its distribution over time is quite different."
+                },
+                "es": {
+                  "title": "Tres fases, tres patrones de gasto",
+                  "body": "La mayoría de las proyecciones asume un gasto constante durante treinta años, lo que rara vez describe una vida real. Es común una fase inicial más activa, con viajes y proyectos postergados, un período intermedio de ritmo más tranquilo y gasto menor, y una fase final en que los gastos de salud y apoyo pueden crecer. Reconocer esas fases cambia la cuenta: el total puede ser parecido, pero la distribución en el tiempo es bien distinta."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém planeja um gasto anual constante e se assusta ao ver as despesas dos primeiros anos acima do previsto — sem perceber que são justamente os anos de maior atividade, e que esse padrão tende a se acomodar depois. Outro caso, mais delicado: quem planejou pela média pode se ver com folga no meio do caminho e aperto na fase final, quando surgem custos de saúde e de apoio."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone plans constant annual spending and is startled to see the first years' expenses above forecast — without realizing those are precisely the most active years, and that the pattern tends to settle later. A more delicate case: someone who planned by the average may find themselves comfortable midway and squeezed in the final phase, when health and support costs appear."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien planifica un gasto anual constante y se asusta al ver los gastos de los primeros años por encima de lo previsto — sin notar que son justamente los años de mayor actividad, y que ese patrón tiende a acomodarse después. Otro caso, más delicado: quien planificó por el promedio puede verse con holgura a mitad de camino y con aprietos en la fase final, cuando surgen costos de salud y de apoyo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o padrão de gastos ao longo da aposentadoria costuma mostrar?",
+                  "options": [
+                    "Um gasto rigorosamente constante, corrigido apenas pela inflação",
+                    "Um crescimento contínuo e uniforme ano após ano",
+                    "Uma queda constante, já que despesas de trabalho desaparecem",
+                    "Fases distintas: mais atividade no início, acomodação no meio e possível aumento de custos de saúde no fim"
+                  ],
+                  "explanation": "Planejar com fases distintas aproxima a projeção da vida real e evita tanto o susto inicial quanto o aperto no fim."
+                },
+                "en": {
+                  "prompt": "What does the spending pattern over retirement usually show?",
+                  "options": [
+                    "Strictly constant spending, adjusted only for inflation",
+                    "Continuous, uniform growth year after year",
+                    "A constant decline, since work-related expenses disappear",
+                    "Distinct phases: more activity early, settling in the middle and possible growth in health costs at the end"
+                  ],
+                  "explanation": "Planning with distinct phases brings the projection closer to real life and avoids both the early shock and the late squeeze."
+                },
+                "es": {
+                  "prompt": "¿Qué suele mostrar el patrón de gastos a lo largo de la jubilación?",
+                  "options": [
+                    "Un gasto rigurosamente constante, corregido solo por la inflación",
+                    "Un crecimiento continuo y uniforme año tras año",
+                    "Una caída constante, ya que los gastos del trabajo desaparecen",
+                    "Fases distintas: más actividad al inicio, acomodación en el medio y posible aumento de costos de salud al final"
+                  ],
+                  "explanation": "Planificar con fases distintas acerca la proyección a la vida real y evita tanto el susto inicial como el aprieto al final."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Como usar essa informação ao montar o plano de aposentadoria?",
+                  "options": [
+                    "Planejar apenas a fase inicial, já que o futuro distante é imprevisível",
+                    "Adotar um gasto constante para simplificar, porque as fases se compensam",
+                    "Prever uma fase inicial mais cara, uma intermediária mais leve e reservar capacidade para custos de saúde e apoio na fase final",
+                    "Reduzir o gasto planejado em todas as fases igualmente, para ter margem"
+                  ],
+                  "explanation": "O total pode ser semelhante, mas o momento em que o dinheiro sai importa — especialmente porque a fase final é a que tem menos flexibilidade para cortar."
+                },
+                "en": {
+                  "prompt": "How do you use that when building the retirement plan?",
+                  "options": [
+                    "Plan only the early phase, since the distant future is unpredictable",
+                    "Adopt constant spending to simplify, because the phases offset each other",
+                    "Plan for a costlier early phase, a lighter middle one and reserve capacity for health and support costs in the final phase",
+                    "Reduce planned spending equally across all phases, to have margin"
+                  ],
+                  "explanation": "The total may be similar, but when the money leaves matters — especially because the final phase has the least flexibility to cut."
+                },
+                "es": {
+                  "prompt": "¿Cómo usar esa información al armar el plan de jubilación?",
+                  "options": [
+                    "Planificar solo la fase inicial, ya que el futuro lejano es imprevisible",
+                    "Adoptar un gasto constante para simplificar, porque las fases se compensan",
+                    "Prever una fase inicial más cara, una intermedia más ligera y reservar capacidad para costos de salud y apoyo en la fase final",
+                    "Reducir el gasto planificado en todas las fases por igual, para tener margen"
+                  ],
+                  "explanation": "El total puede ser similar, pero el momento en que sale el dinero importa — especialmente porque la fase final es la que tiene menos flexibilidad para recortar."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O gasto na aposentadoria costuma variar por fases, não ser constante.",
+                    "A fase inicial tende a ser mais ativa e mais cara.",
+                    "A fase final pede capacidade reservada para saúde e apoio, quando cortar é mais difícil."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Retirement spending usually varies by phase rather than staying constant.",
+                    "The early phase tends to be more active and more expensive.",
+                    "The final phase calls for reserved capacity for health and support, when cutting is hardest."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El gasto en la jubilación suele variar por fases, no ser constante.",
+                    "La fase inicial tiende a ser más activa y más cara.",
+                    "La fase final exige capacidad reservada para salud y apoyo, cuando recortar es más difícil."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_phased_retirement",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Aposentadoria Gradual: Reduzir Antes de Parar"
+            },
+            "en": {
+              "title": "Phased Retirement: Slowing Down Before Stopping"
+            },
+            "es": {
+              "title": "Jubilación Gradual: Reducir Antes de Parar"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Parar não precisa ser um interruptor",
+                  "body": "Entre trabalhar em tempo integral e parar completamente existe um caminho intermediário: reduzir a jornada, atuar por projetos ou migrar para uma atividade menos intensa. Financeiramente, isso tem um efeito duplo e poderoso — adia o início dos saques e reduz o valor que precisa ser retirado nos primeiros anos, que são justamente os mais sensíveis do plano. Alguns anos de renda parcial mudam a conta mais do que a intuição sugere."
+                },
+                "en": {
+                  "title": "Stopping doesn't have to be a switch",
+                  "body": "Between full-time work and stopping entirely there's a middle path: cutting hours, working by project or moving to a less intense activity. Financially, that has a powerful double effect — it postpones the start of withdrawals and reduces the amount that must be withdrawn in the early years, which are precisely the plan's most sensitive ones. A few years of partial income change the math more than intuition suggests."
+                },
+                "es": {
+                  "title": "Parar no tiene que ser un interruptor",
+                  "body": "Entre trabajar a tiempo completo y parar por completo existe un camino intermedio: reducir la jornada, trabajar por proyectos o migrar a una actividad menos intensa. Financieramente, eso tiene un efecto doble y poderoso — pospone el inicio de los retiros y reduce el monto que hay que retirar en los primeros años, que son justamente los más sensibles del plan. Algunos años de renta parcial cambian la cuenta más de lo que sugiere la intuición."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém que reduz a jornada por três anos antes de parar continua cobrindo parte das despesas com renda do trabalho. Nesses anos, a carteira pode continuar crescendo, ou pelo menos sofrer saques menores — e são justamente os anos em que uma queda de mercado combinada com saques integrais faria o maior estrago. O ganho vem menos do valor recebido e mais do saque que deixou de acontecer."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who cuts their hours for three years before stopping keeps covering part of their expenses with work income. In those years the portfolio can keep growing, or at least face smaller withdrawals — and those are precisely the years when a market drop combined with full withdrawals would do the most damage. The gain comes less from the income received and more from the withdrawal that didn't happen."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien que reduce la jornada por tres años antes de parar sigue cubriendo parte de los gastos con renta del trabajo. En esos años la cartera puede seguir creciendo, o al menos sufrir retiros menores — y son justamente los años en que una caída de mercado combinada con retiros completos haría el mayor daño. La ganancia viene menos del monto recibido y más del retiro que no ocurrió."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que alguns anos de renda parcial antes de parar têm efeito desproporcional no plano?",
+                  "options": [
+                    "Porque adiam o início dos saques e reduzem a retirada nos anos mais sensíveis do plano",
+                    "Porque aumentam automaticamente o retorno da carteira nesse período",
+                    "Porque eliminam a necessidade de reserva de emergência",
+                    "Porque reduzem a expectativa de vida considerada no cálculo"
+                  ],
+                  "explanation": "O efeito vem de dois lados ao mesmo tempo: menos saque e mais tempo de capitalização, exatamente na janela de maior fragilidade."
+                },
+                "en": {
+                  "prompt": "Why do a few years of partial income before stopping have a disproportionate effect on the plan?",
+                  "options": [
+                    "Because they postpone the start of withdrawals and reduce drawdown in the plan's most sensitive years",
+                    "Because they automatically increase the portfolio's return in that period",
+                    "Because they eliminate the need for an emergency fund",
+                    "Because they reduce the life expectancy used in the calculation"
+                  ],
+                  "explanation": "The effect comes from two sides at once: less withdrawal and more compounding time, exactly in the window of greatest fragility."
+                },
+                "es": {
+                  "prompt": "¿Por qué algunos años de renta parcial antes de parar tienen un efecto desproporcionado en el plan?",
+                  "options": [
+                    "Porque posponen el inicio de los retiros y reducen el retiro en los años más sensibles del plan",
+                    "Porque aumentan automáticamente el retorno de la cartera en ese período",
+                    "Porque eliminan la necesidad de un fondo de emergencia",
+                    "Porque reducen la expectativa de vida considerada en el cálculo"
+                  ],
+                  "explanation": "El efecto viene de dos lados a la vez: menos retiro y más tiempo de capitalización, exactamente en la ventana de mayor fragilidad."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Sua projeção mostra que o patrimônio fica no limite para parar na data pretendida. Quais alavancas a aposentadoria gradual oferece?",
+                  "options": [
+                    "Somente aumentar o risco da carteira para render mais no tempo restante",
+                    "Adiar parcialmente os saques, manter alguma renda por mais tempo e reduzir o valor retirado nos primeiros anos",
+                    "Reduzir o padrão de vida imediatamente, antes mesmo de parar",
+                    "Antecipar a data de parada, já que o patrimônio está no limite"
+                  ],
+                  "explanation": "A transição gradual ataca o problema pelos dois lados sem exigir mais risco: entra alguma renda e sai menos patrimônio justamente na fase crítica."
+                },
+                "en": {
+                  "prompt": "Your projection shows the portfolio is borderline for stopping on the intended date. Which levers does phased retirement offer?",
+                  "options": [
+                    "Only raising portfolio risk to earn more in the remaining time",
+                    "Partially postponing withdrawals, keeping some income for longer and reducing the amount withdrawn in the early years",
+                    "Cutting your standard of living immediately, even before stopping",
+                    "Moving the stop date earlier, since the portfolio is borderline"
+                  ],
+                  "explanation": "A phased transition attacks the problem from both sides without requiring more risk: some income comes in and less capital goes out, precisely in the critical phase."
+                },
+                "es": {
+                  "prompt": "Tu proyección muestra que el patrimonio queda al límite para parar en la fecha pretendida. ¿Qué palancas ofrece la jubilación gradual?",
+                  "options": [
+                    "Solamente aumentar el riesgo de la cartera para rendir más en el tiempo restante",
+                    "Posponer parcialmente los retiros, mantener alguna renta por más tiempo y reducir el monto retirado en los primeros años",
+                    "Reducir el nivel de vida de inmediato, incluso antes de parar",
+                    "Adelantar la fecha de parada, ya que el patrimonio está al límite"
+                  ],
+                  "explanation": "La transición gradual ataca el problema por ambos lados sin exigir más riesgo: entra alguna renta y sale menos patrimonio justamente en la fase crítica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Existe um caminho entre tempo integral e parada total.",
+                    "Renda parcial adia saques e reduz a retirada na fase mais sensível.",
+                    "É uma alavanca que melhora o plano sem exigir mais risco da carteira."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "There's a path between full-time work and stopping entirely.",
+                    "Partial income postpones withdrawals and lowers drawdown in the most sensitive phase.",
+                    "It's a lever that improves the plan without demanding more portfolio risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Existe un camino entre el tiempo completo y la parada total.",
+                    "La renta parcial pospone retiros y reduce el retiro en la fase más sensible.",
+                    "Es una palanca que mejora el plan sin exigir más riesgo de la cartera."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "retirement_benefit_timing",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Quando Solicitar o Benefício: O Efeito de Adiar"
+            },
+            "en": {
+              "title": "When to Claim the Benefit: The Effect of Waiting"
+            },
+            "es": {
+              "title": "Cuándo Solicitar el Beneficio: El Efecto de Posponer"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Antecipar e adiar não são equivalentes",
+                  "body": "Regimes de previdência costumam permitir alguma escolha sobre quando começar a receber, e essa escolha muda o valor mensal: começar mais cedo costuma significar um benefício menor por mais tempo; adiar costuma significar um benefício maior por menos tempo. As regras específicas variam por país e mudam ao longo dos anos — o que não muda é a natureza da decisão: você está trocando valor mensal por duração, e a escolha depende de saúde, outras fontes de renda e necessidade imediata."
+                },
+                "en": {
+                  "title": "Claiming early and waiting aren't equivalent",
+                  "body": "Pension systems usually allow some choice about when to start receiving, and that choice changes the monthly amount: starting earlier usually means a smaller benefit for longer; waiting usually means a larger benefit for less time. The specific rules vary by country and change over the years — what doesn't change is the nature of the decision: you're trading monthly amount for duration, and the choice depends on health, other income sources and immediate need."
+                },
+                "es": {
+                  "title": "Anticipar y posponer no son equivalentes",
+                  "body": "Los regímenes de previsión suelen permitir alguna elección sobre cuándo empezar a recibir, y esa elección cambia el monto mensual: empezar antes suele significar un beneficio menor por más tiempo; posponer suele significar un beneficio mayor por menos tiempo. Las reglas específicas varían por país y cambian con los años — lo que no cambia es la naturaleza de la decisión: estás cambiando monto mensual por duración, y la elección depende de la salud, otras fuentes de renta y la necesidad inmediata."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quem tem outras fontes de renda e saúde estável pode preferir adiar, aumentando o valor que receberá pelo resto da vida — e esse valor maior funciona como proteção contra o risco de longevidade. Quem precisa da renda agora, ou tem razões concretas para esperar um horizonte mais curto, pode preferir começar antes. Não existe resposta única: existe a resposta coerente com a sua situação, verificada nas regras vigentes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone with other income sources and stable health may prefer to wait, raising the amount they'll receive for the rest of their life — and that larger amount works as protection against longevity risk. Someone who needs the income now, or has concrete reasons to expect a shorter horizon, may prefer to start earlier. There's no single answer: there's the answer consistent with your situation, checked against the rules in force."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Quien tiene otras fuentes de renta y salud estable puede preferir posponer, aumentando el monto que recibirá por el resto de su vida — y ese monto mayor funciona como protección contra el riesgo de longevidad. Quien necesita la renta ahora, o tiene razones concretas para esperar un horizonte más corto, puede preferir empezar antes. No existe una respuesta única: existe la respuesta coherente con tu situación, verificada en las reglas vigentes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a troca envolvida na decisão de quando começar a receber um benefício previdenciário?",
+                  "options": [
+                    "Trocar segurança por rentabilidade da carteira",
+                    "Trocar liquidez imediata por isenção de impostos",
+                    "Trocar valor mensal por duração do recebimento",
+                    "Trocar o regime de tributação pelo tipo de plano"
+                  ],
+                  "explanation": "Começar antes tende a reduzir o valor mensal e aumentar o número de parcelas; adiar faz o oposto."
+                },
+                "en": {
+                  "prompt": "What's the trade-off in deciding when to start receiving a pension benefit?",
+                  "options": [
+                    "Trading security for portfolio returns",
+                    "Trading immediate liquidity for tax exemption",
+                    "Trading monthly amount for how long you receive it",
+                    "Trading the tax regime for the plan type"
+                  ],
+                  "explanation": "Starting earlier tends to lower the monthly amount and raise the number of payments; waiting does the opposite."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el intercambio en la decisión de cuándo empezar a recibir un beneficio previsional?",
+                  "options": [
+                    "Cambiar seguridad por rentabilidad de la cartera",
+                    "Cambiar liquidez inmediata por exención de impuestos",
+                    "Cambiar monto mensual por duración del cobro",
+                    "Cambiar el régimen de tributación por el tipo de plan"
+                  ],
+                  "explanation": "Empezar antes tiende a reducir el monto mensual y aumentar el número de cuotas; posponer hace lo contrario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem outras fontes de renda para os próximos anos e está decidindo se adia o início do benefício. Que raciocínio é mais completo?",
+                  "options": [
+                    "Verificar as regras vigentes no seu regime e considerar que um benefício maior e vitalício também funciona como proteção contra o risco de longevidade",
+                    "Solicitar o quanto antes, porque receber cedo é sempre melhor que receber tarde",
+                    "Adiar o máximo possível em qualquer situação, já que o valor mensal sempre cresce",
+                    "Decidir apenas pelo total nominal recebido até a expectativa média de vida"
+                  ],
+                  "explanation": "A decisão combina regras vigentes, necessidade atual e o papel do benefício como renda que não se esgota — algo que o cálculo até a média de vida ignora."
+                },
+                "en": {
+                  "prompt": "You have other income sources for the coming years and are deciding whether to delay claiming. Which reasoning is more complete?",
+                  "options": [
+                    "Check the rules in force in your system and consider that a larger lifelong benefit also works as protection against longevity risk",
+                    "Claim as early as possible, because receiving early is always better than late",
+                    "Delay as much as possible in any situation, since the monthly amount always grows",
+                    "Decide only by the nominal total received up to average life expectancy"
+                  ],
+                  "explanation": "The decision combines current rules, present need and the benefit's role as income that doesn't run out — something a calculation up to average life expectancy ignores."
+                },
+                "es": {
+                  "prompt": "Tienes otras fuentes de renta para los próximos años y estás decidiendo si pospones el inicio del beneficio. ¿Qué razonamiento es más completo?",
+                  "options": [
+                    "Verificar las reglas vigentes en tu régimen y considerar que un beneficio mayor y vitalicio también funciona como protección contra el riesgo de longevidad",
+                    "Solicitarlo cuanto antes, porque recibir temprano siempre es mejor que tarde",
+                    "Posponer lo máximo posible en cualquier situación, ya que el monto mensual siempre crece",
+                    "Decidir solo por el total nominal recibido hasta la expectativa media de vida"
+                  ],
+                  "explanation": "La decisión combina reglas vigentes, necesidad actual y el papel del beneficio como renta que no se agota — algo que el cálculo hasta la media de vida ignora."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A escolha do momento troca valor mensal por duração do recebimento.",
+                    "As regras variam por país e mudam — a natureza da decisão, não.",
+                    "Um benefício vitalício maior também protege contra o risco de longevidade."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The timing choice trades monthly amount for how long you receive it.",
+                    "Rules vary by country and change — the nature of the decision doesn't.",
+                    "A larger lifelong benefit also protects against longevity risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La elección del momento cambia monto mensual por duración del cobro.",
+                    "Las reglas varían por país y cambian — la naturaleza de la decisión, no.",
+                    "Un beneficio vitalicio mayor también protege contra el riesgo de longevidad."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
