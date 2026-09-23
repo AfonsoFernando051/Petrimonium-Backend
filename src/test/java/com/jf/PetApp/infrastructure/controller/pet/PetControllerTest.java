@@ -1,6 +1,8 @@
 package com.jf.PetApp.infrastructure.controller.pet;
 
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -60,6 +62,48 @@ class PetControllerTest {
         pet.setName(name);
         pet.setHealth(health);
         return pet;
+    }
+
+    // `specie` is required by the handler (it immediately calls .toUpperCase() on it), but the
+    // request record declared no constraint and the parameter carried no @Valid — so an omitted
+    // field became a NullPointerException, which is not an IllegalArgumentException and therefore
+    // slipped past the handler's own catch straight to GlobalExceptionHandler's catch-all. A
+    // caller that forgets a field is a client error (400), never a server fault (500).
+    @Test
+    @WithMockUser(username = "investor@test.com", authorities = "APP_CONTEXT_WALLET")
+    void configurePet_WithMissingSpecie_IsBadRequestNotServerError() throws Exception {
+        mockMvc.perform(post("/api/pets/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{}"))
+                .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com", authorities = "APP_CONTEXT_WALLET")
+    void configurePet_WithBlankSpecie_IsBadRequest() throws Exception {
+        mockMvc.perform(post("/api/pets/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"specie\":\"  \"}"))
+                .andExpect(status().isBadRequest());
+    }
+
+    // The pet name is stored in a varchar(255) *and* interpolated into the Mentor's LLM prompt on
+    // every chat turn (MentorSystemPromptBuilder.appendPetBlock). MentorClientContextDTO caps every
+    // one of its own fields for exactly that reason — "this whole DTO ends up interpolated into the
+    // LLM prompt, so every field needs a cap to bound prompt-injection surface and prompt-cost
+    // inflation". The pet name reaches the same prompt by another route and had no cap at all, so
+    // it was both the cheapest way to inflate every prompt and a 500 waiting at the column limit.
+    @Test
+    @WithMockUser(username = "investor@test.com", authorities = "APP_CONTEXT_WALLET")
+    void configurePet_WithAnOverlongName_IsBadRequestRatherThanReachingTheUseCase() throws Exception {
+        String overlongName = "a".repeat(300);
+
+        mockMvc.perform(post("/api/pets/configure")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"specie\":\"dog\",\"name\":\"" + overlongName + "\"}"))
+                .andExpect(status().isBadRequest());
+
+        verify(configurePetUseCase, never()).execute(any(), any(), any(), any());
     }
 
     @Test

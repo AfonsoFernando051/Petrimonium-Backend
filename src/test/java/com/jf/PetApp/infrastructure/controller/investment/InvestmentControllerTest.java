@@ -193,6 +193,56 @@ class InvestmentControllerTest {
                 .andExpect(jsonPath("$.name").value("PETR4"));
     }
 
+    // @Positive alone does not express the bound the schema actually has: V24 pinned
+    // jf_investments.quantity to numeric(19,6) and purchase_price to numeric(19,2) (mirrored on
+    // InvestmentJpaEntity's @Column precision/scale). A value wider than that is not "large" —
+    // it is unstorable, and Postgres answers a numeric field overflow, which reaches the caller
+    // as a 500 for what is plainly a malformed request. Rejecting it at the edge keeps the
+    // schema's own precision the single source of truth rather than something only the database
+    // discovers.
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_WithQuantityWiderThanTheColumn_Returns400() throws Exception {
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"PETR4\",\"quantity\":1e300,\"purchasePrice\":30.5,"
+                                + "\"purchaseDate\":\"2025-01-01\",\"type\":\"STOCKS\"}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
+
+        org.mockito.Mockito.verifyNoInteractions(createInvestmentLotUseCase);
+    }
+
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_WithPriceWiderThanTheColumn_Returns400() throws Exception {
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"PETR4\",\"quantity\":1,\"purchasePrice\":1e300,"
+                                + "\"purchaseDate\":\"2025-01-01\",\"type\":\"STOCKS\"}"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.code").value("VALIDATION_ERROR"));
+
+        org.mockito.Mockito.verifyNoInteractions(createInvestmentLotUseCase);
+    }
+
+    // Fractional shares are real (scale 6 exists for them), so the bound must reject only what
+    // the column cannot hold — a legitimate fractional quantity has to keep working.
+    @Test
+    @WithMockUser(username = "investor@test.com")
+    void createInvestment_WithALegitimateFractionalQuantity_IsStillAccepted() throws Exception {
+        when(createInvestmentLotUseCase.execute(eq("investor@test.com"), any())).thenReturn(
+                new InvestmentDTO(9, "BTC", new BigDecimal("0.123456"), BigDecimal.valueOf(30.5),
+                        java.time.LocalDate.of(2025, 1, 1), com.jf.PetApp.core.domain.enums.InvestmentType.CRYPTO,
+                        "BRL", com.jf.PetApp.core.domain.enums.AssetOrigin.MANUAL));
+
+        mockMvc.perform(post("/api/investments")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{\"name\":\"BTC\",\"quantity\":0.123456,\"purchasePrice\":30.5,"
+                                + "\"purchaseDate\":\"2025-01-01\",\"type\":\"CRYPTO\"}"))
+                .andExpect(status().isCreated());
+    }
+
     @Test
     @WithMockUser(username = "investor@test.com")
     void createInvestment_WithInvalidFields_Returns400ValidationError() throws Exception {

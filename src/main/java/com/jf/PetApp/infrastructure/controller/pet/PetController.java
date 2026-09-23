@@ -17,6 +17,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 @RestController
 @RequestMapping("/api/pets")
 public class PetController {
@@ -41,7 +45,7 @@ public class PetController {
     }
 
     @PostMapping("/configure")
-    public ResponseEntity<Void> configurePet(@RequestBody ConfigurePetRequestDTO request) {
+    public ResponseEntity<Void> configurePet(@Valid @RequestBody ConfigurePetRequestDTO request) {
         String email = SecurityUtils.getCurrentUserEmail();
         AppContextEnum appContext = SecurityUtils.getCurrentAppContext()
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "appContext required"));
@@ -101,7 +105,23 @@ public class PetController {
         return ResponseEntity.ok(new PetDetailResponseDTO(pet.getSpecie().name(), pet.getName(), pet.getHealth()));
     }
 
-    public record ConfigurePetRequestDTO(String specie, String name) {}
+    /**
+     * {@code specie} is {@code @NotBlank} because the handler dereferences it immediately: without
+     * the constraint an omitted field raised a NullPointerException, which is not an
+     * IllegalArgumentException and so escaped the handler's own catch and surfaced as 500 — a
+     * server fault for what is plainly a malformed request.
+     *
+     * <p>{@code name} is capped at 60 because it does not stay in the database: it is interpolated
+     * into the Mentor's LLM system prompt on every chat turn
+     * ({@code MentorSystemPromptBuilder.appendPetBlock}). {@code MentorClientContextDTO} already
+     * bounds every field it sends to that same prompt, for the same two reasons — prompt-injection
+     * surface and prompt-cost inflation — and this field reached the prompt by a different route
+     * with no bound at all. 60 is a pet name, generously; the column behind it is varchar(255), so
+     * anything longer was also a 500 waiting at the database.
+     */
+    public record ConfigurePetRequestDTO(
+            @NotBlank(message = "Specie is required") String specie,
+            @Size(max = 60, message = "Pet name must be at most 60 characters") String name) {}
     public record PetStatusResponseDTO(boolean hasPet) {}
     public record PetDetailResponseDTO(String specie, String name, int health) {}
     public record PetSummaryResponseDTO(Integer id, String specie, String name, int health) {}

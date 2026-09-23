@@ -64,6 +64,55 @@ class RequestIdFilterTest {
                 org.mockito.ArgumentMatchers.argThat(id -> id != null && !id.isBlank() && !id.equals("   ")));
     }
 
+    // The inbound header is attacker-controlled on every request: app.security.trusted-proxies
+    // is empty by default (see application.properties), so this app trusts no hop in front of it
+    // and any client can send whatever it likes here. That value lands in two places that must
+    // not take it raw — the logging MDC (a newline forges whole log lines, which is how an
+    // attacker hides or fabricates audit trail) and a response header.
+    @Test
+    void doFilterInternal_WithNewlinesInTheInboundHeader_GeneratesAUuidInstead() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        HttpServletResponse response = mock(HttpServletResponse.class);
+        FilterChain chain = mock(FilterChain.class);
+        when(request.getHeader(RequestIdFilter.HEADER_NAME))
+                .thenReturn("abc\n2026-01-01 00:00:00 ERROR forged log line");
+
+        filter.doFilterInternal(request, response, chain);
+
+        verify(response).setHeader(org.mockito.ArgumentMatchers.eq(RequestIdFilter.HEADER_NAME),
+                org.mockito.ArgumentMatchers.argThat(id -> id.length() == 36 && !id.contains("forged")));
+    }
+
+    @Test
+    void doFilterInternal_WithAnOverlongInboundHeader_GeneratesAUuidInstead() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        HttpServletResponse response = mock(HttpServletResponse.class);
+        FilterChain chain = mock(FilterChain.class);
+        when(request.getHeader(RequestIdFilter.HEADER_NAME)).thenReturn("a".repeat(500));
+
+        filter.doFilterInternal(request, response, chain);
+
+        verify(response).setHeader(org.mockito.ArgumentMatchers.eq(RequestIdFilter.HEADER_NAME),
+                org.mockito.ArgumentMatchers.argThat(id -> id.length() == 36));
+    }
+
+    // A real correlation id from a proxy (UUIDs, W3C traceparent, Heroku/CloudFront request ids)
+    // is alphanumerics with dashes/underscores/dots — that shape must keep passing through, or
+    // the sanitization would break the only thing this filter is for.
+    @Test
+    void doFilterInternal_WithATypicalProxyRequestId_StillPassesItThrough() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);
+        HttpServletResponse response = mock(HttpServletResponse.class);
+        FilterChain chain = mock(FilterChain.class);
+        when(request.getHeader(RequestIdFilter.HEADER_NAME))
+                .thenReturn("00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01");
+
+        filter.doFilterInternal(request, response, chain);
+
+        verify(response).setHeader(RequestIdFilter.HEADER_NAME,
+                "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01");
+    }
+
     @Test
     void doFilterInternal_PutsTheRequestIdInMdcWhileTheChainRuns() throws Exception {
         HttpServletRequest request = mock(HttpServletRequest.class);

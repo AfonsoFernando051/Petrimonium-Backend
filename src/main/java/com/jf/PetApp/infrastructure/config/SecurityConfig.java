@@ -3,7 +3,10 @@ package com.jf.PetApp.infrastructure.config;
 import com.jf.PetApp.application.auth.port.TokenProvider;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
+import tools.jackson.databind.ObjectMapper;
 import com.jf.PetApp.infrastructure.security.RequestIdFilter;
+import com.jf.PetApp.infrastructure.security.error.ProblemDetailAccessDeniedHandler;
+import com.jf.PetApp.infrastructure.security.error.UnauthenticatedEntryPoint;
 import com.jf.PetApp.infrastructure.security.jwt.JwtAuthenticationFilter;
 import com.jf.PetApp.infrastructure.security.ratelimit.RateLimitingFilter;
 import org.springframework.beans.factory.annotation.Value;
@@ -12,7 +15,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
@@ -66,11 +71,23 @@ public class SecurityConfig {
     }
 
     @Bean
+    public AuthenticationEntryPoint unauthenticatedEntryPoint(ObjectMapper objectMapper) {
+        return new UnauthenticatedEntryPoint(objectMapper);
+    }
+
+    @Bean
+    public AccessDeniedHandler problemDetailAccessDeniedHandler(ObjectMapper objectMapper) {
+        return new ProblemDetailAccessDeniedHandler(objectMapper);
+    }
+
+    @Bean
     public SecurityFilterChain securityFilterChain(
         HttpSecurity http,
         JwtAuthenticationFilter jwtAuthenticationFilter,
         RateLimitingFilter rateLimitingFilter,
-        RequestIdFilter requestIdFilter
+        RequestIdFilter requestIdFilter,
+        AuthenticationEntryPoint authenticationEntryPoint,
+        AccessDeniedHandler accessDeniedHandler
     ) throws Exception {
         http
             .cors(cors -> cors.configurationSource(corsConfigurationSource()))
@@ -81,6 +98,15 @@ public class SecurityConfig {
             .formLogin(form -> form.disable())
             .httpBasic(basic -> basic.disable())
             .logout(logout -> logout.disable())
+            // Without these two explicitly set, Spring Security falls back to
+            // Http403ForbiddenEntryPoint (because httpBasic and formLogin are both disabled
+            // above) and an empty response body: an expired access token then answers 403, which
+            // the mobile client does not treat as "refresh and retry" — only 401 triggers that.
+            // See UnauthenticatedEntryPoint for the full account of what that cost.
+            .exceptionHandling(exceptions -> exceptions
+                .authenticationEntryPoint(authenticationEntryPoint)
+                .accessDeniedHandler(accessDeniedHandler)
+            )
             .headers(headers -> headers
                 .frameOptions(frame -> {
                     if (h2ConsoleEnabled) {

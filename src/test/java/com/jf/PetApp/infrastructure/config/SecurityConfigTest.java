@@ -8,6 +8,7 @@ import com.jf.PetApp.core.domain.enums.RoleEnum;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.resttestclient.TestRestTemplate;
 import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureTestRestTemplate;
@@ -15,7 +16,14 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.security.Keys;
+
+import java.nio.charset.StandardCharsets;
+import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -40,6 +48,24 @@ class SecurityConfigTest {
 
     @Autowired
     private UserRepository userRepository;
+
+    // Minted directly rather than through TokenProvider: the port deliberately exposes no way to
+    // issue an already-expired token, and this test needs exactly that — the shape a real client
+    // presents once jwt.expiration has elapsed.
+    @Value("${jwt.secret}")
+    private String jwtSecret;
+
+    private String expiredTokenFor(User user) {
+        Date expiredAt = new Date(System.currentTimeMillis() - 60_000);
+        return Jwts.builder()
+                .subject(user.getEmail())
+                .claim("role", user.getRole().name())
+                .claim("app_context", AppContextEnum.WALLET.claimValue())
+                .issuedAt(new Date(expiredAt.getTime() - 60_000))
+                .expiration(expiredAt)
+                .signWith(Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8)))
+                .compact();
+    }
 
     // JwtAuthenticationFilter re-looks-up the user by email on every request (see its
     // doFilterInternal) rather than trusting the JWT's claims — so a token is only "valid" in
@@ -72,25 +98,73 @@ class SecurityConfigTest {
         assertNotEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
     }
 
+    // 401, not merely "some 4xx": the distinction is load bearing for the mobile client, whose
+    // ApiClient._sendWithAuth refreshes-and-retries on exactly 401 and passes anything else
+    // straight to the caller. Spring Security's default entry point when neither httpBasic nor
+    // formLogin is enabled is Http403ForbiddenEntryPoint, so without an explicit entry point an
+    // expired access token answers 403 and the client never refreshes — the session dies after
+    // jwt.expiration instead of living the refresh token's 30 days. Asserting only is4xx (as
+    // this test used to) is precisely what let that go unnoticed.
     @Test
-    void protectedEndpoint_WithoutAnyToken_IsRejected() {
+    void protectedEndpoint_WithoutAnyToken_IsUnauthorized() {
         ResponseEntity<String> response =
                 restTemplate.getForEntity("/api/investments/quote/PETR4", String.class);
 
-        assertTrue(response.getStatusCode().is4xxClientError());
-        assertNotEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
     }
 
+    // The same path an *expired* access token takes: JwtAuthenticationFilter's validate() fails,
+    // no Authentication is set, and the request arrives at the authorization rules anonymous.
     @Test
-    void protectedEndpoint_WithGarbageToken_IsRejected() {
+    void protectedEndpoint_WithGarbageToken_IsUnauthorized() {
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth("this-is-not-a-real-jwt");
 
         ResponseEntity<String> response = restTemplate.exchange(
                 "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
 
-        assertTrue(response.getStatusCode().is4xxClientError());
-        assertNotEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+
+    // An expired token specifically — the case the mobile client hits every hour in normal use.
+    @Test
+    void protectedEndpoint_WithExpiredToken_IsUnauthorized() {
+        User user = User.create("expiredtest", "expired-token@test.com", "irrelevant-hash", RoleEnum.USER);
+        userRepository.save(user);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(expiredTokenFor(user));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.UNAUTHORIZED, response.getStatusCode());
+    }
+
+    // Both rejections must carry the same ProblemDetail shape every other error in this API uses
+    // (GlobalExceptionHandler's `code`/`timestamp`), because these two are thrown inside the
+    // filter chain and never reach @ControllerAdvice — without an explicit handler they answer
+    // with an empty body the client cannot parse alongside every other error it handles.
+    @Test
+    void unauthorizedResponse_CarriesTheStandardProblemDetailShape() {
+        ResponseEntity<String> response =
+                restTemplate.getForEntity("/api/investments/quote/PETR4", String.class);
+
+        assertEquals(MediaType.APPLICATION_PROBLEM_JSON, response.getHeaders().getContentType());
+        assertTrue(response.getBody().contains("\"code\":\"UNAUTHENTICATED\""), response.getBody());
+    }
+
+    @Test
+    void forbiddenResponse_CarriesTheStandardProblemDetailShape() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(validTokenFor("problemdetail-forbidden@test.com", RoleEnum.USER));
+
+        ResponseEntity<String> response = restTemplate.exchange(
+                "/api/investments/quote/PETR4", HttpMethod.GET, new HttpEntity<>(headers), String.class);
+
+        assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
+        assertEquals(MediaType.APPLICATION_PROBLEM_JSON, response.getHeaders().getContentType());
+        assertTrue(response.getBody().contains("\"code\":\"ACCESS_DENIED\""), response.getBody());
     }
 
     @Test

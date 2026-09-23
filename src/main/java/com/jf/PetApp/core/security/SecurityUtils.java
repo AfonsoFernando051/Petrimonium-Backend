@@ -2,6 +2,7 @@ package com.jf.PetApp.core.security;
 
 import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.enums.AppContextEnum;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -39,7 +40,14 @@ public class SecurityUtils {
 
     public static String getCurrentUserEmail() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication == null || !authentication.isAuthenticated()) {
+        // isAuthenticated() is true for an AnonymousAuthenticationToken, and its principal is the
+        // String "anonymousUser" — which the String branch below would hand back as if it were an
+        // email. No route reaches that today (every caller sits behind an authenticated rule), but
+        // the failure mode if one ever did is a silent lookup for a user named "anonymousUser"
+        // rather than a refusal, so the anonymous case is rejected by type here.
+        if (authentication == null
+                || !authentication.isAuthenticated()
+                || authentication instanceof AnonymousAuthenticationToken) {
             throw new ResponseStatusException(org.springframework.http.HttpStatus.UNAUTHORIZED, "Not authenticated");
         }
 
