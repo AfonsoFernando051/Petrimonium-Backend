@@ -2738,6 +2738,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "investment_fundamentals_in_practice",
+      "order": 4,
+      "iconKey": "flag_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "investment_fundamentals_next_steps"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Na Prática: Da Decisão ao Aporte",
+          "description": "O tripé risco-retorno-liquidez, ciclo de liquidação, leitura dos documentos oficiais, começar pequeno e quando ainda não é hora de investir."
+        },
+        "en": {
+          "title": "In Practice: From Decision to Contribution",
+          "description": "The risk-return-liquidity tripod, the settlement cycle, reading official documents, starting small and when it isn't time to invest yet."
+        },
+        "es": {
+          "title": "En la Práctica: De la Decisión al Aporte",
+          "description": "El trípode riesgo-retorno-liquidez, ciclo de liquidación, lectura de los documentos oficiales, empezar pequeño y cuándo todavía no es momento de invertir."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "investment_fundamentals_tripod",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O Tripé: Risco, Retorno e Liquidez"
+            },
+            "en": {
+              "title": "The Tripod: Risk, Return and Liquidity"
+            },
+            "es": {
+              "title": "El Trípode: Riesgo, Retorno y Liquidez"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nenhum investimento é o melhor nos três ao mesmo tempo",
+                  "body": "Todo investimento pode ser descrito por três características que se puxam entre si: o retorno esperado, o risco assumido e a liquidez oferecida. Melhorar uma costuma custar outra — mais retorno esperado normalmente pede mais risco ou menos liquidez; liquidez imediata com risco baixo costuma vir com retorno modesto. Quando um produto parece ganhar nos três critérios ao mesmo tempo, a pergunta certa não é 'onde assino', é 'o que eu não estou enxergando'."
+                },
+                "en": {
+                  "title": "No investment is the best at all three at once",
+                  "body": "Every investment can be described by three characteristics that pull against each other: expected return, risk taken and liquidity offered. Improving one usually costs another — more expected return normally asks for more risk or less liquidity; immediate liquidity with low risk usually comes with a modest return. When a product seems to win on all three at once, the right question isn't 'where do I sign', it's 'what am I not seeing'."
+                },
+                "es": {
+                  "title": "Ninguna inversión es la mejor en los tres a la vez",
+                  "body": "Toda inversión puede describirse por tres características que se tensionan entre sí: el retorno esperado, el riesgo asumido y la liquidez ofrecida. Mejorar una suele costar otra — más retorno esperado normalmente pide más riesgo o menos liquidez; liquidez inmediata con riesgo bajo suele venir con retorno modesto. Cuando un producto parece ganar en los tres criterios a la vez, la pregunta correcta no es 'dónde firmo', es 'qué no estoy viendo'."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma aplicação de liquidez diária e risco baixo tende a render menos que uma de prazo longo do mesmo emissor. Se aparece uma oferta com liquidez diária, risco baixo e retorno muito acima das demais, alguma das três pontas não é o que parece: ou a liquidez tem condições que não foram destacadas, ou o risco é maior do que o material sugere, ou o retorno anunciado não é o que será efetivamente pago."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investment with daily liquidity and low risk tends to yield less than a long-dated one from the same issuer. If an offer shows up with daily liquidity, low risk and a return far above the rest, one of the three corners isn't what it seems: either the liquidity has conditions that weren't highlighted, or the risk is higher than the material suggests, or the advertised return isn't what will actually be paid."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una inversión de liquidez diaria y riesgo bajo tiende a rendir menos que una de plazo largo del mismo emisor. Si aparece una oferta con liquidez diaria, riesgo bajo y retorno muy por encima de las demás, alguna de las tres puntas no es lo que parece: o la liquidez tiene condiciones que no se destacaron, o el riesgo es mayor de lo que sugiere el material, o el retorno anunciado no es el que se pagará efectivamente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o tripé risco, retorno e liquidez diz sobre um investimento?",
+                  "options": [
+                    "Que os três podem ser maximizados juntos se você escolher o produto certo",
+                    "Que liquidez é sempre mais importante que retorno",
+                    "Que melhorar uma das três pontas normalmente custa alguma das outras",
+                    "Que investimentos de risco alto sempre entregam retorno alto"
+                  ],
+                  "explanation": "As três se puxam entre si. Reconhecer a troca é o que permite escolher em função do objetivo, em vez de procurar um produto perfeito que não existe."
+                },
+                "en": {
+                  "prompt": "What does the risk, return and liquidity tripod say about an investment?",
+                  "options": [
+                    "That all three can be maximized together if you pick the right product",
+                    "That liquidity is always more important than return",
+                    "That improving one of the three corners normally costs one of the others",
+                    "That high-risk investments always deliver high returns"
+                  ],
+                  "explanation": "The three pull against each other. Recognizing the trade-off is what lets you choose by goal, instead of hunting for a perfect product that doesn't exist."
+                },
+                "es": {
+                  "prompt": "¿Qué dice el trípode riesgo, retorno y liquidez sobre una inversión?",
+                  "options": [
+                    "Que los tres pueden maximizarse juntos si eliges el producto correcto",
+                    "Que la liquidez siempre es más importante que el retorno",
+                    "Que mejorar una de las tres puntas normalmente cuesta alguna de las otras",
+                    "Que las inversiones de riesgo alto siempre entregan retorno alto"
+                  ],
+                  "explanation": "Las tres se tensionan entre sí. Reconocer el intercambio es lo que permite elegir en función del objetivo, en vez de buscar un producto perfecto que no existe."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Um produto é apresentado como tendo retorno bem acima da média, risco baixo e resgate a qualquer momento. Qual é a reação mais prudente?",
+                  "options": [
+                    "Procurar no material oficial qual das três pontas foi suavizada — condições de resgate, natureza do risco ou como o retorno é calculado",
+                    "Investir rapidamente, antes que a oferta acabe",
+                    "Aceitar, desde que alguém conhecido já tenha investido",
+                    "Comparar apenas com a poupança, que é o produto mais simples"
+                  ],
+                  "explanation": "Uma oferta que vence nas três pontas contraria a estrutura do mercado. A investigação começa pelo documento oficial, não pelo material de venda."
+                },
+                "en": {
+                  "prompt": "A product is presented as having well-above-average returns, low risk and withdrawal at any time. What's the prudent reaction?",
+                  "options": [
+                    "Look in the official documentation for which of the three corners was softened — withdrawal terms, the nature of the risk, or how the return is calculated",
+                    "Invest quickly, before the offer ends",
+                    "Accept it, as long as someone you know has already invested",
+                    "Compare only with a savings account, which is the simplest product"
+                  ],
+                  "explanation": "An offer winning on all three corners contradicts how the market is structured. The investigation starts with the official document, not the sales material."
+                },
+                "es": {
+                  "prompt": "Un producto se presenta como con retorno muy por encima del promedio, riesgo bajo y rescate en cualquier momento. ¿Cuál es la reacción más prudente?",
+                  "options": [
+                    "Buscar en el material oficial cuál de las tres puntas fue suavizada — condiciones de rescate, naturaleza del riesgo o cómo se calcula el retorno",
+                    "Invertir rápidamente, antes de que la oferta termine",
+                    "Aceptarlo, siempre que alguien conocido ya haya invertido",
+                    "Compararlo solo con la cuenta de ahorro, que es el producto más simple"
+                  ],
+                  "explanation": "Una oferta que gana en las tres puntas contradice la estructura del mercado. La investigación empieza por el documento oficial, no por el material de venta."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco, retorno e liquidez se puxam entre si em qualquer investimento.",
+                    "Melhorar uma ponta normalmente custa outra.",
+                    "Uma oferta que parece vencer nas três pede investigação no material oficial."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk, return and liquidity pull against each other in any investment.",
+                    "Improving one corner normally costs another.",
+                    "An offer that seems to win on all three calls for investigation in the official material."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Riesgo, retorno y liquidez se tensionan entre sí en cualquier inversión.",
+                    "Mejorar una punta normalmente cuesta otra.",
+                    "Una oferta que parece ganar en las tres exige investigar el material oficial."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_settlement_cycle",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Liquidação: Quando o Dinheiro Troca de Mãos"
+            },
+            "en": {
+              "title": "Settlement: When the Money Changes Hands"
+            },
+            "es": {
+              "title": "Liquidación: Cuándo el Dinero Cambia de Manos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Executar a ordem e receber o dinheiro são dois momentos",
+                  "body": "Quando uma ordem é executada, o negócio está fechado — mas a troca efetiva de dinheiro e ativo acontece na liquidação, alguns dias úteis depois, conforme a regra de cada mercado. Por isso o valor de uma venda pode não estar disponível na sua conta no mesmo dia, e um resgate solicitado hoje pode ser creditado depois. Isso não é atraso nem falha: é o ciclo normal de liquidação, e planejar sem considerá-lo é o que gera susto."
+                },
+                "en": {
+                  "title": "Executing the order and receiving the money are two moments",
+                  "body": "When an order is executed, the trade is done — but the actual exchange of money and asset happens at settlement, a few business days later, according to each market's rule. That's why the proceeds of a sale may not be available in your account the same day, and a withdrawal requested today may be credited later. This isn't a delay or a failure: it's the normal settlement cycle, and planning without accounting for it is what creates surprises."
+                },
+                "es": {
+                  "title": "Ejecutar la orden y recibir el dinero son dos momentos",
+                  "body": "Cuando una orden se ejecuta, el negocio está cerrado — pero el intercambio efectivo de dinero y activo ocurre en la liquidación, algunos días hábiles después, según la regla de cada mercado. Por eso el importe de una venta puede no estar disponible en tu cuenta el mismo día, y un rescate solicitado hoy puede acreditarse después. Esto no es un retraso ni una falla: es el ciclo normal de liquidación, y planificar sin considerarlo es lo que genera sustos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém vende um ativo na sexta-feira contando com o dinheiro para um pagamento na segunda. Dependendo do prazo de liquidação do mercado em questão e dos dias úteis envolvidos, o valor pode chegar depois da data do pagamento. O negócio foi feito, o preço está travado — só o dinheiro ainda não circulou. Conhecer o prazo antes evita transformar uma operação normal em um aperto de caixa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone sells an asset on Friday counting on the money for a payment on Monday. Depending on that market's settlement period and the business days involved, the amount may arrive after the payment date. The trade was done, the price is locked — only the money hasn't moved yet. Knowing the period beforehand keeps a routine operation from becoming a cash squeeze."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien vende un activo el viernes contando con el dinero para un pago el lunes. Según el plazo de liquidación del mercado en cuestión y los días hábiles involucrados, el importe puede llegar después de la fecha del pago. El negocio se hizo, el precio está fijado — solo el dinero aún no circuló. Conocer el plazo antes evita convertir una operación normal en un apuro de caja."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece entre a execução de uma ordem e a sua liquidação?",
+                  "options": [
+                    "O preço da operação ainda pode mudar até a liquidação",
+                    "O negócio já está fechado, mas a troca efetiva de dinheiro e ativo ainda não ocorreu",
+                    "A ordem pode ser cancelada automaticamente pelo mercado",
+                    "O investidor precisa confirmar a operação novamente"
+                  ],
+                  "explanation": "A execução fixa o negócio e o preço; a liquidação é o momento posterior em que dinheiro e ativo de fato trocam de mãos."
+                },
+                "en": {
+                  "prompt": "What happens between an order's execution and its settlement?",
+                  "options": [
+                    "The trade's price can still change until settlement",
+                    "The trade is already done, but the actual exchange of money and asset hasn't happened yet",
+                    "The order can be cancelled automatically by the market",
+                    "The investor has to confirm the operation again"
+                  ],
+                  "explanation": "Execution locks the trade and the price; settlement is the later moment when money and asset actually change hands."
+                },
+                "es": {
+                  "prompt": "¿Qué ocurre entre la ejecución de una orden y su liquidación?",
+                  "options": [
+                    "El precio de la operación aún puede cambiar hasta la liquidación",
+                    "El negocio ya está cerrado, pero el intercambio efectivo de dinero y activo aún no ocurrió",
+                    "La orden puede ser cancelada automáticamente por el mercado",
+                    "El inversor debe confirmar la operación nuevamente"
+                  ],
+                  "explanation": "La ejecución fija el negocio y el precio; la liquidación es el momento posterior en que dinero y activo cambian de manos efectivamente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem um pagamento importante em poucos dias e pretende usar dinheiro de um investimento. Como o ciclo de liquidação entra nesse planejamento?",
+                  "options": [
+                    "Não entra: o dinheiro de qualquer investimento fica disponível no mesmo dia da venda",
+                    "Basta vender no dia do pagamento, porque a liquidação é instantânea",
+                    "Basta avisar a corretora para antecipar a liquidação sem custo",
+                    "É preciso checar o prazo de liquidação do produto e contar os dias úteis, resgatando com antecedência suficiente"
+                  ],
+                  "explanation": "O prazo varia por tipo de produto e conta em dias úteis. Verificar antes é o que garante o dinheiro disponível na data certa."
+                },
+                "en": {
+                  "prompt": "You have an important payment in a few days and plan to use money from an investment. How does the settlement cycle enter that planning?",
+                  "options": [
+                    "It doesn't: money from any investment is available the same day you sell",
+                    "Just sell on the payment day, because settlement is instant",
+                    "Just ask the broker to advance settlement at no cost",
+                    "You need to check the product's settlement period and count business days, redeeming far enough in advance"
+                  ],
+                  "explanation": "The period varies by product type and counts in business days. Checking beforehand is what guarantees the money is available on the right date."
+                },
+                "es": {
+                  "prompt": "Tienes un pago importante en pocos días y piensas usar dinero de una inversión. ¿Cómo entra el ciclo de liquidación en esa planificación?",
+                  "options": [
+                    "No entra: el dinero de cualquier inversión queda disponible el mismo día de la venta",
+                    "Basta vender el día del pago, porque la liquidación es instantánea",
+                    "Basta avisar a la corredora para adelantar la liquidación sin costo",
+                    "Hay que verificar el plazo de liquidación del producto y contar los días hábiles, rescatando con suficiente anticipación"
+                  ],
+                  "explanation": "El plazo varía por tipo de producto y cuenta en días hábiles. Verificarlo antes es lo que garantiza el dinero disponible en la fecha correcta."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Execução fecha o negócio; liquidação é quando dinheiro e ativo trocam de mãos.",
+                    "O prazo varia por mercado e conta em dias úteis.",
+                    "Planejar um pagamento com dinheiro investido exige contar esse prazo com antecedência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Execution closes the trade; settlement is when money and asset change hands.",
+                    "The period varies by market and counts in business days.",
+                    "Planning a payment with invested money requires counting that period in advance."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La ejecución cierra el negocio; la liquidación es cuando dinero y activo cambian de manos.",
+                    "El plazo varía por mercado y cuenta en días hábiles.",
+                    "Planificar un pago con dinero invertido exige contar ese plazo con anticipación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_reading_product_information",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Lendo as Informações Oficiais de um Produto"
+            },
+            "en": {
+              "title": "Reading a Product's Official Information"
+            },
+            "es": {
+              "title": "Leyendo la Información Oficial de un Producto"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O material de venda e o documento oficial não dizem a mesma coisa",
+                  "body": "Todo produto de investimento tem documentos formais — regulamento, lâmina, prospecto, termo de adesão — onde estão as regras que valem juridicamente: prazos, carências, custos, riscos e o que exatamente você está comprando. O material de divulgação destaca o que é atraente; o documento oficial descreve o que é vinculante. Ler o segundo antes de decidir é o que transforma uma promessa em um contrato compreendido."
+                },
+                "en": {
+                  "title": "Sales material and the official document don't say the same thing",
+                  "body": "Every investment product has formal documents — bylaws, fact sheet, prospectus, subscription terms — holding the rules that are legally binding: terms, lock-ups, costs, risks and what exactly you're buying. Marketing material highlights what's attractive; the official document describes what's binding. Reading the latter before deciding is what turns a promise into a contract you understand."
+                },
+                "es": {
+                  "title": "El material de venta y el documento oficial no dicen lo mismo",
+                  "body": "Todo producto de inversión tiene documentos formales — reglamento, ficha, prospecto, término de adhesión — donde están las reglas que valen jurídicamente: plazos, carencias, costos, riesgos y qué exactamente estás comprando. El material de difusión destaca lo atractivo; el documento oficial describe lo que es vinculante. Leer el segundo antes de decidir es lo que convierte una promesa en un contrato comprendido."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um material promocional destaca a rentabilidade passada de um fundo em um período favorável. O regulamento do mesmo fundo informa a política de investimento, as taxas cobradas, os prazos de resgate e os riscos aos quais a carteira está exposta. As duas peças falam do mesmo produto — mas só uma delas responde 'o que acontece se eu precisar sair antes' e 'quanto isso custa por ano'."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A promotional piece highlights a fund's past performance over a favorable period. The same fund's bylaws state the investment policy, the fees charged, redemption terms and the risks the portfolio is exposed to. Both describe the same product — but only one answers 'what happens if I need to exit early' and 'how much does this cost per year'."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un material promocional destaca la rentabilidad pasada de un fondo en un período favorable. El reglamento del mismo fondo informa la política de inversión, las comisiones cobradas, los plazos de rescate y los riesgos a los que está expuesta la cartera. Ambas piezas hablan del mismo producto — pero solo una responde 'qué pasa si necesito salir antes' y 'cuánto cuesta esto por año'."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Onde estão as regras que de fato valem para um produto de investimento?",
+                  "options": [
+                    "Nos documentos oficiais, como regulamento, lâmina e prospecto",
+                    "No material publicitário divulgado pela instituição",
+                    "Nas avaliações de outros investidores em redes sociais",
+                    "No histórico de rentabilidade dos últimos meses"
+                  ],
+                  "explanation": "O documento oficial é o que vincula as partes — é lá que estão prazos, custos, riscos e condições de saída."
+                },
+                "en": {
+                  "prompt": "Where are the rules that actually apply to an investment product?",
+                  "options": [
+                    "In the official documents, such as bylaws, fact sheet and prospectus",
+                    "In the advertising material released by the institution",
+                    "In other investors' reviews on social media",
+                    "In the performance history of the last few months"
+                  ],
+                  "explanation": "The official document is what binds the parties — that's where terms, costs, risks and exit conditions live."
+                },
+                "es": {
+                  "prompt": "¿Dónde están las reglas que de hecho valen para un producto de inversión?",
+                  "options": [
+                    "En los documentos oficiales, como reglamento, ficha y prospecto",
+                    "En el material publicitario divulgado por la institución",
+                    "En las valoraciones de otros inversores en redes sociales",
+                    "En el historial de rentabilidad de los últimos meses"
+                  ],
+                  "explanation": "El documento oficial es lo que vincula a las partes — ahí están plazos, costos, riesgos y condiciones de salida."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Antes de investir em um fundo, quais informações do documento oficial respondem melhor às perguntas práticas do dia a dia?",
+                  "options": [
+                    "A rentabilidade do último ano e o nome do gestor",
+                    "O número de cotistas e o patrimônio total do fundo",
+                    "A política de investimento, as taxas, os prazos de resgate e os riscos descritos",
+                    "A data de constituição e o endereço da administradora"
+                  ],
+                  "explanation": "Essas quatro informações respondem, respectivamente: no que o dinheiro é aplicado, quanto custa, quando eu consigo sair e o que pode dar errado."
+                },
+                "en": {
+                  "prompt": "Before investing in a fund, which pieces of the official document best answer day-to-day practical questions?",
+                  "options": [
+                    "Last year's performance and the manager's name",
+                    "The number of unitholders and the fund's total assets",
+                    "The investment policy, the fees, the redemption terms and the risks described",
+                    "The incorporation date and the administrator's address"
+                  ],
+                  "explanation": "Those four answer, respectively: what the money is invested in, how much it costs, when I can exit and what can go wrong."
+                },
+                "es": {
+                  "prompt": "Antes de invertir en un fondo, ¿qué informaciones del documento oficial responden mejor a las preguntas prácticas del día a día?",
+                  "options": [
+                    "La rentabilidad del último año y el nombre del gestor",
+                    "El número de cuotistas y el patrimonio total del fondo",
+                    "La política de inversión, las comisiones, los plazos de rescate y los riesgos descritos",
+                    "La fecha de constitución y la dirección de la administradora"
+                  ],
+                  "explanation": "Esas cuatro responden, respectivamente: en qué se invierte el dinero, cuánto cuesta, cuándo puedo salir y qué puede salir mal."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Material de divulgação destaca; documento oficial vincula.",
+                    "Regulamento, lâmina e prospecto trazem política, custos, prazos e riscos.",
+                    "Ler o documento oficial responde o que o material de venda não responde."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Marketing material highlights; the official document binds.",
+                    "Bylaws, fact sheets and prospectuses carry policy, costs, terms and risks.",
+                    "Reading the official document answers what the sales material doesn't."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El material de difusión destaca; el documento oficial vincula.",
+                    "Reglamento, ficha y prospecto traen política, costos, plazos y riesgos.",
+                    "Leer el documento oficial responde lo que el material de venta no responde."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_starting_small",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Começar Pequeno: Valor Mínimo e Fracionamento"
+            },
+            "en": {
+              "title": "Starting Small: Minimums and Fractional Amounts"
+            },
+            "es": {
+              "title": "Empezar Pequeño: Monto Mínimo y Fraccionamiento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O valor inicial importa menos do que a regularidade",
+                  "body": "Muita gente adia o primeiro aporte esperando juntar 'um valor que valha a pena'. Na prática, boa parte dos produtos aceita aplicações iniciais pequenas, e existem formas de comprar frações do que antes exigia lotes inteiros. O ponto não é que valores pequenos produzam resultados grandes rapidamente — é que começar cedo com pouco cria o hábito, expõe você à prática real e faz o tempo, que é o fator mais poderoso, começar a contar."
+                },
+                "en": {
+                  "title": "The starting amount matters less than regularity",
+                  "body": "Many people postpone the first contribution waiting to gather 'an amount that's worth it'. In practice, plenty of products accept small initial investments, and there are ways to buy fractions of what once required whole lots. The point isn't that small amounts produce big results quickly — it's that starting early with little builds the habit, exposes you to real practice and puts time, the most powerful factor, on the clock."
+                },
+                "es": {
+                  "title": "El monto inicial importa menos que la regularidad",
+                  "body": "Mucha gente pospone el primer aporte esperando juntar 'un monto que valga la pena'. En la práctica, buena parte de los productos acepta inversiones iniciales pequeñas, y existen formas de comprar fracciones de lo que antes exigía lotes enteros. El punto no es que los montos pequeños produzcan resultados grandes rápidamente — es que empezar temprano con poco crea el hábito, te expone a la práctica real y hace que el tiempo, el factor más poderoso, empiece a contar."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas decidem investir. A primeira começa imediatamente com um valor modesto e mantém aportes regulares. A segunda espera juntar uma quantia maior e começa anos depois. Mesmo que a segunda aporte mais por mês quando finalmente começar, a primeira ganhou algo que não se recupera: tempo de capitalização e experiência acumulada em decisões reais."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people decide to invest. The first starts immediately with a modest amount and keeps contributing regularly. The second waits to gather a larger sum and starts years later. Even if the second contributes more per month once they finally start, the first gained something that can't be recovered: compounding time and experience accumulated in real decisions."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas deciden invertir. La primera empieza de inmediato con un monto modesto y mantiene aportes regulares. La segunda espera juntar una cantidad mayor y empieza años después. Aunque la segunda aporte más por mes cuando finalmente empiece, la primera ganó algo que no se recupera: tiempo de capitalización y experiencia acumulada en decisiones reales."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o principal ganho de começar a investir cedo com um valor pequeno?",
+                  "options": [
+                    "Garantir um retorno maior que o de quem começa com valores altos",
+                    "Eliminar o risco das primeiras decisões",
+                    "Reduzir as taxas cobradas pelos produtos escolhidos",
+                    "Iniciar o tempo de capitalização e construir o hábito com decisões reais"
+                  ],
+                  "explanation": "O valor inicial pequeno não muda o retorno percentual, mas inicia o relógio da capitalização e a prática que só a experiência real dá."
+                },
+                "en": {
+                  "prompt": "What's the main gain of starting to invest early with a small amount?",
+                  "options": [
+                    "Guaranteeing a higher return than those who start with large amounts",
+                    "Eliminating the risk of the first decisions",
+                    "Lowering the fees charged by the chosen products",
+                    "Starting the compounding clock and building the habit through real decisions"
+                  ],
+                  "explanation": "A small starting amount doesn't change the percentage return, but it starts the compounding clock and the practice only real experience provides."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la principal ganancia de empezar a invertir temprano con un monto pequeño?",
+                  "options": [
+                    "Garantizar un retorno mayor que el de quien empieza con montos altos",
+                    "Eliminar el riesgo de las primeras decisiones",
+                    "Reducir las comisiones cobradas por los productos elegidos",
+                    "Iniciar el tiempo de capitalización y construir el hábito con decisiones reales"
+                  ],
+                  "explanation": "Un monto inicial pequeño no cambia el retorno porcentual, pero inicia el reloj de la capitalización y la práctica que solo da la experiencia real."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem pouco para investir e os custos fixos de cada operação parecem altos em relação ao valor. Qual ajuste resolve isso sem desistir de começar?",
+                  "options": [
+                    "Fazer muitas operações pequenas, para diluir o custo ao longo do tempo",
+                    "Concentrar os aportes em intervalos maiores e escolher produtos com custo compatível com valores pequenos",
+                    "Esperar até ter um valor alto e só então iniciar",
+                    "Escolher os produtos de maior risco, para compensar o custo com retorno"
+                  ],
+                  "explanation": "Custo fixo pesa mais em operação pequena e frequente. Espaçar os aportes e escolher produtos adequados ao valor resolve a aritmética sem adiar o começo."
+                },
+                "en": {
+                  "prompt": "You have little to invest and each operation's fixed costs look high relative to the amount. Which adjustment solves that without giving up on starting?",
+                  "options": [
+                    "Make many small operations, to spread the cost over time",
+                    "Group contributions into longer intervals and choose products whose costs suit small amounts",
+                    "Wait until you have a large amount and only then begin",
+                    "Choose the riskiest products, to offset the cost with returns"
+                  ],
+                  "explanation": "Fixed costs weigh more on small, frequent operations. Spacing contributions and choosing products suited to the amount fixes the arithmetic without postponing the start."
+                },
+                "es": {
+                  "prompt": "Tienes poco para invertir y los costos fijos de cada operación parecen altos en relación al monto. ¿Qué ajuste lo resuelve sin renunciar a empezar?",
+                  "options": [
+                    "Hacer muchas operaciones pequeñas, para diluir el costo a lo largo del tiempo",
+                    "Agrupar los aportes en intervalos mayores y elegir productos con costo compatible con montos pequeños",
+                    "Esperar hasta tener un monto alto y solo entonces iniciar",
+                    "Elegir los productos de mayor riesgo, para compensar el costo con retorno"
+                  ],
+                  "explanation": "El costo fijo pesa más en operaciones pequeñas y frecuentes. Espaciar los aportes y elegir productos adecuados al monto resuelve la aritmética sin posponer el inicio."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Muitos produtos aceitam aplicações iniciais pequenas e frações.",
+                    "Começar cedo inicia a capitalização e constrói o hábito com prática real.",
+                    "Custo fixo alto em relação ao aporte se resolve espaçando aportes e escolhendo produtos compatíveis."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Many products accept small initial investments and fractional amounts.",
+                    "Starting early begins compounding and builds the habit through real practice.",
+                    "High fixed costs relative to the contribution are solved by spacing contributions and choosing suitable products."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Muchos productos aceptan inversiones iniciales pequeñas y fracciones.",
+                    "Empezar temprano inicia la capitalización y construye el hábito con práctica real.",
+                    "Un costo fijo alto respecto al aporte se resuelve espaciando aportes y eligiendo productos compatibles."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "investment_fundamentals_when_not_to_invest_yet",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Quando Ainda Não é Hora de Investir"
+            },
+            "en": {
+              "title": "When It Isn't Time to Invest Yet"
+            },
+            "es": {
+              "title": "Cuándo Todavía No es Momento de Invertir"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Existem duas situações em que investir sai mais caro do que esperar",
+                  "body": "A primeira é ter uma dívida cara em aberto: se o custo dessa dívida é maior do que o retorno que você razoavelmente espera de um investimento, quitá-la é a aplicação com o melhor retorno disponível — e sem risco de mercado. A segunda é não ter reserva de emergência: sem ela, qualquer imprevisto força um resgate no pior momento, ou pior, uma nova dívida. Investir antes de resolver essas duas frentes costuma desfazer o próprio investimento."
+                },
+                "en": {
+                  "title": "There are two situations where investing costs more than waiting",
+                  "body": "The first is having expensive debt outstanding: if that debt's cost is higher than the return you can reasonably expect from an investment, paying it off is the best-returning application available — with no market risk. The second is having no emergency fund: without one, any surprise forces a withdrawal at the worst moment, or worse, new debt. Investing before settling these two fronts tends to undo the investment itself."
+                },
+                "es": {
+                  "title": "Hay dos situaciones en que invertir sale más caro que esperar",
+                  "body": "La primera es tener una deuda cara abierta: si el costo de esa deuda es mayor que el retorno que razonablemente esperas de una inversión, saldarla es la aplicación con el mejor retorno disponible — y sin riesgo de mercado. La segunda es no tener fondo de emergencia: sin él, cualquier imprevisto fuerza un rescate en el peor momento, o peor, una nueva deuda. Invertir antes de resolver esos dos frentes suele deshacer la propia inversión."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém mantém uma dívida de juros altos e, ao mesmo tempo, começa a investir. O rendimento do investimento dificilmente acompanha o custo da dívida, então o patrimônio líquido encolhe mesmo com a carteira crescendo na tela. Outro caso: sem reserva, uma emergência obriga a vender investimentos em um momento ruim — e a perda realizada ali costuma superar meses de rendimento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone keeps a high-interest debt and starts investing at the same time. The investment's return rarely keeps up with the debt's cost, so net worth shrinks even while the portfolio grows on screen. Another case: with no fund, an emergency forces selling investments at a bad moment — and the loss realized there usually exceeds months of returns."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien mantiene una deuda de intereses altos y, al mismo tiempo, empieza a invertir. El rendimiento de la inversión difícilmente acompaña el costo de la deuda, así que el patrimonio neto se reduce aunque la cartera crezca en la pantalla. Otro caso: sin fondo, una emergencia obliga a vender inversiones en un mal momento — y la pérdida realizada ahí suele superar meses de rendimiento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que quitar uma dívida cara costuma ser melhor do que investir o mesmo valor?",
+                  "options": [
+                    "Porque o custo dessa dívida costuma superar o retorno esperado de um investimento, e quitá-la não tem risco de mercado",
+                    "Porque toda dívida impede legalmente novos investimentos",
+                    "Porque investimentos não rendem enquanto existir qualquer dívida",
+                    "Porque quitar dívidas melhora automaticamente o perfil de investidor"
+                  ],
+                  "explanation": "Eliminar um custo certo e alto equivale a um retorno certo e alto — algo que investimento nenhum oferece sem risco."
+                },
+                "en": {
+                  "prompt": "Why is paying off expensive debt usually better than investing the same amount?",
+                  "options": [
+                    "Because that debt's cost usually exceeds an investment's expected return, and paying it off carries no market risk",
+                    "Because any debt legally prevents new investments",
+                    "Because investments don't earn anything while any debt exists",
+                    "Because paying off debts automatically improves your investor profile"
+                  ],
+                  "explanation": "Eliminating a certain, high cost is equivalent to a certain, high return — something no investment offers without risk."
+                },
+                "es": {
+                  "prompt": "¿Por qué saldar una deuda cara suele ser mejor que invertir el mismo monto?",
+                  "options": [
+                    "Porque el costo de esa deuda suele superar el retorno esperado de una inversión, y saldarla no tiene riesgo de mercado",
+                    "Porque toda deuda impide legalmente nuevas inversiones",
+                    "Porque las inversiones no rinden mientras exista cualquier deuda",
+                    "Porque saldar deudas mejora automáticamente el perfil de inversor"
+                  ],
+                  "explanation": "Eliminar un costo cierto y alto equivale a un retorno cierto y alto — algo que ninguna inversión ofrece sin riesgo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer começar a investir, tem uma dívida de cartão em aberto e nenhuma reserva. Qual sequência é mais coerente?",
+                  "options": [
+                    "Investir metade e pagar o mínimo do cartão, para não perder oportunidades de mercado",
+                    "Montar a reserva completa primeiro e só depois olhar para a dívida",
+                    "Quitar a dívida cara, formar a reserva de emergência e então começar a investir com regularidade",
+                    "Investir tudo em um produto de liquidez diária e usar o rendimento para pagar o cartão"
+                  ],
+                  "explanation": "A ordem importa: a dívida cara consome o retorno de qualquer investimento, e a reserva é o que impede que o próximo imprevisto desfaça o que você acabou de construir."
+                },
+                "en": {
+                  "prompt": "You want to start investing, have an outstanding credit card debt and no reserve. Which sequence is more coherent?",
+                  "options": [
+                    "Invest half and pay the card minimum, so as not to miss market opportunities",
+                    "Build the full reserve first and only then look at the debt",
+                    "Pay off the expensive debt, build the emergency fund and then start investing regularly",
+                    "Invest everything in a daily-liquidity product and use the yield to pay the card"
+                  ],
+                  "explanation": "Order matters: expensive debt eats any investment's return, and the reserve is what stops the next surprise from undoing what you just built."
+                },
+                "es": {
+                  "prompt": "Quieres empezar a invertir, tienes una deuda de tarjeta abierta y ningún fondo. ¿Qué secuencia es más coherente?",
+                  "options": [
+                    "Invertir la mitad y pagar el mínimo de la tarjeta, para no perder oportunidades de mercado",
+                    "Armar el fondo completo primero y solo después mirar la deuda",
+                    "Saldar la deuda cara, formar el fondo de emergencia y entonces empezar a invertir con regularidad",
+                    "Invertir todo en un producto de liquidez diaria y usar el rendimiento para pagar la tarjeta"
+                  ],
+                  "explanation": "El orden importa: la deuda cara consume el retorno de cualquier inversión, y el fondo es lo que impide que el próximo imprevisto deshaga lo que acabas de construir."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Dívida cara em aberto costuma render mais quitada do que o investimento renderia.",
+                    "Sem reserva de emergência, qualquer imprevisto força resgate no pior momento.",
+                    "A sequência é: quitar dívida cara, formar reserva e então investir com regularidade."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Outstanding expensive debt usually 'pays' more when settled than the investment would earn.",
+                    "Without an emergency fund, any surprise forces a withdrawal at the worst moment.",
+                    "The sequence is: pay off expensive debt, build the reserve, then invest regularly."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Una deuda cara abierta suele rendir más saldada de lo que rendiría la inversión.",
+                    "Sin fondo de emergencia, cualquier imprevisto fuerza un rescate en el peor momento.",
+                    "La secuencia es: saldar la deuda cara, formar el fondo y entonces invertir con regularidad."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
