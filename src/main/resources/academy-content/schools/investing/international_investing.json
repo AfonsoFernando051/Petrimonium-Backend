@@ -2528,6 +2528,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "international_operating_abroad",
+      "order": 4,
+      "iconKey": "public_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "international_investing_expert"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Operando no Exterior",
+          "description": "Moeda de referência, fusos e liquidação internacional, sucessão de ativos no exterior, risco de acesso e o empilhamento de custos."
+        },
+        "en": {
+          "title": "Operating Abroad",
+          "description": "Reference currency, time zones and international settlement, estate planning abroad, access risk and the cost stack."
+        },
+        "es": {
+          "title": "Operando en el Exterior",
+          "description": "Moneda de referencia, husos horarios y liquidación internacional, sucesión de activos en el exterior, riesgo de acceso y el apilamiento de costos."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "international_reference_currency",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sua Moeda de Referência"
+            },
+            "en": {
+              "title": "Your Reference Currency"
+            },
+            "es": {
+              "title": "Tu Moneda de Referencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O retorno depende de em que moeda você vai gastar",
+                  "body": "Um mesmo investimento pode ter desempenhos muito diferentes dependendo da moeda em que você mede. Se você vai gastar o dinheiro no país onde mora, é nessa moeda que o retorno precisa ser avaliado — não na moeda do ativo. Um ativo que subiu no exterior pode ter rendido pouco para você se a sua moeda se valorizou no período, e o contrário também é verdade. Definir a moeda de referência antes de comparar é o que evita conclusões invertidas."
+                },
+                "en": {
+                  "title": "Your return depends on the currency you'll spend in",
+                  "body": "The same investment can show very different performance depending on the currency you measure it in. If you'll spend the money in the country where you live, that's the currency the return must be judged in — not the asset's currency. An asset that rose abroad may have earned you little if your currency appreciated in the period, and the reverse is equally true. Defining the reference currency before comparing is what prevents inverted conclusions."
+                },
+                "es": {
+                  "title": "El retorno depende de en qué moneda vas a gastar",
+                  "body": "Una misma inversión puede tener desempeños muy distintos según la moneda en que la midas. Si vas a gastar el dinero en el país donde vives, es en esa moneda que el retorno debe evaluarse — no en la moneda del activo. Un activo que subió en el exterior puede haber rendido poco para ti si tu moneda se valorizó en el período, y lo contrario también es cierto. Definir la moneda de referencia antes de comparar es lo que evita conclusiones invertidas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investimento no exterior valoriza no período, mas a moeda local do investidor se fortalece na mesma proporção. Convertido de volta, o resultado é próximo de zero. Outro caso: o ativo no exterior fica estável, a moeda local se desvaloriza, e o retorno medido na moeda do investidor é positivo. Nos dois casos, o desempenho do ativo foi só parte da história."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A foreign investment appreciates over the period, but the investor's local currency strengthens in the same proportion. Converted back, the result is close to zero. Another case: the foreign asset stays flat, the local currency weakens, and the return measured in the investor's currency is positive. In both cases, the asset's performance was only part of the story."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una inversión en el exterior se valoriza en el período, pero la moneda local del inversor se fortalece en la misma proporción. Convertido de vuelta, el resultado es cercano a cero. Otro caso: el activo en el exterior queda estable, la moneda local se desvaloriza, y el retorno medido en la moneda del inversor es positivo. En ambos casos, el desempeño del activo fue solo parte de la historia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Em qual moeda faz mais sentido avaliar o retorno de um investimento no exterior?",
+                  "options": [
+                    "Sempre na moeda do país onde o ativo é negociado",
+                    "Na moeda que teve o melhor desempenho no período",
+                    "Na moeda em que você pretende gastar o dinheiro",
+                    "Em uma moeda de referência global, independentemente de onde você vive"
+                  ],
+                  "explanation": "O retorno só vira poder de compra quando convertido para a moeda das suas despesas — é essa a régua relevante."
+                },
+                "en": {
+                  "prompt": "Which currency makes most sense for judging a foreign investment's return?",
+                  "options": [
+                    "Always the currency of the country where the asset trades",
+                    "The currency that performed best in the period",
+                    "The currency you intend to spend the money in",
+                    "A global reference currency, regardless of where you live"
+                  ],
+                  "explanation": "A return only becomes purchasing power once converted into the currency of your expenses — that's the relevant yardstick."
+                },
+                "es": {
+                  "prompt": "¿En qué moneda tiene más sentido evaluar el retorno de una inversión en el exterior?",
+                  "options": [
+                    "Siempre en la moneda del país donde se negocia el activo",
+                    "En la moneda que tuvo el mejor desempeño en el período",
+                    "En la moneda en que pretendes gastar el dinero",
+                    "En una moneda de referencia global, sin importar dónde vives"
+                  ],
+                  "explanation": "El retorno solo se convierte en poder de compra cuando se convierte a la moneda de tus gastos — esa es la regla relevante."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você compara dois fundos: um mede o retorno na moeda estrangeira, o outro já na sua moeda local. Como tornar a comparação justa?",
+                  "options": [
+                    "Converter os dois para a mesma moeda de referência antes de comparar, incluindo o efeito cambial do período",
+                    "Escolher o que reportou o maior número, seja qual for a moeda",
+                    "Comparar apenas o retorno na moeda estrangeira, que isola a gestão",
+                    "Desconsiderar o câmbio, porque ele tende a se anular no longo prazo"
+                  ],
+                  "explanation": "Números em moedas diferentes não são comparáveis. Trazer ambos para a moeda das suas despesas é o único jeito de saber qual entregou mais a você."
+                },
+                "en": {
+                  "prompt": "You compare two funds: one reports returns in the foreign currency, the other already in your local currency. How do you make the comparison fair?",
+                  "options": [
+                    "Convert both to the same reference currency before comparing, including the period's currency effect",
+                    "Pick the one reporting the bigger number, whatever the currency",
+                    "Compare only the foreign-currency return, which isolates the management",
+                    "Disregard currency, because it tends to cancel out over the long run"
+                  ],
+                  "explanation": "Numbers in different currencies aren't comparable. Bringing both into the currency of your expenses is the only way to know which delivered more to you."
+                },
+                "es": {
+                  "prompt": "Comparas dos fondos: uno mide el retorno en la moneda extranjera, el otro ya en tu moneda local. ¿Cómo hacer justa la comparación?",
+                  "options": [
+                    "Convertir ambos a la misma moneda de referencia antes de comparar, incluyendo el efecto cambiario del período",
+                    "Elegir el que reportó el número mayor, sea cual sea la moneda",
+                    "Comparar solo el retorno en la moneda extranjera, que aísla la gestión",
+                    "Desconsiderar el cambio, porque tiende a anularse en el largo plazo"
+                  ],
+                  "explanation": "Números en monedas distintas no son comparables. Llevar ambos a la moneda de tus gastos es la única forma de saber cuál te entregó más."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A moeda de referência é aquela em que você vai gastar o dinheiro.",
+                    "O retorno de um ativo estrangeiro combina desempenho do ativo e variação cambial.",
+                    "Comparar produtos exige trazer todos para a mesma moeda de referência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Your reference currency is the one you'll spend the money in.",
+                    "A foreign asset's return combines asset performance and currency variation.",
+                    "Comparing products requires bringing them all into the same reference currency."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La moneda de referencia es aquella en que vas a gastar el dinero.",
+                    "El retorno de un activo extranjero combina desempeño del activo y variación cambiaria.",
+                    "Comparar productos exige llevarlos todos a la misma moneda de referencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_market_hours_and_settlement",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fusos, Pregões e Liquidação Internacional"
+            },
+            "en": {
+              "title": "Time Zones, Trading Hours and International Settlement"
+            },
+            "es": {
+              "title": "Husos Horarios, Ruedas y Liquidación Internacional"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Mercados diferentes vivem em relógios e calendários diferentes",
+                  "body": "Investir no exterior significa operar sob o horário, o calendário e as regras de liquidação de outro mercado. Feriados não coincidem, o pregão abre quando você está dormindo ou trabalhando, e o prazo até o dinheiro estar disponível soma o ciclo de liquidação local ao tempo de conversão e transferência internacional. Nada disso é obstáculo para quem investe com horizonte longo — mas é problema para quem precisa do dinheiro em uma data específica."
+                },
+                "en": {
+                  "title": "Different markets live on different clocks and calendars",
+                  "body": "Investing abroad means operating under another market's hours, calendar and settlement rules. Holidays don't line up, the session opens while you're asleep or at work, and the time until money is available adds the local settlement cycle to conversion and international transfer time. None of this is an obstacle for a long-horizon investor — but it is a problem for someone who needs the money on a specific date."
+                },
+                "es": {
+                  "title": "Mercados distintos viven en relojes y calendarios distintos",
+                  "body": "Invertir en el exterior significa operar bajo el horario, el calendario y las reglas de liquidación de otro mercado. Los feriados no coinciden, la rueda abre cuando estás durmiendo o trabajando, y el plazo hasta que el dinero esté disponible suma el ciclo de liquidación local al tiempo de conversión y transferencia internacional. Nada de eso es un obstáculo para quien invierte con horizonte largo — pero sí es un problema para quien necesita el dinero en una fecha específica."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém envia uma ordem fora do horário de funcionamento do mercado estrangeiro e ela só é executada na abertura seguinte, a um preço diferente do que viu. Em outro caso, um resgate planejado esbarra em um feriado local que não existe no calendário do investidor, e o dinheiro chega dias depois do previsto. Os dois problemas somem quando o calendário do outro mercado entra no planejamento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone sends an order outside the foreign market's hours and it's only executed at the next open, at a different price than they saw. In another case, a planned withdrawal runs into a local holiday that doesn't exist on the investor's calendar, and the money arrives days later than expected. Both problems disappear once the other market's calendar enters the planning."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien envía una orden fuera del horario de funcionamiento del mercado extranjero y solo se ejecuta en la apertura siguiente, a un precio distinto del que vio. En otro caso, un rescate planificado choca con un feriado local que no existe en el calendario del inversor, y el dinero llega días después de lo previsto. Ambos problemas desaparecen cuando el calendario del otro mercado entra en la planificación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com uma ordem enviada fora do horário de pregão do mercado estrangeiro?",
+                  "options": [
+                    "Ela é cancelada automaticamente pelo sistema",
+                    "Ela fica pendente e tende a ser executada na abertura seguinte, a um preço que pode ser diferente",
+                    "Ela é executada imediatamente ao último preço do dia anterior",
+                    "Ela passa a valer apenas para investidores locais daquele mercado"
+                  ],
+                  "explanation": "Fora do pregão não há formação de preço: a execução espera a abertura, e o preço pode ter mudado até lá."
+                },
+                "en": {
+                  "prompt": "What happens to an order sent outside the foreign market's trading hours?",
+                  "options": [
+                    "It's automatically cancelled by the system",
+                    "It stays pending and tends to execute at the next open, at a price that may be different",
+                    "It's executed immediately at the previous day's last price",
+                    "It becomes valid only for local investors in that market"
+                  ],
+                  "explanation": "Outside the session there's no price formation: execution waits for the open, and the price may have changed by then."
+                },
+                "es": {
+                  "prompt": "¿Qué ocurre con una orden enviada fuera del horario de rueda del mercado extranjero?",
+                  "options": [
+                    "Es cancelada automáticamente por el sistema",
+                    "Queda pendiente y tiende a ejecutarse en la apertura siguiente, a un precio que puede ser distinto",
+                    "Se ejecuta inmediatamente al último precio del día anterior",
+                    "Pasa a valer solo para inversores locales de ese mercado"
+                  ],
+                  "explanation": "Fuera de la rueda no hay formación de precio: la ejecución espera la apertura, y el precio puede haber cambiado para entonces."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você precisa de um valor em data certa e ele está investido no exterior. O que precisa entrar na conta de prazo?",
+                  "options": [
+                    "Apenas o ciclo de liquidação do mercado estrangeiro",
+                    "Apenas o tempo de conversão da moeda",
+                    "Nada: transferências internacionais são imediatas",
+                    "O ciclo de liquidação local, o tempo de conversão e o de transferência internacional, considerando feriados dos dois países"
+                  ],
+                  "explanation": "O prazo é a soma de várias etapas em calendários diferentes. Contar só uma delas é o caminho mais rápido para o dinheiro chegar atrasado."
+                },
+                "en": {
+                  "prompt": "You need an amount on a specific date and it's invested abroad. What must enter the timing calculation?",
+                  "options": [
+                    "Only the foreign market's settlement cycle",
+                    "Only the currency conversion time",
+                    "Nothing: international transfers are immediate",
+                    "The local settlement cycle, conversion time and international transfer time, accounting for both countries' holidays"
+                  ],
+                  "explanation": "The timeline is the sum of several steps across different calendars. Counting only one of them is the fastest route to the money arriving late."
+                },
+                "es": {
+                  "prompt": "Necesitas un monto en una fecha determinada y está invertido en el exterior. ¿Qué debe entrar en la cuenta de plazo?",
+                  "options": [
+                    "Solo el ciclo de liquidación del mercado extranjero",
+                    "Solo el tiempo de conversión de la moneda",
+                    "Nada: las transferencias internacionales son inmediatas",
+                    "El ciclo de liquidación local, el tiempo de conversión y el de transferencia internacional, considerando feriados de ambos países"
+                  ],
+                  "explanation": "El plazo es la suma de varias etapas en calendarios distintos. Contar solo una de ellas es el camino más rápido para que el dinero llegue tarde."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Cada mercado tem horário, calendário e ciclo de liquidação próprios.",
+                    "Ordens fora do pregão esperam a abertura seguinte.",
+                    "O prazo até o dinheiro disponível soma liquidação, conversão e transferência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Each market has its own hours, calendar and settlement cycle.",
+                    "Orders outside the session wait for the next open.",
+                    "Time to available cash adds settlement, conversion and transfer."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Cada mercado tiene horario, calendario y ciclo de liquidación propios.",
+                    "Las órdenes fuera de rueda esperan la apertura siguiente.",
+                    "El plazo hasta el dinero disponible suma liquidación, conversión y transferencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_estate_abroad",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sucessão de Ativos no Exterior"
+            },
+            "en": {
+              "title": "Estate Planning for Assets Abroad"
+            },
+            "es": {
+              "title": "Sucesión de Activos en el Exterior"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ativos em outro país seguem as regras daquele país",
+                  "body": "Quando parte do patrimônio está no exterior, a transmissão aos herdeiros pode envolver procedimentos e regras da jurisdição onde os ativos estão, além das do país de residência. Isso costuma significar processos paralelos, prazos mais longos, custos próprios e a necessidade de documentação específica. As regras variam bastante entre países e mudam com o tempo — o ponto que não muda é que ignorar o tema transfere a complexidade inteira para quem fica."
+                },
+                "en": {
+                  "title": "Assets in another country follow that country's rules",
+                  "body": "When part of the wealth is abroad, passing it to heirs can involve procedures and rules of the jurisdiction where the assets sit, on top of those of the country of residence. That usually means parallel processes, longer timelines, separate costs and the need for specific documentation. Rules vary considerably between countries and change over time — what doesn't change is that ignoring the topic transfers the whole complexity to those left behind."
+                },
+                "es": {
+                  "title": "Los activos en otro país siguen las reglas de ese país",
+                  "body": "Cuando parte del patrimonio está en el exterior, la transmisión a los herederos puede involucrar procedimientos y reglas de la jurisdicción donde están los activos, además de las del país de residencia. Eso suele significar procesos paralelos, plazos más largos, costos propios y la necesidad de documentación específica. Las reglas varían bastante entre países y cambian con el tiempo — lo que no cambia es que ignorar el tema transfiere toda la complejidad a quien queda."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma família descobre, no pior momento possível, que precisa conduzir um procedimento em outro idioma e outra jurisdição para acessar uma conta de investimentos no exterior, enquanto as despesas correntes continuam. O patrimônio existia; o acesso é que levou meses. Documentar onde os ativos estão, como acessá-los e quem deve ser acionado é um trabalho de poucas horas que evita exatamente esse cenário."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A family discovers, at the worst possible moment, that it must run a procedure in another language and jurisdiction to reach an investment account abroad, while ongoing expenses continue. The wealth existed; access is what took months. Documenting where the assets are, how to reach them and who should be contacted is a few hours' work that prevents exactly that scenario."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una familia descubre, en el peor momento posible, que debe conducir un procedimiento en otro idioma y otra jurisdicción para acceder a una cuenta de inversiones en el exterior, mientras los gastos corrientes continúan. El patrimonio existía; el acceso es lo que llevó meses. Documentar dónde están los activos, cómo acceder a ellos y a quién recurrir es un trabajo de pocas horas que evita exactamente ese escenario."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que ativos no exterior costumam tornar a sucessão mais complexa?",
+                  "options": [
+                    "Porque podem envolver procedimentos e regras da jurisdição onde estão, além das do país de residência",
+                    "Porque não podem ser herdados por residentes de outros países",
+                    "Porque perdem valor automaticamente na transmissão",
+                    "Porque precisam ser vendidos antes de qualquer transmissão"
+                  ],
+                  "explanation": "Duas jurisdições costumam significar dois conjuntos de regras, prazos e custos — que correm em paralelo."
+                },
+                "en": {
+                  "prompt": "Why do assets abroad usually make succession more complex?",
+                  "options": [
+                    "Because they can involve procedures and rules of the jurisdiction where they sit, on top of the country of residence's",
+                    "Because they can't be inherited by residents of other countries",
+                    "Because they automatically lose value on transfer",
+                    "Because they must be sold before any transfer"
+                  ],
+                  "explanation": "Two jurisdictions usually mean two sets of rules, timelines and costs — running in parallel."
+                },
+                "es": {
+                  "prompt": "¿Por qué los activos en el exterior suelen hacer más compleja la sucesión?",
+                  "options": [
+                    "Porque pueden involucrar procedimientos y reglas de la jurisdicción donde están, además de las del país de residencia",
+                    "Porque no pueden ser heredados por residentes de otros países",
+                    "Porque pierden valor automáticamente en la transmisión",
+                    "Porque deben venderse antes de cualquier transmisión"
+                  ],
+                  "explanation": "Dos jurisdicciones suelen significar dos conjuntos de reglas, plazos y costos — que corren en paralelo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem investimentos no exterior e quer reduzir o transtorno para a família. Qual providência é a mais eficaz e imediata?",
+                  "options": [
+                    "Encerrar todos os investimentos no exterior, para simplificar",
+                    "Adiar o tema até ter um patrimônio maior",
+                    "Deixar registrado, de forma acessível e segura, onde estão os ativos, como acessá-los e quais profissionais acionar — e consultar as regras aplicáveis em cada jurisdição",
+                    "Transferir tudo para o nome de um herdeiro agora mesmo"
+                  ],
+                  "explanation": "O maior obstáculo costuma ser informacional antes de ser jurídico. Um registro seguro resolve a primeira barreira e permite tratar a segunda com tempo."
+                },
+                "en": {
+                  "prompt": "You have investments abroad and want to reduce the burden on your family. Which step is most effective and immediate?",
+                  "options": [
+                    "Close all foreign investments, to simplify",
+                    "Postpone the topic until the portfolio is larger",
+                    "Leave an accessible, secure record of where the assets are, how to reach them and which professionals to contact — and check the rules applicable in each jurisdiction",
+                    "Transfer everything into an heir's name right now"
+                  ],
+                  "explanation": "The biggest obstacle is usually informational before it's legal. A secure record removes the first barrier and leaves time to handle the second."
+                },
+                "es": {
+                  "prompt": "Tienes inversiones en el exterior y quieres reducir el trastorno para la familia. ¿Qué medida es la más eficaz e inmediata?",
+                  "options": [
+                    "Cerrar todas las inversiones en el exterior, para simplificar",
+                    "Posponer el tema hasta tener un patrimonio mayor",
+                    "Dejar registrado, de forma accesible y segura, dónde están los activos, cómo acceder a ellos y a qué profesionales recurrir — y consultar las reglas aplicables en cada jurisdicción",
+                    "Transferir todo al nombre de un heredero ahora mismo"
+                  ],
+                  "explanation": "El mayor obstáculo suele ser informativo antes que jurídico. Un registro seguro resuelve la primera barrera y permite tratar la segunda con tiempo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ativos no exterior podem envolver procedimentos da jurisdição onde estão.",
+                    "Isso costuma significar processos paralelos, prazos e custos próprios.",
+                    "Registrar onde os ativos estão e como acessá-los resolve a primeira barreira."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Assets abroad can involve procedures of the jurisdiction where they sit.",
+                    "That usually means parallel processes, timelines and separate costs.",
+                    "Recording where the assets are and how to reach them removes the first barrier."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los activos en el exterior pueden involucrar procedimientos de la jurisdicción donde están.",
+                    "Eso suele significar procesos paralelos, plazos y costos propios.",
+                    "Registrar dónde están los activos y cómo acceder a ellos resuelve la primera barrera."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_access_risk",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Acesso: Quando as Regras Mudam"
+            },
+            "en": {
+              "title": "Access Risk: When the Rules Change"
+            },
+            "es": {
+              "title": "Riesgo de Acceso: Cuando las Reglas Cambian"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ter o ativo e poder usá-lo são coisas distintas",
+                  "body": "Investir em outro país adiciona um risco que não existe no mercado doméstico: mudanças de regra que afetam o seu acesso. Requisitos novos de documentação, restrições a investidores estrangeiros, alterações em acordos entre países ou decisões da instituição que guarda os seus ativos podem dificultar movimentações — sem que o valor do investimento tenha mudado. É um risco de baixa probabilidade e alto incômodo, e a defesa contra ele é estrutural, não analítica."
+                },
+                "en": {
+                  "title": "Owning the asset and being able to use it are different things",
+                  "body": "Investing in another country adds a risk absent from the domestic market: rule changes affecting your access. New documentation requirements, restrictions on foreign investors, changes in agreements between countries or decisions by the institution holding your assets can make transactions harder — without the investment's value having changed. It's a low-probability, high-nuisance risk, and the defense against it is structural, not analytical."
+                },
+                "es": {
+                  "title": "Tener el activo y poder usarlo son cosas distintas",
+                  "body": "Invertir en otro país añade un riesgo que no existe en el mercado doméstico: cambios de regla que afectan tu acceso. Nuevos requisitos de documentación, restricciones a inversores extranjeros, alteraciones en acuerdos entre países o decisiones de la institución que guarda tus activos pueden dificultar movimientos — sin que el valor de la inversión haya cambiado. Es un riesgo de baja probabilidad y alta molestia, y la defensa contra él es estructural, no analítica."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um investidor precisa apresentar documentação adicional para manter uma conta no exterior após uma mudança de exigências. Quem mantinha os dados atualizados e um canal de contato ativo resolve em dias; quem não acompanhava a conta descobre o problema quando precisa movimentar. O ativo nunca deixou de existir — o acesso é que ficou lento no pior momento."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An investor has to provide additional documentation to keep a foreign account after requirements change. Whoever kept their data current and an active contact channel resolves it in days; whoever wasn't following the account discovers the problem when they need to transact. The asset never stopped existing — access is what became slow at the worst moment."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un inversor necesita presentar documentación adicional para mantener una cuenta en el exterior tras un cambio de exigencias. Quien mantenía los datos actualizados y un canal de contacto activo lo resuelve en días; quien no seguía la cuenta descubre el problema cuando necesita movilizarla. El activo nunca dejó de existir — el acceso es lo que se volvió lento en el peor momento."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o risco de acesso em investimentos internacionais?",
+                  "options": [
+                    "A possibilidade de o ativo se desvalorizar por razões de mercado",
+                    "A possibilidade de mudanças de regra ou de exigências dificultarem a movimentação dos seus ativos",
+                    "A chance de a moeda estrangeira se desvalorizar frente à sua",
+                    "O custo de conversão cobrado em cada operação"
+                  ],
+                  "explanation": "É um risco sobre a sua capacidade de movimentar, não sobre o valor do ativo — e por isso não aparece em nenhuma métrica de retorno."
+                },
+                "en": {
+                  "prompt": "What characterizes access risk in international investing?",
+                  "options": [
+                    "The possibility of the asset falling in value for market reasons",
+                    "The possibility that rule or requirement changes make moving your assets harder",
+                    "The chance of the foreign currency weakening against yours",
+                    "The conversion cost charged on each operation"
+                  ],
+                  "explanation": "It's a risk about your ability to transact, not about the asset's value — which is why it shows up in no return metric."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al riesgo de acceso en inversiones internacionales?",
+                  "options": [
+                    "La posibilidad de que el activo se desvalorice por razones de mercado",
+                    "La posibilidad de que cambios de regla o de exigencias dificulten la movilización de tus activos",
+                    "La probabilidad de que la moneda extranjera se desvalorice frente a la tuya",
+                    "El costo de conversión cobrado en cada operación"
+                  ],
+                  "explanation": "Es un riesgo sobre tu capacidad de movilizar, no sobre el valor del activo — y por eso no aparece en ninguna métrica de retorno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Como reduzir o risco de acesso sem abrir mão de investir no exterior?",
+                  "options": [
+                    "Concentrar tudo em uma única instituição estrangeira, para simplificar o acompanhamento",
+                    "Manter apenas ativos domésticos, eliminando o risco",
+                    "Manter documentação e cadastro em dia, acompanhar comunicados da instituição e não concentrar todo o patrimônio internacional em um único canal de acesso",
+                    "Movimentar a conta todos os meses, independentemente de necessidade"
+                  ],
+                  "explanation": "É um risco operacional, não de mercado: a defesa é cadastro em dia, acompanhamento e mais de um caminho de acesso — não abandonar a diversificação geográfica."
+                },
+                "en": {
+                  "prompt": "How do you reduce access risk without giving up investing abroad?",
+                  "options": [
+                    "Concentrate everything at a single foreign institution, to simplify monitoring",
+                    "Hold only domestic assets, eliminating the risk",
+                    "Keep documentation and registration current, follow the institution's notices and avoid concentrating all international wealth in a single access channel",
+                    "Transact on the account every month, whether or not it's needed"
+                  ],
+                  "explanation": "It's an operational risk, not a market one: the defense is current registration, monitoring and more than one access path — not abandoning geographic diversification."
+                },
+                "es": {
+                  "prompt": "¿Cómo reducir el riesgo de acceso sin renunciar a invertir en el exterior?",
+                  "options": [
+                    "Concentrar todo en una única institución extranjera, para simplificar el seguimiento",
+                    "Mantener solo activos domésticos, eliminando el riesgo",
+                    "Mantener documentación y registro al día, seguir los comunicados de la institución y no concentrar todo el patrimonio internacional en un único canal de acceso",
+                    "Movilizar la cuenta todos los meses, sin importar la necesidad"
+                  ],
+                  "explanation": "Es un riesgo operacional, no de mercado: la defensa es registro al día, seguimiento y más de una vía de acceso — no abandonar la diversificación geográfica."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco de acesso afeta a sua capacidade de movimentar, não o valor do ativo.",
+                    "Mudanças de exigência e decisões da instituição podem travar operações.",
+                    "A defesa é cadastro em dia, acompanhamento e mais de um canal de acesso."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Access risk affects your ability to transact, not the asset's value.",
+                    "Requirement changes and institution decisions can stall operations.",
+                    "The defense is current registration, monitoring and more than one access channel."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo de acceso afecta tu capacidad de movilizar, no el valor del activo.",
+                    "Cambios de exigencias y decisiones de la institución pueden trabar operaciones.",
+                    "La defensa es registro al día, seguimiento y más de un canal de acceso."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "international_cost_stack",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "O Empilhamento de Custos no Investimento Internacional"
+            },
+            "en": {
+              "title": "The Cost Stack in International Investing"
+            },
+            "es": {
+              "title": "El Apilamiento de Costos en la Inversión Internacional"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Vários custos pequenos, somados, deixam de ser pequenos",
+                  "body": "Investir no exterior costuma envolver mais de uma camada de custo: a conversão de moeda, eventuais tarifas de transferência, a corretagem da operação, o spread de compra e venda do ativo e, se for um fundo, a taxa de administração — que às vezes se soma à taxa de um fundo subjacente. Cada item isolado parece pequeno. Empilhados, podem consumir uma parcela relevante do retorno, especialmente para quem aporta valores modestos com frequência."
+                },
+                "en": {
+                  "title": "Several small costs, added up, stop being small",
+                  "body": "Investing abroad usually involves more than one layer of cost: currency conversion, possible transfer fees, trading commission, the asset's bid-ask spread and, for a fund, the management fee — which sometimes sits on top of an underlying fund's fee. Each item looks small on its own. Stacked, they can consume a meaningful share of the return, especially for someone contributing modest amounts frequently."
+                },
+                "es": {
+                  "title": "Varios costos pequeños, sumados, dejan de ser pequeños",
+                  "body": "Invertir en el exterior suele involucrar más de una capa de costo: la conversión de moneda, eventuales comisiones de transferencia, el corretaje de la operación, el spread de compra y venta del activo y, si es un fondo, la comisión de administración — que a veces se suma a la de un fondo subyacente. Cada ítem aislado parece pequeño. Apilados, pueden consumir una parte relevante del retorno, especialmente para quien aporta montos modestos con frecuencia."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas investem o mesmo valor no mesmo ativo estrangeiro. A primeira faz aportes pequenos e frequentes, pagando conversão e corretagem a cada vez. A segunda agrupa os aportes em intervalos maiores. O ativo rendeu igual para as duas; o resultado líquido, não. A diferença não veio da escolha do investimento, e sim do número de vezes que a pilha de custos foi paga."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people invest the same amount in the same foreign asset. The first makes small, frequent contributions, paying conversion and commission each time. The second groups contributions into longer intervals. The asset performed identically for both; the net result didn't. The difference didn't come from the investment choice, but from how many times the cost stack was paid."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas invierten el mismo monto en el mismo activo extranjero. La primera hace aportes pequeños y frecuentes, pagando conversión y corretaje cada vez. La segunda agrupa los aportes en intervalos mayores. El activo rindió igual para ambas; el resultado neto, no. La diferencia no vino de la elección de la inversión, sino de la cantidad de veces que se pagó la pila de costos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Quais camadas de custo podem incidir em um investimento internacional?",
+                  "options": [
+                    "Apenas a taxa de administração do produto escolhido",
+                    "Apenas a corretagem da operação",
+                    "Apenas o custo de conversão de moeda",
+                    "Conversão de moeda, tarifas de transferência, corretagem, spread e taxas do produto"
+                  ],
+                  "explanation": "O custo total é a soma das camadas. Avaliar só uma delas subestima sistematicamente o que a operação custa."
+                },
+                "en": {
+                  "prompt": "Which cost layers can apply to an international investment?",
+                  "options": [
+                    "Only the chosen product's management fee",
+                    "Only the trading commission",
+                    "Only the currency conversion cost",
+                    "Currency conversion, transfer fees, commission, spread and the product's fees"
+                  ],
+                  "explanation": "Total cost is the sum of the layers. Assessing just one of them systematically underestimates what the operation costs."
+                },
+                "es": {
+                  "prompt": "¿Qué capas de costo pueden incidir en una inversión internacional?",
+                  "options": [
+                    "Solo la comisión de administración del producto elegido",
+                    "Solo el corretaje de la operación",
+                    "Solo el costo de conversión de moneda",
+                    "Conversión de moneda, comisiones de transferencia, corretaje, spread y comisiones del producto"
+                  ],
+                  "explanation": "El costo total es la suma de las capas. Evaluar solo una de ellas subestima sistemáticamente lo que cuesta la operación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer aportar mensalmente no exterior, mas os custos fixos pesam sobre valores pequenos. Qual ajuste faz mais sentido?",
+                  "options": [
+                    "Agrupar os aportes em intervalos maiores, reduzindo quantas vezes a pilha de custos é paga",
+                    "Aumentar o risco dos ativos escolhidos para compensar os custos",
+                    "Desistir da exposição internacional, que é inviável para valores pequenos",
+                    "Aportar semanalmente, para diluir o custo em mais operações"
+                  ],
+                  "explanation": "Custo fixo por operação penaliza a frequência. Agrupar aportes preserva a exposição internacional e reduz quantas vezes você paga para entrar."
+                },
+                "en": {
+                  "prompt": "You want to contribute abroad monthly, but fixed costs weigh on small amounts. Which adjustment makes most sense?",
+                  "options": [
+                    "Group contributions into longer intervals, reducing how many times the cost stack is paid",
+                    "Increase the risk of the chosen assets to offset the costs",
+                    "Give up international exposure, which is unviable for small amounts",
+                    "Contribute weekly, to spread the cost over more operations"
+                  ],
+                  "explanation": "A fixed per-operation cost penalizes frequency. Grouping contributions preserves international exposure and cuts how many times you pay to get in."
+                },
+                "es": {
+                  "prompt": "Quieres aportar mensualmente en el exterior, pero los costos fijos pesan sobre montos pequeños. ¿Qué ajuste tiene más sentido?",
+                  "options": [
+                    "Agrupar los aportes en intervalos mayores, reduciendo cuántas veces se paga la pila de costos",
+                    "Aumentar el riesgo de los activos elegidos para compensar los costos",
+                    "Renunciar a la exposición internacional, inviable para montos pequeños",
+                    "Aportar semanalmente, para diluir el costo en más operaciones"
+                  ],
+                  "explanation": "Un costo fijo por operación penaliza la frecuencia. Agrupar aportes preserva la exposición internacional y reduce cuántas veces pagas por entrar."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O custo internacional é empilhado: conversão, transferência, corretagem, spread e taxas.",
+                    "Cada camada parece pequena isolada e relevante somada.",
+                    "Agrupar aportes reduz quantas vezes a pilha inteira é paga."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "International cost is stacked: conversion, transfer, commission, spread and fees.",
+                    "Each layer looks small alone and matters once added up.",
+                    "Grouping contributions reduces how many times the whole stack is paid."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El costo internacional es apilado: conversión, transferencia, corretaje, spread y comisiones.",
+                    "Cada capa parece pequeña aislada y relevante sumada.",
+                    "Agrupar aportes reduce cuántas veces se paga la pila entera."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
