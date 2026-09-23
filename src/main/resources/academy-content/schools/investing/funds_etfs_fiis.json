@@ -2724,6 +2724,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "etfs_specialist_topics",
+      "order": 3,
+      "iconKey": "pie_chart_outline",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "etfs_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Fundos, ETFs e FIIs: Nível Especialista",
+          "description": "Distribuição x reinvestimento, spread e formador de mercado, escolha do índice, vacância e cap rate, e novas emissões de cotas."
+        },
+        "en": {
+          "title": "Funds, ETFs and REITs: Specialist Level",
+          "description": "Distributing vs. accumulating, spreads and market makers, choosing the index, vacancy and cap rate, and new unit offerings."
+        },
+        "es": {
+          "title": "Fondos, ETF y FII: Nivel Especialista",
+          "description": "Distribución vs. reinversión, spread y formador de mercado, elección del índice, vacancia y cap rate, y nuevas emisiones de cuotas."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "etfs_distribution_vs_accumulation",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Distribuir ou Reinvestir os Proventos"
+            },
+            "en": {
+              "title": "Distributing or Reinvesting Income"
+            },
+            "es": {
+              "title": "Distribuir o Reinvertir los Rendimientos"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois destinos para o dinheiro que o fundo recebe",
+                  "body": "Quando os ativos dentro de um fundo pagam dividendos, juros ou aluguéis, esse dinheiro pode seguir dois caminhos: ser distribuído aos cotistas, caindo na conta de quem tem a cota, ou ser reinvestido dentro do próprio fundo, aumentando o valor de cada cota. Fundos imobiliários costumam distribuir rendimentos periodicamente; muitos ETFs de ações historicamente reinvestem os proventos dentro do fundo. O regulamento e a lâmina do produto são onde essa política está escrita — não presuma."
+                },
+                "en": {
+                  "title": "Two destinations for the money the fund receives",
+                  "body": "When the assets inside a fund pay dividends, interest or rent, that money can take one of two paths: being distributed to unitholders, landing in the account of whoever holds the unit, or being reinvested inside the fund itself, raising the value of each unit. Real-estate funds usually distribute income periodically; many equity ETFs have historically reinvested income inside the fund. The product's bylaws and fact sheet are where this policy is written down — don't assume."
+                },
+                "es": {
+                  "title": "Dos destinos para el dinero que el fondo recibe",
+                  "body": "Cuando los activos dentro de un fondo pagan dividendos, intereses o alquileres, ese dinero puede seguir dos caminos: ser distribuido a los cuotistas, cayendo en la cuenta de quien tiene la cuota, o ser reinvertido dentro del propio fondo, aumentando el valor de cada cuota. Los fondos inmobiliarios suelen distribuir rendimientos periódicamente; muchos ETF de acciones históricamente reinvierten los rendimientos dentro del fondo. El reglamento y la ficha del producto son donde esa política está escrita — no lo presumas."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois investidores com a mesma quantia: um em um fundo que distribui e outro em um fundo que reinveste. O primeiro vê dinheiro entrando na conta e o valor da cota refletindo só a valorização dos ativos. O segundo não vê entrada nenhuma, mas a cota incorpora também os proventos acumulados. Nenhum dos dois é melhor por natureza — eles atendem a necessidades diferentes: fluxo de caixa agora ou capitalização automática."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two investors with the same amount: one in a distributing fund and one in an accumulating fund. The first sees money arriving in the account, with the unit price reflecting only the assets' appreciation. The second sees no inflow, but the unit also incorporates the accumulated income. Neither is inherently better — they serve different needs: cash flow now, or automatic compounding."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos inversores con la misma cantidad: uno en un fondo que distribuye y otro en un fondo que reinvierte. El primero ve dinero entrando en la cuenta y el valor de la cuota reflejando solo la valorización de los activos. El segundo no ve ninguna entrada, pero la cuota incorpora también los rendimientos acumulados. Ninguno de los dos es mejor por naturaleza — atienden necesidades distintas: flujo de caja ahora o capitalización automática."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com os proventos em um fundo que reinveste em vez de distribuir?",
+                  "options": [
+                    "Eles são devolvidos ao gestor como remuneração adicional",
+                    "Eles são pagos ao cotista apenas quando ele vende a cota, como um bônus separado",
+                    "Eles deixam de existir e não afetam o patrimônio do fundo",
+                    "Eles permanecem no fundo e se refletem no valor da cota"
+                  ],
+                  "explanation": "Sem distribuição, o dinheiro continua dentro do fundo e aparece no valor da cota — a capitalização acontece ali, sem passar pela sua conta."
+                },
+                "en": {
+                  "prompt": "What happens to income in a fund that reinvests instead of distributing?",
+                  "options": [
+                    "It goes back to the manager as extra compensation",
+                    "It is paid to the unitholder only when they sell the unit, as a separate bonus",
+                    "It ceases to exist and doesn't affect the fund's assets",
+                    "It stays in the fund and is reflected in the unit's value"
+                  ],
+                  "explanation": "Without distribution, the money stays inside the fund and shows up in the unit's value — compounding happens there, without passing through your account."
+                },
+                "es": {
+                  "prompt": "¿Qué ocurre con los rendimientos en un fondo que reinvierte en lugar de distribuir?",
+                  "options": [
+                    "Vuelven al gestor como remuneración adicional",
+                    "Se pagan al cuotista solo cuando vende la cuota, como un bono separado",
+                    "Dejan de existir y no afectan al patrimonio del fondo",
+                    "Permanecen en el fondo y se reflejan en el valor de la cuota"
+                  ],
+                  "explanation": "Sin distribución, el dinero sigue dentro del fondo y aparece en el valor de la cuota — la capitalización ocurre ahí, sin pasar por tu cuenta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você ainda está na fase de acumular patrimônio e não precisa de renda mensal. Como a política de proventos entra nessa escolha?",
+                  "options": [
+                    "Um fundo que distribui é sempre superior, porque dinheiro na conta é sempre melhor",
+                    "Um fundo que reinveste tende a facilitar a capitalização, já que você não precisa reaplicar manualmente cada valor recebido",
+                    "A política de proventos não faz diferença nenhuma em nenhuma fase",
+                    "Um fundo que reinveste isenta o investidor de qualquer tributação futura"
+                  ],
+                  "explanation": "Na fase de acumulação, o reinvestimento automático evita o esforço (e o esquecimento) de reaplicar cada provento — mas isso é conveniência e disciplina, não isenção de imposto."
+                },
+                "en": {
+                  "prompt": "You're still in the accumulation phase and don't need monthly income. How does the income policy factor into that choice?",
+                  "options": [
+                    "A distributing fund is always superior, because cash in the account is always better",
+                    "An accumulating fund tends to make compounding easier, since you don't have to manually reinvest each amount received",
+                    "The income policy makes no difference at all, in any phase",
+                    "An accumulating fund exempts the investor from any future taxation"
+                  ],
+                  "explanation": "In the accumulation phase, automatic reinvestment avoids the effort (and the forgetting) of reinvesting each payout — but that's convenience and discipline, not a tax exemption."
+                },
+                "es": {
+                  "prompt": "Todavía estás en la fase de acumular patrimonio y no necesitas renta mensual. ¿Cómo entra la política de rendimientos en esa elección?",
+                  "options": [
+                    "Un fondo que distribuye es siempre superior, porque el dinero en la cuenta siempre es mejor",
+                    "Un fondo que reinvierte tiende a facilitar la capitalización, ya que no necesitas reinvertir manualmente cada monto recibido",
+                    "La política de rendimientos no marca ninguna diferencia en ninguna fase",
+                    "Un fondo que reinvierte exime al inversor de cualquier tributación futura"
+                  ],
+                  "explanation": "En la fase de acumulación, la reinversión automática evita el esfuerzo (y el olvido) de reinvertir cada rendimiento — pero eso es conveniencia y disciplina, no exención de impuestos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Proventos recebidos por um fundo podem ser distribuídos ou reinvestidos internamente.",
+                    "FIIs costumam distribuir; muitos ETFs de ações historicamente reinvestem.",
+                    "A política está no regulamento e na lâmina — e atende a necessidades diferentes, não a uma superioridade absoluta."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Income received by a fund can be distributed or reinvested internally.",
+                    "Real-estate funds usually distribute; many equity ETFs have historically reinvested.",
+                    "The policy is in the bylaws and fact sheet — and serves different needs, not absolute superiority."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los rendimientos recibidos por un fondo pueden distribuirse o reinvertirse internamente.",
+                    "Los FII suelen distribuir; muchos ETF de acciones históricamente reinvierten.",
+                    "La política está en el reglamento y en la ficha — y atiende necesidades distintas, no una superioridad absoluta."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_market_maker_and_spread",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Formador de Mercado e Spread de Compra e Venda"
+            },
+            "en": {
+              "title": "Market Makers and the Bid-Ask Spread"
+            },
+            "es": {
+              "title": "Formador de Mercado y Spread de Compra y Venta"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O custo invisível de entrar e sair",
+                  "body": "Em um ativo negociado em bolsa, como um ETF ou um FII, sempre existem dois preços ao mesmo tempo: o maior que alguém aceita pagar e o menor que alguém aceita receber. A distância entre eles é o spread de compra e venda, e ele é um custo real toda vez que você entra ou sai. O formador de mercado é o participante contratado para manter ofertas dos dois lados, estreitando esse spread e tornando a negociação mais previsível — especialmente em fundos de menor volume."
+                },
+                "en": {
+                  "title": "The invisible cost of getting in and out",
+                  "body": "In an exchange-traded asset like an ETF or a real-estate fund, there are always two prices at once: the highest someone is willing to pay and the lowest someone is willing to accept. The distance between them is the bid-ask spread, and it's a real cost every time you get in or out. The market maker is the participant contracted to keep offers on both sides, narrowing that spread and making trading more predictable — especially in lower-volume funds."
+                },
+                "es": {
+                  "title": "El costo invisible de entrar y salir",
+                  "body": "En un activo negociado en bolsa, como un ETF o un FII, siempre existen dos precios al mismo tiempo: el mayor que alguien acepta pagar y el menor que alguien acepta recibir. La distancia entre ambos es el spread de compra y venta, y es un costo real cada vez que entras o sales. El formador de mercado es el participante contratado para mantener ofertas en ambos lados, estrechando ese spread y haciendo la negociación más previsible — especialmente en fondos de menor volumen."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois ETFs seguem índices parecidos e cobram taxas parecidas, mas um negocia um volume muito maior que o outro. No de maior volume, comprar e vender no mesmo instante custa pouco, porque as ofertas estão próximas. No de volume baixo, a diferença entre comprar e vender pode consumir parte relevante do ganho de quem entra e sai com frequência — um custo que não aparece na taxa de administração."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two ETFs track similar indices and charge similar fees, but one trades far more volume than the other. In the higher-volume one, buying and selling at the same instant costs little, because the offers sit close together. In the low-volume one, the gap between buying and selling can eat a meaningful part of the gains for someone who trades often — a cost that never shows up in the management fee."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos ETF siguen índices parecidos y cobran comisiones parecidas, pero uno negocia un volumen mucho mayor que el otro. En el de mayor volumen, comprar y vender en el mismo instante cuesta poco, porque las ofertas están cerca. En el de volumen bajo, la diferencia entre comprar y vender puede consumir una parte relevante de la ganancia de quien entra y sale con frecuencia — un costo que no aparece en la comisión de administración."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o spread de compra e venda de um ativo negociado em bolsa?",
+                  "options": [
+                    "A diferença entre o melhor preço de compra e o melhor preço de venda disponíveis no momento",
+                    "A taxa cobrada pelo gestor do fundo a cada ano",
+                    "A diferença entre o preço de hoje e o preço de ontem",
+                    "O imposto cobrado sobre o lucro na venda"
+                  ],
+                  "explanation": "O spread é a distância entre as duas pontas do livro de ofertas — e ele é pago na prática por quem executa a ordem."
+                },
+                "en": {
+                  "prompt": "What is the bid-ask spread of an exchange-traded asset?",
+                  "options": [
+                    "The difference between the best buy price and the best sell price available at the moment",
+                    "The fee the fund manager charges each year",
+                    "The difference between today's price and yesterday's price",
+                    "The tax charged on the profit at sale"
+                  ],
+                  "explanation": "The spread is the distance between the two sides of the order book — and it's effectively paid by whoever executes the order."
+                },
+                "es": {
+                  "prompt": "¿Qué es el spread de compra y venta de un activo negociado en bolsa?",
+                  "options": [
+                    "La diferencia entre el mejor precio de compra y el mejor precio de venta disponibles en el momento",
+                    "La comisión que cobra el gestor del fondo cada año",
+                    "La diferencia entre el precio de hoy y el precio de ayer",
+                    "El impuesto cobrado sobre la ganancia en la venta"
+                  ],
+                  "explanation": "El spread es la distancia entre las dos puntas del libro de órdenes — y en la práctica lo paga quien ejecuta la orden."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você compara dois ETFs com a mesma taxa de administração e índices semelhantes. Um tem volume diário alto; o outro, bem baixo. Como isso deve pesar na decisão?",
+                  "options": [
+                    "Volume não importa, porque a taxa de administração é o único custo real de um ETF",
+                    "O de volume baixo é preferível, porque tende a ter menos investidores disputando as cotas",
+                    "O de volume maior tende a ter spread mais estreito, reduzindo o custo de entrar e sair — e esse custo se soma à taxa",
+                    "O volume só importa para quem faz operações de day trade"
+                  ],
+                  "explanation": "Custo total é taxa mais spread mais eventuais corretagens. Dois produtos com a mesma taxa podem custar diferente na prática por causa da liquidez."
+                },
+                "en": {
+                  "prompt": "You compare two ETFs with the same management fee and similar indices. One has high daily volume; the other, quite low. How should that weigh on the decision?",
+                  "options": [
+                    "Volume doesn't matter, because the management fee is an ETF's only real cost",
+                    "The low-volume one is preferable, because fewer investors compete for the units",
+                    "The higher-volume one tends to have a narrower spread, lowering the cost of getting in and out — and that cost adds to the fee",
+                    "Volume only matters for day traders"
+                  ],
+                  "explanation": "Total cost is fee plus spread plus any brokerage. Two products with the same fee can cost differently in practice because of liquidity."
+                },
+                "es": {
+                  "prompt": "Comparas dos ETF con la misma comisión de administración e índices similares. Uno tiene volumen diario alto; el otro, bastante bajo. ¿Cómo debe pesar eso en la decisión?",
+                  "options": [
+                    "El volumen no importa, porque la comisión de administración es el único costo real de un ETF",
+                    "El de volumen bajo es preferible, porque tiende a tener menos inversores disputando las cuotas",
+                    "El de mayor volumen tiende a tener un spread más estrecho, reduciendo el costo de entrar y salir — y ese costo se suma a la comisión",
+                    "El volumen solo importa para quien hace operaciones de day trade"
+                  ],
+                  "explanation": "El costo total es comisión más spread más eventuales corretajes. Dos productos con la misma comisión pueden costar distinto en la práctica por la liquidez."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O spread é a diferença entre as melhores ofertas de compra e de venda, e é um custo real de negociação.",
+                    "O formador de mercado mantém ofertas dos dois lados e ajuda a estreitar esse spread.",
+                    "Custo total inclui taxa de administração, spread e corretagem — não só a taxa anunciada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The spread is the gap between the best buy and sell offers, and it's a real trading cost.",
+                    "The market maker keeps offers on both sides and helps narrow that spread.",
+                    "Total cost includes the management fee, the spread and brokerage — not just the advertised fee."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El spread es la diferencia entre las mejores ofertas de compra y venta, y es un costo real de negociación.",
+                    "El formador de mercado mantiene ofertas en ambos lados y ayuda a estrechar ese spread.",
+                    "El costo total incluye comisión de administración, spread y corretaje — no solo la comisión anunciada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_benchmark_choice",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "A Escolha do Índice de Referência"
+            },
+            "en": {
+              "title": "Choosing the Benchmark Index"
+            },
+            "es": {
+              "title": "La Elección del Índice de Referencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois fundos passivos podem ser investimentos bem diferentes",
+                  "body": "Um fundo passivo entrega o desempenho do índice que se propôs a seguir. Por isso, a decisão mais importante não é a gestão — é qual índice você está comprando. Índices diferem no universo de ativos, no critério de seleção e na forma de ponderar os componentes: alguns pesam pelo valor de mercado, outros por liquidez, outros por critérios como dividendos ou governança. Ler o nome do índice não basta; é preciso saber o que ele inclui."
+                },
+                "en": {
+                  "title": "Two passive funds can be very different investments",
+                  "body": "A passive fund delivers the performance of the index it set out to track. That's why the most important decision isn't the management — it's which index you're buying. Indices differ in their asset universe, selection criteria and how they weight components: some weight by market value, others by liquidity, others by criteria like dividends or governance. Reading the index's name isn't enough; you need to know what it includes."
+                },
+                "es": {
+                  "title": "Dos fondos pasivos pueden ser inversiones bien distintas",
+                  "body": "Un fondo pasivo entrega el desempeño del índice que se propuso seguir. Por eso, la decisión más importante no es la gestión — es qué índice estás comprando. Los índices difieren en el universo de activos, en el criterio de selección y en la forma de ponderar los componentes: algunos pesan por valor de mercado, otros por liquidez, otros por criterios como dividendos o gobernanza. Leer el nombre del índice no basta; hay que saber qué incluye."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um índice amplo de ações de um país e um índice concentrado nas maiores empresas desse mesmo país podem andar juntos na maior parte do tempo e, ainda assim, entregar resultados diferentes em períodos em que empresas menores se descolam. Quem comprou o ETF achando que 'é tudo bolsa' pode estranhar a diferença — que não veio de erro do gestor, e sim da escolha do índice."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A broad index of a country's stocks and an index concentrated in that same country's largest companies can move together most of the time and still deliver different results in periods when smaller companies diverge. Someone who bought the ETF thinking 'it's all just the stock market' may be surprised by the gap — which didn't come from a manager's mistake, but from the choice of index."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un índice amplio de acciones de un país y un índice concentrado en las mayores empresas de ese mismo país pueden moverse juntos la mayor parte del tiempo y, aun así, entregar resultados distintos en períodos en que las empresas menores se desacoplan. Quien compró el ETF pensando que 'todo es bolsa' puede extrañarse por la diferencia — que no vino de un error del gestor, sino de la elección del índice."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Em um fundo passivo, o que determina principalmente o resultado entregue ao investidor?",
+                  "options": [
+                    "A habilidade do gestor em escolher as melhores ações do momento",
+                    "O índice que o fundo se propõe a replicar",
+                    "O número de cotistas que o fundo possui",
+                    "A data em que o fundo foi criado"
+                  ],
+                  "explanation": "Por definição, um fundo passivo busca replicar um índice — logo, o índice escolhido é o que define o perfil de retorno do produto."
+                },
+                "en": {
+                  "prompt": "In a passive fund, what mainly determines the result delivered to the investor?",
+                  "options": [
+                    "The manager's skill at picking the best stocks of the moment",
+                    "The index the fund sets out to replicate",
+                    "The number of unitholders the fund has",
+                    "The date the fund was created"
+                  ],
+                  "explanation": "By definition, a passive fund seeks to replicate an index — so the chosen index is what defines the product's return profile."
+                },
+                "es": {
+                  "prompt": "En un fondo pasivo, ¿qué determina principalmente el resultado entregado al inversor?",
+                  "options": [
+                    "La habilidad del gestor para elegir las mejores acciones del momento",
+                    "El índice que el fondo se propone replicar",
+                    "El número de cuotistas que tiene el fondo",
+                    "La fecha en que se creó el fondo"
+                  ],
+                  "explanation": "Por definición, un fondo pasivo busca replicar un índice — por lo tanto, el índice elegido es lo que define el perfil de retorno del producto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer exposição ampla ao mercado de ações e encontra dois ETFs passivos com taxas quase iguais. Qual verificação é a mais decisiva antes de escolher?",
+                  "options": [
+                    "Qual dos dois teve o melhor retorno nos últimos três meses",
+                    "Qual dos dois tem o nome mais reconhecido no mercado",
+                    "Qual dos dois foi lançado primeiro",
+                    "Quais empresas cada índice inclui e como ele pondera os componentes"
+                  ],
+                  "explanation": "Com taxas equivalentes, a diferença de longo prazo virá da composição do índice — universo de ativos e critério de ponderação — e não de um retorno recente de curto prazo."
+                },
+                "en": {
+                  "prompt": "You want broad exposure to the stock market and find two passive ETFs with nearly identical fees. Which check is the most decisive before choosing?",
+                  "options": [
+                    "Which of the two had the better return over the last three months",
+                    "Which of the two has the more recognized name in the market",
+                    "Which of the two was launched first",
+                    "Which companies each index includes and how it weights its components"
+                  ],
+                  "explanation": "With equivalent fees, the long-term difference will come from the index's composition — asset universe and weighting criteria — not from a recent short-term return."
+                },
+                "es": {
+                  "prompt": "Quieres exposición amplia al mercado de acciones y encuentras dos ETF pasivos con comisiones casi iguales. ¿Qué verificación es la más decisiva antes de elegir?",
+                  "options": [
+                    "Cuál de los dos tuvo el mejor retorno en los últimos tres meses",
+                    "Cuál de los dos tiene el nombre más reconocido del mercado",
+                    "Cuál de los dos se lanzó primero",
+                    "Qué empresas incluye cada índice y cómo pondera sus componentes"
+                  ],
+                  "explanation": "Con comisiones equivalentes, la diferencia de largo plazo vendrá de la composición del índice — universo de activos y criterio de ponderación — y no de un retorno reciente de corto plazo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Em um fundo passivo, o índice escolhido define o perfil do investimento.",
+                    "Índices variam em universo de ativos, critério de seleção e forma de ponderação.",
+                    "Com taxas parecidas, comparar a composição do índice vale mais que comparar retorno recente."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "In a passive fund, the chosen index defines the investment's profile.",
+                    "Indices vary in asset universe, selection criteria and weighting method.",
+                    "With similar fees, comparing index composition is worth more than comparing recent returns."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "En un fondo pasivo, el índice elegido define el perfil de la inversión.",
+                    "Los índices varían en universo de activos, criterio de selección y forma de ponderación.",
+                    "Con comisiones parecidas, comparar la composición del índice vale más que comparar el retorno reciente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_fii_vacancy_and_cap_rate",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Vacância e Cap Rate em FIIs de Tijolo"
+            },
+            "en": {
+              "title": "Vacancy and Cap Rate in Brick-and-Mortar REITs"
+            },
+            "es": {
+              "title": "Vacancia y Cap Rate en FII de Ladrillo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois números que explicam a renda de um fundo imobiliário",
+                  "body": "Em um fundo imobiliário de imóveis físicos, a renda vem dos aluguéis. Dois indicadores ajudam a lê-la. A vacância mede quanto do espaço está desocupado — quanto maior, menor a base de aluguéis que sustenta a distribuição. O cap rate relaciona a renda anual gerada pelo imóvel ao seu valor: é uma medida de quanto aquele patrimônio rende por ano. Nenhum dos dois é um veredito sozinho; juntos, ajudam a entender de onde vem (e quão frágil é) o rendimento."
+                },
+                "en": {
+                  "title": "Two numbers that explain a real-estate fund's income",
+                  "body": "In a real-estate fund holding physical properties, income comes from rent. Two indicators help read it. Vacancy measures how much space is unoccupied — the higher it is, the smaller the rent base supporting distributions. The cap rate relates the property's annual income to its value: a measure of how much that asset yields per year. Neither is a verdict on its own; together, they help you understand where the income comes from and how fragile it is."
+                },
+                "es": {
+                  "title": "Dos números que explican la renta de un fondo inmobiliario",
+                  "body": "En un fondo inmobiliario de inmuebles físicos, la renta viene de los alquileres. Dos indicadores ayudan a leerla. La vacancia mide cuánto del espacio está desocupado — cuanto mayor, menor la base de alquileres que sostiene la distribución. El cap rate relaciona la renta anual generada por el inmueble con su valor: es una medida de cuánto rinde ese patrimonio por año. Ninguno de los dos es un veredicto por sí solo; juntos, ayudan a entender de dónde viene (y qué tan frágil es) el rendimiento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo com vários galpões alugados e vacância baixa tende a ter uma distribuição mais estável do que outro em que uma parte relevante da área está vazia. Se, além disso, o primeiro tem contratos longos e o segundo depende de renovar um contrato grande no próximo ano, a diferença de previsibilidade é maior do que o rendimento atual de cada um sugere."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fund with several leased warehouses and low vacancy tends to have a steadier distribution than one where a meaningful share of the area sits empty. If, on top of that, the first has long leases and the second depends on renewing one large contract next year, the difference in predictability is bigger than either fund's current yield suggests."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo con varias naves alquiladas y vacancia baja tiende a tener una distribución más estable que otro donde una parte relevante del área está vacía. Si, además, el primero tiene contratos largos y el segundo depende de renovar un contrato grande el año que viene, la diferencia de previsibilidad es mayor de lo que sugiere el rendimiento actual de cada uno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a vacância de um fundo imobiliário de tijolo indica?",
+                  "options": [
+                    "O percentual de cotas do fundo ainda não vendidas ao público",
+                    "A parcela do rendimento que o gestor retém como taxa",
+                    "A proporção da área do portfólio que está desocupada, sem gerar aluguel",
+                    "O número de imóveis que o fundo pretende comprar no próximo ano"
+                  ],
+                  "explanation": "Vacância é espaço vazio: área que não está gerando aluguel e, portanto, não sustenta a distribuição de rendimentos."
+                },
+                "en": {
+                  "prompt": "What does vacancy indicate in a brick-and-mortar real-estate fund?",
+                  "options": [
+                    "The percentage of the fund's units not yet sold to the public",
+                    "The share of income the manager keeps as a fee",
+                    "The proportion of the portfolio's area that is unoccupied, generating no rent",
+                    "The number of properties the fund plans to buy next year"
+                  ],
+                  "explanation": "Vacancy is empty space: area that isn't generating rent and therefore isn't supporting income distributions."
+                },
+                "es": {
+                  "prompt": "¿Qué indica la vacancia de un fondo inmobiliario de ladrillo?",
+                  "options": [
+                    "El porcentaje de cuotas del fondo aún no vendidas al público",
+                    "La parte del rendimiento que el gestor retiene como comisión",
+                    "La proporción del área de la cartera que está desocupada, sin generar alquiler",
+                    "El número de inmuebles que el fondo pretende comprar el próximo año"
+                  ],
+                  "explanation": "La vacancia es espacio vacío: área que no está generando alquiler y, por lo tanto, no sostiene la distribución de rendimientos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Um FII de tijolo apresenta um rendimento distribuído bem acima da média de fundos semelhantes. O que investigar antes de concluir que é uma boa oportunidade?",
+                  "options": [
+                    "Se a distribuição vem de aluguéis recorrentes ou de eventos não repetíveis, e qual é a vacância e o prazo dos contratos",
+                    "Apenas o histórico de cotação dos últimos meses, que já resume tudo",
+                    "Somente o número de cotistas, que indica a confiança do mercado",
+                    "Nada: rendimento acima da média já é a evidência de que o fundo é melhor"
+                  ],
+                  "explanation": "Um rendimento alto pode vir de uma venda pontual de imóvel ou de um contrato prestes a vencer. A pergunta é se aquela renda se repete no próximo período."
+                },
+                "en": {
+                  "prompt": "A brick-and-mortar real-estate fund shows a distributed yield well above that of similar funds. What should you investigate before concluding it's a good opportunity?",
+                  "options": [
+                    "Whether the distribution comes from recurring rent or from non-repeatable events, and what the vacancy and lease terms are",
+                    "Only the price history of the last few months, which already summarizes everything",
+                    "Only the number of unitholders, which indicates market confidence",
+                    "Nothing: an above-average yield is already evidence that the fund is better"
+                  ],
+                  "explanation": "A high yield can come from a one-off property sale or a lease about to expire. The question is whether that income repeats next period."
+                },
+                "es": {
+                  "prompt": "Un FII de ladrillo presenta un rendimiento distribuido muy por encima del promedio de fondos similares. ¿Qué investigar antes de concluir que es una buena oportunidad?",
+                  "options": [
+                    "Si la distribución viene de alquileres recurrentes o de eventos no repetibles, y cuál es la vacancia y el plazo de los contratos",
+                    "Solo el historial de cotización de los últimos meses, que ya lo resume todo",
+                    "Solo el número de cuotistas, que indica la confianza del mercado",
+                    "Nada: un rendimiento por encima del promedio ya es evidencia de que el fondo es mejor"
+                  ],
+                  "explanation": "Un rendimiento alto puede venir de una venta puntual de inmueble o de un contrato a punto de vencer. La pregunta es si esa renta se repite en el próximo período."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Vacância mede a área desocupada, que não gera aluguel para a distribuição.",
+                    "Cap rate relaciona a renda anual do imóvel ao seu valor.",
+                    "Rendimento alto pede a pergunta: essa renda é recorrente ou foi um evento pontual?"
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Vacancy measures unoccupied area, which generates no rent for distributions.",
+                    "The cap rate relates a property's annual income to its value.",
+                    "A high yield calls for one question: is that income recurring, or was it a one-off event?"
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La vacancia mide el área desocupada, que no genera alquiler para la distribución.",
+                    "El cap rate relaciona la renta anual del inmueble con su valor.",
+                    "Un rendimiento alto exige una pregunta: ¿esa renta es recurrente o fue un evento puntual?"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "etfs_fii_new_offerings",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Novas Emissões de Cotas e Direito de Preferência"
+            },
+            "en": {
+              "title": "New Unit Offerings and Preemptive Rights"
+            },
+            "es": {
+              "title": "Nuevas Emisiones de Cuotas y Derecho de Preferencia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando o fundo pede mais dinheiro ao mercado",
+                  "body": "Um fundo imobiliário que quer comprar novos ativos costuma emitir novas cotas para levantar recursos. Quem já é cotista normalmente recebe o direito de preferência: a prioridade de subscrever cotas da nova emissão na proporção do que já tem. Exercer ou não esse direito é uma decisão — e não exercê-lo significa aceitar que sua participação relativa no fundo diminua, ainda que o número de cotas que você possui continue o mesmo."
+                },
+                "en": {
+                  "title": "When the fund asks the market for more money",
+                  "body": "A real-estate fund that wants to buy new assets usually issues new units to raise capital. Existing unitholders normally receive a preemptive right: priority to subscribe to units of the new offering in proportion to what they already hold. Exercising that right or not is a decision — and not exercising it means accepting that your relative stake in the fund shrinks, even though the number of units you own stays the same."
+                },
+                "es": {
+                  "title": "Cuando el fondo pide más dinero al mercado",
+                  "body": "Un fondo inmobiliario que quiere comprar nuevos activos suele emitir nuevas cuotas para levantar recursos. Quien ya es cuotista normalmente recibe el derecho de preferencia: la prioridad para suscribir cuotas de la nueva emisión en proporción a lo que ya tiene. Ejercer o no ese derecho es una decisión — y no ejercerlo significa aceptar que tu participación relativa en el fondo disminuya, aunque el número de cuotas que posees siga igual."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um fundo anuncia uma emissão para comprar um novo imóvel. Quem subscreve mantém sua fatia proporcional e passa a participar também do novo ativo. Quem não subscreve continua com as mesmas cotas, mas agora elas representam uma fração menor de um fundo maior. Se a emissão sai a um preço abaixo do valor patrimonial por cota, quem fica de fora pode ainda ver sua parcela do patrimônio por cota ser diluída."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fund announces an offering to buy a new property. Whoever subscribes keeps their proportional share and starts participating in the new asset as well. Whoever doesn't subscribe keeps the same units, but they now represent a smaller fraction of a larger fund. If the offering prices below the net asset value per unit, those who stay out may also see their share of net assets per unit diluted."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un fondo anuncia una emisión para comprar un nuevo inmueble. Quien suscribe mantiene su porción proporcional y pasa a participar también del nuevo activo. Quien no suscribe sigue con las mismas cuotas, pero ahora representan una fracción menor de un fondo mayor. Si la emisión sale a un precio por debajo del valor patrimonial por cuota, quien se queda fuera puede además ver diluida su parte del patrimonio por cuota."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o direito de preferência em uma nova emissão de cotas?",
+                  "options": [
+                    "A garantia de que o cotista receberá as novas cotas sem precisar pagar por elas",
+                    "A prioridade do cotista atual para subscrever a nova emissão na proporção do que já possui",
+                    "O direito de vetar a emissão sozinho, independentemente dos demais cotistas",
+                    "A obrigação de comprar todas as cotas da nova emissão"
+                  ],
+                  "explanation": "Preferência é prioridade de compra proporcional, não gratuidade nem obrigação."
+                },
+                "en": {
+                  "prompt": "What is the preemptive right in a new unit offering?",
+                  "options": [
+                    "A guarantee that the unitholder will receive the new units without paying for them",
+                    "The current unitholder's priority to subscribe to the new offering in proportion to what they already hold",
+                    "The right to single-handedly veto the offering, regardless of other unitholders",
+                    "The obligation to buy all units in the new offering"
+                  ],
+                  "explanation": "A preemptive right is proportional purchase priority — not a free gift, and not an obligation."
+                },
+                "es": {
+                  "prompt": "¿Qué es el derecho de preferencia en una nueva emisión de cuotas?",
+                  "options": [
+                    "La garantía de que el cuotista recibirá las nuevas cuotas sin tener que pagar por ellas",
+                    "La prioridad del cuotista actual para suscribir la nueva emisión en proporción a lo que ya posee",
+                    "El derecho de vetar la emisión por sí solo, sin importar los demás cuotistas",
+                    "La obligación de comprar todas las cuotas de la nueva emisión"
+                  ],
+                  "explanation": "La preferencia es prioridad de compra proporcional, no gratuidad ni obligación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você é cotista de um FII que anuncia uma nova emissão. O que avaliar antes de decidir subscrever?",
+                  "options": [
+                    "Apenas se você tem dinheiro disponível — se tiver, subscrever é sempre vantajoso",
+                    "Apenas o preço da cota no dia do anúncio, já que ele resume a qualidade da emissão",
+                    "O que o fundo pretende comprar com o dinheiro, o preço da emissão em relação ao valor patrimonial e os custos da oferta",
+                    "Somente quantos cotistas pretendem subscrever, para seguir a maioria"
+                  ],
+                  "explanation": "A emissão é uma nova decisão de investimento: o destino dos recursos, o preço e os custos definem se ela agrega ou apenas aumenta o tamanho do fundo."
+                },
+                "en": {
+                  "prompt": "You're a unitholder in a real-estate fund that announces a new offering. What should you weigh before deciding to subscribe?",
+                  "options": [
+                    "Only whether you have cash available — if you do, subscribing is always worthwhile",
+                    "Only the unit price on announcement day, since it summarizes the offering's quality",
+                    "What the fund intends to buy with the money, the offering price relative to net asset value, and the offering's costs",
+                    "Only how many unitholders intend to subscribe, so you can follow the majority"
+                  ],
+                  "explanation": "An offering is a fresh investment decision: where the money goes, the price and the costs determine whether it adds value or merely makes the fund bigger."
+                },
+                "es": {
+                  "prompt": "Eres cuotista de un FII que anuncia una nueva emisión. ¿Qué evaluar antes de decidir suscribir?",
+                  "options": [
+                    "Solo si tienes dinero disponible — si lo tienes, suscribir siempre es ventajoso",
+                    "Solo el precio de la cuota el día del anuncio, ya que resume la calidad de la emisión",
+                    "Qué pretende comprar el fondo con el dinero, el precio de la emisión respecto al valor patrimonial y los costos de la oferta",
+                    "Solamente cuántos cuotistas pretenden suscribir, para seguir a la mayoría"
+                  ],
+                  "explanation": "La emisión es una nueva decisión de inversión: el destino de los recursos, el precio y los costos definen si agrega valor o solo aumenta el tamaño del fondo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Fundos emitem novas cotas para levantar recursos e comprar ativos.",
+                    "O direito de preferência dá prioridade proporcional ao cotista atual — é opção, não obrigação.",
+                    "Subscrever é uma nova decisão de investimento: avalie destino, preço e custos da emissão."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Funds issue new units to raise capital and buy assets.",
+                    "The preemptive right gives current unitholders proportional priority — an option, not an obligation.",
+                    "Subscribing is a fresh investment decision: weigh the use of proceeds, the price and the offering's costs."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los fondos emiten nuevas cuotas para levantar recursos y comprar activos.",
+                    "El derecho de preferencia da prioridad proporcional al cuotista actual — es opción, no obligación.",
+                    "Suscribir es una nueva decisión de inversión: evalúa el destino, el precio y los costos de la emisión."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

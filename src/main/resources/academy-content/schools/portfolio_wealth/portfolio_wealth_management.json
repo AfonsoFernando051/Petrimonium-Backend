@@ -2683,6 +2683,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "portfolio_construction_specialist",
+      "order": 3,
+      "iconKey": "dashboard_customize_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "portfolio_construction_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Carteira: Nível Especialista",
+          "description": "Política de investimento escrita, camadas de liquidez, como medir o retorno com aportes, bandas de rebalanceamento e tamanho de posição."
+        },
+        "en": {
+          "title": "Portfolio: Specialist Level",
+          "description": "A written investment policy, liquidity layers, measuring returns with contributions, rebalancing bands and position sizing."
+        },
+        "es": {
+          "title": "Cartera: Nivel Especialista",
+          "description": "Política de inversión escrita, capas de liquidez, cómo medir el retorno con aportes, bandas de rebalanceo y tamaño de posición."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "portfolio_construction_policy_statement",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sua Política de Investimento por Escrito"
+            },
+            "en": {
+              "title": "Your Investment Policy, in Writing"
+            },
+            "es": {
+              "title": "Tu Política de Inversión por Escrito"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Decidir uma vez, com calma, para não decidir mil vezes no susto",
+                  "body": "Uma política de investimento é um documento curto, escrito por você em um momento tranquilo, dizendo como sua carteira funciona: qual é o objetivo de cada parte do dinheiro, qual é a alocação-alvo, com que frequência você revisa, o que justifica uma mudança e o que explicitamente não justifica. O valor dela não está na sofisticação — está em existir antes da próxima notícia assustadora, quando decidir do zero costuma sair caro."
+                },
+                "en": {
+                  "title": "Decide once, calmly, so you don't decide a thousand times in a panic",
+                  "body": "An investment policy is a short document, written by you at a calm moment, stating how your portfolio works: what each part of the money is for, what the target allocation is, how often you review it, what justifies a change and what explicitly does not. Its value isn't in sophistication — it's in existing before the next frightening headline, when deciding from scratch tends to be expensive."
+                },
+                "es": {
+                  "title": "Decidir una vez, con calma, para no decidir mil veces con el susto",
+                  "body": "Una política de inversión es un documento corto, escrito por ti en un momento tranquilo, que dice cómo funciona tu cartera: cuál es el objetivo de cada parte del dinero, cuál es la asignación objetivo, con qué frecuencia la revisas, qué justifica un cambio y qué explícitamente no lo justifica. Su valor no está en la sofisticación — está en existir antes de la próxima noticia alarmante, cuando decidir desde cero suele salir caro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas com a mesma carteira enfrentam uma queda forte do mercado. A primeira consulta o que escreveu: a alocação-alvo continua válida, o objetivo daquele dinheiro é de dez anos, e sua regra diz para aportar normalmente e rebalancear se o desvio passar do limite definido. A segunda decide no calor do momento, com o aplicativo aberto e as notícias no mesmo dia. As duas podem chegar a conclusões diferentes — mas só a primeira tomou a decisão longe do medo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people with the same portfolio face a sharp market drop. The first consults what they wrote: the target allocation still holds, that money's goal is ten years away, and their rule says to keep contributing and to rebalance if the drift passes the defined limit. The second decides in the heat of the moment, app open and headlines on the same screen. They may reach different conclusions — but only the first made the decision away from fear."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas con la misma cartera enfrentan una caída fuerte del mercado. La primera consulta lo que escribió: la asignación objetivo sigue vigente, el objetivo de ese dinero es de diez años, y su regla dice aportar normalmente y rebalancear si la desviación supera el límite definido. La segunda decide en el calor del momento, con la aplicación abierta y las noticias en la misma pantalla. Ambas pueden llegar a conclusiones distintas — pero solo la primera tomó la decisión lejos del miedo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é a principal função de uma política de investimento escrita?",
+                  "options": [
+                    "Garantir um retorno mínimo para a carteira",
+                    "Substituir a necessidade de escolher ativos",
+                    "Provar para a corretora qual é o seu perfil",
+                    "Registrar, em um momento calmo, as regras que vão guiar suas decisões depois"
+                  ],
+                  "explanation": "A política não promete retorno: ela move a decisão para um momento de clareza e serve de referência quando a emoção aperta."
+                },
+                "en": {
+                  "prompt": "What is the main purpose of a written investment policy?",
+                  "options": [
+                    "Guaranteeing a minimum return for the portfolio",
+                    "Replacing the need to choose assets",
+                    "Proving your profile to the broker",
+                    "Recording, at a calm moment, the rules that will guide your later decisions"
+                  ],
+                  "explanation": "The policy promises no return: it moves the decision to a moment of clarity and serves as a reference when emotion takes over."
+                },
+                "es": {
+                  "prompt": "¿Cuál es la función principal de una política de inversión escrita?",
+                  "options": [
+                    "Garantizar un retorno mínimo para la cartera",
+                    "Sustituir la necesidad de elegir activos",
+                    "Probar ante la corredora cuál es tu perfil",
+                    "Registrar, en un momento de calma, las reglas que guiarán tus decisiones después"
+                  ],
+                  "explanation": "La política no promete retorno: traslada la decisión a un momento de claridad y sirve de referencia cuando la emoción aprieta."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Sua política diz: 'revisar a alocação uma vez por ano, ou quando um objetivo de vida mudar'. Um ativo da sua carteira cai forte em uma semana. O que a política sugere?",
+                  "options": [
+                    "Reescrever a política imediatamente para acomodar a queda",
+                    "Tratar a queda como parte do esperado e seguir a regra, a menos que algo no objetivo ou na tese tenha de fato mudado",
+                    "Vender tudo e voltar a decidir quando o mercado se acalmar",
+                    "Ignorar a política, já que ela não previu essa queda específica"
+                  ],
+                  "explanation": "Oscilação de preço não é, por si, uma mudança de objetivo. A política existe justamente para distinguir ruído de um fato novo que mereça revisão."
+                },
+                "en": {
+                  "prompt": "Your policy says: 'review the allocation once a year, or when a life goal changes'. One asset in your portfolio drops sharply in a week. What does the policy suggest?",
+                  "options": [
+                    "Rewrite the policy immediately to accommodate the drop",
+                    "Treat the drop as part of what's expected and follow the rule, unless something in the goal or the thesis has actually changed",
+                    "Sell everything and decide again once the market calms down",
+                    "Ignore the policy, since it didn't predict this specific drop"
+                  ],
+                  "explanation": "A price swing is not, by itself, a change of goal. The policy exists precisely to tell noise apart from a new fact that deserves a review."
+                },
+                "es": {
+                  "prompt": "Tu política dice: 'revisar la asignación una vez al año, o cuando cambie un objetivo de vida'. Un activo de tu cartera cae fuerte en una semana. ¿Qué sugiere la política?",
+                  "options": [
+                    "Reescribir la política inmediatamente para acomodar la caída",
+                    "Tratar la caída como parte de lo esperado y seguir la regla, salvo que algo en el objetivo o en la tesis haya cambiado de verdad",
+                    "Vender todo y volver a decidir cuando el mercado se calme",
+                    "Ignorar la política, ya que no previó esta caída específica"
+                  ],
+                  "explanation": "Una oscilación de precio no es, por sí sola, un cambio de objetivo. La política existe justamente para distinguir el ruido de un hecho nuevo que merezca revisión."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A política de investimento registra objetivo, alocação-alvo, frequência de revisão e o que justifica mudar.",
+                    "Ela é escrita na calma para ser usada no susto.",
+                    "Queda de preço não é automaticamente um motivo de revisão — mudança de objetivo ou de tese é."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "An investment policy records the goal, target allocation, review frequency and what justifies a change.",
+                    "It's written in calm to be used in panic.",
+                    "A price drop is not automatically a reason to review — a change of goal or thesis is."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La política de inversión registra el objetivo, la asignación objetivo, la frecuencia de revisión y qué justifica cambiar.",
+                    "Se escribe en la calma para usarse en el susto.",
+                    "Una caída de precio no es automáticamente un motivo de revisión — un cambio de objetivo o de tesis sí lo es."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "portfolio_construction_liquidity_buckets",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Carteira em Camadas de Liquidez"
+            },
+            "en": {
+              "title": "A Portfolio in Liquidity Layers"
+            },
+            "es": {
+              "title": "Cartera en Capas de Liquidez"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Cada camada tem um trabalho diferente",
+                  "body": "Em vez de olhar a carteira como um bloco único, é útil organizá-la em camadas pelo momento em que o dinheiro será usado. A camada de curtíssimo prazo cobre imprevistos e precisa de liquidez acima de tudo. A camada intermediária financia objetivos de alguns anos e aceita alguma oscilação. A camada de longo prazo é a que pode conviver com volatilidade em troca de retorno esperado maior. A pergunta que define a camada não é 'qual rende mais', e sim 'quando vou precisar disso'."
+                },
+                "en": {
+                  "title": "Each layer has a different job",
+                  "body": "Instead of seeing the portfolio as a single block, it helps to organize it in layers by when the money will be used. The very-short-term layer covers surprises and needs liquidity above all. The middle layer funds goals a few years out and tolerates some swings. The long-term layer is the one that can live with volatility in exchange for higher expected return. The question that defines the layer isn't 'which yields more', but 'when will I need this'."
+                },
+                "es": {
+                  "title": "Cada capa tiene un trabajo distinto",
+                  "body": "En lugar de mirar la cartera como un bloque único, conviene organizarla en capas según el momento en que se usará el dinero. La capa de cortísimo plazo cubre imprevistos y necesita liquidez ante todo. La capa intermedia financia objetivos de algunos años y acepta cierta oscilación. La capa de largo plazo es la que puede convivir con volatilidad a cambio de un retorno esperado mayor. La pregunta que define la capa no es 'cuál rinde más', sino 'cuándo voy a necesitar esto'."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém com reserva de emergência em um produto de liquidez diária, a entrada de um imóvel prevista para daqui a três anos em aplicações de prazo compatível, e a aposentadoria em uma carteira mais exposta a renda variável. Quando a bolsa cai, essa pessoa sabe exatamente qual camada foi afetada — e sabe que não é a que paga as contas do mês que vem. A estrutura não muda o mercado; muda o que a queda significa para ela."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone with an emergency fund in a daily-liquidity product, a home down payment due in three years in matching-maturity investments, and retirement in a portfolio more exposed to equities. When the stock market falls, this person knows exactly which layer was hit — and knows it isn't the one paying next month's bills. The structure doesn't change the market; it changes what the drop means to them."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien con fondo de emergencia en un producto de liquidez diaria, la entrada de una vivienda prevista para dentro de tres años en inversiones de plazo compatible, y la jubilación en una cartera más expuesta a renta variable. Cuando la bolsa cae, esa persona sabe exactamente qué capa fue afectada — y sabe que no es la que paga las cuentas del mes que viene. La estructura no cambia el mercado; cambia lo que la caída significa para ella."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que define em qual camada de liquidez um valor deve ficar?",
+                  "options": [
+                    "O momento em que aquele dinheiro provavelmente será usado",
+                    "O retorno esperado do produto mais rentável disponível",
+                    "A quantidade de ativos diferentes que você já possui",
+                    "A recomendação mais recente que você viu nas redes sociais"
+                  ],
+                  "explanation": "A camada é definida pelo horizonte de uso do dinheiro; o produto escolhido vem depois, para atender àquele horizonte."
+                },
+                "en": {
+                  "prompt": "What defines which liquidity layer an amount belongs to?",
+                  "options": [
+                    "When that money will likely be used",
+                    "The expected return of the highest-yielding product available",
+                    "How many different assets you already own",
+                    "The most recent recommendation you saw on social media"
+                  ],
+                  "explanation": "The layer is defined by the money's time horizon; the product comes afterwards, to serve that horizon."
+                },
+                "es": {
+                  "prompt": "¿Qué define en qué capa de liquidez debe estar un monto?",
+                  "options": [
+                    "El momento en que ese dinero probablemente será usado",
+                    "El retorno esperado del producto más rentable disponible",
+                    "La cantidad de activos distintos que ya posees",
+                    "La recomendación más reciente que viste en redes sociales"
+                  ],
+                  "explanation": "La capa se define por el horizonte de uso del dinero; el producto elegido viene después, para atender ese horizonte."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você precisará da entrada de um imóvel em 18 meses e percebe que esse valor está na camada de longo prazo, exposto a renda variável. O que a estrutura em camadas sugere?",
+                  "options": [
+                    "Manter como está, porque 18 meses é tempo suficiente para qualquer recuperação",
+                    "Aumentar a exposição, já que falta pouco e é preciso acelerar o resultado",
+                    "Mover esse valor para uma camada compatível com o prazo, aceitando um retorno esperado menor em troca de previsibilidade na data em que ele será usado",
+                    "Dividir o valor entre todas as camadas para diluir o problema"
+                  ],
+                  "explanation": "Quando a data do objetivo se aproxima, previsibilidade passa a valer mais que retorno esperado — o dinheiro precisa estar disponível no valor certo, no dia certo."
+                },
+                "en": {
+                  "prompt": "You'll need a home down payment in 18 months and realize that amount sits in the long-term layer, exposed to equities. What does the layered structure suggest?",
+                  "options": [
+                    "Leave it as is, because 18 months is enough time for any recovery",
+                    "Increase the exposure, since time is short and the result needs accelerating",
+                    "Move that amount to a layer that matches the horizon, accepting a lower expected return in exchange for predictability on the date it will be used",
+                    "Split the amount across every layer to dilute the problem"
+                  ],
+                  "explanation": "As a goal's date approaches, predictability matters more than expected return — the money has to be available, at the right amount, on the right day."
+                },
+                "es": {
+                  "prompt": "Necesitarás la entrada de una vivienda en 18 meses y notas que ese monto está en la capa de largo plazo, expuesto a renta variable. ¿Qué sugiere la estructura en capas?",
+                  "options": [
+                    "Mantenerlo como está, porque 18 meses es tiempo suficiente para cualquier recuperación",
+                    "Aumentar la exposición, ya que falta poco y hay que acelerar el resultado",
+                    "Mover ese monto a una capa compatible con el plazo, aceptando un retorno esperado menor a cambio de previsibilidad en la fecha en que se usará",
+                    "Dividir el monto entre todas las capas para diluir el problema"
+                  ],
+                  "explanation": "Cuando la fecha del objetivo se acerca, la previsibilidad pasa a valer más que el retorno esperado — el dinero debe estar disponible, por el monto correcto, el día correcto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Organizar a carteira em camadas por horizonte dá a cada parte do dinheiro um trabalho claro.",
+                    "A camada é definida pelo prazo de uso, não pela rentabilidade do produto.",
+                    "À medida que um objetivo se aproxima, o dinheiro migra para uma camada mais previsível."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Organizing the portfolio in horizon-based layers gives each part of the money a clear job.",
+                    "The layer is set by the time horizon, not by the product's yield.",
+                    "As a goal approaches, the money migrates to a more predictable layer."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Organizar la cartera en capas por horizonte da a cada parte del dinero un trabajo claro.",
+                    "La capa se define por el plazo de uso, no por la rentabilidad del producto.",
+                    "A medida que un objetivo se acerca, el dinero migra a una capa más previsible."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "portfolio_construction_measuring_return",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Medindo o Retorno Real da Sua Carteira"
+            },
+            "en": {
+              "title": "Measuring Your Portfolio's Real Return"
+            },
+            "es": {
+              "title": "Midiendo el Retorno Real de Tu Cartera"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Com aportes no meio, a conta simples engana",
+                  "body": "Se você só olha 'quanto tenho hoje' menos 'quanto coloquei', está somando aportes ao resultado e misturando duas coisas diferentes: o quanto você poupou e o quanto seus investimentos renderam. Com depósitos e resgates ao longo do tempo, é preciso separar o efeito do dinheiro novo do desempenho dos ativos. Uma forma olha o desempenho da carteira independentemente de quando você aportou; a outra considera também o efeito do momento dos seus aportes sobre o resultado final."
+                },
+                "en": {
+                  "title": "With contributions along the way, the simple math misleads",
+                  "body": "If you only look at 'what I have today' minus 'what I put in', you're adding contributions to performance and mixing two different things: how much you saved and how much your investments earned. With deposits and withdrawals over time, you need to separate the effect of new money from the assets' performance. One approach looks at the portfolio's performance regardless of when you contributed; the other also accounts for how the timing of your contributions affected the final result."
+                },
+                "es": {
+                  "title": "Con aportes de por medio, la cuenta simple engaña",
+                  "body": "Si solo miras 'cuánto tengo hoy' menos 'cuánto puse', estás sumando aportes al resultado y mezclando dos cosas distintas: cuánto ahorraste y cuánto rindieron tus inversiones. Con depósitos y rescates a lo largo del tiempo, hay que separar el efecto del dinero nuevo del desempeño de los activos. Una forma mira el desempeño de la cartera independientemente de cuándo aportaste; la otra considera también el efecto del momento de tus aportes sobre el resultado final."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas investem nos mesmos fundos, com o mesmo desempenho dos ativos no período. A primeira aportou tudo no começo; a segunda foi aportando aos poucos, com boa parte entrando perto do fim. O saldo final em reais será diferente, embora os investimentos tenham rendido o mesmo. Julgar a escolha dos ativos pelo saldo final, nesse caso, atribui ao investimento um resultado que veio do cronograma dos aportes."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people invest in the same funds, with the same asset performance over the period. The first contributed everything at the start; the second contributed gradually, with much of it arriving near the end. The final balance in cash will differ, even though the investments performed identically. Judging the asset choice by the final balance, in this case, credits the investment with a result that came from the contribution schedule."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas invierten en los mismos fondos, con el mismo desempeño de los activos en el período. La primera aportó todo al comienzo; la segunda fue aportando de a poco, con buena parte entrando cerca del final. El saldo final en dinero será distinto, aunque las inversiones rindieron lo mismo. Juzgar la elección de los activos por el saldo final, en este caso, atribuye a la inversión un resultado que vino del cronograma de los aportes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que 'saldo atual menos total aportado' pode ser uma medida enganosa de desempenho?",
+                  "options": [
+                    "Porque ela ignora completamente a inflação do período",
+                    "Porque só funciona para carteiras de renda fixa",
+                    "Porque mistura o dinheiro novo que você depositou com o rendimento gerado pelos ativos",
+                    "Porque exige uma planilha que poucas corretoras oferecem"
+                  ],
+                  "explanation": "Essa conta mede a variação do patrimônio, não o desempenho dos investimentos: aportes aumentam o saldo sem que nada tenha rendido."
+                },
+                "en": {
+                  "prompt": "Why can 'current balance minus total contributed' be a misleading performance measure?",
+                  "options": [
+                    "Because it completely ignores the period's inflation",
+                    "Because it only works for fixed-income portfolios",
+                    "Because it mixes the new money you deposited with the return generated by the assets",
+                    "Because it requires a spreadsheet few brokers offer"
+                  ],
+                  "explanation": "That math measures the change in net worth, not investment performance: contributions raise the balance without anything having earned a return."
+                },
+                "es": {
+                  "prompt": "¿Por qué 'saldo actual menos total aportado' puede ser una medida engañosa de desempeño?",
+                  "options": [
+                    "Porque ignora por completo la inflación del período",
+                    "Porque solo funciona para carteras de renta fija",
+                    "Porque mezcla el dinero nuevo que depositaste con el rendimiento generado por los activos",
+                    "Porque exige una planilla que pocas corredoras ofrecen"
+                  ],
+                  "explanation": "Esa cuenta mide la variación del patrimonio, no el desempeño de las inversiones: los aportes aumentan el saldo sin que nada haya rendido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer comparar o desempenho da sua carteira com o de um índice de referência. Qual cuidado é essencial para que a comparação faça sentido?",
+                  "options": [
+                    "Usar uma medida que isole o efeito dos seus aportes e resgates, já que o índice não recebe depósitos",
+                    "Comparar apenas o saldo final em reais, porque é o número mais concreto",
+                    "Comparar somente meses em que você não fez aportes, descartando o resto do período",
+                    "Ignorar a comparação, porque nenhuma carteira pessoal pode ser comparada a um índice"
+                  ],
+                  "explanation": "O índice não tem aportes. Para uma comparação honesta, a medida da sua carteira precisa isolar o efeito do dinheiro que entrou e saiu no caminho."
+                },
+                "en": {
+                  "prompt": "You want to compare your portfolio's performance with a benchmark index. What care is essential for the comparison to make sense?",
+                  "options": [
+                    "Use a measure that isolates the effect of your contributions and withdrawals, since the index receives no deposits",
+                    "Compare only the final balance in cash, because it's the most concrete number",
+                    "Compare only months in which you made no contributions, discarding the rest of the period",
+                    "Skip the comparison, because no personal portfolio can be compared to an index"
+                  ],
+                  "explanation": "The index has no contributions. For an honest comparison, your portfolio's measure must isolate the effect of money entering and leaving along the way."
+                },
+                "es": {
+                  "prompt": "Quieres comparar el desempeño de tu cartera con el de un índice de referencia. ¿Qué cuidado es esencial para que la comparación tenga sentido?",
+                  "options": [
+                    "Usar una medida que aísle el efecto de tus aportes y rescates, ya que el índice no recibe depósitos",
+                    "Comparar solo el saldo final en dinero, porque es el número más concreto",
+                    "Comparar solamente los meses en que no hiciste aportes, descartando el resto del período",
+                    "Ignorar la comparación, porque ninguna cartera personal puede compararse con un índice"
+                  ],
+                  "explanation": "El índice no tiene aportes. Para una comparación honesta, la medida de tu cartera debe aislar el efecto del dinero que entró y salió en el camino."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Saldo atual menos aportes mede patrimônio, não desempenho dos investimentos.",
+                    "Com aportes ao longo do tempo, é preciso separar dinheiro novo de rendimento.",
+                    "Comparar com um índice exige uma medida que isole o efeito dos aportes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Current balance minus contributions measures net worth, not investment performance.",
+                    "With contributions over time, new money must be separated from returns.",
+                    "Comparing to an index requires a measure that isolates the effect of contributions."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Saldo actual menos aportes mide patrimonio, no desempeño de las inversiones.",
+                    "Con aportes a lo largo del tiempo, hay que separar dinero nuevo de rendimiento.",
+                    "Comparar con un índice exige una medida que aísle el efecto de los aportes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "portfolio_construction_rebalancing_bands",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Bandas de Tolerância: Quando Rebalancear"
+            },
+            "en": {
+              "title": "Tolerance Bands: When to Rebalance"
+            },
+            "es": {
+              "title": "Bandas de Tolerancia: Cuándo Rebalancear"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem todo desvio merece uma operação",
+                  "body": "Você já sabe que a carteira se desvia da alocação-alvo com o tempo e que rebalancear a traz de volta. Falta decidir o gatilho. Uma abordagem rebalanceia em datas fixas; outra define bandas de tolerância — faixas em torno do alvo dentro das quais nada é feito, e só ao ultrapassá-las a operação acontece. A banda existe porque rebalancear tem custo: corretagem, spread e, dependendo do caso, imposto sobre o ganho realizado."
+                },
+                "en": {
+                  "title": "Not every drift deserves a trade",
+                  "body": "You already know the portfolio drifts from its target allocation over time, and that rebalancing brings it back. What's left is choosing the trigger. One approach rebalances on fixed dates; another defines tolerance bands — ranges around the target within which nothing is done, and only crossing them triggers the trade. The band exists because rebalancing has a cost: brokerage, spread and, depending on the case, tax on the realized gain."
+                },
+                "es": {
+                  "title": "No toda desviación merece una operación",
+                  "body": "Ya sabes que la cartera se desvía de la asignación objetivo con el tiempo y que rebalancear la devuelve. Falta decidir el disparador. Un enfoque rebalancea en fechas fijas; otro define bandas de tolerancia — franjas alrededor del objetivo dentro de las cuales no se hace nada, y solo al superarlas ocurre la operación. La banda existe porque rebalancear tiene costo: corretaje, spread y, según el caso, impuesto sobre la ganancia realizada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma carteira com alvo de 60% em renda variável e uma banda de 5 pontos percentuais só é rebalanceada quando essa fatia passa de 65% ou cai abaixo de 55%. Uma oscilação que leve a fatia a 62% não gera operação nenhuma — e é exatamente isso que a banda quer evitar: pagar custo por um ajuste que não muda de forma relevante o risco da carteira."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A portfolio with a 60% equity target and a 5-percentage-point band is only rebalanced when that slice goes above 65% or below 55%. A swing that takes the slice to 62% triggers no trade at all — and that's exactly what the band is for: not paying a cost for an adjustment that doesn't meaningfully change the portfolio's risk."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una cartera con objetivo de 60% en renta variable y una banda de 5 puntos porcentuales solo se rebalancea cuando esa porción supera el 65% o cae por debajo del 55%. Una oscilación que lleve la porción al 62% no genera ninguna operación — y eso es exactamente lo que la banda quiere evitar: pagar un costo por un ajuste que no cambia de forma relevante el riesgo de la cartera."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é uma banda de tolerância no rebalanceamento?",
+                  "options": [
+                    "O prazo máximo que se pode esperar antes de vender um ativo em queda",
+                    "Uma faixa em torno da alocação-alvo dentro da qual nenhuma operação é feita",
+                    "O percentual máximo de um único ativo permitido por regulação",
+                    "A diferença entre o retorno da carteira e o do índice de referência"
+                  ],
+                  "explanation": "A banda define o quanto de desvio você aceita conviver antes de pagar o custo de um ajuste."
+                },
+                "en": {
+                  "prompt": "What is a tolerance band in rebalancing?",
+                  "options": [
+                    "The maximum time you can wait before selling a falling asset",
+                    "A range around the target allocation within which no trade is made",
+                    "The maximum percentage of a single asset allowed by regulation",
+                    "The difference between the portfolio's return and the benchmark's"
+                  ],
+                  "explanation": "The band defines how much drift you're willing to live with before paying the cost of an adjustment."
+                },
+                "es": {
+                  "prompt": "¿Qué es una banda de tolerancia en el rebalanceo?",
+                  "options": [
+                    "El plazo máximo que se puede esperar antes de vender un activo en caída",
+                    "Una franja alrededor de la asignación objetivo dentro de la cual no se hace ninguna operación",
+                    "El porcentaje máximo de un solo activo permitido por la regulación",
+                    "La diferencia entre el retorno de la cartera y el del índice de referencia"
+                  ],
+                  "explanation": "La banda define cuánta desviación aceptas tolerar antes de pagar el costo de un ajuste."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebe um aporte mensal e sua carteira está levemente desviada, mas ainda dentro da banda. Qual caminho tende a ser mais eficiente?",
+                  "options": [
+                    "Vender o que subiu e comprar o que caiu imediatamente, para voltar ao alvo exato",
+                    "Esperar o fim do ano e rebalancear tudo de uma vez, independentemente da banda",
+                    "Ignorar o desvio para sempre, já que bandas tornam o rebalanceamento desnecessário",
+                    "Direcionar o aporte para as classes abaixo do alvo, aproximando a carteira sem vender nada"
+                  ],
+                  "explanation": "Aportes permitem corrigir o desvio comprando, sem realizar ganho e sem pagar o custo de uma venda — e a banda evita a operação desnecessária enquanto o desvio é pequeno."
+                },
+                "en": {
+                  "prompt": "You receive a monthly contribution and your portfolio has drifted slightly, but is still inside the band. Which path tends to be more efficient?",
+                  "options": [
+                    "Sell what went up and buy what went down immediately, to return to the exact target",
+                    "Wait until year-end and rebalance everything at once, regardless of the band",
+                    "Ignore the drift forever, since bands make rebalancing unnecessary",
+                    "Direct the contribution to the classes below target, bringing the portfolio closer without selling anything"
+                  ],
+                  "explanation": "Contributions let you correct drift by buying, without realizing gains and without paying the cost of a sale — and the band avoids the unnecessary trade while drift is small."
+                },
+                "es": {
+                  "prompt": "Recibes un aporte mensual y tu cartera está levemente desviada, pero aún dentro de la banda. ¿Qué camino tiende a ser más eficiente?",
+                  "options": [
+                    "Vender lo que subió y comprar lo que cayó de inmediato, para volver al objetivo exacto",
+                    "Esperar al fin de año y rebalancear todo de una vez, sin importar la banda",
+                    "Ignorar la desviación para siempre, ya que las bandas hacen innecesario el rebalanceo",
+                    "Dirigir el aporte a las clases por debajo del objetivo, acercando la cartera sin vender nada"
+                  ],
+                  "explanation": "Los aportes permiten corregir la desviación comprando, sin realizar ganancias ni pagar el costo de una venta — y la banda evita la operación innecesaria mientras la desviación es pequeña."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Bandas de tolerância definem quanto desvio da alocação-alvo é aceitável antes de agir.",
+                    "Elas existem porque rebalancear custa corretagem, spread e possivelmente imposto.",
+                    "Aportes direcionados corrigem desvios sem precisar vender nada."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Tolerance bands define how much drift from the target is acceptable before acting.",
+                    "They exist because rebalancing costs brokerage, spread and possibly tax.",
+                    "Directed contributions correct drift without having to sell anything."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las bandas de tolerancia definen cuánta desviación del objetivo es aceptable antes de actuar.",
+                    "Existen porque rebalancear cuesta corretaje, spread y posiblemente impuestos.",
+                    "Los aportes dirigidos corrigen desviaciones sin necesidad de vender nada."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "portfolio_construction_position_sizing",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tamanho de Posição: Quanto Colocar em Cada Ideia"
+            },
+            "en": {
+              "title": "Position Sizing: How Much to Put in Each Idea"
+            },
+            "es": {
+              "title": "Tamaño de Posición: Cuánto Poner en Cada Idea"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Acertar o ativo não basta se o tamanho estiver errado",
+                  "body": "Decidir o que comprar é metade da decisão; a outra metade é quanto. O tamanho de uma posição define o impacto que ela terá na carteira se der muito certo — e, principalmente, se der muito errado. Uma regra simples e poderosa é limitar antes: nenhuma posição individual passa de um percentual definido por você da carteira. Assim, uma tese errada custa um pedaço administrável, não o plano inteiro."
+                },
+                "en": {
+                  "title": "Picking the right asset isn't enough if the size is wrong",
+                  "body": "Deciding what to buy is half the decision; the other half is how much. A position's size defines the impact it will have on the portfolio if it goes very well — and, above all, if it goes very badly. A simple and powerful rule is to cap it in advance: no single position exceeds a percentage of the portfolio that you define. That way, a wrong thesis costs a manageable slice, not the whole plan."
+                },
+                "es": {
+                  "title": "Acertar el activo no basta si el tamaño está equivocado",
+                  "body": "Decidir qué comprar es la mitad de la decisión; la otra mitad es cuánto. El tamaño de una posición define el impacto que tendrá en la cartera si sale muy bien — y, sobre todo, si sale muy mal. Una regla simple y poderosa es limitar de antemano: ninguna posición individual supera un porcentaje de la cartera definido por ti. Así, una tesis equivocada cuesta un pedazo manejable, no el plan entero."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas compram o mesmo ativo, que depois cai pela metade. Para quem havia colocado uma fatia pequena da carteira, é um contratempo: a tese falhou, o impacto total é limitado e o plano segue. Para quem havia concentrado uma fatia enorme, a mesma queda muda o patrimônio e, muitas vezes, provoca a decisão de vender tudo no pior momento. O ativo foi o mesmo; o que mudou foi o tamanho."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people buy the same asset, which then falls by half. For the one who had put in a small slice of the portfolio, it's a setback: the thesis failed, the total impact is limited and the plan goes on. For the one who had concentrated a huge slice, the same drop changes their net worth and often triggers the decision to sell everything at the worst moment. The asset was the same; what differed was the size."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas compran el mismo activo, que luego cae a la mitad. Para quien había puesto una porción pequeña de la cartera, es un contratiempo: la tesis falló, el impacto total es limitado y el plan sigue. Para quien había concentrado una porción enorme, la misma caída cambia el patrimonio y muchas veces provoca la decisión de vender todo en el peor momento. El activo fue el mismo; lo que cambió fue el tamaño."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que definir um limite máximo por posição antes de investir?",
+                  "options": [
+                    "Porque isso limita quanto uma única tese errada pode afetar a carteira inteira",
+                    "Porque garante que todas as posições terão retorno positivo",
+                    "Porque reduz a taxa de administração dos produtos escolhidos",
+                    "Porque elimina a necessidade de analisar cada ativo"
+                  ],
+                  "explanation": "O limite não melhora a qualidade da tese: ele define, antecipadamente, o estrago máximo que uma tese errada pode causar."
+                },
+                "en": {
+                  "prompt": "Why set a maximum limit per position before investing?",
+                  "options": [
+                    "Because it limits how much a single wrong thesis can affect the whole portfolio",
+                    "Because it guarantees every position will have a positive return",
+                    "Because it lowers the management fee of the chosen products",
+                    "Because it removes the need to analyze each asset"
+                  ],
+                  "explanation": "The limit doesn't improve the thesis's quality: it defines, in advance, the maximum damage a wrong thesis can cause."
+                },
+                "es": {
+                  "prompt": "¿Por qué definir un límite máximo por posición antes de invertir?",
+                  "options": [
+                    "Porque limita cuánto puede afectar una sola tesis equivocada a toda la cartera",
+                    "Porque garantiza que todas las posiciones tendrán retorno positivo",
+                    "Porque reduce la comisión de administración de los productos elegidos",
+                    "Porque elimina la necesidad de analizar cada activo"
+                  ],
+                  "explanation": "El límite no mejora la calidad de la tesis: define, de antemano, el daño máximo que una tesis equivocada puede causar."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma posição sua se valorizou muito e hoje representa uma fatia bem acima do limite que você definiu. Como tratar isso de forma coerente com o seu plano?",
+                  "options": [
+                    "Manter integralmente, porque vender o que está subindo é sempre um erro",
+                    "Reconhecer que a concentração cresceu sozinha e reduzir a posição de volta ao limite, aceitando os custos e impostos envolvidos na decisão",
+                    "Aumentar a posição, já que o desempenho recente confirma que a tese está certa",
+                    "Zerar a posição imediatamente, porque ultrapassar o limite invalida a tese"
+                  ],
+                  "explanation": "Valorização concentra a carteira sem você fazer nada. Voltar ao limite é aplicar a mesma regra que você definiu quando estava calmo — nem manter por inércia, nem abandonar a tese por completo."
+                },
+                "en": {
+                  "prompt": "One of your positions has appreciated a lot and today represents a slice well above the limit you set. How do you handle that consistently with your plan?",
+                  "options": [
+                    "Keep it entirely, because selling something that's going up is always a mistake",
+                    "Recognize that concentration grew on its own and trim the position back to the limit, accepting the costs and taxes involved in the decision",
+                    "Increase the position, since recent performance confirms the thesis is right",
+                    "Close the position entirely, because exceeding the limit invalidates the thesis"
+                  ],
+                  "explanation": "Appreciation concentrates the portfolio without you doing anything. Returning to the limit applies the same rule you set while calm — neither holding out of inertia nor abandoning the thesis altogether."
+                },
+                "es": {
+                  "prompt": "Una posición tuya se valorizó mucho y hoy representa una porción muy por encima del límite que definiste. ¿Cómo tratarlo de forma coherente con tu plan?",
+                  "options": [
+                    "Mantenerla íntegramente, porque vender lo que está subiendo siempre es un error",
+                    "Reconocer que la concentración creció sola y reducir la posición de vuelta al límite, aceptando los costos e impuestos que implica la decisión",
+                    "Aumentar la posición, ya que el desempeño reciente confirma que la tesis es correcta",
+                    "Cerrar la posición de inmediato, porque superar el límite invalida la tesis"
+                  ],
+                  "explanation": "La valorización concentra la cartera sin que hagas nada. Volver al límite aplica la misma regla que definiste estando calmado — ni mantener por inercia, ni abandonar la tesis por completo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O tamanho da posição define o impacto de a tese dar errado.",
+                    "Um limite máximo por posição é decidido antes, não durante a emoção.",
+                    "Valorização também concentra a carteira — voltar ao limite é aplicar a própria regra."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Position size defines the impact of the thesis being wrong.",
+                    "A maximum per-position limit is decided beforehand, not amid emotion.",
+                    "Appreciation also concentrates the portfolio — returning to the limit is applying your own rule."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El tamaño de la posición define el impacto de que la tesis salga mal.",
+                    "Un límite máximo por posición se decide antes, no en medio de la emoción.",
+                    "La valorización también concentra la cartera — volver al límite es aplicar tu propia regla."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

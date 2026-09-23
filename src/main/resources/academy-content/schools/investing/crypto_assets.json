@@ -2724,6 +2724,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "crypto_specialist_topics",
+      "order": 3,
+      "iconKey": "currency_bitcoin",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "crypto_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Criptoativos: Nível Especialista",
+          "description": "Segunda camada e taxas de rede, tokenização de ativos reais, risco de contraparte em corretoras, transparência on-chain, forks e airdrops."
+        },
+        "en": {
+          "title": "Cryptoassets: Specialist Level",
+          "description": "Second layers and network fees, tokenizing real-world assets, exchange counterparty risk, on-chain transparency, forks and airdrops."
+        },
+        "es": {
+          "title": "Criptoactivos: Nivel Especialista",
+          "description": "Segunda capa y comisiones de red, tokenización de activos reales, riesgo de contraparte en casas de cambio, transparencia on-chain, forks y airdrops."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "crypto_layer_two_scaling",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Escalabilidade e Redes de Segunda Camada"
+            },
+            "en": {
+              "title": "Scalability and Second-Layer Networks"
+            },
+            "es": {
+              "title": "Escalabilidad y Redes de Segunda Capa"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Por que taxas sobem quando a rede fica cheia",
+                  "body": "Uma blockchain pública tem capacidade limitada de transações por bloco. Quando muita gente quer transacionar ao mesmo tempo, o espaço no bloco vira um leilão: quem paga taxa maior é confirmado antes, e as taxas sobem para todos. Redes de segunda camada são sistemas construídos sobre a rede principal para processar transações fora dela e registrar apenas o resultado consolidado — reduzindo custo e tempo, ao preço de uma arquitetura mais complexa e de novas suposições de confiança."
+                },
+                "en": {
+                  "title": "Why fees rise when the network gets crowded",
+                  "body": "A public blockchain has limited transaction capacity per block. When many people want to transact at once, block space becomes an auction: whoever pays a higher fee gets confirmed sooner, and fees rise for everyone. Second-layer networks are systems built on top of the main chain to process transactions off it and record only the consolidated result — cutting cost and time, at the price of a more complex architecture and new trust assumptions."
+                },
+                "es": {
+                  "title": "Por qué suben las comisiones cuando la red se llena",
+                  "body": "Una blockchain pública tiene capacidad limitada de transacciones por bloque. Cuando mucha gente quiere transaccionar al mismo tiempo, el espacio del bloque se vuelve una subasta: quien paga una comisión mayor se confirma antes, y las comisiones suben para todos. Las redes de segunda capa son sistemas construidos sobre la red principal para procesar transacciones fuera de ella y registrar solo el resultado consolidado — reduciendo costo y tiempo, al precio de una arquitectura más compleja y de nuevos supuestos de confianza."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Em um período de uso intenso da rede principal, uma transferência pequena pode custar uma taxa desproporcional ao valor transferido. Movendo a mesma operação para uma rede de segunda camada, o custo cai bastante — mas o usuário passa a depender também do funcionamento correto dessa camada extra e do caminho de volta para a rede principal."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "In a period of heavy main-chain usage, a small transfer can cost a fee out of all proportion to the amount moved. Moving the same operation to a second-layer network cuts the cost considerably — but the user now also depends on that extra layer working correctly, and on the route back to the main chain."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "En un período de uso intenso de la red principal, una transferencia pequeña puede costar una comisión desproporcionada respecto al monto transferido. Moviendo la misma operación a una red de segunda capa, el costo baja bastante — pero el usuario pasa a depender también del funcionamiento correcto de esa capa extra y del camino de vuelta a la red principal."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que explica o aumento das taxas em uma blockchain pública em momentos de uso intenso?",
+                  "options": [
+                    "Uma decisão administrativa da empresa que controla a rede",
+                    "O aumento automático do preço do ativo negociado",
+                    "A disputa por espaço limitado nos blocos, em que taxas maiores são priorizadas",
+                    "A entrada de novos usuários, que pagam uma taxa de adesão"
+                  ],
+                  "explanation": "O espaço em bloco é escasso: quando a demanda cresce, quem oferece taxa maior é confirmado antes, elevando o custo para todos."
+                },
+                "en": {
+                  "prompt": "What explains rising fees on a public blockchain during heavy usage?",
+                  "options": [
+                    "An administrative decision by the company that controls the network",
+                    "An automatic increase in the traded asset's price",
+                    "Competition for limited block space, where higher fees get priority",
+                    "New users joining and paying a membership fee"
+                  ],
+                  "explanation": "Block space is scarce: when demand grows, whoever offers a higher fee is confirmed first, raising the cost for everyone."
+                },
+                "es": {
+                  "prompt": "¿Qué explica el aumento de las comisiones en una blockchain pública en momentos de uso intenso?",
+                  "options": [
+                    "Una decisión administrativa de la empresa que controla la red",
+                    "El aumento automático del precio del activo negociado",
+                    "La disputa por el espacio limitado en los bloques, donde se priorizan las comisiones mayores",
+                    "La entrada de nuevos usuarios, que pagan una comisión de adhesión"
+                  ],
+                  "explanation": "El espacio en bloque es escaso: cuando la demanda crece, quien ofrece una comisión mayor se confirma antes, elevando el costo para todos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Alguém sugere que você use uma rede de segunda camada para reduzir custos. Qual é a leitura mais equilibrada dessa sugestão?",
+                  "options": [
+                    "Segunda camada elimina todos os riscos da rede principal, então é sempre a melhor escolha",
+                    "Segunda camada é apenas marketing: tecnicamente não há diferença nenhuma",
+                    "Segunda camada só existe para ativos sem liquidez e deve ser evitada",
+                    "Pode de fato reduzir custo e tempo, mas acrescenta uma camada de tecnologia e de confiança que também precisa ser compreendida"
+                  ],
+                  "explanation": "Ganho de custo e velocidade vem acompanhado de novas suposições — sobre a implementação da camada e sobre o mecanismo de retorno à rede principal."
+                },
+                "en": {
+                  "prompt": "Someone suggests you use a second-layer network to reduce costs. What's the most balanced reading of that suggestion?",
+                  "options": [
+                    "Second layers remove all the main chain's risks, so they're always the best choice",
+                    "Second layers are just marketing: technically there's no difference at all",
+                    "Second layers only exist for illiquid assets and should be avoided",
+                    "It can indeed cut cost and time, but it adds a layer of technology and of trust that also has to be understood"
+                  ],
+                  "explanation": "Gains in cost and speed come with new assumptions — about the layer's implementation and about the mechanism for returning to the main chain."
+                },
+                "es": {
+                  "prompt": "Alguien sugiere que uses una red de segunda capa para reducir costos. ¿Cuál es la lectura más equilibrada de esa sugerencia?",
+                  "options": [
+                    "La segunda capa elimina todos los riesgos de la red principal, así que siempre es la mejor opción",
+                    "La segunda capa es solo marketing: técnicamente no hay ninguna diferencia",
+                    "La segunda capa solo existe para activos sin liquidez y debe evitarse",
+                    "Puede reducir de hecho costo y tiempo, pero añade una capa de tecnología y de confianza que también hay que comprender"
+                  ],
+                  "explanation": "La ganancia en costo y velocidad viene acompañada de nuevos supuestos — sobre la implementación de la capa y sobre el mecanismo de retorno a la red principal."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O espaço em bloco é limitado, e a disputa por ele faz as taxas subirem.",
+                    "Redes de segunda camada processam transações fora da rede principal e registram o resultado nela.",
+                    "O ganho de custo vem junto com uma camada extra de tecnologia e de confiança."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Block space is limited, and competition for it drives fees up.",
+                    "Second-layer networks process transactions off the main chain and record the result on it.",
+                    "The cost saving comes bundled with an extra layer of technology and trust."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El espacio en bloque es limitado, y la disputa por él hace subir las comisiones.",
+                    "Las redes de segunda capa procesan transacciones fuera de la red principal y registran el resultado en ella.",
+                    "El ahorro de costo viene junto con una capa extra de tecnología y de confianza."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "crypto_tokenization_real_assets",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Tokenização de Ativos Reais"
+            },
+            "en": {
+              "title": "Tokenization of Real-World Assets"
+            },
+            "es": {
+              "title": "Tokenización de Activos Reales"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O token é o registro, não o ativo",
+                  "body": "Tokenizar é representar, em um registro digital, um direito sobre algo que existe fora dele: um recebível, uma cota, um contrato. A tecnologia pode tornar esse registro mais barato de transferir e mais fácil de fracionar. O que ela não faz é criar valor no ativo subjacente nem substituir a análise de quem emitiu, qual direito exatamente o token representa e o que acontece se o emissor não cumprir. O token é a embalagem; o risco continua sendo o do que está dentro."
+                },
+                "en": {
+                  "title": "The token is the record, not the asset",
+                  "body": "Tokenizing means representing, in a digital record, a right over something that exists outside it: a receivable, a share, a contract. The technology can make that record cheaper to transfer and easier to fractionalize. What it does not do is create value in the underlying asset, nor replace the analysis of who issued it, exactly which right the token represents, and what happens if the issuer fails to deliver. The token is the packaging; the risk is still whatever is inside."
+                },
+                "es": {
+                  "title": "El token es el registro, no el activo",
+                  "body": "Tokenizar es representar, en un registro digital, un derecho sobre algo que existe fuera de él: un cobrable, una cuota, un contrato. La tecnología puede hacer ese registro más barato de transferir y más fácil de fraccionar. Lo que no hace es crear valor en el activo subyacente ni sustituir el análisis de quién lo emitió, qué derecho representa exactamente el token y qué ocurre si el emisor no cumple. El token es el envoltorio; el riesgo sigue siendo el de lo que está adentro."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um token que representa a participação em um conjunto de recebíveis pode ser transferido em minutos e comprado em frações pequenas. Ainda assim, se as empresas que devem esses recebíveis não pagarem, o detentor do token sofre a perda — exatamente como sofreria em um investimento equivalente sem token. A facilidade de negociar não muda quem deve o dinheiro."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A token representing a stake in a pool of receivables can be transferred in minutes and bought in small fractions. Even so, if the companies that owe those receivables don't pay, the token holder takes the loss — exactly as they would in an equivalent investment without a token. Ease of trading doesn't change who owes the money."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un token que representa la participación en un conjunto de cobrables puede transferirse en minutos y comprarse en fracciones pequeñas. Aun así, si las empresas que deben esos cobrables no pagan, el tenedor del token sufre la pérdida — exactamente como la sufriría en una inversión equivalente sin token. La facilidad de negociar no cambia quién debe el dinero."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que a tokenização de um ativo real muda, essencialmente?",
+                  "options": [
+                    "A qualidade de crédito do emissor, que passa a ser garantida pela rede",
+                    "A forma de registrar e transferir o direito sobre o ativo",
+                    "A obrigatoriedade de o ativo gerar retorno positivo",
+                    "A natureza do ativo, que deixa de existir fora da blockchain"
+                  ],
+                  "explanation": "Tokenizar muda o registro e a transferência do direito — não a solidez de quem emitiu nem o desempenho do ativo por trás."
+                },
+                "en": {
+                  "prompt": "What does tokenizing a real-world asset essentially change?",
+                  "options": [
+                    "The issuer's credit quality, now guaranteed by the network",
+                    "The way the right over the asset is recorded and transferred",
+                    "The requirement that the asset generate a positive return",
+                    "The nature of the asset, which stops existing outside the blockchain"
+                  ],
+                  "explanation": "Tokenizing changes the recording and transfer of the right — not the soundness of the issuer nor the performance of the underlying asset."
+                },
+                "es": {
+                  "prompt": "¿Qué cambia esencialmente la tokenización de un activo real?",
+                  "options": [
+                    "La calidad crediticia del emisor, que pasa a estar garantizada por la red",
+                    "La forma de registrar y transferir el derecho sobre el activo",
+                    "La obligatoriedad de que el activo genere retorno positivo",
+                    "La naturaleza del activo, que deja de existir fuera de la blockchain"
+                  ],
+                  "explanation": "Tokenizar cambia el registro y la transferencia del derecho — no la solidez de quien emitió ni el desempeño del activo subyacente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebe a oferta de um token que promete um rendimento alto lastreado em contratos do mundo real. Qual análise vem primeiro?",
+                  "options": [
+                    "Quem é o emissor, qual direito exatamente o token dá, quem custodia o lastro e o que acontece em caso de inadimplência",
+                    "Qual blockchain foi usada, já que esse é o fator decisivo do risco",
+                    "Quantas pessoas já compraram o token, como indicador de segurança",
+                    "Se o token está listado em muitas corretoras, o que garante o lastro"
+                  ],
+                  "explanation": "A camada tecnológica é secundária diante da pergunta central de qualquer crédito: quem deve, com base em quê, e o que acontece se não pagar."
+                },
+                "en": {
+                  "prompt": "You're offered a token promising a high yield backed by real-world contracts. Which analysis comes first?",
+                  "options": [
+                    "Who the issuer is, exactly which right the token grants, who custodies the backing and what happens in case of default",
+                    "Which blockchain was used, since that's the decisive risk factor",
+                    "How many people have already bought the token, as a safety indicator",
+                    "Whether the token is listed on many exchanges, which guarantees the backing"
+                  ],
+                  "explanation": "The technology layer is secondary to the central question of any credit: who owes, based on what, and what happens if they don't pay."
+                },
+                "es": {
+                  "prompt": "Recibes la oferta de un token que promete un rendimiento alto respaldado por contratos del mundo real. ¿Qué análisis viene primero?",
+                  "options": [
+                    "Quién es el emisor, qué derecho otorga exactamente el token, quién custodia el respaldo y qué ocurre en caso de impago",
+                    "Qué blockchain se usó, ya que ese es el factor decisivo del riesgo",
+                    "Cuántas personas ya compraron el token, como indicador de seguridad",
+                    "Si el token está listado en muchas casas de cambio, lo que garantiza el respaldo"
+                  ],
+                  "explanation": "La capa tecnológica es secundaria frente a la pregunta central de cualquier crédito: quién debe, con base en qué, y qué ocurre si no paga."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Tokenizar representa digitalmente um direito sobre um ativo que existe fora da rede.",
+                    "A tecnologia facilita transferência e fracionamento, não a qualidade do ativo.",
+                    "A análise começa pelo emissor, pelo direito concedido e pelo que acontece em caso de inadimplência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Tokenizing digitally represents a right over an asset that exists off the network.",
+                    "The technology eases transfer and fractionalization, not the asset's quality.",
+                    "Analysis starts with the issuer, the right granted and what happens on default."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Tokenizar representa digitalmente un derecho sobre un activo que existe fuera de la red.",
+                    "La tecnología facilita la transferencia y el fraccionamiento, no la calidad del activo.",
+                    "El análisis empieza por el emisor, el derecho concedido y qué ocurre en caso de impago."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "crypto_exchange_counterparty_risk",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Contraparte em Corretoras de Cripto"
+            },
+            "en": {
+              "title": "Counterparty Risk at Crypto Exchanges"
+            },
+            "es": {
+              "title": "Riesgo de Contraparte en Casas de Cambio Cripto"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Saldo na tela é uma promessa de alguém",
+                  "body": "Quando seus criptoativos ficam em uma corretora, o que você tem é um registro no sistema dela — uma obrigação daquela empresa com você. Isso é diferente de manter o ativo sob custódia própria, em que o controle das chaves é seu. A distinção parece técnica até o dia em que a empresa enfrenta um problema de solvência, uma falha de segurança ou uma medida judicial: nesses cenários, o saldo na tela e o acesso ao ativo podem deixar de ser a mesma coisa."
+                },
+                "en": {
+                  "title": "A balance on screen is somebody's promise",
+                  "body": "When your cryptoassets sit at an exchange, what you have is a record in its system — an obligation of that company to you. That is different from self-custody, where you control the keys. The distinction feels technical until the day the company faces a solvency problem, a security breach or a court order: in those scenarios, the balance on screen and access to the asset can stop being the same thing."
+                },
+                "es": {
+                  "title": "Un saldo en la pantalla es la promesa de alguien",
+                  "body": "Cuando tus criptoactivos están en una casa de cambio, lo que tienes es un registro en su sistema — una obligación de esa empresa contigo. Eso es distinto de mantener el activo en autocustodia, donde el control de las claves es tuyo. La distinción parece técnica hasta el día en que la empresa enfrenta un problema de solvencia, una falla de seguridad o una medida judicial: en esos escenarios, el saldo en la pantalla y el acceso al activo pueden dejar de ser la misma cosa."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas pessoas têm a mesma quantidade do mesmo criptoativo. Uma deixa tudo em uma corretora, pela comodidade de negociar rápido. A outra mantém a maior parte em custódia própria e só leva para a corretora o que pretende negociar. Se a corretora suspender saques, a primeira fica esperando uma decisão que não depende dela; a segunda perde acesso apenas à parcela que estava lá."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two people hold the same amount of the same cryptoasset. One leaves everything at an exchange, for the convenience of trading quickly. The other keeps most of it in self-custody and only moves to the exchange what they intend to trade. If the exchange suspends withdrawals, the first is left waiting on a decision they don't control; the second loses access only to the portion that was there."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos personas tienen la misma cantidad del mismo criptoactivo. Una deja todo en una casa de cambio, por la comodidad de negociar rápido. La otra mantiene la mayor parte en autocustodia y solo lleva a la casa de cambio lo que pretende negociar. Si la casa de cambio suspende los retiros, la primera queda esperando una decisión que no depende de ella; la segunda pierde acceso solo a la porción que estaba allí."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "O que significa manter criptoativos em uma corretora, do ponto de vista de risco?",
+                  "options": [
+                    "Que o ativo está protegido por garantias equivalentes às de um depósito bancário tradicional",
+                    "Que o ativo não pode mais ser transferido para custódia própria",
+                    "Que o risco de mercado do ativo desaparece enquanto ele estiver lá",
+                    "Que, além do risco do ativo, você assume o risco de a própria empresa falhar"
+                  ],
+                  "explanation": "Custódia em terceiro adiciona uma camada de risco: o desempenho do ativo continua, e soma-se a ele a solidez de quem guarda."
+                },
+                "en": {
+                  "prompt": "What does holding cryptoassets at an exchange mean, from a risk standpoint?",
+                  "options": [
+                    "That the asset is protected by guarantees equivalent to a traditional bank deposit's",
+                    "That the asset can no longer be moved to self-custody",
+                    "That the asset's market risk disappears while it sits there",
+                    "That, on top of the asset's risk, you take on the risk of the company itself failing"
+                  ],
+                  "explanation": "Third-party custody adds a layer of risk: the asset's performance still applies, plus the soundness of whoever holds it."
+                },
+                "es": {
+                  "prompt": "¿Qué significa mantener criptoactivos en una casa de cambio, desde el punto de vista del riesgo?",
+                  "options": [
+                    "Que el activo está protegido por garantías equivalentes a las de un depósito bancario tradicional",
+                    "Que el activo ya no puede transferirse a autocustodia",
+                    "Que el riesgo de mercado del activo desaparece mientras esté allí",
+                    "Que, además del riesgo del activo, asumes el riesgo de que la propia empresa falle"
+                  ],
+                  "explanation": "La custodia en un tercero añade una capa de riesgo: el desempeño del activo sigue, y se le suma la solidez de quien lo guarda."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você mantém uma posição relevante em cripto e quer reduzir o risco de contraparte sem abrir mão de negociar. Qual abordagem é mais coerente?",
+                  "options": [
+                    "Distribuir tudo entre várias corretoras, o que elimina o risco de contraparte",
+                    "Concentrar tudo na corretora de maior volume, porque tamanho garante solidez",
+                    "Manter na corretora apenas a parcela necessária para negociar e o restante sob custódia própria, ciente de que isso transfere para você a responsabilidade pelas chaves",
+                    "Converter tudo em stablecoins dentro da corretora, o que encerra qualquer risco"
+                  ],
+                  "explanation": "Reduzir exposição a uma contraparte é limitar o quanto fica com ela. Custódia própria resolve esse risco específico e cria outro: a guarda das suas chaves passa a ser sua."
+                },
+                "en": {
+                  "prompt": "You hold a meaningful crypto position and want to reduce counterparty risk without giving up trading. Which approach is more coherent?",
+                  "options": [
+                    "Spread everything across several exchanges, which eliminates counterparty risk",
+                    "Concentrate everything at the highest-volume exchange, because size guarantees soundness",
+                    "Keep at the exchange only the portion needed to trade and the rest in self-custody, aware that this transfers responsibility for the keys to you",
+                    "Convert everything into stablecoins inside the exchange, which ends any risk"
+                  ],
+                  "explanation": "Reducing exposure to a counterparty means limiting how much sits with it. Self-custody solves that specific risk and creates another: safeguarding your keys becomes your job."
+                },
+                "es": {
+                  "prompt": "Mantienes una posición relevante en cripto y quieres reducir el riesgo de contraparte sin renunciar a negociar. ¿Qué enfoque es más coherente?",
+                  "options": [
+                    "Distribuir todo entre varias casas de cambio, lo que elimina el riesgo de contraparte",
+                    "Concentrar todo en la casa de cambio de mayor volumen, porque el tamaño garantiza solidez",
+                    "Mantener en la casa de cambio solo la porción necesaria para negociar y el resto en autocustodia, consciente de que eso te transfiere la responsabilidad por las claves",
+                    "Convertir todo en stablecoins dentro de la casa de cambio, lo que termina con cualquier riesgo"
+                  ],
+                  "explanation": "Reducir la exposición a una contraparte es limitar cuánto queda con ella. La autocustodia resuelve ese riesgo específico y crea otro: la guarda de tus claves pasa a ser tuya."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Saldo em corretora é uma obrigação da empresa com você, não posse direta do ativo.",
+                    "Custódia em terceiro soma o risco da empresa ao risco do ativo.",
+                    "Limitar o que fica na corretora reduz esse risco — e transfere a você a responsabilidade pelas chaves."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A balance at an exchange is the company's obligation to you, not direct ownership of the asset.",
+                    "Third-party custody adds the company's risk to the asset's risk.",
+                    "Limiting what sits at the exchange reduces that risk — and hands you responsibility for the keys."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un saldo en una casa de cambio es una obligación de la empresa contigo, no posesión directa del activo.",
+                    "La custodia en un tercero suma el riesgo de la empresa al riesgo del activo.",
+                    "Limitar lo que queda en la casa de cambio reduce ese riesgo — y te transfiere la responsabilidad por las claves."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "crypto_onchain_transparency",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Transparência On-Chain: O Que Dá Para Verificar"
+            },
+            "en": {
+              "title": "On-Chain Transparency: What You Can Verify"
+            },
+            "es": {
+              "title": "Transparencia On-Chain: Qué Se Puede Verificar"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Público não é o mesmo que identificado",
+                  "body": "Em uma blockchain pública, qualquer pessoa pode consultar as transações registradas: valores, endereços envolvidos, horário e confirmações. Isso é um grau de transparência raro em finanças. Mas os endereços são identificadores, não nomes — saber que um valor foi de um endereço a outro não revela, por si só, quem está por trás. Verificar uma transação é possível; concluir a identidade e a intenção de quem a fez, normalmente não."
+                },
+                "en": {
+                  "title": "Public is not the same as identified",
+                  "body": "On a public blockchain, anyone can look up recorded transactions: amounts, addresses involved, timestamp and confirmations. That's a degree of transparency rare in finance. But addresses are identifiers, not names — knowing that a value moved from one address to another doesn't by itself reveal who is behind it. Verifying a transaction is possible; concluding the identity and intent of whoever made it, usually not."
+                },
+                "es": {
+                  "title": "Público no es lo mismo que identificado",
+                  "body": "En una blockchain pública, cualquier persona puede consultar las transacciones registradas: montos, direcciones involucradas, horario y confirmaciones. Ese es un grado de transparencia raro en finanzas. Pero las direcciones son identificadores, no nombres — saber que un monto fue de una dirección a otra no revela, por sí solo, quién está detrás. Verificar una transacción es posible; concluir la identidad y la intención de quien la hizo, normalmente no."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Ao enviar um valor para outra pessoa, você pode acompanhar a transação em um explorador de blocos e confirmar que ela foi incluída e teve confirmações suficientes. Esse é um uso legítimo e útil da transparência. Já uma postagem afirmando que 'um grande investidor está vendendo' a partir da simples movimentação entre endereços é uma interpretação — os dados mostram o movimento, não o motivo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "When sending an amount to someone, you can follow the transaction in a block explorer and confirm it was included and received enough confirmations. That's a legitimate and useful use of transparency. A post claiming 'a big investor is selling' based on a simple movement between addresses, on the other hand, is an interpretation — the data shows the movement, not the motive."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Al enviar un monto a otra persona, puedes seguir la transacción en un explorador de bloques y confirmar que fue incluida y tuvo suficientes confirmaciones. Ese es un uso legítimo y útil de la transparencia. En cambio, una publicación que afirma que 'un gran inversor está vendiendo' a partir del simple movimiento entre direcciones es una interpretación — los datos muestran el movimiento, no el motivo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que um explorador de blocos permite verificar em uma blockchain pública?",
+                  "options": [
+                    "As transações registradas, com valores, endereços e confirmações",
+                    "O nome civil do titular de cada endereço",
+                    "A intenção de quem realizou cada transferência",
+                    "O saldo bancário tradicional de cada participante"
+                  ],
+                  "explanation": "O registro é público e auditável; a identidade por trás dos endereços, em geral, não está nele."
+                },
+                "en": {
+                  "prompt": "What does a block explorer let you verify on a public blockchain?",
+                  "options": [
+                    "The recorded transactions, with amounts, addresses and confirmations",
+                    "The legal name of each address's holder",
+                    "The intent of whoever made each transfer",
+                    "Each participant's traditional bank balance"
+                  ],
+                  "explanation": "The ledger is public and auditable; the identity behind the addresses generally isn't in it."
+                },
+                "es": {
+                  "prompt": "¿Qué permite verificar un explorador de bloques en una blockchain pública?",
+                  "options": [
+                    "Las transacciones registradas, con montos, direcciones y confirmaciones",
+                    "El nombre civil del titular de cada dirección",
+                    "La intención de quien realizó cada transferencia",
+                    "El saldo bancario tradicional de cada participante"
+                  ],
+                  "explanation": "El registro es público y auditable; la identidad detrás de las direcciones, en general, no está en él."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você vê uma análise afirmando que uma grande movimentação entre endereços prova uma venda iminente no mercado. Como avaliar essa afirmação?",
+                  "options": [
+                    "Aceitar, porque dados on-chain são objetivos e não admitem interpretação",
+                    "Tratar como hipótese: o dado mostra que houve movimentação, mas o motivo e até o titular costumam ser desconhecidos",
+                    "Descartar qualquer dado on-chain, porque nada ali é confiável",
+                    "Concluir o contrário: movimentações grandes sempre indicam compra"
+                  ],
+                  "explanation": "O dado é confiável quanto ao que registra — que houve uma transferência. A narrativa sobre o porquê é inferência, e pode estar errada."
+                },
+                "en": {
+                  "prompt": "You see an analysis claiming a large movement between addresses proves an imminent sale in the market. How should you assess that claim?",
+                  "options": [
+                    "Accept it, because on-chain data is objective and admits no interpretation",
+                    "Treat it as a hypothesis: the data shows a movement happened, but the motive and even the holder are usually unknown",
+                    "Discard any on-chain data, because nothing there is trustworthy",
+                    "Conclude the opposite: large movements always indicate buying"
+                  ],
+                  "explanation": "The data is reliable about what it records — that a transfer happened. The narrative about why is inference, and it can be wrong."
+                },
+                "es": {
+                  "prompt": "Ves un análisis que afirma que un gran movimiento entre direcciones prueba una venta inminente en el mercado. ¿Cómo evaluar esa afirmación?",
+                  "options": [
+                    "Aceptarla, porque los datos on-chain son objetivos y no admiten interpretación",
+                    "Tratarla como hipótesis: el dato muestra que hubo un movimiento, pero el motivo e incluso el titular suelen ser desconocidos",
+                    "Descartar cualquier dato on-chain, porque nada allí es confiable",
+                    "Concluir lo contrario: los movimientos grandes siempre indican compra"
+                  ],
+                  "explanation": "El dato es confiable respecto a lo que registra — que hubo una transferencia. La narrativa sobre el porqué es una inferencia, y puede estar equivocada."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Blockchains públicas permitem verificar transações, valores e confirmações.",
+                    "Endereços são identificadores, não nomes: público não significa identificado.",
+                    "Dados on-chain mostram o que aconteceu, não o motivo por trás."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Public blockchains let you verify transactions, amounts and confirmations.",
+                    "Addresses are identifiers, not names: public doesn't mean identified.",
+                    "On-chain data shows what happened, not the motive behind it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las blockchains públicas permiten verificar transacciones, montos y confirmaciones.",
+                    "Las direcciones son identificadores, no nombres: público no significa identificado.",
+                    "Los datos on-chain muestran lo que ocurrió, no el motivo detrás."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "crypto_forks_and_airdrops",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Forks e Airdrops"
+            },
+            "en": {
+              "title": "Forks and Airdrops"
+            },
+            "es": {
+              "title": "Forks y Airdrops"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando a rede se divide ou distribui tokens",
+                  "body": "Um fork acontece quando a comunidade de uma rede adota regras diferentes e o histórico se divide em dois caminhos, podendo dar origem a um novo ativo. Um airdrop é a distribuição de tokens a determinados endereços, muitas vezes como estratégia de divulgação de um projeto. Nos dois casos, aparecem no seu registro ativos que você não comprou — e isso levanta perguntas concretas: qual é o valor deles, que direitos representam e quais obrigações fiscais podem surgir no seu país."
+                },
+                "en": {
+                  "title": "When the network splits or distributes tokens",
+                  "body": "A fork happens when a network's community adopts different rules and the history splits into two paths, possibly giving rise to a new asset. An airdrop is the distribution of tokens to certain addresses, often as a project's promotion strategy. In both cases, assets you never bought show up in your records — and that raises concrete questions: what they're worth, what rights they represent, and what tax obligations may arise in your country."
+                },
+                "es": {
+                  "title": "Cuando la red se divide o distribuye tokens",
+                  "body": "Un fork ocurre cuando la comunidad de una red adopta reglas distintas y el historial se divide en dos caminos, pudiendo dar origen a un nuevo activo. Un airdrop es la distribución de tokens a determinadas direcciones, muchas veces como estrategia de difusión de un proyecto. En ambos casos, aparecen en tu registro activos que no compraste — y eso plantea preguntas concretas: cuál es su valor, qué derechos representan y qué obligaciones fiscales pueden surgir en tu país."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém encontra na carteira um token que nunca comprou, recebido em um airdrop. Antes de qualquer euforia, valem três verificações: se o token tem mercado e liquidez reais, se interagir com ele exige assinar alguma permissão na carteira — um vetor conhecido de golpes — e como esse recebimento deve ser tratado na declaração de impostos do seu país."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone finds a token in their wallet they never bought, received in an airdrop. Before any excitement, three checks are worth making: whether the token has a real market and liquidity, whether interacting with it requires signing a permission in the wallet — a known scam vector — and how that receipt should be treated in your country's tax filing."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien encuentra en su billetera un token que nunca compró, recibido en un airdrop. Antes de cualquier euforia, valen tres verificaciones: si el token tiene mercado y liquidez reales, si interactuar con él exige firmar algún permiso en la billetera — un vector conocido de estafas — y cómo debe tratarse esa recepción en la declaración de impuestos de tu país."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um fork em uma rede de criptoativos?",
+                  "options": [
+                    "A venda de parte do projeto para uma empresa privada",
+                    "A criação de uma corretora oficial ligada à rede",
+                    "A adoção de regras diferentes que divide o histórico da rede em dois caminhos",
+                    "O encerramento definitivo da rede original"
+                  ],
+                  "explanation": "Fork é uma bifurcação de regras e de histórico, que pode resultar em duas redes e, às vezes, em um novo ativo."
+                },
+                "en": {
+                  "prompt": "What characterizes a fork in a cryptoasset network?",
+                  "options": [
+                    "Selling part of the project to a private company",
+                    "Creating an official exchange tied to the network",
+                    "Adopting different rules that split the network's history into two paths",
+                    "Permanently shutting down the original network"
+                  ],
+                  "explanation": "A fork is a split in rules and history, which can result in two networks and, sometimes, a new asset."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un fork en una red de criptoactivos?",
+                  "options": [
+                    "La venta de parte del proyecto a una empresa privada",
+                    "La creación de una casa de cambio oficial ligada a la red",
+                    "La adopción de reglas distintas que divide el historial de la red en dos caminos",
+                    "El cierre definitivo de la red original"
+                  ],
+                  "explanation": "Un fork es una bifurcación de reglas y de historial, que puede resultar en dos redes y, a veces, en un nuevo activo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Um token desconhecido aparece na sua carteira e um site promete resgatar seu valor se você conectar a carteira e autorizar uma permissão. Qual é a atitude correta?",
+                  "options": [
+                    "Conectar rapidamente, antes que a oportunidade expire",
+                    "Autorizar apenas se o site tiver um cadeado de segurança no navegador",
+                    "Transferir primeiro seus outros ativos para a mesma carteira, para resgatar tudo de uma vez",
+                    "Não conectar nem autorizar nada: esse é um golpe conhecido, em que a permissão concedida pode dar acesso aos seus ativos"
+                  ],
+                  "explanation": "Tokens não solicitados são usados como isca. A permissão assinada na carteira é o que abre a porta — e ela não é revertida por arrependimento."
+                },
+                "en": {
+                  "prompt": "An unknown token appears in your wallet and a website promises to redeem its value if you connect the wallet and approve a permission. What's the right move?",
+                  "options": [
+                    "Connect quickly, before the opportunity expires",
+                    "Approve only if the site shows a security padlock in the browser",
+                    "First transfer your other assets into the same wallet, to redeem everything at once",
+                    "Don't connect or approve anything: this is a known scam, where the permission granted can give access to your assets"
+                  ],
+                  "explanation": "Unsolicited tokens are used as bait. The permission signed in the wallet is what opens the door — and regret doesn't reverse it."
+                },
+                "es": {
+                  "prompt": "Un token desconocido aparece en tu billetera y un sitio promete rescatar su valor si conectas la billetera y autorizas un permiso. ¿Cuál es la actitud correcta?",
+                  "options": [
+                    "Conectar rápidamente, antes de que la oportunidad expire",
+                    "Autorizar solo si el sitio tiene un candado de seguridad en el navegador",
+                    "Transferir primero tus otros activos a la misma billetera, para rescatar todo de una vez",
+                    "No conectar ni autorizar nada: esa es una estafa conocida, en la que el permiso concedido puede dar acceso a tus activos"
+                  ],
+                  "explanation": "Los tokens no solicitados se usan como carnada. El permiso firmado en la billetera es lo que abre la puerta — y el arrepentimiento no lo revierte."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Fork divide as regras e o histórico de uma rede, podendo gerar um novo ativo.",
+                    "Airdrop distribui tokens a endereços, muitas vezes como divulgação de um projeto.",
+                    "Ativos que aparecem sem compra pedem verificação de mercado, de segurança e de obrigações fiscais."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A fork splits a network's rules and history, possibly creating a new asset.",
+                    "An airdrop distributes tokens to addresses, often as a project's promotion.",
+                    "Assets that appear without a purchase call for checks on market, security and tax obligations."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un fork divide las reglas y el historial de una red, pudiendo generar un nuevo activo.",
+                    "Un airdrop distribuye tokens a direcciones, muchas veces como difusión de un proyecto.",
+                    "Los activos que aparecen sin compra exigen verificar mercado, seguridad y obligaciones fiscales."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

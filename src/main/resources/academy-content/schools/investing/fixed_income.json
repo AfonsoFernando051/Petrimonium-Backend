@@ -2721,6 +2721,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "fixed_income_specialist_topics",
+      "order": 3,
+      "iconKey": "shield_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "SPECIALIZATION",
+      "prerequisites": [
+        "fixed_income_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Renda Fixa: Nível Especialista",
+          "description": "Curva de juros, juro real, cupom periódico, spread de crédito e liquidez no mercado secundário."
+        },
+        "en": {
+          "title": "Fixed Income: Specialist Level",
+          "description": "The yield curve, real yield, periodic coupons, credit spread and secondary-market liquidity."
+        },
+        "es": {
+          "title": "Renta Fija: Nivel Especialista",
+          "description": "Curva de tasas, tasa real, cupón periódico, spread de crédito y liquidez en el mercado secundario."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "fixed_income_yield_curve",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Curva de Juros: O Que o Mercado Espera"
+            },
+            "en": {
+              "title": "The Yield Curve: What the Market Expects"
+            },
+            "es": {
+              "title": "Curva de Tasas: Lo Que el Mercado Espera"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma taxa para cada prazo",
+                  "body": "Não existe uma única taxa de juros: existe uma taxa para cada prazo de vencimento. A curva de juros é justamente o desenho formado por essas taxas, do prazo mais curto ao mais longo. Quando os prazos longos exigem taxas maiores que os curtos, dizemos que a curva está inclinada para cima — o normal quando o mercado pede um prêmio para emprestar por mais tempo. Quando os prazos curtos pagam mais que os longos, a curva está invertida, o que costuma indicar que o mercado espera juros menores à frente."
+                },
+                "en": {
+                  "title": "One rate for each maturity",
+                  "body": "There is no single interest rate: there is one rate for each maturity. The yield curve is exactly the shape those rates form, from the shortest maturity to the longest. When long maturities demand higher rates than short ones, we say the curve is upward sloping — the usual case, when the market asks for a premium to lend for longer. When short maturities pay more than long ones, the curve is inverted, which usually signals that the market expects lower rates ahead."
+                },
+                "es": {
+                  "title": "Una tasa para cada plazo",
+                  "body": "No existe una única tasa de interés: existe una tasa para cada plazo de vencimiento. La curva de tasas es justamente el dibujo que forman esas tasas, del plazo más corto al más largo. Cuando los plazos largos exigen tasas mayores que los cortos, decimos que la curva tiene pendiente positiva — lo habitual, cuando el mercado pide una prima por prestar durante más tiempo. Cuando los plazos cortos pagan más que los largos, la curva está invertida, lo que suele indicar que el mercado espera tasas más bajas más adelante."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Imagine dois títulos prefixados do mesmo emissor: um vence em 2 anos e paga uma taxa menor; outro vence em 10 anos e paga uma taxa maior. Essa diferença é a curva inclinada para cima. Se, em outro momento, o título de 2 anos passar a pagar mais que o de 10 anos, a curva inverteu — e o que mudou não foi o emissor, e sim o que o mercado passou a esperar dos juros futuros."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Picture two fixed-rate bonds from the same issuer: one matures in 2 years and pays a lower rate; the other matures in 10 years and pays a higher one. That gap is the upward-sloping curve. If, at another moment, the 2-year bond starts paying more than the 10-year one, the curve has inverted — and what changed is not the issuer, but what the market now expects from future rates."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Imagina dos títulos prefijados del mismo emisor: uno vence en 2 años y paga una tasa menor; otro vence en 10 años y paga una tasa mayor. Esa diferencia es la curva con pendiente positiva. Si, en otro momento, el título de 2 años pasa a pagar más que el de 10 años, la curva se invirtió — y lo que cambió no es el emisor, sino lo que el mercado pasó a esperar de las tasas futuras."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza uma curva de juros invertida?",
+                  "options": [
+                    "Todos os prazos passam a pagar exatamente a mesma taxa",
+                    "As taxas de prazo curto ficam maiores que as de prazo longo",
+                    "As taxas de prazo longo ficam maiores que as de prazo curto",
+                    "Os títulos deixam de pagar juros até o vencimento"
+                  ],
+                  "explanation": "Na curva invertida, o curto prazo exige mais que o longo — sinal de que o mercado espera juros menores no futuro."
+                },
+                "en": {
+                  "prompt": "What characterizes an inverted yield curve?",
+                  "options": [
+                    "Every maturity starts paying exactly the same rate",
+                    "Short-term rates become higher than long-term rates",
+                    "Long-term rates become higher than short-term rates",
+                    "Bonds stop paying interest until maturity"
+                  ],
+                  "explanation": "In an inverted curve, the short end demands more than the long end — a sign that the market expects lower rates in the future."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a una curva de tasas invertida?",
+                  "options": [
+                    "Todos los plazos pasan a pagar exactamente la misma tasa",
+                    "Las tasas de corto plazo quedan más altas que las de largo plazo",
+                    "Las tasas de largo plazo quedan más altas que las de corto plazo",
+                    "Los títulos dejan de pagar intereses hasta el vencimiento"
+                  ],
+                  "explanation": "En la curva invertida, el corto plazo exige más que el largo — señal de que el mercado espera tasas menores en el futuro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você observa que a curva está inclinada para cima e pensa em travar uma taxa prefixada de prazo longo. Como interpretar isso com cuidado?",
+                  "options": [
+                    "A taxa longa maior é o prêmio que o mercado pede pelo prazo — ela remunera mais, mas também expõe você a uma marcação a mercado mais intensa se os juros subirem",
+                    "Uma curva inclinada para cima garante que o título longo renderá mais que o curto, aconteça o que acontecer",
+                    "Curva inclinada para cima significa que não há risco algum em títulos longos",
+                    "A inclinação da curva não tem qualquer relação com o prazo dos títulos"
+                  ],
+                  "explanation": "A taxa maior no longo prazo é remuneração por assumir mais tempo — e mais sensibilidade a juros (duration). Rendimento maior contratado não elimina a oscilação de preço no caminho."
+                },
+                "en": {
+                  "prompt": "You notice the curve is upward sloping and consider locking in a long-maturity fixed rate. How should you read that carefully?",
+                  "options": [
+                    "The higher long rate is the premium the market charges for time — it pays more, but it also exposes you to sharper mark-to-market swings if rates rise",
+                    "An upward-sloping curve guarantees the long bond will out-earn the short one, no matter what",
+                    "An upward-sloping curve means there is no risk at all in long bonds",
+                    "The slope of the curve has no relation to the maturity of bonds"
+                  ],
+                  "explanation": "The higher long-term rate is compensation for taking on more time — and more rate sensitivity (duration). A higher contracted yield does not remove price swings along the way."
+                },
+                "es": {
+                  "prompt": "Observas que la curva tiene pendiente positiva y piensas en fijar una tasa prefijada de plazo largo. ¿Cómo interpretarlo con cuidado?",
+                  "options": [
+                    "La tasa larga mayor es la prima que el mercado pide por el plazo — remunera más, pero también te expone a una marcación a mercado más intensa si las tasas suben",
+                    "Una curva con pendiente positiva garantiza que el título largo rendirá más que el corto, pase lo que pase",
+                    "Una curva con pendiente positiva significa que no hay ningún riesgo en los títulos largos",
+                    "La pendiente de la curva no tiene ninguna relación con el plazo de los títulos"
+                  ],
+                  "explanation": "La tasa mayor en el largo plazo es la remuneración por asumir más tiempo — y más sensibilidad a las tasas (duration). Un rendimiento contratado mayor no elimina la oscilación de precio en el camino."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A curva de juros mostra que cada prazo de vencimento tem sua própria taxa.",
+                    "Curva inclinada para cima: o longo prazo paga mais; curva invertida: o curto paga mais.",
+                    "A inclinação reflete expectativas do mercado, não uma garantia de retorno."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The yield curve shows that each maturity has its own rate.",
+                    "Upward-sloping curve: the long end pays more; inverted curve: the short end pays more.",
+                    "The slope reflects market expectations, not a guaranteed return."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La curva de tasas muestra que cada plazo de vencimiento tiene su propia tasa.",
+                    "Curva con pendiente positiva: el largo plazo paga más; curva invertida: el corto paga más.",
+                    "La pendiente refleja expectativas del mercado, no una garantía de retorno."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fixed_income_real_vs_nominal_return",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Juro Nominal e Juro Real"
+            },
+            "en": {
+              "title": "Nominal Yield and Real Yield"
+            },
+            "es": {
+              "title": "Tasa Nominal y Tasa Real"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A taxa anunciada não é o que sobra",
+                  "body": "A taxa nominal é a que o título anuncia. O juro real é o que sobra dessa taxa depois de descontar a inflação do período — ou seja, quanto o seu poder de compra de fato aumentou. Títulos atrelados à inflação separam as duas coisas explicitamente: pagam a variação de um índice de preços mais uma taxa real contratada. Em títulos prefixados, o juro real só é conhecido depois, quando a inflação do período já aconteceu."
+                },
+                "en": {
+                  "title": "The advertised rate is not what's left",
+                  "body": "The nominal yield is the rate the bond advertises. The real yield is what remains after subtracting the period's inflation — that is, how much your purchasing power actually grew. Inflation-linked bonds separate the two explicitly: they pay a price index's variation plus a contracted real rate. With fixed-rate bonds, the real yield is only known afterwards, once the period's inflation has already happened."
+                },
+                "es": {
+                  "title": "La tasa anunciada no es lo que queda",
+                  "body": "La tasa nominal es la que el título anuncia. La tasa real es lo que queda de esa tasa después de descontar la inflación del período — es decir, cuánto aumentó de hecho tu poder de compra. Los títulos atados a la inflación separan ambas cosas explícitamente: pagan la variación de un índice de precios más una tasa real contratada. En los títulos prefijados, la tasa real solo se conoce después, cuando la inflación del período ya ocurrió."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um título prefixado com taxa nominal alta pode entregar um ganho real pequeno se a inflação do período surpreender para cima. Já um título atrelado à inflação entrega a taxa real contratada acima do índice, qualquer que seja o número da inflação — é exatamente esse o ponto dele: proteger o poder de compra, não competir por parecer a maior taxa da prateleira."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A fixed-rate bond with a high nominal rate can deliver a small real gain if the period's inflation surprises to the upside. An inflation-linked bond, on the other hand, delivers the contracted real rate on top of the index, whatever inflation turns out to be — that is precisely its point: protecting purchasing power, not competing to look like the highest rate on the shelf."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un título prefijado con tasa nominal alta puede entregar una ganancia real pequeña si la inflación del período sorprende al alza. En cambio, un título atado a la inflación entrega la tasa real contratada por encima del índice, sea cual sea el número de la inflación — ese es exactamente su punto: proteger el poder de compra, no competir por parecer la tasa más alta del estante."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é o juro real de um investimento?",
+                  "options": [
+                    "A taxa que aparece no anúncio do título, antes de qualquer desconto",
+                    "O que sobra da taxa depois de descontar a inflação do período",
+                    "A taxa cobrada pela corretora para executar a compra",
+                    "A taxa paga apenas por títulos com vencimento acima de dez anos"
+                  ],
+                  "explanation": "Juro real é o ganho acima da inflação — o que mede o aumento efetivo do seu poder de compra."
+                },
+                "en": {
+                  "prompt": "What is the real yield of an investment?",
+                  "options": [
+                    "The rate shown in the bond's headline, before any deduction",
+                    "What's left of the rate after subtracting the period's inflation",
+                    "The fee the broker charges to execute the purchase",
+                    "The rate paid only by bonds maturing in more than ten years"
+                  ],
+                  "explanation": "The real yield is the gain above inflation — what measures the actual increase in your purchasing power."
+                },
+                "es": {
+                  "prompt": "¿Qué es la tasa real de una inversión?",
+                  "options": [
+                    "La tasa que aparece en el anuncio del título, antes de cualquier descuento",
+                    "Lo que queda de la tasa después de descontar la inflación del período",
+                    "La comisión que cobra la corredora para ejecutar la compra",
+                    "La tasa pagada solo por títulos con vencimiento superior a diez años"
+                  ],
+                  "explanation": "La tasa real es la ganancia por encima de la inflación — lo que mide el aumento efectivo de tu poder de compra."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você está reservando dinheiro para um objetivo que só será usado daqui a muitos anos, como a aposentadoria. Por que o juro real costuma ser a métrica mais relevante nesse caso?",
+                  "options": [
+                    "Porque o juro real é sempre maior que o nominal em prazos longos",
+                    "Porque prazos longos dispensam qualquer análise de risco de crédito",
+                    "Porque o que importa é quanto poder de compra o dinheiro terá lá na frente, e só o juro real mede isso",
+                    "Porque o juro real elimina a oscilação de preço do título até o vencimento"
+                  ],
+                  "explanation": "Em objetivos de longo prazo, a inflação acumulada pesa muito. Um retorno nominal alto que não supera a inflação não aumenta o que você conseguirá comprar."
+                },
+                "en": {
+                  "prompt": "You're setting money aside for a goal many years away, like retirement. Why is the real yield usually the more relevant metric here?",
+                  "options": [
+                    "Because the real yield is always higher than the nominal one over long horizons",
+                    "Because long horizons make credit risk analysis unnecessary",
+                    "Because what matters is how much purchasing power the money will have later, and only the real yield measures that",
+                    "Because the real yield removes the bond's price swings until maturity"
+                  ],
+                  "explanation": "Over long horizons, accumulated inflation weighs heavily. A high nominal return that doesn't beat inflation doesn't increase what you'll be able to buy."
+                },
+                "es": {
+                  "prompt": "Estás apartando dinero para un objetivo que solo usarás dentro de muchos años, como la jubilación. ¿Por qué la tasa real suele ser la métrica más relevante en este caso?",
+                  "options": [
+                    "Porque la tasa real siempre es mayor que la nominal en plazos largos",
+                    "Porque los plazos largos hacen innecesario cualquier análisis de riesgo de crédito",
+                    "Porque lo que importa es cuánto poder de compra tendrá el dinero más adelante, y solo la tasa real mide eso",
+                    "Porque la tasa real elimina la oscilación de precio del título hasta el vencimiento"
+                  ],
+                  "explanation": "En objetivos de largo plazo, la inflación acumulada pesa mucho. Un retorno nominal alto que no supera la inflación no aumenta lo que podrás comprar."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Taxa nominal é a anunciada; juro real é o que sobra depois da inflação.",
+                    "Títulos atrelados à inflação contratam a taxa real explicitamente.",
+                    "Para objetivos de longo prazo, o juro real é a métrica que mede o ganho de poder de compra."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The nominal rate is the advertised one; the real yield is what's left after inflation.",
+                    "Inflation-linked bonds contract the real rate explicitly.",
+                    "For long-term goals, the real yield is the metric that measures purchasing-power gains."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa nominal es la anunciada; la tasa real es lo que queda después de la inflación.",
+                    "Los títulos atados a la inflación contratan la tasa real explícitamente.",
+                    "Para objetivos de largo plazo, la tasa real es la métrica que mide la ganancia de poder de compra."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fixed_income_coupon_vs_zero_coupon",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Cupom Periódico ou Juros Só no Vencimento"
+            },
+            "en": {
+              "title": "Periodic Coupons or Interest Only at Maturity"
+            },
+            "es": {
+              "title": "Cupón Periódico o Intereses Solo al Vencimiento"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Dois jeitos de receber o mesmo juro",
+                  "body": "Alguns títulos de renda fixa pagam juros periodicamente, em parcelas ao longo da vida do papel — são os cupons. Outros acumulam tudo e pagam apenas no vencimento. A taxa contratada pode ser a mesma nos dois; o que muda é quando o dinheiro chega às suas mãos. Cupom gera fluxo de caixa antes do fim, mas cada parcela recebida precisa ser reinvestida a uma taxa que você ainda não conhece."
+                },
+                "en": {
+                  "title": "Two ways to receive the same interest",
+                  "body": "Some fixed-income bonds pay interest periodically, in installments over the life of the paper — those are coupons. Others accumulate everything and pay only at maturity. The contracted rate can be the same in both; what changes is when the money reaches your hands. Coupons create cash flow before the end, but each installment received has to be reinvested at a rate you don't know yet."
+                },
+                "es": {
+                  "title": "Dos formas de recibir el mismo interés",
+                  "body": "Algunos títulos de renta fija pagan intereses periódicamente, en cuotas a lo largo de la vida del papel — son los cupones. Otros acumulan todo y pagan solo al vencimiento. La tasa contratada puede ser la misma en ambos; lo que cambia es cuándo llega el dinero a tus manos. El cupón genera flujo de caja antes del final, pero cada cuota recibida debe reinvertirse a una tasa que aún no conoces."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Quem já vive da renda da carteira pode preferir um título com cupom, porque o dinheiro chega de tempos em tempos sem precisar vender nada. Quem ainda está acumulando patrimônio e não precisa daquele dinheiro tende a preferir o título que paga tudo no vencimento: os juros continuam se capitalizando dentro do próprio papel, sem depender de reinvestimento nem antecipar a cobrança de imposto sobre cada parcela."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone already living off portfolio income may prefer a coupon bond, because money arrives periodically without having to sell anything. Someone still accumulating wealth, who doesn't need that money, tends to prefer the bond that pays everything at maturity: the interest keeps compounding inside the paper itself, without depending on reinvestment or triggering tax on each installment earlier."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Quien ya vive de la renta de la cartera puede preferir un título con cupón, porque el dinero llega de tanto en tanto sin necesidad de vender nada. Quien todavía está acumulando patrimonio y no necesita ese dinero tiende a preferir el título que paga todo al vencimiento: los intereses siguen capitalizándose dentro del propio papel, sin depender de la reinversión ni adelantar el cobro de impuestos sobre cada cuota."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza um título com pagamento de cupons?",
+                  "options": [
+                    "Ele paga juros em parcelas periódicas ao longo da vida do papel",
+                    "Ele devolve todo o valor investido logo no primeiro pagamento",
+                    "Ele não tem data de vencimento definida",
+                    "Ele só pode ser comprado por investidores profissionais"
+                  ],
+                  "explanation": "Cupom é o pagamento periódico de juros antes do vencimento; sem cupom, tudo se acumula e é pago no fim."
+                },
+                "en": {
+                  "prompt": "What characterizes a bond that pays coupons?",
+                  "options": [
+                    "It pays interest in periodic installments over the life of the paper",
+                    "It returns the entire amount invested right at the first payment",
+                    "It has no defined maturity date",
+                    "It can only be bought by professional investors"
+                  ],
+                  "explanation": "A coupon is the periodic interest payment before maturity; without coupons, everything accumulates and is paid at the end."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza a un título con pago de cupones?",
+                  "options": [
+                    "Paga intereses en cuotas periódicas a lo largo de la vida del papel",
+                    "Devuelve todo el monto invertido en el primer pago",
+                    "No tiene fecha de vencimiento definida",
+                    "Solo puede ser comprado por inversores profesionales"
+                  ],
+                  "explanation": "El cupón es el pago periódico de intereses antes del vencimiento; sin cupón, todo se acumula y se paga al final."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você já viu, em outra lição, o risco de reinvestimento: não há garantia de que o dinheiro recebido antes do prazo será reaplicado à mesma taxa. Como isso se conecta aos cupons?",
+                  "options": [
+                    "Cupons eliminam o risco de reinvestimento, porque o dinheiro já está na sua conta",
+                    "Cada cupom recebido é justamente um valor que precisará ser reinvestido à taxa que estiver valendo no futuro, e é aí que esse risco aparece",
+                    "O risco de reinvestimento só existe em títulos sem cupom",
+                    "Cupons e risco de reinvestimento são conceitos de mercados diferentes, sem relação"
+                  ],
+                  "explanation": "O título com cupom devolve dinheiro ao longo do caminho — e cada devolução é uma decisão nova de onde reaplicar, a uma taxa que pode estar menor."
+                },
+                "en": {
+                  "prompt": "You've seen, in another lesson, reinvestment risk: there's no guarantee that money received before the deadline can be reinvested at the same rate. How does that connect to coupons?",
+                  "options": [
+                    "Coupons eliminate reinvestment risk, because the money is already in your account",
+                    "Each coupon received is exactly an amount that will need reinvesting at whatever rate prevails in the future, and that's where this risk shows up",
+                    "Reinvestment risk only exists in bonds without coupons",
+                    "Coupons and reinvestment risk belong to different markets, with no relation"
+                  ],
+                  "explanation": "A coupon bond gives money back along the way — and each return is a new decision about where to reinvest, at a rate that may be lower."
+                },
+                "es": {
+                  "prompt": "Ya viste, en otra lección, el riesgo de reinversión: no hay garantía de que el dinero recibido antes del plazo se reinvierta a la misma tasa. ¿Cómo se conecta eso con los cupones?",
+                  "options": [
+                    "Los cupones eliminan el riesgo de reinversión, porque el dinero ya está en tu cuenta",
+                    "Cada cupón recibido es justamente un monto que habrá que reinvertir a la tasa que esté vigente en el futuro, y ahí aparece ese riesgo",
+                    "El riesgo de reinversión solo existe en títulos sin cupón",
+                    "Cupones y riesgo de reinversión son conceptos de mercados distintos, sin relación"
+                  ],
+                  "explanation": "El título con cupón devuelve dinero por el camino — y cada devolución es una nueva decisión sobre dónde reinvertir, a una tasa que puede ser menor."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Cupom é o pagamento periódico de juros; sem cupom, tudo é pago no vencimento.",
+                    "Cupom serve a quem precisa de fluxo de caixa; sem cupom favorece a capitalização de quem ainda acumula.",
+                    "Cada cupom recebido reintroduz o risco de reinvestimento."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A coupon is a periodic interest payment; without coupons, everything is paid at maturity.",
+                    "Coupons serve those who need cash flow; no coupons favors compounding for those still accumulating.",
+                    "Each coupon received reintroduces reinvestment risk."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El cupón es el pago periódico de intereses; sin cupón, todo se paga al vencimiento.",
+                    "El cupón sirve a quien necesita flujo de caja; sin cupón favorece la capitalización de quien aún acumula.",
+                    "Cada cupón recibido reintroduce el riesgo de reinversión."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fixed_income_credit_spread",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Spread de Crédito: O Preço do Risco"
+            },
+            "en": {
+              "title": "Credit Spread: The Price of Risk"
+            },
+            "es": {
+              "title": "Spread de Crédito: El Precio del Riesgo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Por que dois títulos de mesmo prazo pagam diferente",
+                  "body": "Spread de crédito é o quanto um título paga acima de uma referência de menor risco com prazo semelhante. Ele existe porque quem empresta para um emissor mais arriscado exige ser compensado por isso. Spread maior nunca é um bônus gratuito: é o mercado precificando uma chance maior de o emissor não honrar o compromisso. Entender isso muda a leitura de uma prateleira de produtos — a taxa mais alta é uma informação sobre risco, não só sobre retorno."
+                },
+                "en": {
+                  "title": "Why two bonds with the same maturity pay differently",
+                  "body": "A credit spread is how much a bond pays above a lower-risk reference with a similar maturity. It exists because whoever lends to a riskier issuer demands compensation for it. A bigger spread is never a free bonus: it is the market pricing a higher chance that the issuer won't honor the commitment. Understanding this changes how you read a product shelf — the highest rate is information about risk, not only about return."
+                },
+                "es": {
+                  "title": "Por qué dos títulos del mismo plazo pagan distinto",
+                  "body": "El spread de crédito es cuánto paga un título por encima de una referencia de menor riesgo con plazo similar. Existe porque quien presta a un emisor más arriesgado exige ser compensado por ello. Un spread mayor nunca es un bono gratuito: es el mercado poniendo precio a una mayor probabilidad de que el emisor no honre el compromiso. Entender esto cambia la lectura de un estante de productos — la tasa más alta es información sobre riesgo, no solo sobre retorno."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Dois CDBs com o mesmo prazo e a mesma liquidez, um de um banco grande e outro de um banco pequeno: o do banco pequeno normalmente precisa oferecer um percentual do CDI mais alto para atrair dinheiro. Esse 'a mais' é o spread de crédito. Ele pode valer a pena dentro de limites e com diversificação de emissores — mas é uma escolha consciente de assumir mais risco, não uma taxa melhor pelo mesmo produto."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two CDBs with the same maturity and the same liquidity, one from a large bank and one from a small bank: the small bank's usually has to offer a higher percentage of the benchmark rate to attract money. That 'extra' is the credit spread. It can be worth it within limits and with issuer diversification — but it's a conscious choice to take more risk, not a better rate for the same product."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos CDB con el mismo plazo y la misma liquidez, uno de un banco grande y otro de un banco pequeño: el del banco pequeño normalmente necesita ofrecer un porcentaje del CDI más alto para atraer dinero. Ese 'de más' es el spread de crédito. Puede valer la pena dentro de ciertos límites y con diversificación de emisores — pero es una elección consciente de asumir más riesgo, no una mejor tasa por el mismo producto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Dois títulos têm o mesmo prazo e a mesma liquidez, mas um paga bem mais que o outro. Qual é a explicação mais provável?",
+                  "options": [
+                    "O título que paga mais foi emitido primeiro",
+                    "O título que paga menos tem prazo mais longo",
+                    "O emissor do título que paga mais é percebido como mais arriscado, e o spread compensa isso",
+                    "A diferença é apenas uma promoção da corretora, sem relação com risco"
+                  ],
+                  "explanation": "Mantidos prazo e liquidez iguais, a diferença de taxa reflete principalmente a diferença de risco de crédito entre os emissores."
+                },
+                "en": {
+                  "prompt": "Two bonds have the same maturity and the same liquidity, but one pays considerably more. What's the most likely explanation?",
+                  "options": [
+                    "The bond that pays more was issued first",
+                    "The bond that pays less has a longer maturity",
+                    "The issuer of the higher-paying bond is perceived as riskier, and the spread compensates for that",
+                    "The difference is just a broker promotion, unrelated to risk"
+                  ],
+                  "explanation": "Holding maturity and liquidity equal, the rate difference mostly reflects the difference in credit risk between issuers."
+                },
+                "es": {
+                  "prompt": "Dos títulos tienen el mismo plazo y la misma liquidez, pero uno paga bastante más que el otro. ¿Cuál es la explicación más probable?",
+                  "options": [
+                    "El título que paga más fue emitido primero",
+                    "El título que paga menos tiene un plazo más largo",
+                    "El emisor del título que paga más se percibe como más arriesgado, y el spread compensa eso",
+                    "La diferencia es solo una promoción de la corredora, sin relación con el riesgo"
+                  ],
+                  "explanation": "Manteniendo plazo y liquidez iguales, la diferencia de tasa refleja principalmente la diferencia de riesgo de crédito entre los emisores."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você encontra um título com spread bem acima do que emissores semelhantes oferecem. Qual é a leitura mais madura dessa situação?",
+                  "options": [
+                    "É uma oportunidade rara e deve concentrar a maior parte da sua renda fixa nele",
+                    "O spread alto indica que o emissor é mais sólido que os concorrentes",
+                    "O spread alto torna desnecessário verificar a cobertura de garantias",
+                    "O spread é um sinal de que o mercado enxerga mais risco ali — vale investigar o emissor, checar a cobertura de garantia aplicável e limitar a concentração"
+                  ],
+                  "explanation": "Spread fora da curva é um sinal, não um prêmio. A resposta é investigar e dimensionar a posição, não ignorar o que o mercado está dizendo."
+                },
+                "en": {
+                  "prompt": "You find a bond with a spread well above what similar issuers offer. What's the more mature reading of that situation?",
+                  "options": [
+                    "It's a rare opportunity and should hold most of your fixed-income allocation",
+                    "A high spread indicates the issuer is sounder than its competitors",
+                    "A high spread makes it unnecessary to check guarantee coverage",
+                    "The spread is a sign that the market sees more risk there — it's worth investigating the issuer, checking any applicable guarantee coverage and limiting concentration"
+                  ],
+                  "explanation": "An off-the-curve spread is a signal, not a prize. The answer is to investigate and size the position, not ignore what the market is saying."
+                },
+                "es": {
+                  "prompt": "Encuentras un título con un spread muy por encima de lo que ofrecen emisores similares. ¿Cuál es la lectura más madura de esa situación?",
+                  "options": [
+                    "Es una oportunidad rara y debe concentrar la mayor parte de tu renta fija",
+                    "El spread alto indica que el emisor es más sólido que sus competidores",
+                    "El spread alto hace innecesario verificar la cobertura de garantías",
+                    "El spread es una señal de que el mercado ve más riesgo ahí — vale investigar al emisor, verificar la cobertura de garantía aplicable y limitar la concentración"
+                  ],
+                  "explanation": "Un spread fuera de la curva es una señal, no un premio. La respuesta es investigar y dimensionar la posición, no ignorar lo que el mercado está diciendo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Spread de crédito é o prêmio pago acima de uma referência de menor risco de prazo semelhante.",
+                    "Spread maior significa risco percebido maior, não taxa melhor pelo mesmo produto.",
+                    "Diante de um spread fora do padrão, investigue o emissor e limite a concentração."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A credit spread is the premium paid above a lower-risk reference of similar maturity.",
+                    "A bigger spread means greater perceived risk, not a better rate for the same product.",
+                    "Facing an off-pattern spread, investigate the issuer and limit concentration."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El spread de crédito es la prima pagada por encima de una referencia de menor riesgo y plazo similar.",
+                    "Un spread mayor significa mayor riesgo percibido, no una mejor tasa por el mismo producto.",
+                    "Ante un spread fuera de lo común, investiga al emisor y limita la concentración."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fixed_income_liquidity_and_secondary_market",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Liquidez e Mercado Secundário"
+            },
+            "en": {
+              "title": "Liquidity and the Secondary Market"
+            },
+            "es": {
+              "title": "Liquidez y Mercado Secundario"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Poder sair não é o mesmo que sair bem",
+                  "body": "Liquidez é a facilidade de transformar um investimento em dinheiro sem perda relevante de valor. Em renda fixa, há duas situações bem diferentes: o título com liquidez oferecida pelo próprio emissor, em que você resgata nas condições contratadas, e o título sem essa liquidez, que antes do vencimento só sai se alguém no mercado secundário quiser comprá-lo — pelo preço que estiver valendo naquele dia, que pode ser menor do que você pagou."
+                },
+                "en": {
+                  "title": "Being able to exit is not the same as exiting well",
+                  "body": "Liquidity is how easily an investment turns into cash without a meaningful loss of value. In fixed income there are two quite different situations: a bond with liquidity offered by the issuer itself, where you redeem under the contracted terms, and a bond without it, which before maturity only leaves your hands if someone in the secondary market wants to buy it — at whatever price prevails that day, which may be lower than what you paid."
+                },
+                "es": {
+                  "title": "Poder salir no es lo mismo que salir bien",
+                  "body": "La liquidez es la facilidad de convertir una inversión en dinero sin pérdida relevante de valor. En renta fija hay dos situaciones bien distintas: el título con liquidez ofrecida por el propio emisor, donde rescatas en las condiciones contratadas, y el título sin esa liquidez, que antes del vencimiento solo sale si alguien en el mercado secundario quiere comprarlo — al precio que esté vigente ese día, que puede ser menor de lo que pagaste."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um CDB com liquidez diária permite resgatar quando você quiser, recebendo o que rendeu até ali. Um CDB de prazo fechado, com a mesma taxa, pode acabar valendo menos se você precisar vendê-lo no meio do caminho depois de uma alta de juros — a diferença entre os dois não aparece na taxa anunciada, aparece no dia em que você precisa do dinheiro antes do previsto."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A CDB with daily liquidity lets you redeem whenever you want, receiving what it has earned so far. A locked-maturity CDB, at the same rate, may end up worth less if you need to sell it midway after a rate rise — the difference between the two doesn't show up in the advertised rate, it shows up on the day you need the money earlier than planned."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un CDB con liquidez diaria permite rescatar cuando quieras, recibiendo lo que rindió hasta ahí. Un CDB de plazo cerrado, con la misma tasa, puede terminar valiendo menos si necesitas venderlo a mitad de camino tras una subida de tasas — la diferencia entre ambos no aparece en la tasa anunciada, aparece el día en que necesitas el dinero antes de lo previsto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que significa dizer que um investimento tem boa liquidez?",
+                  "options": [
+                    "Que ele garante o maior retorno da categoria",
+                    "Que ele pode ser transformado em dinheiro rapidamente e sem perda relevante de valor",
+                    "Que ele é isento de qualquer tipo de risco",
+                    "Que ele só pode ser resgatado no vencimento"
+                  ],
+                  "explanation": "Liquidez trata da facilidade e do custo de sair do investimento, não do tamanho do retorno."
+                },
+                "en": {
+                  "prompt": "What does it mean to say an investment has good liquidity?",
+                  "options": [
+                    "That it guarantees the highest return in its category",
+                    "That it can be turned into cash quickly and without a meaningful loss of value",
+                    "That it is free of any kind of risk",
+                    "That it can only be redeemed at maturity"
+                  ],
+                  "explanation": "Liquidity is about how easily and at what cost you can exit the investment, not about the size of the return."
+                },
+                "es": {
+                  "prompt": "¿Qué significa decir que una inversión tiene buena liquidez?",
+                  "options": [
+                    "Que garantiza el mayor retorno de la categoría",
+                    "Que puede convertirse en dinero rápidamente y sin pérdida relevante de valor",
+                    "Que está exenta de cualquier tipo de riesgo",
+                    "Que solo puede rescatarse al vencimiento"
+                  ],
+                  "explanation": "La liquidez trata de la facilidad y del costo de salir de la inversión, no del tamaño del retorno."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você vai montar sua reserva de emergência e encontra um título de prazo fechado com taxa bem superior à das opções com liquidez diária. Qual decisão é mais coerente com a função dessa reserva?",
+                  "options": [
+                    "Priorizar a liquidez diária, porque a reserva precisa estar disponível exatamente no dia imprevisto em que for necessária",
+                    "Escolher o título de prazo fechado, porque a taxa maior compensa qualquer inconveniente",
+                    "Dividir a reserva meio a meio, já que a taxa média fica melhor",
+                    "Escolher o título de prazo fechado e resgatar antecipadamente se precisar, sem custo algum"
+                  ],
+                  "explanation": "A reserva de emergência tem uma função antes de tudo: estar disponível na hora certa. Uma taxa maior não ajuda se o dinheiro estiver preso — ou só sair com deságio — justamente no dia em que você precisar dele."
+                },
+                "en": {
+                  "prompt": "You're building your emergency fund and find a locked-maturity bond with a rate well above the daily-liquidity options. Which decision fits that fund's purpose better?",
+                  "options": [
+                    "Prioritize daily liquidity, because the fund needs to be available exactly on the unforeseen day it's needed",
+                    "Choose the locked-maturity bond, because the higher rate compensates for any inconvenience",
+                    "Split the fund in half, since the average rate comes out better",
+                    "Choose the locked-maturity bond and redeem early if needed, at no cost at all"
+                  ],
+                  "explanation": "The emergency fund has one purpose above all: being available at the right moment. A higher rate doesn't help if the money is locked — or only leaves at a discount — precisely on the day you need it."
+                },
+                "es": {
+                  "prompt": "Vas a armar tu fondo de emergencia y encuentras un título de plazo cerrado con una tasa muy superior a las opciones con liquidez diaria. ¿Qué decisión es más coherente con la función de ese fondo?",
+                  "options": [
+                    "Priorizar la liquidez diaria, porque el fondo necesita estar disponible exactamente el día imprevisto en que se necesite",
+                    "Elegir el título de plazo cerrado, porque la tasa mayor compensa cualquier inconveniente",
+                    "Dividir el fondo por la mitad, ya que la tasa promedio queda mejor",
+                    "Elegir el título de plazo cerrado y rescatar anticipadamente si hace falta, sin costo alguno"
+                  ],
+                  "explanation": "El fondo de emergencia tiene una función ante todo: estar disponible en el momento justo. Una tasa mayor no ayuda si el dinero está inmovilizado — o solo sale con descuento — justamente el día en que lo necesitas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Liquidez é a facilidade de virar dinheiro sem perda relevante de valor.",
+                    "Liquidez dada pelo emissor e venda no mercado secundário são situações diferentes.",
+                    "Para a reserva de emergência, a disponibilidade pesa mais que a taxa."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Liquidity is how easily you turn an asset into cash without a meaningful loss of value.",
+                    "Issuer-provided liquidity and selling in the secondary market are different situations.",
+                    "For the emergency fund, availability matters more than the rate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La liquidez es la facilidad de convertir en dinero sin pérdida relevante de valor.",
+                    "La liquidez dada por el emisor y la venta en el mercado secundario son situaciones distintas.",
+                    "Para el fondo de emergencia, la disponibilidad pesa más que la tasa."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
