@@ -2528,6 +2528,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "risk_beyond_the_chart",
+      "order": 4,
+      "iconKey": "gpp_maybe_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "risk_quantification_advanced"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Riscos Fora do Gráfico",
+          "description": "Risco operacional, fraude e engenharia social, capital humano, ponto único de falha e risco de modelo."
+        },
+        "en": {
+          "title": "Risks Beyond the Chart",
+          "description": "Operational risk, fraud and social engineering, human capital, single points of failure and model risk."
+        },
+        "es": {
+          "title": "Riesgos Fuera del Gráfico",
+          "description": "Riesgo operacional, fraude e ingeniería social, capital humano, punto único de falla y riesgo de modelo."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "risk_operational_and_execution",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco Operacional: Quando Falha o Processo, Não o Mercado"
+            },
+            "en": {
+              "title": "Operational Risk: When the Process Fails, Not the Market"
+            },
+            "es": {
+              "title": "Riesgo Operacional: Cuando Falla el Proceso, No el Mercado"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Nem toda perda vem de uma queda de preço",
+                  "body": "Risco operacional é a possibilidade de perda causada por falhas de processo, de sistema ou de pessoas — não por movimento de mercado. Uma ordem enviada com a quantidade errada, um sistema fora do ar justamente no dia em que você precisava agir, um cadastro desatualizado que atrasa um resgate: nada disso aparece em um gráfico de preços, e todos podem custar dinheiro real. É um risco que se reduz com processo, não com diversificação."
+                },
+                "en": {
+                  "title": "Not every loss comes from a price drop",
+                  "body": "Operational risk is the possibility of loss caused by failures of process, systems or people — not by market moves. An order sent with the wrong quantity, a platform down exactly on the day you needed to act, outdated registration data delaying a withdrawal: none of it shows up on a price chart, and all of it can cost real money. It's a risk you reduce with process, not with diversification."
+                },
+                "es": {
+                  "title": "No toda pérdida viene de una caída de precio",
+                  "body": "El riesgo operacional es la posibilidad de pérdida causada por fallas de proceso, de sistema o de personas — no por movimientos de mercado. Una orden enviada con la cantidad equivocada, un sistema caído justamente el día en que necesitabas actuar, un registro desactualizado que retrasa un rescate: nada de eso aparece en un gráfico de precios, y todo puede costar dinero real. Es un riesgo que se reduce con proceso, no con diversificación."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém digita a quantidade no campo do preço ao enviar uma ordem e executa uma operação muito maior do que pretendia. O mercado não fez nada de errado; o processo falhou. Conferir a ordem antes de confirmar, usar tipos de ordem com limite e manter dados cadastrais atualizados são medidas pequenas que atacam exatamente essa categoria de risco."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone types the quantity into the price field when sending an order and executes a far larger trade than intended. The market did nothing wrong; the process failed. Reviewing the order before confirming, using order types with limits and keeping registration data current are small measures that target exactly this category of risk."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien escribe la cantidad en el campo del precio al enviar una orden y ejecuta una operación mucho mayor de la que pretendía. El mercado no hizo nada malo; el proceso falló. Revisar la orden antes de confirmar, usar tipos de orden con límite y mantener los datos de registro actualizados son medidas pequeñas que atacan exactamente esta categoría de riesgo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que caracteriza o risco operacional?",
+                  "options": [
+                    "A possibilidade de os preços dos ativos caírem de forma acentuada",
+                    "A possibilidade de perda por falha de processo, sistema ou pessoa",
+                    "A chance de o emissor de um título não pagar sua dívida",
+                    "A dificuldade de vender um ativo sem perda relevante de valor"
+                  ],
+                  "explanation": "É o risco da execução, não do mercado: falhas humanas, de processo e de tecnologia."
+                },
+                "en": {
+                  "prompt": "What characterizes operational risk?",
+                  "options": [
+                    "The possibility of asset prices falling sharply",
+                    "The possibility of loss through failures of process, systems or people",
+                    "The chance that a bond's issuer won't pay its debt",
+                    "The difficulty of selling an asset without a meaningful loss of value"
+                  ],
+                  "explanation": "It's execution risk, not market risk: human, process and technology failures."
+                },
+                "es": {
+                  "prompt": "¿Qué caracteriza al riesgo operacional?",
+                  "options": [
+                    "La posibilidad de que los precios de los activos caigan de forma acentuada",
+                    "La posibilidad de pérdida por falla de proceso, sistema o persona",
+                    "La probabilidad de que el emisor de un título no pague su deuda",
+                    "La dificultad de vender un activo sin pérdida relevante de valor"
+                  ],
+                  "explanation": "Es el riesgo de la ejecución, no del mercado: fallas humanas, de proceso y de tecnología."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você percebe que já cometeu dois erros de digitação ao enviar ordens. Qual resposta ataca a causa?",
+                  "options": [
+                    "Diversificar mais a carteira, já que diversificação reduz todo tipo de risco",
+                    "Investir apenas em ativos de menor volatilidade, para que os erros custem menos",
+                    "Aceitar o erro como parte inevitável de investir e seguir igual",
+                    "Criar um passo fixo de conferência antes de confirmar e usar ordens com limite em vez de ordens a mercado"
+                  ],
+                  "explanation": "Diversificação não protege contra erro de execução. O que reduz risco operacional é mudar o processo — uma checagem fixa e um tipo de ordem que limita o estrago."
+                },
+                "en": {
+                  "prompt": "You realize you've already made two typing mistakes when sending orders. Which response attacks the cause?",
+                  "options": [
+                    "Diversify the portfolio further, since diversification reduces every kind of risk",
+                    "Invest only in lower-volatility assets, so mistakes cost less",
+                    "Accept the mistake as an inevitable part of investing and carry on unchanged",
+                    "Create a fixed review step before confirming and use limit orders instead of market orders"
+                  ],
+                  "explanation": "Diversification doesn't protect against execution errors. What reduces operational risk is changing the process — a fixed check and an order type that caps the damage."
+                },
+                "es": {
+                  "prompt": "Notas que ya cometiste dos errores de digitación al enviar órdenes. ¿Qué respuesta ataca la causa?",
+                  "options": [
+                    "Diversificar más la cartera, ya que la diversificación reduce todo tipo de riesgo",
+                    "Invertir solo en activos de menor volatilidad, para que los errores cuesten menos",
+                    "Aceptar el error como parte inevitable de invertir y seguir igual",
+                    "Crear un paso fijo de revisión antes de confirmar y usar órdenes con límite en lugar de órdenes a mercado"
+                  ],
+                  "explanation": "La diversificación no protege contra el error de ejecución. Lo que reduce el riesgo operacional es cambiar el proceso — una revisión fija y un tipo de orden que limite el daño."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Risco operacional é perda por falha de processo, sistema ou pessoa.",
+                    "Ele não aparece em gráficos de preço e não é reduzido por diversificação.",
+                    "A defesa é processo: conferência antes de confirmar, ordens com limite, cadastro em dia."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Operational risk is loss through process, system or people failures.",
+                    "It doesn't show on price charts and isn't reduced by diversification.",
+                    "The defense is process: review before confirming, limit orders, current registration data."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El riesgo operacional es pérdida por falla de proceso, sistema o persona.",
+                    "No aparece en los gráficos de precio y no se reduce con diversificación.",
+                    "La defensa es el proceso: revisión antes de confirmar, órdenes con límite, registro al día."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_fraud_and_social_engineering",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Fraude e Engenharia Social"
+            },
+            "en": {
+              "title": "Fraud and Social Engineering"
+            },
+            "es": {
+              "title": "Fraude e Ingeniería Social"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O alvo do golpe é a pessoa, não o sistema",
+                  "body": "Engenharia social é a manipulação da pessoa para que ela mesma entregue acesso, dados ou dinheiro. O golpista não precisa quebrar uma tecnologia se conseguir criar urgência, medo ou a impressão de autoridade. Por isso os sinais de alerta são quase sempre os mesmos, qualquer que seja o canal: pressa artificial, promessa de retorno garantido, pedido de sigilo e contato partindo de quem procurou você — não o contrário."
+                },
+                "en": {
+                  "title": "The target of the scam is the person, not the system",
+                  "body": "Social engineering is manipulating a person so that they themselves hand over access, data or money. The scammer doesn't need to break technology if they can create urgency, fear or the impression of authority. That's why the warning signs are almost always the same, whatever the channel: artificial haste, a promise of guaranteed returns, a request for secrecy, and contact initiated by whoever approached you — not the other way around."
+                },
+                "es": {
+                  "title": "El objetivo de la estafa es la persona, no el sistema",
+                  "body": "La ingeniería social es la manipulación de la persona para que ella misma entregue acceso, datos o dinero. El estafador no necesita romper una tecnología si consigue crear urgencia, miedo o la impresión de autoridad. Por eso las señales de alerta son casi siempre las mismas, sea cual sea el canal: prisa artificial, promesa de retorno garantizado, pedido de secreto y contacto iniciado por quien te buscó — no al revés."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma mensagem avisa que há um problema urgente na sua conta e oferece um link para resolver. Outra apresenta uma oportunidade de investimento com retorno fixo muito acima do mercado, disponível só hoje. Em ambos os casos, a defesa é a mesma e é simples: não use o canal que chegou até você. Encerre o contato e procure a instituição pelos canais oficiais que você mesmo conhece."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A message warns of an urgent problem with your account and offers a link to fix it. Another presents an investment opportunity with a fixed return far above the market, available today only. In both cases the defense is the same and it's simple: don't use the channel that reached you. End the contact and reach the institution through official channels you already know."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un mensaje avisa que hay un problema urgente en tu cuenta y ofrece un enlace para resolverlo. Otro presenta una oportunidad de inversión con retorno fijo muy por encima del mercado, disponible solo hoy. En ambos casos la defensa es la misma y es simple: no uses el canal que llegó hasta ti. Termina el contacto y busca a la institución por los canales oficiales que tú mismo conoces."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual combinação é o sinal de alerta mais clássico de um golpe financeiro?",
+                  "options": [
+                    "Urgência artificial somada à promessa de retorno garantido e acima do mercado",
+                    "Um produto que exige leitura de regulamento antes da contratação",
+                    "Um investimento que apresenta seus riscos de forma detalhada",
+                    "Um prazo de carência informado com clareza no contrato"
+                  ],
+                  "explanation": "Pressa e garantia de retorno alto são incompatíveis com investimento legítimo — retorno acima da média vem com risco, nunca com garantia."
+                },
+                "en": {
+                  "prompt": "Which combination is the most classic warning sign of a financial scam?",
+                  "options": [
+                    "Artificial urgency plus a promise of guaranteed, above-market returns",
+                    "A product that requires reading the bylaws before signing up",
+                    "An investment that presents its risks in detail",
+                    "A lock-up period stated clearly in the contract"
+                  ],
+                  "explanation": "Haste plus a guarantee of high returns is incompatible with legitimate investing — above-average returns come with risk, never with a guarantee."
+                },
+                "es": {
+                  "prompt": "¿Qué combinación es la señal de alerta más clásica de una estafa financiera?",
+                  "options": [
+                    "Urgencia artificial sumada a la promesa de retorno garantizado y por encima del mercado",
+                    "Un producto que exige leer el reglamento antes de contratarlo",
+                    "Una inversión que presenta sus riesgos de forma detallada",
+                    "Un plazo de carencia informado con claridad en el contrato"
+                  ],
+                  "explanation": "Prisa y garantía de retorno alto son incompatibles con una inversión legítima — el retorno por encima del promedio viene con riesgo, nunca con garantía."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Alguém liga dizendo ser da sua instituição financeira, cita dados seus e pede que você confirme um código enviado por mensagem. O que fazer?",
+                  "options": [
+                    "Confirmar o código, já que a pessoa demonstrou conhecer seus dados",
+                    "Confirmar apenas parte do código, para testar se o contato é legítimo",
+                    "Encerrar a ligação e procurar a instituição pelos canais oficiais que você já conhece",
+                    "Pedir que a pessoa ligue novamente mais tarde, quando você estiver mais tranquilo"
+                  ],
+                  "explanation": "Conhecer seus dados não prova identidade — dados vazam. Códigos de verificação nunca devem ser repassados, e a checagem correta parte sempre de um canal que você mesmo iniciou."
+                },
+                "en": {
+                  "prompt": "Someone calls claiming to be from your financial institution, cites your personal data and asks you to confirm a code sent by message. What do you do?",
+                  "options": [
+                    "Confirm the code, since the person clearly knows your data",
+                    "Confirm only part of the code, to test whether the contact is legitimate",
+                    "End the call and reach the institution through official channels you already know",
+                    "Ask the person to call back later, when you're calmer"
+                  ],
+                  "explanation": "Knowing your data doesn't prove identity — data leaks. Verification codes should never be passed on, and the right check always starts from a channel you initiated yourself."
+                },
+                "es": {
+                  "prompt": "Alguien llama diciendo ser de tu institución financiera, cita datos tuyos y pide que confirmes un código enviado por mensaje. ¿Qué haces?",
+                  "options": [
+                    "Confirmar el código, ya que la persona demostró conocer tus datos",
+                    "Confirmar solo parte del código, para probar si el contacto es legítimo",
+                    "Terminar la llamada y buscar a la institución por los canales oficiales que ya conoces",
+                    "Pedir que la persona llame más tarde, cuando estés más tranquilo"
+                  ],
+                  "explanation": "Conocer tus datos no prueba identidad — los datos se filtran. Los códigos de verificación nunca deben compartirse, y la verificación correcta parte siempre de un canal que tú mismo iniciaste."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Engenharia social manipula a pessoa, sem precisar quebrar nenhuma tecnologia.",
+                    "Urgência, sigilo e retorno garantido acima do mercado são os sinais clássicos.",
+                    "A defesa é sempre trocar o canal: encerrar o contato recebido e procurar a instituição por conta própria."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Social engineering manipulates the person, without breaking any technology.",
+                    "Urgency, secrecy and guaranteed above-market returns are the classic signs.",
+                    "The defense is always switching channels: end the incoming contact and reach the institution yourself."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La ingeniería social manipula a la persona, sin necesidad de romper ninguna tecnología.",
+                    "Urgencia, secreto y retorno garantizado por encima del mercado son las señales clásicas.",
+                    "La defensa es siempre cambiar de canal: terminar el contacto recibido y buscar a la institución por cuenta propia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_human_capital_and_income",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sua Renda Como Ativo: Risco de Capital Humano"
+            },
+            "en": {
+              "title": "Your Income as an Asset: Human Capital Risk"
+            },
+            "es": {
+              "title": "Tu Renta Como Activo: Riesgo de Capital Humano"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O maior ativo de quem está começando não está na carteira",
+                  "body": "Para a maioria das pessoas na fase de acumulação, o valor presente de todos os salários futuros é muito maior que o patrimônio investido. Essa capacidade de gerar renda é um ativo — e, como todo ativo, tem risco e correlação. Se a sua renda depende de um único empregador ou de um único setor, investir pesado nesse mesmo setor concentra duas exposições que podem cair juntas, exatamente no pior momento."
+                },
+                "en": {
+                  "title": "For someone starting out, the biggest asset isn't in the portfolio",
+                  "body": "For most people in the accumulation phase, the present value of all future salaries is far larger than the invested portfolio. That income-generating capacity is an asset — and, like any asset, it has risk and correlation. If your income depends on a single employer or a single sector, investing heavily in that same sector concentrates two exposures that can fall together, at exactly the worst moment."
+                },
+                "es": {
+                  "title": "El mayor activo de quien empieza no está en la cartera",
+                  "body": "Para la mayoría de las personas en la fase de acumulación, el valor presente de todos los salarios futuros es mucho mayor que el patrimonio invertido. Esa capacidad de generar renta es un activo — y, como todo activo, tiene riesgo y correlación. Si tu renta depende de un único empleador o de un único sector, invertir fuerte en ese mismo sector concentra dos exposiciones que pueden caer juntas, exactamente en el peor momento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém que trabalha em uma empresa e recebe parte da remuneração em ações dela, além de investir por conta própria nessa mesma ação, está triplamente exposto: emprego, remuneração variável e carteira dependem do desempenho da mesma companhia. Uma crise nessa empresa atinge as três frentes ao mesmo tempo — e é justamente quando ter reservas e outras fontes de valor importa mais."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone who works at a company, receives part of their pay in its shares, and also invests on their own in that same stock is triply exposed: job, variable pay and portfolio all depend on the same company's performance. A crisis at that company hits all three fronts at once — and that's precisely when having reserves and other sources of value matters most."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien que trabaja en una empresa y recibe parte de su remuneración en acciones de ella, además de invertir por su cuenta en esa misma acción, está triplemente expuesto: empleo, remuneración variable y cartera dependen del desempeño de la misma compañía. Una crisis en esa empresa golpea los tres frentes al mismo tiempo — y es justamente cuando tener reservas y otras fuentes de valor importa más."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que a sua renda do trabalho deve ser considerada na análise de risco da carteira?",
+                  "options": [
+                    "Porque ela determina o rendimento dos títulos que você compra",
+                    "Porque ela substitui a necessidade de uma reserva de emergência",
+                    "Porque ela garante que qualquer perda na carteira será recuperada",
+                    "Porque ela é uma exposição econômica que pode estar correlacionada com os seus investimentos"
+                  ],
+                  "explanation": "Renda e carteira são duas exposições. Se dependem do mesmo empregador ou setor, o risco total é maior do que a carteira isolada sugere."
+                },
+                "en": {
+                  "prompt": "Why should your work income be considered in the portfolio's risk analysis?",
+                  "options": [
+                    "Because it determines the yield of the bonds you buy",
+                    "Because it replaces the need for an emergency fund",
+                    "Because it guarantees any portfolio loss will be recovered",
+                    "Because it is an economic exposure that can be correlated with your investments"
+                  ],
+                  "explanation": "Income and portfolio are two exposures. If they depend on the same employer or sector, total risk is higher than the portfolio alone suggests."
+                },
+                "es": {
+                  "prompt": "¿Por qué tu renta del trabajo debe considerarse en el análisis de riesgo de la cartera?",
+                  "options": [
+                    "Porque determina el rendimiento de los títulos que compras",
+                    "Porque sustituye la necesidad de un fondo de emergencia",
+                    "Porque garantiza que cualquier pérdida en la cartera será recuperada",
+                    "Porque es una exposición económica que puede estar correlacionada con tus inversiones"
+                  ],
+                  "explanation": "Renta y cartera son dos exposiciones. Si dependen del mismo empleador o sector, el riesgo total es mayor de lo que sugiere la cartera aislada."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você trabalha em um setor bastante cíclico e sua carteira também está concentrada nesse setor. Qual ajuste faz mais sentido?",
+                  "options": [
+                    "Aumentar a posição no setor, já que você o conhece melhor que os outros investidores",
+                    "Reduzir a concentração da carteira nesse setor, para que a queda dele não atinja renda e patrimônio ao mesmo tempo",
+                    "Manter tudo como está, porque renda e investimentos são assuntos independentes",
+                    "Vender todos os investimentos e manter apenas a renda do trabalho"
+                  ],
+                  "explanation": "Conhecer o setor não reduz a correlação entre a sua renda e a sua carteira. Diversificar para fora dele é o que separa as duas exposições."
+                },
+                "en": {
+                  "prompt": "You work in a highly cyclical sector and your portfolio is also concentrated in it. Which adjustment makes more sense?",
+                  "options": [
+                    "Increase the sector position, since you know it better than other investors",
+                    "Reduce the portfolio's concentration in that sector, so a downturn doesn't hit income and wealth at once",
+                    "Keep everything as is, because income and investments are independent matters",
+                    "Sell all investments and keep only the work income"
+                  ],
+                  "explanation": "Knowing the sector doesn't reduce the correlation between your income and your portfolio. Diversifying away from it is what separates the two exposures."
+                },
+                "es": {
+                  "prompt": "Trabajas en un sector bastante cíclico y tu cartera también está concentrada en ese sector. ¿Qué ajuste tiene más sentido?",
+                  "options": [
+                    "Aumentar la posición en el sector, ya que lo conoces mejor que otros inversores",
+                    "Reducir la concentración de la cartera en ese sector, para que su caída no golpee renta y patrimonio al mismo tiempo",
+                    "Mantener todo como está, porque renta e inversiones son asuntos independientes",
+                    "Vender todas las inversiones y mantener solo la renta del trabajo"
+                  ],
+                  "explanation": "Conocer el sector no reduce la correlación entre tu renta y tu cartera. Diversificar fuera de él es lo que separa las dos exposiciones."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Na fase de acumulação, a capacidade de gerar renda costuma valer mais que a carteira.",
+                    "Renda e investimentos são exposições que podem estar correlacionadas.",
+                    "Concentrar carteira no setor em que você trabalha soma riscos em vez de diversificá-los."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "In the accumulation phase, income-generating capacity usually outweighs the portfolio.",
+                    "Income and investments are exposures that can be correlated.",
+                    "Concentrating the portfolio in the sector you work in adds risks instead of diversifying them."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "En la fase de acumulación, la capacidad de generar renta suele valer más que la cartera.",
+                    "Renta e inversiones son exposiciones que pueden estar correlacionadas.",
+                    "Concentrar la cartera en el sector en que trabajas suma riesgos en lugar de diversificarlos."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_single_point_of_failure",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Ponto Único de Falha"
+            },
+            "en": {
+              "title": "Single Point of Failure"
+            },
+            "es": {
+              "title": "Punto Único de Falla"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O que acontece se exatamente uma coisa parar de funcionar",
+                  "body": "Um ponto único de falha é qualquer elemento cuja indisponibilidade derruba tudo o que depende dele: um único e-mail que recupera todas as suas contas, um único aparelho que guarda todos os seus acessos, uma única instituição que concentra todo o seu dinheiro, uma única pessoa que sabe onde tudo está. A pergunta que revela esses pontos é simples e desconfortável: se isto sumir hoje, o que para de funcionar?"
+                },
+                "en": {
+                  "title": "What happens if exactly one thing stops working",
+                  "body": "A single point of failure is any element whose unavailability takes down everything depending on it: one email address that recovers all your accounts, one device holding all your access, one institution concentrating all your money, one person who knows where everything is. The question that reveals these points is simple and uncomfortable: if this disappeared today, what stops working?"
+                },
+                "es": {
+                  "title": "Qué ocurre si exactamente una cosa deja de funcionar",
+                  "body": "Un punto único de falla es cualquier elemento cuya indisponibilidad derriba todo lo que depende de él: un único correo que recupera todas tus cuentas, un único dispositivo que guarda todos tus accesos, una única institución que concentra todo tu dinero, una única persona que sabe dónde está todo. La pregunta que revela esos puntos es simple e incómoda: si esto desapareciera hoy, ¿qué deja de funcionar?"
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa com todos os acessos guardados em um único celular, e com a recuperação de todas as contas apontando para o mesmo endereço de e-mail, perde o aparelho. O patrimônio continua existindo, mas o acesso a ele vira um problema demorado justamente no momento de estresse. Um segundo fator de autenticação em outro dispositivo e um registro seguro de onde está cada coisa resolvem isso antes de acontecer."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone with all their access stored on a single phone, and with account recovery for everything pointing to the same email address, loses the device. The assets still exist, but reaching them becomes a drawn-out problem at exactly the most stressful moment. A second authentication factor on another device and a secure record of where each thing lives solve this before it happens."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona con todos los accesos guardados en un único celular, y con la recuperación de todas las cuentas apuntando al mismo correo, pierde el dispositivo. El patrimonio sigue existiendo, pero acceder a él se vuelve un problema largo justamente en el momento de estrés. Un segundo factor de autenticación en otro dispositivo y un registro seguro de dónde está cada cosa resuelven esto antes de que ocurra."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um ponto único de falha no contexto das suas finanças?",
+                  "options": [
+                    "Um investimento que teve o pior desempenho da carteira",
+                    "Uma despesa mensal que consome a maior parte da renda",
+                    "Um elemento cuja indisponibilidade impede o acesso a tudo que depende dele",
+                    "Uma instituição financeira que cobra taxas mais altas que as concorrentes"
+                  ],
+                  "explanation": "É a dependência exclusiva: um dispositivo, um e-mail, uma instituição ou uma pessoa da qual tudo o mais depende."
+                },
+                "en": {
+                  "prompt": "What is a single point of failure in your finances?",
+                  "options": [
+                    "An investment that had the portfolio's worst performance",
+                    "A monthly expense that eats most of your income",
+                    "An element whose unavailability blocks access to everything that depends on it",
+                    "A financial institution charging higher fees than its competitors"
+                  ],
+                  "explanation": "It's exclusive dependence: one device, one email, one institution or one person that everything else relies on."
+                },
+                "es": {
+                  "prompt": "¿Qué es un punto único de falla en el contexto de tus finanzas?",
+                  "options": [
+                    "Una inversión que tuvo el peor desempeño de la cartera",
+                    "Un gasto mensual que consume la mayor parte de la renta",
+                    "Un elemento cuya indisponibilidad impide el acceso a todo lo que depende de él",
+                    "Una institución financiera que cobra comisiones más altas que sus competidores"
+                  ],
+                  "explanation": "Es la dependencia exclusiva: un dispositivo, un correo, una institución o una persona de la que todo lo demás depende."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer reduzir os pontos únicos de falha da sua vida financeira. Por onde começar de forma mais eficaz?",
+                  "options": [
+                    "Mapeando de que exatamente depende o acesso ao seu dinheiro e criando uma alternativa para cada dependência crítica",
+                    "Trocando todas as suas senhas por combinações mais longas e mantendo o resto igual",
+                    "Comprando um seguro que cubra qualquer perda de acesso",
+                    "Concentrando tudo em uma única instituição, para facilitar o controle"
+                  ],
+                  "explanation": "A defesa é mapear a dependência e criar uma segunda via — outro fator de autenticação, outra instituição, um registro seguro do que existe e onde está."
+                },
+                "en": {
+                  "prompt": "You want to reduce single points of failure in your financial life. Where do you most effectively start?",
+                  "options": [
+                    "By mapping what exactly your access to money depends on and creating an alternative for each critical dependency",
+                    "By replacing all your passwords with longer combinations and leaving the rest unchanged",
+                    "By buying insurance covering any loss of access",
+                    "By concentrating everything at a single institution, to make control easier"
+                  ],
+                  "explanation": "The defense is mapping the dependency and creating a second path — another authentication factor, another institution, a secure record of what exists and where."
+                },
+                "es": {
+                  "prompt": "Quieres reducir los puntos únicos de falla de tu vida financiera. ¿Por dónde empezar de forma más eficaz?",
+                  "options": [
+                    "Mapeando de qué depende exactamente el acceso a tu dinero y creando una alternativa para cada dependencia crítica",
+                    "Cambiando todas tus contraseñas por combinaciones más largas y dejando el resto igual",
+                    "Comprando un seguro que cubra cualquier pérdida de acceso",
+                    "Concentrando todo en una única institución, para facilitar el control"
+                  ],
+                  "explanation": "La defensa es mapear la dependencia y crear una segunda vía — otro factor de autenticación, otra institución, un registro seguro de qué existe y dónde está."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Ponto único de falha é a dependência exclusiva de um dispositivo, canal, instituição ou pessoa.",
+                    "A pergunta reveladora é: se isto sumir hoje, o que para de funcionar?",
+                    "A defesa é criar uma segunda via para cada dependência crítica, antes da emergência."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A single point of failure is exclusive dependence on one device, channel, institution or person.",
+                    "The revealing question is: if this disappeared today, what stops working?",
+                    "The defense is creating a second path for each critical dependency, before the emergency."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Un punto único de falla es la dependencia exclusiva de un dispositivo, canal, institución o persona.",
+                    "La pregunta reveladora es: si esto desapareciera hoy, ¿qué deja de funcionar?",
+                    "La defensa es crear una segunda vía para cada dependencia crítica, antes de la emergencia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "risk_model_risk",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Risco de Modelo: Quando a Própria Métrica Falha"
+            },
+            "en": {
+              "title": "Model Risk: When the Metric Itself Fails"
+            },
+            "es": {
+              "title": "Riesgo de Modelo: Cuando la Propia Métrica Falla"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Toda medida de risco carrega suposições",
+                  "body": "Métricas como volatilidade, beta e valor em risco são construídas sobre suposições: que o passado recente representa o futuro, que as relações entre ativos permanecem estáveis, que os eventos extremos são tão raros quanto o histórico sugere. Risco de modelo é a possibilidade de perda causada por confiar em uma métrica cujas suposições deixaram de valer. O número continua aparecendo na tela; o que mudou foi o mundo que ele descrevia."
+                },
+                "en": {
+                  "title": "Every risk measure carries assumptions",
+                  "body": "Metrics like volatility, beta and value at risk are built on assumptions: that the recent past represents the future, that relationships between assets stay stable, that extreme events are as rare as history suggests. Model risk is the possibility of loss caused by trusting a metric whose assumptions no longer hold. The number still shows on the screen; what changed is the world it described."
+                },
+                "es": {
+                  "title": "Toda medida de riesgo carga suposiciones",
+                  "body": "Métricas como volatilidad, beta y valor en riesgo se construyen sobre suposiciones: que el pasado reciente representa el futuro, que las relaciones entre activos permanecen estables, que los eventos extremos son tan raros como sugiere el historial. El riesgo de modelo es la posibilidad de pérdida causada por confiar en una métrica cuyas suposiciones dejaron de valer. El número sigue apareciendo en la pantalla; lo que cambió es el mundo que describía."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma carteira montada com base em correlações históricas baixas entre suas classes de ativos parece bem diversificada — até um momento de estresse em que quase tudo cai junto. As correlações medidas no passado não eram falsas; elas simplesmente descreviam um período diferente. O erro não foi calcular: foi tratar o resultado do cálculo como uma propriedade permanente dos ativos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A portfolio built on historically low correlations between its asset classes looks well diversified — until a moment of stress when nearly everything falls together. The correlations measured in the past weren't false; they simply described a different period. The error wasn't the calculation: it was treating the calculation's output as a permanent property of the assets."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una cartera armada con base en correlaciones históricas bajas entre sus clases de activos parece bien diversificada — hasta un momento de estrés en que casi todo cae junto. Las correlaciones medidas en el pasado no eran falsas; simplemente describían un período distinto. El error no fue calcular: fue tratar el resultado del cálculo como una propiedad permanente de los activos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é risco de modelo?",
+                  "options": [
+                    "A chance de a plataforma de investimentos ficar fora do ar",
+                    "A possibilidade de perda por confiar em uma métrica cujas suposições deixaram de valer",
+                    "A variação natural dos preços de mercado ao longo do tempo",
+                    "O custo de contratar um analista para calcular indicadores"
+                  ],
+                  "explanation": "É o risco de a ferramenta de medição falhar — não porque o cálculo está errado, mas porque as premissas que ele assume mudaram."
+                },
+                "en": {
+                  "prompt": "What is model risk?",
+                  "options": [
+                    "The chance the investment platform goes down",
+                    "The possibility of loss from trusting a metric whose assumptions no longer hold",
+                    "The natural variation of market prices over time",
+                    "The cost of hiring an analyst to calculate indicators"
+                  ],
+                  "explanation": "It's the risk of the measuring tool failing — not because the math is wrong, but because the premises it assumes have changed."
+                },
+                "es": {
+                  "prompt": "¿Qué es el riesgo de modelo?",
+                  "options": [
+                    "La probabilidad de que la plataforma de inversiones se caiga",
+                    "La posibilidad de pérdida por confiar en una métrica cuyas suposiciones dejaron de valer",
+                    "La variación natural de los precios de mercado a lo largo del tiempo",
+                    "El costo de contratar a un analista para calcular indicadores"
+                  ],
+                  "explanation": "Es el riesgo de que la herramienta de medición falle — no porque el cálculo esté mal, sino porque las premisas que asume cambiaron."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você usa uma métrica de risco para dimensionar posições. Qual postura reduz o risco de modelo sem abandonar a métrica?",
+                  "options": [
+                    "Aumentar as posições sempre que a métrica indicar risco baixo, já que ela é objetiva",
+                    "Trocar de métrica toda vez que o resultado desagradar",
+                    "Abandonar qualquer métrica e decidir apenas pela intuição",
+                    "Saber quais suposições a métrica faz, verificar se ainda fazem sentido e manter margem para o cenário em que ela erra"
+                  ],
+                  "explanation": "Métricas são úteis desde que você conheça seus limites. A defesa não é descartá-las, é não dimensionar posições como se elas fossem infalíveis."
+                },
+                "en": {
+                  "prompt": "You use a risk metric to size positions. Which stance reduces model risk without abandoning the metric?",
+                  "options": [
+                    "Increase positions whenever the metric shows low risk, since it's objective",
+                    "Switch metrics every time the result is unpleasant",
+                    "Abandon any metric and decide purely on intuition",
+                    "Know which assumptions the metric makes, check whether they still hold and keep margin for the scenario where it's wrong"
+                  ],
+                  "explanation": "Metrics are useful as long as you know their limits. The defense isn't discarding them, it's not sizing positions as if they were infallible."
+                },
+                "es": {
+                  "prompt": "Usas una métrica de riesgo para dimensionar posiciones. ¿Qué postura reduce el riesgo de modelo sin abandonar la métrica?",
+                  "options": [
+                    "Aumentar las posiciones siempre que la métrica indique riesgo bajo, ya que es objetiva",
+                    "Cambiar de métrica cada vez que el resultado desagrade",
+                    "Abandonar cualquier métrica y decidir solo por intuición",
+                    "Saber qué suposiciones hace la métrica, verificar si aún tienen sentido y mantener margen para el escenario en que se equivoca"
+                  ],
+                  "explanation": "Las métricas son útiles siempre que conozcas sus límites. La defensa no es descartarlas, es no dimensionar posiciones como si fueran infalibles."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Métricas de risco assumem estabilidade do passado, das relações entre ativos e da raridade de extremos.",
+                    "Risco de modelo é a perda por confiar em uma métrica cujas suposições mudaram.",
+                    "A defesa é conhecer as suposições e manter margem para o cenário em que a métrica erra."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Risk metrics assume stability of the past, of relationships between assets and of the rarity of extremes.",
+                    "Model risk is the loss from trusting a metric whose assumptions changed.",
+                    "The defense is knowing the assumptions and keeping margin for the scenario where the metric is wrong."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las métricas de riesgo asumen estabilidad del pasado, de las relaciones entre activos y de la rareza de los extremos.",
+                    "El riesgo de modelo es la pérdida por confiar en una métrica cuyas suposiciones cambiaron.",
+                    "La defensa es conocer las suposiciones y mantener margen para el escenario en que la métrica se equivoca."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
