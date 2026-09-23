@@ -2544,6 +2544,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "fundamental_analysis_beyond_indicators",
+      "order": 4,
+      "iconKey": "analytics_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "fundamental_analysis_specialist"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Além dos Indicadores",
+          "description": "Qualidade da receita, diluição e recompras, lucro ajustado, resultados por segmento e sinais de governança."
+        },
+        "en": {
+          "title": "Beyond the Indicators",
+          "description": "Revenue quality, dilution and buybacks, adjusted earnings, segment results and governance signals."
+        },
+        "es": {
+          "title": "Más Allá de los Indicadores",
+          "description": "Calidad de los ingresos, dilución y recompras, ganancia ajustada, resultados por segmento y señales de gobernanza."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "fundamental_analysis_revenue_quality",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Qualidade da Receita: Recorrente ou Não"
+            },
+            "en": {
+              "title": "Revenue Quality: Recurring or Not"
+            },
+            "es": {
+              "title": "Calidad de los Ingresos: Recurrente o No"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Duas empresas com a mesma receita podem ser muito diferentes",
+                  "body": "Receita é um número único no balanço, mas nem toda receita tem o mesmo valor analítico. Receita recorrente — contratos, assinaturas, clientes que voltam — tende a se repetir no próximo período. Receita não recorrente — a venda de um ativo, uma indenização, um contrato único — entra no resultado uma vez e some. Avaliar uma empresa pelo total sem separar as duas leva a projetar para o futuro algo que já se sabe que não vai se repetir."
+                },
+                "en": {
+                  "title": "Two companies with the same revenue can be very different",
+                  "body": "Revenue is a single line on the statement, but not all revenue carries the same analytical weight. Recurring revenue — contracts, subscriptions, returning customers — tends to repeat next period. Non-recurring revenue — an asset sale, a settlement, a one-off contract — enters the result once and disappears. Valuing a company by the total without separating the two means projecting into the future something you already know won't repeat."
+                },
+                "es": {
+                  "title": "Dos empresas con los mismos ingresos pueden ser muy distintas",
+                  "body": "Los ingresos son un número único en el balance, pero no todos tienen el mismo valor analítico. Los ingresos recurrentes — contratos, suscripciones, clientes que vuelven — tienden a repetirse el próximo período. Los ingresos no recurrentes — la venta de un activo, una indemnización, un contrato único — entran en el resultado una vez y desaparecen. Evaluar una empresa por el total sin separar ambos lleva a proyectar al futuro algo que ya se sabe que no se repetirá."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa apresenta crescimento expressivo de receita em um trimestre. Lendo as notas, parte relevante veio da venda de um imóvel próprio. O crescimento aconteceu de fato, mas ele não diz nada sobre a capacidade de gerar receita no próximo trimestre. Quem projeta o mesmo ritmo para os próximos anos está estendendo um evento único como se fosse tendência."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company posts significant revenue growth in a quarter. Reading the notes, a meaningful part came from selling one of its properties. The growth did happen, but it says nothing about the capacity to generate revenue next quarter. Whoever projects the same pace for the coming years is extending a one-off event as if it were a trend."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa presenta un crecimiento expresivo de ingresos en un trimestre. Leyendo las notas, una parte relevante vino de la venta de un inmueble propio. El crecimiento ocurrió de hecho, pero no dice nada sobre la capacidad de generar ingresos el próximo trimestre. Quien proyecta el mismo ritmo para los próximos años está extendiendo un evento único como si fuera tendencia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que diferencia receita recorrente de receita não recorrente?",
+                  "options": [
+                    "A recorrente vem de clientes antigos e a não recorrente de clientes novos",
+                    "A recorrente tende a se repetir nos próximos períodos; a não recorrente vem de eventos únicos",
+                    "A recorrente é sempre maior que a não recorrente",
+                    "A não recorrente não aparece nas demonstrações financeiras"
+                  ],
+                  "explanation": "A diferença está na repetibilidade — é ela que define o quanto aquela receita ajuda a projetar o futuro."
+                },
+                "en": {
+                  "prompt": "What distinguishes recurring from non-recurring revenue?",
+                  "options": [
+                    "Recurring comes from old customers and non-recurring from new ones",
+                    "Recurring tends to repeat in coming periods; non-recurring comes from one-off events",
+                    "Recurring is always larger than non-recurring",
+                    "Non-recurring doesn't appear in the financial statements"
+                  ],
+                  "explanation": "The difference is repeatability — that's what defines how much that revenue helps project the future."
+                },
+                "es": {
+                  "prompt": "¿Qué diferencia a los ingresos recurrentes de los no recurrentes?",
+                  "options": [
+                    "Los recurrentes vienen de clientes antiguos y los no recurrentes de clientes nuevos",
+                    "Los recurrentes tienden a repetirse en los próximos períodos; los no recurrentes vienen de eventos únicos",
+                    "Los recurrentes siempre son mayores que los no recurrentes",
+                    "Los no recurrentes no aparecen en los estados financieros"
+                  ],
+                  "explanation": "La diferencia está en la repetibilidad — es ella la que define cuánto ayuda ese ingreso a proyectar el futuro."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você calcula o P/L de uma empresa cujo lucro do período inclui um ganho não recorrente relevante. O que acontece com o indicador?",
+                  "options": [
+                    "Nada: o P/L não é afetado pela composição do lucro",
+                    "O P/L fica artificialmente alto, sugerindo que a ação está cara",
+                    "O P/L fica artificialmente baixo, porque o denominador foi inflado por um ganho que não se repete",
+                    "O P/L deixa de poder ser calculado nesse período"
+                  ],
+                  "explanation": "Lucro inflado por evento único derruba o P/L e faz a ação parecer barata. Recalcular excluindo o item não recorrente devolve a comparação ao lugar."
+                },
+                "en": {
+                  "prompt": "You calculate the P/E of a company whose period profit includes a meaningful non-recurring gain. What happens to the indicator?",
+                  "options": [
+                    "Nothing: P/E isn't affected by the composition of profit",
+                    "The P/E becomes artificially high, suggesting the stock is expensive",
+                    "The P/E becomes artificially low, because the denominator was inflated by a gain that won't repeat",
+                    "The P/E can no longer be calculated for that period"
+                  ],
+                  "explanation": "Profit inflated by a one-off event drags the P/E down and makes the stock look cheap. Recalculating without the non-recurring item restores the comparison."
+                },
+                "es": {
+                  "prompt": "Calculas el P/U de una empresa cuya ganancia del período incluye una ganancia no recurrente relevante. ¿Qué ocurre con el indicador?",
+                  "options": [
+                    "Nada: el P/U no se ve afectado por la composición de la ganancia",
+                    "El P/U queda artificialmente alto, sugiriendo que la acción está cara",
+                    "El P/U queda artificialmente bajo, porque el denominador fue inflado por una ganancia que no se repite",
+                    "El P/U deja de poder calcularse en ese período"
+                  ],
+                  "explanation": "Una ganancia inflada por un evento único baja el P/U y hace que la acción parezca barata. Recalcular excluyendo el ítem no recurrente devuelve la comparación a su lugar."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Receita recorrente se repete; não recorrente entra uma vez e some.",
+                    "Projetar crescimento sem separar as duas estende um evento único como tendência.",
+                    "Indicadores baseados em lucro ficam distorcidos por itens não recorrentes."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Recurring revenue repeats; non-recurring enters once and disappears.",
+                    "Projecting growth without separating the two extends a one-off as a trend.",
+                    "Profit-based indicators get distorted by non-recurring items."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El ingreso recurrente se repite; el no recurrente entra una vez y desaparece.",
+                    "Proyectar crecimiento sin separar ambos extiende un evento único como tendencia.",
+                    "Los indicadores basados en ganancias se distorsionan por ítems no recurrentes."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_share_count_and_dilution",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Número de Ações: Diluição e Recompras"
+            },
+            "en": {
+              "title": "Share Count: Dilution and Buybacks"
+            },
+            "es": {
+              "title": "Número de Acciones: Dilución y Recompras"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O lucro total importa menos que o lucro por ação que é seu",
+                  "body": "Ao comprar uma ação, você compra uma fração da empresa. Se o número total de ações aumenta — por novas emissões, conversões ou remuneração em ações — a mesma participação passa a representar uma fatia menor do lucro: é a diluição. O movimento oposto, a recompra de ações pela própria empresa, reduz o total e aumenta a fatia de quem ficou. Por isso acompanhar a quantidade de ações ao longo do tempo é tão relevante quanto acompanhar o lucro."
+                },
+                "en": {
+                  "title": "Total profit matters less than the profit per share that's yours",
+                  "body": "When you buy a share, you buy a fraction of the company. If the total number of shares rises — through new issues, conversions or stock-based compensation — the same holding comes to represent a smaller slice of profit: that's dilution. The opposite move, the company buying back its own shares, reduces the total and increases the slice of those who stayed. That's why tracking the share count over time matters as much as tracking profit."
+                },
+                "es": {
+                  "title": "La ganancia total importa menos que la ganancia por acción que es tuya",
+                  "body": "Al comprar una acción, compras una fracción de la empresa. Si el número total de acciones aumenta — por nuevas emisiones, conversiones o remuneración en acciones — la misma participación pasa a representar una porción menor de la ganancia: es la dilución. El movimiento opuesto, la recompra de acciones por la propia empresa, reduce el total y aumenta la porción de quien se quedó. Por eso seguir la cantidad de acciones a lo largo del tiempo es tan relevante como seguir la ganancia."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa reporta lucro crescendo ano após ano, mas também emite ações continuamente para remunerar executivos e financiar aquisições. O lucro por ação pode ficar praticamente parado, apesar do lucro total subir. Quem olhou só a manchete do lucro viu crescimento; quem dividiu pelo número de ações viu que a sua parte não cresceu."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company reports profit growing year after year, but also continuously issues shares to compensate executives and fund acquisitions. Earnings per share can stay virtually flat, despite total profit rising. Whoever read only the profit headline saw growth; whoever divided by the share count saw that their part didn't grow."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa reporta ganancias creciendo año tras año, pero también emite acciones continuamente para remunerar ejecutivos y financiar adquisiciones. La ganancia por acción puede quedar prácticamente estancada, a pesar de que la ganancia total sube. Quien miró solo el titular de la ganancia vio crecimiento; quien dividió por el número de acciones vio que su parte no creció."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "O que acontece com a sua fatia da empresa quando novas ações são emitidas?",
+                  "options": [
+                    "Ela diminui proporcionalmente, mesmo que você não venda nada",
+                    "Ela aumenta, porque a empresa levanta mais capital",
+                    "Ela permanece idêntica, já que o número de ações que você tem não muda",
+                    "Ela só muda se você participar da nova emissão com desconto"
+                  ],
+                  "explanation": "Sua quantidade de ações continua a mesma, mas o total aumentou — e é a razão entre as duas que define a sua participação."
+                },
+                "en": {
+                  "prompt": "What happens to your slice of the company when new shares are issued?",
+                  "options": [
+                    "It shrinks proportionally, even if you sell nothing",
+                    "It grows, because the company raises more capital",
+                    "It stays identical, since the number of shares you hold doesn't change",
+                    "It only changes if you join the new issue at a discount"
+                  ],
+                  "explanation": "Your share count stays the same, but the total grew — and it's the ratio between the two that defines your stake."
+                },
+                "es": {
+                  "prompt": "¿Qué ocurre con tu porción de la empresa cuando se emiten nuevas acciones?",
+                  "options": [
+                    "Disminuye proporcionalmente, aunque no vendas nada",
+                    "Aumenta, porque la empresa levanta más capital",
+                    "Permanece idéntica, ya que el número de acciones que tienes no cambia",
+                    "Solo cambia si participas de la nueva emisión con descuento"
+                  ],
+                  "explanation": "Tu cantidad de acciones sigue igual, pero el total aumentó — y es la razón entre ambos lo que define tu participación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa anuncia um programa de recompra de ações. Qual leitura é mais completa?",
+                  "options": [
+                    "Recompra é sempre positiva, porque reduz o número de ações",
+                    "Recompra é sempre negativa, porque gasta caixa que poderia virar dividendo",
+                    "Recompra não afeta em nada a participação dos acionistas",
+                    "Aumenta a fatia de quem fica, mas o efeito depende do preço pago e do que a empresa deixou de fazer com esse caixa"
+                  ],
+                  "explanation": "Recomprar caro destrói valor mesmo reduzindo o número de ações; recomprar barato concentra valor em quem ficou. O preço pago é parte da análise, não detalhe."
+                },
+                "en": {
+                  "prompt": "A company announces a share buyback program. Which reading is more complete?",
+                  "options": [
+                    "Buybacks are always positive, because they reduce the share count",
+                    "Buybacks are always negative, because they spend cash that could be a dividend",
+                    "Buybacks don't affect shareholders' stake at all",
+                    "It increases the slice of those who stay, but the effect depends on the price paid and on what the company gave up doing with that cash"
+                  ],
+                  "explanation": "Buying back expensively destroys value even while cutting the share count; buying back cheaply concentrates value in those who stay. The price paid is part of the analysis, not a detail."
+                },
+                "es": {
+                  "prompt": "Una empresa anuncia un programa de recompra de acciones. ¿Qué lectura es más completa?",
+                  "options": [
+                    "La recompra siempre es positiva, porque reduce el número de acciones",
+                    "La recompra siempre es negativa, porque gasta caja que podría ser dividendo",
+                    "La recompra no afecta en nada la participación de los accionistas",
+                    "Aumenta la porción de quien se queda, pero el efecto depende del precio pagado y de lo que la empresa dejó de hacer con esa caja"
+                  ],
+                  "explanation": "Recomprar caro destruye valor aunque reduzca el número de acciones; recomprar barato concentra valor en quien se queda. El precio pagado es parte del análisis, no un detalle."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Emissões novas diluem a sua participação mesmo sem você vender nada.",
+                    "Recompras aumentam a fatia de quem fica — se o preço pago fizer sentido.",
+                    "Acompanhar o número de ações é tão importante quanto acompanhar o lucro."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "New issues dilute your stake even if you sell nothing.",
+                    "Buybacks increase the slice of those who stay — if the price paid makes sense.",
+                    "Tracking the share count matters as much as tracking profit."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las nuevas emisiones diluyen tu participación aunque no vendas nada.",
+                    "Las recompras aumentan la porción de quien se queda — si el precio pagado tiene sentido.",
+                    "Seguir el número de acciones importa tanto como seguir la ganancia."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_adjusted_earnings",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Lucro Ajustado: O Número que a Empresa Escolhe"
+            },
+            "en": {
+              "title": "Adjusted Earnings: The Number the Company Chooses"
+            },
+            "es": {
+              "title": "Ganancia Ajustada: El Número que la Empresa Elige"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Ajustar pode esclarecer — ou maquiar",
+                  "body": "Além dos números contábeis obrigatórios, empresas costumam divulgar versões 'ajustadas' de lucro ou de resultado operacional, excluindo itens que consideram não representativos do negócio. Às vezes isso ajuda genuinamente: um evento extraordinário realmente distorce a comparação. Outras vezes, os mesmos itens 'extraordinários' aparecem todo ano — e aí a exclusão deixa de esclarecer e passa a esconder um custo que é, na prática, recorrente."
+                },
+                "en": {
+                  "title": "Adjusting can clarify — or dress up",
+                  "body": "Beyond the mandatory accounting figures, companies often publish 'adjusted' versions of profit or operating results, excluding items they deem unrepresentative of the business. Sometimes that genuinely helps: an extraordinary event really does distort the comparison. Other times, the same 'extraordinary' items appear every year — and then the exclusion stops clarifying and starts hiding a cost that is, in practice, recurring."
+                },
+                "es": {
+                  "title": "Ajustar puede aclarar — o maquillar",
+                  "body": "Además de los números contables obligatorios, las empresas suelen divulgar versiones 'ajustadas' de ganancia o de resultado operativo, excluyendo ítems que consideran no representativos del negocio. A veces eso ayuda genuinamente: un evento extraordinario realmente distorsiona la comparación. Otras veces, los mismos ítems 'extraordinarios' aparecen todos los años — y entonces la exclusión deja de aclarar y pasa a esconder un costo que es, en la práctica, recurrente."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa reporta prejuízo contábil e, ao lado, um lucro ajustado positivo, excluindo despesas de reestruturação. Olhando os últimos anos, as mesmas despesas de reestruturação aparecem em todos eles. Se um custo se repete ano após ano, ele faz parte de como aquele negócio opera — chamá-lo de extraordinário não muda o caixa que sai."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company reports an accounting loss and, alongside it, a positive adjusted profit, excluding restructuring expenses. Looking at the last few years, the same restructuring expenses appear in all of them. If a cost repeats year after year, it's part of how that business operates — calling it extraordinary doesn't change the cash going out."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa reporta pérdida contable y, al lado, una ganancia ajustada positiva, excluyendo gastos de reestructuración. Mirando los últimos años, los mismos gastos de reestructuración aparecen en todos. Si un costo se repite año tras año, forma parte de cómo opera ese negocio — llamarlo extraordinario no cambia la caja que sale."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é um resultado 'ajustado' divulgado por uma empresa?",
+                  "options": [
+                    "O resultado auditado e obrigatório previsto nas normas contábeis",
+                    "O resultado projetado para o próximo exercício",
+                    "Uma versão do resultado em que a empresa exclui itens que considera não representativos",
+                    "O resultado calculado pelos analistas independentes do mercado"
+                  ],
+                  "explanation": "É um número elaborado pela própria empresa, com critérios definidos por ela — útil quando bem justificado, enganoso quando recorrente."
+                },
+                "en": {
+                  "prompt": "What is an 'adjusted' result published by a company?",
+                  "options": [
+                    "The audited, mandatory result required by accounting standards",
+                    "The result projected for the next fiscal year",
+                    "A version of the result in which the company excludes items it considers unrepresentative",
+                    "The result calculated by independent market analysts"
+                  ],
+                  "explanation": "It's a figure crafted by the company itself, with criteria it defines — useful when well justified, misleading when recurring."
+                },
+                "es": {
+                  "prompt": "¿Qué es un resultado 'ajustado' divulgado por una empresa?",
+                  "options": [
+                    "El resultado auditado y obligatorio previsto en las normas contables",
+                    "El resultado proyectado para el próximo ejercicio",
+                    "Una versión del resultado en que la empresa excluye ítems que considera no representativos",
+                    "El resultado calculado por analistas independientes del mercado"
+                  ],
+                  "explanation": "Es un número elaborado por la propia empresa, con criterios definidos por ella — útil cuando está bien justificado, engañoso cuando es recurrente."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Ao encontrar um lucro ajustado bem maior que o contábil, qual verificação é mais útil?",
+                  "options": [
+                    "Adotar o número ajustado, já que a empresa conhece melhor o próprio negócio",
+                    "Verificar quais itens foram excluídos e se eles aparecem também nos anos anteriores",
+                    "Adotar sempre o número contábil e ignorar o ajustado",
+                    "Comparar o ajustado desta empresa com o ajustado de outra, sem olhar os critérios"
+                  ],
+                  "explanation": "O teste é a recorrência do item excluído. Um ajuste isolado pode esclarecer; um ajuste que se repete todo ano descreve o negócio, não uma exceção."
+                },
+                "en": {
+                  "prompt": "Finding an adjusted profit much larger than the accounting one, which check is most useful?",
+                  "options": [
+                    "Adopt the adjusted figure, since the company knows its own business best",
+                    "Check which items were excluded and whether they also appear in prior years",
+                    "Always adopt the accounting figure and ignore the adjusted one",
+                    "Compare this company's adjusted figure with another's, without looking at the criteria"
+                  ],
+                  "explanation": "The test is the recurrence of the excluded item. An isolated adjustment can clarify; one that repeats every year describes the business, not an exception."
+                },
+                "es": {
+                  "prompt": "Al encontrar una ganancia ajustada mucho mayor que la contable, ¿qué verificación es más útil?",
+                  "options": [
+                    "Adoptar el número ajustado, ya que la empresa conoce mejor su propio negocio",
+                    "Verificar qué ítems fueron excluidos y si aparecen también en los años anteriores",
+                    "Adoptar siempre el número contable e ignorar el ajustado",
+                    "Comparar el ajustado de esta empresa con el ajustado de otra, sin mirar los criterios"
+                  ],
+                  "explanation": "La prueba es la recurrencia del ítem excluido. Un ajuste aislado puede aclarar; uno que se repite todos los años describe el negocio, no una excepción."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Resultados ajustados são construídos pela empresa, com critérios próprios.",
+                    "Podem esclarecer distorções reais ou esconder custos recorrentes.",
+                    "O teste prático é olhar se o item excluído se repete nos anos anteriores."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Adjusted results are built by the company, with its own criteria.",
+                    "They can clarify real distortions or hide recurring costs.",
+                    "The practical test is checking whether the excluded item repeats in prior years."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los resultados ajustados los construye la empresa, con criterios propios.",
+                    "Pueden aclarar distorsiones reales o esconder costos recurrentes.",
+                    "La prueba práctica es mirar si el ítem excluido se repite en los años anteriores."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_segment_reporting",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Segmentos: De Onde o Lucro Realmente Vem"
+            },
+            "en": {
+              "title": "Segments: Where the Profit Actually Comes From"
+            },
+            "es": {
+              "title": "Segmentos: De Dónde Viene Realmente la Ganancia"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma empresa pode ser vários negócios ao mesmo tempo",
+                  "body": "Empresas com mais de uma linha de atuação divulgam resultados por segmento — por negócio, por região ou por tipo de cliente. Esse detalhamento revela algo que o número consolidado esconde: qual parte cresce, qual encolhe e qual sustenta o resultado. Duas empresas com o mesmo lucro total podem ter perfis de risco muito diferentes se, em uma delas, quase todo o resultado vem de um único segmento."
+                },
+                "en": {
+                  "title": "A company can be several businesses at once",
+                  "body": "Companies with more than one line of business report results by segment — by business, region or customer type. That breakdown reveals something the consolidated figure hides: which part is growing, which is shrinking and which sustains the result. Two companies with the same total profit can have very different risk profiles if, in one of them, nearly all the result comes from a single segment."
+                },
+                "es": {
+                  "title": "Una empresa puede ser varios negocios al mismo tiempo",
+                  "body": "Las empresas con más de una línea de actuación divulgan resultados por segmento — por negocio, por región o por tipo de cliente. Ese detalle revela algo que el número consolidado esconde: qué parte crece, cuál se reduce y cuál sostiene el resultado. Dos empresas con la misma ganancia total pueden tener perfiles de riesgo muy distintos si, en una de ellas, casi todo el resultado viene de un único segmento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma empresa apresenta lucro estável há anos. Abrindo por segmento, percebe-se que um negócio maduro vem caindo devagar enquanto outro, novo, cresce rápido e compensa a queda. O consolidado parece parado, mas a empresa em cinco anos será bem diferente da atual — e qualquer projeção feita sobre o total ignora essa mudança de composição."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A company shows stable profit for years. Breaking it down by segment, you see a mature business declining slowly while a new one grows fast and offsets the fall. The consolidated figure looks flat, but in five years the company will be quite different from today's — and any projection made on the total ignores that change in composition."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una empresa presenta ganancias estables durante años. Abriendo por segmento, se percibe que un negocio maduro viene cayendo despacio mientras otro, nuevo, crece rápido y compensa la caída. El consolidado parece estancado, pero la empresa en cinco años será bien distinta de la actual — y cualquier proyección hecha sobre el total ignora ese cambio de composición."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que ler o resultado por segmento agrega à análise?",
+                  "options": [
+                    "Porque os segmentos são auditados separadamente por empresas diferentes",
+                    "Porque o resultado consolidado não é confiável",
+                    "Porque cada segmento tem uma cotação própria em bolsa",
+                    "Porque revela qual parte do negócio cresce, qual encolhe e qual sustenta o resultado"
+                  ],
+                  "explanation": "O consolidado é uma soma. Só a abertura mostra a dinâmica interna — e a dependência de uma única fonte de lucro."
+                },
+                "en": {
+                  "prompt": "Why does reading results by segment add to the analysis?",
+                  "options": [
+                    "Because segments are audited separately by different firms",
+                    "Because the consolidated result isn't trustworthy",
+                    "Because each segment has its own stock price",
+                    "Because it reveals which part of the business grows, which shrinks and which sustains the result"
+                  ],
+                  "explanation": "The consolidated figure is a sum. Only the breakdown shows the internal dynamics — and the dependence on a single source of profit."
+                },
+                "es": {
+                  "prompt": "¿Por qué leer el resultado por segmento aporta al análisis?",
+                  "options": [
+                    "Porque los segmentos son auditados por separado por empresas distintas",
+                    "Porque el resultado consolidado no es confiable",
+                    "Porque cada segmento tiene una cotización propia en bolsa",
+                    "Porque revela qué parte del negocio crece, cuál se reduce y cuál sostiene el resultado"
+                  ],
+                  "explanation": "El consolidado es una suma. Solo la apertura muestra la dinámica interna — y la dependencia de una única fuente de ganancia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você descobre que quase todo o lucro de uma empresa vem de um único segmento. O que isso acrescenta à sua análise de risco?",
+                  "options": [
+                    "Que o desempenho da empresa depende fortemente das condições daquele mercado específico, mesmo que ela pareça diversificada",
+                    "Nada: o que importa é o lucro total, independentemente da origem",
+                    "Que a empresa é necessariamente mais eficiente que as concorrentes",
+                    "Que os outros segmentos devem ser vendidos imediatamente"
+                  ],
+                  "explanation": "Diversificação aparente não protege quando a concentração de resultado é alta. O risco daquele segmento é, na prática, o risco da empresa."
+                },
+                "en": {
+                  "prompt": "You find that nearly all of a company's profit comes from a single segment. What does that add to your risk analysis?",
+                  "options": [
+                    "That the company's performance depends heavily on that specific market's conditions, even if it looks diversified",
+                    "Nothing: what matters is total profit, regardless of its origin",
+                    "That the company is necessarily more efficient than its competitors",
+                    "That the other segments should be sold immediately"
+                  ],
+                  "explanation": "Apparent diversification doesn't protect when profit concentration is high. That segment's risk is, in practice, the company's risk."
+                },
+                "es": {
+                  "prompt": "Descubres que casi toda la ganancia de una empresa viene de un único segmento. ¿Qué agrega eso a tu análisis de riesgo?",
+                  "options": [
+                    "Que el desempeño de la empresa depende fuertemente de las condiciones de ese mercado específico, aunque parezca diversificada",
+                    "Nada: lo que importa es la ganancia total, sin importar su origen",
+                    "Que la empresa es necesariamente más eficiente que sus competidores",
+                    "Que los otros segmentos deben venderse de inmediato"
+                  ],
+                  "explanation": "La diversificación aparente no protege cuando la concentración de resultado es alta. El riesgo de ese segmento es, en la práctica, el riesgo de la empresa."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Resultados por segmento revelam a dinâmica que o consolidado esconde.",
+                    "Um total estável pode esconder um negócio caindo e outro crescendo.",
+                    "Concentração de lucro em um segmento é risco, mesmo com aparência de diversificação."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Segment results reveal dynamics the consolidated figure hides.",
+                    "A stable total can hide one business declining and another growing.",
+                    "Profit concentration in one segment is risk, even with the appearance of diversification."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los resultados por segmento revelan la dinámica que el consolidado esconde.",
+                    "Un total estable puede esconder un negocio cayendo y otro creciendo.",
+                    "La concentración de ganancia en un segmento es riesgo, aun con apariencia de diversificación."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "fundamental_analysis_governance_signals",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Sinais de Governança na Análise"
+            },
+            "en": {
+              "title": "Governance Signals in Analysis"
+            },
+            "es": {
+              "title": "Señales de Gobernanza en el Análisis"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quem decide e para quem trabalha",
+                  "body": "Governança trata de como as decisões são tomadas na empresa e de quais interesses elas atendem. Estrutura do conselho, política de remuneração, transações com partes relacionadas, histórico de tratamento dos acionistas minoritários e qualidade da divulgação são sinais concretos. Eles não aparecem como um indicador numérico no balanço, mas explicam por que empresas com números parecidos podem entregar resultados muito diferentes a quem investe."
+                },
+                "en": {
+                  "title": "Who decides and whose interests they serve",
+                  "body": "Governance is about how decisions are made in a company and whose interests they serve. Board structure, compensation policy, related-party transactions, the track record of treating minority shareholders and the quality of disclosure are concrete signals. They don't appear as a numeric indicator on the statements, but they explain why companies with similar numbers can deliver very different results to investors."
+                },
+                "es": {
+                  "title": "Quién decide y para quién trabaja",
+                  "body": "La gobernanza trata de cómo se toman las decisiones en la empresa y a qué intereses atienden. Estructura del consejo, política de remuneración, transacciones con partes relacionadas, historial de trato a los accionistas minoritarios y calidad de la divulgación son señales concretas. No aparecen como un indicador numérico en el balance, pero explican por qué empresas con números parecidos pueden entregar resultados muy distintos a quien invierte."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas empresas com indicadores semelhantes: em uma, contratos relevantes são firmados com empresas ligadas ao grupo controlador, e as informações demoram a ser divulgadas; na outra, transações com partes relacionadas são raras, detalhadas e submetidas a aprovação independente. O segundo caso reduz uma incerteza que nenhum múltiplo mede: a de que o valor gerado pode não chegar a quem investiu."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two companies with similar indicators: in one, significant contracts are signed with firms tied to the controlling group, and information takes a long time to be disclosed; in the other, related-party transactions are rare, detailed and subject to independent approval. The second case reduces an uncertainty no multiple measures: that the value created may not reach those who invested."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos empresas con indicadores similares: en una, los contratos relevantes se firman con empresas ligadas al grupo controlador, y la información tarda en divulgarse; en la otra, las transacciones con partes relacionadas son raras, detalladas y sometidas a aprobación independiente. El segundo caso reduce una incertidumbre que ningún múltiplo mide: la de que el valor generado puede no llegar a quien invirtió."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "O que são transações com partes relacionadas?",
+                  "options": [
+                    "Negócios feitos exclusivamente com clientes internacionais",
+                    "Operações de compra e venda de ações pelos acionistas minoritários",
+                    "Negócios entre a empresa e pessoas ou empresas ligadas a seus controladores e administradores",
+                    "Contratos firmados apenas durante ofertas públicas de ações"
+                  ],
+                  "explanation": "São operações em que o outro lado não é totalmente independente — por isso exigem divulgação detalhada e aprovação com cuidado redobrado."
+                },
+                "en": {
+                  "prompt": "What are related-party transactions?",
+                  "options": [
+                    "Deals made exclusively with international clients",
+                    "Share purchases and sales by minority shareholders",
+                    "Deals between the company and people or firms tied to its controllers and managers",
+                    "Contracts signed only during public share offerings"
+                  ],
+                  "explanation": "They're transactions where the other side isn't fully independent — which is why they require detailed disclosure and extra care in approval."
+                },
+                "es": {
+                  "prompt": "¿Qué son las transacciones con partes relacionadas?",
+                  "options": [
+                    "Negocios hechos exclusivamente con clientes internacionales",
+                    "Operaciones de compra y venta de acciones por los accionistas minoritarios",
+                    "Negocios entre la empresa y personas o empresas ligadas a sus controladores y administradores",
+                    "Contratos firmados solo durante ofertas públicas de acciones"
+                  ],
+                  "explanation": "Son operaciones en que la otra parte no es totalmente independiente — por eso exigen divulgación detallada y aprobación con cuidado redoblado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Uma empresa tem excelentes indicadores, mas histórico de divulgação tardia e decisões que favoreceram o controlador em detrimento dos minoritários. Como incorporar isso à análise?",
+                  "options": [
+                    "Ignorar, já que governança não é mensurável e os números falam por si",
+                    "Tratar como um risco real: parte do valor gerado pode não chegar ao acionista minoritário, o que exige margem de segurança maior ou a decisão de não investir",
+                    "Aumentar a posição, porque bons indicadores compensam qualquer questão de governança",
+                    "Esperar o próximo balanço, que deve corrigir o histórico"
+                  ],
+                  "explanation": "Governança fraca não aparece nos múltiplos, mas afeta diretamente quanto do resultado chega a você — por isso entra como risco, não como detalhe qualitativo."
+                },
+                "en": {
+                  "prompt": "A company has excellent indicators, but a record of late disclosure and decisions favoring the controller over minority shareholders. How do you incorporate that?",
+                  "options": [
+                    "Ignore it, since governance isn't measurable and the numbers speak for themselves",
+                    "Treat it as a real risk: part of the value created may not reach the minority shareholder, requiring a larger margin of safety or a decision not to invest",
+                    "Increase the position, because good indicators offset any governance issue",
+                    "Wait for the next report, which should correct the record"
+                  ],
+                  "explanation": "Weak governance doesn't show in multiples, but it directly affects how much of the result reaches you — so it enters as risk, not as a qualitative footnote."
+                },
+                "es": {
+                  "prompt": "Una empresa tiene excelentes indicadores, pero historial de divulgación tardía y decisiones que favorecieron al controlador en detrimento de los minoritarios. ¿Cómo incorporarlo al análisis?",
+                  "options": [
+                    "Ignorarlo, ya que la gobernanza no es medible y los números hablan por sí solos",
+                    "Tratarlo como un riesgo real: parte del valor generado puede no llegar al accionista minoritario, lo que exige mayor margen de seguridad o la decisión de no invertir",
+                    "Aumentar la posición, porque los buenos indicadores compensan cualquier cuestión de gobernanza",
+                    "Esperar el próximo balance, que debería corregir el historial"
+                  ],
+                  "explanation": "Una gobernanza débil no aparece en los múltiplos, pero afecta directamente cuánto del resultado llega a ti — por eso entra como riesgo, no como detalle cualitativo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Governança define como as decisões são tomadas e a quem elas beneficiam.",
+                    "Partes relacionadas, remuneração e qualidade da divulgação são sinais concretos.",
+                    "Governança fraca não aparece nos múltiplos, mas afeta quanto do valor chega a você."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Governance defines how decisions are made and whom they benefit.",
+                    "Related parties, compensation and disclosure quality are concrete signals.",
+                    "Weak governance doesn't show in multiples, but it affects how much value reaches you."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La gobernanza define cómo se toman las decisiones y a quién benefician.",
+                    "Partes relacionadas, remuneración y calidad de la divulgación son señales concretas.",
+                    "Una gobernanza débil no aparece en los múltiplos, pero afecta cuánto valor llega a ti."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
