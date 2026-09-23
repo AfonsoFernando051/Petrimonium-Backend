@@ -2555,20 +2555,20 @@
       },
       "lessons": [
         {
-          "lessonId": "financial_math_total_effective_cost",
+          "lessonId": "financial_math_expected_value",
           "order": 1,
           "xpReward": 20,
           "competency": "APPLY",
           "estimatedMinutes": 3,
           "translations": {
             "pt": {
-              "title": "Custo Efetivo Total: O Preço Real do Crédito"
+              "title": "Valor Esperado: Probabilidade Vezes Resultado"
             },
             "en": {
-              "title": "Total Effective Cost: Credit's Real Price"
+              "title": "Expected Value: Probability Times Outcome"
             },
             "es": {
-              "title": "Costo Efectivo Total: El Precio Real del Crédito"
+              "title": "Valor Esperado: Probabilidad por Resultado"
             }
           },
           "steps": [
@@ -2577,16 +2577,16 @@
               "order": 1,
               "translations": {
                 "pt": {
-                  "title": "A taxa de juros não é o custo inteiro",
-                  "body": "Em um empréstimo ou financiamento, a taxa de juros anunciada é apenas uma parte do que você paga. Somam-se a ela tarifas de contratação, seguros embutidos, impostos sobre operações financeiras e outros encargos. O custo efetivo total reúne tudo isso em uma única taxa, permitindo comparar propostas diferentes em pé de igualdade. É por isso que duas ofertas com a mesma taxa de juros podem ter custos efetivos bem distintos."
+                  "title": "O tamanho do prêmio não basta",
+                  "body": "Valor esperado é o resultado médio de uma decisão quando se leva em conta tanto o tamanho de cada desfecho quanto a chance de ele acontecer: multiplica-se cada resultado possível pela sua probabilidade e somam-se as parcelas. É a ferramenta que impede duas confusões comuns — achar que um ganho enorme e improvável compensa sempre, e achar que uma perda pequena e quase certa é irrelevante."
                 },
                 "en": {
-                  "title": "The interest rate isn't the whole cost",
-                  "body": "In a loan or financing deal, the advertised interest rate is only part of what you pay. Origination fees, bundled insurance, financial transaction taxes and other charges add to it. The total effective cost gathers all of that into a single rate, letting you compare different offers on equal footing. That's why two offers with the same interest rate can have quite different effective costs."
+                  "title": "The size of the prize isn't enough",
+                  "body": "Expected value is a decision's average outcome once you account for both the size of each result and the chance of it happening: multiply each possible result by its probability and add the parts. It's the tool that prevents two common confusions — thinking a huge, unlikely gain always pays off, and thinking a small, near-certain loss is irrelevant."
                 },
                 "es": {
-                  "title": "La tasa de interés no es el costo completo",
-                  "body": "En un préstamo o financiamiento, la tasa de interés anunciada es solo una parte de lo que pagas. Se le suman comisiones de contratación, seguros incluidos, impuestos sobre operaciones financieras y otros cargos. El costo efectivo total reúne todo eso en una única tasa, permitiendo comparar propuestas distintas en igualdad de condiciones. Por eso dos ofertas con la misma tasa de interés pueden tener costos efectivos bien distintos."
+                  "title": "El tamaño del premio no basta",
+                  "body": "El valor esperado es el resultado promedio de una decisión cuando se considera tanto el tamaño de cada desenlace como la probabilidad de que ocurra: se multiplica cada resultado posible por su probabilidad y se suman las partes. Es la herramienta que evita dos confusiones comunes — creer que una ganancia enorme e improbable siempre compensa, y creer que una pérdida pequeña y casi segura es irrelevante."
                 }
               }
             },
@@ -2596,15 +2596,15 @@
               "translations": {
                 "pt": {
                   "title": "Na prática",
-                  "body": "Duas instituições oferecem o mesmo financiamento com a mesma taxa de juros mensal. A primeira não cobra tarifa de cadastro e não embute seguro; a segunda cobra as duas coisas, diluídas nas parcelas. As prestações da segunda são maiores, e o custo efetivo total revela isso em um número só — enquanto a comparação feita apenas pela taxa de juros sugeriria que as ofertas são idênticas."
+                  "body": "Uma aposta que paga 100 vezes o valor investido, mas com uma chance em mil de acontecer, tem valor esperado negativo: o prêmio é grande, mas a probabilidade é pequena demais para compensá-lo. Já uma decisão que quase sempre traz um ganho pequeno e, raramente, uma perda enorme pode ter valor esperado negativo mesmo parecendo vantajosa na maioria das vezes — é o mesmo cálculo, na direção oposta."
                 },
                 "en": {
                   "title": "In practice",
-                  "body": "Two institutions offer the same financing at the same monthly interest rate. The first charges no origination fee and bundles no insurance; the second charges both, spread across the installments. The second's payments are larger, and the total effective cost reveals that in a single number — while a comparison based only on the interest rate would suggest the offers are identical."
+                  "body": "A bet paying 100 times the amount staked, but with a one-in-a-thousand chance of happening, has negative expected value: the prize is large, but the probability is far too small to offset it. Meanwhile, a decision that almost always brings a small gain and, rarely, a huge loss can have negative expected value even while looking advantageous most of the time — the same math, in the opposite direction."
                 },
                 "es": {
                   "title": "En la práctica",
-                  "body": "Dos instituciones ofrecen el mismo financiamiento con la misma tasa de interés mensual. La primera no cobra comisión de apertura ni incluye seguro; la segunda cobra ambas cosas, diluidas en las cuotas. Las cuotas de la segunda son mayores, y el costo efectivo total revela eso en un solo número — mientras que la comparación hecha solo por la tasa de interés sugeriría que las ofertas son idénticas."
+                  "body": "Una apuesta que paga 100 veces el monto invertido, pero con una probabilidad de una en mil, tiene valor esperado negativo: el premio es grande, pero la probabilidad es demasiado pequeña para compensarlo. En cambio, una decisión que casi siempre trae una ganancia pequeña y, raramente, una pérdida enorme puede tener valor esperado negativo aunque parezca ventajosa la mayoría de las veces — el mismo cálculo, en dirección opuesta."
                 }
               }
             },
@@ -2612,37 +2612,37 @@
               "type": "choice_question",
               "order": 3,
               "framing": "micro_exercise",
-              "correctIndex": 1,
+              "correctIndex": 2,
               "translations": {
                 "pt": {
-                  "prompt": "O que o custo efetivo total de um crédito inclui, além dos juros?",
+                  "prompt": "Como se calcula o valor esperado de uma decisão com resultados incertos?",
                   "options": [
-                    "Apenas a correção pela inflação do período",
-                    "Tarifas, seguros embutidos, impostos e demais encargos da operação",
-                    "Somente o valor das parcelas ainda não pagas",
-                    "Exclusivamente o lucro da instituição financeira"
+                    "Somando todos os resultados possíveis e dividindo pela quantidade deles",
+                    "Escolhendo o maior resultado possível como referência",
+                    "Multiplicando cada resultado possível pela sua probabilidade e somando as parcelas",
+                    "Dividindo o maior ganho pela maior perda possível"
                   ],
-                  "explanation": "O custo efetivo total consolida juros e todos os encargos cobrados, resultando na taxa que representa o preço real da operação."
+                  "explanation": "O valor esperado pondera cada desfecho pela chance de ele ocorrer — por isso um prêmio grande e improvável pesa pouco no total."
                 },
                 "en": {
-                  "prompt": "What does a loan's total effective cost include, beyond interest?",
+                  "prompt": "How do you calculate the expected value of a decision with uncertain outcomes?",
                   "options": [
-                    "Only the inflation adjustment for the period",
-                    "Fees, bundled insurance, taxes and other charges of the operation",
-                    "Only the value of installments not yet paid",
-                    "Exclusively the financial institution's profit"
+                    "By adding all possible results and dividing by how many there are",
+                    "By taking the largest possible result as the reference",
+                    "By multiplying each possible result by its probability and adding the parts",
+                    "By dividing the largest gain by the largest possible loss"
                   ],
-                  "explanation": "The total effective cost consolidates interest and every charge levied, resulting in the rate that represents the operation's real price."
+                  "explanation": "Expected value weights each outcome by its chance of occurring — which is why a large, unlikely prize contributes little to the total."
                 },
                 "es": {
-                  "prompt": "¿Qué incluye el costo efectivo total de un crédito, además de los intereses?",
+                  "prompt": "¿Cómo se calcula el valor esperado de una decisión con resultados inciertos?",
                   "options": [
-                    "Solo el ajuste por la inflación del período",
-                    "Comisiones, seguros incluidos, impuestos y demás cargos de la operación",
-                    "Solamente el valor de las cuotas aún no pagadas",
-                    "Exclusivamente la ganancia de la institución financiera"
+                    "Sumando todos los resultados posibles y dividiendo por su cantidad",
+                    "Eligiendo el mayor resultado posible como referencia",
+                    "Multiplicando cada resultado posible por su probabilidad y sumando las partes",
+                    "Dividiendo la mayor ganancia por la mayor pérdida posible"
                   ],
-                  "explanation": "El costo efectivo total consolida los intereses y todos los cargos cobrados, resultando en la tasa que representa el precio real de la operación."
+                  "explanation": "El valor esperado pondera cada desenlace por la probabilidad de que ocurra — por eso un premio grande e improbable pesa poco en el total."
                 }
               }
             },
@@ -2650,37 +2650,37 @@
               "type": "choice_question",
               "order": 4,
               "framing": "apply",
-              "correctIndex": 2,
+              "correctIndex": 0,
               "translations": {
                 "pt": {
-                  "prompt": "Você recebe duas propostas de financiamento: a primeira tem taxa de juros menor, mas custo efetivo total maior; a segunda, o contrário. Qual comparação responde melhor à pergunta 'qual sai mais caro'?",
+                  "prompt": "Uma estratégia entrega um ganho pequeno em quase todos os meses e, de vez em quando, uma perda muito grande. Por que o histórico recente pode enganar?",
                   "options": [
-                    "A taxa de juros, porque é o número que a instituição divulga com destaque",
-                    "O valor da primeira parcela, porque revela o esforço mensal imediato",
-                    "O custo efetivo total, porque reúne juros e encargos em uma taxa comparável",
-                    "O prazo do contrato, porque prazos menores são sempre mais baratos"
+                    "Porque uma sequência de meses positivos não revela o desfecho raro que domina o valor esperado",
+                    "Porque ganhos pequenos nunca se acumulam em nada relevante",
+                    "Porque o valor esperado só se aplica a apostas, não a investimentos",
+                    "Porque perdas grandes são sempre recuperadas no mês seguinte"
                   ],
-                  "explanation": "A taxa de juros isolada pode esconder encargos. O custo efetivo total existe justamente para tornar propostas com estruturas diferentes comparáveis."
+                  "explanation": "Quando o desfecho ruim é raro, ele pode simplesmente ainda não ter acontecido. O valor esperado o inclui na conta; o histórico curto, não."
                 },
                 "en": {
-                  "prompt": "You get two financing offers: the first has a lower interest rate but a higher total effective cost; the second, the opposite. Which comparison better answers 'which is more expensive'?",
+                  "prompt": "A strategy delivers a small gain in almost every month and, once in a while, a very large loss. Why can the recent track record mislead?",
                   "options": [
-                    "The interest rate, because it's the number the institution advertises prominently",
-                    "The first installment's value, because it reveals the immediate monthly effort",
-                    "The total effective cost, because it gathers interest and charges into a comparable rate",
-                    "The contract term, because shorter terms are always cheaper"
+                    "Because a run of positive months doesn't reveal the rare outcome that dominates expected value",
+                    "Because small gains never add up to anything meaningful",
+                    "Because expected value only applies to bets, not investments",
+                    "Because large losses are always recovered the following month"
                   ],
-                  "explanation": "An isolated interest rate can hide charges. The total effective cost exists precisely to make offers with different structures comparable."
+                  "explanation": "When the bad outcome is rare, it may simply not have happened yet. Expected value includes it in the math; a short track record doesn't."
                 },
                 "es": {
-                  "prompt": "Recibes dos propuestas de financiamiento: la primera tiene una tasa de interés menor, pero un costo efectivo total mayor; la segunda, lo contrario. ¿Qué comparación responde mejor a la pregunta 'cuál sale más caro'?",
+                  "prompt": "Una estrategia entrega una ganancia pequeña en casi todos los meses y, de vez en cuando, una pérdida muy grande. ¿Por qué el historial reciente puede engañar?",
                   "options": [
-                    "La tasa de interés, porque es el número que la institución divulga con destaque",
-                    "El valor de la primera cuota, porque revela el esfuerzo mensual inmediato",
-                    "El costo efectivo total, porque reúne intereses y cargos en una tasa comparable",
-                    "El plazo del contrato, porque los plazos menores siempre son más baratos"
+                    "Porque una secuencia de meses positivos no revela el desenlace raro que domina el valor esperado",
+                    "Porque las ganancias pequeñas nunca se acumulan en nada relevante",
+                    "Porque el valor esperado solo se aplica a apuestas, no a inversiones",
+                    "Porque las pérdidas grandes siempre se recuperan al mes siguiente"
                   ],
-                  "explanation": "La tasa de interés aislada puede esconder cargos. El costo efectivo total existe justamente para hacer comparables propuestas con estructuras distintas."
+                  "explanation": "Cuando el desenlace malo es raro, puede simplemente no haber ocurrido todavía. El valor esperado lo incluye en la cuenta; un historial corto, no."
                 }
               }
             },
@@ -2691,25 +2691,25 @@
                 "pt": {
                   "title": "O que você aprendeu",
                   "takeaways": [
-                    "A taxa de juros anunciada é apenas parte do custo de um crédito.",
-                    "O custo efetivo total consolida juros, tarifas, seguros e impostos em uma taxa.",
-                    "Comparar propostas pelo custo efetivo total evita esconder encargos na taxa nominal."
+                    "Valor esperado pondera cada resultado possível pela sua probabilidade.",
+                    "Um prêmio grande com chance mínima pode ter valor esperado negativo.",
+                    "Estratégias de ganho frequente e perda rara exigem olhar o desfecho raro, não só o histórico."
                   ]
                 },
                 "en": {
                   "title": "What you learned",
                   "takeaways": [
-                    "The advertised interest rate is only part of a loan's cost.",
-                    "The total effective cost consolidates interest, fees, insurance and taxes into one rate.",
-                    "Comparing offers by total effective cost prevents charges from hiding behind the nominal rate."
+                    "Expected value weights each possible result by its probability.",
+                    "A large prize with a tiny chance can have negative expected value.",
+                    "Strategies with frequent gains and rare losses demand looking at the rare outcome, not just the record."
                   ]
                 },
                 "es": {
                   "title": "Lo que aprendiste",
                   "takeaways": [
-                    "La tasa de interés anunciada es solo parte del costo de un crédito.",
-                    "El costo efectivo total consolida intereses, comisiones, seguros e impuestos en una tasa.",
-                    "Comparar propuestas por el costo efectivo total evita esconder cargos en la tasa nominal."
+                    "El valor esperado pondera cada resultado posible por su probabilidad.",
+                    "Un premio grande con una probabilidad mínima puede tener valor esperado negativo.",
+                    "Las estrategias de ganancia frecuente y pérdida rara exigen mirar el desenlace raro, no solo el historial."
                   ]
                 }
               }
