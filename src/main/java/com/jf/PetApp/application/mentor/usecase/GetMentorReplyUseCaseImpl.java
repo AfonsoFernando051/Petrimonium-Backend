@@ -51,8 +51,13 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
     private static final Logger log = LoggerFactory.getLogger(GetMentorReplyUseCaseImpl.class);
     private static final int MAX_HISTORY_TURNS = 10;
     private static final int MAX_TITLE_LENGTH = 60;
-    private static final String FALLBACK_REPLY =
-            "Hmm, I'm having a little trouble thinking right now 🐾 Let's try again in a moment.";
+    private static String fallbackReply(String language) {
+        return switch (language) {
+            case "en" -> "I'm having trouble responding right now 🐾 Let's try again in a moment.";
+            case "es" -> "Tengo dificultades para responder ahora 🐾 Volvamos a intentarlo en un momento.";
+            default -> "Estou com dificuldade para responder agora 🐾 Vamos tentar novamente em instantes.";
+        };
+    }
 
     private final UserRepository userRepository;
     private final GetPortfolioSummaryUseCase getPortfolioSummaryUseCase;
@@ -162,7 +167,7 @@ public class GetMentorReplyUseCaseImpl implements GetMentorReplyUseCase {
             // reach an exception message (see AnthropicChatClient/GeminiChatClient's own catch
             // blocks). Reachable only if both the primary provider and its Gemini fallback fail.
             log.warn("Mentor chat call failed (both providers), falling back to canned reply: {}", e.getMessage());
-            reply = FALLBACK_REPLY;
+            reply = fallbackReply(language);
         }
 
         messageRepositoryPort.append(conversation.id(), "user", request.message());

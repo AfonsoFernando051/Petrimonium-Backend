@@ -48,6 +48,23 @@ class SettingsControllerTest {
     private JwtAuthenticationFilter jwtAuthenticationFilter; // mock the exact filter that security config uses
 
     @Test
+    @WithMockUser(username = "investor@test.com", authorities = "APP_CONTEXT_ACADEMY")
+    void academyCountryIsAlwaysBrazilWithoutChangingTheSharedAccount() throws Exception {
+        User user = new User();
+        user.setCountryCode("PT");
+        when(userRepository.findByEmail("investor@test.com")).thenReturn(Optional.of(user));
+        mockMvc.perform(get("/api/settings/country"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.countryCode").value("BR"));
+        mockMvc.perform(put("/api/settings/country").contentType(MediaType.APPLICATION_JSON)
+                .content("{\"countryCode\":\"PT\"}"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.countryCode").value("BR"));
+        org.mockito.Mockito.verifyNoInteractions(updateCountryUseCase);
+        org.junit.jupiter.api.Assertions.assertEquals("PT", user.getCountryCode());
+    }
+
+    @Test
     @WithMockUser(username = "investor@test.com")
     void getLanguage_ReturnsUsersPreferredLanguage() throws Exception {
         User user = new User();

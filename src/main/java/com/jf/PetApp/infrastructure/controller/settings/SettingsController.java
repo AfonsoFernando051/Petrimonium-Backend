@@ -6,6 +6,7 @@ import com.jf.PetApp.application.settings.usecase.UpdateCountryUseCase;
 import com.jf.PetApp.application.settings.usecase.UpdateLanguageUseCase;
 import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.User;
+import com.jf.PetApp.core.domain.enums.AppContextEnum;
 import com.jf.PetApp.core.security.SecurityUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,13 +50,18 @@ public class SettingsController {
     public ResponseEntity<CountryResponseDTO> getCountry() {
         User user = userRepository.findByEmail(SecurityUtils.getCurrentUserEmail())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "User not found"));
-        // Pode vir null: significa que a conta ainda não escolheu país.
-        return ResponseEntity.ok(new CountryResponseDTO(user.getCountryCode()));
+        // Academy's simulated market is Brazilian; the account preference belongs to other contexts.
+        String country = SecurityUtils.getCurrentAppContext().orElse(null) == AppContextEnum.ACADEMY
+                ? "BR" : user.getCountryCode();
+        return ResponseEntity.ok(new CountryResponseDTO(country));
     }
 
     @PutMapping("/country")
     public ResponseEntity<CountryResponseDTO> updateCountry(@RequestBody UpdateCountryRequestDTO request) {
         String email = SecurityUtils.getCurrentUserEmail();
+        if (SecurityUtils.getCurrentAppContext().orElse(null) == AppContextEnum.ACADEMY) {
+            return ResponseEntity.ok(new CountryResponseDTO("BR"));
+        }
         String updatedCountry = updateCountryUseCase.execute(email, request.countryCode());
         return ResponseEntity.ok(new CountryResponseDTO(updatedCountry));
     }

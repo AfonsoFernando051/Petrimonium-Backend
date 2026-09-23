@@ -168,6 +168,21 @@ class GetMentorReplyUseCaseImplTest {
         verify(messageRepositoryPort).append(CONVERSATION_ID, "mentor", "Dividends are periodic payments...");
     }
 
+    @org.junit.jupiter.params.ParameterizedTest
+    @org.junit.jupiter.params.provider.CsvSource({
+        "pt, Estou com dificuldade para responder agora 🐾 Vamos tentar novamente em instantes.",
+        "pt_PT, Estou com dificuldade para responder agora 🐾 Vamos tentar novamente em instantes.",
+        "en, I'm having trouble responding right now 🐾 Let's try again in a moment.",
+        "es, Tengo dificultades para responder ahora 🐾 Volvamos a intentarlo en un momento."
+    })
+    void academyFallbackUsesPreferredLanguage(String language, String expected) {
+        userRepository.findByEmail(EMAIL).orElseThrow().setPreferredLanguage(language);
+        when(mentorChatPort.generateReply(anyString(), any(), anyString()))
+                .thenThrow(new RuntimeException("Provider unavailable"));
+        assertEquals(expected, useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID),
+                AppContextEnum.ACADEMY).reply());
+    }
+
     @Test
     void execute_WhenMentorChatThrows_ReturnsTheCannedFallbackInsteadOfPropagating() {
         when(mentorChatPort.generateReply(anyString(), any(), anyString())).thenThrow(new RuntimeException("Provider request failed"));
@@ -175,7 +190,7 @@ class GetMentorReplyUseCaseImplTest {
         MentorChatResponse response = useCase.execute(EMAIL, requestWithConversation(CONVERSATION_ID), AppContextEnum.WALLET);
 
         assertNotNull(response.reply());
-        assertTrue(response.reply().toLowerCase().contains("trouble") || !response.reply().isBlank());
+        assertEquals("Estou com dificuldade para responder agora 🐾 Vamos tentar novamente em instantes.", response.reply());
         verify(messageRepositoryPort).append(eq(CONVERSATION_ID), eq("mentor"), anyString());
     }
 
