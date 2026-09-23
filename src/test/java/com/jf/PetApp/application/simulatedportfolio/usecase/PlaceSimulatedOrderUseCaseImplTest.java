@@ -4,7 +4,9 @@ import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedOrderDTO;
 import com.jf.PetApp.application.simulatedportfolio.port.SimulatedPortfolioRepositoryPort;
+import com.jf.PetApp.application.user.port.UserRepository;
 import com.jf.PetApp.core.domain.SimulatedOrder;
+import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.SimulatedPortfolio;
 import com.jf.PetApp.core.domain.SimulatedPosition;
 import com.jf.PetApp.core.domain.enums.SimulatedOrderSide;
@@ -29,6 +31,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.lenient;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -45,6 +48,9 @@ class PlaceSimulatedOrderUseCaseImplTest {
     @Mock
     private ExternalInvestmentApiPort externalInvestmentApiPort;
 
+    @Mock
+    private UserRepository userRepository;
+
     private PlaceSimulatedOrderUseCaseImpl useCase;
 
     private static final String EMAIL = "learner@test.com";
@@ -54,7 +60,9 @@ class PlaceSimulatedOrderUseCaseImplTest {
     void setUp() {
         MockitoAnnotations.openMocks(this);
         useCase = new PlaceSimulatedOrderUseCaseImpl(
-                getOrCreateSimulatedPortfolioUseCase, simulatedPortfolioRepository, externalInvestmentApiPort);
+                getOrCreateSimulatedPortfolioUseCase, simulatedPortfolioRepository, externalInvestmentApiPort,
+                userRepository);
+        lenient().when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(new User()));
     }
 
     private SimulatedPortfolio portfolio() {
@@ -416,5 +424,111 @@ class PlaceSimulatedOrderUseCaseImplTest {
                 "PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null, tradeDate)));
 
         verify(simulatedPortfolioRepository, never()).saveOrder(any(), any(), any(), any(), any(), any(), any());
+    }
+
+    // --- Rejection copy reaches the learner as-is (the mobile client shows the
+    // backend's `detail` verbatim, see friendlyErrorCopy), so these messages are
+    // product copy, not developer strings: they have to be in the user's language.
+
+    private void stubUserLanguage(String language) {
+        User user = new User();
+        user.setEmail(EMAIL);
+        user.setPreferredLanguage(language);
+        when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.of(user));
+    }
+
+    private void stubSellable(BigDecimal held) {
+        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio());
+        when(externalInvestmentApiPort.getQuote("PETR4"))
+                .thenReturn(Optional.of(new AssetQuoteResponse("PETR4", "Petrobras", 30.00, "BRL")));
+        when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
+                .thenReturn(Optional.empty());
+        when(simulatedPortfolioRepository.findPosition(PORTFOLIO_ID, "PETR4")).thenReturn(held == null
+                ? Optional.empty()
+                : Optional.of(new SimulatedPosition(1L, PORTFOLIO_ID, "PETR4", held, new BigDecimal("25.00"))));
+    }
+
+    @Test
+    void execute_Sell_WithNoPosition_ExplainsItInPortuguese() {
+        stubUserLanguage("pt");
+        stubSellable(null);
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.SELL, new BigDecimal("4"), null)));
+
+        assertEquals("Você não tem PETR4 na sua carteira simulada.", e.getMessage());
+    }
+
+    @Test
+    void execute_Sell_MoreThanHeld_NamesTheQuantityHeldInPortuguese() {
+        stubUserLanguage("pt");
+        stubSellable(new BigDecimal("5"));
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.SELL, new BigDecimal("10"), null)));
+
+        // Quantities are shown the way the learner typed them — never BigDecimal's
+        // raw scale ("10.0" for a whole number of shares).
+        assertEquals("Você tem 5 de PETR4 na carteira simulada — não dá para vender 10.", e.getMessage());
+    }
+
+    @Test
+    void execute_Sell_MoreThanHeld_FallsBackToEnglishForAnEnglishAccount() {
+        stubUserLanguage("en");
+        stubSellable(new BigDecimal("5"));
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.SELL, new BigDecimal("10"), null)));
+
+        assertEquals("You hold 5 of PETR4 in your simulated portfolio — you cannot sell 10.", e.getMessage());
+    }
+
+    @Test
+    void execute_WithUnknownTicker_ExplainsItInSpanish() {
+        stubUserLanguage("es");
+        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio());
+        when(externalInvestmentApiPort.getQuote("GHOST99")).thenReturn(Optional.empty());
+        when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
+                .thenReturn(Optional.empty());
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("GHOST99", SimulatedOrderSide.BUY, new BigDecimal("1"), null)));
+
+        assertEquals("No encontramos el activo GHOST99.", e.getMessage());
+    }
+
+    @Test
+    void execute_WithFutureTradeDate_ExplainsItInPortuguese() {
+        stubUserLanguage("pt");
+        when(getOrCreateSimulatedPortfolioUseCase.execute(EMAIL)).thenReturn(portfolio());
+        when(simulatedPortfolioRepository.findOrderByClientOrderId(eq(PORTFOLIO_ID), anyString()))
+                .thenReturn(Optional.empty());
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, new BigDecimal("10"), null,
+                        LocalDate.now(ZoneOffset.UTC).plusDays(1))));
+
+        assertEquals("A data da operação não pode estar no futuro.", e.getMessage());
+    }
+
+    @Test
+    void execute_WithZeroQuantity_ExplainsItInPortuguese() {
+        stubUserLanguage("pt");
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.BUY, BigDecimal.ZERO, null)));
+
+        assertEquals("Informe uma quantidade maior que zero.", e.getMessage());
+    }
+
+    @Test
+    void execute_WithAnAccountWhoseLanguageCannotBeRead_StillSpeaksTheDefaultLanguage() {
+        when(userRepository.findByEmail(EMAIL)).thenReturn(Optional.empty());
+        stubSellable(null);
+
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, () -> useCase.execute(EMAIL,
+                new PlaceSimulatedOrderCommand("PETR4", SimulatedOrderSide.SELL, new BigDecimal("4"), null)));
+
+        assertEquals("Você não tem PETR4 na sua carteira simulada.", e.getMessage());
     }
 }

@@ -2,8 +2,11 @@ package com.jf.PetApp.application.simulatedportfolio.usecase;
 
 import com.jf.PetApp.application.investment.dto.AssetQuoteResponse;
 import com.jf.PetApp.application.investment.port.ExternalInvestmentApiPort;
+import com.jf.PetApp.application.simulatedportfolio.SimulatedOrderMessages;
 import com.jf.PetApp.application.simulatedportfolio.dto.SimulatedOrderDTO;
 import com.jf.PetApp.application.simulatedportfolio.port.SimulatedPortfolioRepositoryPort;
+import com.jf.PetApp.application.user.port.UserRepository;
+import com.jf.PetApp.core.domain.User;
 import com.jf.PetApp.core.domain.SimulatedOrder;
 import com.jf.PetApp.core.domain.SimulatedPortfolio;
 import com.jf.PetApp.core.domain.SimulatedPosition;
@@ -52,24 +55,39 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
     private final SimulatedPortfolioRepositoryPort simulatedPortfolioRepository;
     private final ExternalInvestmentApiPort externalInvestmentApiPort;
 
+    /**
+     * Only ever read for {@code preferredLanguage}: every rejection below is shown to the learner
+     * verbatim by the client, so it has to be written in their language — see
+     * {@link SimulatedOrderMessages}. Same reason the Mentor's use case holds this port.
+     */
+    private final UserRepository userRepository;
+
     public PlaceSimulatedOrderUseCaseImpl(
             GetOrCreateSimulatedPortfolioUseCase getOrCreateSimulatedPortfolioUseCase,
             SimulatedPortfolioRepositoryPort simulatedPortfolioRepository,
-            ExternalInvestmentApiPort externalInvestmentApiPort
+            ExternalInvestmentApiPort externalInvestmentApiPort,
+            UserRepository userRepository
     ) {
         this.getOrCreateSimulatedPortfolioUseCase = getOrCreateSimulatedPortfolioUseCase;
         this.simulatedPortfolioRepository = simulatedPortfolioRepository;
         this.externalInvestmentApiPort = externalInvestmentApiPort;
+        this.userRepository = userRepository;
+    }
+
+    /** Falls back to the default language rather than failing the request over missing copy. */
+    private String languageOf(String email) {
+        return userRepository.findByEmail(email).map(User::getPreferredLanguage).orElse(null);
     }
 
     @Override
     @Transactional
     public SimulatedOrderDTO execute(String email, PlaceSimulatedOrderCommand command) {
+        String language = languageOf(email);
         if (command.quantity() == null || command.quantity().compareTo(BigDecimal.ZERO) <= 0) {
-            throw new IllegalArgumentException("Order quantity must be greater than zero");
+            throw new IllegalArgumentException(SimulatedOrderMessages.quantityMustBePositive(language));
         }
         if (command.ticker() == null || command.ticker().isBlank()) {
-            throw new IllegalArgumentException("Order ticker must not be blank");
+            throw new IllegalArgumentException(SimulatedOrderMessages.tickerMustNotBeBlank(language));
         }
 
         SimulatedPortfolio portfolio = getOrCreateSimulatedPortfolioUseCase.execute(email);
@@ -87,56 +105,59 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
         LocalDate today = LocalDate.now(ZoneOffset.UTC);
         LocalDate tradeDate = command.tradeDate();
         if (tradeDate != null && tradeDate.isAfter(today)) {
-            throw new IllegalArgumentException("Trade date must not be in the future: " + tradeDate);
+            throw new IllegalArgumentException(SimulatedOrderMessages.tradeDateMustNotBeInTheFuture(language));
         }
         boolean backdated = tradeDate != null && tradeDate.isBefore(today);
 
-        BigDecimal price = backdated ? resolveHistoricalPrice(ticker, tradeDate) : resolveReferencePrice(ticker);
+        BigDecimal price = backdated
+                ? resolveHistoricalPrice(ticker, tradeDate, language)
+                : resolveReferencePrice(ticker, language);
         Instant executedAt = backdated ? tradeDate.atTime(BACKDATED_EXECUTION_TIME).toInstant(ZoneOffset.UTC) : Instant.now();
         BigDecimal quantity = command.quantity();
 
         if (backdated && command.side() == SimulatedOrderSide.SELL) {
-            requireHeldSince(portfolio, ticker, tradeDate);
+            requireHeldSince(portfolio, ticker, tradeDate, language);
         }
 
         SimulatedOrder order = switch (command.side()) {
             case BUY -> executeBuy(portfolio, ticker, quantity, price, executedAt, clientOrderId);
-            case SELL -> executeSell(portfolio, ticker, quantity, price, executedAt, clientOrderId);
+            case SELL -> executeSell(portfolio, ticker, quantity, price, executedAt, clientOrderId, language);
         };
 
         return toDto(order);
     }
 
-    private BigDecimal resolveReferencePrice(String ticker) {
+    private BigDecimal resolveReferencePrice(String ticker, String language) {
         AssetQuoteResponse quote = externalInvestmentApiPort.getQuote(ticker)
-                .orElseThrow(() -> new IllegalArgumentException("Unknown ticker for simulation: " + ticker));
+                .orElseThrow(() -> new IllegalArgumentException(
+                        SimulatedOrderMessages.unknownTicker(language, ticker)));
         if (quote.regularMarketPrice() == null || quote.simulated()) {
-            throw new IllegalArgumentException("No reference price available for ticker: " + ticker);
+            throw new IllegalArgumentException(SimulatedOrderMessages.noReferencePrice(language, ticker));
         }
         return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
     }
 
     /** Empty means no close on or before {@code date} — never falls back to today's price. */
-    private BigDecimal resolveHistoricalPrice(String ticker, LocalDate date) {
+    private BigDecimal resolveHistoricalPrice(String ticker, LocalDate date, String language) {
         AssetQuoteResponse quote = externalInvestmentApiPort.getQuoteAtDate(ticker, date)
                 .orElseThrow(() -> new IllegalArgumentException(
-                        "No historical price available for " + ticker + " on " + date));
+                        SimulatedOrderMessages.noHistoricalPrice(language, ticker, date)));
         if (quote.regularMarketPrice() == null || quote.simulated()) {
-            throw new IllegalArgumentException("No historical price available for " + ticker + " on " + date);
+            throw new IllegalArgumentException(SimulatedOrderMessages.noHistoricalPrice(language, ticker, date));
         }
         return BigDecimal.valueOf(quote.regularMarketPrice()).setScale(2, RoundingMode.HALF_UP);
     }
 
     // A sell dated before the first buy of that ticker would leave the order ledger claiming the
     // student sold something they did not yet own, which the wealth-evolution chart replays.
-    private void requireHeldSince(SimulatedPortfolio portfolio, String ticker, LocalDate sellDate) {
+    private void requireHeldSince(SimulatedPortfolio portfolio, String ticker, LocalDate sellDate, String language) {
         Optional<LocalDate> firstBuyDate = simulatedPortfolioRepository.findOrders(portfolio.id()).stream()
                 .filter(o -> o.side() == SimulatedOrderSide.BUY && o.ticker().equals(ticker))
                 .map(o -> o.executedAt().atZone(ZoneOffset.UTC).toLocalDate())
                 .min(LocalDate::compareTo);
         if (firstBuyDate.isPresent() && sellDate.isBefore(firstBuyDate.get())) {
             throw new IllegalArgumentException(
-                    "Cannot sell " + ticker + " on " + sellDate + ", before it was first bought on " + firstBuyDate.get());
+                    SimulatedOrderMessages.sellBeforeFirstBuy(language, ticker, sellDate, firstBuyDate.get()));
         }
     }
 
@@ -159,14 +180,15 @@ public class PlaceSimulatedOrderUseCaseImpl implements PlaceSimulatedOrderUseCas
 
     private SimulatedOrder executeSell(
             SimulatedPortfolio portfolio, String ticker, BigDecimal quantity, BigDecimal price,
-            Instant executedAt, String clientOrderId
+            Instant executedAt, String clientOrderId, String language
     ) {
         SimulatedPosition position = simulatedPortfolioRepository.findPosition(portfolio.id(), ticker)
-                .orElseThrow(() -> new IllegalArgumentException("No simulated position held in " + ticker));
+                .orElseThrow(() -> new IllegalArgumentException(
+                        SimulatedOrderMessages.noPositionHeld(language, ticker)));
 
         if (quantity.compareTo(position.quantity()) > 0) {
             throw new IllegalArgumentException(
-                    "Insufficient simulated position quantity in " + ticker + " to sell " + quantity);
+                    SimulatedOrderMessages.insufficientQuantity(language, ticker, position.quantity(), quantity));
         }
 
         BigDecimal remainingQuantity = position.quantity().subtract(quantity);
