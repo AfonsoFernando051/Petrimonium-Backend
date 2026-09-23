@@ -48,7 +48,7 @@ boot — see its Javadoc for the exact algorithm.
      "http://localhost:8081/api/v1/academy/catalog?lang=pt" | less
    ```
 7. **Update `AcademyContentSeedRunnerTest`** — it asserts exact row counts
-   (`domains=8, schools=19, modules=65, lessons=401, steps=2015` as of this
+   (`domains=8, schools=19, modules=66, lessons=406, steps=2040` as of this
    writing) against the real content in this directory. Adding anything
    changes those numbers; the test will fail until you update them.
 8. **Deploy the backend as usual.** Nothing in the Flutter app needs to

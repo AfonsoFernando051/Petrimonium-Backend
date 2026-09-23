@@ -2528,6 +2528,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "macro_reading_in_real_time",
+      "order": 4,
+      "iconKey": "bar_chart_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "ADVANCED",
+      "prerequisites": [
+        "macro_specialist_topics"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Lendo a Economia em Tempo Real",
+          "description": "Esperado x realizado, comunicação do banco central, defasagem da política monetária, mercado de trabalho e índices de confiança."
+        },
+        "en": {
+          "title": "Reading the Economy in Real Time",
+          "description": "Expected vs. actual, central bank communication, policy transmission lag, the labor market and confidence indices."
+        },
+        "es": {
+          "title": "Leyendo la Economía en Tiempo Real",
+          "description": "Esperado vs. realizado, comunicación del banco central, rezago de la política monetaria, mercado laboral e índices de confianza."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "macro_expectations_and_surprises",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Esperado x Realizado: O Mercado Reage à Surpresa"
+            },
+            "en": {
+              "title": "Expected vs. Actual: Markets React to Surprise"
+            },
+            "es": {
+              "title": "Esperado vs. Realizado: El Mercado Reacciona a la Sorpresa"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O preço de hoje já contém o que todo mundo espera",
+                  "body": "Os preços de mercado incorporam continuamente as expectativas dos participantes sobre o que vai acontecer. Por isso, quando um indicador é divulgado, o que move os preços não é o número em si, e sim a diferença entre ele e o que já era esperado. Um dado ruim que vem melhor do que o previsto pode fazer preços subirem; um dado bom, mas pior do que o consenso, pode fazê-los cair. É a surpresa que carrega informação nova."
+                },
+                "en": {
+                  "title": "Today's price already contains what everyone expects",
+                  "body": "Market prices continuously incorporate participants' expectations about what will happen. That's why, when an indicator is released, what moves prices isn't the number itself but the gap between it and what was already expected. A weak figure that comes in better than forecast can push prices up; a strong figure that falls short of consensus can push them down. It's the surprise that carries new information."
+                },
+                "es": {
+                  "title": "El precio de hoy ya contiene lo que todos esperan",
+                  "body": "Los precios de mercado incorporan continuamente las expectativas de los participantes sobre lo que va a ocurrir. Por eso, cuando se divulga un indicador, lo que mueve los precios no es el número en sí, sino la diferencia entre él y lo que ya se esperaba. Un dato malo que viene mejor de lo previsto puede hacer subir los precios; un dato bueno, pero peor que el consenso, puede hacerlos caer. Es la sorpresa la que carga información nueva."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um índice de inflação é divulgado com alta — um dado desfavorável em si. Se, porém, o mercado esperava uma alta ainda maior, o resultado é uma surpresa favorável, e os preços podem reagir positivamente. Quem olha apenas a manchete 'inflação sobe' fica sem entender o movimento; quem sabe que o preço já embutia a expectativa entende que a notícia foi menos ruim do que o previsto."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "An inflation index is released showing a rise — unfavorable in itself. If, however, the market expected an even bigger rise, the result is a favorable surprise, and prices can react positively. Someone reading only the headline 'inflation rises' won't understand the move; someone who knows the price already embedded the expectation sees that the news was less bad than forecast."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Se divulga un índice de inflación con alza — un dato desfavorable en sí. Si, sin embargo, el mercado esperaba un alza aún mayor, el resultado es una sorpresa favorable, y los precios pueden reaccionar positivamente. Quien mira solo el titular 'la inflación sube' no entiende el movimiento; quien sabe que el precio ya incorporaba la expectativa comprende que la noticia fue menos mala de lo previsto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que costuma mover os preços quando um indicador econômico é divulgado?",
+                  "options": [
+                    "O valor absoluto do indicador, independentemente do que se esperava",
+                    "A diferença entre o dado divulgado e o que o mercado já esperava",
+                    "A quantidade de veículos de imprensa que noticiaram o dado",
+                    "A data exata da divulgação, sempre no mesmo sentido"
+                  ],
+                  "explanation": "O esperado já está no preço. O que resta de informação nova é a surpresa — a distância entre o previsto e o realizado."
+                },
+                "en": {
+                  "prompt": "What usually moves prices when an economic indicator is released?",
+                  "options": [
+                    "The indicator's absolute value, regardless of what was expected",
+                    "The gap between the released figure and what the market already expected",
+                    "How many media outlets reported the figure",
+                    "The exact release date, always in the same direction"
+                  ],
+                  "explanation": "The expected is already in the price. What's left as new information is the surprise — the distance between forecast and actual."
+                },
+                "es": {
+                  "prompt": "¿Qué suele mover los precios cuando se divulga un indicador económico?",
+                  "options": [
+                    "El valor absoluto del indicador, sin importar lo que se esperaba",
+                    "La diferencia entre el dato divulgado y lo que el mercado ya esperaba",
+                    "La cantidad de medios de prensa que informaron el dato",
+                    "La fecha exacta de la divulgación, siempre en el mismo sentido"
+                  ],
+                  "explanation": "Lo esperado ya está en el precio. Lo que queda de información nueva es la sorpresa — la distancia entre lo previsto y lo realizado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você lê uma notícia econômica claramente positiva e pensa em comprar antes que o mercado reaja. Qual é o problema dessa lógica?",
+                  "options": [
+                    "Notícias econômicas nunca afetam preços de ativos",
+                    "Comprar após uma notícia positiva é proibido para investidores pessoa física",
+                    "O preço só reage a notícias no dia seguinte, o que dá tempo de agir",
+                    "Se a notícia já é pública, o preço provavelmente já a incorporou — e talvez já embutisse a expectativa dela antes mesmo de sair"
+                  ],
+                  "explanation": "Agir depois da divulgação pressupõe que os demais participantes não a viram. O que sobra de vantagem raramente está na notícia em si, e sim no horizonte e na disciplina de quem investe."
+                },
+                "en": {
+                  "prompt": "You read clearly positive economic news and think about buying before the market reacts. What's wrong with that logic?",
+                  "options": [
+                    "Economic news never affects asset prices",
+                    "Buying after positive news is forbidden for retail investors",
+                    "Prices only react to news the next day, which leaves time to act",
+                    "If the news is already public, the price has probably incorporated it — and may have embedded the expectation of it even before release"
+                  ],
+                  "explanation": "Acting after the release assumes other participants didn't see it. The remaining edge rarely lies in the news itself, but in the horizon and discipline of the investor."
+                },
+                "es": {
+                  "prompt": "Lees una noticia económica claramente positiva y piensas en comprar antes de que el mercado reaccione. ¿Cuál es el problema de esa lógica?",
+                  "options": [
+                    "Las noticias económicas nunca afectan los precios de los activos",
+                    "Comprar tras una noticia positiva está prohibido para inversores minoristas",
+                    "Los precios solo reaccionan a las noticias al día siguiente, lo que da tiempo de actuar",
+                    "Si la noticia ya es pública, el precio probablemente ya la incorporó — y quizá ya incorporaba su expectativa antes incluso de salir"
+                  ],
+                  "explanation": "Actuar tras la divulgación supone que los demás participantes no la vieron. La ventaja que queda rara vez está en la noticia en sí, sino en el horizonte y la disciplina de quien invierte."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Preços incorporam continuamente as expectativas sobre o futuro.",
+                    "O que move o mercado na divulgação é a surpresa, não o número isolado.",
+                    "Agir sobre uma notícia já pública supõe que ninguém mais a viu."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Prices continuously incorporate expectations about the future.",
+                    "What moves the market at release is the surprise, not the isolated number.",
+                    "Acting on already-public news assumes nobody else saw it."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los precios incorporan continuamente las expectativas sobre el futuro.",
+                    "Lo que mueve al mercado en la divulgación es la sorpresa, no el número aislado.",
+                    "Actuar sobre una noticia ya pública supone que nadie más la vio."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_central_bank_communication",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Lendo a Comunicação do Banco Central"
+            },
+            "en": {
+              "title": "Reading Central Bank Communication"
+            },
+            "es": {
+              "title": "Leyendo la Comunicación del Banco Central"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A decisão é só metade da mensagem",
+                  "body": "Quando uma autoridade monetária decide sobre juros, ela publica também um comunicado e, depois, a ata da reunião. Esses textos explicam o diagnóstico do cenário e sinalizam o que pode vir adiante. Como as expectativas já estão nos preços, muitas vezes a decisão em si surpreende menos do que o tom do texto: uma mudança de palavras sobre riscos ou sobre os próximos passos pode mover mais o mercado do que o número anunciado."
+                },
+                "en": {
+                  "title": "The decision is only half the message",
+                  "body": "When a monetary authority decides on interest rates, it also publishes a statement and, later, the meeting minutes. These texts explain its reading of the scenario and signal what may come next. Since expectations are already in prices, the decision itself often surprises less than the text's tone: a shift in wording about risks or next steps can move markets more than the announced number."
+                },
+                "es": {
+                  "title": "La decisión es solo la mitad del mensaje",
+                  "body": "Cuando una autoridad monetaria decide sobre las tasas, publica también un comunicado y, después, el acta de la reunión. Esos textos explican el diagnóstico del escenario y señalan lo que puede venir. Como las expectativas ya están en los precios, muchas veces la decisión en sí sorprende menos que el tono del texto: un cambio de palabras sobre los riesgos o sobre los próximos pasos puede mover más al mercado que el número anunciado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma decisão de juros vem exatamente como o mercado esperava, e ainda assim os preços se movem bastante. O motivo costuma estar no comunicado: uma frase que antes indicava cautela e agora indica preocupação, ou a retirada de uma expressão que sinalizava continuidade. Acompanhar a mudança de linguagem entre uma reunião e a seguinte diz mais do que ler o texto isolado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A rate decision comes in exactly as expected, and prices still move considerably. The reason is usually in the statement: a sentence that previously signaled caution now signals concern, or the removal of a phrase that suggested continuity. Tracking how the language changes from one meeting to the next says more than reading a single text in isolation."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una decisión de tasas llega exactamente como el mercado esperaba, y aun así los precios se mueven bastante. El motivo suele estar en el comunicado: una frase que antes indicaba cautela y ahora indica preocupación, o el retiro de una expresión que señalaba continuidad. Seguir el cambio de lenguaje entre una reunión y la siguiente dice más que leer el texto aislado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que o comunicado de uma decisão de juros pode mover mais o mercado do que a própria decisão?",
+                  "options": [
+                    "Porque o comunicado define legalmente a taxa que valerá no período",
+                    "Porque o comunicado é divulgado antes da decisão",
+                    "Porque a decisão costuma estar dentro do esperado, enquanto o texto traz sinais novos sobre o que vem adiante",
+                    "Porque o mercado só tem acesso à decisão semanas depois"
+                  ],
+                  "explanation": "A decisão esperada já está nos preços. O que ainda não está é a leitura de cenário e a sinalização sobre os próximos passos."
+                },
+                "en": {
+                  "prompt": "Why can the statement accompanying a rate decision move markets more than the decision itself?",
+                  "options": [
+                    "Because the statement legally sets the rate for the period",
+                    "Because the statement is released before the decision",
+                    "Because the decision is usually in line with expectations, while the text brings new signals about what's ahead",
+                    "Because the market only sees the decision weeks later"
+                  ],
+                  "explanation": "An expected decision is already in prices. What isn't yet is the reading of the scenario and the signaling about next steps."
+                },
+                "es": {
+                  "prompt": "¿Por qué el comunicado de una decisión de tasas puede mover más al mercado que la propia decisión?",
+                  "options": [
+                    "Porque el comunicado fija legalmente la tasa que regirá en el período",
+                    "Porque el comunicado se divulga antes de la decisión",
+                    "Porque la decisión suele estar dentro de lo esperado, mientras el texto trae señales nuevas sobre lo que viene",
+                    "Porque el mercado solo accede a la decisión semanas después"
+                  ],
+                  "explanation": "Una decisión esperada ya está en los precios. Lo que aún no está es la lectura del escenario y la señalización sobre los próximos pasos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer acompanhar a política monetária de forma útil, sem virar operador de mercado. Qual uso faz mais sentido para um investidor de longo prazo?",
+                  "options": [
+                    "Entender a direção geral do ciclo de juros e checar se isso muda alguma premissa do seu plano — não tentar antecipar a reação de curto prazo",
+                    "Reposicionar a carteira a cada comunicado, para capturar o movimento imediato",
+                    "Ignorar completamente a política monetária, que só afeta operadores profissionais",
+                    "Aumentar a renda variável sempre que o comunicado tiver tom otimista"
+                  ],
+                  "explanation": "Para quem investe com horizonte longo, o valor está em entender o ciclo e revisar premissas — não em competir na reação de minutos, que é o jogo de outros participantes."
+                },
+                "en": {
+                  "prompt": "You want to follow monetary policy usefully, without becoming a trader. Which use makes most sense for a long-term investor?",
+                  "options": [
+                    "Understand the general direction of the rate cycle and check whether it changes any assumption in your plan — not try to front-run the short-term reaction",
+                    "Reposition the portfolio at every statement, to capture the immediate move",
+                    "Ignore monetary policy entirely, since it only affects professional traders",
+                    "Increase equities whenever the statement has an optimistic tone"
+                  ],
+                  "explanation": "For a long-horizon investor, the value lies in understanding the cycle and revisiting assumptions — not competing in the minute-by-minute reaction, which is other participants' game."
+                },
+                "es": {
+                  "prompt": "Quieres seguir la política monetaria de forma útil, sin volverte operador de mercado. ¿Qué uso tiene más sentido para un inversor de largo plazo?",
+                  "options": [
+                    "Entender la dirección general del ciclo de tasas y verificar si eso cambia alguna premisa de tu plan — no intentar anticipar la reacción de corto plazo",
+                    "Reposicionar la cartera en cada comunicado, para capturar el movimiento inmediato",
+                    "Ignorar por completo la política monetaria, que solo afecta a operadores profesionales",
+                    "Aumentar la renta variable siempre que el comunicado tenga tono optimista"
+                  ],
+                  "explanation": "Para quien invierte con horizonte largo, el valor está en entender el ciclo y revisar premisas — no en competir en la reacción de minutos, que es el juego de otros participantes."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Comunicado e ata explicam o diagnóstico e sinalizam os próximos passos.",
+                    "A mudança de linguagem entre reuniões costuma informar mais que o texto isolado.",
+                    "Para o longo prazo, o uso é entender o ciclo e revisar premissas, não antecipar reações."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The statement and minutes explain the diagnosis and signal next steps.",
+                    "How the language changes between meetings usually informs more than a single text.",
+                    "For the long term, the use is understanding the cycle and revisiting assumptions, not front-running reactions."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Comunicado y acta explican el diagnóstico y señalan los próximos pasos.",
+                    "El cambio de lenguaje entre reuniones suele informar más que el texto aislado.",
+                    "Para el largo plazo, el uso es entender el ciclo y revisar premisas, no anticipar reacciones."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_policy_transmission_lag",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Defasagem: Por Que o Efeito dos Juros Demora"
+            },
+            "en": {
+              "title": "Transmission Lag: Why Rate Changes Take Time"
+            },
+            "es": {
+              "title": "Rezago: Por Qué el Efecto de las Tasas Demora"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A economia não responde no dia seguinte",
+                  "body": "Uma mudança na taxa básica de juros leva tempo para chegar à atividade econômica e à inflação. O caminho passa pelo custo do crédito, pelas decisões de consumo e de investimento das empresas, pelos contratos que só são renovados meses depois. Esse intervalo entre a decisão e o efeito é a defasagem da política monetária, e ela explica por que juros podem estar subindo enquanto a inflação ainda acelera — o remédio foi tomado, mas ainda não agiu."
+                },
+                "en": {
+                  "title": "The economy doesn't respond the next day",
+                  "body": "A change in the policy rate takes time to reach economic activity and inflation. The path runs through the cost of credit, households' and firms' consumption and investment decisions, and contracts that are only renewed months later. That interval between decision and effect is monetary policy's transmission lag, and it explains why rates can be rising while inflation is still accelerating — the medicine was taken, but hasn't acted yet."
+                },
+                "es": {
+                  "title": "La economía no responde al día siguiente",
+                  "body": "Un cambio en la tasa básica de interés tarda en llegar a la actividad económica y a la inflación. El camino pasa por el costo del crédito, por las decisiones de consumo y de inversión de las empresas, por los contratos que solo se renuevan meses después. Ese intervalo entre la decisión y el efecto es el rezago de la política monetaria, y explica por qué las tasas pueden estar subiendo mientras la inflación aún acelera — el remedio fue tomado, pero todavía no actuó."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Depois de uma sequência de altas de juros, a inflação corrente ainda pode vir alta por vários meses. Isso não significa, por si só, que a política foi ineficaz: parte do efeito ainda está a caminho. É também por isso que decisões de política monetária costumam olhar para a inflação esperada no futuro, e não apenas para o número do mês passado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "After a sequence of rate hikes, current inflation can still come in high for several months. That doesn't by itself mean the policy failed: part of the effect is still on its way. It's also why monetary policy decisions tend to look at expected future inflation, not just last month's number."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Tras una secuencia de subidas de tasas, la inflación corriente aún puede venir alta durante varios meses. Eso no significa, por sí solo, que la política fue ineficaz: parte del efecto todavía está en camino. También por eso las decisiones de política monetaria suelen mirar la inflación esperada en el futuro, y no solo el número del mes pasado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "O que é a defasagem da política monetária?",
+                  "options": [
+                    "O tempo que o banco central leva para divulgar a ata da reunião",
+                    "A diferença entre a taxa básica e a taxa cobrada pelos bancos",
+                    "O atraso na atualização dos índices de inflação",
+                    "O intervalo entre a mudança de juros e o seu efeito sobre atividade e inflação"
+                  ],
+                  "explanation": "É o tempo que a decisão leva para percorrer crédito, consumo, investimento e contratos até afetar os preços."
+                },
+                "en": {
+                  "prompt": "What is monetary policy's transmission lag?",
+                  "options": [
+                    "The time the central bank takes to publish the meeting minutes",
+                    "The gap between the policy rate and the rate banks charge",
+                    "The delay in updating inflation indices",
+                    "The interval between a rate change and its effect on activity and inflation"
+                  ],
+                  "explanation": "It's the time the decision takes to travel through credit, consumption, investment and contracts before affecting prices."
+                },
+                "es": {
+                  "prompt": "¿Qué es el rezago de la política monetaria?",
+                  "options": [
+                    "El tiempo que el banco central tarda en divulgar el acta de la reunión",
+                    "La diferencia entre la tasa básica y la tasa que cobran los bancos",
+                    "El atraso en la actualización de los índices de inflación",
+                    "El intervalo entre el cambio de tasas y su efecto sobre la actividad y la inflación"
+                  ],
+                  "explanation": "Es el tiempo que la decisión tarda en recorrer crédito, consumo, inversión y contratos hasta afectar los precios."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Alguém afirma que a alta de juros 'não funcionou' porque a inflação do mês seguinte veio alta. Como avaliar essa conclusão?",
+                  "options": [
+                    "Está correta: se o efeito não aparece no mês seguinte, a política falhou",
+                    "É precipitada: pela defasagem, o efeito de uma decisão leva meses para aparecer nos dados",
+                    "É irrelevante: juros e inflação não têm relação entre si",
+                    "Está correta apenas se a alta de juros tiver sido pequena"
+                  ],
+                  "explanation": "Julgar a política pelo dado do mês seguinte ignora o mecanismo: a decisão ainda está percorrendo crédito, consumo e contratos."
+                },
+                "en": {
+                  "prompt": "Someone claims the rate hike 'didn't work' because the following month's inflation came in high. How do you assess that?",
+                  "options": [
+                    "It's correct: if the effect doesn't show the next month, the policy failed",
+                    "It's premature: due to the lag, a decision's effect takes months to appear in the data",
+                    "It's irrelevant: rates and inflation have no relation to each other",
+                    "It's correct only if the hike was small"
+                  ],
+                  "explanation": "Judging policy by the next month's figure ignores the mechanism: the decision is still traveling through credit, consumption and contracts."
+                },
+                "es": {
+                  "prompt": "Alguien afirma que la subida de tasas 'no funcionó' porque la inflación del mes siguiente vino alta. ¿Cómo evaluar esa conclusión?",
+                  "options": [
+                    "Es correcta: si el efecto no aparece al mes siguiente, la política falló",
+                    "Es precipitada: por el rezago, el efecto de una decisión tarda meses en aparecer en los datos",
+                    "Es irrelevante: tasas e inflación no tienen relación entre sí",
+                    "Es correcta solo si la subida de tasas fue pequeña"
+                  ],
+                  "explanation": "Juzgar la política por el dato del mes siguiente ignora el mecanismo: la decisión todavía está recorriendo crédito, consumo y contratos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Mudanças de juros levam meses para afetar atividade e inflação.",
+                    "A defasagem explica juros subindo com inflação ainda alta.",
+                    "Por isso a política olha a inflação esperada, não só a do mês passado."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Rate changes take months to affect activity and inflation.",
+                    "The lag explains rates rising while inflation is still high.",
+                    "That's why policy looks at expected inflation, not just last month's."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los cambios de tasas tardan meses en afectar la actividad y la inflación.",
+                    "El rezago explica tasas subiendo con inflación aún alta.",
+                    "Por eso la política mira la inflación esperada, no solo la del mes pasado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_labor_market",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Mercado de Trabalho: Emprego, Renda e Consumo"
+            },
+            "en": {
+              "title": "The Labor Market: Jobs, Income and Consumption"
+            },
+            "es": {
+              "title": "Mercado Laboral: Empleo, Renta y Consumo"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O elo entre a economia e o bolso das pessoas",
+                  "body": "Indicadores de emprego e de renda dizem quanto dinheiro as famílias terão para gastar — e, por isso, antecipam consumo, receita das empresas e pressão sobre preços. Um mercado de trabalho aquecido sustenta o consumo, mas pode pressionar salários e, através deles, a inflação. Um mercado enfraquecido reduz a pressão inflacionária ao custo de atividade menor. Nenhum dos dois é 'bom' ou 'ruim' em abstrato: depende do que a economia precisa naquele momento."
+                },
+                "en": {
+                  "title": "The link between the economy and people's pockets",
+                  "body": "Employment and income indicators tell how much money households will have to spend — and therefore anticipate consumption, company revenues and price pressure. A hot labor market sustains consumption but can push up wages and, through them, inflation. A weak one reduces inflationary pressure at the cost of lower activity. Neither is 'good' or 'bad' in the abstract: it depends on what the economy needs at that moment."
+                },
+                "es": {
+                  "title": "El vínculo entre la economía y el bolsillo de las personas",
+                  "body": "Los indicadores de empleo y de renta dicen cuánto dinero tendrán las familias para gastar — y, por eso, anticipan consumo, ingresos de las empresas y presión sobre los precios. Un mercado laboral caliente sostiene el consumo, pero puede presionar los salarios y, a través de ellos, la inflación. Un mercado debilitado reduce la presión inflacionaria al costo de una actividad menor. Ninguno es 'bueno' o 'malo' en abstracto: depende de lo que la economía necesite en ese momento."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma sequência de meses com criação de vagas e renda média em alta costuma se refletir depois nas receitas de empresas voltadas ao consumo doméstico. Ao mesmo tempo, essa mesma força pode levar a autoridade monetária a manter juros mais altos por mais tempo — o que afeta outros ativos na direção oposta. O mesmo dado, portanto, não é positivo para tudo ao mesmo tempo."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A run of months with job creation and rising average income usually shows up later in the revenues of companies serving domestic consumption. At the same time, that same strength can lead the monetary authority to keep rates higher for longer — which affects other assets in the opposite direction. The same data point, therefore, isn't positive for everything at once."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una secuencia de meses con creación de empleo y renta media en alza suele reflejarse después en los ingresos de empresas orientadas al consumo doméstico. Al mismo tiempo, esa misma fuerza puede llevar a la autoridad monetaria a mantener tasas más altas por más tiempo — lo que afecta a otros activos en dirección opuesta. El mismo dato, por lo tanto, no es positivo para todo a la vez."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que indicadores de emprego e renda importam para quem investe?",
+                  "options": [
+                    "Porque antecipam consumo, receita das empresas e pressão sobre preços",
+                    "Porque determinam diretamente a taxa de juros dos títulos públicos",
+                    "Porque substituem a análise dos balanços das empresas",
+                    "Porque só afetam quem investe em ações de empresas industriais"
+                  ],
+                  "explanation": "Emprego e renda definem a capacidade de gasto das famílias — que se propaga para receitas, inflação e, por consequência, política monetária."
+                },
+                "en": {
+                  "prompt": "Why do employment and income indicators matter to investors?",
+                  "options": [
+                    "Because they anticipate consumption, company revenues and price pressure",
+                    "Because they directly set the yield of government bonds",
+                    "Because they replace analysis of company financial statements",
+                    "Because they only affect those invested in industrial company shares"
+                  ],
+                  "explanation": "Employment and income define households' spending capacity — which propagates into revenues, inflation and, consequently, monetary policy."
+                },
+                "es": {
+                  "prompt": "¿Por qué importan los indicadores de empleo y renta para quien invierte?",
+                  "options": [
+                    "Porque anticipan consumo, ingresos de las empresas y presión sobre los precios",
+                    "Porque determinan directamente la tasa de interés de los títulos públicos",
+                    "Porque sustituyen el análisis de los balances de las empresas",
+                    "Porque solo afectan a quien invierte en acciones de empresas industriales"
+                  ],
+                  "explanation": "Empleo y renta definen la capacidad de gasto de las familias — que se propaga a ingresos, inflación y, en consecuencia, política monetaria."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Um dado de emprego vem muito mais forte que o esperado. Por que a reação dos ativos pode ser mista?",
+                  "options": [
+                    "Porque dados de emprego nunca afetam o mercado financeiro",
+                    "Porque o dado só vale para o mês em que foi medido",
+                    "Porque a mesma força pode elevar receitas de empresas e, ao mesmo tempo, sustentar juros mais altos por mais tempo",
+                    "Porque a reação depende apenas do humor dos investidores naquele dia"
+                  ],
+                  "explanation": "Um único indicador atinge canais diferentes: atividade e política monetária. Eles podem empurrar preços de ativos em direções opostas."
+                },
+                "en": {
+                  "prompt": "An employment figure comes in much stronger than expected. Why can the reaction across assets be mixed?",
+                  "options": [
+                    "Because employment data never affects financial markets",
+                    "Because the figure only applies to the month it measured",
+                    "Because the same strength can lift company revenues and, at the same time, keep rates higher for longer",
+                    "Because the reaction depends only on investors' mood that day"
+                  ],
+                  "explanation": "A single indicator hits different channels: activity and monetary policy. They can push asset prices in opposite directions."
+                },
+                "es": {
+                  "prompt": "Un dato de empleo viene mucho más fuerte de lo esperado. ¿Por qué la reacción de los activos puede ser mixta?",
+                  "options": [
+                    "Porque los datos de empleo nunca afectan al mercado financiero",
+                    "Porque el dato solo vale para el mes en que fue medido",
+                    "Porque la misma fuerza puede elevar ingresos de empresas y, al mismo tiempo, sostener tasas más altas por más tiempo",
+                    "Porque la reacción depende solo del humor de los inversores ese día"
+                  ],
+                  "explanation": "Un único indicador golpea canales distintos: actividad y política monetaria. Pueden empujar los precios de los activos en direcciones opuestas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Emprego e renda antecipam consumo, receitas e pressão de preços.",
+                    "Mercado aquecido sustenta atividade e pode pressionar salários e inflação.",
+                    "Um mesmo dado pode ser bom para uns ativos e ruim para outros."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Employment and income anticipate consumption, revenues and price pressure.",
+                    "A hot market sustains activity and can push wages and inflation.",
+                    "The same figure can be good for some assets and bad for others."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Empleo y renta anticipan consumo, ingresos y presión de precios.",
+                    "Un mercado caliente sostiene la actividad y puede presionar salarios e inflación.",
+                    "Un mismo dato puede ser bueno para unos activos y malo para otros."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "macro_confidence_indices",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Índices de Confiança e Seus Limites"
+            },
+            "en": {
+              "title": "Confidence Indices and Their Limits"
+            },
+            "es": {
+              "title": "Índices de Confianza y Sus Límites"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Medir intenção não é medir comportamento",
+                  "body": "Índices de confiança de consumidores e de empresários são construídos a partir de pesquisas: perguntam como as pessoas avaliam a situação atual e o que esperam do futuro. Eles são úteis porque intenção costuma anteceder decisão — quem está confiante tende a consumir e investir mais. Mas são declarações, não transações: a distância entre o que as pessoas dizem que farão e o que de fato fazem é o principal limite desse tipo de indicador."
+                },
+                "en": {
+                  "title": "Measuring intent isn't measuring behavior",
+                  "body": "Consumer and business confidence indices are built from surveys: they ask how people assess the current situation and what they expect of the future. They're useful because intent tends to precede decision — confident people tend to consume and invest more. But they're statements, not transactions: the gap between what people say they'll do and what they actually do is this indicator type's main limit."
+                },
+                "es": {
+                  "title": "Medir intención no es medir comportamiento",
+                  "body": "Los índices de confianza de consumidores y empresarios se construyen a partir de encuestas: preguntan cómo evalúan las personas la situación actual y qué esperan del futuro. Son útiles porque la intención suele anteceder a la decisión — quien está confiado tiende a consumir e invertir más. Pero son declaraciones, no transacciones: la distancia entre lo que las personas dicen que harán y lo que de hecho hacen es el principal límite de este tipo de indicador."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "A confiança do consumidor pode melhorar por vários meses sem que as vendas cresçam na mesma proporção, porque a intenção esbarra em crédito caro, endividamento ou insegurança sobre o emprego. Por isso índices de confiança são mais úteis quando lidos junto a dados de transação — vendas, concessões de crédito, produção — do que sozinhos."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Consumer confidence can improve for several months without sales growing in the same proportion, because intent runs into expensive credit, existing debt or job insecurity. That's why confidence indices are more useful read alongside transaction data — sales, credit originations, production — than on their own."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "La confianza del consumidor puede mejorar durante varios meses sin que las ventas crezcan en la misma proporción, porque la intención choca con crédito caro, endeudamiento o inseguridad sobre el empleo. Por eso los índices de confianza son más útiles leídos junto a datos de transacción — ventas, otorgamiento de crédito, producción — que por sí solos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Como são construídos os índices de confiança?",
+                  "options": [
+                    "A partir do volume de transações registradas no sistema financeiro",
+                    "A partir de pesquisas que perguntam avaliação da situação atual e expectativas",
+                    "A partir dos balanços publicados pelas empresas de capital aberto",
+                    "A partir da variação dos preços de ativos no mercado"
+                  ],
+                  "explanation": "São pesquisas de percepção e intenção — por isso antecipam comportamento, mas não o garantem."
+                },
+                "en": {
+                  "prompt": "How are confidence indices built?",
+                  "options": [
+                    "From the volume of transactions recorded in the financial system",
+                    "From surveys asking about current-situation assessment and expectations",
+                    "From financial statements published by listed companies",
+                    "From the variation of asset prices in the market"
+                  ],
+                  "explanation": "They're perception and intent surveys — which is why they anticipate behavior without guaranteeing it."
+                },
+                "es": {
+                  "prompt": "¿Cómo se construyen los índices de confianza?",
+                  "options": [
+                    "A partir del volumen de transacciones registradas en el sistema financiero",
+                    "A partir de encuestas que preguntan la evaluación de la situación actual y las expectativas",
+                    "A partir de los balances publicados por las empresas cotizadas",
+                    "A partir de la variación de los precios de los activos en el mercado"
+                  ],
+                  "explanation": "Son encuestas de percepción e intención — por eso anticipan comportamiento, pero no lo garantizan."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Um índice de confiança sobe de forma expressiva. Qual leitura é mais prudente para um investidor?",
+                  "options": [
+                    "Tratar como confirmação de que o consumo vai crescer na mesma proporção",
+                    "Ignorar, porque pesquisas de opinião não têm valor informativo",
+                    "Concluir que a inflação cairá, já que confiança e preços caminham juntos",
+                    "Tratar como um sinal de intenção, a ser confirmado ou desmentido por dados de transação nos meses seguintes"
+                  ],
+                  "explanation": "Confiança é um sinal antecedente e frágil. Sua utilidade aparece quando os dados concretos confirmam — ou contradizem — a intenção declarada."
+                },
+                "en": {
+                  "prompt": "A confidence index rises significantly. Which reading is more prudent for an investor?",
+                  "options": [
+                    "Treat it as confirmation that consumption will grow in the same proportion",
+                    "Ignore it, because opinion surveys carry no informational value",
+                    "Conclude inflation will fall, since confidence and prices move together",
+                    "Treat it as a signal of intent, to be confirmed or contradicted by transaction data in the following months"
+                  ],
+                  "explanation": "Confidence is a leading and fragile signal. Its usefulness shows up when concrete data confirms — or contradicts — the stated intent."
+                },
+                "es": {
+                  "prompt": "Un índice de confianza sube de forma expresiva. ¿Qué lectura es más prudente para un inversor?",
+                  "options": [
+                    "Tratarlo como confirmación de que el consumo crecerá en la misma proporción",
+                    "Ignorarlo, porque las encuestas de opinión no tienen valor informativo",
+                    "Concluir que la inflación caerá, ya que confianza y precios van juntos",
+                    "Tratarlo como una señal de intención, a confirmar o desmentir por datos de transacción en los meses siguientes"
+                  ],
+                  "explanation": "La confianza es una señal anticipada y frágil. Su utilidad aparece cuando los datos concretos confirman — o contradicen — la intención declarada."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Índices de confiança medem percepção e intenção, via pesquisa.",
+                    "Intenção antecede comportamento, mas não o garante.",
+                    "Eles são mais úteis lidos junto a dados de transação do que isolados."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Confidence indices measure perception and intent, through surveys.",
+                    "Intent precedes behavior but doesn't guarantee it.",
+                    "They're more useful read alongside transaction data than in isolation."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Los índices de confianza miden percepción e intención, vía encuesta.",
+                    "La intención antecede al comportamiento, pero no lo garantiza.",
+                    "Son más útiles leídos junto a datos de transacción que aislados."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

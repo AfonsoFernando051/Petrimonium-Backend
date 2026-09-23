@@ -106,9 +106,9 @@ class AcademyContentSeedRunnerTest {
         assertThat(schoolRepository.count()).isEqualTo(19);
         assertThat(schoolRepository.findAll())
                 .allSatisfy(school -> assertThat(school.isContentAvailable()).isTrue());
-        assertThat(moduleRepository.count()).isEqualTo(65);
-        assertThat(lessonRepository.count()).isEqualTo(401);
-        assertThat(stepRepository.count()).isEqualTo(2015);
+        assertThat(moduleRepository.count()).isEqualTo(66);
+        assertThat(lessonRepository.count()).isEqualTo(406);
+        assertThat(stepRepository.count()).isEqualTo(2040);
         assertThat(optionRepository.count()).isGreaterThan(0);
         assertThat(takeawayRepository.count()).isGreaterThan(0);
         // Educational Portfolio Intelligence pilot slice (DECISION-029): 5 lessons in
