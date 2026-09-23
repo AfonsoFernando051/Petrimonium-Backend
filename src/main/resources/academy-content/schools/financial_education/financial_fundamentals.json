@@ -2528,6 +2528,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "financial_math_for_decisions",
+      "order": 4,
+      "iconKey": "calculate_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "expert_financial_math"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Matemática Financeira para Decidir",
+          "description": "Custo efetivo total, à vista x parcelado, média ponderada de taxas, prazo de retorno e análise de sensibilidade."
+        },
+        "en": {
+          "title": "Financial Math for Decisions",
+          "description": "Total effective cost, cash vs. installments, weighted average rates, payback period and sensitivity analysis."
+        },
+        "es": {
+          "title": "Matemática Financiera para Decidir",
+          "description": "Costo efectivo total, contado vs. cuotas, promedio ponderado de tasas, plazo de retorno y análisis de sensibilidad."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "financial_math_total_effective_cost",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Custo Efetivo Total: O Preço Real do Crédito"
+            },
+            "en": {
+              "title": "Total Effective Cost: Credit's Real Price"
+            },
+            "es": {
+              "title": "Costo Efectivo Total: El Precio Real del Crédito"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "A taxa de juros não é o custo inteiro",
+                  "body": "Em um empréstimo ou financiamento, a taxa de juros anunciada é apenas uma parte do que você paga. Somam-se a ela tarifas de contratação, seguros embutidos, impostos sobre operações financeiras e outros encargos. O custo efetivo total reúne tudo isso em uma única taxa, permitindo comparar propostas diferentes em pé de igualdade. É por isso que duas ofertas com a mesma taxa de juros podem ter custos efetivos bem distintos."
+                },
+                "en": {
+                  "title": "The interest rate isn't the whole cost",
+                  "body": "In a loan or financing deal, the advertised interest rate is only part of what you pay. Origination fees, bundled insurance, financial transaction taxes and other charges add to it. The total effective cost gathers all of that into a single rate, letting you compare different offers on equal footing. That's why two offers with the same interest rate can have quite different effective costs."
+                },
+                "es": {
+                  "title": "La tasa de interés no es el costo completo",
+                  "body": "En un préstamo o financiamiento, la tasa de interés anunciada es solo una parte de lo que pagas. Se le suman comisiones de contratación, seguros incluidos, impuestos sobre operaciones financieras y otros cargos. El costo efectivo total reúne todo eso en una única tasa, permitiendo comparar propuestas distintas en igualdad de condiciones. Por eso dos ofertas con la misma tasa de interés pueden tener costos efectivos bien distintos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Duas instituições oferecem o mesmo financiamento com a mesma taxa de juros mensal. A primeira não cobra tarifa de cadastro e não embute seguro; a segunda cobra as duas coisas, diluídas nas parcelas. As prestações da segunda são maiores, e o custo efetivo total revela isso em um número só — enquanto a comparação feita apenas pela taxa de juros sugeriria que as ofertas são idênticas."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Two institutions offer the same financing at the same monthly interest rate. The first charges no origination fee and bundles no insurance; the second charges both, spread across the installments. The second's payments are larger, and the total effective cost reveals that in a single number — while a comparison based only on the interest rate would suggest the offers are identical."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Dos instituciones ofrecen el mismo financiamiento con la misma tasa de interés mensual. La primera no cobra comisión de apertura ni incluye seguro; la segunda cobra ambas cosas, diluidas en las cuotas. Las cuotas de la segunda son mayores, y el costo efectivo total revela eso en un solo número — mientras que la comparación hecha solo por la tasa de interés sugeriría que las ofertas son idénticas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o custo efetivo total de um crédito inclui, além dos juros?",
+                  "options": [
+                    "Apenas a correção pela inflação do período",
+                    "Tarifas, seguros embutidos, impostos e demais encargos da operação",
+                    "Somente o valor das parcelas ainda não pagas",
+                    "Exclusivamente o lucro da instituição financeira"
+                  ],
+                  "explanation": "O custo efetivo total consolida juros e todos os encargos cobrados, resultando na taxa que representa o preço real da operação."
+                },
+                "en": {
+                  "prompt": "What does a loan's total effective cost include, beyond interest?",
+                  "options": [
+                    "Only the inflation adjustment for the period",
+                    "Fees, bundled insurance, taxes and other charges of the operation",
+                    "Only the value of installments not yet paid",
+                    "Exclusively the financial institution's profit"
+                  ],
+                  "explanation": "The total effective cost consolidates interest and every charge levied, resulting in the rate that represents the operation's real price."
+                },
+                "es": {
+                  "prompt": "¿Qué incluye el costo efectivo total de un crédito, además de los intereses?",
+                  "options": [
+                    "Solo el ajuste por la inflación del período",
+                    "Comisiones, seguros incluidos, impuestos y demás cargos de la operación",
+                    "Solamente el valor de las cuotas aún no pagadas",
+                    "Exclusivamente la ganancia de la institución financiera"
+                  ],
+                  "explanation": "El costo efectivo total consolida los intereses y todos los cargos cobrados, resultando en la tasa que representa el precio real de la operación."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você recebe duas propostas de financiamento: a primeira tem taxa de juros menor, mas custo efetivo total maior; a segunda, o contrário. Qual comparação responde melhor à pergunta 'qual sai mais caro'?",
+                  "options": [
+                    "A taxa de juros, porque é o número que a instituição divulga com destaque",
+                    "O valor da primeira parcela, porque revela o esforço mensal imediato",
+                    "O custo efetivo total, porque reúne juros e encargos em uma taxa comparável",
+                    "O prazo do contrato, porque prazos menores são sempre mais baratos"
+                  ],
+                  "explanation": "A taxa de juros isolada pode esconder encargos. O custo efetivo total existe justamente para tornar propostas com estruturas diferentes comparáveis."
+                },
+                "en": {
+                  "prompt": "You get two financing offers: the first has a lower interest rate but a higher total effective cost; the second, the opposite. Which comparison better answers 'which is more expensive'?",
+                  "options": [
+                    "The interest rate, because it's the number the institution advertises prominently",
+                    "The first installment's value, because it reveals the immediate monthly effort",
+                    "The total effective cost, because it gathers interest and charges into a comparable rate",
+                    "The contract term, because shorter terms are always cheaper"
+                  ],
+                  "explanation": "An isolated interest rate can hide charges. The total effective cost exists precisely to make offers with different structures comparable."
+                },
+                "es": {
+                  "prompt": "Recibes dos propuestas de financiamiento: la primera tiene una tasa de interés menor, pero un costo efectivo total mayor; la segunda, lo contrario. ¿Qué comparación responde mejor a la pregunta 'cuál sale más caro'?",
+                  "options": [
+                    "La tasa de interés, porque es el número que la institución divulga con destaque",
+                    "El valor de la primera cuota, porque revela el esfuerzo mensual inmediato",
+                    "El costo efectivo total, porque reúne intereses y cargos en una tasa comparable",
+                    "El plazo del contrato, porque los plazos menores siempre son más baratos"
+                  ],
+                  "explanation": "La tasa de interés aislada puede esconder cargos. El costo efectivo total existe justamente para hacer comparables propuestas con estructuras distintas."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A taxa de juros anunciada é apenas parte do custo de um crédito.",
+                    "O custo efetivo total consolida juros, tarifas, seguros e impostos em uma taxa.",
+                    "Comparar propostas pelo custo efetivo total evita esconder encargos na taxa nominal."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The advertised interest rate is only part of a loan's cost.",
+                    "The total effective cost consolidates interest, fees, insurance and taxes into one rate.",
+                    "Comparing offers by total effective cost prevents charges from hiding behind the nominal rate."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa de interés anunciada es solo parte del costo de un crédito.",
+                    "El costo efectivo total consolida intereses, comisiones, seguros e impuestos en una tasa.",
+                    "Comparar propuestas por el costo efectivo total evita esconder cargos en la tasa nominal."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_cash_vs_installments",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "À Vista com Desconto ou Parcelado 'Sem Juros'"
+            },
+            "en": {
+              "title": "Cash Discount or 'Interest-Free' Installments"
+            },
+            "es": {
+              "title": "Al Contado con Descuento o en Cuotas 'Sin Intereses'"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Quando existe desconto à vista, o parcelamento tem juros",
+                  "body": "Se o vendedor oferece um preço menor para pagamento à vista, o parcelamento 'sem juros' cobra, sim, um custo: a diferença entre os dois preços. Essa diferença, distribuída pelas parcelas, é uma taxa de juros implícita. A decisão correta depende de comparar essa taxa implícita com o que o seu dinheiro renderia se ficasse investido durante o mesmo período — é o custo de oportunidade aplicado a uma compra."
+                },
+                "en": {
+                  "title": "When there's a cash discount, the installment plan has interest",
+                  "body": "If the seller offers a lower price for paying in cash, the 'interest-free' installment plan does carry a cost: the difference between the two prices. That difference, spread across the installments, is an implicit interest rate. The right decision depends on comparing that implicit rate with what your money would earn if it stayed invested over the same period — it's opportunity cost applied to a purchase."
+                },
+                "es": {
+                  "title": "Cuando existe descuento al contado, las cuotas tienen intereses",
+                  "body": "Si el vendedor ofrece un precio menor por el pago al contado, el plan de cuotas 'sin intereses' sí cobra un costo: la diferencia entre ambos precios. Esa diferencia, repartida entre las cuotas, es una tasa de interés implícita. La decisión correcta depende de comparar esa tasa implícita con lo que tu dinero rendiría si quedara invertido durante el mismo período — es el costo de oportunidad aplicado a una compra."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Um produto custa menos à vista do que a soma das parcelas oferecidas 'sem juros'. Quem tem o dinheiro disponível precisa responder a uma pergunta só: a taxa implícita nessa diferença é maior ou menor do que o rendimento que eu obteria deixando esse valor investido ao longo do parcelamento? Se for maior, pagar à vista sai na frente; se for menor, parcelar e manter o dinheiro rendendo faz mais sentido."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A product costs less in cash than the sum of the 'interest-free' installments offered. Someone with the money available has just one question to answer: is the rate implicit in that difference higher or lower than what I'd earn by keeping that amount invested through the installment period? If higher, paying cash comes out ahead; if lower, paying in installments and keeping the money earning makes more sense."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un producto cuesta menos al contado que la suma de las cuotas ofrecidas 'sin intereses'. Quien tiene el dinero disponible debe responder una sola pregunta: ¿la tasa implícita en esa diferencia es mayor o menor que el rendimiento que obtendría dejando ese monto invertido a lo largo del plan de cuotas? Si es mayor, pagar al contado sale adelante; si es menor, pagar en cuotas y mantener el dinero rindiendo tiene más sentido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Se um produto tem preço menor à vista, o que isso revela sobre o parcelamento 'sem juros'?",
+                  "options": [
+                    "Que ele embute um custo: a diferença entre os dois preços é uma taxa de juros implícita",
+                    "Que o vendedor está cometendo um erro de precificação",
+                    "Que o parcelamento é gratuito, já que nenhuma taxa é cobrada explicitamente",
+                    "Que o produto será entregue mais rápido a quem paga à vista"
+                  ],
+                  "explanation": "Preço à vista menor significa que, ao parcelar, você paga mais pelo mesmo bem — e esse 'a mais' é juro, mesmo sem ser chamado assim."
+                },
+                "en": {
+                  "prompt": "If a product has a lower cash price, what does that reveal about the 'interest-free' installment plan?",
+                  "options": [
+                    "That it embeds a cost: the difference between the two prices is an implicit interest rate",
+                    "That the seller is making a pricing mistake",
+                    "That the installment plan is free, since no rate is charged explicitly",
+                    "That the product will be delivered faster to whoever pays cash"
+                  ],
+                  "explanation": "A lower cash price means that, by paying in installments, you pay more for the same good — and that 'more' is interest, even when it isn't called that."
+                },
+                "es": {
+                  "prompt": "Si un producto tiene un precio menor al contado, ¿qué revela eso sobre el plan de cuotas 'sin intereses'?",
+                  "options": [
+                    "Que incorpora un costo: la diferencia entre ambos precios es una tasa de interés implícita",
+                    "Que el vendedor está cometiendo un error de fijación de precios",
+                    "Que el plan de cuotas es gratuito, ya que no se cobra ninguna tasa explícitamente",
+                    "Que el producto se entregará más rápido a quien paga al contado"
+                  ],
+                  "explanation": "Un precio al contado menor significa que, al pagar en cuotas, pagas más por el mismo bien — y ese 'de más' es interés, aunque no se llame así."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem o valor disponível e a taxa implícita do parcelamento é claramente menor do que o rendimento do seu investimento de liquidez diária. Qual decisão é mais coerente — e qual cuidado ela exige?",
+                  "options": [
+                    "Pagar à vista de qualquer forma, porque dívida é sempre ruim independentemente da taxa",
+                    "Parcelar e gastar o valor que ficaria investido, já que ele não é mais necessário",
+                    "Parcelar e ignorar o acompanhamento, porque o valor já está garantido",
+                    "Parcelar, manter o valor investido e reservar mentalmente esse dinheiro para honrar as parcelas até o fim"
+                  ],
+                  "explanation": "A conta só se sustenta se o dinheiro realmente ficar investido e disponível para pagar as parcelas. Parcelar e gastar o valor transforma uma decisão racional em um compromisso sem lastro."
+                },
+                "en": {
+                  "prompt": "You have the cash available and the installment plan's implicit rate is clearly lower than your daily-liquidity investment's yield. Which decision is more coherent — and what care does it require?",
+                  "options": [
+                    "Pay cash anyway, because debt is always bad regardless of the rate",
+                    "Pay in installments and spend the amount that would stay invested, since it's no longer needed",
+                    "Pay in installments and stop tracking it, because the amount is already secured",
+                    "Pay in installments, keep the amount invested and earmark that money to honor the installments to the end"
+                  ],
+                  "explanation": "The math only holds if the money actually stays invested and available to pay the installments. Paying in installments and spending the cash turns a rational decision into an unbacked commitment."
+                },
+                "es": {
+                  "prompt": "Tienes el monto disponible y la tasa implícita de las cuotas es claramente menor que el rendimiento de tu inversión de liquidez diaria. ¿Qué decisión es más coherente — y qué cuidado exige?",
+                  "options": [
+                    "Pagar al contado de todos modos, porque la deuda siempre es mala sin importar la tasa",
+                    "Pagar en cuotas y gastar el monto que quedaría invertido, ya que no es más necesario",
+                    "Pagar en cuotas e ignorar el seguimiento, porque el monto ya está garantizado",
+                    "Pagar en cuotas, mantener el monto invertido y reservar ese dinero para honrar las cuotas hasta el final"
+                  ],
+                  "explanation": "La cuenta solo se sostiene si el dinero realmente queda invertido y disponible para pagar las cuotas. Pagar en cuotas y gastar el monto convierte una decisión racional en un compromiso sin respaldo."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Desconto à vista revela a taxa de juros implícita de um parcelamento 'sem juros'.",
+                    "A decisão compara essa taxa implícita com o rendimento do seu dinheiro no mesmo período.",
+                    "Parcelar só compensa se o valor de fato permanecer investido e reservado para as parcelas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A cash discount reveals the implicit interest rate of an 'interest-free' installment plan.",
+                    "The decision compares that implicit rate with your money's yield over the same period.",
+                    "Paying in installments only pays off if the amount actually stays invested and earmarked."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El descuento al contado revela la tasa de interés implícita de un plan de cuotas 'sin intereses'.",
+                    "La decisión compara esa tasa implícita con el rendimiento de tu dinero en el mismo período.",
+                    "Pagar en cuotas solo compensa si el monto de hecho permanece invertido y reservado."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_weighted_average_rate",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Média Ponderada: A Taxa Real do Conjunto"
+            },
+            "en": {
+              "title": "Weighted Average: The Real Rate of the Whole"
+            },
+            "es": {
+              "title": "Promedio Ponderado: La Tasa Real del Conjunto"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Somar taxas e dividir pela quantidade dá a resposta errada",
+                  "body": "Quando você tem várias aplicações com taxas diferentes, a taxa do conjunto não é a média simples das taxas: é a média ponderada pelo valor aplicado em cada uma. Uma taxa excelente sobre um valor pequeno pesa pouco no resultado total; uma taxa mediana sobre a maior parte do dinheiro domina o retorno. O mesmo vale para dívidas: a taxa que importa é a que incide sobre os maiores saldos."
+                },
+                "en": {
+                  "title": "Adding rates and dividing by the count gives the wrong answer",
+                  "body": "When you hold several investments at different rates, the whole's rate isn't the simple average of the rates: it's the average weighted by the amount invested in each. An excellent rate on a small amount barely moves the total; a mediocre rate on most of the money dominates the return. The same goes for debts: the rate that matters is the one applied to the largest balances."
+                },
+                "es": {
+                  "title": "Sumar tasas y dividir por la cantidad da la respuesta equivocada",
+                  "body": "Cuando tienes varias inversiones con tasas distintas, la tasa del conjunto no es el promedio simple de las tasas: es el promedio ponderado por el monto invertido en cada una. Una tasa excelente sobre un monto pequeño pesa poco en el resultado total; una tasa mediana sobre la mayor parte del dinero domina el retorno. Lo mismo vale para las deudas: la tasa que importa es la que incide sobre los mayores saldos."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém tem quase todo o dinheiro em uma aplicação de taxa modesta e um valor pequeno em outra de taxa bem alta. Ao calcular a média simples das duas taxas, a carteira parece render muito mais do que realmente rende. Ponderando pelo valor de cada aplicação, o número se aproxima da taxa da aplicação grande — que é o que de fato determina o resultado."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone holds nearly all their money in a modest-rate investment and a small amount in a much higher-rate one. Taking the simple average of the two rates makes the portfolio look like it earns far more than it really does. Weighting by each investment's amount, the number moves close to the large investment's rate — which is what actually drives the result."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien tiene casi todo el dinero en una inversión de tasa modesta y un monto pequeño en otra de tasa bastante alta. Al calcular el promedio simple de ambas tasas, la cartera parece rendir mucho más de lo que realmente rinde. Ponderando por el monto de cada inversión, el número se acerca a la tasa de la inversión grande — que es lo que de hecho determina el resultado."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que a média simples das taxas de várias aplicações costuma distorcer o retorno do conjunto?",
+                  "options": [
+                    "Porque ela desconsidera a inflação acumulada do período",
+                    "Porque taxas de aplicações diferentes nunca podem ser comparadas",
+                    "Porque ela trata aplicações de valores muito diferentes como se tivessem o mesmo peso",
+                    "Porque ela só é válida para aplicações de renda variável"
+                  ],
+                  "explanation": "A média simples dá o mesmo peso a cada taxa. O que define o resultado é quanto dinheiro está sujeito a cada uma delas."
+                },
+                "en": {
+                  "prompt": "Why does the simple average of several investments' rates usually distort the whole's return?",
+                  "options": [
+                    "Because it ignores the period's accumulated inflation",
+                    "Because rates of different investments can never be compared",
+                    "Because it treats investments of very different sizes as if they had equal weight",
+                    "Because it's only valid for equity investments"
+                  ],
+                  "explanation": "The simple average gives each rate equal weight. What drives the result is how much money is subject to each of them."
+                },
+                "es": {
+                  "prompt": "¿Por qué el promedio simple de las tasas de varias inversiones suele distorsionar el retorno del conjunto?",
+                  "options": [
+                    "Porque desconsidera la inflación acumulada del período",
+                    "Porque las tasas de inversiones distintas nunca pueden compararse",
+                    "Porque trata inversiones de montos muy distintos como si tuvieran el mismo peso",
+                    "Porque solo es válido para inversiones de renta variable"
+                  ],
+                  "explanation": "El promedio simple da el mismo peso a cada tasa. Lo que define el resultado es cuánto dinero está sujeto a cada una de ellas."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem várias dívidas com taxas diferentes e dinheiro para quitar apenas uma parte. Como a lógica da ponderação ajuda a priorizar?",
+                  "options": [
+                    "Atacando primeiro a combinação de taxa alta com saldo relevante, que é a que mais pesa no custo total",
+                    "Quitando a dívida de menor saldo primeiro, porque isso reduz o número de dívidas",
+                    "Dividindo o dinheiro igualmente entre todas as dívidas, para tratar todas do mesmo jeito",
+                    "Escolhendo a dívida de maior taxa, mesmo que o saldo dela seja irrelevante no total"
+                  ],
+                  "explanation": "O custo total vem da taxa multiplicada pelo saldo. Uma taxa altíssima sobre um saldo mínimo custa pouco; uma taxa alta sobre um saldo grande é o que drena o orçamento."
+                },
+                "en": {
+                  "prompt": "You have several debts at different rates and money to pay off only part of them. How does the weighting logic help you prioritize?",
+                  "options": [
+                    "By attacking first the combination of a high rate with a meaningful balance, which weighs most on total cost",
+                    "By paying off the smallest balance first, because it reduces the number of debts",
+                    "By splitting the money equally across all debts, to treat them all the same",
+                    "By choosing the highest-rate debt, even if its balance is irrelevant in the total"
+                  ],
+                  "explanation": "Total cost comes from the rate multiplied by the balance. A sky-high rate on a tiny balance costs little; a high rate on a large balance is what drains the budget."
+                },
+                "es": {
+                  "prompt": "Tienes varias deudas con tasas distintas y dinero para saldar solo una parte. ¿Cómo ayuda la lógica de la ponderación a priorizar?",
+                  "options": [
+                    "Atacando primero la combinación de tasa alta con saldo relevante, que es la que más pesa en el costo total",
+                    "Saldando la deuda de menor saldo primero, porque reduce el número de deudas",
+                    "Dividiendo el dinero por igual entre todas las deudas, para tratarlas todas igual",
+                    "Eligiendo la deuda de mayor tasa, aunque su saldo sea irrelevante en el total"
+                  ],
+                  "explanation": "El costo total viene de la tasa multiplicada por el saldo. Una tasa altísima sobre un saldo mínimo cuesta poco; una tasa alta sobre un saldo grande es lo que drena el presupuesto."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "A taxa de um conjunto é a média ponderada pelos valores, não a média simples das taxas.",
+                    "Uma taxa alta sobre um valor pequeno pesa pouco no resultado total.",
+                    "Em dívidas, priorize a combinação de taxa alta com saldo relevante."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "A group's rate is the average weighted by amounts, not the simple average of rates.",
+                    "A high rate on a small amount barely moves the total result.",
+                    "With debts, prioritize the combination of a high rate and a meaningful balance."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "La tasa de un conjunto es el promedio ponderado por los montos, no el promedio simple de las tasas.",
+                    "Una tasa alta sobre un monto pequeño pesa poco en el resultado total.",
+                    "En deudas, prioriza la combinación de tasa alta con saldo relevante."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_payback_period",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Prazo de Retorno: Em Quanto Tempo se Paga"
+            },
+            "en": {
+              "title": "Payback Period: How Long It Takes to Pay Off"
+            },
+            "es": {
+              "title": "Plazo de Retorno: En Cuánto Tiempo se Paga"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma pergunta simples, com um limite conhecido",
+                  "body": "O prazo de retorno responde em quanto tempo os benefícios de uma decisão cobrem o valor investido nela. É uma métrica intuitiva e útil para comparar alternativas parecidas, especialmente quando o risco de imobilizar dinheiro por muito tempo importa. Seu limite é conhecido: ele ignora tudo o que acontece depois de o investimento se pagar — por isso não deve ser a única métrica, e sim uma de várias."
+                },
+                "en": {
+                  "title": "A simple question, with a known limit",
+                  "body": "The payback period answers how long the benefits of a decision take to cover the amount put into it. It's an intuitive metric, useful for comparing similar alternatives, especially when the risk of tying money up for a long time matters. Its limit is well known: it ignores everything that happens after the investment pays for itself — which is why it shouldn't be the only metric, but one of several."
+                },
+                "es": {
+                  "title": "Una pregunta simple, con un límite conocido",
+                  "body": "El plazo de retorno responde en cuánto tiempo los beneficios de una decisión cubren el monto invertido en ella. Es una métrica intuitiva y útil para comparar alternativas parecidas, especialmente cuando importa el riesgo de inmovilizar dinero por mucho tiempo. Su límite es conocido: ignora todo lo que ocurre después de que la inversión se paga — por eso no debe ser la única métrica, sino una de varias."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma troca de equipamento que reduz uma despesa mensal se paga quando a soma das economias iguala o valor gasto na troca. Se isso leva poucos meses, a decisão tende a ser confortável. Mas duas alternativas podem ter o mesmo prazo de retorno e resultados muito diferentes depois dele: uma gera economia por anos, a outra para de gerar logo em seguida — e o prazo de retorno, sozinho, não mostra isso."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Replacing equipment that lowers a monthly expense pays for itself when the savings add up to the amount spent on the replacement. If that takes a few months, the decision tends to feel comfortable. But two alternatives can share the same payback period and very different results afterwards: one keeps generating savings for years, the other stops soon after — and the payback period alone doesn't show that."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Un cambio de equipo que reduce un gasto mensual se paga cuando la suma de los ahorros iguala el monto gastado en el cambio. Si eso lleva pocos meses, la decisión suele ser cómoda. Pero dos alternativas pueden tener el mismo plazo de retorno y resultados muy distintos después: una genera ahorro durante años, la otra deja de generarlo poco después — y el plazo de retorno, por sí solo, no muestra eso."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "O que o prazo de retorno mede?",
+                  "options": [
+                    "O lucro total que uma decisão vai gerar ao longo de toda a sua vida útil",
+                    "O tempo necessário para os benefícios cobrirem o valor investido",
+                    "A taxa de juros que torna o valor presente do projeto igual a zero",
+                    "O risco de o investimento não dar certo"
+                  ],
+                  "explanation": "É uma medida de tempo até a recuperação do valor aplicado — não de rentabilidade total nem de risco."
+                },
+                "en": {
+                  "prompt": "What does the payback period measure?",
+                  "options": [
+                    "The total profit a decision will generate over its whole useful life",
+                    "The time needed for the benefits to cover the amount invested",
+                    "The interest rate that makes the project's present value equal zero",
+                    "The risk of the investment not working out"
+                  ],
+                  "explanation": "It's a measure of time until the invested amount is recovered — not of total profitability nor of risk."
+                },
+                "es": {
+                  "prompt": "¿Qué mide el plazo de retorno?",
+                  "options": [
+                    "La ganancia total que una decisión generará a lo largo de toda su vida útil",
+                    "El tiempo necesario para que los beneficios cubran el monto invertido",
+                    "La tasa de interés que hace que el valor presente del proyecto sea cero",
+                    "El riesgo de que la inversión no salga bien"
+                  ],
+                  "explanation": "Es una medida de tiempo hasta la recuperación del monto invertido — no de rentabilidad total ni de riesgo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Duas alternativas têm prazos de retorno parecidos. Como complementar essa análise antes de decidir?",
+                  "options": [
+                    "Escolher a que tiver o menor valor inicial, já que os prazos são semelhantes",
+                    "Escolher aleatoriamente, porque prazos iguais significam decisões equivalentes",
+                    "Olhar o que cada uma gera depois de se pagar e por quanto tempo, já que o prazo de retorno ignora esse período",
+                    "Repetir o cálculo do prazo de retorno com outro método, até que um resultado diferente apareça"
+                  ],
+                  "explanation": "O prazo de retorno para de contar quando o investimento se paga. O que acontece depois é justamente onde as duas alternativas podem divergir."
+                },
+                "en": {
+                  "prompt": "Two alternatives have similar payback periods. How do you complement that analysis before deciding?",
+                  "options": [
+                    "Choose the one with the lowest upfront amount, since the periods are similar",
+                    "Choose at random, because equal periods mean equivalent decisions",
+                    "Look at what each generates after it pays for itself and for how long, since the payback period ignores that stretch",
+                    "Redo the payback calculation with another method, until a different result appears"
+                  ],
+                  "explanation": "The payback period stops counting once the investment pays for itself. What happens afterwards is exactly where the two alternatives can diverge."
+                },
+                "es": {
+                  "prompt": "Dos alternativas tienen plazos de retorno parecidos. ¿Cómo complementar ese análisis antes de decidir?",
+                  "options": [
+                    "Elegir la de menor monto inicial, ya que los plazos son similares",
+                    "Elegir al azar, porque plazos iguales significan decisiones equivalentes",
+                    "Mirar qué genera cada una después de pagarse y por cuánto tiempo, ya que el plazo de retorno ignora ese período",
+                    "Repetir el cálculo del plazo de retorno con otro método, hasta que aparezca un resultado distinto"
+                  ],
+                  "explanation": "El plazo de retorno deja de contar cuando la inversión se paga. Lo que ocurre después es justamente donde las dos alternativas pueden divergir."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "O prazo de retorno mede o tempo até os benefícios cobrirem o valor investido.",
+                    "É intuitivo e útil para comparar alternativas parecidas.",
+                    "Ele ignora o que acontece depois do retorno — por isso complementa, não substitui, outras métricas."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "The payback period measures the time until benefits cover the amount invested.",
+                    "It's intuitive and useful for comparing similar alternatives.",
+                    "It ignores what happens after payback — so it complements, not replaces, other metrics."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "El plazo de retorno mide el tiempo hasta que los beneficios cubren el monto invertido.",
+                    "Es intuitivo y útil para comparar alternativas parecidas.",
+                    "Ignora lo que ocurre después del retorno — por eso complementa, no sustituye, a otras métricas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "financial_math_sensitivity_analysis",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Análise de Sensibilidade: Testando as Premissas"
+            },
+            "en": {
+              "title": "Sensitivity Analysis: Testing the Assumptions"
+            },
+            "es": {
+              "title": "Análisis de Sensibilidad: Probando las Premisas"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "Uma projeção é tão boa quanto as suposições que a sustentam",
+                  "body": "Qualquer cálculo que olha para o futuro — quanto terei em vinte anos, quanto rende este imóvel, quando atinjo minha meta — depende de premissas: taxa de retorno, inflação, prazo, valor do aporte. A análise de sensibilidade consiste em refazer a conta mudando uma premissa por vez, para descobrir quais delas realmente mudam o resultado. Não é para acertar o número: é para saber onde o plano é frágil."
+                },
+                "en": {
+                  "title": "A projection is only as good as the assumptions holding it up",
+                  "body": "Any calculation that looks to the future — how much I'll have in twenty years, how much this property yields, when I reach my goal — depends on assumptions: rate of return, inflation, horizon, contribution amount. Sensitivity analysis means redoing the math changing one assumption at a time, to find out which of them actually move the result. It's not about getting the number right: it's about knowing where the plan is fragile."
+                },
+                "es": {
+                  "title": "Una proyección es tan buena como las suposiciones que la sostienen",
+                  "body": "Cualquier cálculo que mira al futuro — cuánto tendré en veinte años, cuánto rinde este inmueble, cuándo alcanzo mi meta — depende de premisas: tasa de retorno, inflación, plazo, monto del aporte. El análisis de sensibilidad consiste en rehacer la cuenta cambiando una premisa por vez, para descubrir cuáles de ellas realmente cambian el resultado. No es para acertar el número: es para saber dónde el plan es frágil."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma projeção de aposentadoria feita com uma taxa de retorno otimista pode parecer tranquila. Refazendo a mesma conta com uma taxa mais conservadora, o prazo para atingir a meta pode aumentar de forma significativa. Descobrir isso antes permite ajustar o aporte, o prazo ou a meta — muito melhor do que descobrir depois, quando restam menos anos para corrigir."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "A retirement projection built on an optimistic rate of return can look comfortable. Redoing the same math with a more conservative rate, the time to reach the goal can lengthen significantly. Finding that out beforehand lets you adjust the contribution, the horizon or the goal — far better than finding out later, when fewer years remain to correct course."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una proyección de jubilación hecha con una tasa de retorno optimista puede parecer tranquila. Rehaciendo la misma cuenta con una tasa más conservadora, el plazo para alcanzar la meta puede aumentar de forma significativa. Descubrir eso antes permite ajustar el aporte, el plazo o la meta — mucho mejor que descubrirlo después, cuando quedan menos años para corregir."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "micro_exercise",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual é o objetivo de uma análise de sensibilidade?",
+                  "options": [
+                    "Encontrar a única projeção correta para o futuro",
+                    "Eliminar a incerteza sobre o resultado final",
+                    "Substituir o cálculo original por um mais otimista",
+                    "Descobrir quais premissas mais afetam o resultado quando variam"
+                  ],
+                  "explanation": "Sensibilidade mapeia fragilidade: quais suposições, se estiverem erradas, mudam a conclusão — e quais são quase irrelevantes."
+                },
+                "en": {
+                  "prompt": "What's the goal of a sensitivity analysis?",
+                  "options": [
+                    "Finding the single correct projection for the future",
+                    "Eliminating uncertainty about the final result",
+                    "Replacing the original calculation with a more optimistic one",
+                    "Finding out which assumptions most affect the result when they vary"
+                  ],
+                  "explanation": "Sensitivity maps fragility: which assumptions, if wrong, change the conclusion — and which are nearly irrelevant."
+                },
+                "es": {
+                  "prompt": "¿Cuál es el objetivo de un análisis de sensibilidad?",
+                  "options": [
+                    "Encontrar la única proyección correcta para el futuro",
+                    "Eliminar la incertidumbre sobre el resultado final",
+                    "Sustituir el cálculo original por uno más optimista",
+                    "Descubrir qué premisas afectan más al resultado cuando varían"
+                  ],
+                  "explanation": "La sensibilidad mapea la fragilidad: qué suposiciones, si están equivocadas, cambian la conclusión — y cuáles son casi irrelevantes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Ao testar sua projeção de longo prazo, você percebe que o resultado muda pouco com o prazo e muito com a taxa de retorno assumida. O que fazer com essa informação?",
+                  "options": [
+                    "Aumentar a taxa assumida até que o plano feche no prazo desejado",
+                    "Tratar a taxa como a premissa crítica: adotar um valor conservador e planejar com margem, já que é ela que decide o resultado",
+                    "Abandonar a projeção, porque depender de uma premissa a invalida",
+                    "Ignorar a taxa e focar apenas no prazo, que é a variável sob seu controle"
+                  ],
+                  "explanation": "Saber qual premissa domina o resultado indica onde ser conservador. Ajustar a premissa para o plano fechar é o oposto: transforma a análise em justificativa."
+                },
+                "en": {
+                  "prompt": "Testing your long-term projection, you notice the result barely changes with the horizon and changes a lot with the assumed rate of return. What do you do with that information?",
+                  "options": [
+                    "Raise the assumed rate until the plan works within the desired horizon",
+                    "Treat the rate as the critical assumption: adopt a conservative value and plan with margin, since it's what decides the result",
+                    "Abandon the projection, because depending on an assumption invalidates it",
+                    "Ignore the rate and focus only on the horizon, which is the variable under your control"
+                  ],
+                  "explanation": "Knowing which assumption dominates the result tells you where to be conservative. Adjusting the assumption to make the plan work is the opposite: it turns analysis into justification."
+                },
+                "es": {
+                  "prompt": "Al probar tu proyección de largo plazo, notas que el resultado cambia poco con el plazo y mucho con la tasa de retorno supuesta. ¿Qué hacer con esa información?",
+                  "options": [
+                    "Aumentar la tasa supuesta hasta que el plan cierre en el plazo deseado",
+                    "Tratar la tasa como la premisa crítica: adoptar un valor conservador y planificar con margen, ya que es ella la que decide el resultado",
+                    "Abandonar la proyección, porque depender de una premisa la invalida",
+                    "Ignorar la tasa y enfocarse solo en el plazo, que es la variable bajo tu control"
+                  ],
+                  "explanation": "Saber qué premisa domina el resultado indica dónde ser conservador. Ajustar la premisa para que el plan cierre es lo contrario: convierte el análisis en justificación."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você aprendeu",
+                  "takeaways": [
+                    "Projeções dependem de premissas: taxa, inflação, prazo e aporte.",
+                    "A análise de sensibilidade refaz a conta mudando uma premissa por vez.",
+                    "O objetivo é descobrir onde o plano é frágil, não produzir o número mais agradável."
+                  ]
+                },
+                "en": {
+                  "title": "What you learned",
+                  "takeaways": [
+                    "Projections rest on assumptions: rate, inflation, horizon and contribution.",
+                    "Sensitivity analysis redoes the math changing one assumption at a time.",
+                    "The goal is finding where the plan is fragile, not producing the nicest number."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que aprendiste",
+                  "takeaways": [
+                    "Las proyecciones dependen de premisas: tasa, inflación, plazo y aporte.",
+                    "El análisis de sensibilidad rehace la cuenta cambiando una premisa por vez.",
+                    "El objetivo es descubrir dónde el plan es frágil, no producir el número más agradable."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
