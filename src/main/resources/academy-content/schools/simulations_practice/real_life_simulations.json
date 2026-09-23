@@ -2527,6 +2527,843 @@
           ]
         }
       ]
+    },
+    {
+      "moduleId": "life_transition_scenarios",
+      "order": 4,
+      "iconKey": "map_outlined",
+      "xpReward": 100,
+      "contentAvailable": true,
+      "difficulty": "INTERMEDIATE",
+      "prerequisites": [
+        "even_more_real_life_scenarios"
+      ],
+      "translations": {
+        "pt": {
+          "title": "Cenários de Transição de Vida",
+          "description": "Ajudar um familiar, mudar de país, trocar de carro, voltar a estudar e os cinco anos antes da aposentadoria."
+        },
+        "en": {
+          "title": "Life Transition Scenarios",
+          "description": "Helping a relative, moving abroad, changing cars, going back to study and the five years before retirement."
+        },
+        "es": {
+          "title": "Escenarios de Transición de Vida",
+          "description": "Ayudar a un familiar, mudarse de país, cambiar de auto, volver a estudiar y los cinco años antes de la jubilación."
+        }
+      },
+      "lessons": [
+        {
+          "lessonId": "simulation_supporting_a_relative",
+          "order": 1,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Ajudando um Familiar"
+            },
+            "en": {
+              "title": "Simulation: Helping a Family Member"
+            },
+            "es": {
+              "title": "Simulación: Ayudando a un Familiar"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Um familiar próximo passa por um aperto financeiro e pede ajuda. Você tem reserva de emergência formada e investimentos de longo prazo em andamento. Esta simulação pede para aplicar o que você já sabe sobre reserva, custo de oportunidade e limites de decisão em uma situação em que o lado emocional pesa tanto quanto a aritmética — e em que dizer sim sem critério pode transferir o problema em vez de resolvê-lo."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "A close relative is going through financial trouble and asks for help. You have an emergency fund in place and long-term investments underway. This simulation asks you to apply what you know about reserves, opportunity cost and decision limits in a situation where emotion weighs as much as arithmetic — and where saying yes without criteria can transfer the problem instead of solving it."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Un familiar cercano pasa por un aprieto financiero y pide ayuda. Tienes un fondo de emergencia formado e inversiones de largo plazo en marcha. Esta simulación pide aplicar lo que ya sabes sobre fondo de emergencia, costo de oportunidad y límites de decisión en una situación donde lo emocional pesa tanto como la aritmética — y donde decir que sí sin criterio puede transferir el problema en vez de resolverlo."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa decide ajudar definindo antes três coisas: quanto pode comprometer sem tocar na própria reserva de emergência, se aquilo é um presente ou um empréstimo (e, se for empréstimo, com que prazo), e o que ela fará se o valor não voltar. Outra decide no impulso, usa a reserva inteira e descobre semanas depois que o problema do familiar continuou — e que agora são duas pessoas sem reserva."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "One person decides to help by first defining three things: how much they can commit without touching their own emergency fund, whether it's a gift or a loan (and, if a loan, on what terms), and what they'll do if the money doesn't come back. Another decides on impulse, uses the entire fund, and finds out weeks later that the relative's problem persisted — and now two people have no reserve."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona decide ayudar definiendo antes tres cosas: cuánto puede comprometer sin tocar su propio fondo de emergencia, si aquello es un regalo o un préstamo (y, si es préstamo, con qué plazo), y qué hará si el dinero no vuelve. Otra decide por impulso, usa el fondo entero y descubre semanas después que el problema del familiar continuó — y que ahora son dos personas sin fondo."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer ajudar e tem reserva de emergência equivalente a seis meses de despesas. Qual abordagem protege as duas partes?",
+                  "options": [
+                    "Entregar a reserva inteira, já que a necessidade do familiar é urgente e a sua não é",
+                    "Definir antes um valor que você pode comprometer sem zerar sua reserva, deixar claro se é presente ou empréstimo e combinar condições explícitas",
+                    "Contrair uma dívida no seu nome para ajudar, mantendo a reserva intacta",
+                    "Resgatar os investimentos de longo prazo, que rendem menos no curto prazo mesmo"
+                  ],
+                  "explanation": "Ajudar sem destruir a própria proteção exige um limite definido antes e clareza sobre a natureza do valor. Zerar a reserva transforma uma emergência em duas."
+                },
+                "en": {
+                  "prompt": "You want to help and have an emergency fund equal to six months of expenses. Which approach protects both sides?",
+                  "options": [
+                    "Hand over the whole fund, since the relative's need is urgent and yours isn't",
+                    "Define beforehand an amount you can commit without emptying your fund, make clear whether it's a gift or a loan, and agree on explicit terms",
+                    "Take on debt in your own name to help, keeping the fund intact",
+                    "Redeem the long-term investments, which earn less in the short run anyway"
+                  ],
+                  "explanation": "Helping without destroying your own protection requires a limit set in advance and clarity about the money's nature. Emptying the fund turns one emergency into two."
+                },
+                "es": {
+                  "prompt": "Quieres ayudar y tienes un fondo de emergencia equivalente a seis meses de gastos. ¿Qué enfoque protege a ambas partes?",
+                  "options": [
+                    "Entregar el fondo entero, ya que la necesidad del familiar es urgente y la tuya no",
+                    "Definir antes un monto que puedas comprometer sin vaciar tu fondo, dejar claro si es regalo o préstamo y acordar condiciones explícitas",
+                    "Contraer una deuda a tu nombre para ayudar, manteniendo el fondo intacto",
+                    "Rescatar las inversiones de largo plazo, que rinden menos en el corto plazo de todos modos"
+                  ],
+                  "explanation": "Ayudar sin destruir la propia protección exige un límite definido antes y claridad sobre la naturaleza del monto. Vaciar el fondo convierte una emergencia en dos."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Alguns meses depois, o mesmo familiar pede um novo valor, maior que o primeiro, que ainda não foi devolvido. O que a situação sugere?",
+                  "options": [
+                    "Emprestar de novo, porque recusar agora invalidaria a ajuda anterior",
+                    "Emprestar o dobro, para resolver o problema de uma vez",
+                    "Reconhecer que ajuda recorrente sinaliza um problema estrutural, e que o apoio mais útil pode ser outro — organizar o orçamento, renegociar dívidas — em vez de um novo valor",
+                    "Cortar o contato para evitar novos pedidos"
+                  ],
+                  "explanation": "Um segundo pedido maior indica que o dinheiro não resolveu a causa. Insistir no mesmo remédio costuma consumir a sua reserva sem mudar a situação de quem pediu."
+                },
+                "en": {
+                  "prompt": "A few months later, the same relative asks for a new amount, larger than the first, which still hasn't been repaid. What does that suggest?",
+                  "options": [
+                    "Lend again, because refusing now would invalidate the earlier help",
+                    "Lend double, to solve the problem once and for all",
+                    "Recognize that recurring help signals a structural problem, and that more useful support may be different — organizing the budget, renegotiating debts — rather than another sum",
+                    "Cut off contact to avoid new requests"
+                  ],
+                  "explanation": "A second, larger request indicates the money didn't address the cause. Insisting on the same remedy tends to consume your reserve without changing the asker's situation."
+                },
+                "es": {
+                  "prompt": "Algunos meses después, el mismo familiar pide un nuevo monto, mayor que el primero, que aún no fue devuelto. ¿Qué sugiere la situación?",
+                  "options": [
+                    "Prestar de nuevo, porque negarse ahora invalidaría la ayuda anterior",
+                    "Prestar el doble, para resolver el problema de una vez",
+                    "Reconocer que la ayuda recurrente señala un problema estructural, y que el apoyo más útil puede ser otro — organizar el presupuesto, renegociar deudas — en vez de un nuevo monto",
+                    "Cortar el contacto para evitar nuevos pedidos"
+                  ],
+                  "explanation": "Un segundo pedido mayor indica que el dinero no resolvió la causa. Insistir en el mismo remedio suele consumir tu fondo sin cambiar la situación de quien pidió."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Definir um limite antes protege quem ajuda e mantém a ajuda possível no futuro.",
+                    "Deixar claro se é presente ou empréstimo evita ressentimento dos dois lados.",
+                    "Pedido recorrente e crescente sinaliza causa não resolvida, não falta de valor."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "Setting a limit beforehand protects the helper and keeps future help possible.",
+                    "Making clear whether it's a gift or a loan avoids resentment on both sides.",
+                    "A recurring, growing request signals an unsolved cause, not an insufficient amount."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Definir un límite antes protege a quien ayuda y mantiene la ayuda posible en el futuro.",
+                    "Dejar claro si es regalo o préstamo evita resentimiento de ambos lados.",
+                    "Un pedido recurrente y creciente señala una causa no resuelta, no un monto insuficiente."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_moving_abroad",
+          "order": 2,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Mudança para Outro País"
+            },
+            "en": {
+              "title": "Simulation: Moving Abroad"
+            },
+            "es": {
+              "title": "Simulación: Mudanza a Otro País"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você recebeu uma proposta de trabalho em outro país e vai se mudar. Sua renda passará a ser em outra moeda, mas parte dos seus compromissos e dos seus investimentos continua no país de origem. Esta simulação aplica o que você já viu sobre câmbio, horizonte, liquidez e obrigações fiscais a uma decisão de vida — em que o erro mais comum é tratar a mudança apenas como uma questão de salário maior."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You've received a job offer in another country and will move. Your income will be in another currency, but part of your commitments and investments stays in your home country. This simulation applies what you've seen about exchange rates, horizon, liquidity and tax obligations to a life decision — where the most common mistake is treating the move as merely a question of a bigger salary."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Recibiste una propuesta de trabajo en otro país y vas a mudarte. Tu renta pasará a ser en otra moneda, pero parte de tus compromisos y de tus inversiones sigue en el país de origen. Esta simulación aplica lo que ya viste sobre cambio, horizonte, liquidez y obligaciones fiscales a una decisión de vida — donde el error más común es tratar la mudanza solo como una cuestión de salario mayor."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa lista, antes de embarcar, três frentes: quais despesas continuarão na moeda de origem, qual reserva precisa estar disponível em cada país nos primeiros meses e quais obrigações declaratórias a mudança cria. Outra só percebe depois que o salário maior, convertido e somado ao custo de vida local, deixou menos margem do que a situação anterior."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "One person lists, before boarding, three fronts: which expenses will remain in the home currency, what reserve needs to be available in each country in the first months, and which filing obligations the move creates. Another only realizes later that the bigger salary, converted and set against local living costs, left less margin than the previous situation."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona lista, antes de embarcar, tres frentes: qué gastos seguirán en la moneda de origen, qué fondo necesita estar disponible en cada país los primeros meses y qué obligaciones declarativas crea la mudanza. Otra solo percibe después que el salario mayor, convertido y sumado al costo de vida local, dejó menos margen que la situación anterior."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "Você terá despesas nos dois países nos primeiros meses. Como estruturar a reserva de emergência nesse período?",
+                  "options": [
+                    "Manter tudo na moeda de origem, porque é a que você conhece melhor",
+                    "Converter tudo imediatamente para a nova moeda, aproveitando a taxa do dia da mudança",
+                    "Dispensar a reserva, já que um novo emprego garante a renda",
+                    "Manter reserva disponível em cada moeda proporcionalmente às despesas que continuam em cada país"
+                  ],
+                  "explanation": "Reserva serve para ser usada onde a despesa acontece. Concentrar tudo em uma moeda transforma uma emergência em um problema adicional de câmbio e prazo de transferência."
+                },
+                "en": {
+                  "prompt": "You'll have expenses in both countries in the first months. How should you structure the emergency fund in that period?",
+                  "options": [
+                    "Keep everything in the home currency, because it's the one you know best",
+                    "Convert everything immediately into the new currency, taking the rate on moving day",
+                    "Skip the reserve, since a new job guarantees income",
+                    "Keep reserve available in each currency, in proportion to the expenses that remain in each country"
+                  ],
+                  "explanation": "A reserve exists to be used where the expense happens. Concentrating it in one currency turns an emergency into an added problem of exchange rates and transfer time."
+                },
+                "es": {
+                  "prompt": "Tendrás gastos en ambos países los primeros meses. ¿Cómo estructurar el fondo de emergencia en ese período?",
+                  "options": [
+                    "Mantener todo en la moneda de origen, porque es la que conoces mejor",
+                    "Convertir todo inmediatamente a la nueva moneda, aprovechando la tasa del día de la mudanza",
+                    "Prescindir del fondo, ya que un nuevo empleo garantiza la renta",
+                    "Mantener fondo disponible en cada moneda proporcionalmente a los gastos que siguen en cada país"
+                  ],
+                  "explanation": "El fondo existe para usarse donde ocurre el gasto. Concentrarlo en una sola moneda convierte una emergencia en un problema adicional de cambio y plazo de transferencia."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Você mantém investimentos no país de origem depois de se mudar. Qual cuidado é essencial?",
+                  "options": [
+                    "Verificar quais obrigações declaratórias e regras tributárias passam a valer para você em cada país, já que residência fiscal pode mudar o tratamento",
+                    "Vender tudo antes de embarcar, porque investimentos não podem ser mantidos à distância",
+                    "Ignorar o tema, já que o imposto é sempre pago onde o investimento está",
+                    "Transferir todos os ativos para a nova moeda no primeiro mês, qualquer que seja a cotação"
+                  ],
+                  "explanation": "Residência fiscal define obrigações, e ela pode mudar com a mudança. Descobrir isso depois costuma custar multa, não só imposto."
+                },
+                "en": {
+                  "prompt": "You keep investments in your home country after moving. Which care is essential?",
+                  "options": [
+                    "Check which filing obligations and tax rules now apply to you in each country, since tax residency can change the treatment",
+                    "Sell everything before boarding, because investments can't be held from abroad",
+                    "Ignore the topic, since tax is always paid where the investment sits",
+                    "Transfer all assets into the new currency in the first month, whatever the rate"
+                  ],
+                  "explanation": "Tax residency defines obligations, and it can change with the move. Finding that out later usually costs penalties, not just tax."
+                },
+                "es": {
+                  "prompt": "Mantienes inversiones en el país de origen después de mudarte. ¿Qué cuidado es esencial?",
+                  "options": [
+                    "Verificar qué obligaciones declarativas y reglas tributarias pasan a regir para ti en cada país, ya que la residencia fiscal puede cambiar el tratamiento",
+                    "Vender todo antes de embarcar, porque las inversiones no pueden mantenerse a distancia",
+                    "Ignorar el tema, ya que el impuesto siempre se paga donde está la inversión",
+                    "Transferir todos los activos a la nueva moneda el primer mes, sea cual sea la cotización"
+                  ],
+                  "explanation": "La residencia fiscal define obligaciones, y puede cambiar con la mudanza. Descubrirlo después suele costar multas, no solo impuestos."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Salário maior em outra moeda só significa mais margem depois do custo de vida local.",
+                    "Reserva deve estar disponível na moeda em que as despesas acontecem.",
+                    "Mudança de país pode alterar residência fiscal e obrigações declaratórias."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "A bigger salary in another currency only means more margin after local living costs.",
+                    "The reserve should be available in the currency where expenses happen.",
+                    "Moving countries can change tax residency and filing obligations."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Un salario mayor en otra moneda solo significa más margen después del costo de vida local.",
+                    "El fondo debe estar disponible en la moneda en que ocurren los gastos.",
+                    "Mudarse de país puede alterar la residencia fiscal y las obligaciones declarativas."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_vehicle_decision",
+          "order": 3,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Trocar de Carro"
+            },
+            "en": {
+              "title": "Simulation: Changing Cars"
+            },
+            "es": {
+              "title": "Simulación: Cambiar de Auto"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Seu carro atual funciona, mas está velho, e você considera trocá-lo. Existem três caminhos: pagar à vista com as economias, financiar mantendo os investimentos, ou adiar a troca. Esta simulação aplica custo de oportunidade, custo efetivo de crédito e o conceito de despesa recorrente — porque, diferentemente de um investimento, um veículo custa dinheiro todo mês mesmo parado."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "Your current car works, but it's old, and you're considering replacing it. There are three paths: pay cash from savings, finance it while keeping your investments, or postpone. This simulation applies opportunity cost, the effective cost of credit and the idea of recurring expense — because, unlike an investment, a vehicle costs money every month even when parked."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Tu auto actual funciona, pero está viejo, y consideras cambiarlo. Existen tres caminos: pagar al contado con los ahorros, financiarlo manteniendo las inversiones, o posponer el cambio. Esta simulación aplica costo de oportunidad, costo efectivo del crédito y el concepto de gasto recurrente — porque, a diferencia de una inversión, un vehículo cuesta dinero todos los meses aunque esté parado."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Alguém compara apenas o valor da parcela com o quanto sobra no orçamento e conclui que cabe. Outra pessoa soma à parcela o seguro, a manutenção, o combustível e os impostos do veículo novo, compara com o custo atual de manter o carro antigo funcionando e descobre que a diferença real é bem maior do que a parcela sugeria."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "Someone compares only the installment with what's left in the budget and concludes it fits. Another adds to the installment the insurance, maintenance, fuel and taxes of the new vehicle, compares that with the current cost of keeping the old car running, and finds the real difference is far larger than the installment suggested."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Alguien compara solo el valor de la cuota con lo que sobra en el presupuesto y concluye que cabe. Otra persona suma a la cuota el seguro, el mantenimiento, el combustible y los impuestos del vehículo nuevo, lo compara con el costo actual de mantener el auto viejo funcionando y descubre que la diferencia real es bastante mayor de lo que sugería la cuota."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Qual comparação responde melhor à pergunta 'eu consigo bancar essa troca'?",
+                  "options": [
+                    "O valor da parcela contra o que sobra no orçamento hoje",
+                    "O preço do carro novo contra o valor do carro atual",
+                    "O custo mensal total do veículo novo — parcela, seguro, manutenção, combustível e impostos — contra o custo atual de manter o carro que você já tem",
+                    "O valor de revenda estimado do carro novo daqui a cinco anos"
+                  ],
+                  "explanation": "Parcela é só uma parte do custo. A decisão se sustenta quando você compara o custo mensal total de cada alternativa, inclusive o de não trocar."
+                },
+                "en": {
+                  "prompt": "Which comparison best answers 'can I afford this change'?",
+                  "options": [
+                    "The installment against what's left in today's budget",
+                    "The new car's price against the current car's value",
+                    "The new vehicle's total monthly cost — installment, insurance, maintenance, fuel and taxes — against the current cost of keeping the car you have",
+                    "The new car's estimated resale value five years from now"
+                  ],
+                  "explanation": "The installment is only part of the cost. The decision holds when you compare each alternative's total monthly cost, including not changing."
+                },
+                "es": {
+                  "prompt": "¿Qué comparación responde mejor a la pregunta 'puedo costear este cambio'?",
+                  "options": [
+                    "El valor de la cuota contra lo que sobra en el presupuesto hoy",
+                    "El precio del auto nuevo contra el valor del auto actual",
+                    "El costo mensual total del vehículo nuevo — cuota, seguro, mantenimiento, combustible e impuestos — contra el costo actual de mantener el auto que ya tienes",
+                    "El valor de reventa estimado del auto nuevo dentro de cinco años"
+                  ],
+                  "explanation": "La cuota es solo una parte del costo. La decisión se sostiene cuando comparas el costo mensual total de cada alternativa, incluida la de no cambiar."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Você tem o valor à vista investido em uma aplicação que rende menos do que o custo efetivo total do financiamento. O que isso indica?",
+                  "options": [
+                    "Que financiar é melhor, porque preserva o dinheiro investido",
+                    "Que pagar à vista tende a sair mais barato, desde que isso não consuma sua reserva de emergência",
+                    "Que a comparação é impossível, porque investimento e financiamento são coisas diferentes",
+                    "Que o ideal é financiar e resgatar o investimento só no fim do contrato"
+                  ],
+                  "explanation": "Se o crédito custa mais do que o investimento rende, manter os dois ao mesmo tempo é perda líquida. A ressalva é não confundir dinheiro disponível com reserva de emergência."
+                },
+                "en": {
+                  "prompt": "You have the cash amount invested in something earning less than the financing's total effective cost. What does that indicate?",
+                  "options": [
+                    "That financing is better, because it preserves the invested money",
+                    "That paying cash tends to be cheaper, as long as it doesn't consume your emergency fund",
+                    "That the comparison is impossible, because investment and financing are different things",
+                    "That the ideal is to finance and redeem the investment only at the end of the contract"
+                  ],
+                  "explanation": "If credit costs more than the investment earns, holding both at once is a net loss. The caveat is not confusing available money with the emergency fund."
+                },
+                "es": {
+                  "prompt": "Tienes el monto al contado invertido en una aplicación que rinde menos que el costo efectivo total del financiamiento. ¿Qué indica eso?",
+                  "options": [
+                    "Que financiar es mejor, porque preserva el dinero invertido",
+                    "Que pagar al contado tiende a salir más barato, siempre que eso no consuma tu fondo de emergencia",
+                    "Que la comparación es imposible, porque inversión y financiamiento son cosas distintas",
+                    "Que lo ideal es financiar y rescatar la inversión solo al final del contrato"
+                  ],
+                  "explanation": "Si el crédito cuesta más de lo que rinde la inversión, mantener ambos a la vez es pérdida neta. La salvedad es no confundir dinero disponible con fondo de emergencia."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "Um veículo é despesa recorrente, não só o preço de compra.",
+                    "A comparação correta inclui o custo de continuar com o carro atual.",
+                    "Crédito que custa mais do que seu investimento rende é perda líquida — respeitada a reserva."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "A vehicle is a recurring expense, not just a purchase price.",
+                    "The right comparison includes the cost of keeping the current car.",
+                    "Credit costing more than your investment earns is a net loss — with the reserve preserved."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "Un vehículo es un gasto recurrente, no solo el precio de compra.",
+                    "La comparación correcta incluye el costo de seguir con el auto actual.",
+                    "Un crédito que cuesta más de lo que rinde tu inversión es pérdida neta — respetado el fondo."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_going_back_to_study",
+          "order": 4,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Voltar a Estudar"
+            },
+            "en": {
+              "title": "Simulation: Going Back to Study"
+            },
+            "es": {
+              "title": "Simulación: Volver a Estudiar"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Você considera fazer um curso caro que pode ampliar suas oportunidades profissionais. Há um custo direto, um custo de tempo e, possivelmente, uma redução temporária de renda. Esta simulação aplica prazo de retorno, custo de oportunidade e a ideia de que a sua capacidade de gerar renda é um ativo — talvez o maior deles nesta fase."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You're considering an expensive course that could widen your professional opportunities. There's a direct cost, a time cost and, possibly, a temporary drop in income. This simulation applies payback period, opportunity cost and the idea that your income-generating capacity is an asset — perhaps the largest one at this stage."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Consideras hacer un curso caro que puede ampliar tus oportunidades profesionales. Hay un costo directo, un costo de tiempo y, posiblemente, una reducción temporal de renta. Esta simulación aplica plazo de retorno, costo de oportunidad y la idea de que tu capacidad de generar renta es un activo — tal vez el mayor en esta fase."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa estima quanto o curso custa, quanto tempo exige, quanto de renda deixará de receber nesse período e em quanto tempo o aumento esperado cobriria tudo isso. Outra olha só a mensalidade e conclui que é acessível, sem contabilizar as horas que deixará de trabalhar nem o intervalo até a mudança se refletir na remuneração."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "One person estimates what the course costs, how much time it demands, how much income they'll forgo in that period, and how long the expected raise would take to cover all of it. Another looks only at the monthly fee and concludes it's affordable, without counting the hours not worked or the delay until the change shows up in pay."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona estima cuánto cuesta el curso, cuánto tiempo exige, cuánta renta dejará de recibir en ese período y en cuánto tiempo el aumento esperado cubriría todo eso. Otra mira solo la mensualidad y concluye que es accesible, sin contabilizar las horas que dejará de trabajar ni el intervalo hasta que el cambio se refleje en la remuneración."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 0,
+              "translations": {
+                "pt": {
+                  "prompt": "Como calcular o custo real de voltar a estudar?",
+                  "options": [
+                    "Somando o custo direto do curso à renda que você deixará de receber e ao tempo dedicado",
+                    "Considerando apenas a mensalidade, que é o desembolso efetivo",
+                    "Considerando apenas a renda perdida, já que o curso pode ser parcelado",
+                    "Comparando o preço do curso com o de outros cursos disponíveis"
+                  ],
+                  "explanation": "O custo de oportunidade — renda e tempo que você abre mão — costuma pesar tanto quanto a mensalidade, e é justamente o que passa despercebido."
+                },
+                "en": {
+                  "prompt": "How do you calculate the real cost of going back to study?",
+                  "options": [
+                    "By adding the course's direct cost to the income you'll forgo and the time dedicated",
+                    "By considering only the monthly fee, which is the actual outlay",
+                    "By considering only the lost income, since the course can be paid in installments",
+                    "By comparing the course's price with other available courses"
+                  ],
+                  "explanation": "Opportunity cost — the income and time given up — usually weighs as much as the fee, and it's precisely what goes unnoticed."
+                },
+                "es": {
+                  "prompt": "¿Cómo calcular el costo real de volver a estudiar?",
+                  "options": [
+                    "Sumando el costo directo del curso a la renta que dejarás de recibir y al tiempo dedicado",
+                    "Considerando solo la mensualidad, que es el desembolso efectivo",
+                    "Considerando solo la renta perdida, ya que el curso puede pagarse en cuotas",
+                    "Comparando el precio del curso con el de otros cursos disponibles"
+                  ],
+                  "explanation": "El costo de oportunidad — renta y tiempo a los que renuncias — suele pesar tanto como la mensualidad, y es justamente lo que pasa desapercibido."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 3,
+              "translations": {
+                "pt": {
+                  "prompt": "O retorno esperado do curso é incerto: depende do mercado e de você conseguir uma posição melhor. Como decidir de forma madura?",
+                  "options": [
+                    "Desistir, porque retorno incerto significa investimento ruim",
+                    "Assumir o cenário mais otimista, já que é o que motiva a estudar",
+                    "Financiar o curso com dívida cara, porque o retorno futuro cobrirá qualquer juro",
+                    "Estimar o prazo de retorno em um cenário conservador e verificar se a decisão continua aceitável mesmo se o aumento demorar mais que o esperado"
+                  ],
+                  "explanation": "Testar a premissa mais frágil é o que separa um investimento em si mesmo de uma aposta. Se a decisão só se sustenta no cenário otimista, ela é mais arriscada do que parece."
+                },
+                "en": {
+                  "prompt": "The course's expected return is uncertain: it depends on the market and on landing a better position. How do you decide maturely?",
+                  "options": [
+                    "Give up, because an uncertain return means a bad investment",
+                    "Assume the most optimistic scenario, since that's what motivates studying",
+                    "Finance the course with expensive debt, because the future return will cover any interest",
+                    "Estimate the payback period in a conservative scenario and check whether the decision still holds even if the raise takes longer than expected"
+                  ],
+                  "explanation": "Testing the most fragile assumption is what separates investing in yourself from gambling. If the decision only holds in the optimistic scenario, it's riskier than it looks."
+                },
+                "es": {
+                  "prompt": "El retorno esperado del curso es incierto: depende del mercado y de que consigas una posición mejor. ¿Cómo decidir de forma madura?",
+                  "options": [
+                    "Desistir, porque un retorno incierto significa una mala inversión",
+                    "Asumir el escenario más optimista, ya que es el que motiva a estudiar",
+                    "Financiar el curso con deuda cara, porque el retorno futuro cubrirá cualquier interés",
+                    "Estimar el plazo de retorno en un escenario conservador y verificar si la decisión sigue siendo aceptable aunque el aumento demore más de lo esperado"
+                  ],
+                  "explanation": "Probar la premisa más frágil es lo que separa una inversión en ti mismo de una apuesta. Si la decisión solo se sostiene en el escenario optimista, es más arriesgada de lo que parece."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "O custo real inclui mensalidade, renda deixada de receber e tempo.",
+                    "O retorno costuma demorar a aparecer na remuneração.",
+                    "Uma decisão que só fecha no cenário otimista é mais arriscada do que parece."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "The real cost includes fees, forgone income and time.",
+                    "The return usually takes a while to show up in pay.",
+                    "A decision that only works in the optimistic scenario is riskier than it looks."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "El costo real incluye mensualidad, renta no recibida y tiempo.",
+                    "El retorno suele tardar en aparecer en la remuneración.",
+                    "Una decisión que solo cierra en el escenario optimista es más arriesgada de lo que parece."
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "lessonId": "simulation_five_years_to_retirement",
+          "order": 5,
+          "xpReward": 20,
+          "competency": "APPLY",
+          "estimatedMinutes": 3,
+          "translations": {
+            "pt": {
+              "title": "Simulação: Cinco Anos Para a Aposentadoria"
+            },
+            "en": {
+              "title": "Simulation: Five Years to Retirement"
+            },
+            "es": {
+              "title": "Simulación: Cinco Años Para la Jubilación"
+            }
+          },
+          "steps": [
+            {
+              "type": "explanation",
+              "order": 1,
+              "translations": {
+                "pt": {
+                  "title": "O cenário",
+                  "body": "Faltam cerca de cinco anos para você parar de trabalhar. O patrimônio acumulado está majoritariamente em ativos de maior risco, montados quando o horizonte era de décadas. Esta simulação aplica o que você já viu sobre horizonte, risco de sequência de retornos e transição entre acumular e usufruir — o período em que uma queda forte tem o menor tempo disponível para ser recuperada."
+                },
+                "en": {
+                  "title": "The scenario",
+                  "body": "You're about five years from stopping work. The accumulated wealth is mostly in higher-risk assets, assembled when the horizon was decades long. This simulation applies what you've seen about horizon, sequence-of-returns risk and the transition from accumulating to drawing down — the period when a sharp drop has the least time available to be recovered."
+                },
+                "es": {
+                  "title": "El escenario",
+                  "body": "Faltan unos cinco años para que dejes de trabajar. El patrimonio acumulado está mayoritariamente en activos de mayor riesgo, armados cuando el horizonte era de décadas. Esta simulación aplica lo que ya viste sobre horizonte, riesgo de secuencia de retornos y transición entre acumular y usufructuar — el período en que una caída fuerte tiene el menor tiempo disponible para ser recuperada."
+                }
+              }
+            },
+            {
+              "type": "example",
+              "order": 2,
+              "translations": {
+                "pt": {
+                  "title": "Na prática",
+                  "body": "Uma pessoa começa, alguns anos antes da data, a mover gradualmente para ativos mais previsíveis a parcela que cobrirá os primeiros anos de despesas. Outra mantém tudo como estava e enfrenta uma queda forte logo no início dos saques — precisando vender justamente quando os preços estão baixos, o que consome o patrimônio mais rápido do que a projeção previa."
+                },
+                "en": {
+                  "title": "In practice",
+                  "body": "One person starts, a few years before the date, gradually moving into more predictable assets the portion that will cover the first years of expenses. Another keeps everything as it was and faces a sharp drop right as withdrawals begin — having to sell precisely when prices are low, which depletes the portfolio faster than the projection assumed."
+                },
+                "es": {
+                  "title": "En la práctica",
+                  "body": "Una persona empieza, algunos años antes de la fecha, a mover gradualmente hacia activos más previsibles la porción que cubrirá los primeros años de gastos. Otra mantiene todo como estaba y enfrenta una caída fuerte justo al inicio de los retiros — teniendo que vender precisamente cuando los precios están bajos, lo que consume el patrimonio más rápido de lo previsto."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 3,
+              "framing": "apply",
+              "correctIndex": 1,
+              "translations": {
+                "pt": {
+                  "prompt": "Por que os anos imediatamente anteriores e posteriores ao início dos saques exigem atenção especial?",
+                  "options": [
+                    "Porque os impostos sobre investimentos aumentam nessa fase",
+                    "Porque uma queda forte nesse período encontra pouco tempo de recuperação e coincide com o momento em que você precisa vender",
+                    "Porque os ativos de risco deixam de se valorizar depois da aposentadoria",
+                    "Porque a inflação só afeta quem já parou de trabalhar"
+                  ],
+                  "explanation": "É o risco de sequência de retornos: a mesma queda dói muito mais quando acontece perto do início dos saques do que décadas antes."
+                },
+                "en": {
+                  "prompt": "Why do the years right before and after withdrawals begin demand special attention?",
+                  "options": [
+                    "Because investment taxes increase in that phase",
+                    "Because a sharp drop in that period has little recovery time and coincides with when you need to sell",
+                    "Because risky assets stop appreciating after retirement",
+                    "Because inflation only affects those who have stopped working"
+                  ],
+                  "explanation": "It's sequence-of-returns risk: the same drop hurts far more near the start of withdrawals than decades earlier."
+                },
+                "es": {
+                  "prompt": "¿Por qué los años inmediatamente anteriores y posteriores al inicio de los retiros exigen atención especial?",
+                  "options": [
+                    "Porque los impuestos sobre inversiones aumentan en esa fase",
+                    "Porque una caída fuerte en ese período encuentra poco tiempo de recuperación y coincide con el momento en que necesitas vender",
+                    "Porque los activos de riesgo dejan de valorizarse después de la jubilación",
+                    "Porque la inflación solo afecta a quien ya dejó de trabajar"
+                  ],
+                  "explanation": "Es el riesgo de secuencia de retornos: la misma caída duele mucho más cerca del inicio de los retiros que décadas antes."
+                }
+              }
+            },
+            {
+              "type": "choice_question",
+              "order": 4,
+              "framing": "apply",
+              "correctIndex": 2,
+              "translations": {
+                "pt": {
+                  "prompt": "Você quer reduzir esse risco sem abrir mão do crescimento de longo prazo do restante do patrimônio. Qual abordagem é mais coerente?",
+                  "options": [
+                    "Vender toda a posição de risco de uma vez e migrar tudo para renda fixa no mês da aposentadoria",
+                    "Manter a alocação inalterada, já que o dinheiro ainda vai durar muitos anos",
+                    "Migrar gradualmente para ativos mais previsíveis a parcela correspondente aos primeiros anos de despesas, mantendo o restante voltado ao longo prazo",
+                    "Aumentar a exposição a risco para acelerar o patrimônio nos últimos cinco anos"
+                  ],
+                  "explanation": "A aposentadoria não é uma data em que tudo muda: é uma transição. Proteger os primeiros anos de saque e deixar o restante crescendo respeita os dois horizontes que passam a coexistir."
+                },
+                "en": {
+                  "prompt": "You want to reduce that risk without giving up long-term growth on the rest of the portfolio. Which approach is more coherent?",
+                  "options": [
+                    "Sell the entire risk position at once and move everything to fixed income in the month you retire",
+                    "Keep the allocation unchanged, since the money still has to last many years",
+                    "Gradually move into more predictable assets the portion matching the first years of expenses, keeping the rest aimed at the long term",
+                    "Increase risk exposure to accelerate the portfolio in the last five years"
+                  ],
+                  "explanation": "Retirement isn't a date when everything changes: it's a transition. Protecting the first withdrawal years while leaving the rest growing respects both horizons that now coexist."
+                },
+                "es": {
+                  "prompt": "Quieres reducir ese riesgo sin renunciar al crecimiento de largo plazo del resto del patrimonio. ¿Qué enfoque es más coherente?",
+                  "options": [
+                    "Vender toda la posición de riesgo de una vez y migrar todo a renta fija el mes de la jubilación",
+                    "Mantener la asignación inalterada, ya que el dinero aún debe durar muchos años",
+                    "Migrar gradualmente hacia activos más previsibles la porción correspondiente a los primeros años de gastos, manteniendo el resto orientado al largo plazo",
+                    "Aumentar la exposición al riesgo para acelerar el patrimonio en los últimos cinco años"
+                  ],
+                  "explanation": "La jubilación no es una fecha en que todo cambia: es una transición. Proteger los primeros años de retiro y dejar el resto creciendo respeta los dos horizontes que pasan a coexistir."
+                }
+              }
+            },
+            {
+              "type": "summary",
+              "order": 5,
+              "translations": {
+                "pt": {
+                  "title": "O que você praticou",
+                  "takeaways": [
+                    "O risco maior se concentra nos anos ao redor do início dos saques.",
+                    "A parcela dos primeiros anos de despesa pede previsibilidade, não retorno máximo.",
+                    "A transição é gradual: o restante do patrimônio continua com horizonte longo."
+                  ]
+                },
+                "en": {
+                  "title": "What you practiced",
+                  "takeaways": [
+                    "The greatest risk concentrates in the years around the start of withdrawals.",
+                    "The portion covering the first years of expenses calls for predictability, not maximum return.",
+                    "The transition is gradual: the rest of the portfolio still has a long horizon."
+                  ]
+                },
+                "es": {
+                  "title": "Lo que practicaste",
+                  "takeaways": [
+                    "El mayor riesgo se concentra en los años alrededor del inicio de los retiros.",
+                    "La porción de los primeros años de gastos exige previsibilidad, no retorno máximo.",
+                    "La transición es gradual: el resto del patrimonio sigue con horizonte largo."
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
