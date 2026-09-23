@@ -2735,33 +2735,33 @@
       "translations": {
         "pt": {
           "title": "Renda Fixa: Nível Especialista",
-          "description": "Curva de juros, juro real, cupom periódico, spread de crédito e liquidez no mercado secundário."
+          "description": "Recompra antecipada pelo emissor, juro real, cupom periódico, spread de crédito e liquidez no mercado secundário."
         },
         "en": {
           "title": "Fixed Income: Specialist Level",
-          "description": "The yield curve, real yield, periodic coupons, credit spread and secondary-market liquidity."
+          "description": "Issuer early redemption, real yield, periodic coupons, credit spread and secondary-market liquidity."
         },
         "es": {
           "title": "Renta Fija: Nivel Especialista",
-          "description": "Curva de tasas, tasa real, cupón periódico, spread de crédito y liquidez en el mercado secundario."
+          "description": "Recompra anticipada por el emisor, tasa real, cupón periódico, spread de crédito y liquidez en el mercado secundario."
         }
       },
       "lessons": [
         {
-          "lessonId": "fixed_income_yield_curve",
+          "lessonId": "fixed_income_issuer_call_option",
           "order": 1,
           "xpReward": 20,
           "competency": "APPLY",
           "estimatedMinutes": 3,
           "translations": {
             "pt": {
-              "title": "Curva de Juros: O Que o Mercado Espera"
+              "title": "Recompra Antecipada Pelo Emissor"
             },
             "en": {
-              "title": "The Yield Curve: What the Market Expects"
+              "title": "Early Redemption by the Issuer"
             },
             "es": {
-              "title": "Curva de Tasas: Lo Que el Mercado Espera"
+              "title": "Recompra Anticipada por el Emisor"
             }
           },
           "steps": [
@@ -2770,16 +2770,16 @@
               "order": 1,
               "translations": {
                 "pt": {
-                  "title": "Uma taxa para cada prazo",
-                  "body": "Não existe uma única taxa de juros: existe uma taxa para cada prazo de vencimento. A curva de juros é justamente o desenho formado por essas taxas, do prazo mais curto ao mais longo. Quando os prazos longos exigem taxas maiores que os curtos, dizemos que a curva está inclinada para cima — o normal quando o mercado pede um prêmio para emprestar por mais tempo. Quando os prazos curtos pagam mais que os longos, a curva está invertida, o que costuma indicar que o mercado espera juros menores à frente."
+                  "title": "Nem sempre é você quem decide quando a aplicação termina",
+                  "body": "Alguns títulos de renda fixa dão ao emissor o direito de recomprar o papel antes do vencimento, em condições previstas no documento da emissão. Para você, isso significa que o prazo contratado é um limite, não uma garantia: o emissor tende a exercer esse direito justamente quando lhe é conveniente — em geral quando consegue se financiar mais barato do que a taxa que está pagando a você. O prazo real da sua aplicação, portanto, pode ser menor do que o previsto."
                 },
                 "en": {
-                  "title": "One rate for each maturity",
-                  "body": "There is no single interest rate: there is one rate for each maturity. The yield curve is exactly the shape those rates form, from the shortest maturity to the longest. When long maturities demand higher rates than short ones, we say the curve is upward sloping — the usual case, when the market asks for a premium to lend for longer. When short maturities pay more than long ones, the curve is inverted, which usually signals that the market expects lower rates ahead."
+                  "title": "You aren't always the one deciding when the investment ends",
+                  "body": "Some fixed-income securities give the issuer the right to buy the paper back before maturity, under conditions set out in the offering document. For you, that means the contracted term is a cap, not a guarantee: the issuer tends to exercise that right precisely when it suits them — generally when they can fund themselves more cheaply than the rate they're paying you. Your investment's real term, therefore, can be shorter than planned."
                 },
                 "es": {
-                  "title": "Una tasa para cada plazo",
-                  "body": "No existe una única tasa de interés: existe una tasa para cada plazo de vencimiento. La curva de tasas es justamente el dibujo que forman esas tasas, del plazo más corto al más largo. Cuando los plazos largos exigen tasas mayores que los cortos, decimos que la curva tiene pendiente positiva — lo habitual, cuando el mercado pide una prima por prestar durante más tiempo. Cuando los plazos cortos pagan más que los largos, la curva está invertida, lo que suele indicar que el mercado espera tasas más bajas más adelante."
+                  "title": "No siempre eres tú quien decide cuándo termina la inversión",
+                  "body": "Algunos títulos de renta fija dan al emisor el derecho de recomprar el papel antes del vencimiento, en condiciones previstas en el documento de la emisión. Para ti, eso significa que el plazo contratado es un límite, no una garantía: el emisor tiende a ejercer ese derecho justamente cuando le conviene — en general cuando consigue financiarse más barato que la tasa que te está pagando. El plazo real de tu inversión, por lo tanto, puede ser menor de lo previsto."
                 }
               }
             },
@@ -2789,15 +2789,15 @@
               "translations": {
                 "pt": {
                   "title": "Na prática",
-                  "body": "Imagine dois títulos prefixados do mesmo emissor: um vence em 2 anos e paga uma taxa menor; outro vence em 10 anos e paga uma taxa maior. Essa diferença é a curva inclinada para cima. Se, em outro momento, o título de 2 anos passar a pagar mais que o de 10 anos, a curva inverteu — e o que mudou não foi o emissor, e sim o que o mercado passou a esperar dos juros futuros."
+                  "body": "Alguém trava uma taxa atrativa em um papel de prazo longo. Tempo depois, as taxas de mercado caem, e o emissor exerce a recompra prevista: devolve o dinheiro e passa a se financiar mais barato em uma nova emissão. O investidor recebe o valor de volta, mas agora só consegue reaplicar às taxas menores que passaram a vigorar — a boa taxa acabou justamente no cenário em que ela mais valeria a pena manter."
                 },
                 "en": {
                   "title": "In practice",
-                  "body": "Picture two fixed-rate bonds from the same issuer: one matures in 2 years and pays a lower rate; the other matures in 10 years and pays a higher one. That gap is the upward-sloping curve. If, at another moment, the 2-year bond starts paying more than the 10-year one, the curve has inverted — and what changed is not the issuer, but what the market now expects from future rates."
+                  "body": "Someone locks in an attractive rate on a long-dated paper. Later, market rates fall, and the issuer exercises the redemption provided for: it returns the money and refinances more cheaply in a new issue. The investor gets the amount back, but can now only reinvest at the lower rates that have taken hold — the good rate ended precisely in the scenario where keeping it would have been most valuable."
                 },
                 "es": {
                   "title": "En la práctica",
-                  "body": "Imagina dos títulos prefijados del mismo emisor: uno vence en 2 años y paga una tasa menor; otro vence en 10 años y paga una tasa mayor. Esa diferencia es la curva con pendiente positiva. Si, en otro momento, el título de 2 años pasa a pagar más que el de 10 años, la curva se invirtió — y lo que cambió no es el emisor, sino lo que el mercado pasó a esperar de las tasas futuras."
+                  "body": "Alguien fija una tasa atractiva en un papel de plazo largo. Tiempo después, las tasas de mercado caen, y el emisor ejerce la recompra prevista: devuelve el dinero y pasa a financiarse más barato en una nueva emisión. El inversor recibe el monto de vuelta, pero ahora solo consigue reinvertir a las tasas menores que pasaron a regir — la buena tasa terminó justamente en el escenario en que más valdría la pena mantenerla."
                 }
               }
             },
@@ -2808,34 +2808,34 @@
               "correctIndex": 2,
               "translations": {
                 "pt": {
-                  "prompt": "O que caracteriza uma curva de juros invertida?",
+                  "prompt": "O que significa um título de renda fixa ter cláusula de recompra pelo emissor?",
                   "options": [
-                    "Todos os prazos passam a pagar exatamente a mesma taxa",
-                    "As taxas de prazo curto ficam maiores que as de prazo longo",
-                    "As taxas de prazo longo ficam maiores que as de prazo curto",
-                    "Os títulos deixam de pagar juros até o vencimento"
+                    "Que o investidor pode exigir o resgate a qualquer momento pela taxa contratada",
+                    "Que o emissor garante a recompra pelo dobro do valor investido",
+                    "Que o emissor pode encerrar a aplicação antes do vencimento, nas condições previstas na emissão",
+                    "Que o título deixa de pagar juros a partir da metade do prazo"
                   ],
-                  "explanation": "Na curva invertida, o curto prazo exige mais que o longo — sinal de que o mercado espera juros menores no futuro."
+                  "explanation": "A cláusula é um direito do emissor, não do investidor — por isso o prazo contratado funciona como um teto, não como certeza."
                 },
                 "en": {
-                  "prompt": "What characterizes an inverted yield curve?",
+                  "prompt": "What does it mean for a fixed-income security to have an issuer call provision?",
                   "options": [
-                    "Every maturity starts paying exactly the same rate",
-                    "Short-term rates become higher than long-term rates",
-                    "Long-term rates become higher than short-term rates",
-                    "Bonds stop paying interest until maturity"
+                    "That the investor can demand redemption at any time at the contracted rate",
+                    "That the issuer guarantees buying it back at twice the amount invested",
+                    "That the issuer can end the investment before maturity, under the conditions set in the issue",
+                    "That the security stops paying interest halfway through the term"
                   ],
-                  "explanation": "In an inverted curve, the short end demands more than the long end — a sign that the market expects lower rates in the future."
+                  "explanation": "The provision is the issuer's right, not the investor's — which is why the contracted term works as a ceiling, not a certainty."
                 },
                 "es": {
-                  "prompt": "¿Qué caracteriza a una curva de tasas invertida?",
+                  "prompt": "¿Qué significa que un título de renta fija tenga cláusula de recompra por el emisor?",
                   "options": [
-                    "Todos los plazos pasan a pagar exactamente la misma tasa",
-                    "Las tasas de corto plazo quedan más altas que las de largo plazo",
-                    "Las tasas de largo plazo quedan más altas que las de corto plazo",
-                    "Los títulos dejan de pagar intereses hasta el vencimiento"
+                    "Que el inversor puede exigir el rescate en cualquier momento a la tasa contratada",
+                    "Que el emisor garantiza la recompra por el doble del monto invertido",
+                    "Que el emisor puede terminar la inversión antes del vencimiento, en las condiciones previstas en la emisión",
+                    "Que el título deja de pagar intereses a partir de la mitad del plazo"
                   ],
-                  "explanation": "En la curva invertida, el corto plazo exige más que el largo — señal de que el mercado espera tasas menores en el futuro."
+                  "explanation": "La cláusula es un derecho del emisor, no del inversor — por eso el plazo contratado funciona como un techo, no como una certeza."
                 }
               }
             },
@@ -2843,37 +2843,37 @@
               "type": "choice_question",
               "order": 4,
               "framing": "apply",
-              "correctIndex": 0,
+              "correctIndex": 1,
               "translations": {
                 "pt": {
-                  "prompt": "Você observa que a curva está inclinada para cima e pensa em travar uma taxa prefixada de prazo longo. Como interpretar isso com cuidado?",
+                  "prompt": "Você compara dois papéis de mesmo emissor e mesmo prazo: um permite recompra antecipada pelo emissor, o outro não. Como isso deveria pesar na decisão?",
                   "options": [
-                    "A taxa longa maior é o prêmio que o mercado pede pelo prazo — ela remunera mais, mas também expõe você a uma marcação a mercado mais intensa se os juros subirem",
-                    "Uma curva inclinada para cima garante que o título longo renderá mais que o curto, aconteça o que acontecer",
-                    "Curva inclinada para cima significa que não há risco algum em títulos longos",
-                    "A inclinação da curva não tem qualquer relação com o prazo dos títulos"
+                    "A recompra é irrelevante, porque você recebe o dinheiro de volta de qualquer forma",
+                    "O papel com recompra deveria compensar essa desvantagem com alguma vantagem — taxa maior, por exemplo — já que você assume o risco de perder a taxa boa cedo",
+                    "O papel com recompra é melhor, porque oferece mais liquidez ao investidor",
+                    "A recompra só importa para quem pretende vender no mercado secundário"
                   ],
-                  "explanation": "A taxa maior no longo prazo é remuneração por assumir mais tempo — e mais sensibilidade a juros (duration). Rendimento maior contratado não elimina a oscilação de preço no caminho."
+                  "explanation": "Quem concede uma opção ao outro lado deveria ser remunerado por isso. Sem taxa melhor, você está entregando de graça o direito de encerrar a aplicação no pior momento para você."
                 },
                 "en": {
-                  "prompt": "You notice the curve is upward sloping and consider locking in a long-maturity fixed rate. How should you read that carefully?",
+                  "prompt": "You compare two papers from the same issuer with the same maturity: one allows early redemption by the issuer, the other doesn't. How should that weigh on the decision?",
                   "options": [
-                    "The higher long rate is the premium the market charges for time — it pays more, but it also exposes you to sharper mark-to-market swings if rates rise",
-                    "An upward-sloping curve guarantees the long bond will out-earn the short one, no matter what",
-                    "An upward-sloping curve means there is no risk at all in long bonds",
-                    "The slope of the curve has no relation to the maturity of bonds"
+                    "The call is irrelevant, because you get your money back either way",
+                    "The callable paper should offset that disadvantage with some advantage — a higher rate, for instance — since you bear the risk of losing the good rate early",
+                    "The callable paper is better, because it offers the investor more liquidity",
+                    "The call only matters to those planning to sell in the secondary market"
                   ],
-                  "explanation": "The higher long-term rate is compensation for taking on more time — and more rate sensitivity (duration). A higher contracted yield does not remove price swings along the way."
+                  "explanation": "Whoever grants an option to the other side should be paid for it. Without a better rate, you're giving away for free the right to end the investment at the worst moment for you."
                 },
                 "es": {
-                  "prompt": "Observas que la curva tiene pendiente positiva y piensas en fijar una tasa prefijada de plazo largo. ¿Cómo interpretarlo con cuidado?",
+                  "prompt": "Comparas dos papeles del mismo emisor y mismo plazo: uno permite recompra anticipada por el emisor, el otro no. ¿Cómo debería pesar eso en la decisión?",
                   "options": [
-                    "La tasa larga mayor es la prima que el mercado pide por el plazo — remunera más, pero también te expone a una marcación a mercado más intensa si las tasas suben",
-                    "Una curva con pendiente positiva garantiza que el título largo rendirá más que el corto, pase lo que pase",
-                    "Una curva con pendiente positiva significa que no hay ningún riesgo en los títulos largos",
-                    "La pendiente de la curva no tiene ninguna relación con el plazo de los títulos"
+                    "La recompra es irrelevante, porque recibes el dinero de vuelta de todos modos",
+                    "El papel con recompra debería compensar esa desventaja con alguna ventaja — una tasa mayor, por ejemplo — ya que asumes el riesgo de perder la buena tasa temprano",
+                    "El papel con recompra es mejor, porque ofrece más liquidez al inversor",
+                    "La recompra solo importa para quien pretende vender en el mercado secundario"
                   ],
-                  "explanation": "La tasa mayor en el largo plazo es la remuneración por asumir más tiempo — y más sensibilidad a las tasas (duration). Un rendimiento contratado mayor no elimina la oscilación de precio en el camino."
+                  "explanation": "Quien concede una opción a la otra parte debería ser remunerado por ello. Sin una tasa mejor, estás regalando el derecho de terminar la inversión en el peor momento para ti."
                 }
               }
             },
@@ -2884,25 +2884,25 @@
                 "pt": {
                   "title": "O que você aprendeu",
                   "takeaways": [
-                    "A curva de juros mostra que cada prazo de vencimento tem sua própria taxa.",
-                    "Curva inclinada para cima: o longo prazo paga mais; curva invertida: o curto paga mais.",
-                    "A inclinação reflete expectativas do mercado, não uma garantia de retorno."
+                    "Alguns papéis dão ao emissor o direito de recomprar antes do vencimento.",
+                    "O emissor tende a exercer esse direito quando as taxas caem, encerrando a sua taxa boa.",
+                    "Esse direito deveria vir acompanhado de alguma compensação na taxa oferecida a você."
                   ]
                 },
                 "en": {
                   "title": "What you learned",
                   "takeaways": [
-                    "The yield curve shows that each maturity has its own rate.",
-                    "Upward-sloping curve: the long end pays more; inverted curve: the short end pays more.",
-                    "The slope reflects market expectations, not a guaranteed return."
+                    "Some papers give the issuer the right to redeem before maturity.",
+                    "The issuer tends to exercise it when rates fall, ending your good rate.",
+                    "That right should come with some compensation in the rate offered to you."
                   ]
                 },
                 "es": {
                   "title": "Lo que aprendiste",
                   "takeaways": [
-                    "La curva de tasas muestra que cada plazo de vencimiento tiene su propia tasa.",
-                    "Curva con pendiente positiva: el largo plazo paga más; curva invertida: el corto paga más.",
-                    "La pendiente refleja expectativas del mercado, no una garantía de retorno."
+                    "Algunos papeles dan al emisor el derecho de recomprar antes del vencimiento.",
+                    "El emisor tiende a ejercerlo cuando las tasas caen, terminando tu buena tasa.",
+                    "Ese derecho debería venir acompañado de alguna compensación en la tasa ofrecida a ti."
                   ]
                 }
               }
